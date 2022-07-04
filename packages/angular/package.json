@@ -6,6 +6,7 @@
         "start": "ng serve",
         "prebuild": "yarn",
         "build": "ng build",
+        "prebuild:prod": "sed -i \"s/0.0.0/$(npm pkg get version | sed 's/\\\"//g')/g\" ./projects/paperless/package.json",
         "build:prod": "ng build --prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",

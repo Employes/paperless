@@ -51,7 +51,7 @@
         "storybook:start": "start-storybook -p 5200 -s ./packages/core/src -h 0.0.0.0",
         "storybook:build": "yarn build-storybook",
         "storybook:deploy": "sls deploy --stage production",
-        "lerna:version": "lerna version --conventional-commits --yes",
+        "lerna:version": "lerna version --conventional-commits --yes --conventional-prerelease",
         "lerna:version:nopush": "yarn lerna:version --no-push",
         "lerna:lint": "lerna run lint",
         "lerna:lint:fix": "lerna run lint:fix",

@@ -4,6 +4,9 @@
 	"version": "0.0.0",
 	"main": "index.js",
 	"license": "ISC",
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
 	"scripts": {
 		"build": "echo 'skipped conventions'",
 		"build:prod": "yarn build",

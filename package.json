@@ -16,6 +16,11 @@
         "access": "public",
         "registry": "https://registry.npmjs.org"
     },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
     "scripts": {
         "link:core": "cd packages/core && yarn link",
         "link:react": "cd packages/react && yarn link @paperless/core",
@@ -67,6 +72,9 @@
         "@types/jest": "^27.0.3",
         "@types/react": "^17.0.34",
         "@types/react-dom": "^17.0.11",
+        "commitizen": "4.2.4",
+        "cz-conventional-changelog": "3.3.0",
+        "cz-lerna-changelog": "2.0.3",
         "jest": "^27.4.5",
         "jest-cli": "^27.4.5",
         "babel-loader": "^8.2.5",

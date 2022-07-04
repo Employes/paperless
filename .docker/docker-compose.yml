@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+    storybook:
+        image: node:16.10
+        command: yarn docker:storybook
+        tty: true
+        working_dir: /opt/app
+        env_file:
+            - ../.env
+        volumes:
+            - ../:/opt/app
+        environment:
+            - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
+        ports:
+            - '$EXPOSED_STORYBOOK_PORT:5200'
+    # core:
+    #     image: node:16.10
+    #     command: yarn docker:start
+    #     tty: true
+    #     working_dir: /opt/app
+    #     env_file:
+    #         - ../.env
+    #     volumes:
+    #         - ../:/opt/app
+    #     ports:
+    #         - '$EXPOSED_CORE_PORT:8080'

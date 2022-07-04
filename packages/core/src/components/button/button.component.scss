@@ -1,0 +1,8 @@
+:host {
+  > button {
+    outline: 0;
+    border: 0;
+    @apply font-semibold text-white rounded;
+    @apply bg-indigo;
+  }
+}

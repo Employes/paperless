@@ -108,6 +108,11 @@ jobs:
               with:
                   fetch-depth: 0
 
+            - name: Download a single artifact
+              uses: actions/download-artifact@v3
+              with:
+                  name: build-artifact
+
             - name: Install dependencies
               run: yarn
 

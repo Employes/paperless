@@ -1,0 +1,120 @@
+# .github/workflows/deploy.yml
+
+# Workflow name
+name: 'Deploy'
+
+# Event for the workflow
+on: push
+
+# env:
+# GIT_SSH_COMMAND: ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+
+# List of jobs
+jobs:
+    # lint:
+    #     runs-on: ubuntu-latest
+    #     if: |
+    #         !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+    #     steps:
+    #         - uses: actions/checkout@v2
+
+    #         - name: Setup node
+    #           uses: actions/setup-node@v2
+    #           with:
+    #               node-version: 14
+
+    #         - uses: c-hive/gha-yarn-cache@v1
+
+    #         - name: Install dependencies
+    #           run: yarn
+
+    # - name: Lint
+    #   run: yarn lerna:lint
+
+    release:
+        runs-on: ubuntu-latest
+        if: |
+            github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Setup node
+              uses: actions/setup-node@v2
+              with:
+                  always-auth: true
+                  node-version: 14
+                  registry-url: 'https://registry.npmjs.org'
+
+            - uses: c-hive/gha-yarn-cache@v1
+
+            - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+              with:
+                  name: 'Github Actions'
+                  email: 'actions@github.com'
+                  token: '${{ secrets.GITHUB_TOKEN }}'
+
+            - name: Version
+              run: yarn lerna:version:nopush
+
+            - name: Install dependencies
+              run: yarn
+
+            - name: Build
+              run: yarn lerna:build:prod
+
+            - name: Release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: yarn lerna:publish
+
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}
+                  tags: true
+
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: build-artifact
+                  path: |
+                      lerna.json
+                      CHANGELOG.md
+                      packages/core/package.json
+                      packages/core/CHANGELOG.md
+                      packages/conventions/package.json
+                      packages/conventions/CHANGELOG.md
+                      packages/angular/package.json
+                      packages/angular/CHANGELOG.md
+                      packages/react/package.json
+                      packages/react/CHANGELOG.md
+                      packages/core/dist
+                      packages/conventions/dist
+                      packages/angular/dist
+                      packages/react/dist
+
+    deploy-storybook:
+        needs: [release]
+        if: |
+            github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+        runs-on: ubuntu-latest
+        # Job steps
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: Install dependencies
+              run: yarn
+
+            - name: Build storybook
+              run: yarn storybook:build
+
+            - name: Deploy storybook
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              run: yarn storybook:deploy

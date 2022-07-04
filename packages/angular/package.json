@@ -3,10 +3,11 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
+        "set-version": "cd projects/paperless && yarn version --new-version=$(node -p \"require('../../package.json').version\") --no-git-tag-version",
         "start": "ng serve",
         "prebuild": "yarn",
         "build": "ng build",
-        "prebuild:prod": "sed -i \"s/0.0.0/$(npm pkg get version | sed 's/\\\"//g')/g\" ./projects/paperless/package.json",
+        "prebuild:prod": "yarn set-version",
         "build:prod": "ng build --prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",

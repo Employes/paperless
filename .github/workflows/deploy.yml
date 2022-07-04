@@ -92,6 +92,7 @@ jobs:
                       packages/react/package.json
                       packages/react/CHANGELOG.md
                       packages/core/dist
+                      packages/core/loader
                       packages/conventions/dist
                       packages/angular/dist
                       packages/react/dist

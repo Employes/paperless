@@ -49,7 +49,7 @@
         "install:angular": "cd packages/angular && yarn",
         "prestorybook:start": "yarn build:core",
         "storybook:start": "start-storybook -p 5200 -s ./packages/core/src -h 0.0.0.0",
-        "storybook:build": "yarn build-storybook",
+        "storybook:build": "yarn build-storybook -s ./packages/core/src -o dist",
         "storybook:deploy": "sls deploy --stage production",
         "lerna:version": "lerna version --conventional-commits --yes --conventional-prerelease",
         "lerna:version:nopush": "yarn lerna:version --no-push",

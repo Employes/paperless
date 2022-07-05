@@ -1,25 +1,29 @@
-<p align="center">
+<div class="pb-10">
+  <p align="center">
 
   <a href="https://paperless.employes.nl">
       <img src="https://github.com/Employes/paperless/raw/main/packages/core/src/assets/images/paperless.png" alt="Employes UI" width="400" />
   </a>
   <br />
-<span>
-A collection of React & Angular components that conform to the Employes design system.
-</span>
 
-</p>
+  <span>
+  A collection of React & Angular components that conform to the Employes design system.
+  </span>
 
-<div align="center">
+  </p>
+
+  <div align="center">
 
 [![](https://badgen.net/npm/v/@paperless/core/latest?label=@paperless/core)](https://www.npmjs.com/package/@paperless/core)
 [![](https://badgen.net/npm/v/@paperless/angular/latest?label=@paperless/angular)](https://www.npmjs.com/package/@paperless/angular)
-[![](https://badgen.net/npm/v/@paperless/angular/latest?label=@paperless/react)](https://www.npmjs.com/package/@paperless/react)
+[![](https://badgen.net/npm/v/@paperless/react/latest?label=@paperless/react)](https://www.npmjs.com/package/@paperless/react)
+[![](https://badgen.net/npm/v/@paperless/conventions/latest?label=@paperless/conventions)](https://www.npmjs.com/package/@paperless/conventions)
 
-</div>
+  </div>
 
-<div align="center">
- <a href="https://paperless.employes.nl">https://paperless.employes.nl</a>
+  <div align="center" >
+    <a href="https://paperless.employes.nl">https://paperless.employes.nl</a>
+  </div>
 </div>
 
 ## 📦 Install

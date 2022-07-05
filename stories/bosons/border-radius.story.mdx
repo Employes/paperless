@@ -1,37 +1,43 @@
-import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+import { Meta, Markdown, Canvas } from '@storybook/addon-docs/blocks';
 import { StoryCategories } from '../categories';
 
 <Meta title={`${StoryCategories.Bosons}/Border Radius`} />
 
 # Border Radius
 
-<div class="h-10 w-full"></div>
-
-### Variants
-
-<div class="flex flex-row space-x-40 w-6/12">
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Small</span>
-        <div class="w-full aspect-w-1 aspect-h-1 bg-indigo rounded-small"></div>
+<Canvas>
+    <div class="flex flex-col">
+        <div class="flex flex-row">
+            <div class="w-1/5">
+                <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                    Small
+                </span>
+                <div class="w-16 h-16 bg-indigo rounded-small"></div>
+            </div>
+            <div class="w-1/5">
+                <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                    Default
+                </span>
+                <div class="w-16 h-16 bg-indigo rounded"></div>
+            </div>
+            <div class="w-1/5">
+                <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                    Large
+                </span>
+                <div class="w-16 h-16 bg-indigo rounded-large"></div>
+            </div>
+            <div class="w-1/5">
+                <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                    Round
+                </span>
+                <div class="w-16 h-16 bg-indigo rounded-round"></div>
+            </div>
+            <div class="w-1/5">
+                <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                    None
+                </span>
+                <div class="w-16 h-16 bg-indigo rounded-none"></div>
+            </div>
+        </div>
     </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Default</span>
-        <div class="w-full aspect-w-1 aspect-h-1 bg-indigo rounded"></div>
-    </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Large</span>
-        <div class="w-full aspect-w-1 aspect-h-1 bg-indigo rounded-large"></div>
-    </div>
-</div>
-
-<div class="flex flex-row space-x-40 w-6/12 pt-10">
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Round</span>
-        <div class="w-full aspect-w-1 aspect-h-1 bg-indigo rounded-round"></div>
-    </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">None</span>
-        <div class="w-full aspect-w-1 aspect-h-1 bg-indigo rounded-none"></div>
-    </div>
-    <div class="basis-1/5"></div>
-</div>
+</Canvas>

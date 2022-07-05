@@ -1,4 +1,4 @@
-import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+import { Meta, Markdown, Canvas } from '@storybook/addon-docs/blocks';
 import { StoryCategories } from '../categories';
 
 <Meta title={`${StoryCategories.Bosons}/Colors`} />
@@ -9,90 +9,250 @@ import { StoryCategories } from '../categories';
 
 ### Primary
 
-<div class="flex flex-row space-x-10 pt-5">
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Indigo</span>
-        <div class=" grid grid-cols-4 gap-2">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-indigo rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-indigo-dark rounded-large"></div>
-            <div class="col-auto row-start-2 w-full aspect-w-1 aspect-h-1 bg-indigo-light rounded-large"></div>
+<div class="h-5 w-full"></div>
+
+#### Indigo
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-indigo-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-indigo rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-indigo-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Sky</span>
-        <div class="grid grid-cols-4 gap-2">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-sky rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-sky-dark rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-sky-light rounded-large"></div>
-            <div class="col-start-4 row-start-1 w-full aspect-w-1 aspect-h-1 bg-sky-vague rounded-large"></div>
+</Canvas>
+
+#### Sky
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-sky-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Vague
+            </span>
+            <div class="w-16 h-16 bg-sky-vague rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-sky rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-sky-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3"></div>
-</div>
+</Canvas>
 
 <div class="h-5 w-full"></div>
 
 ### Secondary
 
-<div class="flex flex-row space-x-10 pt-5">
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Storm</span>
-        <div class=" grid grid-cols-4 gap-2">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-storm rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-storm-dark rounded-large"></div>
-            <div class="col-start-4 row-start-1 w-full aspect-w-1 aspect-h-1 bg-storm-medium rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-storm-vague rounded-large"></div>
-            <div class="col-start-4 row-start-2 w-full aspect-w-1 aspect-h-1 bg-storm-light rounded-large"></div>
+#### Storm
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-storm-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Vague
+            </span>
+            <div class="w-16 h-16 bg-storm-vague rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Medium
+            </span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-storm rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-storm-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Mystic</span>
-        <div class=" grid grid-cols-4 gap-2">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-mystic rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-mystic-dark rounded-large"></div>
-            <div class="col-start-4 row-start-1 w-full aspect-w-1 aspect-h-1 bg-mystic-medium rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-mystic-light rounded-large border-2 border-mystic-dark"></div>
-            <div class="col-start-4 row-start-2 w-full aspect-w-1 aspect-h-1 bg-white rounded-large border-2 border-mystic-dark"></div>
+</Canvas>
+
+#### Mystic
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                White
+            </span>
+            <div class="w-16 h-16 bg-white border-2 border-mystic-dark rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-mystic-light border-2 border-mystic-dark rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-mystic rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Medium
+            </span>
+            <div class="w-16 h-16 bg-mystic-medium rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-mystic-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Redberry</span>
-        <div class="grid grid-cols-4 gap-4">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-redberry rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-redberry-dark rounded-large"></div>
-            <div class="col-start-4 row-start-1 w-full aspect-w-1 aspect-h-1 bg-redberry-medium rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-redberry-light rounded-large"></div>
+</Canvas>
+
+#### Redberry
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-redberry-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Medium
+            </span>
+            <div class="w-16 h-16 bg-redberry-medium rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-redberry rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-redberry-dark rounded-large"></div>
         </div>
     </div>
-</div>
+</Canvas>
 
 <div class="h-5 w-full"></div>
 
 ### Status
 
-<div class="flex flex-row w-6/12 space-x-5 pt-5">
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Positive</span>
-        <div class=" grid grid-cols-4 gap-1">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-positive rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-positive-dark rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-positive-light rounded-large"></div>
+<div class="h-5 w-full"></div>
+
+#### Positive
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-positive-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-positive rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-positive-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Unbiased</span>
-        <div class=" grid grid-cols-4 gap-1">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-unbiased rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-unbiased-dark rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-unbiased-light rounded-large"></div>
+</Canvas>
+
+#### Unbiased
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-unbiased-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-unbiased rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-unbiased-dark rounded-large"></div>
         </div>
     </div>
-    <div class="basis-1/3">
-        <span class="p-0 text-storm-vague text-xs font-semibold">Negative</span>
-        <div class=" grid grid-cols-4 gap-1">
-            <div class="col-span-2 row-start-1 row-span-2 w-full aspect-w-1 aspect-h-1 bg-negative rounded-large"></div>
-            <div class="col-start-3 row-start-1 w-full aspect-w-1 aspect-h-1 bg-negative-dark rounded-large"></div>
-            <div class="col-start-3 row-start-2 w-full aspect-w-1 aspect-h-1 bg-negative-light rounded-large"></div>
+</Canvas>
+
+#### Negative
+
+<Canvas>
+    <div class="flex flex-row w-full justify-start">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Light
+            </span>
+            <div class="w-16 h-16 bg-negative-light rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Default
+            </span>
+            <div class="w-16 h-16 bg-negative rounded-large"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold uppercase">
+                Dark
+            </span>
+            <div class="w-16 h-16 bg-negative-dark rounded-large"></div>
         </div>
     </div>
-</div>
+</Canvas>

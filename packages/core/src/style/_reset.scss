@@ -1,15 +1,13 @@
-button:focus {
-  outline: 0;
-}
+@layer base {
+  html,
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
 
-html,
-body {
-  font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
 
-  min-height: 100vh;
-  width: 100%;
-  max-width: 100vw;
-
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
 }

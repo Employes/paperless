@@ -1,4 +1,4 @@
-import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+import { Meta, Markdown, Canvas } from '@storybook/addon-docs/blocks';
 import { StoryCategories } from '../categories';
 
 <Meta title={`${StoryCategories.Bosons}/Shadows`} />
@@ -7,27 +7,56 @@ import { StoryCategories } from '../categories';
 
 <div class="h-10 w-full"></div>
 
-### Variants
+### Drop Shadow
 
-<div class="flex flex-row space-x-32 w-full">
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">1</span>
-        <div class="w-12 h-12 bg-storm-medium rounded-large filter drop-shadow-1"></div>
+<Canvas>
+    <div class="flex flex-row w-full">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">1</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large filter drop-shadow-1"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">2</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large filter drop-shadow-2"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">3</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large filter drop-shadow-3"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">4</span>
+            <div class="w-16 h-16 bg-mystic-dark rounded-large filter drop-shadow-4"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">5</span>
+            <div class="w-16 h-16 bg-mystic-dark rounded-large filter drop-shadow-5"></div>
+        </div>
     </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">2</span>
-        <div class="w-12 h-12 bg-storm-medium rounded-large filter drop-shadow-2"></div>
+</Canvas>
+
+### Box shadow
+
+<Canvas>
+    <div class="flex flex-row w-full">
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">1</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large shadow-1"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">2</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large shadow-2"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">3</span>
+            <div class="w-16 h-16 bg-storm-medium rounded-large shadow-3"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">4</span>
+            <div class="w-16 h-16 bg-mystic-dark rounded-large shadow-4"></div>
+        </div>
+        <div class="w-1/5">
+            <span class="p-0 text-storm-vague text-xs font-semibold">5</span>
+            <div class="w-16 h-16 bg-mystic-dark rounded-large shadow-5"></div>
+        </div>
     </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">3</span>
-        <div class="w-12 h-12 bg-storm-medium rounded-large filter drop-shadow-3"></div>
-    </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">4</span>
-        <div class="w-12 h-12 bg-mystic-dark rounded-large filter drop-shadow-4"></div>
-    </div>
-    <div class="basis-1/5">
-        <span class="p-0 text-storm-vague text-xs font-semibold">5</span>
-        <div class="w-12 h-12 bg-mystic-dark rounded-large filter drop-shadow-5"></div>
-    </div>
-</div>
+</Canvas>

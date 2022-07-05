@@ -3,6 +3,11 @@ const shadows = require('./tailwind/shadows');
 const borderRadius = require('./tailwind/border-radius');
 
 module.exports = {
+  safelist: [
+    {
+      pattern: /./,
+    },
+  ],
   theme: {
     colors,
     boxShadow: shadows,

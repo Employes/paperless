@@ -3,6 +3,8 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import './codemirror.css';
 import './custom.css';
 
+import '../packages/core/dist/paperless/paperless.css';
+
 import { defineCustomElements } from '../packages/core/loader';
 
 defineCustomElements();
@@ -15,7 +17,7 @@ export const parameters = {
                 ['Welcome', 'Changelog'],
                 'Foundation',
                 'Design system',
-                ['Atoms', 'Molecules', 'Organisms'],
+                ['Bosons', 'Atoms', 'Molecules', 'Organisms'],
             ],
         },
     },

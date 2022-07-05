@@ -24,7 +24,9 @@
   "scripts": {
     "build": "stencil build --docs",
     "build:prod": "stencil build",
-    "postbuild": "tailwindcss -i dist/paperless/paperless.css -o dist/paperless/paperless.css",
+    "postbuild": "yarn tailwind:process",
+    "postbuild:prod": "yarn tailwind:process",
+    "tailwind:process": "tailwindcss -i dist/paperless/paperless.css -o dist/paperless/paperless.css",
     "watch": "stencil build --watch",
     "watch:bg": "(yarn watch&)",
     "start": "stencil build --dev --watch --serve",

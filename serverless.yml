@@ -39,7 +39,7 @@ custom:
 
 provider:
     name: aws
-    runtime: nodejs8.10
+    runtime: nodejs14.x
     stage: development
     region: eu-west-1
 

@@ -30,6 +30,7 @@
         "link:react": "cd packages/react && yarn link @paperless/core",
         "link:angular": "cd packages/angular && yarn link @paperless/core",
         "build:core": "yarn workspace @paperless/core build",
+        "build:core:prod": "yarn workspace @paperless/core build:prod",
         "build:core:watch": "yarn workspace @paperless/core watch",
         "build:core:watch:bg": "yarn workspace @paperless/core watch:bg",
         "postbuild:core": "yarn link:core",

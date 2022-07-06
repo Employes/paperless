@@ -15,7 +15,7 @@ export const config: Config = {
       // enableDebug: true,
       tailwindConf: {
         ...tailwindConfig,
-        content: ['src/style/*.scss'],
+        content: [],
         mode: 'jit',
       },
     }),

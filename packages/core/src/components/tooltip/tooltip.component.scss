@@ -1,0 +1,43 @@
+:host {
+  @apply cursor-pointer;
+
+  .tooltip {
+    @apply bg-storm hidden text-xs font-medium text-white py-1 px-3 rounded drop-shadow-1;
+    max-width: 14.5rem;
+
+    &[data-show] {
+      @apply block;
+    }
+
+    .arrow,
+    .arrow::before {
+      background: inherit;
+      @apply absolute w-2 h-2;
+    }
+
+    .arrow {
+      visibility: hidden;
+
+      &::before {
+        @apply visible transform rotate-45;
+        content: '';
+      }
+    }
+
+    &[data-popper-placement^='top'] > .arrow {
+      @apply -bottom-1;
+    }
+
+    &[data-popper-placement^='bottom'] > .arrow {
+      @apply -top-1;
+    }
+
+    &[data-popper-placement^='left'] > .arrow {
+      @apply -right-1;
+    }
+
+    &[data-popper-placement^='right'] > .arrow {
+      @apply -left-1;
+    }
+  }
+}

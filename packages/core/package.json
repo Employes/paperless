@@ -37,6 +37,7 @@
     "yarn:publish": "yarn publish"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
     "@stencil/core": "^2.13.0"
   },
   "devDependencies": {

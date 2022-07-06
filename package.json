@@ -33,6 +33,7 @@
         "build:core:prod": "yarn workspace @paperless/core build:prod",
         "build:core:watch": "yarn workspace @paperless/core watch",
         "build:core:watch:bg": "yarn workspace @paperless/core watch:bg",
+        "test:core": "yarn workspace @paperless/core test",
         "postbuild:core": "yarn link:core",
         "prebuild:react": "yarn link:react",
         "build:react": "cd packages/react && yarn build",

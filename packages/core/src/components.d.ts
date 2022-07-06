@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconVariant } from "./components/icon/icon.component";
 import { IllustrationVariant } from "./components/illustration/illustration.component";
+import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PButton {
         /**
@@ -38,6 +39,20 @@ export namespace Components {
          */
         "variant": IllustrationVariant;
     }
+    interface PTooltip {
+        /**
+          * The content of the tooltip
+         */
+        "content": any;
+        /**
+          * Wether to force show the tooltip
+         */
+        "forceShow": boolean;
+        /**
+          * The content of the tooltip
+         */
+        "placement": Placement;
+    }
 }
 declare global {
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
@@ -58,10 +73,17 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
+    }
+    var HTMLPTooltipElement: {
+        prototype: HTMLPTooltipElement;
+        new (): HTMLPTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "p-button": HTMLPButtonElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
+        "p-tooltip": HTMLPTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -95,10 +117,25 @@ declare namespace LocalJSX {
          */
         "variant"?: IllustrationVariant;
     }
+    interface PTooltip {
+        /**
+          * The content of the tooltip
+         */
+        "content"?: any;
+        /**
+          * Wether to force show the tooltip
+         */
+        "forceShow"?: boolean;
+        /**
+          * The content of the tooltip
+         */
+        "placement"?: Placement;
+    }
     interface IntrinsicElements {
         "p-button": PButton;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
+        "p-tooltip": PTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -108,6 +145,7 @@ declare module "@stencil/core" {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
+            "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }
 }

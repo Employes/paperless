@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../categories';
+import TooltipDocs from '../../packages/core/src/components/tooltip/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Tooltip`} />
+
+<TooltipDocs />
+
+# Examples
+
+<Canvas>
+    <>
+        <br />
+        <br />
+        <br />
+        <p-tooltip content="test">Hover me</p-tooltip>
+    </>
+</Canvas>
+
+<Canvas>
+    <p-tooltip content="test" placement="right">
+        Hover me
+    </p-tooltip>
+</Canvas>

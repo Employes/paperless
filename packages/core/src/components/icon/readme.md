@@ -1,11 +1,10 @@
 # Icon
 
-Usage:
+## Usage:
 
-    <p-icon icon="name"></p-icon>
+    <p-icon variant="name"></p-icon>
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -16,7 +15,6 @@ Usage:
 | `size`    | `size`    | The size of the icon, using tailwind sizes         | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `'auto'` |
 | `variant` | `variant` | The icon the be displayed                          | `"arrow" \| "attachment" \| "bread" \| "calendar" \| "car" \| "checkmark" \| "chevron" \| "clock" \| "cogs" \| "comment" \| "document" \| "download" \| "envelope" \| "explanation" \| "eye" \| "filter" \| "grid" \| "headset" \| "list" \| "location" \| "megaphone" \| "minus" \| "negative" \| "pagination" \| "payment" \| "pencil" \| "person" \| "plus" \| "question" \| "receipt" \| "report" \| "search" \| "settings" \| "sick" \| "tachometer" \| "tool" \| "trash" \| "turn" \| "upload" \| "warning"` | `null`   |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

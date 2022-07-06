@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconVariant } from "./components/icon/icon.component";
+import { IllustrationVariant } from "./components/illustration/illustration.component";
 export namespace Components {
     interface PButton {
         /**
@@ -31,6 +32,12 @@ export namespace Components {
          */
         "variant": IconVariant;
     }
+    interface PIllustration {
+        /**
+          * The icon the be displayed
+         */
+        "variant": IllustrationVariant;
+    }
 }
 declare global {
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
@@ -45,15 +52,22 @@ declare global {
         prototype: HTMLPIconElement;
         new (): HTMLPIconElement;
     };
+    interface HTMLPIllustrationElement extends Components.PIllustration, HTMLStencilElement {
+    }
+    var HTMLPIllustrationElement: {
+        prototype: HTMLPIllustrationElement;
+        new (): HTMLPIllustrationElement;
+    };
     interface HTMLElementTagNameMap {
         "p-button": HTMLPButtonElement;
         "p-icon": HTMLPIconElement;
+        "p-illustration": HTMLPIllustrationElement;
     }
 }
 declare namespace LocalJSX {
     interface PButton {
         /**
-          * The name
+          * The variant of the button
          */
         "variant"?: 'primary' | 'secondary';
     }
@@ -75,9 +89,16 @@ declare namespace LocalJSX {
          */
         "variant"?: IconVariant;
     }
+    interface PIllustration {
+        /**
+          * The icon the be displayed
+         */
+        "variant"?: IllustrationVariant;
+    }
     interface IntrinsicElements {
         "p-button": PButton;
         "p-icon": PIcon;
+        "p-illustration": PIllustration;
     }
 }
 export { LocalJSX as JSX };
@@ -86,6 +107,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
+            "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
         }
     }
 }

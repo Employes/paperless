@@ -9,16 +9,31 @@ import TooltipDocs from '../../packages/core/src/components/tooltip/readme.md';
 # Examples
 
 <Canvas>
-    <>
-        <br />
-        <br />
-        <br />
+    <div class="flex justify-center items-center h-20">
         <p-tooltip content="test">Hover me</p-tooltip>
-    </>
+    </div>
 </Canvas>
 
 <Canvas>
-    <p-tooltip content="test" placement="right">
-        Hover me
-    </p-tooltip>
+    <div class="flex justify-center items-center h-20">
+        <p-tooltip content="test" placement="right">
+            Hover me
+        </p-tooltip>
+    </div>
+</Canvas>
+
+<Canvas>
+    <div class="flex justify-center items-center h-20">
+        <p-tooltip content="I am a person!" placement="left">
+            <p-icon variant="person" />
+        </p-tooltip>
+    </div>
+</Canvas>
+
+<Canvas>
+    <div class="flex justify-center items-center h-20 pt-24">
+        <p-tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ut sem eget dignissim. Donec bibendum diam non viverra lobortis.">
+            Hover me
+        </p-tooltip>
+    </div>
 </Canvas>

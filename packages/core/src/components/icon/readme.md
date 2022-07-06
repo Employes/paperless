@@ -2,7 +2,9 @@
 
 ## Usage:
 
+```html
     <p-icon variant="name"></p-icon>
+```
 
 <!-- Auto Generated Below -->
 

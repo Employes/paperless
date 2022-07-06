@@ -5,12 +5,31 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IconVariant } from "./components/icon/icon.component";
 export namespace Components {
     interface PButton {
         /**
           * The name
          */
         "variant": 'primary' | 'secondary';
+    }
+    interface PIcon {
+        /**
+          * Wether to flip the icon horizontally or vertically
+         */
+        "flip": 'horizontal' | 'vertical';
+        /**
+          * Wether to rotate the icon x degrees
+         */
+        "rotate": number;
+        /**
+          * The size of the icon, using tailwind sizes
+         */
+        "size": string;
+        /**
+          * The icon the be displayed
+         */
+        "variant": IconVariant;
     }
 }
 declare global {
@@ -20,8 +39,15 @@ declare global {
         prototype: HTMLPButtonElement;
         new (): HTMLPButtonElement;
     };
+    interface HTMLPIconElement extends Components.PIcon, HTMLStencilElement {
+    }
+    var HTMLPIconElement: {
+        prototype: HTMLPIconElement;
+        new (): HTMLPIconElement;
+    };
     interface HTMLElementTagNameMap {
         "p-button": HTMLPButtonElement;
+        "p-icon": HTMLPIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -31,8 +57,27 @@ declare namespace LocalJSX {
          */
         "variant"?: 'primary' | 'secondary';
     }
+    interface PIcon {
+        /**
+          * Wether to flip the icon horizontally or vertically
+         */
+        "flip"?: 'horizontal' | 'vertical';
+        /**
+          * Wether to rotate the icon x degrees
+         */
+        "rotate"?: number;
+        /**
+          * The size of the icon, using tailwind sizes
+         */
+        "size"?: string;
+        /**
+          * The icon the be displayed
+         */
+        "variant"?: IconVariant;
+    }
     interface IntrinsicElements {
         "p-button": PButton;
+        "p-icon": PIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -40,6 +85,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
+            "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
         }
     }
 }

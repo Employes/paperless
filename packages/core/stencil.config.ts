@@ -2,6 +2,7 @@ import { angularOutputTarget as angular } from '@stencil/angular-output-target';
 import { Config } from '@stencil/core';
 import { reactOutputTarget as react } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
+import { inlineSvg } from 'stencil-inline-svg';
 import tailwind from 'stencil-tailwind-plugin';
 import tailwindConfig from './src/tailwind.config';
 
@@ -18,6 +19,7 @@ export const config: Config = {
         mode: 'jit',
       },
     }),
+    inlineSvg(),
   ],
   devServer: {
     address: '0.0.0.0',

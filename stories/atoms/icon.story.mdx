@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../categories';
+import IconDocs from '../../packages/core/src/components/icon/readme.md';
+import icons from '../../packages/core/src/utils/icons';
+
+<Meta title={`${StoryCategories.Atoms}/Icon`} />
+
+<IconDocs />
+
+# Icons
+
+<Canvas>
+    <div class="grid grid-cols-6 gap-10 text-5xl">
+        {Object.keys(icons).map((icon) => (
+            <p-icon variant={icon}></p-icon>
+        ))}
+    </div>
+</Canvas>

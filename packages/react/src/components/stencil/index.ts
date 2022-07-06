@@ -9,3 +9,4 @@ import { defineCustomElements } from '@paperless/core/loader';
 
 defineCustomElements();
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
+export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');

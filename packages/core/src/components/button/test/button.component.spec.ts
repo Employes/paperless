@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Button } from './button.component';
+import { Button } from '../button.component';
 
 describe('button', () => {
   it('renders', async () => {

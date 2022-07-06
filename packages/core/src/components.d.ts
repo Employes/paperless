@@ -9,7 +9,7 @@ import { IconVariant } from "./components/icon/icon.component";
 export namespace Components {
     interface PButton {
         /**
-          * The name
+          * The variant of the button
          */
         "variant": 'primary' | 'secondary';
     }

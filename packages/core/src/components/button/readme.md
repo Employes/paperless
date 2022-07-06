@@ -7,9 +7,9 @@ Button clicky click
 
 ## Properties
 
-| Property  | Attribute | Description | Type                       | Default     |
-| --------- | --------- | ----------- | -------------------------- | ----------- |
-| `variant` | `variant` | The name    | `"primary" \| "secondary"` | `'primary'` |
+| Property  | Attribute | Description               | Type                       | Default     |
+| --------- | --------- | ------------------------- | -------------------------- | ----------- |
+| `variant` | `variant` | The variant of the button | `"primary" \| "secondary"` | `'primary'` |
 
 
 ----------------------------------------------

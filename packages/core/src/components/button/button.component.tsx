@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'p-button',
@@ -7,15 +7,17 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class Button {
   /**
-   * The name
+   * The variant of the button
    */
   @Prop() variant: 'primary' | 'secondary' = 'primary';
 
   render() {
     return (
-      <button class={`variant-${this.variant}`}>
-        <slot />
-      </button>
+      <Host>
+        <button class={`variant-${this.variant}`}>
+          <slot />
+        </button>
+      </Host>
     );
   }
 }

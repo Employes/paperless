@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.3-alpha.10 (2022-07-06)
+
+**Note:** Version bump only for package paperless
+
+
+
+
+
 ## 0.0.3-alpha.9 (2022-07-05)
 
 **Note:** Version bump only for package paperless

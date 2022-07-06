@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.0 (2022-07-06)
+
+
+### Features
+
+* **bosons/border-radius:** Add medium variant ([d658b51](https://github.com/Employes/Paperless/commit/d658b512cf2dca32bb5f9c82f6951b952870738a))
+
+
+
+
+
 ## 0.0.3-alpha.10 (2022-07-06)
 
 **Note:** Version bump only for package @paperless/angular

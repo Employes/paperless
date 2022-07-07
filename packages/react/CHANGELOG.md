@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.4 (2022-07-07)
+
+
+### Features
+
+* **Atoms/Button:** Add hover/active/disabled states ([35109f7](https://github.com/ionic-team/ionic/commit/35109f77d6f87c25e29fa5c704c21ae1240537ad))
+
+
+
+
+
 # 0.1.0-alpha.3 (2022-07-07)
 
 

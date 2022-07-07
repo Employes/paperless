@@ -18,6 +18,11 @@ export class Loader {
   @Prop() variant: 'inline' | 'full-width' | 'full-screen' | 'modal' = 'inline';
 
   /**
+   * Color of the loader
+   */
+  @Prop() color: 'indigo' | 'white' | 'storm' = 'indigo';
+
+  /**
    * !NOT IMPLEMENTED! Modal title for modal variant
    */
   @Prop() modalTitle: string;
@@ -30,7 +35,7 @@ export class Loader {
   private _show = this.show;
   private _showSubscriber: Subscription;
 
-  private _loader = (<div class="loader"></div>);
+  private _loader = (<div class={`loader color-${this.color}`}></div>);
 
   componentWillRender() {
     this._checkShow();

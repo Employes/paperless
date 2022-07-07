@@ -16,7 +16,7 @@
       @apply max-w-xs;
 
       .loader-wrapper {
-        @apply w-full flex justify-center mt-24;
+        @apply w-full flex justify-center;
 
         .loader {
           @apply text-4xl;

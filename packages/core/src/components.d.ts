@@ -5,22 +5,47 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IconVariant } from "./components/atoms/icon/icon.component";
+import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
+import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PButton {
         /**
+          * Icon to show on the button
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate": number;
+        /**
+          * Wether to show a loader or not
+         */
+        "loading": boolean;
+        /**
+          * The size of the button
+         */
+        "size": 'small' | 'medium';
+        /**
           * The variant of the button
          */
-        "variant": 'primary' | 'secondary';
+        "variant": 'primary' | 'secondary' | 'text';
     }
     interface PIcon {
         /**
           * Wether to flip the icon horizontally or vertically
          */
-        "flip": 'horizontal' | 'vertical';
+        "flip": IconFlipOptions;
         /**
           * Wether to rotate the icon x degrees
          */
@@ -41,6 +66,10 @@ export namespace Components {
         "variant": IllustrationVariant;
     }
     interface PLoader {
+        /**
+          * Color of the loader
+         */
+        "color": 'indigo' | 'white' | 'storm';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */
@@ -115,15 +144,39 @@ declare global {
 declare namespace LocalJSX {
     interface PButton {
         /**
+          * Icon to show on the button
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition"?: 'start' | 'end';
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: number;
+        /**
+          * Wether to show a loader or not
+         */
+        "loading"?: boolean;
+        /**
+          * The size of the button
+         */
+        "size"?: 'small' | 'medium';
+        /**
           * The variant of the button
          */
-        "variant"?: 'primary' | 'secondary';
+        "variant"?: 'primary' | 'secondary' | 'text';
     }
     interface PIcon {
         /**
           * Wether to flip the icon horizontally or vertically
          */
-        "flip"?: 'horizontal' | 'vertical';
+        "flip"?: IconFlipOptions;
         /**
           * Wether to rotate the icon x degrees
          */
@@ -144,6 +197,10 @@ declare namespace LocalJSX {
         "variant"?: IllustrationVariant;
     }
     interface PLoader {
+        /**
+          * Color of the loader
+         */
+        "color"?: 'indigo' | 'white' | 'storm';
         /**
           * !NOT IMPLEMENTED! Modal description for modal variant
          */

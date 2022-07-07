@@ -1,8 +1,48 @@
-:host {
+p-button {
   > button {
     outline: 0;
     border: 0;
-    @apply font-semibold text-white rounded;
-    @apply bg-indigo;
+    @apply h-10 rounded-large;
+    @apply font-semibold leading-4;
+    @apply flex items-center justify-center;
+    @apply cursor-pointer;
+
+    > p-loader {
+      @apply ml-2;
+    }
+
+    // Icon positions
+    &.icon-position-end {
+      > p-icon {
+        @apply ml-2;
+      }
+    }
+
+    &.icon-position-start {
+      > p-icon {
+        @apply mr-2;
+      }
+    }
+
+    // Variants
+    &.variant-primary,
+    &.variant-secondary {
+      @apply rounded;
+      @apply px-4;
+    }
+
+    &.variant-primary {
+      @apply bg-indigo text-white;
+    }
+
+    &.variant-secondary {
+      @apply border border-mystic-dark #{!important};
+      @apply bg-white text-storm;
+      @apply filter drop-shadow-4;
+    }
+
+    &.variant-text {
+      @apply text-indigo;
+    }
   }
 }

@@ -9,5 +9,24 @@ import ButtonDocs from '../../packages/core/src/components/atoms/button/readme.m
 # Examples
 
 <Canvas>
-    <p-button>Test</p-button>
+    <p-button loading={true} icon="person" icon-position="start">
+        Test
+    </p-button>
+</Canvas>
+
+<Canvas>
+    <p-button variant="secondary" loading={true}>
+        Test
+    </p-button>
+</Canvas>
+
+<Canvas>
+    <p-button
+        variant="text"
+        icon="arrow"
+        icon-position="start"
+        icon-flip="horizontal"
+    >
+        Test
+    </p-button>
 </Canvas>

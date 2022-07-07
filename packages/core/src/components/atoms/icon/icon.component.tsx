@@ -37,7 +37,7 @@ export class Icon {
 
   private _getClass() {
     return `p-icon inline-block text-${this.size} ${this.rotate || this.flip ? 'transform' : ''} ${
-      this.rotate ? ` !${this.rotate < 0 ? '-' : ''}rotate-${this.rotate < 0 ? this.rotate * -1 : this.rotate}` : ''
-    } ${this.flip ? `!scale-${this.flip === 'horizontal' ? 'x' : 'y'}-flip` : ''}`;
+      this.rotate ? `${this.rotate < 0 ? '-' : ''}rotate-${this.rotate < 0 ? this.rotate * -1 : this.rotate}` : ''
+    } ${this.flip ? `scale-${this.flip === 'horizontal' ? 'x' : 'y'}-flip` : ''}`;
   }
 }

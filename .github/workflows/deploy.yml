@@ -33,8 +33,7 @@ jobs:
 
     release:
         runs-on: ubuntu-latest
-        if: |
-            github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+        if: ${{ !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish') }}
         steps:
             - uses: actions/checkout@v2
 
@@ -54,6 +53,8 @@ jobs:
                   token: '${{ secrets.GITHUB_TOKEN }}'
 
             - name: Version
+              if: |
+                  github.ref == 'refs/heads/main'
               run: yarn lerna:version:nopush
 
             - name: Install dependencies
@@ -68,7 +69,8 @@ jobs:
               run: yarn build:core:prod
 
             - name: Release
-              if: ${{ !contains(github.event.head_commit.message, 'docs(') }}
+              if: |
+                  github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message , 'docs(')
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -76,6 +78,8 @@ jobs:
               run: yarn lerna:publish
 
             - name: Push changes
+              if: |
+                  github.ref == 'refs/heads/main'
               uses: ad-m/github-push-action@master
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}

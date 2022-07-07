@@ -5,8 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IconVariant } from "./components/icon/icon.component";
-import { IllustrationVariant } from "./components/illustration/illustration.component";
+import { IconVariant } from "./components/atoms/icon/icon.component";
+import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PButton {

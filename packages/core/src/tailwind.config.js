@@ -5,11 +5,6 @@ const grid = require('./tailwind/grid');
 
 module.exports = {
   important: true,
-  safelist: [
-    {
-      pattern: /./,
-    },
-  ],
   theme: {
     colors,
     boxShadow: shadows,

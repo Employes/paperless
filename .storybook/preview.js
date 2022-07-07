@@ -3,11 +3,10 @@ import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks';
 import './codemirror.css';
 import './custom.css';
 
-import '../packages/core/dist/paperless/paperless.css';
-
 import { defineCustomElements } from '../packages/core/loader';
-
 defineCustomElements();
+
+import '../packages/core/dist/paperless/paperless.css';
 
 export const parameters = {
     options: {

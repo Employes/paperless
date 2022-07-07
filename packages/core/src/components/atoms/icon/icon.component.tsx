@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import icons from '../../utils/icons';
+import icons from '../../../utils/icons';
 
 export type IconVariant = keyof typeof icons;
 

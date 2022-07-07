@@ -13,11 +13,7 @@ export const config: Config = {
     sass(),
     tailwind({
       // enableDebug: true,
-      tailwindConf: {
-        ...tailwindConfig,
-        content: [],
-        mode: 'jit',
-      },
+      tailwindConf: tailwindConfig,
     }),
     inlineSvg(),
   ],

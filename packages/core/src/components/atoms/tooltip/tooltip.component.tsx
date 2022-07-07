@@ -40,7 +40,7 @@ export class Tooltip {
 
   render() {
     return (
-      <Host>
+      <Host class="p-tooltip">
         <slot />
         <div class="tooltip" role="tooltip" ref={el => this._load(el)}>
           {this.content}

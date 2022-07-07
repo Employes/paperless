@@ -7,7 +7,7 @@ export type IllustrationVariant = keyof typeof illustrations;
   tag: 'p-illustration',
   // shadow: true,
 })
-export class Icon {
+export class Illustration {
   /**
    * The icon the be displayed
    */

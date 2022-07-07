@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Icon } from '../illustration.component';
+import { Illustration } from '../illustration.component';
 
 describe('p-illustration', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [Icon],
+      components: [Illustration],
       html: `<p-illustration icon="document"></p-illustration>`,
     });
     expect(page.root).toEqualHtml(`

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.3 (2022-07-07)
+
+
+### Features
+
+* **Atoms:** Button Component ([#2](https://github.com/Employes/Paperless/issues/2)) ([e32a7f9](https://github.com/Employes/Paperless/commit/e32a7f9b86a2f96ebc9bb151e568de128022e6dc))
+
+
+
+
+
 # 0.1.0-alpha.2 (2022-07-07)
 
 **Note:** Version bump only for package @paperless/conventions

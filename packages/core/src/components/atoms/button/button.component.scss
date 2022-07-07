@@ -35,21 +35,45 @@ p-button {
 
     &.variant-primary {
       @apply bg-indigo text-white;
+
+      &:hover {
+        @apply bg-indigo/95;
+      }
+
+      &:active {
+        @apply bg-indigo-dark;
+      }
     }
 
     &.variant-secondary {
       @apply border border-mystic-dark #{!important};
       @apply bg-white text-storm;
       @apply filter drop-shadow-4;
+
+      &:hover {
+        @apply bg-mystic;
+      }
+
+      &:active {
+        @apply bg-storm-light/5 border-storm-light/20;
+      }
     }
 
     &.variant-text {
       @apply text-indigo;
+
+      &:hover {
+        @apply text-indigo-dark;
+      }
     }
 
     // sizes
     &.size-small {
       @apply h-8 text-sm;
+    }
+
+    &[disabled] {
+      @apply opacity-50;
     }
   }
 }

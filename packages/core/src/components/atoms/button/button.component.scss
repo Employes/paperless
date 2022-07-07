@@ -27,7 +27,6 @@ p-button {
     // Variants
     &.variant-primary,
     &.variant-secondary {
-      @apply rounded;
       @apply px-4;
     }
 
@@ -43,6 +42,11 @@ p-button {
 
     &.variant-text {
       @apply text-indigo;
+    }
+
+    // sizes
+    &.size-small {
+      @apply h-8 text-sm;
     }
   }
 }

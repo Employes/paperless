@@ -7,7 +7,9 @@ import icons from '../../packages/core/src/utils/icons';
 
 <IconDocs />
 
-# Icons
+# Examples
+
+### Variants
 
 <Canvas>
     <div class="grid grid-cols-6 gap-10 text-5xl">
@@ -15,4 +17,32 @@ import icons from '../../packages/core/src/utils/icons';
             <p-icon key={icon} variant={icon}></p-icon>
         ))}
     </div>
+</Canvas>
+
+### Flipping
+
+#### Horizontal
+
+<Canvas>
+    <p-icon variant="arrow" flip="horizontal" />
+</Canvas>
+
+#### Vertical
+
+<Canvas>
+    <p-icon variant="person" flip="vertical" />
+</Canvas>
+
+### Rotation
+
+#### 45 degrees
+
+<Canvas>
+    <p-icon variant="arrow" rotate={45} />
+</Canvas>
+
+#### -25 degrees
+
+<Canvas>
+    <p-icon variant="arrow" rotate={-25} />
 </Canvas>

@@ -2,6 +2,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 import icons from '../../../utils/icons';
 
 export type IconVariant = keyof typeof icons;
+export type IconFlipOptions = 'horizontal' | 'vertical';
 
 @Component({
   tag: 'p-icon',
@@ -26,7 +27,7 @@ export class Icon {
   /**
    * Wether to flip the icon horizontally or vertically
    */
-  @Prop() flip: 'horizontal' | 'vertical' = null;
+  @Prop() flip: IconFlipOptions = null;
 
   render() {
     const icon = icons[this.variant];
@@ -36,7 +37,7 @@ export class Icon {
 
   private _getClass() {
     return `p-icon inline-block text-${this.size} ${this.rotate || this.flip ? 'transform' : ''} ${
-      this.rotate ? ` ${this.rotate < 0 ? '-' : ''}rotate-${this.rotate < 0 ? this.rotate * -1 : this.rotate}` : ''
-    } ${this.flip === 'horizontal' ? ` -scale-x-1` : this.flip === 'vertical' ? ` -scale-y-1` : ''}`;
+      this.rotate ? ` !${this.rotate < 0 ? '-' : ''}rotate-${this.rotate < 0 ? this.rotate * -1 : this.rotate}` : ''
+    } ${this.flip ? `!scale-${this.flip === 'horizontal' ? 'x' : 'y'}-flip` : ''}`;
   }
 }

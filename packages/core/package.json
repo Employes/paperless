@@ -38,7 +38,8 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
-    "@stencil/core": "^2.13.0"
+    "@stencil/core": "^2.13.0",
+    "rxjs": "^7.5.5"
   },
   "devDependencies": {
     "@stencil/angular-output-target": "^0.4.0",

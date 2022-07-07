@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconVariant } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
+import { Observable } from "rxjs";
 import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PButton {
@@ -38,6 +39,24 @@ export namespace Components {
           * The icon the be displayed
          */
         "variant": IllustrationVariant;
+    }
+    interface PLoader {
+        /**
+          * !NOT IMPLEMENTED! Modal description for modal variant
+         */
+        "modalDescription": string;
+        /**
+          * !NOT IMPLEMENTED! Modal title for modal variant
+         */
+        "modalTitle": string;
+        /**
+          * Wether to show or hide the loader
+         */
+        "show": boolean | Observable<boolean>;
+        /**
+          * Variant of loader
+         */
+        "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
     interface PTooltip {
         /**
@@ -73,6 +92,12 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPLoaderElement extends Components.PLoader, HTMLStencilElement {
+    }
+    var HTMLPLoaderElement: {
+        prototype: HTMLPLoaderElement;
+        new (): HTMLPLoaderElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -83,6 +108,7 @@ declare global {
         "p-button": HTMLPButtonElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
+        "p-loader": HTMLPLoaderElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -117,6 +143,24 @@ declare namespace LocalJSX {
          */
         "variant"?: IllustrationVariant;
     }
+    interface PLoader {
+        /**
+          * !NOT IMPLEMENTED! Modal description for modal variant
+         */
+        "modalDescription"?: string;
+        /**
+          * !NOT IMPLEMENTED! Modal title for modal variant
+         */
+        "modalTitle"?: string;
+        /**
+          * Wether to show or hide the loader
+         */
+        "show"?: boolean | Observable<boolean>;
+        /**
+          * Variant of loader
+         */
+        "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
+    }
     interface PTooltip {
         /**
           * The content of the tooltip
@@ -135,6 +179,7 @@ declare namespace LocalJSX {
         "p-button": PButton;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
+        "p-loader": PLoader;
         "p-tooltip": PTooltip;
     }
 }
@@ -145,6 +190,7 @@ declare module "@stencil/core" {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
+            "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

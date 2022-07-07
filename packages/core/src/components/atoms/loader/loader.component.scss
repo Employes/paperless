@@ -1,0 +1,27 @@
+:host {
+  .loader {
+    @apply w-[1em] h-[1em] inline-block rounded-round;
+    @apply animate-spin duration-500;
+    @apply border-solid border-2 border-indigo-light border-t-indigo #{!important};
+  }
+
+  .loading-screen {
+    @apply fixed top-0 left-0 w-screen h-screen;
+    @apply flex items-center justify-center;
+    @apply bg-mystic;
+
+    z-index: 9999;
+
+    .content {
+      @apply max-w-xs;
+
+      .loader-wrapper {
+        @apply w-full flex justify-center mt-24;
+
+        .loader {
+          @apply text-4xl;
+        }
+      }
+    }
+  }
+}

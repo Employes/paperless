@@ -13,6 +13,16 @@ export class Button {
   @Prop() variant: 'primary' | 'secondary' | 'text' = 'primary';
 
   /**
+   * Href in case of "text" version
+   */
+  @Prop() href: string;
+
+  /**
+   * Target in case of "text" version
+   */
+  @Prop() target: string;
+
+  /**
    * The size of the button
    */
   @Prop() size: 'small' | 'medium' = 'medium';
@@ -21,6 +31,11 @@ export class Button {
    * Wether to show a loader or not
    */
   @Prop() loading: boolean = false;
+
+  /**
+   * Wether the button is disabled
+   */
+  @Prop() disabled: boolean = false;
 
   /**
    * Icon to show on the button
@@ -58,9 +73,11 @@ export class Button {
         break;
     }
 
+    const VariableTag = this.variant === 'text' ? 'a' : 'button';
+
     return (
       <Host class="p-button">
-        <button class={`variant-${this.variant} size-${this.size} icon-position-${this.iconPosition}`}>
+        <VariableTag class={`variant-${this.variant} size-${this.size} icon-position-${this.iconPosition}`} disabled={this.disabled} href={this.href} target={this.target}>
           {this.icon && this.iconPosition === 'start' && this._getIcon()}
 
           <slot />
@@ -68,13 +85,17 @@ export class Button {
           {this.icon && this.iconPosition === 'end' && this._getIcon()}
 
           {this.loading && <p-loader color={loaderColor} />}
-        </button>
+        </VariableTag>
       </Host>
     );
   }
 
   @Listen('click', { capture: true })
   handleClick(ev: MouseEvent) {
+    if (this.loading || this.disabled) {
+      return;
+    }
+
     this.click.emit(ev);
   }
 

@@ -13,6 +13,14 @@ import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PButton {
         /**
+          * Wether the button is disabled
+         */
+        "disabled": boolean;
+        /**
+          * Href in case of "text" version
+         */
+        "href": string;
+        /**
           * Icon to show on the button
          */
         "icon": IconVariant;
@@ -36,6 +44,10 @@ export namespace Components {
           * The size of the button
          */
         "size": 'small' | 'medium';
+        /**
+          * Target in case of "text" version
+         */
+        "target": string;
         /**
           * The variant of the button
          */
@@ -148,6 +160,14 @@ declare global {
 declare namespace LocalJSX {
     interface PButton {
         /**
+          * Wether the button is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Href in case of "text" version
+         */
+        "href"?: string;
+        /**
           * Icon to show on the button
          */
         "icon"?: IconVariant;
@@ -175,6 +195,10 @@ declare namespace LocalJSX {
           * The size of the button
          */
         "size"?: 'small' | 'medium';
+        /**
+          * Target in case of "text" version
+         */
+        "target"?: string;
         /**
           * The variant of the button
          */

@@ -102,6 +102,10 @@ export namespace Components {
         "placement": Placement;
     }
 }
+export interface PButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPButtonElement;
+}
 declare global {
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
@@ -163,6 +167,10 @@ declare namespace LocalJSX {
           * Wether to show a loader or not
          */
         "loading"?: boolean;
+        /**
+          * Button press event
+         */
+        "onClick"?: (event: PButtonCustomEvent<MouseEvent>) => void;
         /**
           * The size of the button
          */

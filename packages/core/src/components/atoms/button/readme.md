@@ -1,9 +1,12 @@
 # Button
 
-Button clicky click
+## Usage:
+
+```html
+<p-button>Label</p-button>
+```
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -17,6 +20,11 @@ Button clicky click
 | `size`         | `size`          | The size of the button         | `"medium" \| "small"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | `'medium'`  |
 | `variant`      | `variant`       | The variant of the button      | `"primary" \| "secondary" \| "text"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | `'primary'` |
 
+## Events
+
+| Event   | Description        | Type                      |
+| ------- | ------------------ | ------------------------- |
+| `click` | Button press event | `CustomEvent<MouseEvent>` |
 
 ## Dependencies
 
@@ -26,6 +34,7 @@ Button clicky click
 - [p-icon](../icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   p-button --> p-loader
@@ -33,6 +42,6 @@ graph TD;
   style p-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

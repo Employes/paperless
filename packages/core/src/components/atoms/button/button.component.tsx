@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Listen, Prop } from '@stencil/core';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 
 @Component({
@@ -42,6 +42,11 @@ export class Button {
    */
   @Prop() iconRotate: number;
 
+  /**
+   * Button press event
+   */
+  @Event() click: EventEmitter<MouseEvent>;
+
   render() {
     let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
     switch (this.variant) {
@@ -66,6 +71,11 @@ export class Button {
         </button>
       </Host>
     );
+  }
+
+  @Listen('click', { capture: true })
+  handleClick(ev: MouseEvent) {
+    this.click.emit(ev);
   }
 
   private _getIcon() {

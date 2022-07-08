@@ -63,6 +63,12 @@ yarn add @paperless/core
 #### React
 
 ```jsx
+// setup
+import { applyPolyfills, defineCustomElements } from '@paperless/core/loader';
+
+applyPolyfills().then(() => defineCustomElements());
+
+// usage
 import { Button } from '@employes/paperless';
 
 const App = () => <Button>Click me!</Button>;
@@ -71,6 +77,16 @@ const App = () => <Button>Click me!</Button>;
 #### Angular
 
 ```jsx
+// main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { applyPolyfills, defineCustomElements } from '@paperless/core/loader';
+
+applyPolyfills()
+    .then(() => defineCustomElements())
+    .then(() => platformBrowserDynamic().bootstrapModule(AppModule))
+    .catch((err) => console.error(err));
+
+// App Module
 import { PaperlessModule } from '@employes/paperless-ngx';
 
 @NgModule({
@@ -81,6 +97,7 @@ import { PaperlessModule } from '@employes/paperless-ngx';
 })
 export class AppModule {}
 
+// Any component
 @Component({
     selector: 'app-root',
     templateUrl: `

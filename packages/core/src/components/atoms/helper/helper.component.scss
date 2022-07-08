@@ -1,0 +1,10 @@
+:host {
+  .helper {
+    @apply inline-block cursor-pointer bg-no-repeat bg-center w-3 h-3;
+    background-image: url(/assets/images/helper.svg);
+
+    &:hover {
+      background-image: url(/assets/images/helper-hover.svg);
+    }
+  }
+}

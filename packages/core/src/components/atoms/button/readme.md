@@ -1,6 +1,10 @@
 # Button
 
-Button clicky click
+## Usage:
+
+```html
+<p-button>Label</p-button>
+```
 
 <!-- Auto Generated Below -->
 

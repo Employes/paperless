@@ -53,6 +53,8 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary' | 'text';
     }
+    interface PHelper {
+    }
     interface PIcon {
         /**
           * Wether to flip the icon horizontally or vertically
@@ -125,6 +127,12 @@ declare global {
         prototype: HTMLPButtonElement;
         new (): HTMLPButtonElement;
     };
+    interface HTMLPHelperElement extends Components.PHelper, HTMLStencilElement {
+    }
+    var HTMLPHelperElement: {
+        prototype: HTMLPHelperElement;
+        new (): HTMLPHelperElement;
+    };
     interface HTMLPIconElement extends Components.PIcon, HTMLStencilElement {
     }
     var HTMLPIconElement: {
@@ -151,6 +159,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "p-button": HTMLPButtonElement;
+        "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
         "p-loader": HTMLPLoaderElement;
@@ -203,6 +212,8 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
+    }
+    interface PHelper {
     }
     interface PIcon {
         /**
@@ -266,6 +277,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "p-button": PButton;
+        "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
         "p-loader": PLoader;
@@ -277,6 +289,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
+            "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.5 (2022-07-08)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Rename `click` event to `onClick` ([e14cf01](https://github.com/ionic-team/ionic/commit/e14cf011d2010b151596a576df6fc8bdafc45081))
+
+
+
+
+
 # 0.1.0-alpha.4 (2022-07-07)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.7 (2022-07-08)
+
+
+### Features
+
+* **Atoms:** Add helper component ([64cccca](https://github.com/employes/paperless/commit/64cccca8035f9492754370d1e94b275c226b1464))
+
+
+
+
+
 # 0.1.0-alpha.6 (2022-07-08)
 
 **Note:** Version bump only for package paperless

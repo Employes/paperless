@@ -10,14 +10,16 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
 
 <Canvas>
     <div class="flex justify-center items-center h-20">
-        <p-tooltip content="test">Hover me</p-tooltip>
+        <p-tooltip content="test">
+            <span slot="content">Hover me</span>
+        </p-tooltip>
     </div>
 </Canvas>
 
 <Canvas>
     <div class="flex justify-center items-center h-20">
         <p-tooltip content="test" placement="right">
-            Hover me
+            <span slot="content">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -25,7 +27,7 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
 <Canvas>
     <div class="flex justify-center items-center h-20">
         <p-tooltip content="I am a person!" placement="left">
-            <p-icon variant="person" />
+            <p-icon variant="person" slot="content" />
         </p-tooltip>
     </div>
 </Canvas>
@@ -33,7 +35,7 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
 <Canvas>
     <div class="flex justify-center items-center h-20 pt-24">
         <p-tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ut sem eget dignissim. Donec bibendum diam non viverra lobortis.">
-            Hover me
+            <span slot="content">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>

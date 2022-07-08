@@ -41,9 +41,9 @@ export class Tooltip {
   render() {
     return (
       <Host class="p-tooltip">
-        <slot />
+        <slot name="content" />
         <div class="tooltip" role="tooltip" ref={el => this._load(el)}>
-          {this.content}
+          {this.content ? this.content : <slot name="tooltip" />}
           <div class="arrow" data-popper-arrow></div>
         </div>
       </Host>

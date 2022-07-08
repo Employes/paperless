@@ -58,9 +58,9 @@ export class Button {
   @Prop() iconRotate: number;
 
   /**
-   * Button press event
+   * Button click event
    */
-  @Event() click: EventEmitter<MouseEvent>;
+  @Event() onClick: EventEmitter<MouseEvent>;
 
   render() {
     let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
@@ -96,7 +96,7 @@ export class Button {
       return;
     }
 
-    this.click.emit(ev);
+    this.onClick.emit(ev);
   }
 
   private _getIcon() {

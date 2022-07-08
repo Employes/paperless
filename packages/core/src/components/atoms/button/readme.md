@@ -23,9 +23,9 @@ Button clicky click
 
 ## Events
 
-| Event   | Description        | Type                      |
-| ------- | ------------------ | ------------------------- |
-| `click` | Button press event | `CustomEvent<MouseEvent>` |
+| Event     | Description        | Type                      |
+| --------- | ------------------ | ------------------------- |
+| `onClick` | Button click event | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies

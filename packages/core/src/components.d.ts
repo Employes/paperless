@@ -188,9 +188,9 @@ declare namespace LocalJSX {
          */
         "loading"?: boolean;
         /**
-          * Button press event
+          * Button click event
          */
-        "onClick"?: (event: PButtonCustomEvent<MouseEvent>) => void;
+        "onOnClick"?: (event: PButtonCustomEvent<MouseEvent>) => void;
         /**
           * The size of the button
          */

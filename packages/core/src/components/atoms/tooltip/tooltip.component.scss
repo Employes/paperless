@@ -1,5 +1,5 @@
 :host {
-  @apply cursor-pointer;
+  @apply cursor-pointer inline-block;
 
   .tooltip {
     @apply bg-storm hidden text-xs font-medium text-white py-1 px-3 rounded drop-shadow-1;

@@ -1,14 +1,9 @@
-# Tooltip
+# p-tooltip
 
-## Usage:
 
-```html
-<p-tooltip content="This is a tooltip!" placement="top">
-  <span slot="content">Hover me</span>
-</p-tooltip>
-```
 
 <!-- Auto Generated Below -->
+
 
 ## Properties
 
@@ -18,20 +13,26 @@
 | `forceShow` | `force-show` | Wether to force show the tooltip | `boolean`                                                                                                                                                                                                    | `false` |
 | `placement` | `placement`  | The content of the tooltip       | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [p-helper](../helper)
+ - [p-helper](../helper)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-helper --> p-tooltip
   style p-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
+roke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

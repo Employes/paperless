@@ -13,7 +13,7 @@ module.exports = {
     dropShadow: shadows,
     borderRadius,
     extend: {
-      grid,
+      ...grid,
       scale,
       rotate,
     },

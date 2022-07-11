@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.8 (2022-07-11)
+
+
+### Features
+
+* **Grid:** Implement grid ([969cd32](https://github.com/ionic-team/stencil-component-starter/commit/969cd32cdd604e6ff1b9bc4123606b891d66b79a))
+
+
+
+
+
 # 0.1.0-alpha.7 (2022-07-08)
 
 

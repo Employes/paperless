@@ -64,7 +64,7 @@ export class Loader {
       );
     }
 
-    return <Host class={`p-loader ${this.variant === 'full-width' && 'w-100 d-block flex justify-center text-4xl'}`}>{this._loader}</Host>;
+    return <Host class={`p-loader flex ${this.variant === 'full-width' && 'w-100 d-block flex justify-center text-4xl'}`}>{this._loader}</Host>;
   }
 
   private _checkShow() {

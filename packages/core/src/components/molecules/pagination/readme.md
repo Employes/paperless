@@ -13,16 +13,16 @@
 
 | Property             | Attribute   | Description                  | Type     | Default     |
 | -------------------- | ----------- | ---------------------------- | -------- | ----------- |
-| `page`               | `page`      | The current page             | `number` | `1`         |
 | `pageSize`           | `page-size` | The amount of items per page | `number` | `12`        |
 | `total` _(required)_ | `total`     | The total amount of items    | `number` | `undefined` |
+| `value`              | `value`     | The current page             | `number` | `1`         |
 
 
 ## Events
 
-| Event        | Description | Type                  |
-| ------------ | ----------- | --------------------- |
-| `pageChange` |             | `CustomEvent<number>` |
+| Event         | Description | Type                  |
+| ------------- | ----------- | --------------------- |
+| `valueChange` |             | `CustomEvent<number>` |
 
 
 ## Dependencies

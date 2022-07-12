@@ -21,7 +21,7 @@ export class Pagination {
     /**
      * The current page
      */
-    @Prop({ mutable: true, reflect: true }) value: number = 1;
+    @Prop({ mutable: true }) value: number = 1;
     @Event() valueChange: EventEmitter<number>;
 
     /**

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.23 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Atoms/Loader:** fix loader z-index & full width version ([2d2a48a](https://github.com/ionic-team/stencil-component-starter/commit/2d2a48abb614e94a1c0f599b94dfcdc73aef67af))
+
+
+
+
+
 # 0.1.0-alpha.22 (2022-07-12)
 
 

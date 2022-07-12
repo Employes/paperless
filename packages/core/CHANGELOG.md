@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.20 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Molecules/Pagination:** Watch `page` => `value` ([92a2a8f](https://github.com/ionic-team/stencil-component-starter/commit/92a2a8f723f49999f9bc59f87f87210ed9b93996))
+
+
+
+
+
 # 0.1.0-alpha.19 (2022-07-12)
 
 **Note:** Version bump only for package @paperless/core

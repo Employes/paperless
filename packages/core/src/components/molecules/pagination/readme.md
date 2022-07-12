@@ -18,6 +18,13 @@
 | `value`              | `value`     | The current page             | `number` | `1`         |
 
 
+## Events
+
+| Event         | Description | Type                  |
+| ------------- | ----------- | --------------------- |
+| `valueChange` |             | `CustomEvent<number>` |
+
+
 ## Dependencies
 
 ### Depends on

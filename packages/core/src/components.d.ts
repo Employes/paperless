@@ -188,6 +188,10 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
 }
+export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPPaginationElement;
+}
 declare global {
     interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
     }
@@ -412,6 +416,7 @@ declare namespace LocalJSX {
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
     interface PPagination {
+        "onValueChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
           * The amount of items per page
          */

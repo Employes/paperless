@@ -1,6 +1,6 @@
-import { Component, h, Host, Prop, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop, Watch } from '@stencil/core';
 
-export type SetItem = {
+type PaginationSetItem = {
   type: string;
   value?: number | Element | JSX.Element | string;
 };
@@ -13,7 +13,8 @@ export class Pagination {
   /**
    * The current page
    */
-  @Prop({ mutable: true }) value: number = 1;
+  @Prop({ mutable: true }) page: number = 1;
+  @Event() pageChange: EventEmitter<number>;
 
   /**
    * The amount of items per page
@@ -26,7 +27,7 @@ export class Pagination {
   @Prop() total!: number;
 
   private _pages: number[] = [];
-  private _set: SetItem[] = [];
+  private _set: PaginationSetItem[] = [];
 
   componentWillRender() {
     this._generate();
@@ -45,7 +46,7 @@ export class Pagination {
           }
 
           return (
-            <p-pagination-item active={p.value === this.value} onClick={() => this._pageClick(p.value as number)}>
+            <p-pagination-item active={p.value === this.page} onClick={() => this._pageClick(p.value as number)}>
               {p.value}
             </p-pagination-item>
           );
@@ -71,11 +72,12 @@ export class Pagination {
       return;
     }
 
-    this.value = p;
+    this.page = p;
+    this.pageChange.emit(this.page);
   }
 
   private _previousClick() {
-    const previousPage = this.value - 1;
+    const previousPage = this.page - 1;
     if (previousPage < this._pages[0]) {
       return;
     }
@@ -84,7 +86,7 @@ export class Pagination {
   }
 
   private _nextClick = () => {
-    const nextPage = this.value + 1;
+    const nextPage = this.page + 1;
     if (nextPage > this._pages[this._pages.length - 1]) {
       return;
     }
@@ -103,15 +105,15 @@ export class Pagination {
     return new Array(pages).fill(undefined).map((_, i) => i + 1);
   }
 
-  private _generateSet = (range: number = 1, enableBoundaries: boolean = true): SetItem[] => {
+  private _generateSet = (range: number = 1, enableBoundaries: boolean = true): PaginationSetItem[] => {
     const totalPages = this._pages.length;
 
     if (!totalPages) {
       return [];
     }
 
-    let start = this.value - range;
-    let end = this.value + range;
+    let start = this.page - range;
+    let end = this.page + range;
 
     if (end > totalPages) {
       end = totalPages;

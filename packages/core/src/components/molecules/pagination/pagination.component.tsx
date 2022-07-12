@@ -76,7 +76,7 @@ export class Pagination {
         );
     }
 
-    @Watch('page')
+    @Watch('value')
     @Watch('pageSize')
     @Watch('total')
     protected pageChangeHandler() {

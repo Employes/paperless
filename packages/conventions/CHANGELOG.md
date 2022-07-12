@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.10 (2022-07-12)
+
+
+### Features
+
+* **Atoms:** Add info panel component ([bc3636d](https://github.com/Employes/Paperless/commit/bc3636d4006b164fbee5ded3ad7c2b1dfd07d86c))
+
+
+
+
+
 # 0.1.0-alpha.9 (2022-07-12)
 
 **Note:** Version bump only for package @paperless/conventions

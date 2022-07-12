@@ -11,9 +11,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default |
-| -------- | --------- | ----------- | --------- | ------- |
-| `active` | `active`  |             | `boolean` | `false` |
+| Property | Attribute | Description                          | Type      | Default |
+| -------- | --------- | ------------------------------------ | --------- | ------- |
+| `active` | `active`  | Wether the pagination item is active | `boolean` | `false` |
 
 
 ----------------------------------------------

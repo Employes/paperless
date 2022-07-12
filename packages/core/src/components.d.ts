@@ -141,6 +141,9 @@ export namespace Components {
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PPaginationItem {
+        "active": boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -223,6 +226,12 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPPaginationItemElement extends Components.PPaginationItem, HTMLStencilElement {
+    }
+    var HTMLPPaginationItemElement: {
+        prototype: HTMLPPaginationItemElement;
+        new (): HTMLPPaginationItemElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -239,6 +248,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
+        "p-pagination-item": HTMLPPaginationItemElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -377,6 +387,9 @@ declare namespace LocalJSX {
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PPaginationItem {
+        "active"?: boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -409,6 +422,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
+        "p-pagination-item": PPaginationItem;
         "p-tooltip": PTooltip;
     }
 }
@@ -425,6 +439,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
+            "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

@@ -237,7 +237,7 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant"?: IllustrationVariant;
+        "variant": IllustrationVariant;
     }
     interface PLoader {
         /**

@@ -11,7 +11,7 @@ export class Illustration {
   /**
    * The icon the be displayed
    */
-  @Prop() variant: IllustrationVariant = null;
+  @Prop() variant!: IllustrationVariant;
 
   render() {
     const illustration = illustrations[this.variant];

@@ -11,9 +11,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description               | Type                                                                                                                          | Default |
-| --------- | --------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------- |
-| `variant` | `variant` | The icon the be displayed | `"departments" \| "empty-state" \| "expenses" \| "functions" \| "questions" \| "sick-leave" \| "time-off" \| "upgrade-to-hr"` | `null`  |
+| Property               | Attribute | Description               | Type                                                                                                                          | Default     |
+| ---------------------- | --------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `variant` _(required)_ | `variant` | The icon the be displayed | `"departments" \| "empty-state" \| "expenses" \| "functions" \| "questions" \| "sick-leave" \| "time-off" \| "upgrade-to-hr"` | `undefined` |
 
 
 ----------------------------------------------

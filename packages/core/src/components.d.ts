@@ -73,6 +73,8 @@ export namespace Components {
     }
     interface PCounter {
     }
+    interface PDivider {
+    }
     interface PHelper {
     }
     interface PIcon {
@@ -185,6 +187,12 @@ declare global {
         prototype: HTMLPCounterElement;
         new (): HTMLPCounterElement;
     };
+    interface HTMLPDividerElement extends Components.PDivider, HTMLStencilElement {
+    }
+    var HTMLPDividerElement: {
+        prototype: HTMLPDividerElement;
+        new (): HTMLPDividerElement;
+    };
     interface HTMLPHelperElement extends Components.PHelper, HTMLStencilElement {
     }
     var HTMLPHelperElement: {
@@ -225,6 +233,7 @@ declare global {
         "p-avatar": HTMLPAvatarElement;
         "p-button": HTMLPButtonElement;
         "p-counter": HTMLPCounterElement;
+        "p-divider": HTMLPDividerElement;
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
@@ -299,6 +308,8 @@ declare namespace LocalJSX {
         "variant"?: 'primary' | 'secondary' | 'text';
     }
     interface PCounter {
+    }
+    interface PDivider {
     }
     interface PHelper {
     }
@@ -392,6 +403,7 @@ declare namespace LocalJSX {
         "p-avatar": PAvatar;
         "p-button": PButton;
         "p-counter": PCounter;
+        "p-divider": PDivider;
         "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
@@ -407,6 +419,7 @@ declare module "@stencil/core" {
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
+            "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;

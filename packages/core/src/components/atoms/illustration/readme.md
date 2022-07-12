@@ -3,11 +3,10 @@
 ## Usage:
 
 ```html
-<p-illustration variant="name"></p-illustration>
+<p-illustration variant="name" />
 ```
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -15,7 +14,6 @@
 | ---------------------- | --------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | `variant` _(required)_ | `variant` | The icon the be displayed | `"departments" \| "empty-state" \| "expenses" \| "functions" \| "questions" \| "sick-leave" \| "time-off" \| "upgrade-to-hr"` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

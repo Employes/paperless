@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../categories';
+import NavigationItemDocs from '../../packages/core/src/components/molecules/navigation-item/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Navigation Item`} />
+
+<NavigationItemDocs />
+
+# Examples
+
+### Default
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-navigation-item href="https://google.com" target="_GOOGLE">
+            Item name
+        </p-navigation-item>
+    </div>
+</Canvas>
+
+### Active
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-navigation-item active>Item name</p-navigation-item>
+    </div>
+</Canvas>
+
+### With icon
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-navigation-item icon="person">Item name</p-navigation-item>
+    </div>
+</Canvas>
+
+### With icon & counter
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-navigation-item icon="person" counter={10}>
+            Item name
+        </p-navigation-item>
+    </div>
+</Canvas>
+
+### With icon & counter active
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-navigation-item icon="person" counter={10} active>
+            Item name
+        </p-navigation-item>
+    </div>
+</Canvas>

@@ -25,6 +25,7 @@
 
  - [p-button](../button)
  - [p-info-panel](../info-panel)
+ - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
 
 ### Graph
@@ -32,6 +33,7 @@
 graph TD;
   p-button --> p-icon
   p-info-panel --> p-icon
+  p-navigation-item --> p-icon
   p-pagination --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

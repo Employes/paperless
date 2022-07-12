@@ -141,6 +141,28 @@ export namespace Components {
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PNavigationItem {
+        /**
+          * Wether the navigation item is active
+         */
+        "active": boolean;
+        /**
+          * Icon of the navigation item
+         */
+        "counter": number | string;
+        /**
+          * The href of the navigation item
+         */
+        "href": string;
+        /**
+          * Icon of the navigation item
+         */
+        "icon": IconVariant;
+        /**
+          * The target of the navigation item
+         */
+        "target": string;
+    }
     interface PPagination {
         /**
           * The current page
@@ -247,6 +269,12 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPNavigationItemElement extends Components.PNavigationItem, HTMLStencilElement {
+    }
+    var HTMLPNavigationItemElement: {
+        prototype: HTMLPNavigationItemElement;
+        new (): HTMLPNavigationItemElement;
+    };
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
     }
     var HTMLPPaginationElement: {
@@ -275,6 +303,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
+        "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
         "p-tooltip": HTMLPTooltipElement;
@@ -415,6 +444,28 @@ declare namespace LocalJSX {
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PNavigationItem {
+        /**
+          * Wether the navigation item is active
+         */
+        "active"?: boolean;
+        /**
+          * Icon of the navigation item
+         */
+        "counter"?: number | string;
+        /**
+          * The href of the navigation item
+         */
+        "href"?: string;
+        /**
+          * Icon of the navigation item
+         */
+        "icon"?: IconVariant;
+        /**
+          * The target of the navigation item
+         */
+        "target"?: string;
+    }
     interface PPagination {
         "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
@@ -468,6 +519,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
+        "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
         "p-tooltip": PTooltip;
@@ -486,6 +538,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
+            "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;

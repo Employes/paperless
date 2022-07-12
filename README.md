@@ -7,7 +7,7 @@
   <br />
 
   <span>
-  A collection of React & Angular components that conform to the Employes design system.
+  A collection of Web, React & Angular components that conform to the Employes design system.
   </span>
 
   </p>

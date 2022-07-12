@@ -22,10 +22,12 @@ export class PaginationDirective extends ValueAccessor {
         super(el);
     }
 
+    override writeValue(value: any) {
+        this.el.nativeElement.page = this.lastValue =
+            value == null ? '' : value;
+    }
+
     override registerOnChange(fn: (_: number | null) => void) {
-        super.registerOnChange((value) => {
-            console.log("We got a change", value)
-            fn(value === '' ? null : parseInt(value, 10));
-        });
+        super.registerOnChange((value) => fn(value === '' ? null : parseInt(value, 10)));
     }
 }

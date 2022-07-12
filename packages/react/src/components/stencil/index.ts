@@ -14,5 +14,6 @@ export const PCounter = /*@__PURE__*/createReactComponent<JSX.PCounter, HTMLPCou
 export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelperElement>('p-helper');
 export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
+export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

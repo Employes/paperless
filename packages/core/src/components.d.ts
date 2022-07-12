@@ -99,6 +99,24 @@ export namespace Components {
          */
         "variant": IllustrationVariant;
     }
+    interface PInfoPanel {
+        /**
+          * Wether the panel can be closed
+         */
+        "closeable": boolean;
+        /**
+          * The content of the info panel
+         */
+        "content": string;
+        /**
+          * The header of the info panel
+         */
+        "header": string;
+        /**
+          * The variant of the info panel
+         */
+        "variant": 'info' | 'negative' | 'positive' | 'unbiased';
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -185,6 +203,12 @@ declare global {
         prototype: HTMLPIllustrationElement;
         new (): HTMLPIllustrationElement;
     };
+    interface HTMLPInfoPanelElement extends Components.PInfoPanel, HTMLStencilElement {
+    }
+    var HTMLPInfoPanelElement: {
+        prototype: HTMLPInfoPanelElement;
+        new (): HTMLPInfoPanelElement;
+    };
     interface HTMLPLoaderElement extends Components.PLoader, HTMLStencilElement {
     }
     var HTMLPLoaderElement: {
@@ -204,6 +228,7 @@ declare global {
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
+        "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -301,6 +326,24 @@ declare namespace LocalJSX {
          */
         "variant": IllustrationVariant;
     }
+    interface PInfoPanel {
+        /**
+          * Wether the panel can be closed
+         */
+        "closeable"?: boolean;
+        /**
+          * The content of the info panel
+         */
+        "content"?: string;
+        /**
+          * The header of the info panel
+         */
+        "header"?: string;
+        /**
+          * The variant of the info panel
+         */
+        "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -352,6 +395,7 @@ declare namespace LocalJSX {
         "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
+        "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
         "p-tooltip": PTooltip;
     }
@@ -366,6 +410,7 @@ declare module "@stencil/core" {
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
+            "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

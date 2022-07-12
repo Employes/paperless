@@ -24,11 +24,13 @@
 ### Used by
 
  - [p-button](../button)
+ - [p-info-panel](../info-panel)
 
 ### Graph
 ```mermaid
 graph TD;
   p-button --> p-icon
+  p-info-panel --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

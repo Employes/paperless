@@ -69,7 +69,7 @@ export class Loader {
             <Host
                 class={`p-loader flex ${
                     this.variant === 'full-width' &&
-                    'w-full d-block flex justify-center text-4xl'
+                    'w-full flex justify-center text-4xl'
                 }`}
             >
                 {this._loader}

@@ -21,8 +21,8 @@ export class Pagination {
     /**
      * The current page
      */
-    @Prop({ mutable: true, reflect: true }) page: number = 1;
-    @Event() pageChange: EventEmitter<number>;
+    @Prop({ mutable: true, reflect: true }) value: number = 1;
+    @Event() valueChange: EventEmitter<number>;
 
     /**
      * The amount of items per page
@@ -65,7 +65,7 @@ export class Pagination {
 
                     return (
                         <p-pagination-item
-                            active={p.value === this.page}
+                            active={p.value === this.value}
                             onClick={() => this._pageClick(p.value as number)}
                         >
                             {p.value}
@@ -93,12 +93,12 @@ export class Pagination {
             return;
         }
 
-        this.page = p;
-        this.pageChange.emit(this.page);
+        this.value = p;
+        this.valueChange.emit(this.value);
     }
 
     private _previousClick() {
-        const previousPage = this.page - 1;
+        const previousPage = this.value - 1;
         if (previousPage < this._pages[0]) {
             return;
         }
@@ -107,7 +107,7 @@ export class Pagination {
     }
 
     private _nextClick = () => {
-        const nextPage = this.page + 1;
+        const nextPage = this.value + 1;
         if (nextPage > this._pages[this._pages.length - 1]) {
             return;
         }
@@ -136,8 +136,8 @@ export class Pagination {
             return [];
         }
 
-        let start = this.page - range;
-        let end = this.page + range;
+        let start = this.value - range;
+        let end = this.value + range;
 
         if (end > totalPages) {
             end = totalPages;

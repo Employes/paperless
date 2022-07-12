@@ -165,6 +165,10 @@ export namespace Components {
     }
     interface PPagination {
         /**
+          * The current page
+         */
+        "page": number;
+        /**
           * The amount of items per page
          */
         "pageSize": number;
@@ -172,10 +176,6 @@ export namespace Components {
           * The total amount of items
          */
         "total": number;
-        /**
-          * The current page
-         */
-        "value": number;
     }
     interface PPaginationItem {
         /**
@@ -467,7 +467,11 @@ declare namespace LocalJSX {
         "target"?: string;
     }
     interface PPagination {
-        "onValueChange"?: (event: PPaginationCustomEvent<number>) => void;
+        "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "page"?: number;
         /**
           * The amount of items per page
          */
@@ -476,10 +480,6 @@ declare namespace LocalJSX {
           * The total amount of items
          */
         "total": number;
-        /**
-          * The current page
-         */
-        "value"?: number;
     }
     interface PPaginationItem {
         /**

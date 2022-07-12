@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.14 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Angular:** Export custom directives from top level ([1058f9b](https://github.com/Employes/Paperless/commit/1058f9b7855e9bcc82c4ce492ecb9e3d465f0719))
+
+
+
+
+
 # 0.1.0-alpha.13 (2022-07-12)
 
 **Note:** Version bump only for package @paperless/angular

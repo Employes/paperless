@@ -86,6 +86,10 @@ export class Pagination {
     private _generate() {
         this._pages = this._generatePages();
         this._set = this._generateSet();
+
+        if (this.page > this._pages?.length) {
+            this._changePage(this._pages.length);
+        }
     }
 
     private _changePage(p?: number) {

@@ -11,6 +11,24 @@ import { IllustrationVariant } from "./components/atoms/illustration/illustratio
 import { Observable } from "rxjs";
 import { Placement } from "@popperjs/core";
 export namespace Components {
+    interface PAvatar {
+        /**
+          * The default image to show on errors
+         */
+        "defaultImage": string;
+        /**
+          * The size of the avatar
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * The image used for the avatar
+         */
+        "src": string;
+        /**
+          * The variant of the avatar
+         */
+        "variant": 'user' | 'company';
+    }
     interface PButton {
         /**
           * Wether the button is disabled
@@ -121,6 +139,12 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLPButtonElement;
 }
 declare global {
+    interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
+    }
+    var HTMLPAvatarElement: {
+        prototype: HTMLPAvatarElement;
+        new (): HTMLPAvatarElement;
+    };
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -158,6 +182,7 @@ declare global {
         new (): HTMLPTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "p-avatar": HTMLPAvatarElement;
         "p-button": HTMLPButtonElement;
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
@@ -167,6 +192,24 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface PAvatar {
+        /**
+          * The default image to show on errors
+         */
+        "defaultImage"?: string;
+        /**
+          * The size of the avatar
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The image used for the avatar
+         */
+        "src": string;
+        /**
+          * The variant of the avatar
+         */
+        "variant"?: 'user' | 'company';
+    }
     interface PButton {
         /**
           * Wether the button is disabled
@@ -276,6 +319,7 @@ declare namespace LocalJSX {
         "placement"?: Placement;
     }
     interface IntrinsicElements {
+        "p-avatar": PAvatar;
         "p-button": PButton;
         "p-helper": PHelper;
         "p-icon": PIcon;
@@ -288,6 +332,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;

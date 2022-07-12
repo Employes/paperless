@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../categories';
+import AvatarDocs from '../../packages/core/src/components/atoms/avatar/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Avatar`} />
+
+<AvatarDocs />
+
+# Examples
+
+### User variant & Sizes
+
+<Canvas>
+    <div class="flex items-center place-content-evenly">
+        <p-avatar
+            size="small"
+            src="https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
+        <p-avatar src="https://images.unsplash.com/photo-1576014662151-46d23666bc28?auto=format&fit=crop&crop=faces&w=150&h=250&q=80"></p-avatar>
+        <p-avatar
+            size="large"
+            src="https://images.unsplash.com/photo-1580314737657-8456bc907659?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
+    </div>
+</Canvas>
+
+### Company variant & Sizes
+
+<Canvas>
+    <div class="flex items-center place-content-evenly">
+        <p-avatar
+            variant="company"
+            size="small"
+            src="https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
+        <p-avatar
+            variant="company"
+            src="https://images.unsplash.com/photo-1576014662151-46d23666bc28?auto=format&fit=crop&crop=faces&w=150&h=250&q=80"
+        ></p-avatar>
+        <p-avatar
+            variant="company"
+            size="large"
+            src="https://images.unsplash.com/photo-1580314737657-8456bc907659?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
+    </div>
+</Canvas>
+
+### Default image
+
+<Canvas>
+    <div class="flex items-center place-content-evenly">
+        <p-avatar src="broken-link"></p-avatar>
+        <p-avatar variant="company" src="broken-link"></p-avatar>
+    </div>
+</Canvas>

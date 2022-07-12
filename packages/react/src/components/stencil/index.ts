@@ -8,6 +8,7 @@ import type { JSX } from '@paperless/core';
 import { defineCustomElements } from '@paperless/core/loader';
 
 defineCustomElements();
+export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvatarElement>('p-avatar');
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
 export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelperElement>('p-helper');
 export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');

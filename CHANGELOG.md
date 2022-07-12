@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.24 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Atoms/Loader:** Remove d-block attribute... ([8fc1222](https://github.com/employes/paperless/commit/8fc1222fbb2b3e212183f628bc3697a45b5f0178))
+
+
+
+
+
 # 0.1.0-alpha.23 (2022-07-12)
 
 

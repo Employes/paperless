@@ -8,19 +8,51 @@ import ButtonDocs from '../../packages/core/src/components/atoms/button/readme.m
 
 # Examples
 
+### Variants
+
 <Canvas>
-    <p-button loading={true} icon="person" icon-position="start">
+    <p-button variant="primary">Label</p-button>
+    <p-button variant="secondary">Label</p-button>
+    <p-button variant="text">Label</p-button>
+</Canvas>
+
+### Small size
+
+<Canvas>
+    <p-button variant="primary" size="small">
+        Label
+    </p-button>
+    <p-button variant="secondary" size="small">
+        Label
+    </p-button>
+    <p-button variant="text" size="small">
         Label
     </p-button>
 </Canvas>
 
+### Loading
+
 <Canvas>
-    <p-button variant="secondary" loading={true}>
+    <p-button variant="primary" loading>
+        Label
+    </p-button>
+    <p-button variant="secondary" loading>
+        Label
+    </p-button>
+    <p-button variant="text" loading>
         Label
     </p-button>
 </Canvas>
 
+### With icon
+
 <Canvas>
+    <p-button icon="person" variant="primary" loading>
+        Label
+    </p-button>
+    <p-button icon="tachometer" variant="secondary" loading>
+        Label
+    </p-button>
     <p-button
         variant="text"
         icon="arrow"
@@ -33,20 +65,16 @@ import ButtonDocs from '../../packages/core/src/components/atoms/button/readme.m
     </p-button>
 </Canvas>
 
-<Canvas>
-    <p-button variant="primary" size="small">
-        Label
-    </p-button>
-</Canvas>
+### Disabled
 
 <Canvas>
-    <p-button variant="primary" disabled={true}>
+    <p-button variant="primary" disabled>
         Label
     </p-button>
-    <p-button variant="secondary" disabled={true}>
+    <p-button variant="secondary" disabled>
         Label
     </p-button>
-    <p-button variant="text" disabled={true}>
+    <p-button variant="text" disabled>
         Label
     </p-button>
 </Canvas>

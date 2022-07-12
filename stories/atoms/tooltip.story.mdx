@@ -90,7 +90,7 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
 
 <Canvas>
     <div class="flex justify-center items-center h-20">
-        <p-tooltip popover="You can't hide me" show={true}>
+        <p-tooltip popover="You can't hide me" show>
             <span slot="content">Hover me</span>
         </p-tooltip>
     </div>
@@ -103,8 +103,8 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
         <p-tooltip
             variant="click"
             popover="You can't hide me"
-            show={true}
             can-manually-close={false}
+            show
         >
             <span slot="content">Click me</span>
         </p-tooltip>

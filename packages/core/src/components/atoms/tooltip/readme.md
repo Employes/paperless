@@ -1,6 +1,17 @@
 # p-tooltip
 
+## Usage:
 
+```html
+<p-tooltip content="Your content">
+  <span slot="content">Hover me</span>
+</p-tooltip>
+
+<p-tooltip>
+  <span slot="tooltip">Your content</span>
+  <span slot="content">Hover me</span>
+</p-tooltip>
+```
 
 <!-- Auto Generated Below -->
 

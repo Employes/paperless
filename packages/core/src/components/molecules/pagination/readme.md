@@ -8,19 +8,22 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property   | Attribute   | Description                  | Type     | Default |
-| ---------- | ----------- | ---------------------------- | -------- | ------- |
-| `page`     | `page`      | The current page             | `number` | `1`     |
-| `pageSize` | `page-size` | The amount of items per page | `number` | `12`    |
-| `total`    | `total`     | The total amount of items    | `number` | `0`     |
+| Property             | Attribute   | Description                  | Type     | Default     |
+| -------------------- | ----------- | ---------------------------- | -------- | ----------- |
+| `page`               | `page`      | The current page             | `number` | `1`         |
+| `pageSize`           | `page-size` | The amount of items per page | `number` | `12`        |
+| `total` _(required)_ | `total`     | The total amount of items    | `number` | `undefined` |
+
 
 ## Events
 
 | Event        | Description        | Type                  |
 | ------------ | ------------------ | --------------------- |
 | `pageChange` | Button click event | `CustomEvent<number>` |
+
 
 ## Dependencies
 
@@ -30,7 +33,6 @@
 - [p-pagination-item](../../atoms/pagination-item)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-pagination --> p-icon
@@ -38,6 +40,6 @@ graph TD;
   style p-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

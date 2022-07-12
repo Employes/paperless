@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.25 (2022-07-12)
+
+
+### Features
+
+* **Molecules/Pagination:** Set page to max if value is not available ([838210c](https://github.com/employes/paperless/commit/838210c82ccab9070cc3e6fe1d23d82cdc089ab2))
+
+
+
+
+
 # 0.1.0-alpha.24 (2022-07-12)
 
 

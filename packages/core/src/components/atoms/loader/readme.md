@@ -8,6 +8,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property           | Attribute           | Description                                           | Type                                                   | Default     |
@@ -18,20 +19,20 @@
 | `show`             | `show`              | Wether to show or hide the loader                     | `Observable<boolean> \| boolean`                       | `true`      |
 | `variant`          | `variant`           | Variant of loader                                     | `"full-screen" \| "full-width" \| "inline" \| "modal"` | `'inline'`  |
 
+
 ## Dependencies
 
 ### Used by
 
-- [p-button](../button)
+ - [p-button](../button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-button --> p-loader
   style p-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -1,0 +1,5 @@
+:host {
+  @apply h-4 px-2 bg-indigo rounded-xlarge;
+  @apply text-xs leading-3 text-white font-bold uppercase;
+  @apply flex justify-center items-center;
+}

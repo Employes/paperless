@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.11 (2022-07-12)
+
+
+### Features
+
+* **Molecules:** Add pagination component ([fde8866](https://github.com/Employes/Paperless/commit/fde886609ae4a81b8ca2d258f6c3292aff7c4bfb))
+
+
+
+
+
 # 0.1.0-alpha.10 (2022-07-12)
 
 

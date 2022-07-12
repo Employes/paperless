@@ -7,7 +7,7 @@ import { ValueAccessor } from '../base';
     /* tslint:disable-next-line:directive-selector */
     selector: 'p-pagination',
     host: {
-        '(pageChange)': 'handleChangeEvent($event.target.value)',
+        '(pageChange)': 'handleChangeEvent($event.target.page)',
     },
     providers: [
         {
@@ -24,6 +24,7 @@ export class PaginationDirective extends ValueAccessor {
 
     override registerOnChange(fn: (_: number | null) => void) {
         super.registerOnChange((value) => {
+            console.log("We got a change", value)
             fn(value === '' ? null : parseInt(value, 10));
         });
     }

@@ -13,7 +13,7 @@ export class Pagination {
   /**
    * The current page
    */
-  @Prop({ mutable: true }) page: number = 1;
+  @Prop({ mutable: true, reflect: true }) page: number = 1;
   @Event() pageChange: EventEmitter<number>;
 
   /**

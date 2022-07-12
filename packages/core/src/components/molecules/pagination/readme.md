@@ -13,16 +13,9 @@
 
 | Property             | Attribute   | Description                  | Type     | Default     |
 | -------------------- | ----------- | ---------------------------- | -------- | ----------- |
-| `page`               | `page`      | The current page             | `number` | `1`         |
 | `pageSize`           | `page-size` | The amount of items per page | `number` | `12`        |
 | `total` _(required)_ | `total`     | The total amount of items    | `number` | `undefined` |
-
-
-## Events
-
-| Event        | Description        | Type                  |
-| ------------ | ------------------ | --------------------- |
-| `pageChange` | Button click event | `CustomEvent<number>` |
+| `value`              | `value`     | The current page             | `number` | `1`         |
 
 
 ## Dependencies

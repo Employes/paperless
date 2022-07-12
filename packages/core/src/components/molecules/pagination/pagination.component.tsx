@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Host, Prop, Watch } from '@stencil/core';
 
 export type SetItem = {
   type: string;
@@ -13,9 +13,7 @@ export class Pagination {
   /**
    * The current page
    */
-  @Prop()
-  @State()
-  page: number = 1;
+  @Prop({ mutable: true }) value: number = 1;
 
   /**
    * The amount of items per page
@@ -26,11 +24,6 @@ export class Pagination {
    * The total amount of items
    */
   @Prop() total!: number;
-
-  /**
-   * Button click event
-   */
-  @Event() pageChange: EventEmitter<number>;
 
   private _pages: number[] = [];
   private _set: SetItem[] = [];
@@ -52,7 +45,7 @@ export class Pagination {
           }
 
           return (
-            <p-pagination-item active={p.value === this.page} onClick={() => this._pageClick(p.value as number)}>
+            <p-pagination-item active={p.value === this.value} onClick={() => this._pageClick(p.value as number)}>
               {p.value}
             </p-pagination-item>
           );
@@ -61,9 +54,10 @@ export class Pagination {
     );
   }
 
-  @Watch('page')
+  @Watch('value')
+  @Watch('pageSize')
+  @Watch('total')
   protected pageChangeHandler() {
-    console.log('Page changed!');
     this._generate();
   }
 
@@ -77,12 +71,11 @@ export class Pagination {
       return;
     }
 
-    this.pageChange.emit(p);
-    this.page = p;
+    this.value = p;
   }
 
   private _previousClick() {
-    const previousPage = this.page - 1;
+    const previousPage = this.value - 1;
     if (previousPage < this._pages[0]) {
       return;
     }
@@ -91,7 +84,7 @@ export class Pagination {
   }
 
   private _nextClick = () => {
-    const nextPage = this.page + 1;
+    const nextPage = this.value + 1;
     if (nextPage > this._pages[this._pages.length - 1]) {
       return;
     }
@@ -117,8 +110,8 @@ export class Pagination {
       return [];
     }
 
-    let start = this.page - range;
-    let end = this.page + range;
+    let start = this.value - range;
+    let end = this.value + range;
 
     if (end > totalPages) {
       end = totalPages;

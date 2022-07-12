@@ -143,10 +143,6 @@ export namespace Components {
     }
     interface PPagination {
         /**
-          * The current page
-         */
-        "page": number;
-        /**
           * The amount of items per page
          */
         "pageSize": number;
@@ -154,6 +150,10 @@ export namespace Components {
           * The total amount of items
          */
         "total": number;
+        /**
+          * The current page
+         */
+        "value": number;
     }
     interface PPaginationItem {
         /**
@@ -187,10 +187,6 @@ export namespace Components {
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
-}
-export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPPaginationElement;
 }
 declare global {
     interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
@@ -417,14 +413,6 @@ declare namespace LocalJSX {
     }
     interface PPagination {
         /**
-          * Button click event
-         */
-        "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
-        /**
-          * The current page
-         */
-        "page"?: number;
-        /**
           * The amount of items per page
          */
         "pageSize"?: number;
@@ -432,6 +420,10 @@ declare namespace LocalJSX {
           * The total amount of items
          */
         "total": number;
+        /**
+          * The current page
+         */
+        "value"?: number;
     }
     interface PPaginationItem {
         /**

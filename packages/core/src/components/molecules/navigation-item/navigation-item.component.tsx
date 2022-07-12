@@ -34,8 +34,12 @@ export class NavigationItem {
 
     render() {
         return (
-            <Host class={`p-navigation-item ${this.active && 'active'}`}>
-                <a href={this.href} target={this.target}>
+            <Host>
+                <a
+                    class={`p-navigation-item ${this.active && 'active'}`}
+                    href={this.href}
+                    target={this.target}
+                >
                     {this.icon && <p-icon variant={this.icon} />}
                     <span class={this.counter && 'has-counter'}>
                         <slot />

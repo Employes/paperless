@@ -1,5 +1,5 @@
 :host {
-    @apply w-full inline-block mb-1;
+    @apply w-full inline-block;
 
     > a {
         @apply w-full h-8 px-2 cursor-pointer rounded-large;
@@ -23,15 +23,13 @@
         &:hover > p-icon {
             @apply text-storm-vague;
         }
-    }
-}
 
-:host(.active) {
-    > a {
-        @apply text-indigo bg-indigo-light;
+        &.active {
+            @apply text-indigo bg-indigo-light;
 
-        > p-icon {
-            @apply text-indigo;
+            > p-icon {
+                @apply text-indigo;
+            }
         }
     }
 }

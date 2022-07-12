@@ -80,7 +80,6 @@ export class Pagination {
     @Watch('pageSize')
     @Watch('total')
     protected pageChangeHandler() {
-        console.log('pageChangeHandler called');
         this._generate();
     }
 

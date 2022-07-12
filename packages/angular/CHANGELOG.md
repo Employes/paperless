@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.18 (2022-07-12)
+
+
+### Features
+
+* We need a release ([ff8f487](https://github.com/Employes/Paperless/commit/ff8f487a07067522b817c14a969118c14e1fab7e))
+
+
+
+
+
 # 0.1.0-alpha.17 (2022-07-12)
 
 **Note:** Version bump only for package @paperless/angular

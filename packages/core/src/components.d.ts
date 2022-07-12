@@ -141,7 +141,24 @@ export namespace Components {
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PPagination {
+        /**
+          * The current page
+         */
+        "page": number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize": number;
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PPaginationItem {
+        /**
+          * Wether the pagination item is active
+         */
         "active": boolean;
     }
     interface PTooltip {
@@ -170,6 +187,10 @@ export namespace Components {
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
+}
+export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPPaginationElement;
 }
 declare global {
     interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
@@ -226,6 +247,12 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
+    }
+    var HTMLPPaginationElement: {
+        prototype: HTMLPPaginationElement;
+        new (): HTMLPPaginationElement;
+    };
     interface HTMLPPaginationItemElement extends Components.PPaginationItem, HTMLStencilElement {
     }
     var HTMLPPaginationItemElement: {
@@ -248,6 +275,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
+        "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -387,7 +415,28 @@ declare namespace LocalJSX {
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PPagination {
+        /**
+          * Button click event
+         */
+        "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "page"?: number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize"?: number;
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PPaginationItem {
+        /**
+          * Wether the pagination item is active
+         */
         "active"?: boolean;
     }
     interface PTooltip {
@@ -422,6 +471,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
+        "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
         "p-tooltip": PTooltip;
     }
@@ -439,6 +489,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
+            "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

@@ -25,12 +25,14 @@
 
  - [p-button](../button)
  - [p-info-panel](../info-panel)
+ - [p-pagination](../../molecules/pagination)
 
 ### Graph
 ```mermaid
 graph TD;
   p-button --> p-icon
   p-info-panel --> p-icon
+  p-pagination --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.22 (2022-07-12)
+
+
+### Reverts
+
+* Revert "fix(Molecules/Pagination): Watch `page` => `value`" ([e598bb9](https://github.com/ionic-team/stencil-component-starter/commit/e598bb902605997389736a292da34de6bfa6400d))
+
+
+
+
+
 # 0.1.0-alpha.21 (2022-07-12)
 
 **Note:** Version bump only for package @paperless/core

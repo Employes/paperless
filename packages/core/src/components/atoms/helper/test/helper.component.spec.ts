@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { Helper } from '../helper.component';
 
-describe('helper', () => {
+describe('p-helper', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
       components: [Helper],

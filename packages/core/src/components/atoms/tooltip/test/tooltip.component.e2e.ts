@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('p-illustration', () => {
+describe('p-popover', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<p-icon icon="document"></p-icon>');

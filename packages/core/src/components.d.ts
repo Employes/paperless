@@ -123,17 +123,25 @@ export namespace Components {
     }
     interface PTooltip {
         /**
-          * The content of the tooltip
+          * Wether to someone can manually close the popover
          */
-        "content": any;
+        "canManuallyClose": boolean;
         /**
-          * Wether to force show the tooltip
-         */
-        "forceShow": boolean;
-        /**
-          * The content of the tooltip
+          * The content of the popover
          */
         "placement": Placement;
+        /**
+          * The content of the popover
+         */
+        "popover": any;
+        /**
+          * Wether to show the popover
+         */
+        "show": boolean;
+        /**
+          * The variant of the popover
+         */
+        "variant": 'hover' | 'click';
     }
 }
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
@@ -317,17 +325,25 @@ declare namespace LocalJSX {
     }
     interface PTooltip {
         /**
-          * The content of the tooltip
+          * Wether to someone can manually close the popover
          */
-        "content"?: any;
+        "canManuallyClose"?: boolean;
         /**
-          * Wether to force show the tooltip
-         */
-        "forceShow"?: boolean;
-        /**
-          * The content of the tooltip
+          * The content of the popover
          */
         "placement"?: Placement;
+        /**
+          * The content of the popover
+         */
+        "popover"?: any;
+        /**
+          * Wether to show the popover
+         */
+        "show"?: boolean;
+        /**
+          * The variant of the popover
+         */
+        "variant"?: 'hover' | 'click';
     }
     interface IntrinsicElements {
         "p-avatar": PAvatar;

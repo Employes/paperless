@@ -2,14 +2,29 @@
 
 ## Usage:
 
+### Hover
+
 ```html
 <p-tooltip content="Your content">
   <span slot="content">Hover me</span>
 </p-tooltip>
 
 <p-tooltip>
-  <span slot="tooltip">Your content</span>
+  <span slot="popover">Your content</span>
   <span slot="content">Hover me</span>
+</p-tooltip>
+```
+
+### Click
+
+```html
+<p-tooltip variant="click" content="Your content">
+  <span slot="content">Click me</span>
+</p-tooltip>
+
+<p-tooltip variant="click">
+  <span slot="popover">Your content</span>
+  <span slot="content">Click me</span>
 </p-tooltip>
 ```
 
@@ -18,11 +33,13 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                      | Type                                                                                                                                                                                                         | Default |
-| ----------- | ------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| `content`   | `content`    | The content of the tooltip       | `any`                                                                                                                                                                                                        | `null`  |
-| `forceShow` | `force-show` | Wether to force show the tooltip | `boolean`                                                                                                                                                                                                    | `false` |
-| `placement` | `placement`  | The content of the tooltip       | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'` |
+| Property           | Attribute            | Description                                      | Type                                                                                                                                                                                                         | Default   |
+| ------------------ | -------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| `canManuallyClose` | `can-manually-close` | Wether to someone can manually close the popover | `boolean`                                                                                                                                                                                                    | `true`    |
+| `placement`        | `placement`          | The content of the popover                       | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`   |
+| `popover`          | `popover`            | The content of the popover                       | `any`                                                                                                                                                                                                        | `null`    |
+| `show`             | `show`               | Wether to show the popover                       | `boolean`                                                                                                                                                                                                    | `false`   |
+| `variant`          | `variant`            | The variant of the popover                       | `"click" \| "hover"`                                                                                                                                                                                         | `'hover'` |
 
 
 ## Dependencies

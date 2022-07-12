@@ -10,7 +10,7 @@ export class Helper {
     return (
       <Host class="p-helper">
         <p-tooltip>
-          <div slot="tooltip">
+          <div slot="popover">
             <slot />
           </div>
 

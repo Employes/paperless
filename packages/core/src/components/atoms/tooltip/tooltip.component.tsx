@@ -8,19 +8,29 @@ import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
 })
 export class Tooltip {
   /**
-   * The content of the tooltip
+   * The variant of the popover
    */
-  @Prop() content: any = null;
+  @Prop() variant: 'hover' | 'click' = 'hover';
 
   /**
-   * The content of the tooltip
+   * The content of the popover
+   */
+  @Prop() popover: any = null;
+
+  /**
+   * The content of the popover
    */
   @Prop() placement: Placement = 'top';
 
   /**
-   * Wether to force show the tooltip
+   * Wether to show the popover
    */
-  @Prop() forceShow: boolean = false;
+  @Prop() show: boolean = false;
+
+  /**
+   * Wether to someone can manually close the popover
+   */
+  @Prop() canManuallyClose: boolean = true;
 
   /**
    * The host element
@@ -29,36 +39,84 @@ export class Tooltip {
 
   private _loaded = false;
   private _popper: any;
-  private _tooltip: HTMLElement;
+  private _popover: HTMLElement;
 
   componentShouldUpdate() {
     this._setOptions();
-    if (this.forceShow) {
+    if (this._loaded && this.show) {
       this._show();
     }
   }
 
   render() {
     return (
-      <Host class="p-tooltip">
+      <Host class="p-popover">
         <slot name="content" />
-        <div class="tooltip" role="tooltip" ref={el => this._load(el)}>
-          {this.content ? this.content : <slot name="tooltip" />}
+        <div class={`popover variant-${this.variant}`} role="popover" ref={el => this._load(el)}>
+          {this.popover ? this.popover : <slot name="popover" />}
           <div class="arrow" data-popper-arrow></div>
         </div>
       </Host>
     );
   }
 
+  @Listen('click', { capture: true })
+  protected clickHandler() {
+    if (this.variant === 'hover') {
+      return;
+    }
+
+    if (this._popover.hasAttribute('data-show')) {
+      return;
+    }
+
+    if (!this._popover.hasAttribute('data-show')) {
+      this._show();
+    }
+  }
+
+  @Listen('click', { target: 'document', capture: true })
+  protected documentClickHandler() {
+    if (this.variant === 'hover' || !this.canManuallyClose) {
+      return;
+    }
+
+    if (!this._popover.hasAttribute('data-show')) {
+      return;
+    }
+
+    if (this._popover.hasAttribute('data-show')) {
+      this._hide();
+    }
+  }
+
   @Listen('mouseenter')
   @Listen('focus')
-  protected _show() {
+  protected mouseEnterHandler() {
+    if (this.variant === 'click') {
+      return;
+    }
+
+    this._show();
+  }
+
+  @Listen('mouseleave')
+  @Listen('blur')
+  protected mouseLeaveHandler() {
+    if (this.show || this.variant === 'click') {
+      return;
+    }
+
+    this._hide();
+  }
+
+  private _show() {
     if (!this._loaded) {
       return;
     }
 
-    // Make the tooltip visible
-    this._tooltip.setAttribute('data-show', '');
+    // Make the popover visible
+    this._popover.setAttribute('data-show', '');
 
     // Enable the event listeners
     this._popper.setOptions(options => ({
@@ -70,16 +128,13 @@ export class Tooltip {
     this._popper.update();
   }
 
-  @Listen('mouseleave')
-  @Listen('blur')
-  protected _hide() {
-    if (!this._loaded && !this.forceShow) {
+  private _hide() {
+    if (!this._loaded) {
       return;
     }
 
-    // Hide the tooltip
-
-    this._tooltip.removeAttribute('data-show');
+    // Hide the popover
+    this._popover.removeAttribute('data-show');
 
     // Disable the event listeners
     this._popper.setOptions(options => ({
@@ -88,16 +143,16 @@ export class Tooltip {
     }));
   }
 
-  private _load(tooltip: HTMLElement) {
-    this._tooltip = tooltip;
-    if (tooltip) {
-      this._popper = createPopper(this._el, tooltip);
+  private _load(popover: HTMLElement) {
+    this._popover = popover;
+    if (popover) {
+      this._popper = createPopper(this._el, popover);
 
       this._setOptions();
       this._loaded = true;
 
-      if (this.forceShow) {
-        this._show();
+      if (this.show) {
+        setTimeout(() => this._show(), 100);
       }
     }
   }

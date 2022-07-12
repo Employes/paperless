@@ -1,9 +1,13 @@
 :host {
   @apply cursor-pointer inline-block;
 
-  .tooltip {
-    @apply bg-storm hidden text-xs font-medium text-white py-1 px-3 rounded drop-shadow-1;
+  .popover {
+    @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4;
     max-width: 14.5rem;
+
+    &.variant-hover {
+      @apply bg-storm text-white py-1;
+    }
 
     &[data-show] {
       @apply block;

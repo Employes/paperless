@@ -8,34 +8,105 @@ import TooltipDocs from '../../packages/core/src/components/atoms/tooltip/readme
 
 # Examples
 
+## Variants
+
+### Hover
+
 <Canvas>
     <div class="flex justify-center items-center h-20">
-        <p-tooltip content="test">
+        <p-tooltip popover="test">
             <span slot="content">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>
 
+### Click
+
 <Canvas>
     <div class="flex justify-center items-center h-20">
-        <p-tooltip content="test" placement="right">
-            <span slot="content">Hover me</span>
+        <p-tooltip variant="click" popover="test">
+            <span slot="content">Click me</span>
         </p-tooltip>
     </div>
 </Canvas>
 
+## Positions
+
+### Hover
+
 <Canvas>
     <div class="flex justify-center items-center h-20">
-        <p-tooltip content="I am a person!" placement="left">
-            <p-icon variant="person" slot="content" />
+        <p-tooltip popover="test" placement="right">
+            <span slot="content">Hover me (right)</span>
         </p-tooltip>
     </div>
 </Canvas>
+
+### Click
+
+<Canvas>
+    <div class="flex justify-center items-center h-20">
+        <p-tooltip variant="click" popover="test" placement="left">
+            <span slot="content">Click me (left)</span>
+        </p-tooltip>
+    </div>
+</Canvas>
+
+## Big content
+
+### Hover
 
 <Canvas>
     <div class="flex justify-center items-center h-20 pt-24">
-        <p-tooltip content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum ut sem eget dignissim. Donec bibendum diam non viverra lobortis.">
+        <p-tooltip>
+            <div slot="popover">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                bibendum ut sem eget dignissim. Donec bibendum diam non viverra
+                lobortis.
+            </div>
+            <span slot="content">Click me</span>
+        </p-tooltip>
+    </div>
+</Canvas>
+
+### Click
+
+<Canvas>
+    <div class="flex justify-center items-center h-20 pt-24">
+        <p-tooltip variant="click">
+            <div slot="popover">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                bibendum ut sem eget dignissim. Donec bibendum diam non viverra
+                lobortis.
+            </div>
+            <span slot="content">Click me</span>
+        </p-tooltip>
+    </div>
+</Canvas>
+
+## Force show / disable manual close
+
+### Hover
+
+<Canvas>
+    <div class="flex justify-center items-center h-20">
+        <p-tooltip popover="You can't hide me" show={true}>
             <span slot="content">Hover me</span>
+        </p-tooltip>
+    </div>
+</Canvas>
+
+### Click
+
+<Canvas>
+    <div class="flex justify-center items-center h-20">
+        <p-tooltip
+            variant="click"
+            popover="You can't hide me"
+            show={true}
+            can-manually-close={false}
+        >
+            <span slot="content">Click me</span>
         </p-tooltip>
     </div>
 </Canvas>

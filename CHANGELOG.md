@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.16 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Angular/Pagination:** Make sure we write the correct property ([c1b9fdc](https://github.com/employes/paperless/commit/c1b9fdc22a9621a7f1ff0d354a9395d94902e4bc))
+
+
+
+
+
 # 0.1.0-alpha.15 (2022-07-12)
 
 

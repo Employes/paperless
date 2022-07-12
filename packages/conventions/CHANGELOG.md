@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.15 (2022-07-12)
+
+
+### Bug Fixes
+
+* **Molecules/Pagination:** Reflect the value ([755a031](https://github.com/Employes/Paperless/commit/755a031d3f7fc2650fa1a6f0ca7bbc29f8cad49b))
+
+
+
+
+
 # 0.1.0-alpha.14 (2022-07-12)
 
 

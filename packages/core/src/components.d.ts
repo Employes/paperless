@@ -231,7 +231,7 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant"?: IconVariant;
+        "variant": IconVariant;
     }
     interface PIllustration {
         /**

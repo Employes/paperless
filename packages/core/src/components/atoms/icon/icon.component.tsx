@@ -12,7 +12,7 @@ export class Icon {
   /**
    * The icon the be displayed
    */
-  @Prop() variant: IconVariant = null;
+  @Prop() variant!: IconVariant;
 
   /**
    * The size of the icon, using tailwind sizes

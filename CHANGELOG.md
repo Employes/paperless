@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.28 (2022-07-14)
+
+
+### Features
+
+* **Molecules:** Add dropdown component ([3e608f5](https://github.com/employes/paperless/commit/3e608f52b3486f24193dcee221efe345d2952041))
+
+
+
+
+
 # 0.1.0-alpha.27 (2022-07-12)
 
 

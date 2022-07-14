@@ -12,6 +12,7 @@ export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvata
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
 export const PCounter = /*@__PURE__*/createReactComponent<JSX.PCounter, HTMLPCounterElement>('p-counter');
 export const PDivider = /*@__PURE__*/createReactComponent<JSX.PDivider, HTMLPDividerElement>('p-divider');
+export const PDropdown = /*@__PURE__*/createReactComponent<JSX.PDropdown, HTMLPDropdownElement>('p-dropdown');
 export const PDropdownMenuContainer = /*@__PURE__*/createReactComponent<JSX.PDropdownMenuContainer, HTMLPDropdownMenuContainerElement>('p-dropdown-menu-container');
 export const PDropdownMenuItem = /*@__PURE__*/createReactComponent<JSX.PDropdownMenuItem, HTMLPDropdownMenuItemElement>('p-dropdown-menu-item');
 export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelperElement>('p-helper');

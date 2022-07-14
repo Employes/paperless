@@ -75,6 +75,24 @@ export namespace Components {
     }
     interface PDivider {
     }
+    interface PDropdown {
+        /**
+          * Wether to automatically close the dropdown menu after clicking inside
+         */
+        "disableTriggerClick": boolean;
+        /**
+          * Wether to automatically close the dropdown menu after clicking inside
+         */
+        "insideClick": boolean;
+        /**
+          * The content of the dropdown menu
+         */
+        "placement": 'bottom' | 'top';
+        /**
+          * Wether to show the dropdown menu
+         */
+        "show": boolean;
+    }
     interface PDropdownMenuContainer {
     }
     interface PDropdownMenuItem {
@@ -218,6 +236,10 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
 }
+export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPDropdownElement;
+}
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
@@ -246,6 +268,12 @@ declare global {
     var HTMLPDividerElement: {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
+    };
+    interface HTMLPDropdownElement extends Components.PDropdown, HTMLStencilElement {
+    }
+    var HTMLPDropdownElement: {
+        prototype: HTMLPDropdownElement;
+        new (): HTMLPDropdownElement;
     };
     interface HTMLPDropdownMenuContainerElement extends Components.PDropdownMenuContainer, HTMLStencilElement {
     }
@@ -318,6 +346,7 @@ declare global {
         "p-button": HTMLPButtonElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
+        "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
         "p-helper": HTMLPHelperElement;
@@ -399,6 +428,28 @@ declare namespace LocalJSX {
     interface PCounter {
     }
     interface PDivider {
+    }
+    interface PDropdown {
+        /**
+          * Wether to automatically close the dropdown menu after clicking inside
+         */
+        "disableTriggerClick"?: boolean;
+        /**
+          * Wether to automatically close the dropdown menu after clicking inside
+         */
+        "insideClick"?: boolean;
+        /**
+          * Open change event
+         */
+        "onIsOpen"?: (event: PDropdownCustomEvent<boolean>) => void;
+        /**
+          * The content of the dropdown menu
+         */
+        "placement"?: 'bottom' | 'top';
+        /**
+          * Wether to show the dropdown menu
+         */
+        "show"?: boolean;
     }
     interface PDropdownMenuContainer {
     }
@@ -544,6 +595,7 @@ declare namespace LocalJSX {
         "p-button": PButton;
         "p-counter": PCounter;
         "p-divider": PDivider;
+        "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
         "p-helper": PHelper;
@@ -565,6 +617,7 @@ declare module "@stencil/core" {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
+            "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;

@@ -75,6 +75,8 @@ export namespace Components {
     }
     interface PDivider {
     }
+    interface PDropdownMenuContainer {
+    }
     interface PHelper {
     }
     interface PIcon {
@@ -239,6 +241,12 @@ declare global {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
     };
+    interface HTMLPDropdownMenuContainerElement extends Components.PDropdownMenuContainer, HTMLStencilElement {
+    }
+    var HTMLPDropdownMenuContainerElement: {
+        prototype: HTMLPDropdownMenuContainerElement;
+        new (): HTMLPDropdownMenuContainerElement;
+    };
     interface HTMLPHelperElement extends Components.PHelper, HTMLStencilElement {
     }
     var HTMLPHelperElement: {
@@ -298,6 +306,7 @@ declare global {
         "p-button": HTMLPButtonElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
+        "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
@@ -377,6 +386,8 @@ declare namespace LocalJSX {
     interface PCounter {
     }
     interface PDivider {
+    }
+    interface PDropdownMenuContainer {
     }
     interface PHelper {
     }
@@ -514,6 +525,7 @@ declare namespace LocalJSX {
         "p-button": PButton;
         "p-counter": PCounter;
         "p-divider": PDivider;
+        "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
@@ -533,6 +545,7 @@ declare module "@stencil/core" {
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
+            "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;

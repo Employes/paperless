@@ -74,9 +74,7 @@ export class Tooltip {
             return;
         }
 
-        if (!this._popover.hasAttribute('data-show')) {
-            this._show();
-        }
+        this._show();
     }
 
     @Listen('click', { target: 'document', capture: true })
@@ -89,9 +87,7 @@ export class Tooltip {
             return;
         }
 
-        if (this._popover.hasAttribute('data-show')) {
-            this._hide();
-        }
+        this._hide();
     }
 
     @Listen('mouseenter')

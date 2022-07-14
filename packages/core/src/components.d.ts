@@ -203,7 +203,7 @@ export namespace Components {
         /**
           * The variant of the popover
          */
-        "variant": 'hover' | 'click';
+        "variant": 'hover' | 'click' | 'error';
     }
 }
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
@@ -507,7 +507,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the popover
          */
-        "variant"?: 'hover' | 'click';
+        "variant"?: 'hover' | 'click' | 'error';
     }
     interface IntrinsicElements {
         "p-avatar": PAvatar;

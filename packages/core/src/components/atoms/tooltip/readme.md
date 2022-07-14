@@ -39,7 +39,7 @@
 | `placement`        | `placement`          | The content of the popover                       | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'top'`   |
 | `popover`          | `popover`            | The content of the popover                       | `any`                                                                                                                                                                                                        | `null`    |
 | `show`             | `show`               | Wether to show the popover                       | `boolean`                                                                                                                                                                                                    | `false`   |
-| `variant`          | `variant`            | The variant of the popover                       | `"click" \| "hover"`                                                                                                                                                                                         | `'hover'` |
+| `variant`          | `variant`            | The variant of the popover                       | `"click" \| "error" \| "hover"`                                                                                                                                                                              | `'hover'` |
 
 
 ## Dependencies

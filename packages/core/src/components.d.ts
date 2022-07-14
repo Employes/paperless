@@ -77,6 +77,12 @@ export namespace Components {
     }
     interface PDropdownMenuContainer {
     }
+    interface PDropdownMenuItem {
+        /**
+          * Wether the dropdown menu item is active
+         */
+        "active": boolean;
+    }
     interface PHelper {
     }
     interface PIcon {
@@ -247,6 +253,12 @@ declare global {
         prototype: HTMLPDropdownMenuContainerElement;
         new (): HTMLPDropdownMenuContainerElement;
     };
+    interface HTMLPDropdownMenuItemElement extends Components.PDropdownMenuItem, HTMLStencilElement {
+    }
+    var HTMLPDropdownMenuItemElement: {
+        prototype: HTMLPDropdownMenuItemElement;
+        new (): HTMLPDropdownMenuItemElement;
+    };
     interface HTMLPHelperElement extends Components.PHelper, HTMLStencilElement {
     }
     var HTMLPHelperElement: {
@@ -307,6 +319,7 @@ declare global {
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
+        "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
@@ -388,6 +401,12 @@ declare namespace LocalJSX {
     interface PDivider {
     }
     interface PDropdownMenuContainer {
+    }
+    interface PDropdownMenuItem {
+        /**
+          * Wether the dropdown menu item is active
+         */
+        "active"?: boolean;
     }
     interface PHelper {
     }
@@ -526,6 +545,7 @@ declare namespace LocalJSX {
         "p-counter": PCounter;
         "p-divider": PDivider;
         "p-dropdown-menu-container": PDropdownMenuContainer;
+        "p-dropdown-menu-item": PDropdownMenuItem;
         "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
@@ -546,6 +566,7 @@ declare module "@stencil/core" {
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
+            "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;

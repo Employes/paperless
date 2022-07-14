@@ -1,0 +1,13 @@
+:host {
+    @apply h-8 flex items-center px-2 rounded w-full;
+    @apply text-sm text-storm-medium font-medium;
+    @apply cursor-pointer;
+}
+
+:host(:hover) {
+    @apply text-storm bg-indigo-light;
+}
+
+:host(.active) {
+    @apply text-indigo bg-indigo-light;
+}

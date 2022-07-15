@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.29 (2022-07-15)
+
+
+### Features
+
+* **Atoms:** Add status component ([5e42f15](https://github.com/ionic-team/ionic/commit/5e42f157044240bc47ef573973d1399596ba877e))
+
+
+
+
+
 # 0.1.0-alpha.28 (2022-07-14)
 
 

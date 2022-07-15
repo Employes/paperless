@@ -1,4 +1,4 @@
-# p-tooltip
+# Tooltip
 
 ## Usage:
 
@@ -6,12 +6,12 @@
 
 ```html
 <p-tooltip content="Your content">
-  <span slot="content">Hover me</span>
+    <span slot="content">Hover me</span>
 </p-tooltip>
 
 <p-tooltip>
-  <span slot="popover">Your content</span>
-  <span slot="content">Hover me</span>
+    <span slot="popover">Your content</span>
+    <span slot="content">Hover me</span>
 </p-tooltip>
 ```
 
@@ -19,12 +19,29 @@
 
 ```html
 <p-tooltip variant="click" content="Your content">
-  <span slot="content">Click me</span>
+    <span slot="content">Click me</span>
 </p-tooltip>
 
 <p-tooltip variant="click">
-  <span slot="popover">Your content</span>
-  <span slot="content">Click me</span>
+    <span slot="popover">Your content</span>
+    <span slot="content">Click me</span>
+</p-tooltip>
+```
+
+### Error
+
+```html
+<p-tooltip variant="error" content="Display an error">
+    <span slot="content">
+        <!-- Error content -->
+    </span>
+</p-tooltip>
+
+<p-tooltip variant="click">
+    <span slot="popover">Display an error</span>
+    <span slot="content">
+        <!-- Error content -->
+    </span>
 </p-tooltip>
 ```
 

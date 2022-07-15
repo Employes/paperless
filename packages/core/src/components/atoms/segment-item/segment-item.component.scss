@@ -1,0 +1,21 @@
+:host {
+    @apply h-6 flex items-center px-2 rounded font-medium mr-1;
+    @apply text-storm-light text-sm;
+    @apply cursor-pointer;
+}
+
+:host(.variant-icon) {
+    @apply w-6 justify-center px-0;
+}
+
+:host(:hover) {
+    @apply text-storm-medium;
+}
+
+:host(.active) {
+    @apply text-indigo bg-indigo-light;
+}
+
+:host(:last-child) {
+    @apply mr-0;
+}

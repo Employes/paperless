@@ -209,6 +209,24 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PSegmentItem {
+        /**
+          * Wether the segment item is active
+         */
+        "active": boolean;
+        /**
+          * Icon to show on the segment item
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate": number;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -335,6 +353,12 @@ declare global {
         prototype: HTMLPPaginationItemElement;
         new (): HTMLPPaginationItemElement;
     };
+    interface HTMLPSegmentItemElement extends Components.PSegmentItem, HTMLStencilElement {
+    }
+    var HTMLPSegmentItemElement: {
+        prototype: HTMLPSegmentItemElement;
+        new (): HTMLPSegmentItemElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -357,6 +381,7 @@ declare global {
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
+        "p-segment-item": HTMLPSegmentItemElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -568,6 +593,24 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PSegmentItem {
+        /**
+          * Wether the segment item is active
+         */
+        "active"?: boolean;
+        /**
+          * Icon to show on the segment item
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: number;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -606,6 +649,7 @@ declare namespace LocalJSX {
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
+        "p-segment-item": PSegmentItem;
         "p-tooltip": PTooltip;
     }
 }
@@ -628,6 +672,7 @@ declare module "@stencil/core" {
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
+            "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

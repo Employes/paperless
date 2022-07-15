@@ -209,6 +209,8 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PSegmentContainer {
+    }
     interface PSegmentItem {
         /**
           * Wether the segment item is active
@@ -353,6 +355,12 @@ declare global {
         prototype: HTMLPPaginationItemElement;
         new (): HTMLPPaginationItemElement;
     };
+    interface HTMLPSegmentContainerElement extends Components.PSegmentContainer, HTMLStencilElement {
+    }
+    var HTMLPSegmentContainerElement: {
+        prototype: HTMLPSegmentContainerElement;
+        new (): HTMLPSegmentContainerElement;
+    };
     interface HTMLPSegmentItemElement extends Components.PSegmentItem, HTMLStencilElement {
     }
     var HTMLPSegmentItemElement: {
@@ -381,6 +389,7 @@ declare global {
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
+        "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -593,6 +602,8 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PSegmentContainer {
+    }
     interface PSegmentItem {
         /**
           * Wether the segment item is active
@@ -649,6 +660,7 @@ declare namespace LocalJSX {
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
+        "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-tooltip": PTooltip;
     }
@@ -672,6 +684,7 @@ declare module "@stencil/core" {
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
+            "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

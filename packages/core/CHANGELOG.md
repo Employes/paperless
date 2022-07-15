@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.30 (2022-07-15)
+
+
+### Features
+
+* **Atoms/Icons:** Add 5 new icons ([15e8900](https://github.com/ionic-team/stencil-component-starter/commit/15e89009e426107204f85dc7decefb3fd9724fc6))
+
+
+
+
+
 # 0.1.0-alpha.29 (2022-07-15)
 
 

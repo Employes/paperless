@@ -28,6 +28,7 @@
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
  - [p-segment-item](../segment-item)
+ - [p-status](../status)
 
 ### Graph
 ```mermaid
@@ -37,6 +38,7 @@ graph TD;
   p-navigation-item --> p-icon
   p-pagination --> p-icon
   p-segment-item --> p-icon
+  p-status --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

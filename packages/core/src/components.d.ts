@@ -229,6 +229,24 @@ export namespace Components {
          */
         "iconRotate": number;
     }
+    interface PStatus {
+        /**
+          * Icon to show on the status
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate": number;
+        /**
+          * The variant of the status
+         */
+        "variant": 'default' | 'positive' | 'unbiased' | 'negative';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -367,6 +385,12 @@ declare global {
         prototype: HTMLPSegmentItemElement;
         new (): HTMLPSegmentItemElement;
     };
+    interface HTMLPStatusElement extends Components.PStatus, HTMLStencilElement {
+    }
+    var HTMLPStatusElement: {
+        prototype: HTMLPStatusElement;
+        new (): HTMLPStatusElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -391,6 +415,7 @@ declare global {
         "p-pagination-item": HTMLPPaginationItemElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
+        "p-status": HTMLPStatusElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -622,6 +647,24 @@ declare namespace LocalJSX {
          */
         "iconRotate"?: number;
     }
+    interface PStatus {
+        /**
+          * Icon to show on the status
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: number;
+        /**
+          * The variant of the status
+         */
+        "variant"?: 'default' | 'positive' | 'unbiased' | 'negative';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -662,6 +705,7 @@ declare namespace LocalJSX {
         "p-pagination-item": PPaginationItem;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
+        "p-status": PStatus;
         "p-tooltip": PTooltip;
     }
 }
@@ -686,6 +730,7 @@ declare module "@stencil/core" {
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
+            "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

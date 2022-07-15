@@ -10,6 +10,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description                       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default     |
@@ -19,20 +20,20 @@
 | `iconFlip`   | `icon-flip`   | Icon flip                         | `"horizontal" \| "vertical"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `undefined` |
 | `iconRotate` | `icon-rotate` | Icon rotate                       | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `undefined` |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [p-icon](../icon)
+- [p-icon](../icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-segment-item --> p-icon
   style p-segment-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

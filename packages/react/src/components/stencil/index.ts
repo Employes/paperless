@@ -25,4 +25,5 @@ export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HT
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');
+export const PStatus = /*@__PURE__*/createReactComponent<JSX.PStatus, HTMLPStatusElement>('p-status');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

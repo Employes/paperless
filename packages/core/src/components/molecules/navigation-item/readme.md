@@ -1,4 +1,4 @@
-# NavigationItem
+# Navigation Item
 
 ## Usage:
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.32 (2022-07-18)
+
+
+### Features
+
+* **Atoms/Button:** Add chevron prop ([342e0e7](https://github.com/employes/paperless/commit/342e0e7a78f92f6a7c84b4009c9d2004585630c7))
+
+
+
+
+
 # 0.1.0-alpha.31 (2022-07-18)
 
 **Note:** Version bump only for package paperless

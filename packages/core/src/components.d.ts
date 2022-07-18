@@ -31,6 +31,10 @@ export namespace Components {
     }
     interface PButton {
         /**
+          * Wether to show a chevron or not
+         */
+        "chevron": boolean | 'up' | 'down';
+        /**
           * Wether the button is disabled
          */
         "disabled": boolean;
@@ -439,6 +443,10 @@ declare namespace LocalJSX {
         "variant"?: 'user' | 'company';
     }
     interface PButton {
+        /**
+          * Wether to show a chevron or not
+         */
+        "chevron"?: boolean | 'up' | 'down';
         /**
           * Wether the button is disabled
          */

@@ -1,79 +1,87 @@
 p-button {
-  @apply inline-block;
+    @apply inline-block;
 
-  > button,
-  > a {
-    outline: 0;
-    border: 0;
-    @apply h-10 rounded-large;
-    @apply font-semibold leading-4;
-    @apply flex items-center justify-center;
-    @apply cursor-pointer;
+    > button,
+    > a {
+        outline: 0;
+        border: 0;
+        @apply h-10 rounded-large;
+        @apply font-semibold leading-4;
+        @apply flex items-center justify-center;
+        @apply cursor-pointer;
 
-    > p-loader {
-      @apply ml-2;
+        > p-loader {
+            @apply ml-2;
+        }
+
+        // Icon positions
+        &.icon-position-end {
+            > p-icon {
+                @apply ml-2;
+            }
+        }
+
+        &.icon-position-start {
+            > p-icon {
+                @apply mr-2;
+            }
+        }
+
+        // Variants
+        &.variant-primary,
+        &.variant-secondary {
+            @apply px-4;
+        }
+
+        &.variant-primary {
+            @apply bg-indigo text-white;
+
+            &:hover {
+                @apply bg-indigo/95;
+            }
+
+            &:active {
+                @apply bg-indigo-dark;
+            }
+        }
+
+        &.variant-secondary {
+            @apply border border-mystic-dark #{!important};
+            @apply bg-white text-storm;
+            @apply filter drop-shadow-4;
+
+            &:hover {
+                @apply bg-mystic;
+            }
+
+            &:active {
+                @apply bg-storm-light/5 border-storm-light/20;
+            }
+        }
+
+        &.variant-text {
+            @apply text-indigo;
+
+            &:hover {
+                @apply text-indigo-dark;
+            }
+        }
+
+        // sizes
+        &.size-small {
+            @apply h-8 text-sm;
+        }
+
+        &[disabled] {
+            @apply opacity-50;
+        }
+
+        &.has-chevron {
+            @apply pr-2;
+
+            &.variant-secondary:hover p-icon:last-child {
+                @apply text-indigo;
+            }
+        }
     }
-
-    // Icon positions
-    &.icon-position-end {
-      > p-icon {
-        @apply ml-2;
-      }
-    }
-
-    &.icon-position-start {
-      > p-icon {
-        @apply mr-2;
-      }
-    }
-
-    // Variants
-    &.variant-primary,
-    &.variant-secondary {
-      @apply px-4;
-    }
-
-    &.variant-primary {
-      @apply bg-indigo text-white;
-
-      &:hover {
-        @apply bg-indigo/95;
-      }
-
-      &:active {
-        @apply bg-indigo-dark;
-      }
-    }
-
-    &.variant-secondary {
-      @apply border border-mystic-dark #{!important};
-      @apply bg-white text-storm;
-      @apply filter drop-shadow-4;
-
-      &:hover {
-        @apply bg-mystic;
-      }
-
-      &:active {
-        @apply bg-storm-light/5 border-storm-light/20;
-      }
-    }
-
-    &.variant-text {
-      @apply text-indigo;
-
-      &:hover {
-        @apply text-indigo-dark;
-      }
-    }
-
-    // sizes
-    &.size-small {
-      @apply h-8 text-sm;
-    }
-
-    &[disabled] {
-      @apply opacity-50;
-    }
-  }
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.33 (2022-07-18)
+
+
+### Features
+
+* **Molecules/Dropdown:** Auto apply chevron to p-button instances ([e08a3c0](https://github.com/ionic-team/stencil-component-starter/commit/e08a3c0b467e1d2af71934772035d17232f292eb))
+
+
+
+
+
 # 0.1.0-alpha.32 (2022-07-18)
 
 

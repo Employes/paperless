@@ -65,7 +65,10 @@ export class Dropdown {
                     class="trigger"
                     onClick={() => this._triggerClickHandler()}
                 >
-                    <slot name="trigger" />
+                    <slot
+                        onSlotchange={(ev) => this._checkButton(ev)}
+                        name="trigger"
+                    />
                 </div>
                 <p-dropdown-menu-container
                     role="popover"
@@ -76,6 +79,18 @@ export class Dropdown {
                 </p-dropdown-menu-container>
             </Host>
         );
+    }
+
+    private _checkButton({ target }: Event) {
+        const slot = target as HTMLSlotElement;
+        const children = slot.assignedElements();
+
+        for (let child of children) {
+            if (child.nodeName === 'P-BUTTON') {
+                (child as any).chevron =
+                    this.placement === 'top' ? 'up' : 'down';
+            }
+        }
     }
 
     private _containerClickHandler() {

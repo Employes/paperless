@@ -18,7 +18,6 @@ module.exports = {
                 transcludeMarkdown: true,
             },
         },
-        '@geometricpanda/storybook-addon-iframe',
         '@geometricpanda/storybook-addon-badges',
     ],
     framework: '@storybook/html',

@@ -27,9 +27,7 @@ export const parameters = {
         },
         canvas: {
             title: 'Story',
-        },
-        '@geometricpanda/storybook-addon-iframe': {
-            title: 'Design',
+            hidden: true,
         },
     },
     actions: { argTypesRegex: '^on[A-Z].*' },

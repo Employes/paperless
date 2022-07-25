@@ -4,6 +4,7 @@ const borderRadius = require('./tailwind/border-radius');
 const grid = require('./tailwind/grid');
 const scale = require('./tailwind/scale');
 const rotate = require('./tailwind/rotate');
+const typeograhpy = require('./tailwind/typography');
 
 module.exports = {
   important: true,
@@ -16,6 +17,8 @@ module.exports = {
       ...grid,
       scale,
       rotate,
+      fontSize: typeograhpy.fontSize,
+      lineHeight: typeograhpy.lineHeight
     },
   },
   variants: {},

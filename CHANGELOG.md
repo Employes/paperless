@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.34 (2022-07-25)
+
+
+### Features
+
+* **Typography:** Implement default typography ([b26b7d6](https://github.com/employes/paperless/commit/b26b7d6c3e68cefdec1b0c85333bd2d18b40b2d3))
+
+
+
+
+
 # 0.1.0-alpha.33 (2022-07-18)
 
 

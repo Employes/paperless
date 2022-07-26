@@ -1,5 +1,6 @@
 export enum StoryCategories {
     Introduction = 'Introduction',
+    DesignSystem = 'Design system',
     Atoms = 'Design system/Atoms',
     Bosons = 'Design system/Bosons',
     Molecules = 'Design system/Molecules',

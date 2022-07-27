@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.38 (2022-07-27)
+
+**Note:** Version bump only for package @paperless/conventions
+
+
+
+
+
 # 0.1.0-alpha.37 (2022-07-26)
 
 **Note:** Version bump only for package @paperless/conventions

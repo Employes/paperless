@@ -89,6 +89,12 @@ export namespace Components {
          */
         "inheritText": boolean;
     }
+    interface PCardContainer {
+        /**
+          * Wether the card should be hoverable
+         */
+        "hoverable": boolean;
+    }
     interface PCounter {
     }
     interface PDivider {
@@ -319,6 +325,12 @@ declare global {
         prototype: HTMLPCardBodyElement;
         new (): HTMLPCardBodyElement;
     };
+    interface HTMLPCardContainerElement extends Components.PCardContainer, HTMLStencilElement {
+    }
+    var HTMLPCardContainerElement: {
+        prototype: HTMLPCardContainerElement;
+        new (): HTMLPCardContainerElement;
+    };
     interface HTMLPCounterElement extends Components.PCounter, HTMLStencilElement {
     }
     var HTMLPCounterElement: {
@@ -425,6 +437,7 @@ declare global {
         "p-avatar": HTMLPAvatarElement;
         "p-button": HTMLPButtonElement;
         "p-card-body": HTMLPCardBodyElement;
+        "p-card-container": HTMLPCardContainerElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
         "p-dropdown": HTMLPDropdownElement;
@@ -526,6 +539,12 @@ declare namespace LocalJSX {
           * Wether the button should inherit text styles
          */
         "inheritText"?: boolean;
+    }
+    interface PCardContainer {
+        /**
+          * Wether the card should be hoverable
+         */
+        "hoverable"?: boolean;
     }
     interface PCounter {
     }
@@ -734,6 +753,7 @@ declare namespace LocalJSX {
         "p-avatar": PAvatar;
         "p-button": PButton;
         "p-card-body": PCardBody;
+        "p-card-container": PCardContainer;
         "p-counter": PCounter;
         "p-divider": PDivider;
         "p-dropdown": PDropdown;
@@ -760,6 +780,7 @@ declare module "@stencil/core" {
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
+            "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;

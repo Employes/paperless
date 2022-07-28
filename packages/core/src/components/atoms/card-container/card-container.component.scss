@@ -1,0 +1,13 @@
+:host {
+    @apply flex flex-col w-full;
+    @apply bg-white rounded-large;
+    @apply shadow-4 #{!important};
+}
+
+:host(.has-hover) {
+    @apply cursor-pointer;
+}
+
+:host(.has-hover:hover) {
+    @apply shadow-5 #{!important};
+}

@@ -83,6 +83,12 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary' | 'text';
     }
+    interface PCardBody {
+        /**
+          * Wether the button should inherit text styles
+         */
+        "inheritText": boolean;
+    }
     interface PCounter {
     }
     interface PDivider {
@@ -307,6 +313,12 @@ declare global {
         prototype: HTMLPButtonElement;
         new (): HTMLPButtonElement;
     };
+    interface HTMLPCardBodyElement extends Components.PCardBody, HTMLStencilElement {
+    }
+    var HTMLPCardBodyElement: {
+        prototype: HTMLPCardBodyElement;
+        new (): HTMLPCardBodyElement;
+    };
     interface HTMLPCounterElement extends Components.PCounter, HTMLStencilElement {
     }
     var HTMLPCounterElement: {
@@ -412,6 +424,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "p-avatar": HTMLPAvatarElement;
         "p-button": HTMLPButtonElement;
+        "p-card-body": HTMLPCardBodyElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
         "p-dropdown": HTMLPDropdownElement;
@@ -507,6 +520,12 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
+    }
+    interface PCardBody {
+        /**
+          * Wether the button should inherit text styles
+         */
+        "inheritText"?: boolean;
     }
     interface PCounter {
     }
@@ -714,6 +733,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "p-avatar": PAvatar;
         "p-button": PButton;
+        "p-card-body": PCardBody;
         "p-counter": PCounter;
         "p-divider": PDivider;
         "p-dropdown": PDropdown;
@@ -739,6 +759,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
+            "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;

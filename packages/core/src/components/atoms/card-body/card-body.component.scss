@@ -1,0 +1,10 @@
+p-card-body {
+    @apply px-6 py-4;
+    @apply text-sm text-storm-vague;
+
+    &.should-inherit-text {
+        color: inherit #{!important};
+        font-size: inherit #{!important};
+        font-weight: inherit #{!important};
+    }
+}

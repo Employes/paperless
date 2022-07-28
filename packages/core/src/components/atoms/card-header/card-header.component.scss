@@ -1,0 +1,23 @@
+p-card-header {
+    @apply mx-6 py-3;
+    @apply flex justify-between items-center;
+    @apply text-storm-medium;
+    @apply border-b border-b-mystic-medium #{!important};
+
+    .title {
+        @apply flex items-center;
+        @apply font-semibold;
+
+        > p-icon {
+            @apply ml-2 text-mystic-dark;
+        }
+    }
+}
+
+p-card-container.has-hover:hover {
+    p-card-header {
+        .title > p-icon {
+            @apply text-indigo;
+        }
+    }
+}

@@ -24,6 +24,7 @@
 ### Used by
 
  - [p-button](../button)
+ - [p-card-header](../card-header)
  - [p-info-panel](../info-panel)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
@@ -34,6 +35,7 @@
 ```mermaid
 graph TD;
   p-button --> p-icon
+  p-card-header --> p-icon
   p-info-panel --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon

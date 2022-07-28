@@ -12,6 +12,7 @@ export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvata
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
 export const PCardBody = /*@__PURE__*/createReactComponent<JSX.PCardBody, HTMLPCardBodyElement>('p-card-body');
 export const PCardContainer = /*@__PURE__*/createReactComponent<JSX.PCardContainer, HTMLPCardContainerElement>('p-card-container');
+export const PCardHeader = /*@__PURE__*/createReactComponent<JSX.PCardHeader, HTMLPCardHeaderElement>('p-card-header');
 export const PCounter = /*@__PURE__*/createReactComponent<JSX.PCounter, HTMLPCounterElement>('p-counter');
 export const PDivider = /*@__PURE__*/createReactComponent<JSX.PDivider, HTMLPDividerElement>('p-divider');
 export const PDropdown = /*@__PURE__*/createReactComponent<JSX.PDropdown, HTMLPDropdownElement>('p-dropdown');

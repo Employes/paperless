@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.39 (2022-07-28)
+
+
+### Features
+
+* **Atoms:** Add card header component ([64548ce](https://github.com/ionic-team/stencil-component-starter/commit/64548ce60bd354e2054e3fc595a2a99820df9a0f))
+
+
+
+
+
 # 0.1.0-alpha.38 (2022-07-27)
 
 **Note:** Version bump only for package @paperless/core

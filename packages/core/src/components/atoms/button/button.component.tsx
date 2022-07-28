@@ -56,6 +56,11 @@ export class Button {
     @Prop() icon: IconVariant;
 
     /**
+     * Wether the button is icon only
+     */
+    @Prop() iconOnly: boolean = false;
+
+    /**
      * Icon position
      */
     @Prop() iconPosition: 'start' | 'end' = 'end';
@@ -69,6 +74,11 @@ export class Button {
      * Icon rotate
      */
     @Prop() iconRotate: number;
+
+    /**
+     * Wether the button should inherit text styles
+     */
+    @Prop() inheritText: boolean = false;
 
     /**
      * Button click event
@@ -95,6 +105,8 @@ export class Button {
                         this.size
                     } icon-position-${this.iconPosition} ${
                         this.chevron && 'has-chevron'
+                    } ${this.iconOnly && 'has-icon-only'} ${
+                        this.inheritText && 'should-inherit-text'
                     }`}
                     disabled={this.disabled}
                     href={this.href}

@@ -83,5 +83,19 @@ p-button {
                 @apply text-indigo;
             }
         }
+
+        &.has-icon-only {
+            @apply px-2;
+
+            > p-icon:first-child {
+                @apply mx-0;
+            }
+        }
+
+        &.should-inherit-text {
+            color: inherit #{!important};
+            font-size: inherit #{!important};
+            font-weight: inherit #{!important};
+        }
     }
 }

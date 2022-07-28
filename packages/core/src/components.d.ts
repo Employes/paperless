@@ -51,6 +51,10 @@ export namespace Components {
          */
         "iconFlip": IconFlipOptions;
         /**
+          * Wether the button is icon only
+         */
+        "iconOnly": boolean;
+        /**
           * Icon position
          */
         "iconPosition": 'start' | 'end';
@@ -58,6 +62,10 @@ export namespace Components {
           * Icon rotate
          */
         "iconRotate": number;
+        /**
+          * Wether the button should inherit text styles
+         */
+        "inheritText": boolean;
         /**
           * Wether to show a loader or not
          */
@@ -464,6 +472,10 @@ declare namespace LocalJSX {
          */
         "iconFlip"?: IconFlipOptions;
         /**
+          * Wether the button is icon only
+         */
+        "iconOnly"?: boolean;
+        /**
           * Icon position
          */
         "iconPosition"?: 'start' | 'end';
@@ -471,6 +483,10 @@ declare namespace LocalJSX {
           * Icon rotate
          */
         "iconRotate"?: number;
+        /**
+          * Wether the button should inherit text styles
+         */
+        "inheritText"?: boolean;
         /**
           * Wether to show a loader or not
          */

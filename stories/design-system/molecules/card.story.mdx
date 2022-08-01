@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+
+<Meta title={`${StoryCategories.Molecules}/Card`} />
+
+# Card
+
+## Usage:
+
+```html
+<p-card-container>
+    <p-card-header title="Title"></p-card-header>
+    <p-card-body>Content</p-card-body>
+    <p-card-footer>content</p-card-footer>
+</p-card-container>
+```
+
+# Examples
+
+## Full card
+
+<Canvas>
+    <div class="flex w-1/2">
+        <p-card-container>
+            <p-card-header title="Title">
+                <p-button
+                    icon-only
+                    icon="pencil"
+                    chevron
+                    variant="secondary"
+                    size="small"
+                ></p-button>
+            </p-card-header>
+            <p-card-body>
+                Bereken het netto-loon en de werkgeverskosten, simpel in maar 3
+                stappen weet je wat hier meer text is.
+            </p-card-body>
+        </p-card-container>
+    </div>
+</Canvas>
+
+## Hoverable card
+
+<Canvas>
+    <div class="flex w-1/2">
+        <p-card-container hoverable>
+            <p-card-header title="Title" arrow></p-card-header>
+            <p-card-body>I can be clicked</p-card-body>
+        </p-card-container>
+    </div>
+</Canvas>
+
+## Change background
+
+<Canvas>
+    <div class="flex w-1/2">
+        <p-card-container class="bg-storm-light">
+            <p-card-body class="text-white font-bold h-24 flex items-center justify-center">
+                I am a special card with just a body and a different background
+            </p-card-body>
+        </p-card-container>
+    </div>
+</Canvas>
+
+## Payrun periods
+
+<Canvas>
+    <div class="flex w-1/2 gap-4">
+        <p-card-container
+            class="bg-mystic-dark text-storm-light hover:text-negative"
+            hoverable
+        >
+            <p-card-header
+                title="Januari"
+                class="text-storm-vague"
+            ></p-card-header>
+            <p-card-body
+                inherit-text
+                class="flex items-center justify-center h-24"
+            >
+                <p-button
+                    variant="text"
+                    inherit-text
+                    class="text-base"
+                    icon="arrow"
+                >
+                    Totaal toevoegen
+                </p-button>
+            </p-card-body>
+        </p-card-container>
+    </div>
+</Canvas>

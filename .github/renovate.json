@@ -5,6 +5,5 @@
         "helpers:pinGitHubActionDigests",
         "group:allNonMajor"
     ],
-    "labels": ["Meta: Dependencies"],
-    "schedule": ["before 12pm on Sunday"]
+    "labels": ["Meta: Dependencies"]
 }

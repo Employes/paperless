@@ -40,7 +40,7 @@ jobs:
             - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
             - name: Setup node
-              uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # tag=v2
+              uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
               with:
                   always-auth: true
                   node-version: 14
@@ -112,7 +112,7 @@ jobs:
                   fetch-depth: 0
 
             - name: Setup node
-              uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # tag=v2
+              uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
               with:
                   always-auth: true
                   node-version: 14

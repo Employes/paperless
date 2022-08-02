@@ -23,6 +23,7 @@ export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconEleme
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
 export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
+export const PModal = /*@__PURE__*/createReactComponent<JSX.PModal, HTMLPModalElement>('p-modal');
 export const PModalBackdrop = /*@__PURE__*/createReactComponent<JSX.PModalBackdrop, HTMLPModalBackdropElement>('p-modal-backdrop');
 export const PModalBody = /*@__PURE__*/createReactComponent<JSX.PModalBody, HTMLPModalBodyElement>('p-modal-body');
 export const PModalContainer = /*@__PURE__*/createReactComponent<JSX.PModalContainer, HTMLPModalContainerElement>('p-modal-container');

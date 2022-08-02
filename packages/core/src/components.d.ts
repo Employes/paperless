@@ -202,6 +202,24 @@ export namespace Components {
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PModal {
+        /**
+          * Wether to show the modal or not
+         */
+        "show": boolean;
+        /**
+          * The size of the modal container
+         */
+        "size": 'sm' | 'md' | 'lg' | 'xl';
+        /**
+          * The title of the modal
+         */
+        "title": string;
+        /**
+          * The variant of the modal body
+         */
+        "variant": 'default' | 'table';
+    }
     interface PModalBackdrop {
     }
     interface PModalBody {
@@ -426,6 +444,12 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPModalElement extends Components.PModal, HTMLStencilElement {
+    }
+    var HTMLPModalElement: {
+        prototype: HTMLPModalElement;
+        new (): HTMLPModalElement;
+    };
     interface HTMLPModalBackdropElement extends Components.PModalBackdrop, HTMLStencilElement {
     }
     var HTMLPModalBackdropElement: {
@@ -514,6 +538,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
+        "p-modal": HTMLPModalElement;
         "p-modal-backdrop": HTMLPModalBackdropElement;
         "p-modal-body": HTMLPModalBodyElement;
         "p-modal-container": HTMLPModalContainerElement;
@@ -727,6 +752,24 @@ declare namespace LocalJSX {
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PModal {
+        /**
+          * Wether to show the modal or not
+         */
+        "show"?: boolean;
+        /**
+          * The size of the modal container
+         */
+        "size"?: 'sm' | 'md' | 'lg' | 'xl';
+        /**
+          * The title of the modal
+         */
+        "title"?: string;
+        /**
+          * The variant of the modal body
+         */
+        "variant"?: 'default' | 'table';
+    }
     interface PModalBackdrop {
     }
     interface PModalBody {
@@ -864,6 +907,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
+        "p-modal": PModal;
         "p-modal-backdrop": PModalBackdrop;
         "p-modal-body": PModalBody;
         "p-modal-container": PModalContainer;
@@ -897,6 +941,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
+            "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
             "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;
             "p-modal-body": LocalJSX.PModalBody & JSXBase.HTMLAttributes<HTMLPModalBodyElement>;
             "p-modal-container": LocalJSX.PModalContainer & JSXBase.HTMLAttributes<HTMLPModalContainerElement>;

@@ -5,5 +5,11 @@
         "helpers:pinGitHubActionDigests",
         "group:allNonMajor"
     ],
-    "labels": ["Meta: Dependencies"]
+    "labels": ["Meta: Dependencies"],
+    "packageRules": [
+        {
+            "matchPackageNames": ["typescript"],
+            "allowedVersions": "4.7.0"
+        }
+    ]
 }

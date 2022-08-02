@@ -420,12 +420,18 @@ declare global {
     };
     interface HTMLPModalBackdropElement extends Components.PModalBackdrop, HTMLStencilElement {
     }
+    var HTMLPModalBackdropElement: {
+        prototype: HTMLPModalBackdropElement;
+        new (): HTMLPModalBackdropElement;
+    };
     interface HTMLPModalContainerElement extends Components.PModalContainer, HTMLStencilElement {
     }
     var HTMLPModalContainerElement: {
         prototype: HTMLPModalContainerElement;
         new (): HTMLPModalContainerElement;
     };
+    interface HTMLPModalHeaderElement extends Components.PModalHeader, HTMLStencilElement {
+    }
     var HTMLPModalHeaderElement: {
         prototype: HTMLPModalHeaderElement;
         new (): HTMLPModalHeaderElement;

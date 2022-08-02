@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.47 (2022-08-02)
+
+
+### Bug Fixes
+
+* **deps:** update angular monorepo to v14 ([#28](https://github.com/ionic-team/stencil-component-starter/issues/28)) ([d97a257](https://github.com/ionic-team/stencil-component-starter/commit/d97a257c98df220084f657a27301d2fa5a652fa4))
+
+
+
+
+
 # 0.1.0-alpha.46 (2022-08-02)
 
 **Note:** Version bump only for package @paperless/core

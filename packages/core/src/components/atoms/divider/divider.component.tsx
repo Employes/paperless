@@ -7,8 +7,6 @@ import { Component, h, Host } from '@stencil/core';
 })
 export class Divider {
     render() {
-        return (
-            <Host class="p-divider h-px bg-mystic-medium my-2 w-full"></Host>
-        );
+        return <Host class="p-divider"></Host>;
     }
 }

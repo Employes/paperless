@@ -46,7 +46,7 @@ jobs:
                   node-version: 14
                   registry-url: 'https://registry.npmjs.org'
 
-            - uses: c-hive/gha-yarn-cache@1188bbd5a9af66e263de707cf9e97b7b7c942969 # tag=v1
+            - uses: c-hive/gha-yarn-cache@d528cd63c28aed0a9f44b1cada95050d7aa95c2e # tag=v2
 
             - uses: oleksiyrudenko/gha-git-credentials@1b0fce528e893ad7a9903c84e0055890d75e29e3 # tag=v2-latest
               with:

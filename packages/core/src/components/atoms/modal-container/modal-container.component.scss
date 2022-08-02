@@ -1,0 +1,6 @@
+p-modal-container {
+    @apply flex flex-col;
+    @apply bg-white rounded-xxlarge;
+    @apply overflow-hidden;
+    @apply shadow-4 #{!important};
+}

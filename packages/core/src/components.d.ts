@@ -204,6 +204,12 @@ export namespace Components {
     }
     interface PModalBackdrop {
     }
+    interface PModalContainer {
+        /**
+          * The size of the modal container
+         */
+        "size": 'sm' | 'md' | 'lg' | 'xl';
+    }
     interface PModalHeader {
     }
     interface PNavigationItem {
@@ -414,6 +420,12 @@ declare global {
     };
     interface HTMLPModalBackdropElement extends Components.PModalBackdrop, HTMLStencilElement {
     }
+    interface HTMLPModalContainerElement extends Components.PModalContainer, HTMLStencilElement {
+    }
+    var HTMLPModalContainerElement: {
+        prototype: HTMLPModalContainerElement;
+        new (): HTMLPModalContainerElement;
+    };
     var HTMLPModalHeaderElement: {
         prototype: HTMLPModalHeaderElement;
         new (): HTMLPModalHeaderElement;
@@ -477,6 +489,7 @@ declare global {
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal-backdrop": HTMLPModalBackdropElement;
+        "p-modal-container": HTMLPModalContainerElement;
         "p-modal-header": HTMLPModalHeaderElement;
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
@@ -688,6 +701,12 @@ declare namespace LocalJSX {
     }
     interface PModalBackdrop {
     }
+    interface PModalContainer {
+        /**
+          * The size of the modal container
+         */
+        "size"?: 'sm' | 'md' | 'lg' | 'xl';
+    }
     interface PModalHeader {
     }
     interface PNavigationItem {
@@ -810,6 +829,7 @@ declare namespace LocalJSX {
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
         "p-modal-backdrop": PModalBackdrop;
+        "p-modal-container": PModalContainer;
         "p-modal-header": PModalHeader;
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
@@ -840,6 +860,7 @@ declare module "@stencil/core" {
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;
+            "p-modal-container": LocalJSX.PModalContainer & JSXBase.HTMLAttributes<HTMLPModalContainerElement>;
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;

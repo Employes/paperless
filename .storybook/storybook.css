@@ -1,0 +1,15 @@
+.sbdocs .boson-collection {
+    @apply flex flex-row w-full justify-start;
+}
+
+.sbdocs .boson-collection .boson {
+    @apply w-1/5;
+}
+
+.sbdocs .boson-collection .boson > span {
+    @apply p-0 text-storm-vague text-xs font-semibold uppercase;
+}
+
+.sbdocs .boson-collection .boson > div {
+    @apply w-16 h-16 rounded-large bg-storm-light;
+}

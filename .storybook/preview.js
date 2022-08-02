@@ -6,7 +6,9 @@ import './custom.css';
 import { defineCustomElements } from '../packages/core/loader';
 defineCustomElements();
 
+import 'tailwindcss/tailwind.css';
 import '../packages/core/dist/paperless/paperless.css';
+import './storybook.css';
 
 export const parameters = {
     options: {

@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
+import { RotateOptions, TextSizeOptions } from "./utils/types";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
@@ -61,7 +62,7 @@ export namespace Components {
         /**
           * Icon rotate
          */
-        "iconRotate": number;
+        "iconRotate": RotateOptions;
         /**
           * Wether the button should inherit text styles
          */
@@ -145,11 +146,11 @@ export namespace Components {
         /**
           * Wether to rotate the icon x degrees
          */
-        "rotate": number;
+        "rotate": RotateOptions;
         /**
           * The size of the icon, using tailwind sizes
          */
-        "size": string;
+        "size": TextSizeOptions;
         /**
           * The icon the be displayed
          */
@@ -261,7 +262,7 @@ export namespace Components {
         /**
           * Icon rotate
          */
-        "iconRotate": number;
+        "iconRotate": RotateOptions;
     }
     interface PStatus {
         /**
@@ -275,7 +276,7 @@ export namespace Components {
         /**
           * Icon rotate
          */
-        "iconRotate": number;
+        "iconRotate": RotateOptions;
         /**
           * The variant of the status
          */
@@ -525,7 +526,7 @@ declare namespace LocalJSX {
         /**
           * Icon rotate
          */
-        "iconRotate"?: number;
+        "iconRotate"?: RotateOptions;
         /**
           * Wether the button should inherit text styles
          */
@@ -617,11 +618,11 @@ declare namespace LocalJSX {
         /**
           * Wether to rotate the icon x degrees
          */
-        "rotate"?: number;
+        "rotate"?: RotateOptions;
         /**
           * The size of the icon, using tailwind sizes
          */
-        "size"?: string;
+        "size"?: TextSizeOptions;
         /**
           * The icon the be displayed
          */
@@ -734,7 +735,7 @@ declare namespace LocalJSX {
         /**
           * Icon rotate
          */
-        "iconRotate"?: number;
+        "iconRotate"?: RotateOptions;
     }
     interface PStatus {
         /**
@@ -748,7 +749,7 @@ declare namespace LocalJSX {
         /**
           * Icon rotate
          */
-        "iconRotate"?: number;
+        "iconRotate"?: RotateOptions;
         /**
           * The variant of the status
          */

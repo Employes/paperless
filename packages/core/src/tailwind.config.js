@@ -7,20 +7,19 @@ const rotate = require('./tailwind/rotate');
 const typeograhpy = require('./tailwind/typography');
 
 module.exports = {
-  important: true,
-  theme: {
-    colors,
-    boxShadow: shadows,
-    dropShadow: shadows,
-    borderRadius,
-    extend: {
-      ...grid,
-      scale,
-      rotate,
-      fontSize: typeograhpy.fontSize,
-      lineHeight: typeograhpy.lineHeight
+    important: true,
+    theme: {
+        colors,
+        boxShadow: shadows,
+        dropShadow: shadows,
+        borderRadius,
+        extend: {
+            ...grid,
+            scale,
+            rotate,
+            fontSize: typeograhpy.fontSize,
+            lineHeight: typeograhpy.lineHeight,
+        },
     },
-  },
-  variants: {},
-  plugins: [require('@tailwindcss/aspect-ratio')],
+    plugins: [require('@tailwindcss/aspect-ratio')],
 };

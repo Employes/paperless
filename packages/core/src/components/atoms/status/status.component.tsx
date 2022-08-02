@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
+import { RotateOptions } from '../../../utils/types';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 
 @Component({
@@ -25,7 +26,7 @@ export class Status {
     /**
      * Icon rotate
      */
-    @Prop() iconRotate: number;
+    @Prop() iconRotate: RotateOptions;
 
     render() {
         return (

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.45 (2022-08-02)
+
+
+### Features
+
+* Add renovate.json ([008bd9a](https://github.com/employes/paperless/commit/008bd9a723724fb278f4872e32a67ba344ba5b1a))
+
+
+
+
+
 # 0.1.0-alpha.44 (2022-08-02)
 
 **Note:** Version bump only for package paperless

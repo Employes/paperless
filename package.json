@@ -9,7 +9,7 @@
         "packages/*"
     ],
     "resolutions": {
-        "@types/react": "17.0.48",
+        "@types/react": "18.0.15",
         "@types/react-dom": "17.0.17"
     },
     "publishConfig": {
@@ -77,7 +77,7 @@
         "@storybook/manager-webpack4": "6.5.9",
         "@storybook/testing-library": "0.0.13",
         "@types/jest": "27.5.2",
-        "@types/react": "17.0.48",
+        "@types/react": "18.0.15",
         "@types/react-dom": "17.0.17",
         "autoprefixer": "10.4.8",
         "babel-loader": "8.2.5",

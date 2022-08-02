@@ -35,18 +35,18 @@ jobs:
         runs-on: ubuntu-latest
         if: ${{ !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish') }}
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
 
             - name: Setup node
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # tag=v2
               with:
                   always-auth: true
                   node-version: 14
                   registry-url: 'https://registry.npmjs.org'
 
-            - uses: c-hive/gha-yarn-cache@v1
+            - uses: c-hive/gha-yarn-cache@1188bbd5a9af66e263de707cf9e97b7b7c942969 # tag=v1
 
-            - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+            - uses: oleksiyrudenko/gha-git-credentials@1b0fce528e893ad7a9903c84e0055890d75e29e3 # tag=v2-latest
               with:
                   name: 'Github Actions'
                   email: 'actions@github.com'
@@ -87,7 +87,7 @@ jobs:
                   tags: true
 
             - name: Upload artifacts
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # tag=v2
               with:
                   name: build-artifact
                   path: |
@@ -114,12 +114,12 @@ jobs:
         runs-on: ubuntu-latest
         # Job steps
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
               with:
                   fetch-depth: 0
 
             - name: Download a single artifact
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # tag=v3
               with:
                   name: build-artifact
 

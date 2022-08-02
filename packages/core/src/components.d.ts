@@ -202,6 +202,8 @@ export namespace Components {
          */
         "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PModalBackdrop {
+    }
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
@@ -408,6 +410,8 @@ declare global {
         prototype: HTMLPLoaderElement;
         new (): HTMLPLoaderElement;
     };
+    interface HTMLPModalBackdropElement extends Components.PModalBackdrop, HTMLStencilElement {
+    }
     interface HTMLPNavigationItemElement extends Components.PNavigationItem, HTMLStencilElement {
     }
     var HTMLPNavigationItemElement: {
@@ -466,6 +470,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
+        "p-modal-backdrop": HTMLPModalBackdropElement;
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
@@ -674,6 +679,8 @@ declare namespace LocalJSX {
          */
         "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
     }
+    interface PModalBackdrop {
+    }
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
@@ -793,6 +800,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
+        "p-modal-backdrop": PModalBackdrop;
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
@@ -821,6 +829,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
+            "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;

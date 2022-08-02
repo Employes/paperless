@@ -1,0 +1,9 @@
+:host {
+    @apply fixed top-0 left-0 z-modal;
+    @apply h-screen w-screen p-16;
+    @apply backdrop-blur-xs bg-storm/50;
+
+    @apply flex justify-center items-center;
+
+    @apply animate-fade-in;
+}

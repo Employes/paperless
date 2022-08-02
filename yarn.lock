@@ -19551,14 +19551,13 @@ serverless-cloudfront-invalidate@1.12.2:
     proxy-agent "^5.0.0"
     randomstring "^1.1.5"
 
-serverless-s3-sync@1.17.3:
-  version "1.17.3"
-  resolved "https://registry.yarnpkg.com/serverless-s3-sync/-/serverless-s3-sync-1.17.3.tgz#cf7913dde5f38c215c21dbf7466370974003cf7a"
-  integrity sha512-lnet9qqu8Uh3N8lyywxWt+0eljsfiX4xVDDMLkE2ggWBGEupM4B4xBonsI1GfWgPVpd4EJOTeyFOEWUAWpINeA==
+serverless-s3-sync@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/serverless-s3-sync/-/serverless-s3-sync-3.0.0.tgz#e837dcdb04f97bff1390e4a88e6c86d57e3f0c6a"
+  integrity sha512-KT5H6urQmx5jXtfJOd0rXfHWYt/HxVTwN+n6qYBARUwDUlUIuM31FT/QOmQL4grr5+jq/e2Vi2DiH3BDBpJT3g==
   dependencies:
     "@auth0/s3" "^1.0.0"
     bluebird "^3.5.4"
-    chalk "^2.4.2"
     mime "^2.4.4"
     minimatch "^3.0.4"
 

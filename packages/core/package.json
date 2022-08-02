@@ -57,7 +57,7 @@
         "stencil-inline-svg": "1.1.0",
         "stencil-tailwind-plugin": "1.4.1",
         "tailwindcss": "3.1.7",
-        "workbox-build": "4.3.1"
+        "workbox-build": "6.5.4"
     },
     "license": "MIT"
 }

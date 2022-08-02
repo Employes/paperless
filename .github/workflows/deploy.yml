@@ -31,9 +31,11 @@ jobs:
     # - name: Lint
     #   run: yarn lerna:lint
 
-    release:
+    build:
         runs-on: ubuntu-latest
-        if: ${{ !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish') }}
+        if: |
+            !contains(github.event.head_commit.message, 'no-build') &&
+            !contains(github.event.head_commit.message, 'Lerna publish')
         steps:
             - uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
 
@@ -61,30 +63,7 @@ jobs:
               run: yarn
 
             - name: Build
-              if: ${{ !contains(github.event.head_commit.message , 'docs(') }}
               run: yarn lerna:build:prod
-
-            - name: Build Core
-              if: ${{ contains(github.event.head_commit.message, 'docs(') }}
-              run: yarn build:core:prod
-
-            - name: Release
-              if: |
-                  github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message , 'docs(')
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: yarn lerna:publish
-
-            - name: Push changes
-              if: |
-                  github.ref == 'refs/heads/main'
-              uses: ad-m/github-push-action@master
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: ${{ github.ref }}
-                  tags: true
 
             - name: Upload artifacts
               uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # tag=v2
@@ -107,10 +86,63 @@ jobs:
                       packages/angular/dist
                       packages/react/dist
 
-    deploy-storybook:
-        needs: [release]
+    release:
+        needs: [build]
+        runs-on: ubuntu-latest
         if: |
-            github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+            github.ref == 'refs/heads/main' && 
+            !contains(github.event.head_commit.message, 'no-release') &&
+            !contains(github.event.head_commit.message, 'Lerna publish') &&
+            !contains(github.event.head_commit.message , 'docs:') &&
+            !contains(github.event.head_commit.message , 'docs(')
+        steps:
+            - uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
+              with:
+                  fetch-depth: 0
+
+            - name: Setup node
+              uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561 # tag=v2
+              with:
+                  always-auth: true
+                  node-version: 14
+                  registry-url: 'https://registry.npmjs.org'
+
+            - uses: c-hive/gha-yarn-cache@1188bbd5a9af66e263de707cf9e97b7b7c942969 # tag=v1
+
+            - uses: oleksiyrudenko/gha-git-credentials@1b0fce528e893ad7a9903c84e0055890d75e29e3 # tag=v2-latest
+              with:
+                  name: 'Github Actions'
+                  email: 'actions@github.com'
+                  token: '${{ secrets.GITHUB_TOKEN }}'
+
+            - name: Download a single artifact
+              uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # tag=v3
+              with:
+                  name: build-artifact
+
+            - name: Release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: yarn lerna:publish
+
+            - name: Push changes
+              if: |
+                  github.ref == 'refs/heads/main'
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}
+                  tags: true
+
+    deploy-storybook:
+        needs: [build]
+        if: |
+            github.ref == 'refs/heads/main' &&
+            !contains(github.event.head_commit.message, 'no-build') &&
+            !contains(github.event.head_commit.message, 'no-release') &&
+            !contains(github.event.head_commit.message, 'Lerna publish')
         runs-on: ubuntu-latest
         # Job steps
         steps:

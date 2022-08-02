@@ -1,0 +1,7 @@
+:host {
+    @apply bg-mystic;
+    @apply block px-8 py-6;
+    @apply text-storm-dark text-3xl font-bold;
+
+    @apply border-b border-b-mystic-medium #{!important};
+}

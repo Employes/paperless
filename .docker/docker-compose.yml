@@ -2,7 +2,7 @@ version: '2'
 
 services:
     storybook:
-        image: node:16.10
+        image: node:16.16
         command: yarn docker:storybook
         tty: true
         working_dir: /opt/app

@@ -25,6 +25,7 @@ export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTML
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
 export const PModalBackdrop = /*@__PURE__*/createReactComponent<JSX.PModalBackdrop, HTMLPModalBackdropElement>('p-modal-backdrop');
 export const PModalContainer = /*@__PURE__*/createReactComponent<JSX.PModalContainer, HTMLPModalContainerElement>('p-modal-container');
+export const PModalFooter = /*@__PURE__*/createReactComponent<JSX.PModalFooter, HTMLPModalFooterElement>('p-modal-footer');
 export const PModalHeader = /*@__PURE__*/createReactComponent<JSX.PModalHeader, HTMLPModalHeaderElement>('p-modal-header');
 export const PNavigationItem = /*@__PURE__*/createReactComponent<JSX.PNavigationItem, HTMLPNavigationItemElement>('p-navigation-item');
 export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HTMLPPaginationElement>('p-pagination');

@@ -1,10 +1,6 @@
-# Divider
+# p-modal-footer
 
-## Usage:
 
-```html
-<p-divider />
-```
 
 <!-- Auto Generated Below -->
 
@@ -13,13 +9,18 @@
 
 ### Used by
 
- - [p-modal-footer](../modal-footer)
+ - [p-modal](../../molecules/modal)
+
+### Depends on
+
+- [p-divider](../divider)
 
 ### Graph
 ```mermaid
 graph TD;
   p-modal-footer --> p-divider
-  style p-divider fill:#f9f,stroke:#333,stroke-width:4px
+  p-modal --> p-modal-footer
+  style p-modal-footer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

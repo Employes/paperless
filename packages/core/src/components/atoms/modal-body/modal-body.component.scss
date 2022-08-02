@@ -1,0 +1,7 @@
+:host {
+    @apply px-14 py-6;
+}
+
+:host(.variant-table) {
+    @apply px-6;
+}

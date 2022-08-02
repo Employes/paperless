@@ -204,6 +204,12 @@ export namespace Components {
     }
     interface PModalBackdrop {
     }
+    interface PModalBody {
+        /**
+          * The variant of the modal body
+         */
+        "variant": 'default' | 'table';
+    }
     interface PModalContainer {
         /**
           * The size of the modal container
@@ -426,6 +432,12 @@ declare global {
         prototype: HTMLPModalBackdropElement;
         new (): HTMLPModalBackdropElement;
     };
+    interface HTMLPModalBodyElement extends Components.PModalBody, HTMLStencilElement {
+    }
+    var HTMLPModalBodyElement: {
+        prototype: HTMLPModalBodyElement;
+        new (): HTMLPModalBodyElement;
+    };
     interface HTMLPModalContainerElement extends Components.PModalContainer, HTMLStencilElement {
     }
     var HTMLPModalContainerElement: {
@@ -503,6 +515,7 @@ declare global {
         "p-info-panel": HTMLPInfoPanelElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal-backdrop": HTMLPModalBackdropElement;
+        "p-modal-body": HTMLPModalBodyElement;
         "p-modal-container": HTMLPModalContainerElement;
         "p-modal-footer": HTMLPModalFooterElement;
         "p-modal-header": HTMLPModalHeaderElement;
@@ -716,6 +729,12 @@ declare namespace LocalJSX {
     }
     interface PModalBackdrop {
     }
+    interface PModalBody {
+        /**
+          * The variant of the modal body
+         */
+        "variant"?: 'default' | 'table';
+    }
     interface PModalContainer {
         /**
           * The size of the modal container
@@ -846,6 +865,7 @@ declare namespace LocalJSX {
         "p-info-panel": PInfoPanel;
         "p-loader": PLoader;
         "p-modal-backdrop": PModalBackdrop;
+        "p-modal-body": PModalBody;
         "p-modal-container": PModalContainer;
         "p-modal-footer": PModalFooter;
         "p-modal-header": PModalHeader;
@@ -878,6 +898,7 @@ declare module "@stencil/core" {
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;
+            "p-modal-body": LocalJSX.PModalBody & JSXBase.HTMLAttributes<HTMLPModalBodyElement>;
             "p-modal-container": LocalJSX.PModalContainer & JSXBase.HTMLAttributes<HTMLPModalContainerElement>;
             "p-modal-footer": LocalJSX.PModalFooter & JSXBase.HTMLAttributes<HTMLPModalFooterElement>;
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;

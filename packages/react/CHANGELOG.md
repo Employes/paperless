@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.43 (2022-08-02)
+
+
+### Features
+
+* **Molecules:** Add modal component ([8ba26b6](https://github.com/ionic-team/ionic/commit/8ba26b6e6329baae899af86445f16b3fa6e406e5))
+
+
+
+
+
 # 0.1.0-alpha.42 (2022-08-02)
 
 **Note:** Version bump only for package @paperless/react

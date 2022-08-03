@@ -12,6 +12,7 @@ services:
             - ../:/opt/app
         environment:
             - 'NODE_AUTH_TOKEN=$NPM_AUTH_TOKEN'
+            - NODE_OPTIONS=--openssl-legacy-provider
         ports:
             - '$EXPOSED_STORYBOOK_PORT:5200'
     # core:

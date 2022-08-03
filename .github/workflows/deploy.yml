@@ -43,7 +43,7 @@ jobs:
               uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
               with:
                   always-auth: true
-                  node-version: 14
+                  node-version: 18
                   registry-url: 'https://registry.npmjs.org'
 
             - uses: c-hive/gha-yarn-cache@d528cd63c28aed0a9f44b1cada95050d7aa95c2e # tag=v2
@@ -115,7 +115,7 @@ jobs:
               uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3
               with:
                   always-auth: true
-                  node-version: 14
+                  node-version: 18
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Download a single artifact

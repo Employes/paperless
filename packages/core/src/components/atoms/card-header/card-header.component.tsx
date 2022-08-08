@@ -6,9 +6,9 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class CardHeader {
     /**
-     * Title of the card header
+     * Content of the card header
      */
-    @Prop() title: string;
+    @Prop() header: string;
 
     /**
      * Enable the title arrow
@@ -18,9 +18,9 @@ export class CardHeader {
     render() {
         return (
             <Host class="p-card-header">
-                {(this.title?.length || this.arrow) && (
+                {(this.header?.length || this.arrow) && (
                     <div class="title">
-                        {this.title ?? ''}
+                        {this.header ?? ''}
                         {this.arrow && <p-icon variant="arrow" />}
                     </div>
                 )}

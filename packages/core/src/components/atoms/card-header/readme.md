@@ -13,10 +13,10 @@
 
 ## Properties
 
-| Property | Attribute | Description              | Type      | Default     |
-| -------- | --------- | ------------------------ | --------- | ----------- |
-| `arrow`  | `arrow`   | Enable the title arrow   | `boolean` | `false`     |
-| `title`  | `title`   | Title of the card header | `string`  | `undefined` |
+| Property | Attribute | Description                | Type      | Default     |
+| -------- | --------- | -------------------------- | --------- | ----------- |
+| `arrow`  | `arrow`   | Enable the title arrow     | `boolean` | `false`     |
+| `header` | `header`  | Content of the card header | `string`  | `undefined` |
 
 
 ## Dependencies

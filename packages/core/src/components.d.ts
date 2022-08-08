@@ -102,9 +102,9 @@ export namespace Components {
          */
         "arrow": boolean;
         /**
-          * Title of the card header
+          * Content of the card header
          */
-        "title": string;
+        "header": string;
     }
     interface PCounter {
     }
@@ -648,9 +648,9 @@ declare namespace LocalJSX {
          */
         "arrow"?: boolean;
         /**
-          * Title of the card header
+          * Content of the card header
          */
-        "title"?: string;
+        "header"?: string;
     }
     interface PCounter {
     }

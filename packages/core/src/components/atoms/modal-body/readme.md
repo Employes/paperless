@@ -16,7 +16,7 @@
 
 ### Used by
 
- - [p-modal](../../molecules/modal)
+ - [p-modal](../../organisms/modal)
 
 ### Graph
 ```mermaid

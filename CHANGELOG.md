@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.49 (2022-08-08)
+
+
+### Features
+
+* **Molecules:** Add stepper component ([ed27680](https://github.com/employes/paperless/commit/ed27680bd9a33045bb4aee187d3a28964aec4280))
+
+
+
+
+
 # 0.1.0-alpha.48 (2022-08-08)
 
 

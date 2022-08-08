@@ -318,6 +318,16 @@ export namespace Components {
          */
         "variant": 'default' | 'positive' | 'unbiased' | 'negative';
     }
+    interface PStepper {
+        /**
+          * The currently active step
+         */
+        "activeStep": number;
+        /**
+          * The direction of the stepper
+         */
+        "direction": 'horizontal' | 'vertical';
+    }
     interface PStepperLine {
         /**
           * Wether the line is active
@@ -544,6 +554,18 @@ declare global {
         prototype: HTMLPStatusElement;
         new (): HTMLPStatusElement;
     };
+    interface HTMLPStepperElement extends Components.PStepper, HTMLStencilElement {
+    }
+    var HTMLPStepperElement: {
+        prototype: HTMLPStepperElement;
+        new (): HTMLPStepperElement;
+    };
+    interface HTMLPStepperLineElement extends Components.PStepperLine, HTMLStencilElement {
+    }
+    var HTMLPStepperLineElement: {
+        prototype: HTMLPStepperLineElement;
+        new (): HTMLPStepperLineElement;
+    };
     interface HTMLPStepperStepElement extends Components.PStepperStep, HTMLStencilElement {
     }
     var HTMLPStepperStepElement: {
@@ -584,6 +606,8 @@ declare global {
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-status": HTMLPStatusElement;
+        "p-stepper": HTMLPStepperElement;
+        "p-stepper-line": HTMLPStepperLineElement;
         "p-stepper-step": HTMLPStepperStepElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -904,6 +928,26 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'positive' | 'unbiased' | 'negative';
     }
+    interface PStepper {
+        /**
+          * The currently active step
+         */
+        "activeStep"?: number;
+        /**
+          * The direction of the stepper
+         */
+        "direction"?: 'horizontal' | 'vertical';
+    }
+    interface PStepperLine {
+        /**
+          * Wether the line is active
+         */
+        "active"?: boolean;
+        /**
+          * The direction of the stepper line
+         */
+        "direction"?: 'horizontal' | 'vertical';
+    }
     interface PStepperStep {
         /**
           * Wether the step is active
@@ -972,6 +1016,8 @@ declare namespace LocalJSX {
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-status": PStatus;
+        "p-stepper": PStepper;
+        "p-stepper-line": PStepperLine;
         "p-stepper-step": PStepperStep;
         "p-tooltip": PTooltip;
     }
@@ -1007,6 +1053,8 @@ declare module "@stencil/core" {
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
+            "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
+            "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-stepper-step": LocalJSX.PStepperStep & JSXBase.HTMLAttributes<HTMLPStepperStepElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

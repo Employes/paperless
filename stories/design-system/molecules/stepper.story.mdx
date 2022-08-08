@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import StepperDocs from '../../../packages/core/src/components/molecules/stepper/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Stepper`} />
+
+<StepperDocs />
+
+# Examples
+
+## Directions
+
+## Horizontal
+
+<Canvas>
+    <p-stepper active-step={2}>
+        <p-stepper-step>Step 1</p-stepper-step>
+        <p-stepper-step>Step 2</p-stepper-step>
+        <p-stepper-step>Step 3</p-stepper-step>
+    </p-stepper>
+</Canvas>
+
+## Vertical
+
+<Canvas>
+    <div class="h-48">
+        <p-stepper active-step={2} direction="vertical">
+            <p-stepper-step>Step 1</p-stepper-step>
+            <p-stepper-step>Step 2</p-stepper-step>
+            <p-stepper-step>Step 3</p-stepper-step>
+        </p-stepper>
+    </div>
+</Canvas>

@@ -318,6 +318,24 @@ export namespace Components {
          */
         "variant": 'default' | 'positive' | 'unbiased' | 'negative';
     }
+    interface PStepperStep {
+        /**
+          * Wether the step is active
+         */
+        "active": boolean;
+        /**
+          * The alignment of the step content
+         */
+        "align": 'start' | 'center' | 'end';
+        /**
+          * The direction of the stepper step
+         */
+        "direction": 'horizontal' | 'vertical';
+        /**
+          * Wether the step is finished
+         */
+        "finished": boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -516,6 +534,12 @@ declare global {
         prototype: HTMLPStatusElement;
         new (): HTMLPStatusElement;
     };
+    interface HTMLPStepperStepElement extends Components.PStepperStep, HTMLStencilElement {
+    }
+    var HTMLPStepperStepElement: {
+        prototype: HTMLPStepperStepElement;
+        new (): HTMLPStepperStepElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -550,6 +574,7 @@ declare global {
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-status": HTMLPStatusElement;
+        "p-stepper-step": HTMLPStepperStepElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -869,6 +894,24 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'positive' | 'unbiased' | 'negative';
     }
+    interface PStepperStep {
+        /**
+          * Wether the step is active
+         */
+        "active"?: boolean;
+        /**
+          * The alignment of the step content
+         */
+        "align"?: 'start' | 'center' | 'end';
+        /**
+          * The direction of the stepper step
+         */
+        "direction"?: 'horizontal' | 'vertical';
+        /**
+          * Wether the step is finished
+         */
+        "finished"?: boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -919,6 +962,7 @@ declare namespace LocalJSX {
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-status": PStatus;
+        "p-stepper-step": PStepperStep;
         "p-tooltip": PTooltip;
     }
 }
@@ -953,6 +997,7 @@ declare module "@stencil/core" {
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
+            "p-stepper-step": LocalJSX.PStepperStep & JSXBase.HTMLAttributes<HTMLPStepperStepElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

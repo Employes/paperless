@@ -1,0 +1,74 @@
+:host {
+    @apply flex items-center justify-center relative;
+
+    .content {
+        @apply whitespace-nowrap;
+        @apply text-sm font-semibold text-storm-light;
+    }
+
+    .circle {
+        @apply transition duration-500 ease-in-out;
+        @apply flex items-center justify-center;
+        @apply rounded-round h-4 w-4;
+        @apply bg-mystic-dark text-white;
+
+        p-icon {
+            @apply flex #{!important};
+            font-size: 0.625rem;
+        }
+    }
+}
+
+:host(.direction-horizontal) {
+    @apply h-12 pt-5;
+
+    .content {
+        @apply absolute top-0;
+        @apply order-1;
+    }
+
+    .circle {
+        @apply order-2;
+    }
+}
+
+:host(.direction-vertical) {
+    @apply h-4;
+
+    .content {
+        @apply ml-4 order-2;
+    }
+
+    .circle {
+        @apply order-1;
+    }
+}
+
+:host(.active),
+:host(.finished) {
+    .content {
+        @apply text-indigo;
+    }
+
+    .circle {
+        @apply bg-indigo;
+    }
+}
+
+:host(.direction-horizontal.align-start) {
+    .content {
+        @apply left-0;
+    }
+}
+
+:host(.direction-horizontal.align-end) {
+    .content {
+        @apply right-0;
+    }
+}
+
+:host(.direction-horizontal.align-center) {
+    .content {
+        @apply left-1/2 text-center transform -translate-x-1/2;
+    }
+}

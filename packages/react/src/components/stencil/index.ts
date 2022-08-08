@@ -35,5 +35,6 @@ export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPagination
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');
 export const PStatus = /*@__PURE__*/createReactComponent<JSX.PStatus, HTMLPStatusElement>('p-status');
+export const PStepperLine = /*@__PURE__*/createReactComponent<JSX.PStepperLine, HTMLPStepperLineElement>('p-stepper-line');
 export const PStepperStep = /*@__PURE__*/createReactComponent<JSX.PStepperStep, HTMLPStepperStepElement>('p-stepper-step');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

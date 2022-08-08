@@ -318,6 +318,16 @@ export namespace Components {
          */
         "variant": 'default' | 'positive' | 'unbiased' | 'negative';
     }
+    interface PStepperLine {
+        /**
+          * Wether the line is active
+         */
+        "active": boolean;
+        /**
+          * The direction of the stepper line
+         */
+        "direction": 'horizontal' | 'vertical';
+    }
     interface PStepperStep {
         /**
           * Wether the step is active

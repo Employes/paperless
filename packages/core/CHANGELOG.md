@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.48 (2022-08-08)
+
+
+### Features
+
+* **Molecules/Modal:** title -> header because title is reserved ([0b1852f](https://github.com/ionic-team/stencil-component-starter/commit/0b1852f0be34039d79e5ada865341d25dbced4cb))
+
+
+
+
+
 # 0.1.0-alpha.47 (2022-08-02)
 
 

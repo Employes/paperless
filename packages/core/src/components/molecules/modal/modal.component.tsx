@@ -16,9 +16,9 @@ export class Modal {
     @Prop() variant: 'default' | 'table' = 'default';
 
     /**
-     * The title of the modal
+     * The Header of the modal
      */
-    @Prop() title: string;
+    @Prop() header: string;
 
     /**
      * Wether to show the modal or not
@@ -41,7 +41,7 @@ export class Modal {
             return;
         }
 
-        const titleContent = <slot name="title" />;
+        const headerContent = <slot name="header" />;
         const bodyContent = <slot name="content" />;
         const footerContent = <slot name="footer" />;
 
@@ -50,7 +50,7 @@ export class Modal {
                 <p-modal-backdrop>
                     <p-modal-container size={this.size}>
                         <p-modal-header>
-                            {this.title ? this.title : titleContent}
+                            {this.header ? this.header : headerContent}
                         </p-modal-header>
                         <p-modal-body variant={this.variant}>
                             {bodyContent}

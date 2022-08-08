@@ -204,6 +204,10 @@ export namespace Components {
     }
     interface PModal {
         /**
+          * The Header of the modal
+         */
+        "header": string;
+        /**
           * Wether to show the modal or not
          */
         "show": boolean;
@@ -211,10 +215,6 @@ export namespace Components {
           * The size of the modal container
          */
         "size": 'sm' | 'md' | 'lg' | 'xl';
-        /**
-          * The title of the modal
-         */
-        "title": string;
         /**
           * The variant of the modal body
          */
@@ -754,6 +754,10 @@ declare namespace LocalJSX {
     }
     interface PModal {
         /**
+          * The Header of the modal
+         */
+        "header"?: string;
+        /**
           * Wether to show the modal or not
          */
         "show"?: boolean;
@@ -761,10 +765,6 @@ declare namespace LocalJSX {
           * The size of the modal container
          */
         "size"?: 'sm' | 'md' | 'lg' | 'xl';
-        /**
-          * The title of the modal
-         */
-        "title"?: string;
         /**
           * The variant of the modal body
          */

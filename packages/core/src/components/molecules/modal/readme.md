@@ -16,9 +16,9 @@
 
 | Property  | Attribute | Description                     | Type                           | Default     |
 | --------- | --------- | ------------------------------- | ------------------------------ | ----------- |
+| `header`  | `header`  | The Header of the modal         | `string`                       | `undefined` |
 | `show`    | `show`    | Wether to show the modal or not | `boolean`                      | `false`     |
 | `size`    | `size`    | The size of the modal container | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
-| `title`   | `title`   | The title of the modal          | `string`                       | `undefined` |
 | `variant` | `variant` | The variant of the modal body   | `"default" \| "table"`         | `'default'` |
 
 

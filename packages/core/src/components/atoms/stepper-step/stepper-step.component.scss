@@ -1,5 +1,5 @@
 :host {
-    @apply flex items-center justify-center relative;
+    @apply flex items-end justify-center relative;
 
     .content {
         @apply whitespace-nowrap;
@@ -19,8 +19,8 @@
     }
 }
 
-:host(.direction-horizontal) {
-    @apply h-12 pt-5;
+:host([direction='horizontal']) {
+    @apply h-10;
 
     .content {
         @apply absolute top-0;
@@ -32,7 +32,7 @@
     }
 }
 
-:host(.direction-vertical) {
+:host([direction='vertical']) {
     @apply h-4;
 
     .content {
@@ -44,8 +44,8 @@
     }
 }
 
-:host(.active),
-:host(.finished) {
+:host([active]),
+:host([finished]) {
     .content {
         @apply text-indigo;
     }
@@ -55,19 +55,19 @@
     }
 }
 
-:host(.direction-horizontal.align-start) {
+:host([direction='horizontal'][align='start']) {
     .content {
         @apply left-0;
     }
 }
 
-:host(.direction-horizontal.align-end) {
+:host([direction='horizontal'][align='end']) {
     .content {
         @apply right-0;
     }
 }
 
-:host(.direction-horizontal.align-center) {
+:host([direction='horizontal'][align='center']) {
     .content {
         @apply left-1/2 text-center transform -translate-x-1/2;
     }

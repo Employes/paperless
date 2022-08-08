@@ -10,6 +10,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute   | Description                       | Type                           | Default        |
@@ -19,20 +20,25 @@
 | `direction` | `direction` | The direction of the stepper step | `"horizontal" \| "vertical"`   | `'horizontal'` |
 | `finished`  | `finished`  | Wether the step is finished       | `boolean`                      | `false`        |
 
+
 ## Dependencies
+
+### Used by
+
+ - [p-stepper](../../molecules/stepper)
 
 ### Depends on
 
--   [p-icon](../icon)
+- [p-icon](../icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-stepper-step --> p-icon
+  p-stepper --> p-stepper-step
   style p-stepper-step fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

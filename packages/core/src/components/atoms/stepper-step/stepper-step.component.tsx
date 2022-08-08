@@ -9,30 +9,27 @@ export class StepperStep {
     /**
      * The alignment of the step content
      */
-    @Prop() align: 'start' | 'center' | 'end' = 'center';
+    @Prop({ reflect: true }) align: 'start' | 'center' | 'end' = 'center';
 
     /**
      * The direction of the stepper step
      */
-    @Prop() direction: 'horizontal' | 'vertical' = 'horizontal';
+    @Prop({ reflect: true }) direction: 'horizontal' | 'vertical' =
+        'horizontal';
 
     /**
      * Wether the step is finished
      */
-    @Prop() finished: boolean = false;
+    @Prop({ reflect: true }) finished: boolean = false;
 
     /**
      * Wether the step is active
      */
-    @Prop() active: boolean = false;
+    @Prop({ reflect: true }) active: boolean = false;
 
     render() {
         return (
-            <Host
-                class={`p-stepper-step align-${this.align} direction-${
-                    this.direction
-                } ${this.finished && 'finished'} ${this.active && 'active'}`}
-            >
+            <Host class="p-stepper-step">
                 <div class="content">
                     <slot />
                 </div>

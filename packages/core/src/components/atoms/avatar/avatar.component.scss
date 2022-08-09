@@ -1,36 +1,36 @@
-:host {
-  @apply inline-block;
+p-avatar {
+    @apply inline-block;
 
-  > img {
-    @apply object-cover object-center;
-  }
-}
+    > img {
+        @apply object-cover object-center;
+    }
 
-:host(.size-small) > img {
-  @apply w-10 h-10;
-}
+    &[size='small'] > img {
+        @apply w-10 h-10;
+    }
 
-:host(.size-medium) > img {
-  @apply w-20 h-20;
-}
+    &[size='medium'] > img {
+        @apply w-20 h-20;
+    }
 
-:host(.size-large) > img {
-  @apply w-28 h-28;
-}
+    &[size='large'] > img {
+        @apply w-28 h-28;
+    }
 
-:host(.variant-company) {
-  > img {
-    @apply rounded;
-  }
-}
+    &[variant='company'] {
+        > img {
+            @apply rounded;
+        }
 
-:host(.variant-company.size-medium),
-:host(.variant-company.size-large) {
-  @apply rounded-large;
-}
+        &[size='medium'],
+        &[size='large'] {
+            > img {
+                @apply rounded-large;
+            }
+        }
+    }
 
-:host(.variant-user) {
-  > img {
-    @apply rounded-round;
-  }
+    &[variant='user'] > img {
+        @apply rounded-round;
+    }
 }

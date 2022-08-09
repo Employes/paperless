@@ -3,18 +3,18 @@ import { Component, h, Host, Prop, State } from '@stencil/core';
 @Component({
     tag: 'p-avatar',
     styleUrl: 'avatar.component.scss',
-    shadow: true,
+    // shadow: true,
 })
 export class Avatar {
     /**
      * The variant of the avatar
      */
-    @Prop() variant: 'user' | 'company' = 'user';
+    @Prop({ reflect: true }) variant: 'user' | 'company' = 'user';
 
     /**
      * The size of the avatar
      */
-    @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
 
     /**
      * The default image to show on errors
@@ -30,7 +30,7 @@ export class Avatar {
 
     render() {
         return (
-            <Host class={`p-avatar size-${this.size} variant-${this.variant}`}>
+            <Host class="p-avatar">
                 <img src={this._src} onError={() => this._setDefaultLink()} />
             </Host>
         );

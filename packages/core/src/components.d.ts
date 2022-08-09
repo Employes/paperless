@@ -30,6 +30,12 @@ export namespace Components {
          */
         "variant": 'user' | 'company';
     }
+    interface PAvatarGroup {
+        /**
+          * The amount to show after the avatars
+         */
+        "extra": number;
+    }
     interface PButton {
         /**
           * Wether to show a chevron or not
@@ -398,6 +404,12 @@ declare global {
         prototype: HTMLPAvatarElement;
         new (): HTMLPAvatarElement;
     };
+    interface HTMLPAvatarGroupElement extends Components.PAvatarGroup, HTMLStencilElement {
+    }
+    var HTMLPAvatarGroupElement: {
+        prototype: HTMLPAvatarGroupElement;
+        new (): HTMLPAvatarGroupElement;
+    };
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -580,6 +592,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "p-avatar": HTMLPAvatarElement;
+        "p-avatar-group": HTMLPAvatarGroupElement;
         "p-button": HTMLPButtonElement;
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
@@ -630,6 +643,12 @@ declare namespace LocalJSX {
           * The variant of the avatar
          */
         "variant"?: 'user' | 'company';
+    }
+    interface PAvatarGroup {
+        /**
+          * The amount to show after the avatars
+         */
+        "extra"?: number;
     }
     interface PButton {
         /**
@@ -990,6 +1009,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "p-avatar": PAvatar;
+        "p-avatar-group": PAvatarGroup;
         "p-button": PButton;
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
@@ -1027,6 +1047,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
+            "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;

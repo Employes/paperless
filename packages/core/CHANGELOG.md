@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.50 (2022-08-09)
+
+
+### Features
+
+* **Atoms:** Add avatar group component ([a5db706](https://github.com/ionic-team/stencil-component-starter/commit/a5db7063e414c37748efd63918a2590571d90a87))
+
+
+
+
+
 # 0.1.0-alpha.49 (2022-08-08)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.53 (2022-08-10)
+
+
+### Features
+
+* **Molecules:** Add accordion component ([27730d3](https://github.com/ionic-team/ionic/commit/27730d3b4eced24cb7542473eadbc8e9cc6c7d88))
+
+
+
+
+
 # 0.1.0-alpha.52 (2022-08-10)
 
 

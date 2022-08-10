@@ -9,11 +9,16 @@ export class CardContainer {
     /**
      * Wether the card should be hoverable
      */
-    @Prop() hoverable: boolean = false;
+    @Prop({ reflect: true }) hoverable: boolean = false;
+
+    /**
+     * Wether the card should have shadow
+     */
+    @Prop({ reflect: true }) shadow: boolean = true;
 
     render() {
         return (
-            <Host class={`p-card-container ${this.hoverable && 'has-hover'}`}>
+            <Host class="p-card-container">
                 <slot />
             </Host>
         );

@@ -4,10 +4,14 @@
     @apply shadow-4 #{!important};
 }
 
-:host(.has-hover) {
+:host([hoverable]) {
     @apply cursor-pointer;
 }
 
-:host(.has-hover:hover) {
+:host([hoverable]:hover) {
     @apply shadow-5 #{!important};
+}
+
+:host([shadow='false']) {
+    @apply shadow-transparent #{!important};
 }

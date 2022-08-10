@@ -119,6 +119,10 @@ export namespace Components {
           * Wether the card should be hoverable
          */
         "hoverable": boolean;
+        /**
+          * Wether the card should have shadow
+         */
+        "shadow": boolean;
     }
     interface PCardHeader {
         /**
@@ -821,6 +825,10 @@ declare namespace LocalJSX {
           * Wether the card should be hoverable
          */
         "hoverable"?: boolean;
+        /**
+          * Wether the card should have shadow
+         */
+        "shadow"?: boolean;
     }
     interface PCardHeader {
         /**

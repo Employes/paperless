@@ -1,6 +1,12 @@
-# p-modal-body
+# Modal Body
 
+## Usage:
 
+```html
+<p-modal-body>
+    <!-- content -->
+</p-modal-body>
+```
 
 <!-- Auto Generated Below -->
 

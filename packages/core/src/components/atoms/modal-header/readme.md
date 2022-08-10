@@ -1,6 +1,12 @@
-# p-modal-header
+# Modal Header
 
+## Usage:
 
+```html
+<p-modal-header>
+    <!-- content -->
+</p-modal-header>
+```
 
 <!-- Auto Generated Below -->
 

@@ -4,8 +4,8 @@
 
 ```html
 <p-info-panel>
-  <span slot="header">Title</span>
-  <span slot="content">Content</span>
+    <span slot="header">Title</span>
+    <span slot="content">Content</span>
 </p-info-panel>
 ```
 

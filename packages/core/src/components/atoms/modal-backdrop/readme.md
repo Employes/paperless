@@ -1,9 +1,11 @@
-# Modal backdrop
+# Modal Backdrop
 
 ## Usage:
 
 ```html
-<p-modal-backdrop />
+<p-modal-backdrop>
+    <!-- content -->
+</p-modal-backdrop>
 ```
 
 <!-- Auto Generated Below -->

@@ -1,6 +1,12 @@
-# p-modal-container
+# Modal Container
 
+## Usage:
 
+```html
+<p-modal-container>
+    <!-- content -->
+</p-modal-container>
+```
 
 <!-- Auto Generated Below -->
 

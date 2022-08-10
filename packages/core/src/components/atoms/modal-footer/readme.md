@@ -1,6 +1,12 @@
-# p-modal-footer
+# Modal Footer
 
+## Usage:
 
+```html
+<p-modal-footer>
+    <!-- content -->
+</p-modal-footer>
+```
 
 <!-- Auto Generated Below -->
 

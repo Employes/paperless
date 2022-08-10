@@ -4,9 +4,9 @@
 
 ```html
 <p-stepper>
-    <p-stepper-step>Step 1</p-stepper-step>
-    <p-stepper-step>Step 1</p-stepper-step>
-    <p-stepper-step>Step 1</p-stepper-step>
+    <p-stepper-item>Step 1</p-stepper-item>
+    <p-stepper-item>Step 1</p-stepper-item>
+    <p-stepper-item>Step 1</p-stepper-item>
 </p-stepper>
 ```
 
@@ -26,14 +26,14 @@
 ### Depends on
 
 - [p-stepper-line](../../atoms/stepper-line)
-- [p-stepper-step](../../atoms/stepper-step)
+- [p-stepper-item](../../atoms/stepper-item)
 
 ### Graph
 ```mermaid
 graph TD;
   p-stepper --> p-stepper-line
-  p-stepper --> p-stepper-step
-  p-stepper-step --> p-icon
+  p-stepper --> p-stepper-item
+  p-stepper-item --> p-icon
   style p-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

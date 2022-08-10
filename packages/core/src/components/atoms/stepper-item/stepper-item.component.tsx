@@ -1,11 +1,11 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'p-stepper-step',
-    styleUrl: 'stepper-step.component.scss',
+    tag: 'p-stepper-item',
+    styleUrl: 'stepper-item.component.scss',
     shadow: true,
 })
-export class StepperStep {
+export class StepperItem {
     /**
      * The alignment of the step content
      */
@@ -29,7 +29,7 @@ export class StepperStep {
 
     render() {
         return (
-            <Host class="p-stepper-step">
+            <Host class="p-stepper-item">
                 <div class="content">
                     <slot />
                 </div>

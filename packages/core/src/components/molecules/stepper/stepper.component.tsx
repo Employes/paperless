@@ -35,10 +35,10 @@ export class Stepper {
 
     private _generateSteps(activeStep: number) {
         const elements = [];
-        const steps = this._el.querySelectorAll('p-stepper-step');
+        const items = this._el.querySelectorAll('p-stepper-item');
 
-        for (let i = 0; i < steps?.length; i++) {
-            const step = steps.item(i);
+        for (let i = 0; i < items?.length; i++) {
+            const item = items.item(i);
 
             if (i > 0) {
                 elements.push(
@@ -49,24 +49,24 @@ export class Stepper {
                 );
             }
 
-            const newStep = (
-                <p-stepper-step
+            const newItem = (
+                <p-stepper-item
                     active={i === activeStep}
                     finished={i < activeStep}
                     direction={this.direction}
                     align={
                         i === 0
                             ? 'start'
-                            : i === steps?.length - 1
+                            : i === items?.length - 1
                             ? 'end'
                             : 'center'
                     }
                 >
-                    {step.innerHTML}
-                </p-stepper-step>
+                    {item.innerHTML}
+                </p-stepper-item>
             );
 
-            elements.push(newStep);
+            elements.push(newItem);
         }
 
         return elements;

@@ -358,17 +358,7 @@ export namespace Components {
          */
         "direction": 'horizontal' | 'vertical';
     }
-    interface PStepperLine {
-        /**
-          * Wether the line is active
-         */
-        "active": boolean;
-        /**
-          * The direction of the stepper line
-         */
-        "direction": 'horizontal' | 'vertical';
-    }
-    interface PStepperStep {
+    interface PStepperItem {
         /**
           * Wether the step is active
          */
@@ -385,6 +375,16 @@ export namespace Components {
           * Wether the step is finished
          */
         "finished": boolean;
+    }
+    interface PStepperLine {
+        /**
+          * Wether the line is active
+         */
+        "active": boolean;
+        /**
+          * The direction of the stepper line
+         */
+        "direction": 'horizontal' | 'vertical';
     }
     interface PTabGroup {
     }
@@ -633,17 +633,17 @@ declare global {
         prototype: HTMLPStepperElement;
         new (): HTMLPStepperElement;
     };
+    interface HTMLPStepperItemElement extends Components.PStepperItem, HTMLStencilElement {
+    }
+    var HTMLPStepperItemElement: {
+        prototype: HTMLPStepperItemElement;
+        new (): HTMLPStepperItemElement;
+    };
     interface HTMLPStepperLineElement extends Components.PStepperLine, HTMLStencilElement {
     }
     var HTMLPStepperLineElement: {
         prototype: HTMLPStepperLineElement;
         new (): HTMLPStepperLineElement;
-    };
-    interface HTMLPStepperStepElement extends Components.PStepperStep, HTMLStencilElement {
-    }
-    var HTMLPStepperStepElement: {
-        prototype: HTMLPStepperStepElement;
-        new (): HTMLPStepperStepElement;
     };
     interface HTMLPTabGroupElement extends Components.PTabGroup, HTMLStencilElement {
     }
@@ -701,8 +701,8 @@ declare global {
         "p-segment-item": HTMLPSegmentItemElement;
         "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
+        "p-stepper-item": HTMLPStepperItemElement;
         "p-stepper-line": HTMLPStepperLineElement;
-        "p-stepper-step": HTMLPStepperStepElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
         "p-tag": HTMLPTagElement;
@@ -1069,17 +1069,7 @@ declare namespace LocalJSX {
          */
         "direction"?: 'horizontal' | 'vertical';
     }
-    interface PStepperLine {
-        /**
-          * Wether the line is active
-         */
-        "active"?: boolean;
-        /**
-          * The direction of the stepper line
-         */
-        "direction"?: 'horizontal' | 'vertical';
-    }
-    interface PStepperStep {
+    interface PStepperItem {
         /**
           * Wether the step is active
          */
@@ -1096,6 +1086,16 @@ declare namespace LocalJSX {
           * Wether the step is finished
          */
         "finished"?: boolean;
+    }
+    interface PStepperLine {
+        /**
+          * Wether the line is active
+         */
+        "active"?: boolean;
+        /**
+          * The direction of the stepper line
+         */
+        "direction"?: 'horizontal' | 'vertical';
     }
     interface PTabGroup {
     }
@@ -1172,8 +1172,8 @@ declare namespace LocalJSX {
         "p-segment-item": PSegmentItem;
         "p-status": PStatus;
         "p-stepper": PStepper;
+        "p-stepper-item": PStepperItem;
         "p-stepper-line": PStepperLine;
-        "p-stepper-step": PStepperStep;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
         "p-tag": PTag;
@@ -1215,8 +1215,8 @@ declare module "@stencil/core" {
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
+            "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
-            "p-stepper-step": LocalJSX.PStepperStep & JSXBase.HTMLAttributes<HTMLPStepperStepElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;

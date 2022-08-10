@@ -1,11 +1,11 @@
-# Stepper step
+# Stepper item
 
 ## Usage:
 
 ```html
-<p-stepper-step>
+<p-stepper-item>
     <!-- content -->
-</p-stepper-step>
+</p-stepper-item>
 ```
 
 <!-- Auto Generated Below -->
@@ -34,9 +34,9 @@
 ### Graph
 ```mermaid
 graph TD;
-  p-stepper-step --> p-icon
-  p-stepper --> p-stepper-step
-  style p-stepper-step fill:#f9f,stroke:#333,stroke-width:4px
+  p-stepper-item --> p-icon
+  p-stepper --> p-stepper-item
+  style p-stepper-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

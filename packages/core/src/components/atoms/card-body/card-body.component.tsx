@@ -8,15 +8,11 @@ export class CardBody {
     /**
      * Wether the button should inherit text styles
      */
-    @Prop() inheritText: boolean = false;
+    @Prop({ reflect: true }) inheritText: boolean = false;
 
     render() {
         return (
-            <Host
-                class={`p-card-body ${
-                    this.inheritText && 'should-inherit-text'
-                }`}
-            >
+            <Host class="p-card-body">
                 <slot />
             </Host>
         );

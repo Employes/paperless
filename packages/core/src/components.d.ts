@@ -390,6 +390,19 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PTag {
+        /**
+          * Wether to add the circle or not
+         */
+        "circle": boolean;
+        /**
+          * Variant of the tag
+         */
+        "variant": | 'positive'
+        | 'unbiased'
+        | 'negative'
+        | 'info';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -640,6 +653,12 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTagElement extends Components.PTag, HTMLStencilElement {
+    }
+    var HTMLPTagElement: {
+        prototype: HTMLPTagElement;
+        new (): HTMLPTagElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -682,6 +701,7 @@ declare global {
         "p-stepper-step": HTMLPStepperStepElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
+        "p-tag": HTMLPTagElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -1077,6 +1097,19 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PTag {
+        /**
+          * Wether to add the circle or not
+         */
+        "circle"?: boolean;
+        /**
+          * Variant of the tag
+         */
+        "variant"?: | 'positive'
+        | 'unbiased'
+        | 'negative'
+        | 'info';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -1135,6 +1168,7 @@ declare namespace LocalJSX {
         "p-stepper-step": PStepperStep;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
+        "p-tag": PTag;
         "p-tooltip": PTooltip;
     }
 }
@@ -1177,6 +1211,7 @@ declare module "@stencil/core" {
             "p-stepper-step": LocalJSX.PStepperStep & JSXBase.HTMLAttributes<HTMLPStepperStepElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
+            "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

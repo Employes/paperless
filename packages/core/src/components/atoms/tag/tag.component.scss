@@ -1,0 +1,59 @@
+:host {
+    @apply flex gap-1 items-center px-3 rounded;
+    @apply h-[1.375rem];
+    @apply text-xs font-semibold;
+
+    .circle {
+        @apply hidden rounded-round h-2 w-2;
+    }
+}
+
+:host([circle]) {
+    @apply pl-2;
+
+    .circle {
+        @apply block;
+    }
+}
+
+:host([circle='false']) {
+    .circle {
+        @apply hidden;
+    }
+}
+
+:host([variant='info']) {
+    @apply bg-sky/20;
+    @apply text-sky;
+
+    .circle {
+        @apply bg-sky;
+    }
+}
+
+:host([variant='positive']) {
+    @apply bg-positive/20;
+    @apply text-positive;
+
+    .circle {
+        @apply bg-positive;
+    }
+}
+
+:host([variant='unbiased']) {
+    @apply bg-unbiased/20;
+    @apply text-unbiased;
+
+    .circle {
+        @apply bg-unbiased;
+    }
+}
+
+:host([variant='negative']) {
+    @apply bg-negative/20;
+    @apply text-negative;
+
+    .circle {
+        @apply bg-negative;
+    }
+}

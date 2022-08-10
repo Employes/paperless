@@ -43,4 +43,5 @@ export const PStepperLine = /*@__PURE__*/createReactComponent<JSX.PStepperLine, 
 export const PStepperStep = /*@__PURE__*/createReactComponent<JSX.PStepperStep, HTMLPStepperStepElement>('p-stepper-step');
 export const PTabGroup = /*@__PURE__*/createReactComponent<JSX.PTabGroup, HTMLPTabGroupElement>('p-tab-group');
 export const PTabItem = /*@__PURE__*/createReactComponent<JSX.PTabItem, HTMLPTabItemElement>('p-tab-item');
+export const PTag = /*@__PURE__*/createReactComponent<JSX.PTag, HTMLPTagElement>('p-tag');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

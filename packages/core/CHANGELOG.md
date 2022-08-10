@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.59 (2022-08-10)
+
+
+### Bug Fixes
+
+* **Molecules/Stepper:** Typing of items ([141f98c](https://github.com/ionic-team/stencil-component-starter/commit/141f98ca64137ebe2356a0fe5b8472424fc94421))
+
+
+
+
+
 # 0.1.0-alpha.58 (2022-08-10)
 
 **Note:** Version bump only for package @paperless/core

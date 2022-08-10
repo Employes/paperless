@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.51 (2022-08-10)
+
+
+### Features
+
+* **Atoms:** Add profile component ([6940b79](https://github.com/ionic-team/stencil-component-starter/commit/6940b79aa89a65e1da802c7a2bddcc79b4b5be7e))
+
+
+
+
+
 # 0.1.0-alpha.50 (2022-08-09)
 
 

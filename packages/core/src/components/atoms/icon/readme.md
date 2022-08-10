@@ -23,6 +23,7 @@
 
 ### Used by
 
+ - [p-accordion](../../molecules/accordion)
  - [p-button](../button)
  - [p-card-header](../card-header)
  - [p-info-panel](../info-panel)
@@ -35,6 +36,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  p-accordion --> p-icon
   p-button --> p-icon
   p-card-header --> p-icon
   p-info-panel --> p-icon

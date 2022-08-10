@@ -12,6 +12,24 @@ import { IllustrationVariant } from "./components/atoms/illustration/illustratio
 import { Observable } from "rxjs";
 import { Placement } from "@popperjs/core";
 export namespace Components {
+    interface PAccordion {
+        /**
+          * Wether the accordion can be closed
+         */
+        "closeable": boolean;
+        /**
+          * Header of the accordion
+         */
+        "header": string;
+        /**
+          * Wether the accordion is open
+         */
+        "open": boolean;
+        /**
+          * Wether the accordion can be opened
+         */
+        "openable": boolean;
+    }
     interface PAvatar {
         /**
           * The default image to show on errors
@@ -395,6 +413,10 @@ export namespace Components {
         "variant": 'hover' | 'click' | 'error';
     }
 }
+export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPAccordionElement;
+}
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
@@ -408,6 +430,12 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     target: HTMLPPaginationElement;
 }
 declare global {
+    interface HTMLPAccordionElement extends Components.PAccordion, HTMLStencilElement {
+    }
+    var HTMLPAccordionElement: {
+        prototype: HTMLPAccordionElement;
+        new (): HTMLPAccordionElement;
+    };
     interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
     }
     var HTMLPAvatarElement: {
@@ -619,6 +647,7 @@ declare global {
         new (): HTMLPTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "p-accordion": HTMLPAccordionElement;
         "p-avatar": HTMLPAvatarElement;
         "p-avatar-group": HTMLPAvatarGroupElement;
         "p-button": HTMLPButtonElement;
@@ -657,6 +686,28 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface PAccordion {
+        /**
+          * Wether the accordion can be closed
+         */
+        "closeable"?: boolean;
+        /**
+          * Header of the accordion
+         */
+        "header": string;
+        /**
+          * Open change event
+         */
+        "onIsOpen"?: (event: PAccordionCustomEvent<boolean>) => void;
+        /**
+          * Wether the accordion is open
+         */
+        "open"?: boolean;
+        /**
+          * Wether the accordion can be opened
+         */
+        "openable"?: boolean;
+    }
     interface PAvatar {
         /**
           * The default image to show on errors
@@ -1049,6 +1100,7 @@ declare namespace LocalJSX {
         "variant"?: 'hover' | 'click' | 'error';
     }
     interface IntrinsicElements {
+        "p-accordion": PAccordion;
         "p-avatar": PAvatar;
         "p-avatar-group": PAvatarGroup;
         "p-button": PButton;
@@ -1090,6 +1142,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "p-accordion": LocalJSX.PAccordion & JSXBase.HTMLAttributes<HTMLPAccordionElement>;
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;

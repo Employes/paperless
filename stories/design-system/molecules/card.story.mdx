@@ -65,10 +65,10 @@ import { StoryCategories } from '../../categories';
 ## Payrun periods
 
 <Canvas>
-    <div class="flex w-1/2 gap-4">
+    <div class="grid grid-cols-3 gap-4">
         <p-card-container
-            class="bg-mystic-dark text-storm-light hover:text-negative"
-            hoverable
+            class="bg-mystic text-storm-light border border-mystic-dark"
+            shadow={false}
         >
             <p-card-header
                 header="Januari"
@@ -78,14 +78,47 @@ import { StoryCategories } from '../../categories';
                 inherit-text
                 class="flex items-center justify-center h-24"
             >
-                <p-button
-                    variant="text"
-                    inherit-text
-                    class="text-base"
-                    icon="arrow"
-                >
-                    Totaal toevoegen
-                </p-button>
+                <span class="text-sm font-semibold text-storm-vague">
+                    Later verlonen
+                </span>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Januari" arrow></p-card-header>
+            <p-card-body
+                inherit-text
+                class="flex items-center justify-center h-24"
+            >
+                <p-button size="small">Bekijk verloning</p-button>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Januari" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-24">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon class="mr-1" variant="person" />
+                        10
+                    </span>
+                </div>
             </p-card-body>
         </p-card-container>
     </div>

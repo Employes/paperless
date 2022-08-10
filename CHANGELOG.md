@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.56 (2022-08-10)
+
+
+### Bug Fixes
+
+* **Atoms/Icon:** Add `sm` size which missed ([bb696e8](https://github.com/employes/paperless/commit/bb696e8f17854d5bfe2df1d8f4ee96db52c78493))
+
+
+
+
+
 # 0.1.0-alpha.55 (2022-08-10)
 
 **Note:** Version bump only for package paperless

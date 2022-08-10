@@ -286,6 +286,8 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PProfile {
+    }
     interface PSegmentContainer {
     }
     interface PSegmentItem {
@@ -548,6 +550,12 @@ declare global {
         prototype: HTMLPPaginationItemElement;
         new (): HTMLPPaginationItemElement;
     };
+    interface HTMLPProfileElement extends Components.PProfile, HTMLStencilElement {
+    }
+    var HTMLPProfileElement: {
+        prototype: HTMLPProfileElement;
+        new (): HTMLPProfileElement;
+    };
     interface HTMLPSegmentContainerElement extends Components.PSegmentContainer, HTMLStencilElement {
     }
     var HTMLPSegmentContainerElement: {
@@ -616,6 +624,7 @@ declare global {
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
+        "p-profile": HTMLPProfileElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
         "p-status": HTMLPStatusElement;
@@ -909,6 +918,8 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PProfile {
+    }
     interface PSegmentContainer {
     }
     interface PSegmentItem {
@@ -1033,6 +1044,7 @@ declare namespace LocalJSX {
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
+        "p-profile": PProfile;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
         "p-status": PStatus;
@@ -1071,6 +1083,7 @@ declare module "@stencil/core" {
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
+            "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;

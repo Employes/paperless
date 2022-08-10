@@ -29,6 +29,10 @@ export class Avatar {
     @State() private _src = this.src;
 
     render() {
+        if (!this._src) {
+            this._setDefaultLink();
+        }
+
         return (
             <Host class="p-avatar">
                 <img src={this._src} onError={() => this._setDefaultLink()} />

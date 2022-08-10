@@ -1,0 +1,16 @@
+:host {
+    @apply flex gap-4 items-center;
+
+    .name {
+        @apply flex flex-col justify-center;
+
+        > *:nth-child(1) {
+            @apply text-sm text-storm-dark;
+            @apply font-semibold;
+        }
+
+        > *:nth-child(2) {
+            @apply text-sm text-storm-vague;
+        }
+    }
+}

@@ -33,6 +33,7 @@ export const PModalHeader = /*@__PURE__*/createReactComponent<JSX.PModalHeader, 
 export const PNavigationItem = /*@__PURE__*/createReactComponent<JSX.PNavigationItem, HTMLPNavigationItemElement>('p-navigation-item');
 export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HTMLPPaginationElement>('p-pagination');
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');
+export const PProfile = /*@__PURE__*/createReactComponent<JSX.PProfile, HTMLPProfileElement>('p-profile');
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');
 export const PStatus = /*@__PURE__*/createReactComponent<JSX.PStatus, HTMLPStatusElement>('p-status');

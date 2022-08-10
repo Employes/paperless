@@ -27,7 +27,6 @@ export class Stepper {
     componentWillRender() {
         const activeStep = this.activeStep - 1;
         this._steps = this._generateSteps(activeStep);
-        console.log(this._steps);
     }
 
     render() {

@@ -32,7 +32,6 @@ export class Accordion {
     @Event() isOpen: EventEmitter<boolean>;
 
     render() {
-        console.log(this.open);
         return (
             <Host class="p-accordion">
                 <div

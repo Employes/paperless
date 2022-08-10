@@ -10,6 +10,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property              | Attribute   | Description                        | Type      | Default     |
@@ -19,21 +20,22 @@
 | `open`                | `open`      | Wether the accordion is open       | `boolean` | `false`     |
 | `openable`            | `openable`  | Wether the accordion can be opened | `boolean` | `true`      |
 
+
 ## Events
 
 | Event    | Description       | Type                   |
 | -------- | ----------------- | ---------------------- |
 | `isOpen` | Open change event | `CustomEvent<boolean>` |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [p-icon](../../atoms/icon)
--   [p-divider](../../atoms/divider)
+- [p-icon](../../atoms/icon)
+- [p-divider](../../atoms/divider)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-accordion --> p-icon
@@ -41,6 +43,6 @@ graph TD;
   style p-accordion fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

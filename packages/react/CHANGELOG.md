@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.54 (2022-08-10)
+
+
+### Features
+
+* **Atoms:** Add tag component ([b45499d](https://github.com/ionic-team/ionic/commit/b45499defb03ea5ae44ecfcdb026bbe2154de6ea))
+
+
+
+
+
 # 0.1.0-alpha.53 (2022-08-10)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.55 (2022-08-10)
+
+
+### Bug Fixes
+
+* **Atoms/Segment Item:** Icon alignment ([9eadc96](https://github.com/ionic-team/ionic/commit/9eadc963aeb5b33c7dc54191c3418441f2c9487e))
+
+
+
+
+
 # 0.1.0-alpha.54 (2022-08-10)
 
 

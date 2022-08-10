@@ -39,6 +39,7 @@ export class Icon {
             'text-auto': this.size === 'auto',
             'text-xxs': this.size === 'xxs',
             'text-xs': this.size === 'xs',
+            'text-sm': this.size === 'sm',
             'text-base': this.size === 'base',
             'text-lg': this.size === 'lg',
             'text-xl': this.size === 'xl',

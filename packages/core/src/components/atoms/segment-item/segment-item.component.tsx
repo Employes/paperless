@@ -47,6 +47,7 @@ export class SegmentItem {
 
         return (
             <p-icon
+                class="flex"
                 variant={this.icon}
                 flip={this.iconFlip}
                 rotate={this.iconRotate}

@@ -18,13 +18,16 @@ export class CardHeader {
     render() {
         return (
             <Host class="p-card-header">
+                <slot name="prefix" />
+
                 {(this.header?.length || this.arrow) && (
                     <div class="title">
                         {this.header ?? ''}
                         {this.arrow && <p-icon variant="arrow" />}
                     </div>
                 )}
-                <slot />
+
+                <slot name="suffix" />
             </Host>
         );
     }

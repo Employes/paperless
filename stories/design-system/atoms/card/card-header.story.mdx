@@ -8,6 +8,30 @@ import CardHeaderDocs from '../../../../packages/core/src/components/atoms/card-
 
 # Examples
 
+## Default
+
 <Canvas>
-    <p-card-header>content</p-card-header>
+    <p-card-header header="content"></p-card-header>
+</Canvas>
+
+## With an arrow
+
+<Canvas>
+    <p-card-header header="content" arrow></p-card-header>
+</Canvas>
+
+## With a prefix
+
+<Canvas>
+    <p-card-header header="content" arrow>
+        <p-icon size="sm" slot="prefix" variant="person" />
+    </p-card-header>
+</Canvas>
+
+## With a suffix
+
+<Canvas>
+    <p-card-header header="content" arrow>
+        <p-icon size="sm" slot="suffix" variant="checkmark" class="ml-auto" />
+    </p-card-header>
 </Canvas>

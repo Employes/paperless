@@ -22,7 +22,7 @@ export class Stepper {
      */
     @Element() private _el: HTMLElement;
 
-    private _steps: Array<HTMLPStepperStepElement>;
+    private _steps: Array<HTMLPStepperItemElement>;
 
     componentWillRender() {
         const activeStep = this.activeStep - 1;

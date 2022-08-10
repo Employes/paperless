@@ -1,9 +1,9 @@
-# Divider
+# Tab Group
 
 ## Usage:
 
 ```html
-<p-divider />
+<p-tab-group />
 ```
 
 <!-- Auto Generated Below -->
@@ -11,17 +11,15 @@
 
 ## Dependencies
 
-### Used by
+### Depends on
 
- - [p-modal-footer](../modal-footer)
- - [p-tab-group](../tab-group)
+- [p-divider](../divider)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-modal-footer --> p-divider
   p-tab-group --> p-divider
-  style p-divider fill:#f9f,stroke:#333,stroke-width:4px
+  style p-tab-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

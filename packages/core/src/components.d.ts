@@ -364,6 +364,12 @@ export namespace Components {
          */
         "finished": boolean;
     }
+    interface PTabItem {
+        /**
+          * Wether the tab item is active
+         */
+        "active": boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -592,6 +598,12 @@ declare global {
         prototype: HTMLPStepperStepElement;
         new (): HTMLPStepperStepElement;
     };
+    interface HTMLPTabItemElement extends Components.PTabItem, HTMLStencilElement {
+    }
+    var HTMLPTabItemElement: {
+        prototype: HTMLPTabItemElement;
+        new (): HTMLPTabItemElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -631,6 +643,7 @@ declare global {
         "p-stepper": HTMLPStepperElement;
         "p-stepper-line": HTMLPStepperLineElement;
         "p-stepper-step": HTMLPStepperStepElement;
+        "p-tab-item": HTMLPTabItemElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -996,6 +1009,12 @@ declare namespace LocalJSX {
          */
         "finished"?: boolean;
     }
+    interface PTabItem {
+        /**
+          * Wether the tab item is active
+         */
+        "active"?: boolean;
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -1051,6 +1070,7 @@ declare namespace LocalJSX {
         "p-stepper": PStepper;
         "p-stepper-line": PStepperLine;
         "p-stepper-step": PStepperStep;
+        "p-tab-item": PTabItem;
         "p-tooltip": PTooltip;
     }
 }
@@ -1090,6 +1110,7 @@ declare module "@stencil/core" {
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-stepper-step": LocalJSX.PStepperStep & JSXBase.HTMLAttributes<HTMLPStepperStepElement>;
+            "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

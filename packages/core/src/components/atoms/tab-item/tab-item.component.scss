@@ -1,0 +1,10 @@
+:host {
+    @apply flex items-center h-10;
+    @apply font-semibold text-storm-medium;
+    @apply cursor-pointer;
+    @apply border-0 border-b-2 border-transparent #{!important};
+}
+
+:host(.active) {
+    @apply border-indigo text-indigo #{!important};
+}

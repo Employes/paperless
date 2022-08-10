@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.52 (2022-08-10)
+
+
+### Features
+
+* **Atoms:** Add tab group component ([e2a3feb](https://github.com/employes/paperless/commit/e2a3feb532d62adc9a879143f58cffc61c588e95))
+
+
+
+
+
 # 0.1.0-alpha.51 (2022-08-10)
 
 

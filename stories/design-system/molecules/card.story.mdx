@@ -65,25 +65,7 @@ import { StoryCategories } from '../../categories';
 ## Payrun periods
 
 <Canvas>
-    <div class="grid grid-cols-3 gap-4">
-        <p-card-container
-            class="bg-mystic text-storm-light border border-mystic-dark"
-            shadow={false}
-        >
-            <p-card-header
-                header="Januari"
-                class="text-storm-vague"
-            ></p-card-header>
-            <p-card-body class="flex items-center justify-center h-24 text-sm font-semibold text-storm-vague">
-                Later verlonen
-            </p-card-body>
-        </p-card-container>
-        <p-card-container hoverable>
-            <p-card-header header="Januari" arrow></p-card-header>
-            <p-card-body class="flex items-center justify-center h-24">
-                <p-button size="small">Bekijk verloning</p-button>
-            </p-card-body>
-        </p-card-container>
+    <div class="grid grid-cols-3 gap-4 bg-mystic py-12 px-4">
         <p-card-container hoverable>
             <p-card-header header="Januari" arrow>
                 <p-icon
@@ -93,7 +75,7 @@ import { StoryCategories } from '../../categories';
                     variant="checkmark"
                 />
             </p-card-header>
-            <p-card-body class="flex flex-col h-24">
+            <p-card-body class="flex flex-col h-28">
                 <span class="text-sky-dark uppercase text-xs font-bold">
                     Netto Loon
                 </span>
@@ -104,13 +86,236 @@ import { StoryCategories } from '../../categories';
                         ,50
                     </span>
                 </div>
-                <div class="flex items-center place-content-between text-storm-light text-sm">
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
                     <span>&euro; 30.00,50</span>
                     <span class="flex items-center">
-                        <p-icon class="mr-1" variant="person" />
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
                         10
                     </span>
                 </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Februari" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-28">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
+                        10
+                    </span>
+                </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Maart" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-28">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
+                        10
+                    </span>
+                </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="April" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-28">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
+                        10
+                    </span>
+                </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Mei" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-28">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
+                        10
+                    </span>
+                </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Juni" arrow>
+                <p-icon
+                    class="ml-auto"
+                    slot="suffix"
+                    size="sm"
+                    variant="checkmark"
+                />
+            </p-card-header>
+            <p-card-body class="flex flex-col h-28">
+                <span class="text-sky-dark uppercase text-xs font-bold">
+                    Netto Loon
+                </span>
+                <div class="flex text-3xl">
+                    <span class="text-storm-light mr-1">&euro;</span>
+                    <span class="font-bold">30.000</span>
+                    <span class="text-storm-light text-xl font-bold mt-[0.1rem]">
+                        ,50
+                    </span>
+                </div>
+                <div class="flex items-center place-content-between text-storm-light text-sm mt-auto">
+                    <span>&euro; 30.00,50</span>
+                    <span class="flex items-center">
+                        <p-icon
+                            class="mr-1 text-storm-vague"
+                            variant="person"
+                        />
+                        10
+                    </span>
+                </div>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Juli" arrow></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28">
+                <p-button size="small">Bekijk verloning</p-button>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container hoverable>
+            <p-card-header header="Augustus" arrow></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28">
+                <p-button size="small">Start verloning</p-button>
+            </p-card-body>
+        </p-card-container>
+        <p-card-container
+            class="bg-transparent text-storm-light border border-mystic-dark"
+            shadow={false}
+        >
+            <p-card-header
+                header="September"
+                class="text-storm-vague"
+            ></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28 text-sm font-semibold text-storm-vague">
+                Later verlonen
+            </p-card-body>
+        </p-card-container>
+        <p-card-container
+            class="bg-transparent text-storm-light border border-mystic-dark"
+            shadow={false}
+        >
+            <p-card-header
+                header="Oktober"
+                class="text-storm-vague"
+            ></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28 text-sm font-semibold text-storm-vague">
+                Later verlonen
+            </p-card-body>
+        </p-card-container>
+        <p-card-container
+            class="bg-transparent text-storm-light border border-mystic-dark"
+            shadow={false}
+        >
+            <p-card-header
+                header="November"
+                class="text-storm-vague"
+            ></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28 text-sm font-semibold text-storm-vague">
+                Later verlonen
+            </p-card-body>
+        </p-card-container>
+        <p-card-container
+            class="bg-transparent text-storm-light border border-mystic-dark"
+            shadow={false}
+        >
+            <p-card-header
+                header="December"
+                class="text-storm-vague"
+            ></p-card-header>
+            <p-card-body class="flex items-center justify-center h-28 text-sm font-semibold text-storm-vague">
+                Later verlonen
             </p-card-body>
         </p-card-container>
     </div>

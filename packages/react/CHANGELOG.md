@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.60 (2022-08-18)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies to v14.1.3 ([#40](https://github.com/ionic-team/ionic/issues/40)) ([6ba3ab7](https://github.com/ionic-team/ionic/commit/6ba3ab74fa2f8a2dd346cf67aa4749aba6997f3f))
+
+
+
+
+
 # 0.1.0-alpha.59 (2022-08-10)
 
 

@@ -62,7 +62,7 @@
         "lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --ignore=@paperless/core --stream"
     },
     "devDependencies": {
-        "@babel/core": "7.18.10",
+        "@babel/core": "7.18.13",
         "@geometricpanda/storybook-addon-badges": "0.2.2",
         "@geometricpanda/storybook-addon-iframe": "0.2.2",
         "@storybook/addon-actions": "6.5.10",

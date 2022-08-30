@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.71 (2022-08-30)
+
+
+### Features
+
+* **Atoms/Divider:** Add content for dividers ([32ce5de](https://github.com/ionic-team/stencil-component-starter/commit/32ce5de91c64d4c5cff50ad3723e214903644af8))
+
+
+
+
+
 # 0.1.0-alpha.70 (2022-08-30)
 
 

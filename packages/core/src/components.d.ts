@@ -242,6 +242,12 @@ export namespace Components {
          */
         "suffix": string;
     }
+    interface PLayout {
+        /**
+          * Variant of the layout
+         */
+        "variant": 'default' | 'login';
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -583,6 +589,12 @@ declare global {
         prototype: HTMLPInputGroupElement;
         new (): HTMLPInputGroupElement;
     };
+    interface HTMLPLayoutElement extends Components.PLayout, HTMLStencilElement {
+    }
+    var HTMLPLayoutElement: {
+        prototype: HTMLPLayoutElement;
+        new (): HTMLPLayoutElement;
+    };
     interface HTMLPLoaderElement extends Components.PLoader, HTMLStencilElement {
     }
     var HTMLPLoaderElement: {
@@ -727,6 +739,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-input-group": HTMLPInputGroupElement;
+        "p-layout": HTMLPLayoutElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal": HTMLPModalElement;
         "p-modal-backdrop": HTMLPModalBackdropElement;
@@ -993,6 +1006,12 @@ declare namespace LocalJSX {
          */
         "suffix"?: string;
     }
+    interface PLayout {
+        /**
+          * Variant of the layout
+         */
+        "variant"?: 'default' | 'login';
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -1233,6 +1252,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-input-group": PInputGroup;
+        "p-layout": PLayout;
         "p-loader": PLoader;
         "p-modal": PModal;
         "p-modal-backdrop": PModalBackdrop;
@@ -1277,6 +1297,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
+            "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
             "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;

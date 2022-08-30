@@ -13,3 +13,16 @@
 .sbdocs .boson-collection .boson > div {
     @apply w-16 h-16 rounded-large bg-storm-light;
 }
+
+.sbdocs .bg-bird,
+.sbdocs .bg-city {
+    @apply bg-cover bg-no-repeat bg-center;
+}
+
+.sbdocs .bg-bird {
+    background-image: url('https://images.unsplash.com/photo-1661804354022-435bb8c16c9f');
+}
+
+.sbdocs .bg-city {
+    background-image: url('https://images.unsplash.com/photo-1661829387984-8da6fc78ca8b');
+}

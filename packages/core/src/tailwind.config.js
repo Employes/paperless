@@ -7,6 +7,9 @@ const typeograhpy = require('./tailwind/typography');
 const backdropBlur = require('./tailwind/backdrop-blur');
 const zIndex = require('./tailwind/z-index');
 const animation = require('./tailwind/animation');
+const screens = require('./tailwind/screens');
+const width = require('./tailwind/width');
+const spacing = require('./tailwind/spacing');
 
 module.exports = {
     important: true,
@@ -23,6 +26,9 @@ module.exports = {
             lineHeight: typeograhpy.lineHeight,
             backdropBlur,
             zIndex,
+            screens,
+            width,
+            spacing,
         },
     },
     plugins: [require('@tailwindcss/aspect-ratio')],

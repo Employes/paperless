@@ -23,7 +23,7 @@
 }
 
 :host([variant='info']) {
-    @apply bg-sky/20;
+    @apply bg-sky-light;
     @apply text-sky;
 
     .circle {
@@ -32,7 +32,7 @@
 }
 
 :host([variant='positive']) {
-    @apply bg-positive/20;
+    @apply bg-positive-light;
     @apply text-positive;
 
     .circle {
@@ -41,7 +41,7 @@
 }
 
 :host([variant='unbiased']) {
-    @apply bg-unbiased/20;
+    @apply bg-unbiased-light;
     @apply text-unbiased;
 
     .circle {
@@ -50,7 +50,7 @@
 }
 
 :host([variant='negative']) {
-    @apply bg-negative/20;
+    @apply bg-negative-light;
     @apply text-negative;
 
     .circle {

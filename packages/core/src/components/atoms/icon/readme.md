@@ -27,6 +27,7 @@
  - [p-button](../button)
  - [p-card-header](../card-header)
  - [p-info-panel](../info-panel)
+ - [p-input-group](../../molecules/input-group)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
  - [p-segment-item](../segment-item)
@@ -40,6 +41,7 @@ graph TD;
   p-button --> p-icon
   p-card-header --> p-icon
   p-info-panel --> p-icon
+  p-input-group --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
   p-segment-item --> p-icon

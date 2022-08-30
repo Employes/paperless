@@ -24,6 +24,7 @@ export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelpe
 export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
 export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');
+export const PInputGroup = /*@__PURE__*/createReactComponent<JSX.PInputGroup, HTMLPInputGroupElement>('p-input-group');
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
 export const PModal = /*@__PURE__*/createReactComponent<JSX.PModal, HTMLPModalElement>('p-modal');
 export const PModalBackdrop = /*@__PURE__*/createReactComponent<JSX.PModalBackdrop, HTMLPModalBackdropElement>('p-modal-backdrop');

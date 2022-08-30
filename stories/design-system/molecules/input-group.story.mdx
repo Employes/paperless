@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import InputGroupDocs from '../../../packages/core/src/components/molecules/input-group/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Input Group`} />
+
+<InputGroupDocs />
+
+# Examples
+
+## Default
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group>
+            <span slot="helper">The name your mom/dad provided you.</span>
+            <span slot="label">Name</span>
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Asd
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group
+            helper="The name your mom/dad provided you."
+            label="Name"
+        >
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Error
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group label="Name" error="Verplicht veld">
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Icon
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group label="Name" icon="person">
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Prefix
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group label="Name" prefix="%">
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Header
+
+<Canvas>
+    <div class="flex items-center h-48">
+        <p-input-group label="Password">
+            <input
+                slot="input"
+                type="password"
+                placeholder="What is your password?"
+            />
+            <p-button slot="header" variant="text" size="small" class="-mb-2">
+                Password forgotten?
+            </p-button>
+        </p-input-group>
+    </div>
+</Canvas>

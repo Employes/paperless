@@ -208,6 +208,40 @@ export namespace Components {
          */
         "variant": 'info' | 'negative' | 'positive' | 'unbiased';
     }
+    interface PInputGroup {
+        /**
+          * The helper of the input group
+         */
+        "error": string;
+        /**
+          * The helper of the input group
+         */
+        "helper": string;
+        /**
+          * Icon of the navigation item
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label": string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix": string;
+        /**
+          * The suffix of the input group
+         */
+        "suffix": string;
+    }
     interface PLoader {
         /**
           * Color of the loader
@@ -543,6 +577,12 @@ declare global {
         prototype: HTMLPInfoPanelElement;
         new (): HTMLPInfoPanelElement;
     };
+    interface HTMLPInputGroupElement extends Components.PInputGroup, HTMLStencilElement {
+    }
+    var HTMLPInputGroupElement: {
+        prototype: HTMLPInputGroupElement;
+        new (): HTMLPInputGroupElement;
+    };
     interface HTMLPLoaderElement extends Components.PLoader, HTMLStencilElement {
     }
     var HTMLPLoaderElement: {
@@ -686,6 +726,7 @@ declare global {
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
+        "p-input-group": HTMLPInputGroupElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal": HTMLPModalElement;
         "p-modal-backdrop": HTMLPModalBackdropElement;
@@ -917,6 +958,40 @@ declare namespace LocalJSX {
           * The variant of the info panel
          */
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+    }
+    interface PInputGroup {
+        /**
+          * The helper of the input group
+         */
+        "error"?: string;
+        /**
+          * The helper of the input group
+         */
+        "helper"?: string;
+        /**
+          * Icon of the navigation item
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions;
+        /**
+          * The label of the input group
+         */
+        "label"?: string;
+        /**
+          * The prefix of the input group
+         */
+        "prefix"?: string;
+        /**
+          * The suffix of the input group
+         */
+        "suffix"?: string;
     }
     interface PLoader {
         /**
@@ -1157,6 +1232,7 @@ declare namespace LocalJSX {
         "p-icon": PIcon;
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
+        "p-input-group": PInputGroup;
         "p-loader": PLoader;
         "p-modal": PModal;
         "p-modal-backdrop": PModalBackdrop;
@@ -1200,6 +1276,7 @@ declare module "@stencil/core" {
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
+            "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
             "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;

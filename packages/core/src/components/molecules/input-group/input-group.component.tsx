@@ -51,12 +51,12 @@ export class InputGroup {
     /**
      * Wether the input group is disabled
      */
-    @Prop() disabled: boolean = false;
+    @Prop({ reflect: true }) disabled: boolean = false;
 
     /**
      * Wether the input group is focused
      */
-    @Prop() focused: boolean = false;
+    @Prop({ reflect: true }) focused: boolean = false;
 
     /**
      * The host element
@@ -75,74 +75,71 @@ export class InputGroup {
         const prefix = hasPrefixSlot ? <slot name="prefix" /> : this.prefix;
         const suffix = hasSuffixSlot ? <slot name="suffix" /> : this.suffix;
 
-        console.log(helper);
         const errorAndErrorIsNotBoolean =
             this.error &&
             typeof this.error === 'string' &&
             this.error !== 'true';
 
         return (
-            <Host class="p-input-group">
-                <div
-                    class={`input-group ${this.error?.length && 'error'} ${
-                        this.disabled && 'disabled'
-                    } ${this.focused && 'focused'}`}
-                >
-                    <div class="flex justify-between items-end">
-                        {label && <div class="input-label">{label}</div>}
+            <Host
+                class={`p-input-group ${this.error?.length && 'error'} ${
+                    this.disabled && 'disabled'
+                } ${this.focused && 'focused'}`}
+            >
+                <div class="flex justify-between items-end">
+                    {label && <div class="input-label">{label}</div>}
 
-                        {(helper || hasHeaderSlot) && (
-                            <div class="input-header">
-                                {hasHeaderSlot && <slot name="header" />}
-                                {helper && (
-                                    <p-helper
-                                        class={`flex ${
-                                            hasHeaderSlot ? 'ml-2' : ''
-                                        }`}
-                                        placement="top-end"
-                                    >
-                                        {helper}
-                                    </p-helper>
-                                )}
-                            </div>
-                        )}
-                    </div>
-                    <div class="content">
-                        {(prefix || this.icon) && (
-                            <div class="prefix">
-                                {this.icon ? (
+                    {(helper || hasHeaderSlot) && (
+                        <div class="input-header">
+                            {hasHeaderSlot && <slot name="header" />}
+                            {helper && (
+                                <p-helper
+                                    class={`flex ${
+                                        hasHeaderSlot ? 'ml-2' : ''
+                                    }`}
+                                    placement="top-end"
+                                >
+                                    {helper}
+                                </p-helper>
+                            )}
+                        </div>
+                    )}
+                </div>
+                <div class="content">
+                    {(prefix || this.icon) && (
+                        <div class="prefix">
+                            {this.icon ? (
+                                <p-icon
+                                    class="flex"
+                                    variant={this.icon}
+                                    rotate={this.iconRotate}
+                                    flip={this.iconFlip}
+                                />
+                            ) : (
+                                prefix
+                            )}
+                        </div>
+                    )}
+                    {(suffix || errorAndErrorIsNotBoolean) && (
+                        <div class="suffix">
+                            {errorAndErrorIsNotBoolean ? (
+                                <p-tooltip
+                                    class="flex"
+                                    variant="error"
+                                    popover={this.error}
+                                >
                                     <p-icon
-                                        class="flex"
-                                        variant={this.icon}
-                                        rotate={this.iconRotate}
-                                        flip={this.iconFlip}
+                                        class="flex text-negative-light hover:text-negative"
+                                        slot="content"
+                                        variant="explanation"
                                     />
-                                ) : (
-                                    prefix
-                                )}
-                            </div>
-                        )}
-                        {(suffix || errorAndErrorIsNotBoolean) && (
-                            <div class="suffix">
-                                {errorAndErrorIsNotBoolean ? (
-                                    <p-tooltip
-                                        class="flex"
-                                        variant="error"
-                                        popover={this.error}
-                                    >
-                                        <p-icon
-                                            class="flex text-negative-light hover:text-negative"
-                                            slot="content"
-                                            variant="explanation"
-                                        />
-                                    </p-tooltip>
-                                ) : (
-                                    suffix
-                                )}
-                            </div>
-                        )}
-                        <slot name="input" />
-                    </div>
+                                </p-tooltip>
+                            ) : (
+                                suffix
+                            )}
+                        </div>
+                    )}
+                    <slot name="input" />
                 </div>
             </Host>
         );

@@ -1,15 +1,15 @@
 @mixin inputs($prefix: false, $slotted: false) {
     @if $prefix != false {
         @if $slotted == true {
-            #{$prefix} + ::slotted(input[type='text']),
-            #{$prefix} + ::slotted(input[type='number']),
-            #{$prefix} + ::slotted(input[type='date']),
-            #{$prefix} + ::slotted(input[type='month']),
-            #{$prefix} + ::slotted(input[type='datetime-local']),
-            #{$prefix} + ::slotted(input[type='time']),
-            #{$prefix} + ::slotted(input[type='tel']),
-            #{$prefix} + ::slotted(input[type='password']),
-            #{$prefix} + ::slotted(input[type='email']) {
+            #{$prefix} + ::slotted(input[type='text'].p-input),
+            #{$prefix} + ::slotted(input[type='number'].p-input),
+            #{$prefix} + ::slotted(input[type='date'].p-input),
+            #{$prefix} + ::slotted(input[type='month'].p-input),
+            #{$prefix} + ::slotted(input[type='datetime-local'].p-input),
+            #{$prefix} + ::slotted(input[type='time'].p-input),
+            #{$prefix} + ::slotted(input[type='tel'].p-input),
+            #{$prefix} + ::slotted(input[type='password'].p-input),
+            #{$prefix} + ::slotted(input[type='email'].p-input) {
                 @content;
             }
         } @else {
@@ -22,20 +22,22 @@
             #{$prefix} + input[type='tel'],
             #{$prefix} + input[type='password'],
             #{$prefix} + input[type='email'] {
-                @content;
+                &.p-input {
+                    @content;
+                }
             }
         }
     } @else {
         @if $slotted == true {
-            ::slotted(input[type='text']),
-            ::slotted(input[type='number']),
-            ::slotted(input[type='date']),
-            ::slotted(input[type='month']),
-            ::slotted(input[type='datetime-local']),
-            ::slotted(input[type='time']),
-            ::slotted(input[type='tel']),
-            ::slotted(input[type='password']),
-            ::slotted(input[type='email']) {
+            ::slotted(input[type='text'].p-input),
+            ::slotted(input[type='number'].p-input),
+            ::slotted(input[type='date'].p-input),
+            ::slotted(input[type='month'].p-input),
+            ::slotted(input[type='datetime-local'].p-input),
+            ::slotted(input[type='time'].p-input),
+            ::slotted(input[type='tel'].p-input),
+            ::slotted(input[type='password'].p-input),
+            ::slotted(input[type='email'].p-input) {
                 @content;
             }
         } @else {
@@ -48,7 +50,9 @@
             input[type='tel'],
             input[type='password'],
             input[type='email'] {
-                @content;
+                &.p-input {
+                    @content;
+                }
             }
         }
     }

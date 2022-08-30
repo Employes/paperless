@@ -1,6 +1,6 @@
 @import './mixins';
 
-textarea {
+textarea.p-input {
     @include inputDefaultState();
 
     @apply h-auto py-2;

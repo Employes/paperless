@@ -18,7 +18,7 @@ export class Tooltip {
     @Prop() popover: any = null;
 
     /**
-     * The content of the popover
+     * The placement of the popover
      */
     @Prop() placement: Placement = 'top';
 

@@ -1,22 +1,28 @@
-import { Component, h, Host } from '@stencil/core';
+import { Placement } from '@popperjs/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'p-helper',
-  styleUrl: 'helper.component.scss',
-  shadow: true,
+    tag: 'p-helper',
+    styleUrl: 'helper.component.scss',
+    shadow: true,
 })
 export class Helper {
-  render() {
-    return (
-      <Host class="p-helper">
-        <p-tooltip>
-          <div slot="popover">
-            <slot />
-          </div>
+    /**
+     * The placement of the helper popover
+     */
+    @Prop() placement: Placement = 'top';
 
-          <div slot="content" class="helper"></div>
-        </p-tooltip>
-      </Host>
-    );
-  }
+    render() {
+        return (
+            <Host class="p-helper">
+                <p-tooltip placement={this.placement}>
+                    <div slot="popover">
+                        <slot />
+                    </div>
+
+                    <div slot="content" class="helper"></div>
+                </p-tooltip>
+            </Host>
+        );
+    }
 }

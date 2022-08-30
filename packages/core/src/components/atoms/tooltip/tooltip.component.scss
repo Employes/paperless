@@ -1,5 +1,5 @@
 :host {
-    @apply cursor-pointer inline-block;
+    @apply flex cursor-pointer;
 
     .popover {
         @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4;

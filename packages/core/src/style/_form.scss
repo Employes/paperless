@@ -1,0 +1,69 @@
+@mixin inputDefaultState {
+    @apply flex justify-start items-center h-10;
+    @apply text-storm-dark;
+    @apply bg-white px-4 w-full;
+    @apply rounded-large;
+    @apply border border-mystic-dark #{!important};
+    @apply outline-none #{!important};
+
+    &::placeholder {
+        @apply text-storm-medium;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &.focus {
+        @include inputFocusState();
+    }
+}
+
+@mixin inputFocusState {
+    @apply border-indigo #{!important};
+}
+
+@mixin inputErrorState {
+    @apply text-negative-dark;
+    @apply border-negative #{!important};
+
+    &::placeholder {
+        @apply text-negative-light;
+    }
+}
+
+@mixin inputDisabledState {
+    @apply opacity-40;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='datetime-local'],
+input[type='time'],
+input[type='tel'],
+input[type='password'],
+input[type='email'],
+textarea {
+    @include inputDefaultState();
+
+    &[error],
+    &.error {
+        @include inputErrorState();
+    }
+
+    &[disabled],
+    &:disabled,
+    &.disabled {
+        @include inputDisabledState();
+    }
+
+    &.clean {
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    }
+}
+
+textarea {
+    @apply h-auto;
+}

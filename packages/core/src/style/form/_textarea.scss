@@ -1,9 +1,9 @@
 @import './mixins';
 
 textarea {
-    @apply h-auto;
-
     @include inputDefaultState();
+
+    @apply h-auto py-2;
 
     &[error],
     &.error {

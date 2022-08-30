@@ -49,6 +49,16 @@ export class InputGroup {
     @Prop({ reflect: true }) error: string;
 
     /**
+     * Wether the input group is disabled
+     */
+    @Prop() disabled: boolean = false;
+
+    /**
+     * Wether the input group is focused
+     */
+    @Prop() focus: boolean = false;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -73,14 +83,27 @@ export class InputGroup {
 
         return (
             <Host class="p-input-group">
-                <div class={`input-group ${this.error?.length && 'error'}`}>
+                <div
+                    class={`input-group ${this.error?.length && 'error'} ${
+                        this.disabled && 'disabled'
+                    } ${this.focus && 'focus'}`}
+                >
                     <div class="flex justify-between items-end">
                         {label && <div class="input-label">{label}</div>}
 
                         {(helper || hasHeaderSlot) && (
                             <div class="input-header">
                                 {hasHeaderSlot && <slot name="header" />}
-                                {helper && <p-helper>{helper}</p-helper>}
+                                {helper && (
+                                    <p-helper
+                                        class={`flex ${
+                                            hasHeaderSlot ? 'ml-2' : ''
+                                        }`}
+                                        placement="top-end"
+                                    >
+                                        {helper}
+                                    </p-helper>
+                                )}
                             </div>
                         )}
                     </div>
@@ -89,6 +112,7 @@ export class InputGroup {
                             <div class="prefix">
                                 {this.icon ? (
                                     <p-icon
+                                        class="flex"
                                         variant={this.icon}
                                         rotate={this.iconRotate}
                                         flip={this.iconFlip}
@@ -107,7 +131,7 @@ export class InputGroup {
                                         popover={this.error}
                                     >
                                         <p-icon
-                                            class="text-negative-light hover:text-negative"
+                                            class="flex text-negative-light hover:text-negative"
                                             slot="content"
                                             variant="explanation"
                                         />

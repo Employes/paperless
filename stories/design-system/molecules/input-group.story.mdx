@@ -8,72 +8,163 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 
 # Examples
 
-## Default
+## Variants
+
+### Disabled
 
 <Canvas>
-    <div class="flex items-center h-48">
-        <p-input-group>
-            <span slot="helper">The name on your birth certificate.</span>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group disabled>
             <span slot="label">Name</span>
             <input slot="input" type="text" placeholder="What is your name?" />
         </p-input-group>
     </div>
 </Canvas>
 
-## Asd
+### Default
 
 <Canvas>
-    <div class="flex items-center h-48">
-        <p-input-group
-            helper="The name your mom/dad provided you."
-            label="Name"
-        >
+    <div class="flex items-center h-32 px-10">
+        <p-input-group>
+            <span slot="label">Name</span>
             <input slot="input" type="text" placeholder="What is your name?" />
         </p-input-group>
     </div>
 </Canvas>
 
-## Error
+### Focus
 
 <Canvas>
-    <div class="flex items-center h-48">
-        <p-input-group label="Name" error="Verplicht veld">
+    <div class="flex items-center h-32 px-10">
+        <p-input-group focus>
+            <span slot="label">Name</span>
             <input slot="input" type="text" placeholder="What is your name?" />
         </p-input-group>
     </div>
 </Canvas>
 
-## Icon
+### Error
 
 <Canvas>
-    <div class="flex items-center h-48">
+    <div class="flex items-center h-32 px-10">
+        <p-input-group error="Invalid">
+            <span slot="label">Name</span>
+            <input slot="input" type="text" placeholder="What is your name?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Prefix & Suffix
+
+### Prefix
+
+#### Icon
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
         <p-input-group label="Name" icon="person">
             <input slot="input" type="text" placeholder="What is your name?" />
         </p-input-group>
     </div>
 </Canvas>
 
-## Prefix
+#### Text
 
 <Canvas>
-    <div class="flex items-center h-48">
-        <p-input-group label="Name" prefix="%">
-            <input slot="input" type="text" placeholder="What is your name?" />
+    <div class="flex items-center h-32 px-10">
+        <p-input-group label="Name" prefix="#">
+            <input slot="input" type="number" placeholder="Choose a number?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+### Suffix
+
+#### Text
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group label="Name" suffix="#">
+            <input slot="input" type="number" placeholder="Choose a number?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+#### Text with error
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group label="Name" suffix="#" error="Not a number">
+            <input slot="input" type="number" placeholder="Choose a number?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+## Helper
+
+### Default
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group helper="The on your birth certificate." label="Name">
+            <textarea slot="input" placeholder="Tell me your story?" />
+        </p-input-group>
+    </div>
+</Canvas>
+
+### Slotted
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group label="Name">
+            <textarea slot="input" placeholder="Tell me your story?" />
+            <span slot="helper">
+                The name on your birth certificate. (slotted)
+            </span>
         </p-input-group>
     </div>
 </Canvas>
 
 ## Header
 
+### Custom header item
+
 <Canvas>
-    <div class="flex items-center h-48">
+    <div class="flex items-center h-32 px-10">
         <p-input-group label="Password">
             <input
                 slot="input"
                 type="password"
                 placeholder="What is your password?"
             />
-            <p-button slot="header" variant="text" size="small" class="-mb-2">
+            <p-button
+                slot="header"
+                variant="text"
+                size="small"
+                class="-mt-2 -mb-2"
+            >
+                Password forgotten?
+            </p-button>
+        </p-input-group>
+    </div>
+</Canvas>
+
+### With helper
+
+<Canvas>
+    <div class="flex items-center h-32 px-10">
+        <p-input-group label="Password" helper="I am helping!">
+            <input
+                slot="input"
+                type="password"
+                placeholder="What is your password?"
+            />
+            <p-button
+                slot="header"
+                variant="text"
+                size="small"
+                class="-mt-2 -mb-2"
+            >
                 Password forgotten?
             </p-button>
         </p-input-group>

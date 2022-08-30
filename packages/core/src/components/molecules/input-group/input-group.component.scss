@@ -17,7 +17,7 @@
         }
 
         .input-header {
-            @apply flex gap-4;
+            @apply flex gap-2 items-end mb-[2px];
         }
 
         .content {
@@ -68,19 +68,35 @@
                 @include inputFocusState();
                 @apply text-indigo;
             }
+
+            @include slottedItems() {
+                @include inputFocusState();
+            }
         }
 
         &.error,
         &[error] {
-            @include slottedItems() {
-                @include inputErrorState();
-                @apply text-negative;
-            }
-
             .prefix,
             .suffix {
                 @include inputErrorState();
                 @apply text-negative;
+            }
+
+            @include slottedItems() {
+                @include inputErrorState();
+            }
+        }
+
+        &.disabled,
+        &[disabled] {
+            .prefix,
+            .suffix {
+                @include inputDisabledState();
+            }
+
+            @include slottedItems() {
+                @include inputDisabledState();
+                pointer-events: none;
             }
         }
     }

@@ -7,10 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./utils/types";
+import { Placement } from "@popperjs/core";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
-import { Placement } from "@popperjs/core";
 export namespace Components {
     interface PAccordion {
         /**
@@ -165,6 +165,10 @@ export namespace Components {
         "active": boolean;
     }
     interface PHelper {
+        /**
+          * The placement of the helper popover
+         */
+        "placement": Placement;
     }
     interface PIcon {
         /**
@@ -210,9 +214,17 @@ export namespace Components {
     }
     interface PInputGroup {
         /**
+          * Wether the input group is disabled
+         */
+        "disabled": boolean;
+        /**
           * The helper of the input group
          */
         "error": string;
+        /**
+          * Wether the input group is focused
+         */
+        "focus": boolean;
         /**
           * The helper of the input group
          */
@@ -453,7 +465,7 @@ export namespace Components {
          */
         "canManuallyClose": boolean;
         /**
-          * The content of the popover
+          * The placement of the popover
          */
         "placement": Placement;
         /**
@@ -929,6 +941,10 @@ declare namespace LocalJSX {
         "active"?: boolean;
     }
     interface PHelper {
+        /**
+          * The placement of the helper popover
+         */
+        "placement"?: Placement;
     }
     interface PIcon {
         /**
@@ -974,9 +990,17 @@ declare namespace LocalJSX {
     }
     interface PInputGroup {
         /**
+          * Wether the input group is disabled
+         */
+        "disabled"?: boolean;
+        /**
           * The helper of the input group
          */
         "error"?: string;
+        /**
+          * Wether the input group is focused
+         */
+        "focus"?: boolean;
         /**
           * The helper of the input group
          */
@@ -1218,7 +1242,7 @@ declare namespace LocalJSX {
          */
         "canManuallyClose"?: boolean;
         /**
-          * The content of the popover
+          * The placement of the popover
          */
         "placement"?: Placement;
         /**

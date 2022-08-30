@@ -37,6 +37,11 @@ export class Button {
     @Prop() size: 'small' | 'medium' = 'medium';
 
     /**
+     * The width of the button
+     */
+    @Prop() width: 'auto' | 'full' = 'auto';
+
+    /**
      * Wether to show a loader or not
      */
     @Prop() loading: boolean = false;
@@ -102,8 +107,8 @@ export class Button {
         return (
             <Host class="p-button">
                 <VariableTag
-                    class={`variant-${this.variant} size-${
-                        this.size
+                    class={`variant-${this.variant} size-${this.size} width-${
+                        this.width
                     } icon-position-${this.iconPosition} ${
                         this.chevron && 'has-chevron'
                     } ${this.iconOnly && 'has-icon-only'} ${

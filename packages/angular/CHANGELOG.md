@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.67 (2022-08-30)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Rename `focus` to `focused` ([04912f4](https://github.com/Employes/Paperless/commit/04912f4bc2267af05037fba735dabae3ade302a5))
+
+
+
+
+
 # 0.1.0-alpha.66 (2022-08-30)
 
 

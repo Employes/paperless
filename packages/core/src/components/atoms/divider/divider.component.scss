@@ -1,3 +1,13 @@
 :host {
-    @apply block h-px bg-mystic-medium my-2 w-full;
+    @apply block my-2 w-full;
+
+    .container {
+        @apply flex w-full items-center;
+
+        &::before,
+        &::after {
+            content: '';
+            @apply h-px bg-mystic-medium flex-1;
+        }
+    }
 }

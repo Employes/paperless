@@ -107,6 +107,10 @@ export namespace Components {
           * The variant of the button
          */
         "variant": 'primary' | 'secondary' | 'text';
+        /**
+          * The width of the button
+         */
+        "width": 'auto' | 'full';
     }
     interface PCardBody {
         /**
@@ -879,6 +883,10 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
+        /**
+          * The width of the button
+         */
+        "width"?: 'auto' | 'full';
     }
     interface PCardBody {
         /**

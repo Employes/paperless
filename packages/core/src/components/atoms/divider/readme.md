@@ -4,6 +4,10 @@
 
 ```html
 <p-divider />
+
+<!-- or -->
+
+<p-divider> Content </p-divider>
 ```
 
 <!-- Auto Generated Below -->

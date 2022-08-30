@@ -35,5 +35,8 @@
       }
     }
   },
-  "defaultProject": "paperless"
+  "defaultProject": "paperless",
+  "cli": {
+    "analytics": false
+  }
 }

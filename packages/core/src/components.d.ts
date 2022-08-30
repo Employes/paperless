@@ -224,7 +224,7 @@ export namespace Components {
         /**
           * Wether the input group is focused
          */
-        "focus": boolean;
+        "focused": boolean;
         /**
           * The helper of the input group
          */
@@ -1000,7 +1000,7 @@ declare namespace LocalJSX {
         /**
           * Wether the input group is focused
          */
-        "focus"?: boolean;
+        "focused"?: boolean;
         /**
           * The helper of the input group
          */

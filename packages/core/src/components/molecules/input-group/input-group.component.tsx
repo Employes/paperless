@@ -56,7 +56,7 @@ export class InputGroup {
     /**
      * Wether the input group is focused
      */
-    @Prop() focus: boolean = false;
+    @Prop() focused: boolean = false;
 
     /**
      * The host element
@@ -86,7 +86,7 @@ export class InputGroup {
                 <div
                     class={`input-group ${this.error?.length && 'error'} ${
                         this.disabled && 'disabled'
-                    } ${this.focus && 'focus'}`}
+                    } ${this.focused && 'focused'}`}
                 >
                     <div class="flex justify-between items-end">
                         {label && <div class="input-label">{label}</div>}

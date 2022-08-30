@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.61 (2022-08-30)
+
+
+### Features
+
+* Update grid to be of 12 columns ([2c2603b](https://github.com/ionic-team/ionic/commit/2c2603bb2d2c10abd4b9dd67cb83ae1d9b0c1a6f))
+
+
+
+
+
 # 0.1.0-alpha.60 (2022-08-18)
 
 

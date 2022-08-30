@@ -1,6 +1,6 @@
 {
     "name": "@paperless/angular",
-    "version": "0.1.0-alpha.67",
+    "version": "0.1.0-alpha.68",
     "scripts": {
         "ng": "ng",
         "set-version": "cd projects/paperless && yarn version --new-version=$(node -p \"require('../../package.json').version\") --no-git-tag-version",
@@ -16,7 +16,6 @@
     },
     "dependencies": {
         "@angular/animations": "14.2.0",
-        
         "@angular/common": "14.2.0",
         "@angular/compiler": "14.2.0",
         "@angular/core": "14.2.0",

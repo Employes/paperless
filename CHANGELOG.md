@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.70 (2022-08-30)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** `.size-full` -> `.width-full` ([a8a4af1](https://github.com/employes/paperless/commit/a8a4af16bd1686474e0ad6dd00e7c2c318e850ed))
+
+
+
+
+
 # 0.1.0-alpha.69 (2022-08-30)
 
 

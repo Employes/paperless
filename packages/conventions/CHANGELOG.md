@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.66 (2022-08-30)
+
+
+### Features
+
+* **Atoms/Layout:** Improvements to width/padding ([1e4fc8b](https://github.com/Employes/Paperless/commit/1e4fc8b3139925c6eca8e798df5fda3165689bf8))
+
+
+
+
+
 # 0.1.0-alpha.65 (2022-08-30)
 
 

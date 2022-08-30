@@ -5,7 +5,7 @@
 ### Hover
 
 ```html
-<p-tooltip content="Your content">
+<p-tooltip popover="Your content">
     <span slot="content">Hover me</span>
 </p-tooltip>
 
@@ -18,7 +18,7 @@
 ### Click
 
 ```html
-<p-tooltip variant="click" content="Your content">
+<p-tooltip variant="click" popover="Your content">
     <span slot="content">Click me</span>
 </p-tooltip>
 
@@ -31,7 +31,7 @@
 ### Error
 
 ```html
-<p-tooltip variant="error" content="Display an error">
+<p-tooltip variant="error" popover="Display an error">
     <span slot="content">
         <!-- Error content -->
     </span>

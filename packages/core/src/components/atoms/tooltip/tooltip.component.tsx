@@ -93,7 +93,7 @@ export class Tooltip {
     @Listen('mouseenter')
     @Listen('focus')
     protected mouseEnterHandler() {
-        if (this.variant !== 'hover') {
+        if (this.variant === 'click') {
             return;
         }
 
@@ -103,7 +103,7 @@ export class Tooltip {
     @Listen('mouseleave')
     @Listen('blur')
     protected mouseLeaveHandler() {
-        if (this.show || this.variant !== 'hover') {
+        if (this.show || this.variant === 'click') {
             return;
         }
 
@@ -169,13 +169,12 @@ export class Tooltip {
         }
 
         this._popper.setOptions({
-            placement:
-                this.variant === 'error' ? 'bottom-start' : this.placement,
+            placement: this.variant === 'error' ? 'top-end' : this.placement,
             modifiers: [
                 {
                     name: 'offset',
                     options: {
-                        offset: [0, 8],
+                        offset: this.variant === 'error' ? [8, 14] : [0, 8],
                     },
                 },
                 {

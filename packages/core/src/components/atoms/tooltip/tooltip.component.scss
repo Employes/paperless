@@ -11,7 +11,7 @@
         }
 
         &.variant-error {
-            @apply bg-negative;
+            @apply bg-negative uppercase tracking-wider;
         }
 
         &[data-show] {

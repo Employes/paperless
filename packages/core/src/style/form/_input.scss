@@ -1,0 +1,22 @@
+@import './mixins';
+
+@include inputs() {
+    @include inputDefaultState();
+
+    &[error],
+    &.error {
+        @include inputErrorState();
+    }
+
+    &[disabled],
+    &:disabled,
+    &.disabled {
+        @include inputDisabledState();
+    }
+
+    &.clean {
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    }
+}

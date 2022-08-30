@@ -1,0 +1,18 @@
+@import './mixins';
+
+textarea {
+    @apply h-auto;
+
+    @include inputDefaultState();
+
+    &[error],
+    &.error {
+        @include inputErrorState();
+    }
+
+    &[disabled],
+    &:disabled,
+    &.disabled {
+        @include inputDisabledState();
+    }
+}

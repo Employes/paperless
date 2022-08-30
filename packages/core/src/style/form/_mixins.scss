@@ -1,0 +1,91 @@
+@mixin inputs($prefix: false, $slotted: false) {
+    @if $prefix != false {
+        @if $slotted == true {
+            #{$prefix} + ::slotted(input[type='text']),
+            #{$prefix} + ::slotted(input[type='number']),
+            #{$prefix} + ::slotted(input[type='date']),
+            #{$prefix} + ::slotted(input[type='month']),
+            #{$prefix} + ::slotted(input[type='datetime-local']),
+            #{$prefix} + ::slotted(input[type='time']),
+            #{$prefix} + ::slotted(input[type='tel']),
+            #{$prefix} + ::slotted(input[type='password']),
+            #{$prefix} + ::slotted(input[type='email']) {
+                @content;
+            }
+        } @else {
+            #{$prefix} + input[type='text'],
+            #{$prefix} + input[type='number'],
+            #{$prefix} + input[type='date'],
+            #{$prefix} + input[type='month'],
+            #{$prefix} + input[type='datetime-local'],
+            #{$prefix} + input[type='time'],
+            #{$prefix} + input[type='tel'],
+            #{$prefix} + input[type='password'],
+            #{$prefix} + input[type='email'] {
+                @content;
+            }
+        }
+    } @else {
+        @if $slotted == true {
+            ::slotted(input[type='text']),
+            ::slotted(input[type='number']),
+            ::slotted(input[type='date']),
+            ::slotted(input[type='month']),
+            ::slotted(input[type='datetime-local']),
+            ::slotted(input[type='time']),
+            ::slotted(input[type='tel']),
+            ::slotted(input[type='password']),
+            ::slotted(input[type='email']) {
+                @content;
+            }
+        } @else {
+            input[type='text'],
+            input[type='number'],
+            input[type='date'],
+            input[type='month'],
+            input[type='datetime-local'],
+            input[type='time'],
+            input[type='tel'],
+            input[type='password'],
+            input[type='email'] {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin inputDefaultState {
+    @apply flex justify-start items-center h-10;
+    @apply text-storm-dark;
+    @apply bg-white px-4 w-full;
+    @apply rounded-large;
+    @apply border border-mystic-dark border-solid #{!important};
+    @apply outline-0 #{!important};
+
+    &::placeholder {
+        @apply text-storm-medium;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &.focus {
+        @include inputFocusState();
+    }
+}
+
+@mixin inputFocusState {
+    @apply border-indigo #{!important};
+}
+
+@mixin inputErrorState {
+    @apply text-negative-dark;
+    @apply border-negative #{!important};
+
+    &::placeholder {
+        @apply text-negative-light;
+    }
+}
+
+@mixin inputDisabledState {
+    @apply opacity-40;
+}

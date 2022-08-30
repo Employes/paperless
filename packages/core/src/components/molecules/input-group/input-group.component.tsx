@@ -5,6 +5,7 @@ import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 @Component({
     tag: 'p-input-group',
     styleUrl: './input-group.component.scss',
+    shadow: true,
 })
 export class InputGroup {
     /**
@@ -57,12 +58,14 @@ export class InputGroup {
         const hasLabelSlot = !!this._el.querySelector('[slot="label"]');
         const hasPrefixSlot = !!this._el.querySelector('[slot="prefix"]');
         const hasSuffixSlot = !!this._el.querySelector('[slot="suffix"]');
+        const hasHeaderSlot = !!this._el.querySelector('[slot="header"]');
 
         const helper = hasHelperSlot ? <slot name="helper" /> : this.helper;
         const label = hasLabelSlot ? <slot name="label" /> : this.label;
         const prefix = hasPrefixSlot ? <slot name="prefix" /> : this.prefix;
         const suffix = hasSuffixSlot ? <slot name="suffix" /> : this.suffix;
 
+        console.log(helper);
         const errorAndErrorIsNotBoolean =
             this.error &&
             typeof this.error === 'string' &&
@@ -72,12 +75,14 @@ export class InputGroup {
             <Host class="p-input-group">
                 <div class={`input-group ${this.error?.length && 'error'}`}>
                     <div class="flex justify-between items-end">
-                        <div class="input-label">{label}</div>
+                        {label && <div class="input-label">{label}</div>}
 
-                        <div class="input-header">
-                            <slot name="header" />
-                            {helper && <p-helper>{helper}</p-helper>}
-                        </div>
+                        {(helper || hasHeaderSlot) && (
+                            <div class="input-header">
+                                {hasHeaderSlot && <slot name="header" />}
+                                {helper && <p-helper>{helper}</p-helper>}
+                            </div>
+                        )}
                     </div>
                     <div class="content">
                         {(prefix || this.icon) && (

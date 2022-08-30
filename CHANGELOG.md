@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.69 (2022-08-30)
+
+
+### Features
+
+* **Atoms/Button:** Add widths prop ([83eb353](https://github.com/employes/paperless/commit/83eb3532e80c6918df847aa2156428c89d7ffe8d))
+
+
+
+
+
 # 0.1.0-alpha.68 (2022-08-30)
 
 **Note:** Version bump only for package paperless

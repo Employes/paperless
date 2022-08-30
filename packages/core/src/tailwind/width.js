@@ -14,5 +14,5 @@ module.exports = {
 
     // login variant
     'sidebar-desktop-login': '100%',
-    'content-desktop-login': '21rem',
+    'content-desktop-login': '30rem',
 };

@@ -18,9 +18,7 @@ export class Layout {
                     <slot name="topbar" />
                 </div>
                 <div class="sidebar">
-                    <div class="inner-content">
-                        <slot name="sidebar" />
-                    </div>
+                    <slot name="sidebar" />
                 </div>
                 <div class="content">
                     <div class="inner-content">

@@ -24,13 +24,9 @@
     .sidebar {
         grid-area: sidebar;
 
-        @apply flex flex-col h-full;
+        @apply flex h-full box-border;
         @apply w-sidebar-mobile tablet:w-sidebar-desktop;
         @apply order-1 tablet:order-2;
-
-        .inner-content {
-            @apply flex flex-1;
-        }
     }
 
     .content {
@@ -40,10 +36,10 @@
         @apply order-3;
 
         .inner-content {
-            @apply relative;
+            @apply relative pb-24;
 
             @apply px-content-mobile-x py-content-mobile-y;
-            @apply tablet:pr-0 tablet:pb-0 tablet:pl-content-desktop-x tablet:pt-content-desktop-y;
+            @apply tablet:px-content-desktop-x tablet:py-content-desktop-y;
 
             @apply desktop-xs:w-content-desktop-xs desktop-sm:w-content-desktop-sm desktop:w-content-desktop desktop-lg:w-content-desktop-lg desktop-xl:w-content-desktop-xl;
         }
@@ -63,7 +59,7 @@
 
     .sidebar {
         @apply hidden tablet:flex w-unset;
-        @apply order-3;
+        @apply order-3 p-2;
         @apply flex-1 overflow-hidden;
 
         .inner-content {
@@ -76,6 +72,7 @@
         @apply tablet:justify-center;
 
         .inner-content {
+            @apply box-border;
             @apply tablet:py-0 tablet:px-18;
             @apply tablet:w-content-desktop-login;
         }

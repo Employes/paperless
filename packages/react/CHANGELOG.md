@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.65 (2022-08-30)
+
+
+### Features
+
+* **Atoms:** Layout atom ([7b07da3](https://github.com/ionic-team/ionic/commit/7b07da366e2c6485815fe4d0edc6cfee8e0a043c))
+
+
+
+
+
 # 0.1.0-alpha.64 (2022-08-30)
 
 

@@ -1,5 +1,5 @@
 :host {
-    @apply grid h-screen content-start overflow-hidden;
+    @apply grid h-screen w-screen content-start overflow-hidden;
 
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
@@ -18,15 +18,15 @@
         grid-area: topbar;
 
         @apply sticky w-full;
-        @apply order-2 tablet:order-1;
+        @apply order-2 desktop-sm:order-1;
     }
 
     .sidebar {
         grid-area: sidebar;
 
         @apply flex h-full box-border;
-        @apply w-sidebar-mobile tablet:w-sidebar-desktop;
-        @apply order-1 tablet:order-2;
+        @apply w-sidebar-mobile desktop-sm:w-sidebar-desktop;
+        @apply order-1 desktop-sm:order-2;
     }
 
     .content {
@@ -39,7 +39,7 @@
             @apply relative pb-24;
 
             @apply px-content-mobile-x py-content-mobile-y;
-            @apply tablet:px-content-desktop-x tablet:py-content-desktop-y;
+            @apply desktop-sm:px-content-desktop-x desktop-sm:py-content-desktop-y;
 
             @apply desktop-xs:w-content-desktop-xs desktop-sm:w-content-desktop-sm desktop:w-content-desktop desktop-lg:w-content-desktop-lg desktop-xl:w-content-desktop-xl;
         }
@@ -55,10 +55,16 @@
 :host(.variant-login) {
     grid-template-areas:
         'topbar topbar'
-        'content sidebar';
+        'content content';
+
+    @screen desktop-xs {
+        grid-template-areas:
+            'topbar topbar'
+            'content sidebar';
+    }
 
     .sidebar {
-        @apply hidden tablet:flex w-unset;
+        @apply hidden desktop-xs:flex w-unset;
         @apply order-3 p-2;
         @apply flex-1 overflow-hidden;
 
@@ -68,13 +74,13 @@
     }
 
     .content {
-        @apply order-3 tablet:order-2;
-        @apply tablet:justify-center;
+        @apply order-3 desktop-xs:order-2;
+        @apply desktop-xs:justify-center;
 
         .inner-content {
             @apply box-border;
-            @apply tablet:py-0 tablet:px-18;
-            @apply tablet:w-content-desktop-login;
+            @apply desktop-xs:py-0 desktop-xs:px-18;
+            @apply w-full desktop-xs:w-content-desktop-login;
         }
     }
 }

@@ -13,8 +13,6 @@ export class Divider {
 
     render() {
         const hasSlotted = !!this._el.innerHTML?.length;
-
-        console.log(hasSlotted);
         return (
             <Host class="p-divider">
                 <div class="container">

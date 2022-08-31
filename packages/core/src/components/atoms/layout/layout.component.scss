@@ -69,7 +69,7 @@
         @apply flex-1 overflow-hidden;
 
         .inner-content {
-            @apply p-2 pt-14 desktop-xs:pt-content-mobile-y;
+            @apply p-2;
         }
     }
 
@@ -81,6 +81,7 @@
             @apply box-border;
             @apply desktop-xs:py-0 desktop-xs:px-18;
             @apply w-full tablet:w-content-desktop-login;
+            @apply pt-14 desktop-xs:pt-content-mobile-y;
         }
     }
 }

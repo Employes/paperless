@@ -75,12 +75,12 @@
 
     .content {
         @apply order-3 desktop-xs:order-2;
-        @apply desktop-xs:justify-center;
+        @apply items-center desktop-xs:justify-center;
 
         .inner-content {
             @apply box-border;
             @apply desktop-xs:py-0 desktop-xs:px-18;
-            @apply w-full desktop-xs:w-content-desktop-login;
+            @apply w-full tablet:w-content-desktop-login;
         }
     }
 }

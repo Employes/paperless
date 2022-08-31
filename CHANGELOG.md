@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.75 (2022-08-31)
+
+
+### Features
+
+* **Atoms/Illustrations:** Add e-mail illustration ([0a6e1fc](https://github.com/employes/paperless/commit/0a6e1fc765b9f69fb2d7271351cbc78a4c860968))
+
+
+
+
+
 # 0.1.0-alpha.74 (2022-08-31)
 
 

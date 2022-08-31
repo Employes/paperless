@@ -69,7 +69,7 @@
         @apply flex-1 overflow-hidden;
 
         .inner-content {
-            @apply p-2;
+            @apply p-2 pt-14 desktop-xs:pt-content-mobile-y;
         }
     }
 

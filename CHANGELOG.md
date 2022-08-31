@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.76 (2022-08-31)
+
+
+### Features
+
+* **Atoms/Layout:** login variant inner content padding-top fix ([1debb4b](https://github.com/employes/paperless/commit/1debb4bd694a9b580bd31325044798aea6a8b817))
+
+
+
+
+
 # 0.1.0-alpha.75 (2022-08-31)
 
 

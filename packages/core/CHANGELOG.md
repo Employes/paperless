@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.77 (2022-08-31)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** login variant inner content padding-top fix ([5d56fa4](https://github.com/ionic-team/stencil-component-starter/commit/5d56fa438311d6e930922ff4897961a621171410))
+
+
+
+
+
 # 0.1.0-alpha.76 (2022-08-31)
 
 

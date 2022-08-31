@@ -105,7 +105,7 @@ export class Button {
         const VariableTag = this.variant === 'text' ? 'a' : 'button';
 
         return (
-            <Host class="p-button">
+            <Host class={`p-button ${this.width === 'full' && 'w-full'}`}>
                 <VariableTag
                     class={`variant-${this.variant} size-${this.size} width-${
                         this.width

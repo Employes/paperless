@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.73 (2022-08-31)
+
+
+### Features
+
+* **Atoms/Layout:** Make tablet content for login variant better ([3094b5f](https://github.com/Employes/Paperless/commit/3094b5f05513ab03b3958e0d2b6a144e2eb316c5))
+
+
+
+
+
 # 0.1.0-alpha.72 (2022-08-31)
 
 

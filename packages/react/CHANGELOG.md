@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.72 (2022-08-31)
+
+
+### Features
+
+* **deps:** update all non-major dependencies ([#47](https://github.com/ionic-team/ionic/issues/47)) ([88bcc66](https://github.com/ionic-team/ionic/commit/88bcc663ff2d713eb834b2589a4576cd92de7ab8))
+
+
+
+
+
 # 0.1.0-alpha.71 (2022-08-30)
 
 

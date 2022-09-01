@@ -16,7 +16,7 @@ export class Divider {
         return (
             <Host class="p-divider">
                 <div class="container">
-                    <div class={`content ${hasSlotted && 'px-2'}`}>
+                    <div class={`flex items-center ${hasSlotted && 'px-2'}`}>
                         <slot />
                     </div>
                 </div>

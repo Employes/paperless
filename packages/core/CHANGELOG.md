@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.78 (2022-09-01)
+
+
+### Bug Fixes
+
+* **Atoms/Divider:** Fix content not being centered correctly ([7256d93](https://github.com/ionic-team/stencil-component-starter/commit/7256d93d907b0d104451c6ef94d3ffbb7d845eff))
+
+
+
+
+
 # 0.1.0-alpha.77 (2022-08-31)
 
 

@@ -16,7 +16,8 @@ export const config: Config = {
         sass(),
         tailwind({
             // enableDebug: true,
-            tailwindCssContents: '@tailwind utilities;@tailwind components;',
+            tailwindCssContents:
+                '@tailwind utilities;@tailwind components; * { @apply box-border; }',
             tailwindConf: tailwindConf as any,
         }),
         tailwindHMR(),

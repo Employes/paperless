@@ -1,5 +1,5 @@
 :host {
-    @apply px-14 py-6;
+    @apply px-14 py-6 h-full tablet:h-auto;
 }
 
 :host(.variant-table) {

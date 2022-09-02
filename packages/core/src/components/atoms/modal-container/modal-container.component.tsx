@@ -7,11 +7,11 @@ import { Component, h, Host, Prop } from '@stencil/core';
 // $modal-xl: 57.5rem;
 
 const modalSizes = {
-    xs: 'w-80',
-    sm: 'w-[33.5rem]',
-    md: 'w-[38rem]',
-    lg: 'w-[47.5rem]',
-    xl: 'w-[57.5rem]',
+    xs: 'tablet:w-80',
+    sm: 'tablet:w-[33.5rem]',
+    md: 'tablet:w-[38rem]',
+    lg: 'tablet:w-[47.5rem]',
+    xl: 'tablet:w-[57.5rem]',
 };
 @Component({
     tag: 'p-modal-container',

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.79 (2022-09-02)
+
+
+### Features
+
+* **Atoms/Layout:** Add safe area ([59bc8db](https://github.com/ionic-team/stencil-component-starter/commit/59bc8dbe7c37f0e6e2cdadf86749cb99ada8d65c))
+
+
+
+
+
 # 0.1.0-alpha.78 (2022-09-01)
 
 

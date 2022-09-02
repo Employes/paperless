@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.80 (2022-09-02)
+
+
+### Features
+
+* **Organisms/Modal:** Responsive modal ([3631233](https://github.com/ionic-team/ionic/commit/3631233611b95e4f18b5a0be8a82d3d4fafd5e4c))
+
+
+
+
+
 # 0.1.0-alpha.79 (2022-09-02)
 
 

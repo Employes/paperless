@@ -23,7 +23,6 @@
         .prefix,
         .suffix {
             @include inputDefaultState();
-            @apply flex-1;
             @apply text-storm box-border;
         }
 

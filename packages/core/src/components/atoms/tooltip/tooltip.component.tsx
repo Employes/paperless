@@ -52,13 +52,15 @@ export class Tooltip {
         return (
             <Host class="p-popover">
                 <slot name="content" />
-                <div
-                    class={`popover variant-${this.variant}`}
-                    role="popover"
-                    ref={(el) => this._load(el)}
-                >
-                    {this.popover ? this.popover : <slot name="popover" />}
-                    <div class="arrow" data-popper-arrow></div>
+                <div class="popover-container">
+                    <div
+                        class={`popover variant-${this.variant}`}
+                        role="popover"
+                        ref={(el) => this._load(el)}
+                    >
+                        {this.popover ? this.popover : <slot name="popover" />}
+                        <div class="arrow" data-popper-arrow></div>
+                    </div>
                 </div>
             </Host>
         );
@@ -152,7 +154,9 @@ export class Tooltip {
     private _load(popover: HTMLElement) {
         this._popover = popover;
         if (popover) {
-            this._popper = createPopper(this._el, popover);
+            this._popper = createPopper(this._el, popover, {
+                strategy: 'fixed',
+            });
 
             this._setOptions();
             this._loaded = true;

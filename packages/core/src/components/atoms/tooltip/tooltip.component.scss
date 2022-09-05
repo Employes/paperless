@@ -1,52 +1,55 @@
 :host {
-    @apply cursor-pointer;
+    @apply flex cursor-pointer;
 
-    .popover {
-        @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4;
-        max-width: 14.5rem;
+    .popover-container {
+        @apply w-0 h-0 relative;
+        .popover {
+            @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4;
+            max-width: 14.5rem;
 
-        &.variant-hover,
-        &.variant-error {
-            @apply bg-storm text-white py-1;
-        }
-
-        &.variant-error {
-            @apply bg-negative uppercase tracking-wider;
-        }
-
-        &[data-show] {
-            @apply block;
-        }
-
-        .arrow,
-        .arrow::before {
-            background: inherit;
-            @apply absolute w-2 h-2;
-        }
-
-        .arrow {
-            visibility: hidden;
-
-            &::before {
-                @apply visible transform rotate-45;
-                content: '';
+            &.variant-hover,
+            &.variant-error {
+                @apply bg-storm text-white py-1;
             }
-        }
 
-        &[data-popper-placement^='top'] > .arrow {
-            @apply -bottom-1;
-        }
+            &.variant-error {
+                @apply bg-negative uppercase tracking-wider;
+            }
 
-        &[data-popper-placement^='bottom'] > .arrow {
-            @apply -top-1;
-        }
+            &[data-show] {
+                @apply block;
+            }
 
-        &[data-popper-placement^='left'] > .arrow {
-            @apply -right-1;
-        }
+            .arrow,
+            .arrow::before {
+                background: inherit;
+                @apply absolute w-2 h-2;
+            }
 
-        &[data-popper-placement^='right'] > .arrow {
-            @apply -left-1;
+            .arrow {
+                visibility: hidden;
+
+                &::before {
+                    @apply visible transform rotate-45;
+                    content: '';
+                }
+            }
+
+            &[data-popper-placement^='top'] > .arrow {
+                @apply -bottom-1;
+            }
+
+            &[data-popper-placement^='bottom'] > .arrow {
+                @apply -top-1;
+            }
+
+            &[data-popper-placement^='left'] > .arrow {
+                @apply -right-1;
+            }
+
+            &[data-popper-placement^='right'] > .arrow {
+                @apply -left-1;
+            }
         }
     }
 }

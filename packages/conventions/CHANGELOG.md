@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.82 (2022-09-05)
+
+
+### Bug Fixes
+
+* **Atoms/Tooltip:** Fix tooltip issue on safari ([57a8eba](https://github.com/Employes/Paperless/commit/57a8eba7e465e0c2fbf153510d0aecd67e060362))
+
+
+
+
+
 # 0.1.0-alpha.81 (2022-09-05)
 
 

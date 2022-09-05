@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.81 (2022-09-05)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Remove flex 1 on prefix & suffix ([c8d2e41](https://github.com/employes/paperless/commit/c8d2e410fa7e5ca6a5606eeed856ac38922191d2))
+
+
+
+
+
 # 0.1.0-alpha.80 (2022-09-02)
 
 

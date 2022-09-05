@@ -40,6 +40,7 @@
         "prebuild:angular": "yarn link:angular",
         "build:angular": "cd packages/angular && yarn build",
         "build": "yarn build:core && yarn build:react && yarn build:angular",
+        "build:prod": "yarn build:core:prod && yarn build:react:prod && yarn build:angular:prod",
         "start": "yarn workspace @paperless/core start",
         "test": "cd packages/core && yarn test",
         "predocker:start": "yarn",

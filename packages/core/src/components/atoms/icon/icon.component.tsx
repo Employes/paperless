@@ -35,7 +35,7 @@ export class Icon {
         const icon = icons[this.variant];
 
         const styles = {
-            'p-icon inline-block': true,
+            'p-icon flex': true,
             'text-auto': this.size === 'auto',
             'text-xxs': this.size === 'xxs',
             'text-xs': this.size === 'xs',

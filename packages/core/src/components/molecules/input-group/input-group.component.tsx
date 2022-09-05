@@ -123,13 +123,9 @@ export class InputGroup {
                     {(suffix || errorAndErrorIsNotBoolean) && (
                         <div class="suffix">
                             {errorAndErrorIsNotBoolean ? (
-                                <p-tooltip
-                                    class="flex"
-                                    variant="error"
-                                    popover={this.error}
-                                >
+                                <p-tooltip variant="error" popover={this.error}>
                                     <p-icon
-                                        class="flex text-negative-light hover:text-negative"
+                                        class=" text-negative-light hover:text-negative"
                                         slot="content"
                                         variant="explanation"
                                     />

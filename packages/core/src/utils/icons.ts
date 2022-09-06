@@ -22,7 +22,9 @@ import integration from '../assets/icons/integration.svg';
 import list from '../assets/icons/list.svg';
 import location from '../assets/icons/location.svg';
 import megaphone from '../assets/icons/megaphone.svg';
+import menu from '../assets/icons/menu.svg';
 import minus from '../assets/icons/minus.svg';
+import more from '../assets/icons/more.svg';
 import negative from '../assets/icons/negative.svg';
 import pagination from '../assets/icons/pagination.svg';
 import payment from '../assets/icons/payment.svg';
@@ -35,6 +37,8 @@ import report from '../assets/icons/report.svg';
 import search from '../assets/icons/search.svg';
 import settings from '../assets/icons/settings.svg';
 import sick from '../assets/icons/sick.svg';
+import signout from '../assets/icons/signout.svg';
+import switchIcon from '../assets/icons/switch.svg';
 import tachometer from '../assets/icons/tachometer.svg';
 import task from '../assets/icons/task.svg';
 import template from '../assets/icons/template.svg';
@@ -69,7 +73,9 @@ export default {
     list,
     location,
     megaphone,
+    menu,
     minus,
+    more,
     negative,
     pagination,
     payment,
@@ -82,6 +88,8 @@ export default {
     search,
     settings,
     sick,
+    signout,
+    switch: switchIcon,
     tachometer,
     task,
     template,

@@ -536,6 +536,10 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
 }
+export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTooltipElement;
+}
 declare global {
     interface HTMLPAccordionElement extends Components.PAccordion, HTMLStencilElement {
     }
@@ -1320,6 +1324,10 @@ declare namespace LocalJSX {
           * Wether to someone can manually close the popover
          */
         "canManuallyClose"?: boolean;
+        /**
+          * Open change event
+         */
+        "onIsOpen"?: (event: PTooltipCustomEvent<boolean>) => void;
         /**
           * The placement of the popover
          */

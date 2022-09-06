@@ -60,6 +60,13 @@
 | `variant`          | `variant`            | The variant of the popover                       | `"click" \| "error" \| "hover"`                                                                                                                                                                              | `'hover'` |
 
 
+## Events
+
+| Event    | Description       | Type                   |
+| -------- | ----------------- | ---------------------- |
+| `isOpen` | Open change event | `CustomEvent<boolean>` |
+
+
 ## Dependencies
 
 ### Used by

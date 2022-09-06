@@ -1,5 +1,14 @@
 import { createPopper, Placement, PositioningStrategy } from '@popperjs/core';
-import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
+import {
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Listen,
+    Prop,
+} from '@stencil/core';
 
 @Component({
     tag: 'p-tooltip',
@@ -38,6 +47,11 @@ export class Tooltip {
     @Prop() canManuallyClose: boolean = true;
 
     /**
+     * Open change event
+     */
+    @Event() isOpen: EventEmitter<boolean>;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -48,9 +62,6 @@ export class Tooltip {
 
     componentShouldUpdate() {
         this._setOptions();
-        if (this._loaded && this.show) {
-            this._show();
-        }
     }
 
     render() {
@@ -73,7 +84,7 @@ export class Tooltip {
 
     @Listen('click', { capture: true })
     protected clickHandler() {
-        if (this.variant !== 'click') {
+        if (this.variant === 'hover') {
             return;
         }
 
@@ -86,7 +97,7 @@ export class Tooltip {
 
     @Listen('click', { target: 'document', capture: true })
     protected documentClickHandler() {
-        if (this.variant !== 'click' || !this.canManuallyClose) {
+        if (this.variant === 'hover' || !this.canManuallyClose) {
             return;
         }
 
@@ -100,7 +111,7 @@ export class Tooltip {
     @Listen('mouseenter')
     @Listen('focus')
     protected mouseEnterHandler() {
-        if (this.variant === 'click') {
+        if (this.variant !== 'hover') {
             return;
         }
 
@@ -110,7 +121,7 @@ export class Tooltip {
     @Listen('mouseleave')
     @Listen('blur')
     protected mouseLeaveHandler() {
-        if (this.show || this.variant === 'click') {
+        if (this.show || this.variant !== 'hover') {
             return;
         }
 
@@ -136,6 +147,7 @@ export class Tooltip {
 
         // Update its position
         this._popper.update();
+        this.isOpen.emit(true);
     }
 
     private _hide() {
@@ -154,6 +166,7 @@ export class Tooltip {
                 { name: 'eventListeners', enabled: false },
             ],
         }));
+        this.isOpen.emit(false);
     }
 
     private _load(popover: HTMLElement) {

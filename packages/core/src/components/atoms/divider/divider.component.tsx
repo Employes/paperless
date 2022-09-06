@@ -15,7 +15,7 @@ export class Divider {
         const hasSlotted = !!this._el.innerHTML?.length;
         return (
             <Host class="p-divider">
-                <div class="container">
+                <div class="content">
                     <div class={`flex items-center ${hasSlotted && 'px-2'}`}>
                         <slot />
                     </div>

@@ -1,7 +1,7 @@
 :host {
     @apply block my-2 w-full;
 
-    .container {
+    .content {
         @apply flex w-full items-center;
 
         &::before,

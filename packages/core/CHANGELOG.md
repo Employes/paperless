@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.88 (2022-09-06)
+
+
+### Features
+
+* **Organisms/Navbar:** Make navbar backdrop close the navbar ([d8dc4fa](https://github.com/ionic-team/stencil-component-starter/commit/d8dc4fa49481c3779e24fd36382026e2c3977439))
+
+
+
+
+
 # 0.1.0-alpha.87 (2022-09-06)
 
 

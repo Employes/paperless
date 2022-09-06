@@ -1,4 +1,12 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import {
+    Component,
+    Element,
+    h,
+    Host,
+    Listen,
+    Prop,
+    State,
+} from '@stencil/core';
 import { RotateOptions } from '../../../utils/types';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
@@ -63,6 +71,9 @@ export class InputGroup {
      */
     @Element() private _el: HTMLElement;
 
+    @State() private _showTooltip = false;
+    @State() private _forceShowTooltip = false;
+
     render() {
         const hasHelperSlot = !!this._el.querySelector('[slot="helper"]');
         const hasLabelSlot = !!this._el.querySelector('[slot="label"]');
@@ -123,9 +134,20 @@ export class InputGroup {
                     {(suffix || errorAndErrorIsNotBoolean) && (
                         <div class="suffix">
                             {errorAndErrorIsNotBoolean ? (
-                                <p-tooltip variant="error" popover={this.error}>
+                                <p-tooltip
+                                    variant="error"
+                                    popover={this.error}
+                                    show={this._forceShowTooltip}
+                                    onIsOpen={(ev) =>
+                                        (this._showTooltip = ev.detail)
+                                    }
+                                >
                                     <p-icon
-                                        class=" text-negative-light hover:text-negative"
+                                        class={`${
+                                            this._showTooltip
+                                                ? 'text-negative'
+                                                : 'text-negative-light'
+                                        } hover:text-negative`}
                                         slot="content"
                                         variant="explanation"
                                     />
@@ -139,5 +161,15 @@ export class InputGroup {
                 </div>
             </Host>
         );
+    }
+
+    @Listen('focusin')
+    handleFocusIn() {
+        this._forceShowTooltip = true;
+    }
+
+    @Listen('focusout')
+    handleFocusOut() {
+        this._forceShowTooltip = false;
     }
 }

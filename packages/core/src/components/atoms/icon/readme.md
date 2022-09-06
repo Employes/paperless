@@ -20,10 +20,12 @@
  - [p-accordion](../../molecules/accordion)
  - [p-button](../button)
  - [p-card-header](../card-header)
+ - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-info-panel](../info-panel)
  - [p-input-group](../../molecules/input-group)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
+ - [p-profile](../../molecules/profile)
  - [p-segment-item](../segment-item)
  - [p-status](../status)
  - [p-stepper-item](../stepper-item)
@@ -34,10 +36,12 @@ graph TD;
   p-accordion --> p-icon
   p-button --> p-icon
   p-card-header --> p-icon
+  p-dropdown-menu-item --> p-icon
   p-info-panel --> p-icon
   p-input-group --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
+  p-profile --> p-icon
   p-segment-item --> p-icon
   p-status --> p-icon
   p-stepper-item --> p-icon

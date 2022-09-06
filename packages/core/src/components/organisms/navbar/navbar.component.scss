@@ -1,6 +1,6 @@
 :host {
     @apply w-full;
-    @apply desktop-sm:w-60;
+    @apply desktop-xs:w-60;
 
     .sidebar,
     .sidebar .company,
@@ -18,7 +18,7 @@
 
     .sidebar {
         @apply bg-white fixed top-0 h-screen w-60 z-10 -left-full;
-        @apply desktop-sm:relative desktop-sm:h-full desktop-sm:w-full desktop-sm:left-0;
+        @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full desktop-xs:left-0;
 
         @apply p-4;
 
@@ -28,7 +28,7 @@
 
         .header {
             @apply flex justify-between w-full items-center mb-6;
-            @apply desktop-sm:hidden;
+            @apply desktop-xs:hidden;
         }
 
         .content {
@@ -37,7 +37,7 @@
 
         .user {
             @apply hidden mt-auto;
-            @apply desktop-sm:flex;
+            @apply desktop-xs:flex;
         }
     }
 
@@ -46,6 +46,6 @@
 
         @apply border-b #{!important};
 
-        @apply desktop-sm:hidden;
+        @apply desktop-xs:hidden;
     }
 }

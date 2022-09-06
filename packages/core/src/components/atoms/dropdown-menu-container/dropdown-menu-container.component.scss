@@ -1,5 +1,6 @@
 p-dropdown-menu-container {
-    @apply min-w-[222px]; // TODO: Do something about this..
-    @apply flex flex-col py-2 bg-white rounded-xxlarge;
-    @apply filter drop-shadow-4;
+    @apply w-full;
+    @apply max-w-[222px]; // TODO: Do something about this..
+    @apply flex flex-col p-2 bg-white rounded-xxlarge;
+    @apply filter drop-shadow-4 z-10;
 }

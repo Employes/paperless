@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.87 (2022-09-06)
+
+
+### Features
+
+* **Organisms/Navbar:** Safe inset height too ([ebbc47b](https://github.com/ionic-team/stencil-component-starter/commit/ebbc47b60b6145cb0867368c3dd96839eec6378e))
+
+
+
+
+
 # 0.1.0-alpha.86 (2022-09-06)
 
 

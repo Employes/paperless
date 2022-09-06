@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State } from '@stencil/core';
+import { Component, h, Host, Listen, Prop, State } from '@stencil/core';
 
 @Component({
     tag: 'p-navbar',
@@ -21,7 +21,12 @@ export class Navbar {
     render() {
         return (
             <Host class="p-navbar">
-                <div class={`sidebar ${this._showMenu && 'left-0'}`}>
+                <div
+                    class={`backdrop ${
+                        !this._showMenu ? 'opacity-0' : 'opacity-100'
+                    }`}
+                ></div>
+                <div class={`sidebar ${this._showMenu && 'show'}`}>
                     <div class="header">
                         <p class="text-xl m-0 font-semibold text-storm-dark">
                             {this.menuText}
@@ -63,5 +68,15 @@ export class Navbar {
                 </div>
             </Host>
         );
+    }
+
+    @Listen('closeNavbar', { target: 'window' })
+    handleCloseNavbar() {
+        this._showMenu = false;
+    }
+
+    @Listen('openNavbar', { target: 'window' })
+    handleOpenNavbar() {
+        this._showMenu = true;
     }
 }

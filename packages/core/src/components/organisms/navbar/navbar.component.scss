@@ -48,9 +48,10 @@
     }
 
     .top-bar {
-        @apply flex justify-between h-12 px-4 py-2 w-full;
+        @apply flex justify-between px-4 py-2 w-full;
 
         padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
+        height: calc(env(safe-area-inset-top, 0) + 3rem);
 
         @apply border-b #{!important};
 

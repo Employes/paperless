@@ -1,0 +1,56 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+
+<Meta title={`${StoryCategories.Templates}/Overview`} />
+
+# Overview page
+
+<Canvas>
+    <p-layout class="bg-mystic">
+        <p-navbar slot="sidebar">
+            <p-profile variant="company" slot="company">
+                <p-avatar slot="avatar" />
+                <span slot="title">Employes B.V.</span>
+            </p-profile>
+            <p-profile slot="user">
+                <p-avatar slot="avatar" />
+                <span slot="title">John Doe</span>
+                <div slot="dropdown">
+                    <p-profile class="px-2">
+                        <span slot="title">John Doe</span>
+                        <span slot="subtitle">john@doe.com</span>
+                    </p-profile>
+                    <p-divider class="-px-2" />
+                    <p-dropdown-menu-item icon="person">
+                        Account
+                    </p-dropdown-menu-item>
+                    <p-dropdown-menu-item icon="signout">
+                        Sign out
+                    </p-dropdown-menu-item>
+                </div>
+            </p-profile>
+            <div class="flex flex-col" slot="content">
+                <p class="text-storm-vague text-xs font-semibold uppercase mb-2">
+                    Overzicht
+                </p>
+                <p-navigation-item icon="person">Item name</p-navigation-item>
+                <p-navigation-item icon="person">Item name</p-navigation-item>
+                <p-navigation-item icon="person">Item name</p-navigation-item>
+            </div>
+            <p-dropdown placement="bottom-end" slot="topbar">
+                <p-avatar size="small" slot="trigger" />
+                <slot slot="items">
+                    <p-dropdown-menu-item icon="person">
+                        Account
+                    </p-dropdown-menu-item>
+                    <p-dropdown-menu-item icon="signout">
+                        Sign out
+                    </p-dropdown-menu-item>
+                </slot>
+            </p-dropdown>
+        </p-navbar>
+        <slot slot="content">
+            <h1 class="text-storm-dark hidden desktop-xs:block">Page name</h1>
+        </slot>
+    </p-layout>
+</Canvas>

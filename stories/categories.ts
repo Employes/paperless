@@ -5,4 +5,5 @@ export enum StoryCategories {
     Bosons = 'Design system/Bosons',
     Molecules = 'Design system/Molecules',
     Organisms = 'Design system/Organisms',
+    Templates = 'Design system/Templates',
 }

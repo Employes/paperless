@@ -1,4 +1,12 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import {
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Prop,
+} from '@stencil/core';
 
 @Component({
     tag: 'p-modal',
@@ -26,6 +34,21 @@ export class Modal {
     @Prop() show: boolean = false;
 
     /**
+     * Wether to show the close on mobile in the header
+     */
+    @Prop() showMobileClose = true;
+
+    /**
+     * Wether to show the footer on mobile
+     */
+    @Prop() showMobileFooter = false;
+
+    /**
+     * Close click event
+     */
+    @Event() close: EventEmitter<MouseEvent>;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -49,14 +72,21 @@ export class Modal {
             <Host class="p-modal">
                 <p-modal-backdrop>
                     <p-modal-container size={this.size}>
-                        <p-modal-header>
+                        <p-modal-header
+                            show-mobile-close={this.showMobileClose}
+                            onClose={() => this.close.emit()}
+                        >
                             {this.header ? this.header : headerContent}
                         </p-modal-header>
                         <p-modal-body variant={this.variant}>
                             {bodyContent}
                         </p-modal-body>
                         {this._hasFooterSlot && (
-                            <p-modal-footer>{footerContent}</p-modal-footer>
+                            <p-modal-footer
+                                hide-on-mobile={this.showMobileFooter}
+                            >
+                                {footerContent}
+                            </p-modal-footer>
                         )}
                     </p-modal-container>
                 </p-modal-backdrop>

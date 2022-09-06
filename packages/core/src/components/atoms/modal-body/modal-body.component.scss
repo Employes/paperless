@@ -1,7 +1,7 @@
 :host {
-    @apply px-14 py-6 h-full tablet:h-auto;
+    @apply px-6 tablet:px-10 desktop-xs:px-14 py-6;
 }
 
 :host(.variant-table) {
-    @apply px-6;
+    @apply px-4;
 }

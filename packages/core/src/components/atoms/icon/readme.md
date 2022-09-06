@@ -23,6 +23,7 @@
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-info-panel](../info-panel)
  - [p-input-group](../../molecules/input-group)
+ - [p-modal-header](../modal-header)
  - [p-navigation-item](../../molecules/navigation-item)
  - [p-pagination](../../molecules/pagination)
  - [p-profile](../../molecules/profile)
@@ -39,6 +40,7 @@ graph TD;
   p-dropdown-menu-item --> p-icon
   p-info-panel --> p-icon
   p-input-group --> p-icon
+  p-modal-header --> p-icon
   p-navigation-item --> p-icon
   p-pagination --> p-icon
   p-profile --> p-icon

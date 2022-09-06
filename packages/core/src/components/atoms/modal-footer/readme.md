@@ -11,6 +11,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property       | Attribute        | Description                         | Type      | Default |
+| -------------- | ---------------- | ----------------------------------- | --------- | ------- |
+| `hideOnMobile` | `hide-on-mobile` | Wether to show the footer on mobile | `boolean` | `true`  |
+
+
 ## Dependencies
 
 ### Used by

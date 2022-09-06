@@ -14,12 +14,21 @@
 
 ## Properties
 
-| Property  | Attribute | Description                     | Type                           | Default     |
-| --------- | --------- | ------------------------------- | ------------------------------ | ----------- |
-| `header`  | `header`  | The Header of the modal         | `string`                       | `undefined` |
-| `show`    | `show`    | Wether to show the modal or not | `boolean`                      | `false`     |
-| `size`    | `size`    | The size of the modal container | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
-| `variant` | `variant` | The variant of the modal body   | `"default" \| "table"`         | `'default'` |
+| Property           | Attribute            | Description                                      | Type                           | Default     |
+| ------------------ | -------------------- | ------------------------------------------------ | ------------------------------ | ----------- |
+| `header`           | `header`             | The Header of the modal                          | `string`                       | `undefined` |
+| `show`             | `show`               | Wether to show the modal or not                  | `boolean`                      | `false`     |
+| `showMobileClose`  | `show-mobile-close`  | Wether to show the close on mobile in the header | `boolean`                      | `true`      |
+| `showMobileFooter` | `show-mobile-footer` | Wether to show the footer on mobile              | `boolean`                      | `false`     |
+| `size`             | `size`               | The size of the modal container                  | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
+| `variant`          | `variant`            | The variant of the modal body                    | `"default" \| "table"`         | `'default'` |
+
+
+## Events
+
+| Event   | Description       | Type                      |
+| ------- | ----------------- | ------------------------- |
+| `close` | Close click event | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies
@@ -40,6 +49,7 @@ graph TD;
   p-modal --> p-modal-header
   p-modal --> p-modal-body
   p-modal --> p-modal-footer
+  p-modal-header --> p-icon
   p-modal-footer --> p-divider
   style p-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```

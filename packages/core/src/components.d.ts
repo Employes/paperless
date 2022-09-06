@@ -312,6 +312,14 @@ export namespace Components {
          */
         "show": boolean;
         /**
+          * Wether to show the close on mobile in the header
+         */
+        "showMobileClose": boolean;
+        /**
+          * Wether to show the footer on mobile
+         */
+        "showMobileFooter": boolean;
+        /**
           * The size of the modal container
          */
         "size": 'sm' | 'md' | 'lg' | 'xl';
@@ -335,8 +343,16 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg' | 'xl';
     }
     interface PModalFooter {
+        /**
+          * Wether to show the footer on mobile
+         */
+        "hideOnMobile": boolean;
     }
     interface PModalHeader {
+        /**
+          * Wether to show the close button on mobile
+         */
+        "showMobileClose": boolean;
     }
     interface PNavbar {
         /**
@@ -531,6 +547,14 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
 export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
+}
+export interface PModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPModalElement;
+}
+export interface PModalHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPModalHeaderElement;
 }
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1133,9 +1157,21 @@ declare namespace LocalJSX {
          */
         "header"?: string;
         /**
+          * Close click event
+         */
+        "onClose"?: (event: PModalCustomEvent<MouseEvent>) => void;
+        /**
           * Wether to show the modal or not
          */
         "show"?: boolean;
+        /**
+          * Wether to show the close on mobile in the header
+         */
+        "showMobileClose"?: boolean;
+        /**
+          * Wether to show the footer on mobile
+         */
+        "showMobileFooter"?: boolean;
         /**
           * The size of the modal container
          */
@@ -1160,8 +1196,20 @@ declare namespace LocalJSX {
         "size"?: 'sm' | 'md' | 'lg' | 'xl';
     }
     interface PModalFooter {
+        /**
+          * Wether to show the footer on mobile
+         */
+        "hideOnMobile"?: boolean;
     }
     interface PModalHeader {
+        /**
+          * Close click event
+         */
+        "onClose"?: (event: PModalHeaderCustomEvent<MouseEvent>) => void;
+        /**
+          * Wether to show the close button on mobile
+         */
+        "showMobileClose"?: boolean;
     }
     interface PNavbar {
         /**

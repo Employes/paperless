@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 
 @Component({
     tag: 'p-modal-header',
@@ -6,10 +6,28 @@ import { Component, h, Host } from '@stencil/core';
     shadow: true,
 })
 export class ModalHeader {
+    /**
+     * Wether to show the close button on mobile
+     */
+    @Prop() showMobileClose = true;
+
+    /**
+     * Close click event
+     */
+    @Event() close: EventEmitter<MouseEvent>;
+
     render() {
         return (
             <Host class="p-modal-header">
-                <slot />
+                <span>
+                    <slot />
+                </span>
+
+                {this.showMobileClose && (
+                    <div class="close" onClick={() => this.close.emit()}>
+                        <p-icon variant="negative" />
+                    </div>
+                )}
             </Host>
         );
     }

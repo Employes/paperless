@@ -11,15 +11,34 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property          | Attribute           | Description                               | Type      | Default |
+| ----------------- | ------------------- | ----------------------------------------- | --------- | ------- |
+| `showMobileClose` | `show-mobile-close` | Wether to show the close button on mobile | `boolean` | `true`  |
+
+
+## Events
+
+| Event   | Description       | Type                      |
+| ------- | ----------------- | ------------------------- |
+| `close` | Close click event | `CustomEvent<MouseEvent>` |
+
+
 ## Dependencies
 
 ### Used by
 
  - [p-modal](../../organisms/modal)
 
+### Depends on
+
+- [p-icon](../icon)
+
 ### Graph
 ```mermaid
 graph TD;
+  p-modal-header --> p-icon
   p-modal --> p-modal-header
   style p-modal-header fill:#f9f,stroke:#333,stroke-width:4px
 ```

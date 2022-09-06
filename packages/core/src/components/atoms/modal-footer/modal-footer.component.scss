@@ -2,3 +2,7 @@
     @apply flex flex-col;
     @apply pb-6 px-6;
 }
+
+:host(.hide-on-mobile) {
+    @apply hidden desktop-xs:flex;
+}

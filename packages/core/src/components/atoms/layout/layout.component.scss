@@ -4,12 +4,21 @@
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
         env(safe-area-inset-bottom) env(safe-area-inset-left);
 
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr, 3);
     gap: 0;
     grid-template-areas:
-        'topbar topbar'
-        'sidebar content';
+        'topbar'
+        'sidebar'
+        'content';
+
+    @screen desktop-xs {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            'topbar topbar'
+            'sidebar content';
+    }
 
     .topbar,
     .sidebar,

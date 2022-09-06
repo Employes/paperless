@@ -23,7 +23,7 @@
 
 ### Used by
 
- - [p-profile](../profile)
+ - [p-profile](../../molecules/profile)
 
 ### Graph
 ```mermaid

@@ -1,0 +1,44 @@
+:host {
+    @apply flex;
+
+    .content {
+        @apply flex gap-3 items-center w-full h-12;
+
+        .name {
+            @apply flex flex-col justify-center;
+
+            > *:nth-child(1) {
+                @apply text-sm text-storm-dark;
+                @apply font-semibold;
+            }
+
+            > *:nth-child(2) {
+                @apply text-sm text-storm-vague;
+            }
+        }
+    }
+}
+
+:host(.has-dropdown) {
+    @apply cursor-pointer;
+
+    .content {
+        @apply px-2 rounded;
+        @apply border border-solid border-mystic-dark #{!important};
+    }
+}
+
+:host(.has-dropdown:hover),
+:host(.active) {
+    .content {
+        @apply shadow-4;
+    }
+}
+
+:host(.active) {
+    .content {
+        p-icon {
+            @apply text-indigo;
+        }
+    }
+}

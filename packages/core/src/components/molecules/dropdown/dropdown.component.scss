@@ -1,6 +1,8 @@
 :host {
+    @apply relative;
+
     .trigger {
-        @apply w-auto h-auto inline-block;
+        @apply w-auto h-auto;
     }
 
     p-dropdown-menu-container {

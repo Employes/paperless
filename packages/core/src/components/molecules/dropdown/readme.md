@@ -18,12 +18,13 @@
 
 ## Properties
 
-| Property              | Attribute               | Description                                                           | Type                | Default    |
-| --------------------- | ----------------------- | --------------------------------------------------------------------- | ------------------- | ---------- |
-| `disableTriggerClick` | `disable-trigger-click` | Wether to automatically close the dropdown menu after clicking inside | `boolean`           | `false`    |
-| `insideClick`         | `inside-click`          | Wether to automatically close the dropdown menu after clicking inside | `boolean`           | `false`    |
-| `placement`           | `placement`             | The content of the dropdown menu                                      | `"bottom" \| "top"` | `'bottom'` |
-| `show`                | `show`                  | Wether to show the dropdown menu                                      | `boolean`           | `false`    |
+| Property              | Attribute               | Description                                                           | Type                                                                                                                                                                                                         | Default          |
+| --------------------- | ----------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| `disableTriggerClick` | `disable-trigger-click` | Wether to automatically close the dropdown menu after clicking inside | `boolean`                                                                                                                                                                                                    | `false`          |
+| `insideClick`         | `inside-click`          | Wether to automatically close the dropdown menu after clicking inside | `boolean`                                                                                                                                                                                                    | `false`          |
+| `placement`           | `placement`             | The content of the dropdown menu                                      | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom-start'` |
+| `show`                | `show`                  | Wether to show the dropdown menu                                      | `boolean`                                                                                                                                                                                                    | `false`          |
+| `strategy`            | `strategy`              | The strategy of the popover placement                                 | `"absolute" \| "fixed"`                                                                                                                                                                                      | `'fixed'`        |
 
 
 ## Events
@@ -35,6 +36,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-profile](../profile)
+
 ### Depends on
 
 - [p-dropdown-menu-container](../../atoms/dropdown-menu-container)
@@ -43,6 +48,7 @@
 ```mermaid
 graph TD;
   p-dropdown --> p-dropdown-menu-container
+  p-profile --> p-dropdown
   style p-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

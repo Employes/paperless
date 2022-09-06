@@ -1,4 +1,4 @@
-import { createPopper } from '@popperjs/core';
+import { createPopper, Placement, PositioningStrategy } from '@popperjs/core';
 import {
     Component,
     Element,
@@ -20,7 +20,12 @@ export class Dropdown {
     /**
      * The content of the dropdown menu
      */
-    @Prop() placement: 'bottom' | 'top' = 'bottom';
+    @Prop({ reflect: true }) placement: Placement = 'bottom-start';
+
+    /**
+     * The strategy of the popover placement
+     */
+    @Prop() strategy: PositioningStrategy = 'fixed';
 
     /**
      * Wether to show the dropdown menu
@@ -88,7 +93,7 @@ export class Dropdown {
         for (let child of children) {
             if (child.nodeName === 'P-BUTTON') {
                 (child as any).chevron =
-                    this.placement === 'top' ? 'up' : 'down';
+                    this.placement.indexOf('top') >= 0 ? 'up' : 'down';
             }
         }
     }
@@ -131,7 +136,9 @@ export class Dropdown {
     private _load(popover: HTMLElement) {
         this._menu = popover;
         if (popover) {
-            this._popper = createPopper(this._el, popover);
+            this._popper = createPopper(this._el, popover, {
+                strategy: this.strategy,
+            });
 
             this._setOptions();
             this._loaded = true;
@@ -148,7 +155,7 @@ export class Dropdown {
         }
 
         this._popper.setOptions({
-            placement: `${this.placement}-start`,
+            placement: this.placement,
             modifiers: [
                 {
                     name: 'offset',

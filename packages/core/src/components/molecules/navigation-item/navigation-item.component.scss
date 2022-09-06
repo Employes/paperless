@@ -2,26 +2,18 @@
     @apply w-full inline-block mb-1;
 
     > a {
-        @apply w-full h-8 px-2 cursor-pointer rounded-large;
-        @apply flex items-center;
-        @apply text-storm-medium font-medium;
+        @apply w-full h-8 px-2 cursor-pointer rounded-large no-underline;
+        @apply flex items-center gap-2;
+        @apply text-storm font-semibold;
 
-        @apply hover:bg-indigo-light hover:text-storm-dark;
+        @apply hover:bg-indigo-light;
 
         > p-icon {
-            @apply text-mystic-dark mr-3;
+            @apply text-storm;
         }
 
         > p-counter {
             @apply ml-auto;
-        }
-
-        > span.has-counter {
-            @apply mr-3;
-        }
-
-        &:hover > p-icon {
-            @apply text-storm-vague;
         }
     }
 }

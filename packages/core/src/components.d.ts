@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./utils/types";
-import { Placement } from "@popperjs/core";
+import { Placement, PositioningStrategy } from "@popperjs/core";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
@@ -139,6 +139,14 @@ export namespace Components {
         "header": string;
     }
     interface PCounter {
+        /**
+          * The size of the counter
+         */
+        "size": 'default' | 'mini';
+        /**
+          * The variant of the counter
+         */
+        "variant": 'info' | 'negative' | 'positive' | 'unbiased';
     }
     interface PDivider {
     }
@@ -154,11 +162,15 @@ export namespace Components {
         /**
           * The content of the dropdown menu
          */
-        "placement": 'bottom' | 'top';
+        "placement": Placement;
         /**
           * Wether to show the dropdown menu
          */
         "show": boolean;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy": PositioningStrategy;
     }
     interface PDropdownMenuContainer {
     }
@@ -167,6 +179,10 @@ export namespace Components {
           * Wether the dropdown menu item is active
          */
         "active": boolean;
+        /**
+          * Icon of the navigation item
+         */
+        "icon": IconVariant;
     }
     interface PHelper {
         /**
@@ -365,6 +381,10 @@ export namespace Components {
         "active": boolean;
     }
     interface PProfile {
+        /**
+          * The variant of the profile
+         */
+        "variant": 'company' | 'user';
     }
     interface PSegmentContainer {
     }
@@ -480,6 +500,10 @@ export namespace Components {
           * Wether to show the popover
          */
         "show": boolean;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy": PositioningStrategy;
         /**
           * The variant of the popover
          */
@@ -915,6 +939,14 @@ declare namespace LocalJSX {
         "header"?: string;
     }
     interface PCounter {
+        /**
+          * The size of the counter
+         */
+        "size"?: 'default' | 'mini';
+        /**
+          * The variant of the counter
+         */
+        "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
     }
     interface PDivider {
     }
@@ -934,11 +966,15 @@ declare namespace LocalJSX {
         /**
           * The content of the dropdown menu
          */
-        "placement"?: 'bottom' | 'top';
+        "placement"?: Placement;
         /**
           * Wether to show the dropdown menu
          */
         "show"?: boolean;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy"?: PositioningStrategy;
     }
     interface PDropdownMenuContainer {
     }
@@ -947,6 +983,10 @@ declare namespace LocalJSX {
           * Wether the dropdown menu item is active
          */
         "active"?: boolean;
+        /**
+          * Icon of the navigation item
+         */
+        "icon"?: IconVariant;
     }
     interface PHelper {
         /**
@@ -1146,6 +1186,10 @@ declare namespace LocalJSX {
         "active"?: boolean;
     }
     interface PProfile {
+        /**
+          * The variant of the profile
+         */
+        "variant"?: 'company' | 'user';
     }
     interface PSegmentContainer {
     }
@@ -1261,6 +1305,10 @@ declare namespace LocalJSX {
           * Wether to show the popover
          */
         "show"?: boolean;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy"?: PositioningStrategy;
         /**
           * The variant of the popover
          */

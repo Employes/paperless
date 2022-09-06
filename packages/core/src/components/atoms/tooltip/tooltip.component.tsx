@@ -1,4 +1,4 @@
-import { createPopper, Placement } from '@popperjs/core';
+import { createPopper, Placement, PositioningStrategy } from '@popperjs/core';
 import { Component, Element, h, Host, Listen, Prop } from '@stencil/core';
 
 @Component({
@@ -21,6 +21,11 @@ export class Tooltip {
      * The placement of the popover
      */
     @Prop() placement: Placement = 'top';
+
+    /**
+     * The strategy of the popover placement
+     */
+    @Prop() strategy: PositioningStrategy = 'fixed';
 
     /**
      * Wether to show the popover
@@ -155,7 +160,7 @@ export class Tooltip {
         this._popover = popover;
         if (popover) {
             this._popper = createPopper(this._el, popover, {
-                strategy: 'fixed',
+                strategy: this.strategy,
             });
 
             this._setOptions();

@@ -12,6 +12,11 @@ export class Profile {
     @Prop() variant: 'company' | 'user' = 'user';
 
     /**
+     * The size of the profile avatar
+     */
+    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'small';
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -79,7 +84,7 @@ export class Profile {
                 src={avatar.src ?? null}
                 default-image={avatar.defaultImage ?? null}
                 variant={this.variant ?? avatar.variant}
-                size="small"
+                size={this.size}
             ></p-avatar>
         );
     }

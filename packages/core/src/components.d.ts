@@ -408,6 +408,10 @@ export namespace Components {
     }
     interface PProfile {
         /**
+          * The size of the profile avatar
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
           * The variant of the profile
          */
         "variant": 'company' | 'user';
@@ -1265,6 +1269,10 @@ declare namespace LocalJSX {
         "active"?: boolean;
     }
     interface PProfile {
+        /**
+          * The size of the profile avatar
+         */
+        "size"?: 'small' | 'medium' | 'large';
         /**
           * The variant of the profile
          */

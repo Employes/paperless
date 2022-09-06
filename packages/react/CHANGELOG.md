@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.86 (2022-09-06)
+
+
+### Features
+
+* **Atoms/Layout:** Remove padding-top safe area and apply to content ([bdc6c3f](https://github.com/ionic-team/ionic/commit/bdc6c3f9b0d0780f8fc55351b8d0b29111754a7e))
+
+
+
+
+
 # 0.1.0-alpha.85 (2022-09-06)
 
 

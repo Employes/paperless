@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.85 (2022-09-06)
+
+
+### Features
+
+* **Molecules/Input Group:** Show error on focus in ([c8a977d](https://github.com/ionic-team/stencil-component-starter/commit/c8a977dfd6b9458c21847d854049aaa28f19e344))
+
+
+
+
+
 # 0.1.0-alpha.84 (2022-09-06)
 
 

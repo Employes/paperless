@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.83 (2022-09-06)
+
+
+### Features
+
+* **Organisms:** Add navbar component ([b4f504f](https://github.com/Employes/Paperless/commit/b4f504fcbeb23499fd0bed22bab61de70db2f5bc))
+
+
+
+
+
 # 0.1.0-alpha.82 (2022-09-05)
 
 

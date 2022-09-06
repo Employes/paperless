@@ -1,5 +1,31 @@
 :host {
-  @apply h-4 px-2 bg-indigo rounded-xlarge;
-  @apply text-xs leading-3 text-white font-bold uppercase;
-  @apply flex justify-center items-center;
+    @apply h-4 px-2 bg-indigo rounded-xlarge;
+    @apply text-xs leading-3 text-white font-bold uppercase;
+    @apply flex justify-center items-center;
+}
+
+:host(.variant-positive),
+:host(.variant-unbiased),
+:host(.variant-negative) {
+    @apply rounded px-1 min-w-[1rem];
+}
+
+:host(.variant-positive) {
+    @apply bg-positive-light text-positive-dark;
+}
+
+:host(.variant-unbiased) {
+    @apply bg-unbiased-light text-unbiased-dark;
+}
+
+:host(.variant-negative) {
+    @apply bg-negative-light text-negative-dark;
+}
+
+:host(.size-mini) {
+    @apply w-2 h-2 rounded-round p-0 min-w-0;
+
+    slot {
+        display: none;
+    }
 }

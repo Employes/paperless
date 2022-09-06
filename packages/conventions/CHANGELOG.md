@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.90 (2022-09-06)
+
+
+### Features
+
+* **Molecules/Profile:** Overflow protection ([126176a](https://github.com/Employes/Paperless/commit/126176ad7beba79db3c0dc02a1748f58a3efadea))
+
+
+
+
+
 # 0.1.0-alpha.89 (2022-09-06)
 
 

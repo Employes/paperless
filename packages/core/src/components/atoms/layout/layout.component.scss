@@ -1,9 +1,6 @@
 :host {
     @apply grid h-screen w-screen content-start overflow-hidden;
 
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-        env(safe-area-inset-bottom) env(safe-area-inset-left);
-
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, 3);
     gap: 0;
@@ -46,6 +43,9 @@
 
         @apply relative flex flex-col h-full overflow-y-auto;
         @apply order-3;
+
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+            env(safe-area-inset-bottom) env(safe-area-inset-left);
 
         .inner-content {
             @apply relative pb-24;

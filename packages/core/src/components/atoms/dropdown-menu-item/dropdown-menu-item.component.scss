@@ -1,6 +1,6 @@
 :host {
-    @apply h-8 flex items-center px-2 rounded w-full;
-    @apply text-sm text-storm-medium font-medium;
+    @apply h-8 flex items-center px-2 rounded w-full gap-2;
+    @apply text-sm text-storm font-semibold;
     @apply cursor-pointer;
 }
 

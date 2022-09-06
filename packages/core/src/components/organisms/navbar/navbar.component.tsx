@@ -22,9 +22,8 @@ export class Navbar {
         return (
             <Host class="p-navbar">
                 <div
-                    class={`backdrop ${
-                        !this._showMenu ? 'opacity-0' : 'opacity-100'
-                    }`}
+                    class={`backdrop ${this._showMenu && 'show'}`}
+                    onClick={() => (this._showMenu = false)}
                 ></div>
                 <div class={`sidebar ${this._showMenu && 'show'}`}>
                     <div class="header">

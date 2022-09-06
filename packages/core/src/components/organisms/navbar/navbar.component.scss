@@ -68,5 +68,9 @@
         @apply desktop-xs:hidden;
 
         @apply pointer-events-none;
+
+        &.show {
+            @apply pointer-events-auto opacity-100;
+        }
     }
 }

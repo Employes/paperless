@@ -338,6 +338,16 @@ export namespace Components {
     }
     interface PModalHeader {
     }
+    interface PNavbar {
+        /**
+          * The text to display for the close button
+         */
+        "closeText": string;
+        /**
+          * The text to display for the menu button & sidebar title
+         */
+        "menuText": string;
+    }
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
@@ -677,6 +687,12 @@ declare global {
         prototype: HTMLPModalHeaderElement;
         new (): HTMLPModalHeaderElement;
     };
+    interface HTMLPNavbarElement extends Components.PNavbar, HTMLStencilElement {
+    }
+    var HTMLPNavbarElement: {
+        prototype: HTMLPNavbarElement;
+        new (): HTMLPNavbarElement;
+    };
     interface HTMLPNavigationItemElement extends Components.PNavigationItem, HTMLStencilElement {
     }
     var HTMLPNavigationItemElement: {
@@ -787,6 +803,7 @@ declare global {
         "p-modal-container": HTMLPModalContainerElement;
         "p-modal-footer": HTMLPModalFooterElement;
         "p-modal-header": HTMLPModalHeaderElement;
+        "p-navbar": HTMLPNavbarElement;
         "p-navigation-item": HTMLPNavigationItemElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
@@ -1142,6 +1159,16 @@ declare namespace LocalJSX {
     }
     interface PModalHeader {
     }
+    interface PNavbar {
+        /**
+          * The text to display for the close button
+         */
+        "closeText"?: string;
+        /**
+          * The text to display for the menu button & sidebar title
+         */
+        "menuText"?: string;
+    }
     interface PNavigationItem {
         /**
           * Wether the navigation item is active
@@ -1340,6 +1367,7 @@ declare namespace LocalJSX {
         "p-modal-container": PModalContainer;
         "p-modal-footer": PModalFooter;
         "p-modal-header": PModalHeader;
+        "p-navbar": PNavbar;
         "p-navigation-item": PNavigationItem;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
@@ -1385,6 +1413,7 @@ declare module "@stencil/core" {
             "p-modal-container": LocalJSX.PModalContainer & JSXBase.HTMLAttributes<HTMLPModalContainerElement>;
             "p-modal-footer": LocalJSX.PModalFooter & JSXBase.HTMLAttributes<HTMLPModalFooterElement>;
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;
+            "p-navbar": LocalJSX.PNavbar & JSXBase.HTMLAttributes<HTMLPNavbarElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;

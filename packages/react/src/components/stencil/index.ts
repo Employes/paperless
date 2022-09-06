@@ -33,6 +33,7 @@ export const PModalBody = /*@__PURE__*/createReactComponent<JSX.PModalBody, HTML
 export const PModalContainer = /*@__PURE__*/createReactComponent<JSX.PModalContainer, HTMLPModalContainerElement>('p-modal-container');
 export const PModalFooter = /*@__PURE__*/createReactComponent<JSX.PModalFooter, HTMLPModalFooterElement>('p-modal-footer');
 export const PModalHeader = /*@__PURE__*/createReactComponent<JSX.PModalHeader, HTMLPModalHeaderElement>('p-modal-header');
+export const PNavbar = /*@__PURE__*/createReactComponent<JSX.PNavbar, HTMLPNavbarElement>('p-navbar');
 export const PNavigationItem = /*@__PURE__*/createReactComponent<JSX.PNavigationItem, HTMLPNavigationItemElement>('p-navigation-item');
 export const PPagination = /*@__PURE__*/createReactComponent<JSX.PPagination, HTMLPPaginationElement>('p-pagination');
 export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPaginationItem, HTMLPPaginationItemElement>('p-pagination-item');

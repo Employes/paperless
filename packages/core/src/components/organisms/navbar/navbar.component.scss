@@ -1,0 +1,51 @@
+:host {
+    @apply w-full;
+    @apply desktop-sm:w-60;
+
+    .sidebar,
+    .sidebar .company,
+    .sidebar .content,
+    .sidebar .user,
+    .userbar {
+        @apply flex flex-col w-full;
+    }
+
+    .sidebar,
+    .top-bar {
+        @apply bg-white;
+        @apply border-0  border-solid border-mystic-dark #{!important};
+    }
+
+    .sidebar {
+        @apply bg-white fixed top-0 h-screen w-60 z-10 -left-full;
+        @apply desktop-sm:relative desktop-sm:h-full desktop-sm:w-full desktop-sm:left-0;
+
+        @apply p-4;
+
+        @apply border-r #{!important};
+
+        @apply transition-all;
+
+        .header {
+            @apply flex justify-between w-full items-center mb-6;
+            @apply desktop-sm:hidden;
+        }
+
+        .content {
+            @apply mt-6;
+        }
+
+        .user {
+            @apply hidden mt-auto;
+            @apply desktop-sm:flex;
+        }
+    }
+
+    .top-bar {
+        @apply flex justify-between h-12 px-4 py-2 w-full;
+
+        @apply border-b #{!important};
+
+        @apply desktop-sm:hidden;
+    }
+}

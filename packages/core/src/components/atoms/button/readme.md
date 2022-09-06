@@ -38,6 +38,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-navbar](../../organisms/navbar)
+
 ### Depends on
 
 - [p-loader](../loader)
@@ -48,6 +52,7 @@
 graph TD;
   p-button --> p-loader
   p-button --> p-icon
+  p-navbar --> p-button
   style p-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

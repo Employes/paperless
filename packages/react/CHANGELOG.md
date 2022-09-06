@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.91 (2022-09-06)
+
+
+### Features
+
+* **Atoms/Modal Body:** Update table variant padding ([23afe3f](https://github.com/ionic-team/ionic/commit/23afe3f450b0b173e19249f47768b3e67d66e09b))
+
+
+
+
+
 # 0.1.0-alpha.90 (2022-09-06)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.92 (2022-09-07)
+
+
+### Features
+
+* **Molecules:** Add content slider component ([cece57e](https://github.com/ionic-team/stencil-component-starter/commit/cece57ed228e5f6d93e6c0aed7068b2c59722af8))
+
+
+
+
+
 # 0.1.0-alpha.91 (2022-09-06)
 
 

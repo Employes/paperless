@@ -436,6 +436,12 @@ export namespace Components {
          */
         "iconRotate": RotateOptions;
     }
+    interface PSliderIndicator {
+        /**
+          * Wether the slider indicator is active
+         */
+        "active": boolean;
+    }
     interface PStatus {
         /**
           * Icon to show on the status
@@ -761,6 +767,12 @@ declare global {
         prototype: HTMLPSegmentItemElement;
         new (): HTMLPSegmentItemElement;
     };
+    interface HTMLPSliderIndicatorElement extends Components.PSliderIndicator, HTMLStencilElement {
+    }
+    var HTMLPSliderIndicatorElement: {
+        prototype: HTMLPSliderIndicatorElement;
+        new (): HTMLPSliderIndicatorElement;
+    };
     interface HTMLPStatusElement extends Components.PStatus, HTMLStencilElement {
     }
     var HTMLPStatusElement: {
@@ -842,6 +854,7 @@ declare global {
         "p-profile": HTMLPProfileElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
+        "p-slider-indicator": HTMLPSliderIndicatorElement;
         "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
         "p-stepper-item": HTMLPStepperItemElement;
@@ -1298,6 +1311,12 @@ declare namespace LocalJSX {
          */
         "iconRotate"?: RotateOptions;
     }
+    interface PSliderIndicator {
+        /**
+          * Wether the slider indicator is active
+         */
+        "active"?: boolean;
+    }
     interface PStatus {
         /**
           * Icon to show on the status
@@ -1438,6 +1457,7 @@ declare namespace LocalJSX {
         "p-profile": PProfile;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
+        "p-slider-indicator": PSliderIndicator;
         "p-status": PStatus;
         "p-stepper": PStepper;
         "p-stepper-item": PStepperItem;

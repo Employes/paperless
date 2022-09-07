@@ -1,0 +1,21 @@
+:host {
+    @apply flex flex-col gap-4 overflow-hidden;
+
+    @apply -mx-4 desktop-xs:mx-0;
+
+    .content {
+        @apply flex flex-nowrap overflow-auto gap-2;
+        @apply tablet:gap-4 desktop-xs:flex-wrap;
+
+        @apply px-4 desktop-xs:px-0;
+
+        > ::slotted(*) {
+            @apply w-full tablet:w-[45%] desktop-xs:w-full;
+            @apply flex-shrink-0 desktop-xs:flex-1;
+        }
+    }
+
+    .indicator {
+        @apply flex justify-center items-center gap-2 desktop-xs:hidden;
+    }
+}

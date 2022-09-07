@@ -138,6 +138,12 @@ export namespace Components {
          */
         "header": string;
     }
+    interface PContentSlider {
+        /**
+          * Wether to hide the indicator on mobile
+         */
+        "hideMobileIndicator": boolean;
+    }
     interface PCounter {
         /**
           * The size of the counter
@@ -617,6 +623,12 @@ declare global {
         prototype: HTMLPCardHeaderElement;
         new (): HTMLPCardHeaderElement;
     };
+    interface HTMLPContentSliderElement extends Components.PContentSlider, HTMLStencilElement {
+    }
+    var HTMLPContentSliderElement: {
+        prototype: HTMLPContentSliderElement;
+        new (): HTMLPContentSliderElement;
+    };
     interface HTMLPCounterElement extends Components.PCounter, HTMLStencilElement {
     }
     var HTMLPCounterElement: {
@@ -829,6 +841,7 @@ declare global {
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
         "p-card-header": HTMLPCardHeaderElement;
+        "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
         "p-dropdown": HTMLPDropdownElement;
@@ -999,6 +1012,12 @@ declare namespace LocalJSX {
           * Content of the card header
          */
         "header"?: string;
+    }
+    interface PContentSlider {
+        /**
+          * Wether to hide the indicator on mobile
+         */
+        "hideMobileIndicator"?: boolean;
     }
     interface PCounter {
         /**
@@ -1432,6 +1451,7 @@ declare namespace LocalJSX {
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
         "p-card-header": PCardHeader;
+        "p-content-slider": PContentSlider;
         "p-counter": PCounter;
         "p-divider": PDivider;
         "p-dropdown": PDropdown;
@@ -1479,6 +1499,7 @@ declare module "@stencil/core" {
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
+            "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
@@ -1504,6 +1525,7 @@ declare module "@stencil/core" {
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
+            "p-slider-indicator": LocalJSX.PSliderIndicator & JSXBase.HTMLAttributes<HTMLPSliderIndicatorElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;
             "p-stepper-item": LocalJSX.PStepperItem & JSXBase.HTMLAttributes<HTMLPStepperItemElement>;

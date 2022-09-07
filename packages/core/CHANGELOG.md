@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.93 (2022-09-07)
+
+
+### Features
+
+* **Molecules/Content Slider:** Disable indicator click & Dragging feat ([14b5261](https://github.com/ionic-team/stencil-component-starter/commit/14b52618935a839c2e004601529f622a53a7dc13))
+
+
+
+
+
 # 0.1.0-alpha.92 (2022-09-07)
 
 

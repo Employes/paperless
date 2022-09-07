@@ -140,6 +140,14 @@ export namespace Components {
     }
     interface PContentSlider {
         /**
+          * Wether to disable dragging the content
+         */
+        "disableDrag": boolean;
+        /**
+          * Wether to disable clicking the indicator scrolls content
+         */
+        "disableIndicatorClick": boolean;
+        /**
           * Wether to hide the indicator on mobile
          */
         "hideMobileIndicator": boolean;
@@ -1014,6 +1022,14 @@ declare namespace LocalJSX {
         "header"?: string;
     }
     interface PContentSlider {
+        /**
+          * Wether to disable dragging the content
+         */
+        "disableDrag"?: boolean;
+        /**
+          * Wether to disable clicking the indicator scrolls content
+         */
+        "disableIndicatorClick"?: boolean;
         /**
           * Wether to hide the indicator on mobile
          */

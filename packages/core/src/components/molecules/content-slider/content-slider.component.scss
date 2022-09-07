@@ -1,17 +1,31 @@
 :host {
-    @apply flex flex-col gap-4 overflow-hidden;
+    @apply flex flex-col gap-4;
 
-    @apply -mx-4 desktop-xs:mx-0;
+    @apply -mx-4;
 
     .content {
-        @apply flex flex-nowrap overflow-auto gap-2;
+        @apply flex flex-nowrap items-stretch overflow-x-auto gap-2 relative;
         @apply tablet:gap-4 desktop-xs:flex-wrap;
 
-        @apply px-4 desktop-xs:px-0;
+        @apply p-4 -my-4;
+
+        &.draggable {
+            @apply cursor-grab desktop-xs:cursor-default;
+
+            &.dragging {
+                @apply cursor-grabbing desktop-xs:cursor-default;
+            }
+        }
 
         > ::slotted(*) {
             @apply w-full tablet:w-[45%] desktop-xs:w-full;
             @apply flex-shrink-0 desktop-xs:flex-1;
+            position: relative;
+            z-index: 10;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
         }
     }
 

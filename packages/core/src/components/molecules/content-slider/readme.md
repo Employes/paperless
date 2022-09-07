@@ -10,26 +10,29 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property              | Attribute               | Description                            | Type      | Default |
-| --------------------- | ----------------------- | -------------------------------------- | --------- | ------- |
-| `hideMobileIndicator` | `hide-mobile-indicator` | Wether to hide the indicator on mobile | `boolean` | `false` |
+| Property                | Attribute                 | Description                                              | Type      | Default |
+| ----------------------- | ------------------------- | -------------------------------------------------------- | --------- | ------- |
+| `disableDrag`           | `disable-drag`            | Wether to disable dragging the content                   | `boolean` | `false` |
+| `disableIndicatorClick` | `disable-indicator-click` | Wether to disable clicking the indicator scrolls content | `boolean` | `false` |
+| `hideMobileIndicator`   | `hide-mobile-indicator`   | Wether to hide the indicator on mobile                   | `boolean` | `false` |
+
 
 ## Dependencies
 
 ### Depends on
 
--   [p-slider-indicator](../../atoms/slider-indicator)
+- [p-slider-indicator](../../atoms/slider-indicator)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-content-slider --> p-slider-indicator
   style p-content-slider fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

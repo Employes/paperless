@@ -8,7 +8,9 @@ import Readme from '../../../packages/core/src/components/molecules/content-slid
 
 # Examples
 
-## Default
+## Mobile indicator
+
+### Enabled
 
 <Canvas>
     <div class="p-4 py-16 bg-mystic">
@@ -16,11 +18,13 @@ import Readme from '../../../packages/core/src/components/molecules/content-slid
             <div class="h-16 bg-indigo"></div>
             <div class="h-16 bg-indigo"></div>
             <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
         </p-content-slider>
     </div>
 </Canvas>
 
-## Hide mobile indicator
+### Hidden
 
 <Canvas>
     <div class="p-4 py-16 bg-mystic">
@@ -28,6 +32,81 @@ import Readme from '../../../packages/core/src/components/molecules/content-slid
             <div class="h-16 bg-indigo"></div>
             <div class="h-16 bg-indigo"></div>
             <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+        </p-content-slider>
+    </div>
+</Canvas>
+
+### Disable cick
+
+<Canvas>
+    <div class="p-4 py-16 bg-mystic">
+        <p-content-slider disable-indicator-click>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+        </p-content-slider>
+    </div>
+</Canvas>
+
+## Dragging
+
+### Enabled
+
+<Canvas>
+    <div class="p-4 py-16 bg-mystic">
+        <p-content-slider>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+        </p-content-slider>
+    </div>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+    <div class="p-4 py-16 bg-mystic">
+        <p-content-slider disable-drag>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+            <div class="h-16 bg-indigo"></div>
+        </p-content-slider>
+    </div>
+</Canvas>
+
+## Other
+
+### With cards
+
+<Canvas>
+    <div class="p-4 py-16 bg-mystic">
+        <p-content-slider>
+            <p-card-container>
+                <p-card-header header="Header"></p-card-header>
+                <p-card-body>
+                    Bereken het netto-loon en de werkgeverskosten, simpel in
+                    maar 3 stappen weet je wat hier meer text is.
+                </p-card-body>
+            </p-card-container>
+            <p-card-container>
+                <p-card-header header="Header"></p-card-header>
+                <p-card-body>
+                    This card is very big <br /> <br /> <br /> <br /> <br />{' '}
+                    <br /> <br /> hihi
+                </p-card-body>
+            </p-card-container>
+            <p-card-container>
+                <p-card-header header="Header"></p-card-header>
+                <p-card-body>This card is smol</p-card-body>
+            </p-card-container>
         </p-content-slider>
     </div>
 </Canvas>

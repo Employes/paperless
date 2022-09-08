@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.103 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Profile:** Height adjustments ([a8f213c](https://github.com/employes/paperless/commit/a8f213cca197a44eff9da22bf0eb1c1cf8243517))
+
+
+
+
+
 # 0.1.0-alpha.102 (2022-09-08)
 
 **Note:** Version bump only for package paperless

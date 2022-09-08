@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.97 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Add a bit more padding/-margin ([430755a](https://github.com/ionic-team/ionic/commit/430755af096c7ce39816ae89cfd94861ff76edc0))
+
+
+
+
+
 # 0.1.0-alpha.96 (2022-09-08)
 
 

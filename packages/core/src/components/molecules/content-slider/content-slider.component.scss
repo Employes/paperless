@@ -7,10 +7,10 @@
         @apply overflow-visible relative box-content;
 
         &.draggable {
-            @apply cursor-grab desktop-xs:cursor-default;
+            @apply cursor-grab desktop-xs:cursor-auto;
 
             &.dragging {
-                @apply cursor-grabbing desktop-xs:cursor-default;
+                @apply cursor-grabbing desktop-xs:cursor-auto;
             }
         }
 
@@ -19,7 +19,7 @@
 
             @apply tablet:gap-4 desktop-xs:flex-wrap;
             > ::slotted(*) {
-                @apply w-full tablet:w-[45%] desktop-xs:w-full;
+                @apply w-0 tablet:w-[45%] desktop-xs:w-full;
                 @apply flex-shrink-0 desktop-xs:flex-1;
                 position: relative;
                 z-index: 10;

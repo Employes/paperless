@@ -135,8 +135,6 @@ export class ContentSlider {
             return;
         }
 
-        e.preventDefault();
-
         const x = e.offsetX;
 
         this._innerSliderRef.style.left = `${x - this._startX}px`;

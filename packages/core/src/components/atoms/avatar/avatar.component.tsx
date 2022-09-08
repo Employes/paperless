@@ -26,7 +26,15 @@ export class Avatar {
      */
     @Prop() src!: string;
 
-    @State() private _src = this.src;
+    private _lastSrc: string;
+    @State() private _src: string;
+
+    componentWillRender() {
+        if (this.src !== this._lastSrc) {
+            this._lastSrc = this.src;
+            this._src = this.src;
+        }
+    }
 
     render() {
         if (!this._src) {

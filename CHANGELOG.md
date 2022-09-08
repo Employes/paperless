@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.98 (2022-09-08)
+
+
+### Features
+
+* **Atoms/Layout:** Hide horizontal overflow ([50cf4af](https://github.com/employes/paperless/commit/50cf4afd682c683e4ac14d361102d86567921f91))
+
+
+
+
+
 # 0.1.0-alpha.97 (2022-09-08)
 
 

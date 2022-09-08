@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.101 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Apply content-box to correct content ([78cc733](https://github.com/Employes/Paperless/commit/78cc733017b373f345bbd6f71048409ce54e5e14))
+
+
+
+
+
 # 0.1.0-alpha.100 (2022-09-08)
 
 

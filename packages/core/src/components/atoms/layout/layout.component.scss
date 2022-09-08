@@ -51,7 +51,7 @@
             @apply relative pb-24;
 
             @apply px-content-mobile-x py-content-mobile-y;
-            @apply desktop-sm:px-content-desktop-x desktop-sm:py-content-desktop-y;
+            @apply desktop-xs:px-content-desktop-x desktop-xs:py-content-desktop-y;
 
             @apply desktop-xs:w-content-desktop-xs desktop-sm:w-content-desktop-sm desktop:w-content-desktop desktop-lg:w-content-desktop-lg desktop-xl:w-content-desktop-xl;
         }

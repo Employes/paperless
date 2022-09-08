@@ -25,6 +25,11 @@ export class ContentSlider {
     @Prop() disableDrag: boolean = false;
 
     /**
+     * Wether to disable auto centering the content
+     */
+    @Prop() disableAutoCenter: boolean = false;
+
+    /**
      * Wether to disable clicking the indicator scrolls content
      */
     @Prop() disableIndicatorClick: boolean = false;
@@ -37,6 +42,7 @@ export class ContentSlider {
     @State() private _visibleIndex: number;
     @State() private _outerHeight = 0;
     @State() private _totalWidth = 0;
+    private _indicatorTimeout: NodeJS.Timeout;
     private _sliderRef: HTMLElement;
     private _innerSliderRef: HTMLElement;
     private _items: HTMLElement[] = [];
@@ -183,7 +189,12 @@ export class ContentSlider {
     }
 
     private _calculateIndicator() {
-        setTimeout(() => {
+        if (this._indicatorTimeout) {
+            clearTimeout(this._indicatorTimeout);
+            this._indicatorTimeout = null;
+        }
+
+        this._indicatorTimeout = setTimeout(() => {
             for (let i = 0; i < this._items.length; i++) {
                 const item = this._items[i];
                 const visible = this._isVisible(item);
@@ -195,6 +206,10 @@ export class ContentSlider {
                 if (i === 0 && visible) {
                     break;
                 }
+            }
+
+            if (!this.disableAutoCenter) {
+                this._scrollTo(this._visibleIndex, false);
             }
         }, 200);
     }
@@ -210,14 +225,14 @@ export class ContentSlider {
         return (
             (elRect.left >= sliderRect.left &&
                 elRect.right <= sliderRect.right) ||
-            (sliderRect.width - elRect.width < 10 &&
+            (this._isMobile(el) &&
                 elRect.left + elRect.width / 2 >= sliderRect.left &&
                 elRect.left + elRect.width / 2 <= sliderRect.right)
         );
     }
 
-    private _scrollTo(i: number) {
-        if (this.disableIndicatorClick) {
+    private _scrollTo(i: number, calculateIndicator = true) {
+        if (this.disableIndicatorClick && calculateIndicator) {
             return;
         }
 
@@ -237,7 +252,10 @@ export class ContentSlider {
         this._innerSliderRef.style.left = `-${centerOffset}px`;
 
         this._checkBoundary();
-        this._calculateIndicator();
+
+        if (!calculateIndicator) {
+            this._calculateIndicator();
+        }
     }
 
     private _calculateWidth() {
@@ -264,5 +282,16 @@ export class ContentSlider {
         if (outerHeight != this._outerHeight) {
             this._outerHeight = outerHeight;
         }
+    }
+
+    private _isMobile(el?: HTMLElement) {
+        if (!el) {
+            el = this._items.at(0);
+        }
+
+        const elRect = el.getBoundingClientRect();
+        const sliderRect = this._sliderRef.getBoundingClientRect();
+
+        return sliderRect.width - elRect.width < 10;
     }
 }

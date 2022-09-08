@@ -140,6 +140,10 @@ export namespace Components {
     }
     interface PContentSlider {
         /**
+          * Wether to disable auto centering the content
+         */
+        "disableAutoCenter": boolean;
+        /**
           * Wether to disable dragging the content
          */
         "disableDrag": boolean;
@@ -1022,6 +1026,10 @@ declare namespace LocalJSX {
         "header"?: string;
     }
     interface PContentSlider {
+        /**
+          * Wether to disable auto centering the content
+         */
+        "disableAutoCenter"?: boolean;
         /**
           * Wether to disable dragging the content
          */

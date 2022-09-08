@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.108 (2022-09-08)
+
+
+### Features
+
+* **Atoms/Tag:** Increase height to `1.625rem` ([9278417](https://github.com/ionic-team/ionic/commit/92784176dc5a43721beba6e194cc8e95768cf08b))
+
+
+
+
+
 # 0.1.0-alpha.107 (2022-09-08)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.99 (2022-09-08)
+
+
+### Features
+
+* **Molecules/Content Slider:** Improve height calc on resize ([5fc5ef2](https://github.com/ionic-team/ionic/commit/5fc5ef26db002908381e37c85dd99ba1ea929aab))
+
+
+
+
+
 # 0.1.0-alpha.98 (2022-09-08)
 
 

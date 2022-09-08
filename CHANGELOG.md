@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.111 (2022-09-08)
+
+
+### Features
+
+* **Molecules/Content Slider:** Mobile support ([c7e20c8](https://github.com/employes/paperless/commit/c7e20c82133a9d217e628a73979adaafa7c54080))
+
+
+
+
+
 # 0.1.0-alpha.110 (2022-09-08)
 
 

@@ -5,7 +5,7 @@ import {
     Host,
     Listen,
     Prop,
-    State
+    State,
 } from '@stencil/core';
 
 @Component({
@@ -41,6 +41,7 @@ export class ContentSlider {
     private _sliderRef: HTMLElement;
     private _innerSliderRef: HTMLElement;
     private _items: HTMLElement[] = [];
+    private _innerSliderResizeObserver: ResizeObserver;
 
     // mouse movement stuff
     private _startX: number;
@@ -51,16 +52,15 @@ export class ContentSlider {
         this._items = Array.from(items) as HTMLElement[];
     }
 
-    componentDidRender() {
-        const outerHeight = this._items.at(0).getBoundingClientRect().height;
-        if (outerHeight != this._outerHeight) {
-            this._outerHeight = outerHeight;
-        }
-    }
-
     componentDidLoad() {
         this._calculateWidth();
         this._calculateIndicator();
+    }
+
+    disconnectedCallback() {
+        if (this._innerSliderResizeObserver) {
+            this._innerSliderResizeObserver.disconnect();
+        }
     }
 
     render() {
@@ -80,7 +80,7 @@ export class ContentSlider {
                 >
                     <div
                         class="inner-slider"
-                        ref={(ref) => (this._innerSliderRef = ref)}
+                        ref={(ref) => this._setInnerSliderReft(ref)}
                     >
                         <slot />
                     </div>
@@ -100,6 +100,14 @@ export class ContentSlider {
                 </div>
             </Host>
         );
+    }
+
+    private _setInnerSliderReft(ref) {
+        this._innerSliderRef = ref;
+        this._innerSliderResizeObserver = new ResizeObserver(() =>
+            this._calculateHeight()
+        );
+        this._innerSliderResizeObserver.observe(this._innerSliderRef);
     }
 
     private _handleScroll() {
@@ -231,5 +239,12 @@ export class ContentSlider {
         totalWidth += padding + gap;
 
         this._totalWidth = totalWidth;
+    }
+
+    private _calculateHeight() {
+        const outerHeight = this._items.at(0).getBoundingClientRect().height;
+        if (outerHeight != this._outerHeight) {
+            this._outerHeight = outerHeight;
+        }
     }
 }

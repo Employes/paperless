@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.110 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Atoms/Avatar:** Update avatar on changes ([a9473de](https://github.com/ionic-team/ionic/commit/a9473de04546aa77570191608d5bafaf2eadd207))
+
+
+
+
+
 # 0.1.0-alpha.109 (2022-09-08)
 
 

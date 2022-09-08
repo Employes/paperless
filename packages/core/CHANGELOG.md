@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.113 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Second attempt on pointer-event issue ([e8f831f](https://github.com/ionic-team/stencil-component-starter/commit/e8f831f920247d1df78dc9c49851fea875f76a0f))
+
+
+
+
+
 # 0.1.0-alpha.112 (2022-09-08)
 
 

@@ -8,7 +8,7 @@ import { StoryCategories } from '../../categories';
 ## Usage:
 
 ```html
-<input ...props />
+<input class="p-input" ...props />
 ```
 
 ## Support
@@ -33,8 +33,9 @@ Current we only support a small list of types:
 ### Disabled
 
 <Canvas>
-    <input disabled type="text" placeholder="placeholder" />
+    <input class="p-input" disabled type="text" placeholder="placeholder" />
     <input
+        class="p-input"
         disabled
         type="text"
         placeholder="placeholder"
@@ -45,16 +46,21 @@ Current we only support a small list of types:
 ### Default
 
 <Canvas>
-    <input type="text" placeholder="placeholder" />
-    <input type="text" placeholder="placeholder" value="with content" />
+    <input class="p-input" type="text" placeholder="placeholder" />
+    <input
+        class="p-input"
+        type="text"
+        placeholder="placeholder"
+        value="with content"
+    />
 </Canvas>
 
 ### Focused
 
 <Canvas>
-    <input class="focus" type="text" placeholder="placeholder" />
+    <input class="p-input focus" type="text" placeholder="placeholder" />
     <input
-        class="focus"
+        class="p-input focus"
         type="text"
         placeholder="placeholder"
         value="with content"
@@ -64,9 +70,9 @@ Current we only support a small list of types:
 ### Error
 
 <Canvas>
-    <input class="error" type="text" placeholder="placeholder" />
+    <input class="p-input error" type="text" placeholder="placeholder" />
     <input
-        class="error"
+        class="p-input error"
         type="text"
         placeholder="placeholder"
         value="with content"
@@ -80,29 +86,34 @@ A class `clean` has been added to hide input addons that are added by the browse
 ### Date
 
 <Canvas>
-    <input type="date" placeholder="Non clean" />
-    <input class="clean" type="date" placeholder="Clean" />
+    <input class="p-input" type="date" placeholder="Non clean" />
+    <input class="p-input" class="clean" type="date" placeholder="Clean" />
 </Canvas>
 
 ### Month
 
 <Canvas>
-    <input type="month" placeholder="Non clean" />
-    <input class="clean" type="month" placeholder="Clean" />
+    <input class="p-input" type="month" placeholder="Non clean" />
+    <input class="p-input" class="clean" type="month" placeholder="Clean" />
 </Canvas>
 
 ### Datetime local
 
 <Canvas>
-    <input type="datetime-local" placeholder="Non clean" />
-    <input class="clean" type="datetime-local" placeholder="Clean" />
+    <input class="p-input" type="datetime-local" placeholder="Non clean" />
+    <input
+        class="p-input"
+        class="clean"
+        type="datetime-local"
+        placeholder="Clean"
+    />
 </Canvas>
 
 ### Time
 
 <Canvas>
-    <input type="time" placeholder="Non clean" />
-    <input class="clean" type="time" placeholder="Clean" />
+    <input class="p-input" type="time" placeholder="Non clean" />
+    <input class="p-input" class="clean" type="time" placeholder="Clean" />
 </Canvas>
 
 ## Types
@@ -110,59 +121,59 @@ A class `clean` has been added to hide input addons that are added by the browse
 ### Text input
 
 <Canvas>
-    <input type="text" placeholder="text" />
+    <input class="p-input" type="text" placeholder="text" />
 </Canvas>
 
 ### Number input
 
 <Canvas>
-    <input type="number" placeholder="0" />
+    <input class="p-input" type="number" placeholder="0" />
 </Canvas>
 
 ### Textarea
 
 <Canvas>
-    <textarea placeholder="Write your cool story here" />
+    <textarea class="p-input" placeholder="Write your cool story here" />
 </Canvas>
 
 ### Date
 
 <Canvas>
-    <input type="date" placeholder="Choose a date" />
+    <input class="p-input" type="date" placeholder="Choose a date" />
 </Canvas>
 
 ### Month
 
 <Canvas>
-    <input type="month" placeholder="Choose a month" />
+    <input class="p-input" type="month" placeholder="Choose a month" />
 </Canvas>
 
 ### Datetime local
 
 <Canvas>
-    <input type="datetime-local" placeholder="Choose a date" />
+    <input class="p-input" type="datetime-local" placeholder="Choose a date" />
 </Canvas>
 
 ### Time
 
 <Canvas>
-    <input type="time" placeholder="Choose a time" />
+    <input class="p-input" type="time" placeholder="Choose a time" />
 </Canvas>
 
 ### Telephone
 
 <Canvas>
-    <input type="tel" placeholder="Choose a telephone number" />
+    <input class="p-input" type="tel" placeholder="Choose a telephone number" />
 </Canvas>
 
 ### Password
 
 <Canvas>
-    <input type="password" placeholder="Choose a password" />
+    <input class="p-input" type="password" placeholder="Choose a password" />
 </Canvas>
 
 ### Email
 
 <Canvas>
-    <input type="email" placeholder="Choose a email" />
+    <input class="p-input" type="email" placeholder="Choose a email" />
 </Canvas>

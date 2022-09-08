@@ -21,7 +21,7 @@
         .inner-slider {
             @apply absolute flex flex-nowrap items-stretch w-full gap-2;
 
-            @apply pointer-events-none tablet:gap-4 desktop-xs:flex-wrap desktop-xs:pointer-events-auto;
+            @apply tablet:gap-4 desktop-xs:flex-wrap;
 
             @apply transition-all;
 

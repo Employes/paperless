@@ -148,9 +148,16 @@ import Readme from '../../../packages/core/src/components/molecules/content-slid
             </p-card-container>
             <p-card-container>
                 <p-card-header header="Header"></p-card-header>
-                <p-card-body>
-                    This card is very big <br /> <br /> <br /> <br /> <br />{' '}
-                    <br /> <br /> hihi
+                <p-card-body class="h-48 flex flex-col">
+                    <p>This card is very big</p>
+                    <p-button
+                        variant="secondary"
+                        size="small"
+                        class="mt-auto"
+                        width="full"
+                    >
+                        Click me
+                    </p-button>
                 </p-card-body>
             </p-card-container>
             <p-card-container>

@@ -120,6 +120,8 @@ export class ContentSlider {
             return;
         }
 
+        this._innerSliderRef.style.pointerEvents = 'none';
+
         let x = e.x;
         const sliderRect = this._sliderRef.getBoundingClientRect();
         if (e.type === 'touchstart') {
@@ -164,6 +166,7 @@ export class ContentSlider {
     @Listen('touchend', { target: 'window' })
     mouseUpHandler() {
         this._dragging = false;
+        this._innerSliderRef.style.removeProperty('pointer-events');
     }
 
     @Listen('resize', { target: 'window' })

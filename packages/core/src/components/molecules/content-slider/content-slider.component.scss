@@ -11,13 +11,20 @@
 
             &.dragging {
                 @apply cursor-grabbing desktop-xs:cursor-auto;
+
+                .inner-slider {
+                    @apply transition-none;
+                }
             }
         }
 
         .inner-slider {
             @apply absolute flex flex-nowrap items-stretch w-full gap-2;
 
-            @apply tablet:gap-4 desktop-xs:flex-wrap;
+            @apply pointer-events-none tablet:gap-4 desktop-xs:flex-wrap desktop-xs:pointer-events-auto;
+
+            @apply transition-all;
+
             > ::slotted(*) {
                 @apply w-full tablet:w-[45%] desktop-xs:w-0;
                 @apply flex-shrink-0 desktop-xs:flex-1;

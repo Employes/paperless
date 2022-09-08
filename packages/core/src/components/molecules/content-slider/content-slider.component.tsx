@@ -37,7 +37,6 @@ export class ContentSlider {
     @State() private _visibleIndex: number;
     @State() private _outerHeight = 0;
     @State() private _totalWidth = 0;
-    private _scrollHandlerTimeout: NodeJS.Timeout;
     private _sliderRef: HTMLElement;
     private _innerSliderRef: HTMLElement;
     private _items: HTMLElement[] = [];
@@ -74,7 +73,6 @@ export class ContentSlider {
                         height: `${this._outerHeight}px`,
                     }}
                     ref={(el) => (this._sliderRef = el)}
-                    onScroll={() => this._handleScroll()}
                     onMouseDown={(e) => this._mouseDownHandler(e)}
                     onMouseMove={(e) => this._mouseMoveHandler(e)}
                 >
@@ -110,23 +108,18 @@ export class ContentSlider {
         this._innerSliderResizeObserver.observe(this._innerSliderRef);
     }
 
-    private _handleScroll() {
-        if (this._scrollHandlerTimeout) {
-            clearTimeout(this._scrollHandlerTimeout);
-        }
-
-        this._scrollHandlerTimeout = setTimeout(
-            () => this._calculateIndicator(),
-            200
-        );
-    }
-
     private _mouseDownHandler(e) {
         if (this.disableDrag || this._dragging) {
             return;
         }
 
-        this._startX = e.offsetX - this._innerSliderRef.offsetLeft;
+        const innerSliderStyle = getComputedStyle(this._innerSliderRef);
+        if (innerSliderStyle.flexWrap === 'wrap') {
+            return;
+        }
+
+        const sliderRect = this._sliderRef.getBoundingClientRect();
+        this._startX = e.x - sliderRect.x - this._innerSliderRef.offsetLeft;
         this._dragging = true;
     }
 
@@ -134,6 +127,8 @@ export class ContentSlider {
         if (!e || !this._dragging || this.disableDrag) {
             return;
         }
+
+        e.preventDefault();
 
         const x = e.offsetX;
 
@@ -145,11 +140,9 @@ export class ContentSlider {
 
     private _checkBoundary() {
         let outer = this._sliderRef.getBoundingClientRect();
-
         if (parseInt(this._innerSliderRef.style.left) > 0) {
             this._innerSliderRef.style.left = '0px';
         }
-
         const maxLeft = (this._totalWidth - outer.width) * -1;
         if (parseInt(this._innerSliderRef.style.left) < maxLeft) {
             this._innerSliderRef.style.left = `${maxLeft}px`;
@@ -169,18 +162,20 @@ export class ContentSlider {
     }
 
     private _calculateIndicator() {
-        for (let i = 0; i < this._items.length; i++) {
-            const item = this._items[i];
-            const visible = this._isVisible(item);
+        setTimeout(() => {
+            for (let i = 0; i < this._items.length; i++) {
+                const item = this._items[i];
+                const visible = this._isVisible(item);
 
-            if (visible) {
-                this._visibleIndex = i;
-            }
+                if (visible) {
+                    this._visibleIndex = i;
+                }
 
-            if (i === 0 && visible) {
-                break;
+                if (i === 0 && visible) {
+                    break;
+                }
             }
-        }
+        }, 200);
     }
 
     private _isVisible(el: HTMLElement) {

@@ -6,11 +6,11 @@ module.exports = {
     'sidebar-desktop': '15rem',
 
     'content-mobile': '100%',
-    'content-desktop-xs': '45rem',
-    'content-desktop-sm': '60rem',
+    'content-desktop-xs': '100%',
+    'content-desktop-sm': '100%',
     'content-desktop': '65rem',
     'content-desktop-lg': '65rem',
-    'content-desktop-xl': '70rem',
+    'content-desktop-xl': '65rem',
 
     // login variant
     'sidebar-desktop-login': '100%',

@@ -41,7 +41,7 @@
     .content {
         grid-area: content;
 
-        @apply relative flex flex-col h-full overflow-y-auto overflow-x-hidden;
+        @apply relative flex flex-col h-full overflow-y-auto overflow-x-hidden box-content;
         @apply order-3;
 
         padding: env(safe-area-inset-top) env(safe-area-inset-right)

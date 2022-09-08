@@ -74,7 +74,9 @@ export class ContentSlider {
                     }}
                     ref={(el) => (this._sliderRef = el)}
                     onMouseDown={(e) => this._mouseDownHandler(e)}
+                    onTouchStart={(e) => this._mouseDownHandler(e)}
                     onMouseMove={(e) => this._mouseMoveHandler(e)}
+                    onTouchMove={(e) => this._mouseMoveHandler(e)}
                 >
                     <div
                         class="inner-slider"
@@ -118,8 +120,13 @@ export class ContentSlider {
             return;
         }
 
+        let x = e.x;
         const sliderRect = this._sliderRef.getBoundingClientRect();
-        this._startX = e.x - sliderRect.x - this._innerSliderRef.offsetLeft;
+        if (e.type === 'touchstart') {
+            x = e.touches?.[0].clientX;
+        }
+
+        this._startX = x - sliderRect.x - this._innerSliderRef.offsetLeft;
         this._dragging = true;
     }
 
@@ -130,7 +137,11 @@ export class ContentSlider {
 
         e.preventDefault();
 
-        const x = e.offsetX;
+        let x = e.offsetX;
+        if (e.type === 'touchmove') {
+            const sliderRect = this._sliderRef.getBoundingClientRect();
+            x = e.touches?.[0].clientX - sliderRect.left;
+        }
 
         this._innerSliderRef.style.left = `${x - this._startX}px`;
 
@@ -150,15 +161,18 @@ export class ContentSlider {
     }
 
     @Listen('mouseup', { target: 'window' })
+    @Listen('touchend', { target: 'window' })
     mouseUpHandler() {
         this._dragging = false;
     }
 
     @Listen('resize', { target: 'window' })
     resizeHandler() {
-        this._innerSliderRef.style.left = '0px';
-        this._calculateWidth();
-        this._calculateIndicator();
+        if (this._innerSliderRef) {
+            this._innerSliderRef.style.left = '0px';
+            this._calculateWidth();
+            this._calculateIndicator();
+        }
     }
 
     private _calculateIndicator() {
@@ -187,7 +201,11 @@ export class ContentSlider {
         const sliderRect = this._sliderRef.getBoundingClientRect();
 
         return (
-            elRect.left >= sliderRect.left && elRect.right <= sliderRect.right
+            (elRect.left >= sliderRect.left &&
+                elRect.right <= sliderRect.right) ||
+            (sliderRect.width - elRect.width < 10 &&
+                elRect.left + elRect.width / 2 >= sliderRect.left &&
+                elRect.left + elRect.width / 2 <= sliderRect.right)
         );
     }
 

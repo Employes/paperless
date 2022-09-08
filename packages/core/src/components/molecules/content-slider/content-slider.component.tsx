@@ -5,7 +5,7 @@ import {
     Host,
     Listen,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 
 @Component({
@@ -35,12 +35,15 @@ export class ContentSlider {
     @Element() private _el: HTMLElement;
 
     @State() private _visibleIndex: number;
+    @State() private _outerHeight = 0;
+    @State() private _totalWidth = 0;
     private _scrollHandlerTimeout: NodeJS.Timeout;
-    private _contentRef: Element;
+    private _sliderRef: HTMLElement;
+    private _innerSliderRef: HTMLElement;
     private _items: HTMLElement[] = [];
 
     // mouse movement stuff
-    private _pos = { top: 0, left: 0, x: 0, y: 0 };
+    private _startX: number;
     @State() private _dragging = false;
 
     componentWillRender() {
@@ -48,7 +51,15 @@ export class ContentSlider {
         this._items = Array.from(items) as HTMLElement[];
     }
 
+    componentDidRender() {
+        const outerHeight = this._items.at(0).getBoundingClientRect().height;
+        if (outerHeight != this._outerHeight) {
+            this._outerHeight = outerHeight;
+        }
+    }
+
     componentDidLoad() {
+        this._calculateWidth();
         this._calculateIndicator();
     }
 
@@ -56,14 +67,23 @@ export class ContentSlider {
         return (
             <Host class="p-content-slider">
                 <div
-                    class={`content ${!this.disableDrag && 'draggable'} ${
+                    class={`slider ${!this.disableDrag && 'draggable'} ${
                         this._dragging && 'dragging'
                     }`}
-                    ref={(el) => (this._contentRef = el)}
+                    style={{
+                        height: `${this._outerHeight}px`,
+                    }}
+                    ref={(el) => (this._sliderRef = el)}
                     onScroll={() => this._handleScroll()}
                     onMouseDown={(e) => this._mouseDownHandler(e)}
+                    onMouseMove={(e) => this._mouseMoveHandler(e)}
                 >
-                    <slot />
+                    <div
+                        class="inner-slider"
+                        ref={(ref) => (this._innerSliderRef = ref)}
+                    >
+                        <slot />
+                    </div>
                 </div>
                 <div
                     class={`indicator ${this.hideMobileIndicator && 'hidden'}`}
@@ -98,36 +118,48 @@ export class ContentSlider {
             return;
         }
 
-        this._pos = {
-            // The current scroll
-            left: this._contentRef.scrollLeft,
-            top: this._contentRef.scrollTop,
-            // Get the current mouse position
-            x: e.clientX,
-            y: e.clientY,
-        };
-
+        this._startX = e.offsetX - this._innerSliderRef.offsetLeft;
         this._dragging = true;
     }
 
-    @Listen('mousemove', { target: 'window' })
-    mouseMoveHandler(e) {
+    private _mouseMoveHandler(e) {
         if (!e || !this._dragging || this.disableDrag) {
             return;
         }
 
-        // How far the mouse has been moved
-        const dx = e.clientX - this._pos.x;
-        const dy = e.clientY - this._pos.y;
+        e.preventDefault();
 
-        // Scroll the element
-        this._contentRef.scrollTop = this._pos.top - dy;
-        this._contentRef.scrollLeft = this._pos.left - dx;
+        const x = e.offsetX;
+
+        this._innerSliderRef.style.left = `${x - this._startX}px`;
+
+        this._checkBoundary();
+        this._calculateIndicator();
+    }
+
+    private _checkBoundary() {
+        let outer = this._sliderRef.getBoundingClientRect();
+
+        if (parseInt(this._innerSliderRef.style.left) > 0) {
+            this._innerSliderRef.style.left = '0px';
+        }
+
+        const maxLeft = (this._totalWidth - outer.width) * -1;
+        if (parseInt(this._innerSliderRef.style.left) < maxLeft) {
+            this._innerSliderRef.style.left = `${maxLeft}px`;
+        }
     }
 
     @Listen('mouseup', { target: 'window' })
     mouseUpHandler() {
         this._dragging = false;
+    }
+
+    @Listen('resize', { target: 'window' })
+    resizeHandler() {
+        this._innerSliderRef.style.left = '0px';
+        this._calculateWidth();
+        this._calculateIndicator();
     }
 
     private _calculateIndicator() {
@@ -146,16 +178,15 @@ export class ContentSlider {
     }
 
     private _isVisible(el: HTMLElement) {
-        if (!this._el || !this._contentRef || !el) {
+        if (!this._el || !el) {
             return false;
         }
 
         const elRect = el.getBoundingClientRect();
-        const containerRect = this._el.getBoundingClientRect();
+        const sliderRect = this._sliderRef.getBoundingClientRect();
 
         return (
-            elRect.left > containerRect.left &&
-            elRect.right < containerRect.right
+            elRect.left >= sliderRect.left && elRect.right <= sliderRect.right
         );
     }
 
@@ -166,17 +197,39 @@ export class ContentSlider {
 
         const el = this._items[i];
 
-        const parent = el.offsetParent;
+        if (i === 0) {
+            this._innerSliderRef.style.left = '0px';
+            this._calculateIndicator();
+            return;
+        }
 
-        const parentStyle = getComputedStyle(parent);
-        const gap = parseInt(parentStyle.gap.replace('px', ''));
-        const padding =
-            parseInt(parentStyle['paddingLeft'].replace('px', '')) +
-            parseInt(parentStyle['paddingRight'].replace('px', ''));
+        const sliderRect = this._sliderRef.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
 
-        this._contentRef.scrollTo({
-            left: el.offsetLeft - gap - padding - el.clientWidth / 2,
-            behavior: 'smooth',
-        });
+        const centerOffset =
+            el.offsetLeft + elRect.width / 2 - sliderRect.width / 2;
+        this._innerSliderRef.style.left = `-${centerOffset}px`;
+
+        this._checkBoundary();
+        this._calculateIndicator();
+    }
+
+    private _calculateWidth() {
+        let totalWidth = 0;
+
+        for (let item of this._items) {
+            const rect = item.getBoundingClientRect();
+            totalWidth += rect.width;
+        }
+
+        const sliderStyle = getComputedStyle(this._sliderRef);
+        const padding = parseInt(sliderStyle.padding) * 2;
+
+        const innerSliderStyle = getComputedStyle(this._innerSliderRef);
+        const gap = parseInt(innerSliderStyle.gap) * (this._items.length - 1);
+
+        totalWidth += padding + gap;
+
+        this._totalWidth = totalWidth;
     }
 }

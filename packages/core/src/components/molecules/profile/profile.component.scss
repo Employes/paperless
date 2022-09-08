@@ -2,7 +2,7 @@
     @apply flex;
 
     .content {
-        @apply flex gap-3 items-center w-full h-12;
+        @apply flex gap-3 items-center w-full;
 
         .name {
             @apply flex flex-col justify-center overflow-hidden;
@@ -23,13 +23,37 @@
     }
 }
 
+:host([size='small']) {
+    @apply h-8;
+}
+
+:host([size='medium']) {
+    @apply h-[3.125rem];
+}
+
+:host([size='large']) {
+    @apply h-16;
+}
+
 :host(.has-dropdown) {
     @apply cursor-pointer;
 
     .content {
-        @apply px-2 rounded;
+        @apply p-2 rounded;
         @apply border border-solid border-mystic-dark #{!important};
     }
+}
+
+:host(.has-dropdown[size='small']) {
+    @apply h-12;
+}
+
+:host(.has-dropdown[size='medium']) {
+    @apply h-[4.125rem];
+}
+
+:host(.has-dropdown[size='large']) {
+    @apply h-20;
 }
 
 :host(.has-dropdown:hover),

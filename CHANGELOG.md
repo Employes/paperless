@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.100 (2022-09-08)
+
+
+### Features
+
+* **Atoms/Layout:** Content box sizing content ([c320390](https://github.com/employes/paperless/commit/c3203905eb821e37bb20c979173ea4c948426efc))
+
+
+
+
+
 # 0.1.0-alpha.99 (2022-09-08)
 
 

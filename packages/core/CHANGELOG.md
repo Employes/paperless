@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.105 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Correct padding on `desktop-xs` ([86762b1](https://github.com/ionic-team/stencil-component-starter/commit/86762b1b13d2a3824d8561a6c5a070ac601d4044))
+
+
+
+
+
 # 0.1.0-alpha.104 (2022-09-08)
 
 **Note:** Version bump only for package @paperless/core

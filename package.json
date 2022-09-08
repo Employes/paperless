@@ -63,7 +63,7 @@
         "lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --ignore=@paperless/core --stream"
     },
     "devDependencies": {
-        "@babel/core": "7.18.13",
+        "@babel/core": "7.19.0",
         "@geometricpanda/storybook-addon-badges": "0.2.2",
         "@geometricpanda/storybook-addon-iframe": "0.2.2",
         "@storybook/addon-actions": "6.5.10",
@@ -88,7 +88,7 @@
         "cz-lerna-changelog": "2.0.3",
         "jest": "27.5.1",
         "jest-cli": "27.5.1",
-        "lerna": "5.4.3",
+        "lerna": "5.5.0",
         "postcss": "8.4.16",
         "serverless": "3.22.0",
         "serverless-cloudflare-dns": "0.4.9",

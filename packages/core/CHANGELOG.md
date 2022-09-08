@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.96 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Remove pointer-events-none ([7b9d35f](https://github.com/ionic-team/stencil-component-starter/commit/7b9d35f22047be459c1bba6c00b7b99771dd4443))
+
+
+
+
+
 # 0.1.0-alpha.95 (2022-09-08)
 
 

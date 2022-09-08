@@ -8,9 +8,9 @@ module.exports = {
     'content-mobile': '100%',
     'content-desktop-xs': '100%',
     'content-desktop-sm': '100%',
-    'content-desktop': '65rem',
-    'content-desktop-lg': '65rem',
-    'content-desktop-xl': '65rem',
+    'content-desktop': '69rem',
+    'content-desktop-lg': '69rem',
+    'content-desktop-xl': '69rem',
 
     // login variant
     'sidebar-desktop-login': '100%',

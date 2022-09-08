@@ -48,7 +48,7 @@
             env(safe-area-inset-bottom) env(safe-area-inset-left);
 
         .inner-content {
-            @apply relative pb-24 box-content;
+            @apply relative pb-24;
 
             @apply px-content-mobile-x py-content-mobile-y;
             @apply desktop-sm:px-content-desktop-x desktop-sm:py-content-desktop-y;

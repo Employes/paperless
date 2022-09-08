@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.114 (2022-09-08)
+
+
+### Features
+
+* **Molecules/Content Slider:** Add auto center capability ([4d67fb0](https://github.com/Employes/Paperless/commit/4d67fb07f4ea0a71fdfff32878d4eaf6aac3e820))
+
+
+
+
+
 # 0.1.0-alpha.113 (2022-09-08)
 
 

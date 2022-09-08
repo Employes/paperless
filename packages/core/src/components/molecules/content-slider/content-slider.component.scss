@@ -15,7 +15,7 @@
         }
 
         .inner-slider {
-            @apply absolute flex flex-nowrap items-stretch w-full pointer-events-none gap-2;
+            @apply absolute flex flex-nowrap items-stretch w-full gap-2;
 
             @apply tablet:gap-4 desktop-xs:flex-wrap;
             > ::slotted(*) {

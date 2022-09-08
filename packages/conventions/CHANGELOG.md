@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.112 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Fix pointer event issue with buttons ([fec92dd](https://github.com/Employes/Paperless/commit/fec92ddc0344eb2aa2dd03a2edf363f07296e6f9))
+
+
+
+
+
 # 0.1.0-alpha.111 (2022-09-08)
 
 

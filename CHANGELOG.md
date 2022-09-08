@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.106 (2022-09-08)
+
+
+### Features
+
+* **Atoms/Card Body:** Update padding ([9e232e7](https://github.com/employes/paperless/commit/9e232e7b9140b809cc07db7dd02c8525acc0cdd6))
+
+
+
+
+
 # 0.1.0-alpha.105 (2022-09-08)
 
 

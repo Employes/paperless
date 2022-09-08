@@ -120,8 +120,6 @@ export class ContentSlider {
             return;
         }
 
-        this._innerSliderRef.style.pointerEvents = 'none';
-
         let x = e.x;
         const sliderRect = this._sliderRef.getBoundingClientRect();
         if (e.type === 'touchstart') {
@@ -138,6 +136,12 @@ export class ContentSlider {
         }
 
         e.preventDefault();
+
+        if (
+            this._innerSliderRef.style.getPropertyValue('pointer-events') === ''
+        ) {
+            this._innerSliderRef.style.pointerEvents = 'none';
+        }
 
         let x = e.offsetX;
         if (e.type === 'touchmove') {

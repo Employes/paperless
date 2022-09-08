@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.109 (2022-09-08)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Actually fix content slider behavior ([fe926f4](https://github.com/employes/paperless/commit/fe926f41c0e3128808945fdc028a9a8f32cd2bba))
+
+
+
+
+
 # 0.1.0-alpha.108 (2022-09-08)
 
 

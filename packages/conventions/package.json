@@ -14,9 +14,9 @@
 		"yarn:publish": "yarn publish"
 	},
 	"devDependencies": {
-		"@angular-eslint/eslint-plugin": "14.0.3",
-		"@angular-eslint/eslint-plugin-template": "14.0.3",
-		"@angular-eslint/template-parser": "14.0.3",
+		"@angular-eslint/eslint-plugin": "14.0.4",
+		"@angular-eslint/eslint-plugin-template": "14.0.4",
+		"@angular-eslint/template-parser": "14.0.4",
 		"@stencil/eslint-plugin": "0.4.0",
 		"@typescript-eslint/eslint-plugin": "5.36.2",
 		"@typescript-eslint/parser": "5.36.2",

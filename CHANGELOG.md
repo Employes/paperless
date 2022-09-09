@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.125 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Remove safe-area padding top from main content ([857b6c3](https://github.com/employes/paperless/commit/857b6c34e88a9c81dc90c5f9ad4bb8999eeca27a))
+
+
+
+
+
 # 0.1.0-alpha.124 (2022-09-09)
 
 

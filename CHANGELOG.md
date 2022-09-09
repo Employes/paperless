@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.123 (2022-09-09)
+
+
+### Features
+
+* **Molecules/Profile:** Update avatar correctly instead of regenerate ([1ee3de2](https://github.com/employes/paperless/commit/1ee3de265628bb76cd09b9d83c4a89a01801cefc))
+
+
+
+
+
 # 0.1.0-alpha.122 (2022-09-09)
 
 

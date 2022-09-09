@@ -26,18 +26,25 @@ export class Avatar {
      */
     @Prop() src!: string;
 
-    @Watch('src')
-    onSrchChange(src: string) {
-        this._src = src;
-    }
-
     @State() private _src: string = this.src;
 
-    render() {
+    @Watch('src')
+    onSrchChange(src: string, oldSrc: string) {
+        console.log('src changed');
+        console.log('old src', oldSrc, this._src);
+        this._src = src;
+        console.log('new src', src, this._src);
+    }
+
+    componentWillRender() {
+        console.log('Will render');
         if (!this._src) {
             this._setDefaultLink();
         }
+    }
 
+    render() {
+        console.log('Rendering!');
         return (
             <Host class="p-avatar">
                 <img src={this._src} onError={() => this._setDefaultLink()} />

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.118 (2022-09-09)
+
+
+### Bug Fixes
+
+* make sure we use all variants of fill-available ([551eecd](https://github.com/ionic-team/ionic/commit/551eecdee9935cd51ad94578862905231fa0be40))
+
+
+
+
+
 # 0.1.0-alpha.117 (2022-09-09)
 
 

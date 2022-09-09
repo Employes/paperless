@@ -9,6 +9,7 @@ const zIndex = require('./tailwind/z-index');
 const animation = require('./tailwind/animation');
 const screens = require('./tailwind/screens');
 const width = require('./tailwind/width');
+const height = require('./tailwind/height');
 const spacing = require('./tailwind/spacing');
 
 module.exports = {
@@ -28,6 +29,7 @@ module.exports = {
             zIndex,
             screens,
             width,
+            height,
             spacing,
         },
     },

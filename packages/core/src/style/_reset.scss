@@ -3,14 +3,22 @@
     body {
         font-family: 'IBM Plex Sans', sans-serif;
 
-        min-height: 100vh;
-        width: 100%;
-        max-width: 100vw;
-
+        @apply w-full;
         @apply bg-mystic;
+
+        max-width: 100vw;
 
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+        height: -webkit-fill-available;
+    }
+
+    body {
+        @apply min-h-screen;
+        min-height: webkit-fill-available;
     }
 
     body * {

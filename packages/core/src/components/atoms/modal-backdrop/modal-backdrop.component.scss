@@ -1,7 +1,9 @@
 :host {
     @apply fixed top-0 left-0 z-modal;
-    @apply h-screen w-screen tablet:px-16 desktop-xs:p-16;
+    @apply h-full w-full tablet:px-16 desktop-xs:p-16;
     @apply backdrop-blur-xs bg-storm/50;
+
+    // height: -webkit-fill-available;
 
     @apply flex justify-center items-end desktop-xs:items-center;
 

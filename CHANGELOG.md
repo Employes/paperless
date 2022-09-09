@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.122 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Atoms/Avatar:** Add temporary console.logs ([254669c](https://github.com/employes/paperless/commit/254669ceb675533c839a5ba70a36319baddbc00d))
+
+
+
+
+
 # 0.1.0-alpha.121 (2022-09-09)
 
 

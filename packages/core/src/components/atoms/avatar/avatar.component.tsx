@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State } from '@stencil/core';
+import { Component, h, Host, Prop, State, Watch } from '@stencil/core';
 
 @Component({
     tag: 'p-avatar',
@@ -26,15 +26,12 @@ export class Avatar {
      */
     @Prop() src!: string;
 
-    private _lastSrc: string;
-    @State() private _src: string;
-
-    componentWillRender() {
-        if (this.src !== this._lastSrc) {
-            this._lastSrc = this.src;
-            this._src = this.src;
-        }
+    @Watch('src')
+    onSrchChange(src: string) {
+        this._src = src;
     }
+
+    @State() private _src: string = this.src;
 
     render() {
         if (!this._src) {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.117 (2022-09-09)
+
+
+### Bug Fixes
+
+* **tests:** Remove console.log ([57e650c](https://github.com/Employes/Paperless/commit/57e650c02e3465ed643b9f214018448a5ebb48a9))
+
+
+
+
+
 # 0.1.0-alpha.116 (2022-09-09)
 
 

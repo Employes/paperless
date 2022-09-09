@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.120 (2022-09-09)
+
+
+### Features
+
+* Huge performance improvements ([966634b](https://github.com/Employes/Paperless/commit/966634b1a8647c5399e2827dce961ce517c5235a))
+
+
+
+
+
 # 0.1.0-alpha.119 (2022-09-09)
 
 

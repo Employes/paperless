@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.121 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Atoms/Avatar:** Add temporary console.logs ([ffd7f39](https://github.com/ionic-team/ionic/commit/ffd7f39ce77d9c0c66992b3d9d978eb508d7bcef))
+
+
+
+
+
 # 0.1.0-alpha.120 (2022-09-09)
 
 

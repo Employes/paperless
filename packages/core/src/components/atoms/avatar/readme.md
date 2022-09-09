@@ -19,19 +19,6 @@
 | `variant`          | `variant`       | The variant of the avatar           | `"company" \| "user"`            | `'user'`    |
 
 
-## Dependencies
-
-### Used by
-
- - [p-profile](../../molecules/profile)
-
-### Graph
-```mermaid
-graph TD;
-  p-profile --> p-avatar
-  style p-avatar fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

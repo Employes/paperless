@@ -23,6 +23,10 @@ export class Profile {
 
     @State() private _dropdownOpen = false;
 
+    componentWillRender() {
+        this._updateAvatar();
+    }
+
     render() {
         const hasDropdownSlot = !!this._el.querySelector('[slot="dropdown"]');
         const content = this._getContent(hasDropdownSlot);
@@ -54,11 +58,9 @@ export class Profile {
     }
 
     private _getContent(hasDropdownSlot) {
-        const avatar = this._generateAvatar();
-
         return (
             <div class="content" slot="trigger">
-                {avatar}
+                <slot name="avatar" />
                 <div class="name">
                     <slot name="title" />
                     <slot name="subtitle" />
@@ -69,7 +71,7 @@ export class Profile {
         );
     }
 
-    private _generateAvatar() {
+    private _updateAvatar() {
         const avatar = this._el.querySelector(
             'p-avatar[slot="avatar"]'
         ) as HTMLPAvatarElement;
@@ -78,15 +80,8 @@ export class Profile {
             return;
         }
 
-        return (
-            <p-avatar
-                class="flex"
-                src={avatar.src ?? null}
-                default-image={avatar.defaultImage ?? null}
-                variant={this.variant ?? avatar.variant}
-                size={this.size}
-            ></p-avatar>
-        );
+        avatar.variant = this.variant ?? avatar.variant;
+        avatar.size = this.size ?? avatar?.size;
     }
 
     private _getIcon() {

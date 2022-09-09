@@ -26,14 +26,12 @@
 ### Depends on
 
 - [p-dropdown](../dropdown)
-- [p-avatar](../../atoms/avatar)
 - [p-icon](../../atoms/icon)
 
 ### Graph
 ```mermaid
 graph TD;
   p-profile --> p-dropdown
-  p-profile --> p-avatar
   p-profile --> p-icon
   p-dropdown --> p-dropdown-menu-container
   style p-profile fill:#f9f,stroke:#333,stroke-width:4px

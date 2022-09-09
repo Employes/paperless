@@ -1,5 +1,5 @@
 p-avatar {
-    @apply inline-block;
+    @apply inline-block flex-shrink-0;
 
     > img {
         @apply object-cover object-center;

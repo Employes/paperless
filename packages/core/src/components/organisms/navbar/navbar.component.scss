@@ -17,8 +17,11 @@
     }
 
     .sidebar {
-        @apply bg-white fixed top-0 h-screen w-60 z-50 -left-full;
-        @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full desktop-xs:left-0;
+        @apply bg-white fixed top-0 left-0 h-screen w-60 z-50;
+        @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
+
+        @apply will-change-transform;
+        @apply transform-gpu -translate-x-full desktop-xs:translate-x-0;
 
         @apply p-4;
 
@@ -43,7 +46,7 @@
         }
 
         &.show {
-            left: env(safe-area-inset-left, 0);
+            --tw-translate-x: env(safe-area-inset-left, 0);
         }
     }
 
@@ -63,6 +66,7 @@
         @apply h-screen w-screen;
         @apply backdrop-blur-xs bg-storm/50;
 
+        will-change: opacity;
         @apply transition-opacity opacity-0;
 
         @apply desktop-xs:hidden;

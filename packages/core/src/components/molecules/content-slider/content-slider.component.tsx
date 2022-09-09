@@ -61,7 +61,7 @@ export class ContentSlider {
     }
 
     componentDidLoad() {
-        this._innerSliderRef.style.left = '0px';
+        this._innerSliderRef.style.setProperty('--tw-translate-x', `0px`);
         this._calculateWidth();
         this._calculateIndicator();
     }
@@ -163,7 +163,10 @@ export class ContentSlider {
             this._lastMouseX = e.touches?.[0].clientX;
         }
 
-        this._innerSliderRef.style.left = `${x - this._startX}px`;
+        this._innerSliderRef.style.setProperty(
+            '--tw-translate-x',
+            `${x - this._startX}px`
+        );
 
         this._checkBoundary();
         this._calculateIndicator();
@@ -185,7 +188,7 @@ export class ContentSlider {
     @Listen('resize', { target: 'window' })
     resizeHandler() {
         if (this._innerSliderRef) {
-            this._innerSliderRef.style.left = '0px';
+            this._innerSliderRef.style.setProperty('--tw-translate-x', '0px');
             this._calculateWidth();
             this._calculateIndicator();
         }
@@ -207,7 +210,7 @@ export class ContentSlider {
         const el = this._items[i];
 
         if (i === 0) {
-            this._innerSliderRef.style.left = '0px';
+            this._innerSliderRef.style.setProperty('--tw-translate-x', `0px`);
             return;
         }
 
@@ -220,7 +223,10 @@ export class ContentSlider {
         const centerOffset =
             offsetLeft + elRect.width / 2 - sliderRect.width / 2;
 
-        this._innerSliderRef.style.left = `-${centerOffset}px`;
+        this._innerSliderRef.style.setProperty(
+            '--tw-translate-x',
+            `-${centerOffset}px`
+        );
 
         this._checkBoundary();
         this._calculateIndicator();
@@ -228,12 +234,20 @@ export class ContentSlider {
 
     private _checkBoundary() {
         let outer = this._sliderRef.getBoundingClientRect();
-        if (parseInt(this._innerSliderRef.style.left) > 0) {
-            this._innerSliderRef.style.left = '0px';
+
+        const left = parseInt(
+            this._innerSliderRef.style.getPropertyValue('--tw-translate-x')
+        );
+        if (left > 0) {
+            this._innerSliderRef.style.setProperty('--tw-translate-x', `0px`);
         }
+
         const maxLeft = (this._totalWidth - outer.width) * -1;
-        if (parseInt(this._innerSliderRef.style.left) < maxLeft) {
-            this._innerSliderRef.style.left = `${maxLeft}px`;
+        if (left < maxLeft) {
+            this._innerSliderRef.style.setProperty(
+                '--tw-translate-x',
+                `${maxLeft}px`
+            );
         }
     }
 

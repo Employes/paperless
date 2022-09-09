@@ -10,6 +10,8 @@ p-button {
         @apply flex items-center justify-center;
         @apply cursor-pointer;
 
+        will-change: filter;
+
         > p-loader {
             @apply ml-2;
         }

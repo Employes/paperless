@@ -21,6 +21,8 @@
         .inner-slider {
             @apply absolute flex flex-nowrap items-stretch w-full gap-2;
 
+            @apply will-change-transform transform-gpu translate-x-0;
+
             @apply tablet:gap-4 desktop-xs:flex-wrap;
 
             @apply transition-all;

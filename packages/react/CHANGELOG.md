@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.119 (2022-09-09)
+
+
+### Features
+
+* **Atoms/Avatar:** Use different method of applying src ([a614325](https://github.com/ionic-team/ionic/commit/a61432505d6fe1522f6d90ee0a5119e878812790))
+
+
+
+
+
 # 0.1.0-alpha.118 (2022-09-09)
 
 

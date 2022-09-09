@@ -24,6 +24,7 @@
             @apply tablet:gap-4 desktop-xs:flex-wrap;
 
             @apply transition-all;
+            transition-duration: 0.5s;
 
             > ::slotted(*) {
                 @apply w-full tablet:w-[45%] desktop-xs:w-0;

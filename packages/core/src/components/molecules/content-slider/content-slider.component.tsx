@@ -177,6 +177,10 @@ export class ContentSlider {
     mouseUpHandler() {
         this._dragging = false;
         this._innerSliderRef.style.removeProperty('pointer-events');
+
+        if (!this.disableAutoCenter && !this._indicatorTimeout) {
+            setTimeout(() => this._scrollTo(this._visibleIndex, false), 200);
+        }
     }
 
     @Listen('resize', { target: 'window' })
@@ -208,9 +212,11 @@ export class ContentSlider {
                 }
             }
 
-            if (!this.disableAutoCenter) {
+            if (!this.disableAutoCenter && !this._dragging) {
                 this._scrollTo(this._visibleIndex, false);
             }
+
+            this._indicatorTimeout = null;
         }, 200);
     }
 

@@ -42,7 +42,6 @@ export class ContentSlider {
     @State() private _visibleIndex: number;
     @State() private _outerHeight = 0;
     @State() private _totalWidth = 0;
-    private _indicatorTimeout: NodeJS.Timeout;
     private _sliderRef: HTMLElement;
     private _innerSliderRef: HTMLElement;
     private _items: HTMLElement[] = [];
@@ -50,6 +49,10 @@ export class ContentSlider {
 
     // mouse movement stuff
     private _startX: number;
+    private _startMouseX: number;
+    private _lastMouseX: number;
+    private _lastIndex: number;
+    private _shouldCheckLocation = false;
     @State() private _dragging = false;
 
     componentWillRender() {
@@ -58,6 +61,7 @@ export class ContentSlider {
     }
 
     componentDidLoad() {
+        this._innerSliderRef.style.left = '0px';
         this._calculateWidth();
         this._calculateIndicator();
     }
@@ -87,6 +91,7 @@ export class ContentSlider {
                     <div
                         class="inner-slider"
                         ref={(ref) => this._setInnerSliderReft(ref)}
+                        onTransitionEnd={() => this._transitionEndHandler()}
                     >
                         <slot />
                     </div>
@@ -95,25 +100,20 @@ export class ContentSlider {
                     class={`indicator ${this.hideMobileIndicator && 'hidden'}`}
                 >
                     {this._items.map((_, i) => (
-                        <p-slider-indicator
-                            class={
+                        <div
+                            onClick={() => this._scrollTo(i, true)}
+                            class={`item ${
                                 !this.disableIndicatorClick && 'cursor-pointer'
-                            }
-                            onClick={() => this._scrollTo(i)}
-                            active={i === this._visibleIndex}
-                        />
+                            }`}
+                        >
+                            <p-slider-indicator
+                                active={i === this._visibleIndex}
+                            />
+                        </div>
                     ))}
                 </div>
             </Host>
         );
-    }
-
-    private _setInnerSliderReft(ref) {
-        this._innerSliderRef = ref;
-        this._innerSliderResizeObserver = new ResizeObserver(() =>
-            this._calculateHeight()
-        );
-        this._innerSliderResizeObserver.observe(this._innerSliderRef);
     }
 
     private _mouseDownHandler(e) {
@@ -126,13 +126,17 @@ export class ContentSlider {
             return;
         }
 
-        let x = e.x;
+        this._startMouseX = e.x;
         const sliderRect = this._sliderRef.getBoundingClientRect();
         if (e.type === 'touchstart') {
-            x = e.touches?.[0].clientX;
+            this._startMouseX = e.touches?.[0].clientX;
         }
 
-        this._startX = x - sliderRect.x - this._innerSliderRef.offsetLeft;
+        const innerSliderRect = this._innerSliderRef.getBoundingClientRect();
+        const offsetLeft = innerSliderRect.x - sliderRect.x;
+
+        this._startX = this._startMouseX - sliderRect.x - offsetLeft;
+        this._lastIndex = this._visibleIndex;
         this._dragging = true;
     }
 
@@ -143,19 +147,80 @@ export class ContentSlider {
 
         e.preventDefault();
 
+        this._shouldCheckLocation = true;
+
         if (
             this._innerSliderRef.style.getPropertyValue('pointer-events') === ''
         ) {
             this._innerSliderRef.style.pointerEvents = 'none';
         }
 
-        let x = e.offsetX;
+        const sliderRect = this._sliderRef.getBoundingClientRect();
+        let x = e.clientX - sliderRect.left;
+        this._lastMouseX = e.x;
         if (e.type === 'touchmove') {
-            const sliderRect = this._sliderRef.getBoundingClientRect();
             x = e.touches?.[0].clientX - sliderRect.left;
+            this._lastMouseX = e.touches?.[0].clientX;
         }
 
         this._innerSliderRef.style.left = `${x - this._startX}px`;
+
+        this._checkBoundary();
+        this._calculateIndicator();
+    }
+
+    private _transitionEndHandler() {
+        this._calculateIndicator();
+    }
+
+    @Listen('mouseup', { target: 'window' })
+    @Listen('touchend', { target: 'window' })
+    mouseUpHandler() {
+        this._dragging = false;
+        this._innerSliderRef.style.removeProperty('pointer-events');
+
+        this._checkLocation();
+    }
+
+    @Listen('resize', { target: 'window' })
+    resizeHandler() {
+        if (this._innerSliderRef) {
+            this._innerSliderRef.style.left = '0px';
+            this._calculateWidth();
+            this._calculateIndicator();
+        }
+    }
+
+    private _setInnerSliderReft(ref) {
+        this._innerSliderRef = ref;
+        this._innerSliderResizeObserver = new ResizeObserver(() =>
+            this._calculateHeight()
+        );
+        this._innerSliderResizeObserver.observe(this._innerSliderRef);
+    }
+
+    private _scrollTo(i: number, manual = false) {
+        if (this.disableIndicatorClick && manual) {
+            return;
+        }
+
+        const el = this._items[i];
+
+        if (i === 0) {
+            this._innerSliderRef.style.left = '0px';
+            return;
+        }
+
+        const sliderRect = this._sliderRef.getBoundingClientRect();
+        const innerSliderRect = this._innerSliderRef.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+
+        const offsetLeft = elRect.x - innerSliderRect.x;
+
+        const centerOffset =
+            offsetLeft + elRect.width / 2 - sliderRect.width / 2;
+
+        this._innerSliderRef.style.left = `-${centerOffset}px`;
 
         this._checkBoundary();
         this._calculateIndicator();
@@ -172,52 +237,48 @@ export class ContentSlider {
         }
     }
 
-    @Listen('mouseup', { target: 'window' })
-    @Listen('touchend', { target: 'window' })
-    mouseUpHandler() {
-        this._dragging = false;
-        this._innerSliderRef.style.removeProperty('pointer-events');
-
-        if (!this.disableAutoCenter && !this._indicatorTimeout) {
-            setTimeout(() => this._scrollTo(this._visibleIndex, false), 200);
-        }
-    }
-
-    @Listen('resize', { target: 'window' })
-    resizeHandler() {
-        if (this._innerSliderRef) {
-            this._innerSliderRef.style.left = '0px';
-            this._calculateWidth();
-            this._calculateIndicator();
-        }
-    }
-
     private _calculateIndicator() {
-        if (this._indicatorTimeout) {
-            clearTimeout(this._indicatorTimeout);
-            this._indicatorTimeout = null;
+        for (let i = 0; i < this._items.length; i++) {
+            const item = this._items[i];
+            const visible = this._isVisible(item);
+
+            if (visible) {
+                this._visibleIndex = i;
+            }
+
+            if (i === 0 && visible) {
+                break;
+            }
+        }
+    }
+
+    private _checkLocation() {
+        if (!this._shouldCheckLocation) {
+            return;
         }
 
-        this._indicatorTimeout = setTimeout(() => {
-            for (let i = 0; i < this._items.length; i++) {
-                const item = this._items[i];
-                const visible = this._isVisible(item);
+        let scrollToIndex = null;
+        if (this._lastIndex !== this._visibleIndex) {
+            scrollToIndex = this._visibleIndex;
+        }
 
-                if (visible) {
-                    this._visibleIndex = i;
-                }
-
-                if (i === 0 && visible) {
-                    break;
-                }
+        if (this._lastIndex === this._visibleIndex) {
+            if (this._lastMouseX > this._startMouseX && this._lastIndex !== 0) {
+                scrollToIndex = this._lastIndex - 1;
             }
 
-            if (!this.disableAutoCenter && !this._dragging) {
-                this._scrollTo(this._visibleIndex, false);
+            if (
+                this._lastMouseX < this._startMouseX &&
+                this._lastIndex !== this._items?.length - 1
+            ) {
+                scrollToIndex = this._lastIndex + 1;
             }
+        }
 
-            this._indicatorTimeout = null;
-        }, 200);
+        if (scrollToIndex !== null) {
+            this._shouldCheckLocation = false;
+            setTimeout(() => this._scrollTo(scrollToIndex), 100);
+        }
     }
 
     private _isVisible(el: HTMLElement) {
@@ -235,33 +296,6 @@ export class ContentSlider {
                 elRect.left + elRect.width / 2 >= sliderRect.left &&
                 elRect.left + elRect.width / 2 <= sliderRect.right)
         );
-    }
-
-    private _scrollTo(i: number, calculateIndicator = true) {
-        if (this.disableIndicatorClick && calculateIndicator) {
-            return;
-        }
-
-        const el = this._items[i];
-
-        if (i === 0) {
-            this._innerSliderRef.style.left = '0px';
-            this._calculateIndicator();
-            return;
-        }
-
-        const sliderRect = this._sliderRef.getBoundingClientRect();
-        const elRect = el.getBoundingClientRect();
-
-        const centerOffset =
-            el.offsetLeft + elRect.width / 2 - sliderRect.width / 2;
-        this._innerSliderRef.style.left = `-${centerOffset}px`;
-
-        this._checkBoundary();
-
-        if (!calculateIndicator) {
-            this._calculateIndicator();
-        }
     }
 
     private _calculateWidth() {

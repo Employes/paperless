@@ -1,5 +1,5 @@
 :host {
-    @apply flex flex-col gap-4 overflow-hidden;
+    @apply flex flex-col overflow-hidden;
 
     @apply p-16 -m-16;
 
@@ -36,6 +36,10 @@
     }
 
     .indicator {
-        @apply flex justify-center items-center gap-2 desktop-xs:hidden;
+        @apply flex justify-center items-center desktop-xs:hidden;
+
+        .item {
+            @apply my-3 py-1 px-1;
+        }
     }
 }

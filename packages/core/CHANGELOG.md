@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.124 (2022-09-09)
+
+
+### Bug Fixes
+
+* **Atoms/Profile:** Add `flex-shrink-0` to avatar ([c81be22](https://github.com/ionic-team/stencil-component-starter/commit/c81be221f143699fdc1cd520d095946ea2a37048))
+
+
+
+
+
 # 0.1.0-alpha.123 (2022-09-09)
 
 

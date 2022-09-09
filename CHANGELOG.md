@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.116 (2022-09-09)
+
+
+### Features
+
+* **Molecules/Content Slider:** Improve indicator click & rewrite location logic ([a2c03bc](https://github.com/employes/paperless/commit/a2c03bc772e8e8126c2df38fa6fe43f38de1c290))
+
+
+
+
+
 # 0.1.0-alpha.115 (2022-09-09)
 
 

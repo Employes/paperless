@@ -28,9 +28,8 @@
 
             > ::slotted(*) {
                 @apply w-full tablet:w-[45%] desktop-xs:w-0;
-                @apply flex-shrink-0 desktop-xs:flex-1;
+                @apply flex-shrink-0 desktop-xs:flex-1 z-10;
                 position: relative;
-                z-index: 10;
             }
         }
     }

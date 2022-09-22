@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.127 (2022-09-22)
+
+
+### Features
+
+* **Molecules/Content Slider:** Better fitment for tablet view ([1698897](https://github.com/ionic-team/stencil-component-starter/commit/1698897aff2f39530e70460d739bf1dd8dff09f3))
+
+
+
+
+
 # 0.1.0-alpha.126 (2022-09-22)
 
 

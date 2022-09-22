@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.126 (2022-09-22)
+
+
+### Bug Fixes
+
+* **Molecules/Content Slider:** Margin bottom on indicators ([6bf7bb7](https://github.com/ionic-team/stencil-component-starter/commit/6bf7bb76c311b0094415a8ba1b2cf156c2e6e485))
+
+
+
+
+
 # 0.1.0-alpha.125 (2022-09-09)
 
 

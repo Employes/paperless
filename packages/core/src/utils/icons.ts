@@ -2,6 +2,7 @@ import arrow from '../assets/icons/arrow.svg';
 import attachment from '../assets/icons/attachment.svg';
 import bread from '../assets/icons/bread.svg';
 import calendar from '../assets/icons/calendar.svg';
+import camera from '../assets/icons/camera.svg';
 import car from '../assets/icons/car.svg';
 import checklist from '../assets/icons/checklist.svg';
 import checkmark from '../assets/icons/checkmark.svg';
@@ -53,6 +54,7 @@ export default {
     attachment,
     bread,
     calendar,
+    camera,
     car,
     checklist,
     checkmark,

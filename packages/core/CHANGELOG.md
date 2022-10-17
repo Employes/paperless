@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.128 (2022-10-17)
+
+
+### Features
+
+* **Atoms/Icon:** Add camera icon ([7f5894f](https://github.com/ionic-team/stencil-component-starter/commit/7f5894f7986f951799af4585afca4923ac46ee20))
+
+
+
+
+
 # 0.1.0-alpha.127 (2022-09-22)
 
 

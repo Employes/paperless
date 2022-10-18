@@ -1,0 +1,17 @@
+:host {
+    @apply flex flex-col gap-4;
+    @apply w-full;
+    @apply p-4 desktop-xs:p-6;
+
+    @screen desktop-xs {
+        @apply grid grid-cols-2;
+    }
+
+    p-segment-container {
+        @apply justify-self-start col-start-1;
+    }
+
+    > div {
+        @apply col-start-2;
+    }
+}

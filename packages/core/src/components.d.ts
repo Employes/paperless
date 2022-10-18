@@ -602,6 +602,52 @@ export namespace Components {
          */
         "type": 'td' | 'th';
     }
+    interface PTableHeader {
+        /**
+          * Active quick filter identifier
+         */
+        "activeQuickFilterIdentifier": string;
+        /**
+          * Wether to enable the edit button
+         */
+        "canEdit": boolean;
+        /**
+          * The template for the edit button text
+         */
+        "editButtonTemplate": buttonTemplateFunc;
+        /**
+          * Wether to show the edit button
+         */
+        "enableEdit": boolean;
+        /**
+          * Wether to show the filter button
+         */
+        "enableFilter": boolean;
+        /**
+          * Wether to show the search input
+         */
+        "enableSearch": boolean;
+        /**
+          * The template for the filter button text
+         */
+        "filterButtonTemplate": templateFunc;
+        /**
+          * The amount of items that are selected
+         */
+        "itemsSelectedAmount": number;
+        /**
+          * The query to show in the search bar
+         */
+        "query": string;
+        /**
+          * Quick filters to show
+         */
+        "quickFilters": QuickFilter[];
+        /**
+          * The amount of filters being selected
+         */
+        "selectedFiltersAmount": number;
+    }
     interface PTableRow {
         /**
           * Enable hover
@@ -683,6 +729,10 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
 export interface PTableDefinitionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableDefinitionElement;
+}
+export interface PTableHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTableHeaderElement;
 }
 export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -953,6 +1003,12 @@ declare global {
         prototype: HTMLPTableDefinitionElement;
         new (): HTMLPTableDefinitionElement;
     };
+    interface HTMLPTableHeaderElement extends Components.PTableHeader, HTMLStencilElement {
+    }
+    var HTMLPTableHeaderElement: {
+        prototype: HTMLPTableHeaderElement;
+        new (): HTMLPTableHeaderElement;
+    };
     interface HTMLPTableRowElement extends Components.PTableRow, HTMLStencilElement {
     }
     var HTMLPTableRowElement: {
@@ -1016,6 +1072,7 @@ declare global {
         "p-table-body": HTMLPTableBodyElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
+        "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
         "p-tag": HTMLPTagElement;
         "p-tooltip": HTMLPTooltipElement;
@@ -1642,6 +1699,68 @@ declare namespace LocalJSX {
          */
         "type"?: 'td' | 'th';
     }
+    interface PTableHeader {
+        /**
+          * Active quick filter identifier
+         */
+        "activeQuickFilterIdentifier"?: string;
+        /**
+          * Wether to enable the edit button
+         */
+        "canEdit"?: boolean;
+        /**
+          * The template for the edit button text
+         */
+        "editButtonTemplate"?: buttonTemplateFunc;
+        /**
+          * Wether to show the edit button
+         */
+        "enableEdit"?: boolean;
+        /**
+          * Wether to show the filter button
+         */
+        "enableFilter"?: boolean;
+        /**
+          * Wether to show the search input
+         */
+        "enableSearch"?: boolean;
+        /**
+          * The template for the filter button text
+         */
+        "filterButtonTemplate"?: templateFunc;
+        /**
+          * The amount of items that are selected
+         */
+        "itemsSelectedAmount"?: number;
+        /**
+          * Event when the edit button is clicked
+         */
+        "onEdit"?: (event: PTableHeaderCustomEvent<null>) => void;
+        /**
+          * Event when the filter button is clicked
+         */
+        "onFilter"?: (event: PTableHeaderCustomEvent<null>) => void;
+        /**
+          * Event when the query changes
+         */
+        "onQueryChange"?: (event: PTableHeaderCustomEvent<string>) => void;
+        /**
+          * Event when one of the quick filters is clicked
+         */
+        "onQuickFilter"?: (event: PTableHeaderCustomEvent<QuickFilter>) => void;
+        /**
+          * The query to show in the search bar
+         */
+        "query"?: string;
+        /**
+          * Quick filters to show
+         */
+        "quickFilters"?: QuickFilter[];
+        /**
+          * The amount of filters being selected
+         */
+        "selectedFiltersAmount"?: number;
+    }
     interface PTableRow {
         /**
           * Enable hover
@@ -1740,6 +1859,7 @@ declare namespace LocalJSX {
         "p-table-body": PTableBody;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
+        "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
         "p-tag": PTag;
         "p-tooltip": PTooltip;
@@ -1793,6 +1913,7 @@ declare module "@stencil/core" {
             "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
+            "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;

@@ -52,6 +52,7 @@ export const PTabItem = /*@__PURE__*/createReactComponent<JSX.PTabItem, HTMLPTab
 export const PTableBody = /*@__PURE__*/createReactComponent<JSX.PTableBody, HTMLPTableBodyElement>('p-table-body');
 export const PTableContainer = /*@__PURE__*/createReactComponent<JSX.PTableContainer, HTMLPTableContainerElement>('p-table-container');
 export const PTableDefinition = /*@__PURE__*/createReactComponent<JSX.PTableDefinition, HTMLPTableDefinitionElement>('p-table-definition');
+export const PTableHeader = /*@__PURE__*/createReactComponent<JSX.PTableHeader, HTMLPTableHeaderElement>('p-table-header');
 export const PTableRow = /*@__PURE__*/createReactComponent<JSX.PTableRow, HTMLPTableRowElement>('p-table-row');
 export const PTag = /*@__PURE__*/createReactComponent<JSX.PTag, HTMLPTagElement>('p-tag');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

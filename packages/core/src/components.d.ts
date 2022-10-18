@@ -602,6 +602,36 @@ export namespace Components {
          */
         "type": 'td' | 'th';
     }
+    interface PTableFooter {
+        /**
+          * Wether to enable export
+         */
+        "enableExport": boolean;
+        /**
+          * Wether to enable page size select
+         */
+        "enablePageSize": boolean;
+        /**
+          * Wether to enable pagination
+         */
+        "enablePagination": boolean;
+        /**
+          * The current page
+         */
+        "page": number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize": number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions": number[];
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PTableHeader {
         /**
           * Active quick filter identifier
@@ -729,6 +759,10 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
 export interface PTableDefinitionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableDefinitionElement;
+}
+export interface PTableFooterCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTableFooterElement;
 }
 export interface PTableHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1003,6 +1037,12 @@ declare global {
         prototype: HTMLPTableDefinitionElement;
         new (): HTMLPTableDefinitionElement;
     };
+    interface HTMLPTableFooterElement extends Components.PTableFooter, HTMLStencilElement {
+    }
+    var HTMLPTableFooterElement: {
+        prototype: HTMLPTableFooterElement;
+        new (): HTMLPTableFooterElement;
+    };
     interface HTMLPTableHeaderElement extends Components.PTableHeader, HTMLStencilElement {
     }
     var HTMLPTableHeaderElement: {
@@ -1072,6 +1112,7 @@ declare global {
         "p-table-body": HTMLPTableBodyElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
+        "p-table-footer": HTMLPTableFooterElement;
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
         "p-tag": HTMLPTagElement;
@@ -1699,6 +1740,48 @@ declare namespace LocalJSX {
          */
         "type"?: 'td' | 'th';
     }
+    interface PTableFooter {
+        /**
+          * Wether to enable export
+         */
+        "enableExport"?: boolean;
+        /**
+          * Wether to enable page size select
+         */
+        "enablePageSize"?: boolean;
+        /**
+          * Wether to enable pagination
+         */
+        "enablePagination"?: boolean;
+        /**
+          * Event whenever the page changes
+         */
+        "onExport"?: (event: PTableFooterCustomEvent<number>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageChange"?: (event: PTableFooterCustomEvent<number>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageSizeChange"?: (event: PTableFooterCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "page"?: number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize"?: number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions"?: number[];
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PTableHeader {
         /**
           * Active quick filter identifier
@@ -1859,6 +1942,7 @@ declare namespace LocalJSX {
         "p-table-body": PTableBody;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
+        "p-table-footer": PTableFooter;
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
         "p-tag": PTag;
@@ -1913,6 +1997,7 @@ declare module "@stencil/core" {
             "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
+            "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;

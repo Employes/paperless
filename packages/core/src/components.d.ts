@@ -176,6 +176,14 @@ export namespace Components {
     }
     interface PDropdown {
         /**
+          * Chevron direction
+         */
+        "chevronDirection": 'up' | 'down';
+        /**
+          * Chevron position
+         */
+        "chevronPosition": 'start' | 'end';
+        /**
           * Wether to automatically close the dropdown menu after clicking inside
          */
         "disableTriggerClick": boolean;
@@ -1103,6 +1111,14 @@ declare namespace LocalJSX {
     interface PDivider {
     }
     interface PDropdown {
+        /**
+          * Chevron direction
+         */
+        "chevronDirection"?: 'up' | 'down';
+        /**
+          * Chevron position
+         */
+        "chevronPosition"?: 'start' | 'end';
         /**
           * Wether to automatically close the dropdown menu after clicking inside
          */

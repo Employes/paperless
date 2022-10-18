@@ -43,6 +43,16 @@ export class Dropdown {
     @Prop() disableTriggerClick: boolean = false;
 
     /**
+     * Chevron position
+     */
+    @Prop() chevronPosition: 'start' | 'end' = 'end';
+
+    /**
+     * Chevron direction
+     */
+    @Prop() chevronDirection: 'up' | 'down';
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -92,8 +102,12 @@ export class Dropdown {
 
         for (let child of children) {
             if (child.nodeName === 'P-BUTTON') {
-                (child as any).chevron =
-                    this.placement.indexOf('top') >= 0 ? 'up' : 'down';
+                (child as any).chevronPosition = this.chevronPosition;
+                (child as any).chevron = this.chevronDirection
+                    ? this.chevronDirection
+                    : this.placement.indexOf('top') >= 0
+                    ? 'up'
+                    : 'down';
             }
         }
     }

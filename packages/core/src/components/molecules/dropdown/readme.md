@@ -20,6 +20,8 @@
 
 | Property              | Attribute               | Description                                                           | Type                                                                                                                                                                                                         | Default          |
 | --------------------- | ----------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| `chevronDirection`    | `chevron-direction`     | Chevron direction                                                     | `"down" \| "up"`                                                                                                                                                                                             | `undefined`      |
+| `chevronPosition`     | `chevron-position`      | Chevron position                                                      | `"end" \| "start"`                                                                                                                                                                                           | `'end'`          |
 | `disableTriggerClick` | `disable-trigger-click` | Wether to automatically close the dropdown menu after clicking inside | `boolean`                                                                                                                                                                                                    | `false`          |
 | `insideClick`         | `inside-click`          | Wether to automatically close the dropdown menu after clicking inside | `boolean`                                                                                                                                                                                                    | `false`          |
 | `placement`           | `placement`             | The content of the dropdown menu                                      | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom-start'` |
@@ -38,6 +40,7 @@
 
 ### Used by
 
+ - [p-page-size-select](../page-size-select)
  - [p-profile](../profile)
 
 ### Depends on
@@ -48,6 +51,7 @@
 ```mermaid
 graph TD;
   p-dropdown --> p-dropdown-menu-container
+  p-page-size-select --> p-dropdown
   p-profile --> p-dropdown
   style p-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```

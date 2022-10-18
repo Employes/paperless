@@ -18,10 +18,15 @@
 | `iconRotate` | `icon-rotate` | Icon rotate                        | `-135 \| -180 \| -225 \| -25 \| -270 \| -315 \| -45 \| -90 \| 0 \| 135 \| 180 \| 225 \| 25 \| 270 \| 315 \| 45 \| 90`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `undefined` |
 | `label`      | `label`       | The label of the input group       | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `undefined` |
 | `prefix`     | `prefix`      | The prefix of the input group      | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `undefined` |
+| `size`       | `size`        | The size of the input group        | `"medium" \| "small"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `'medium'`  |
 | `suffix`     | `suffix`      | The suffix of the input group      | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `undefined` |
 
 
 ## Dependencies
+
+### Used by
+
+ - [p-table-header](../table-header)
 
 ### Depends on
 
@@ -36,17 +41,7 @@ graph TD;
   p-input-group --> p-icon
   p-input-group --> p-tooltip
   p-helper --> p-tooltip
-  style p-input-group fill:#f9f,stroke:#333,stroke-width:4px
-```
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
-h TD;
-  p-input-group --> p-helper
-  p-input-group --> p-icon
-  p-input-group --> p-tooltip
-  p-helper --> p-tooltip
+  p-table-header --> p-input-group
   style p-input-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

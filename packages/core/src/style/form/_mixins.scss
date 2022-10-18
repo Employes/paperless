@@ -75,6 +75,10 @@
     &.focus {
         @include inputFocusState();
     }
+
+    &.size-small {
+        @include inputSizeSmall();
+    }
 }
 
 @mixin inputFocusState {
@@ -92,4 +96,8 @@
 
 @mixin inputDisabledState {
     @apply opacity-40;
+}
+
+@mixin inputSizeSmall {
+    @apply h-8 text-sm;
 }

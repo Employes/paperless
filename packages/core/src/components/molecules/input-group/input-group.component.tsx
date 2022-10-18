@@ -7,7 +7,7 @@ import {
     Prop,
     State,
 } from '@stencil/core';
-import { RotateOptions } from '../../../utils/types';
+import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
 
 @Component({
@@ -16,6 +16,11 @@ import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
     shadow: true,
 })
 export class InputGroup {
+    /**
+     * The size of the input group
+     */
+    @Prop() size: 'small' | 'medium' = 'medium';
+
     /**
      * The prefix of the input group
      */
@@ -74,6 +79,10 @@ export class InputGroup {
     @State() private _showTooltip = false;
     @State() private _forceShowTooltip = false;
 
+    componentWillRender() {
+        this._setInputClasses();
+    }
+
     render() {
         const hasHelperSlot = !!this._el.querySelector('[slot="helper"]');
         const hasLabelSlot = !!this._el.querySelector('[slot="label"]');
@@ -95,7 +104,7 @@ export class InputGroup {
             <Host
                 class={`p-input-group ${this.error?.length && 'error'} ${
                     this.disabled && 'disabled'
-                } ${this.focused && 'focused'}`}
+                } ${this.focused && 'focused'} size-${this.size}`}
             >
                 <div class="flex justify-between items-end">
                     {label && <div class="input-label">{label}</div>}
@@ -118,7 +127,7 @@ export class InputGroup {
                 </div>
                 <div class="content">
                     {(prefix || this.icon) && (
-                        <div class="prefix">
+                        <div class={`prefix size-${this.size}`}>
                             {this.icon ? (
                                 <p-icon
                                     class="flex"
@@ -132,7 +141,7 @@ export class InputGroup {
                         </div>
                     )}
                     {(suffix || errorAndErrorIsNotBoolean) && (
-                        <div class="suffix">
+                        <div class={`suffix size-${this.size}`}>
                             {errorAndErrorIsNotBoolean ? (
                                 <p-tooltip
                                     variant="error"
@@ -157,6 +166,7 @@ export class InputGroup {
                             )}
                         </div>
                     )}
+
                     <slot name="input" />
                 </div>
             </Host>
@@ -171,5 +181,13 @@ export class InputGroup {
     @Listen('focusout')
     handleFocusOut() {
         this._forceShowTooltip = false;
+    }
+
+    private _setInputClasses() {
+        const input = this._el.querySelector('[slot="input"]');
+
+        if (!input.classList.contains('p-input')) {
+            input.classList.add('p-input');
+        }
     }
 }

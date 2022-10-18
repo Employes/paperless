@@ -302,6 +302,10 @@ export namespace Components {
          */
         "prefix": string;
         /**
+          * The size of the input group
+         */
+        "size": 'small' | 'medium';
+        /**
           * The suffix of the input group
          */
         "suffix": string;
@@ -1241,6 +1245,10 @@ declare namespace LocalJSX {
           * The prefix of the input group
          */
         "prefix"?: string;
+        /**
+          * The size of the input group
+         */
+        "size"?: 'small' | 'medium';
         /**
           * The suffix of the input group
          */

@@ -41,6 +41,7 @@
         }
 
         @include slottedItems() {
+            @include inputDefaultState();
             @apply order-2;
         }
 
@@ -95,5 +96,11 @@
     @include slottedItems() {
         @include inputDisabledState();
         pointer-events: none;
+    }
+}
+
+:host(.size-small) {
+    @include slottedItems() {
+        @include inputSizeSmall();
     }
 }

@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Directive({})
-export class ValueAccessor implements ControlValueAccessor {
+export class BaseValueAccessor implements ControlValueAccessor {
     private onChange: (value: any) => void = () => {
         /**/
     };

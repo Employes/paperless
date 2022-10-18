@@ -2,7 +2,7 @@ import { Directive, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { QuickFilter } from '@paperless/core';
 
-import { ValueAccessor } from '../base';
+import { BaseValueAccessor } from '../base';
 
 export interface TableDirectiveValue {
 	query?: string;
@@ -30,8 +30,8 @@ export interface TableDirectiveValue {
 		},
 	],
 })
-export class TableDirective extends ValueAccessor {
-	protected lastValue: TableDirectiveValue = {
+export class TableDirective extends BaseValueAccessor {
+	protected override lastValue: TableDirectiveValue = {
 		query: '',
 		quickFilter: undefined,
 		page: 1,

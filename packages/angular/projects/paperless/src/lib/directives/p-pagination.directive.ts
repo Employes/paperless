@@ -1,7 +1,7 @@
 import { Directive, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { ValueAccessor } from '../base';
+import { BaseValueAccessor } from '../base';
 
 @Directive({
     /* tslint:disable-next-line:directive-selector */
@@ -17,7 +17,7 @@ import { ValueAccessor } from '../base';
         },
     ],
 })
-export class PaginationDirective extends ValueAccessor {
+export class PaginationDirective extends BaseValueAccessor {
     constructor(el: ElementRef) {
         super(el);
     }

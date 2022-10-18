@@ -1,6 +1,6 @@
 import { Component, h, Host, Prop } from '@stencil/core';
+import { RotateOptions, TextSizeOptions } from '../../../types/tailwind';
 import icons from '../../../utils/icons';
-import { RotateOptions, TextSizeOptions } from '../../../utils/types';
 
 export type IconVariant = keyof typeof icons;
 export type IconFlipOptions = 'horizontal' | 'vertical';

@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import { RotateOptions } from '../../../utils/types';
+import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 
 @Component({

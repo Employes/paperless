@@ -12,7 +12,10 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
+import { QuickFilter } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
+import { TableDefinitionSizes, templateFunc as templateFunc2 } from "./components/helpers/table-definition/table-definition.component";
+import { buttonTemplateFunc, templateFunc as templateFunc3 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -572,6 +575,92 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PTable {
+        /**
+          * Active quick filter identifier
+         */
+        "activeQuickFilterIdentifier": string;
+        /**
+          * A key to determine if a row can be selected
+         */
+        "canSelectKey": string;
+        /**
+          * The template for the edit button text
+         */
+        "editButtonTemplate": templateFunc1;
+        /**
+          * Wether to show the edit button
+         */
+        "enableEdit": boolean;
+        /**
+          * Wether to enable export
+         */
+        "enableExport": boolean;
+        /**
+          * Wether to show the filter button
+         */
+        "enableFilter": boolean;
+        /**
+          * Wether to enable page size select
+         */
+        "enablePageSize": boolean;
+        /**
+          * Wether to enable pagination
+         */
+        "enablePagination": boolean;
+        /**
+          * Wether to enable selection
+         */
+        "enableRowSelection": boolean;
+        /**
+          * Wether to show the search input
+         */
+        "enableSearch": boolean;
+        /**
+          * The template for the filter button text
+         */
+        "filterButtonTemplate": templateFunc1;
+        /**
+          * The items to be fed to the table
+         */
+        "items": string;
+        /**
+          * The current page
+         */
+        "page": number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize": number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions": number[];
+        /**
+          * The query to show in the search bar
+         */
+        "query": string;
+        /**
+          * Quick filters to show
+         */
+        "quickFilters": QuickFilter[];
+        /**
+          * The amount of filters being selected
+         */
+        "selectedFiltersAmount": number;
+        /**
+          * The current selection of items
+         */
+        "selectedRows": any[];
+        /**
+          * The key to determine if a row is selected
+         */
+        "selectionKey": string;
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PTableBody {
     }
     interface PTableContainer {
@@ -755,6 +844,10 @@ export interface PPageSizeSelectCustomEvent<T> extends CustomEvent<T> {
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
+}
+export interface PTableCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTableElement;
 }
 export interface PTableDefinitionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1019,6 +1112,12 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableElement extends Components.PTable, HTMLStencilElement {
+    }
+    var HTMLPTableElement: {
+        prototype: HTMLPTableElement;
+        new (): HTMLPTableElement;
+    };
     interface HTMLPTableBodyElement extends Components.PTableBody, HTMLStencilElement {
     }
     var HTMLPTableBodyElement: {
@@ -1109,6 +1208,7 @@ declare global {
         "p-stepper-line": HTMLPStepperLineElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
+        "p-table": HTMLPTableElement;
         "p-table-body": HTMLPTableBodyElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
@@ -1706,6 +1806,136 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PTable {
+        /**
+          * Active quick filter identifier
+         */
+        "activeQuickFilterIdentifier"?: string;
+        /**
+          * A key to determine if a row can be selected
+         */
+        "canSelectKey"?: string;
+        /**
+          * The template for the edit button text
+         */
+        "editButtonTemplate"?: templateFunc1;
+        /**
+          * Wether to show the edit button
+         */
+        "enableEdit"?: boolean;
+        /**
+          * Wether to enable export
+         */
+        "enableExport"?: boolean;
+        /**
+          * Wether to show the filter button
+         */
+        "enableFilter"?: boolean;
+        /**
+          * Wether to enable page size select
+         */
+        "enablePageSize"?: boolean;
+        /**
+          * Wether to enable pagination
+         */
+        "enablePagination"?: boolean;
+        /**
+          * Wether to enable selection
+         */
+        "enableRowSelection"?: boolean;
+        /**
+          * Wether to show the search input
+         */
+        "enableSearch"?: boolean;
+        /**
+          * The template for the filter button text
+         */
+        "filterButtonTemplate"?: templateFunc1;
+        /**
+          * The items to be fed to the table
+         */
+        "items"?: string;
+        /**
+          * Event when the edit button is clicked
+         */
+        "onEdit"?: (event: PTableCustomEvent<null>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onExport"?: (event: PTableCustomEvent<number>) => void;
+        /**
+          * Event when the filter button is clicked
+         */
+        "onFilter"?: (event: PTableCustomEvent<null>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageChange"?: (event: PTableCustomEvent<number>) => void;
+        /**
+          * Event whenever the page changes
+         */
+        "onPageSizeChange"?: (event: PTableCustomEvent<number>) => void;
+        /**
+          * Event when the query changes
+         */
+        "onQueryChange"?: (event: PTableCustomEvent<string>) => void;
+        /**
+          * Event when one of the quick filters is clicked
+         */
+        "onQuickFilter"?: (event: PTableCustomEvent<QuickFilter>) => void;
+        /**
+          * Event whenever a row is clicked
+         */
+        "onRowClick"?: (event: PTableCustomEvent<any>) => void;
+        /**
+          * Event whenever a row is deselected
+         */
+        "onRowDeselected"?: (event: PTableCustomEvent<any>) => void;
+        /**
+          * Event whenever a row is selected
+         */
+        "onRowSelected"?: (event: PTableCustomEvent<any>) => void;
+        /**
+          * Event whenever the current selection changes
+         */
+        "onSelectedRowsChange"?: (event: PTableCustomEvent<any>) => void;
+        /**
+          * The current page
+         */
+        "page"?: number;
+        /**
+          * The amount of items per page
+         */
+        "pageSize"?: number;
+        /**
+          * The options for the page size
+         */
+        "pageSizeOptions"?: number[];
+        /**
+          * The query to show in the search bar
+         */
+        "query"?: string;
+        /**
+          * Quick filters to show
+         */
+        "quickFilters"?: QuickFilter[];
+        /**
+          * The amount of filters being selected
+         */
+        "selectedFiltersAmount"?: number;
+        /**
+          * The current selection of items
+         */
+        "selectedRows"?: any[];
+        /**
+          * The key to determine if a row is selected
+         */
+        "selectionKey"?: string;
+        /**
+          * The total amount of items
+         */
+        "total": number;
+    }
     interface PTableBody {
     }
     interface PTableContainer {
@@ -1939,6 +2169,7 @@ declare namespace LocalJSX {
         "p-stepper-line": PStepperLine;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
+        "p-table": PTable;
         "p-table-body": PTableBody;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
@@ -1994,6 +2225,7 @@ declare module "@stencil/core" {
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
+            "p-table": LocalJSX.PTable & JSXBase.HTMLAttributes<HTMLPTableElement>;
             "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;

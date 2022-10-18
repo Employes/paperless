@@ -49,6 +49,7 @@ export const PStepperItem = /*@__PURE__*/createReactComponent<JSX.PStepperItem, 
 export const PStepperLine = /*@__PURE__*/createReactComponent<JSX.PStepperLine, HTMLPStepperLineElement>('p-stepper-line');
 export const PTabGroup = /*@__PURE__*/createReactComponent<JSX.PTabGroup, HTMLPTabGroupElement>('p-tab-group');
 export const PTabItem = /*@__PURE__*/createReactComponent<JSX.PTabItem, HTMLPTabItemElement>('p-tab-item');
+export const PTable = /*@__PURE__*/createReactComponent<JSX.PTable, HTMLPTableElement>('p-table');
 export const PTableBody = /*@__PURE__*/createReactComponent<JSX.PTableBody, HTMLPTableBodyElement>('p-table-body');
 export const PTableContainer = /*@__PURE__*/createReactComponent<JSX.PTableContainer, HTMLPTableContainerElement>('p-table-container');
 export const PTableDefinition = /*@__PURE__*/createReactComponent<JSX.PTableDefinition, HTMLPTableDefinitionElement>('p-table-definition');

@@ -21,8 +21,8 @@
 ```mermaid
 graph TD;
   p-navbar --> p-button
-  p-button --> p-loader
   p-button --> p-icon
+  p-button --> p-loader
   style p-navbar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

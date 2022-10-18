@@ -15,6 +15,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-page-size-select](../../molecules/page-size-select)
+
 ### Depends on
 
 - [p-icon](../icon)
@@ -23,12 +27,10 @@
 ```mermaid
 graph TD;
   p-dropdown-menu-item --> p-icon
+  p-page-size-select --> p-dropdown-menu-item
   style p-dropdown-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
-----------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

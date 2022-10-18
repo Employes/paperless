@@ -20,6 +20,7 @@
  - [p-accordion](../../molecules/accordion)
  - [p-modal-footer](../modal-footer)
  - [p-tab-group](../tab-group)
+ - [p-table-row](../../molecules/table-row)
 
 ### Graph
 ```mermaid
@@ -27,6 +28,7 @@ graph TD;
   p-accordion --> p-divider
   p-modal-footer --> p-divider
   p-tab-group --> p-divider
+  p-table-row --> p-divider
   style p-divider fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

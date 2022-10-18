@@ -17,6 +17,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-table-header](../../molecules/table-header)
+
 ### Depends on
 
 - [p-icon](../icon)
@@ -25,12 +29,10 @@
 ```mermaid
 graph TD;
   p-segment-item --> p-icon
+  p-table-header --> p-segment-item
   style p-segment-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

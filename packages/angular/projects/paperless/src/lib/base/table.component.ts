@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { UntilDestroy } from '@ngneat/until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
 import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
@@ -130,7 +130,7 @@ export abstract class BaseTableComponent
 
         this.tableOptions.valueChanges
             .pipe(
-                UntilDestroy(this),
+                untilDestroyed(this),
                 startWith(this.tableOptions.value),
                 pairwise(),
                 map(([previous, next]) => this._getChanges(previous, next)),

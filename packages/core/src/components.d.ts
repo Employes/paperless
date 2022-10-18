@@ -572,6 +572,8 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PTableBody {
+    }
     interface PTableContainer {
     }
     interface PTableDefinition {
@@ -933,6 +935,12 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableBodyElement extends Components.PTableBody, HTMLStencilElement {
+    }
+    var HTMLPTableBodyElement: {
+        prototype: HTMLPTableBodyElement;
+        new (): HTMLPTableBodyElement;
+    };
     interface HTMLPTableContainerElement extends Components.PTableContainer, HTMLStencilElement {
     }
     var HTMLPTableContainerElement: {
@@ -945,6 +953,8 @@ declare global {
         prototype: HTMLPTableDefinitionElement;
         new (): HTMLPTableDefinitionElement;
     };
+    interface HTMLPTableRowElement extends Components.PTableRow, HTMLStencilElement {
+    }
     var HTMLPTableRowElement: {
         prototype: HTMLPTableRowElement;
         new (): HTMLPTableRowElement;
@@ -1003,6 +1013,7 @@ declare global {
         "p-stepper-line": HTMLPStepperLineElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
+        "p-table-body": HTMLPTableBodyElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
         "p-table-row": HTMLPTableRowElement;
@@ -1597,6 +1608,8 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PTableBody {
+    }
     interface PTableContainer {
     }
     interface PTableDefinition {
@@ -1724,6 +1737,7 @@ declare namespace LocalJSX {
         "p-stepper-line": PStepperLine;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
+        "p-table-body": PTableBody;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
         "p-table-row": PTableRow;
@@ -1776,6 +1790,7 @@ declare module "@stencil/core" {
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
+            "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;

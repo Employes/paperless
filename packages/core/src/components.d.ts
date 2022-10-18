@@ -598,6 +598,16 @@ export namespace Components {
          */
         "type": 'td' | 'th';
     }
+    interface PTableRow {
+        /**
+          * Enable hover
+         */
+        "enableHover": boolean;
+        /**
+          * Variant of the header
+         */
+        "variant": 'default' | 'header';
+    }
     interface PTag {
         /**
           * Wether to add the circle or not
@@ -927,6 +937,10 @@ declare global {
         prototype: HTMLPTableDefinitionElement;
         new (): HTMLPTableDefinitionElement;
     };
+    var HTMLPTableRowElement: {
+        prototype: HTMLPTableRowElement;
+        new (): HTMLPTableRowElement;
+    };
     interface HTMLPTagElement extends Components.PTag, HTMLStencilElement {
     }
     var HTMLPTagElement: {
@@ -982,6 +996,7 @@ declare global {
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
         "p-table-definition": HTMLPTableDefinitionElement;
+        "p-table-row": HTMLPTableRowElement;
         "p-tag": HTMLPTagElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -1603,6 +1618,16 @@ declare namespace LocalJSX {
          */
         "type"?: 'td' | 'th';
     }
+    interface PTableRow {
+        /**
+          * Enable hover
+         */
+        "enableHover"?: boolean;
+        /**
+          * Variant of the header
+         */
+        "variant"?: 'default' | 'header';
+    }
     interface PTag {
         /**
           * Wether to add the circle or not
@@ -1689,6 +1714,7 @@ declare namespace LocalJSX {
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
         "p-table-definition": PTableDefinition;
+        "p-table-row": PTableRow;
         "p-tag": PTag;
         "p-tooltip": PTooltip;
     }
@@ -1739,6 +1765,7 @@ declare module "@stencil/core" {
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
+            "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.131 (2022-10-18)
+
+
+### Bug Fixes
+
+* Add `@ngneat/until-destroy` to `allowedNonPeerDependencies` ([074f2e5](https://github.com/employes/paperless/commit/074f2e51734d98c44779c23221c8f0f62c20b38d))
+
+
+
+
+
 # 0.1.0-alpha.130 (2022-10-18)
 
 

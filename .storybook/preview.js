@@ -10,6 +10,21 @@ import 'tailwindcss/tailwind.css';
 import '../packages/core/dist/paperless/paperless.css';
 import './storybook.css';
 
+// export const globalTypes = {
+//     locale: {
+//         name: 'Locale',
+//         description: 'Internationalization locale',
+//         defaultValue: 'en',
+//         toolbar: {
+//             icon: 'globe',
+//             items: [
+//                 { value: 'en', right: '🇺🇸', title: 'English' },
+//                 { value: 'nl', right: '🇳🇱', title: 'Nederlands' },
+//             ],
+//         },
+//     },
+// };
+
 export const parameters = {
     options: {
         storySort: {
@@ -25,6 +40,8 @@ export const parameters = {
                     'Atoms',
                     'Molecules',
                     'Organisms',
+                    'Templates',
+                    'Helpers',
                 ],
             ],
         },

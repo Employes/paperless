@@ -1,7 +1,5 @@
-const postcss = require('postcss');
-
 module.exports = {
-    staticDirs: ['../packages/core/src'],
+    staticDirs: ['../packages/core/dist'],
     stories: [
         '../stories/**/*.story.mdx',
         '../stories/**/*.story.@(js|jsx|ts|tsx)',

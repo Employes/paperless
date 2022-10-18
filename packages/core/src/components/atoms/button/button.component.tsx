@@ -1,5 +1,6 @@
 import {
     Component,
+    Element,
     Event,
     EventEmitter,
     h,
@@ -7,7 +8,7 @@ import {
     Listen,
     Prop,
 } from '@stencil/core';
-import { RotateOptions } from '../../../utils/types';
+import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 
 @Component({
@@ -52,6 +53,11 @@ export class Button {
     @Prop() chevron: boolean | 'up' | 'down' = false;
 
     /**
+     * Chevron position
+     */
+    @Prop() chevronPosition: 'start' | 'end' = 'end';
+
+    /**
      * Wether the button is disabled
      */
     @Prop() disabled: boolean = false;
@@ -91,6 +97,11 @@ export class Button {
      */
     @Event() onClick: EventEmitter<MouseEvent>;
 
+    /**
+     * The host element
+     */
+    @Element() private _el: HTMLElement;
+
     render() {
         let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
         switch (this.variant) {
@@ -107,17 +118,27 @@ export class Button {
         return (
             <Host class={`p-button ${this.width === 'full' && 'w-full'}`}>
                 <VariableTag
-                    class={`variant-${this.variant} size-${this.size} width-${
-                        this.width
+                    class={`variant-${this.variant} size-${this.size} ${
+                        this.width === 'full' && 'w-full'
                     } icon-position-${this.iconPosition} ${
                         this.chevron && 'has-chevron'
-                    } ${this.iconOnly && 'has-icon-only'} ${
-                        this.inheritText && 'should-inherit-text'
+                    } chevron-position-${this.chevronPosition} ${
+                        this.iconOnly && 'has-icon-only'
+                    } ${this.inheritText && 'should-inherit-text'} ${
+                        this._el.classList.value
                     }`}
                     disabled={this.disabled}
                     href={this.href}
                     target={this.target}
                 >
+                    {this.chevron && this.chevronPosition === 'start' && (
+                        <p-icon
+                            class="chevron"
+                            variant="chevron"
+                            rotate={this.chevron === 'up' ? 180 : 0}
+                        />
+                    )}
+
                     {this.icon &&
                         this.iconPosition === 'start' &&
                         this._getIcon()}
@@ -130,8 +151,9 @@ export class Button {
 
                     {this.loading && <p-loader color={loaderColor} />}
 
-                    {this.chevron && (
+                    {this.chevron && this.chevronPosition === 'end' && (
                         <p-icon
+                            class="chevron"
                             variant="chevron"
                             rotate={this.chevron === 'up' ? 180 : 0}
                         />

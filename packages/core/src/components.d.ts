@@ -62,6 +62,10 @@ export namespace Components {
          */
         "chevron": boolean | 'up' | 'down';
         /**
+          * Chevron position
+         */
+        "chevronPosition": 'start' | 'end';
+        /**
           * Wether the button is disabled
          */
         "disabled": boolean;
@@ -981,6 +985,10 @@ declare namespace LocalJSX {
           * Wether to show a chevron or not
          */
         "chevron"?: boolean | 'up' | 'down';
+        /**
+          * Chevron position
+         */
+        "chevronPosition"?: 'start' | 'end';
         /**
           * Wether the button is disabled
          */

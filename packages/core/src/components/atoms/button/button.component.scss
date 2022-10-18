@@ -18,13 +18,13 @@ p-button {
 
         // Icon positions
         &.icon-position-end {
-            > p-icon {
+            > p-icon:not(.chevron) {
                 @apply ml-2;
             }
         }
 
         &.icon-position-start {
-            > p-icon {
+            > p-icon:not(.chevron) {
                 @apply mr-2;
             }
         }
@@ -83,8 +83,23 @@ p-button {
             @apply opacity-40;
         }
 
+        // chevron
         &.has-chevron {
-            @apply pr-2;
+            &.chevron-position-start {
+                @apply pl-2;
+
+                > p-icon.chevron {
+                    @apply mr-2;
+                }
+            }
+
+            &.chevron-position-end {
+                @apply pr-2;
+
+                > p-icon.chevron {
+                    @apply ml-2;
+                }
+            }
 
             &.variant-secondary:hover p-icon:last-child {
                 @apply text-indigo;

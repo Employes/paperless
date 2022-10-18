@@ -7,7 +7,7 @@ import { ValueAccessor } from '../base';
     /* tslint:disable-next-line:directive-selector */
     selector: 'p-page-size-select',
     host: {
-        '(sizeChange)': 'handleChangeEvent($event.target.page)',
+        '(sizeChange)': 'handleChangeEvent($event.detail)',
     },
     providers: [
         {

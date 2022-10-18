@@ -7,7 +7,7 @@ import { ValueAccessor } from '../base';
     /* tslint:disable-next-line:directive-selector */
     selector: 'p-pagination',
     host: {
-        '(pageChange)': 'handleChangeEvent($event.target.page)',
+        '(pageChange)': 'handleChangeEvent($event.detail)',
     },
     providers: [
         {

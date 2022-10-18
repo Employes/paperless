@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.132 (2022-10-18)
+
+
+### Bug Fixes
+
+* **Angular:** Export table directive ([e04331f](https://github.com/employes/paperless/commit/e04331f86bb96b5b671184ea557bb5f8e5d3c414))
+
+
+
+
+
 # 0.1.0-alpha.131 (2022-10-18)
 
 

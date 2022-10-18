@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.130 (2022-10-18)
+
+
+### Features
+
+* **Angular:** Add table directives ([b496ccb](https://github.com/Employes/Paperless/commit/b496ccb967663a31eaa7c299e5932f47075a4889))
+
+
+
+
+
 # 0.1.0-alpha.129 (2022-10-18)
 
 

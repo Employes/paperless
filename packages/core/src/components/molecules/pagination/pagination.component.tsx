@@ -22,12 +22,21 @@ export class Pagination {
      * The current page
      */
     @Prop({ mutable: true, reflect: true }) page: number = 1;
+
+    /**
+     * Event whenever the page changes
+     */
     @Event() pageChange: EventEmitter<number>;
 
     /**
      * The amount of items per page
      */
     @Prop() pageSize: number = 12;
+
+    /**
+     * Wether to hide when there is only 1 page available
+     */
+    @Prop() hideOnSinglePage: boolean = false;
 
     /**
      * The total amount of items
@@ -43,7 +52,11 @@ export class Pagination {
 
     render() {
         return (
-            <Host class="p-pagination">
+            <Host
+                class={`p-pagination ${
+                    this.hideOnSinglePage && this._set?.length === 3 && 'hidden'
+                }`}
+            >
                 {this._set?.map((p) => {
                     if (p.type === 'previous' || p.type === 'next') {
                         return (

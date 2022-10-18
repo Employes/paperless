@@ -450,6 +450,10 @@ export namespace Components {
     }
     interface PPagination {
         /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage": boolean;
+        /**
           * The current page
          */
         "page": number;
@@ -1405,6 +1409,13 @@ declare namespace LocalJSX {
         "sizeOptions"?: number[];
     }
     interface PPagination {
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage"?: boolean;
+        /**
+          * Event whenever the page changes
+         */
         "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
           * The current page

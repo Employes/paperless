@@ -572,6 +572,8 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PTableContainer {
+    }
     interface PTableDefinition {
         /**
           * The alignment of the column
@@ -931,6 +933,12 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableContainerElement extends Components.PTableContainer, HTMLStencilElement {
+    }
+    var HTMLPTableContainerElement: {
+        prototype: HTMLPTableContainerElement;
+        new (): HTMLPTableContainerElement;
+    };
     interface HTMLPTableDefinitionElement extends Components.PTableDefinition, HTMLStencilElement {
     }
     var HTMLPTableDefinitionElement: {
@@ -995,6 +1003,7 @@ declare global {
         "p-stepper-line": HTMLPStepperLineElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
+        "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
         "p-table-row": HTMLPTableRowElement;
         "p-tag": HTMLPTagElement;
@@ -1588,6 +1597,8 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PTableContainer {
+    }
     interface PTableDefinition {
         /**
           * The alignment of the column
@@ -1713,6 +1724,7 @@ declare namespace LocalJSX {
         "p-stepper-line": PStepperLine;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
+        "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
         "p-table-row": PTableRow;
         "p-tag": PTag;
@@ -1764,6 +1776,7 @@ declare module "@stencil/core" {
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
+            "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;

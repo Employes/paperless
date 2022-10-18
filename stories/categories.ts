@@ -6,4 +6,5 @@ export enum StoryCategories {
     Molecules = 'Design system/Molecules',
     Organisms = 'Design system/Organisms',
     Templates = 'Design system/Templates',
+    Helpers = 'Design system/Helpers',
 }

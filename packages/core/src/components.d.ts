@@ -572,6 +572,32 @@ export namespace Components {
          */
         "active": boolean;
     }
+    interface PTableDefinition {
+        /**
+          * The alignment of the column
+         */
+        "align": 'start' | 'center' | 'end';
+        /**
+          * The name of the column
+         */
+        "name": string;
+        /**
+          * The path of the value of the item you want to display
+         */
+        "path": string;
+        /**
+          * The sizes of the column
+         */
+        "sizes": 'auto' | number | TableDefinitionSizes;
+        /**
+          * The template for the data view
+         */
+        "template": templateFunc;
+        /**
+          * The type of the column
+         */
+        "type": 'td' | 'th';
+    }
     interface PTag {
         /**
           * Wether to add the circle or not
@@ -639,6 +665,10 @@ export interface PPageSizeSelectCustomEvent<T> extends CustomEvent<T> {
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
+}
+export interface PTableDefinitionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPTableDefinitionElement;
 }
 export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -891,6 +921,12 @@ declare global {
         prototype: HTMLPTabItemElement;
         new (): HTMLPTabItemElement;
     };
+    interface HTMLPTableDefinitionElement extends Components.PTableDefinition, HTMLStencilElement {
+    }
+    var HTMLPTableDefinitionElement: {
+        prototype: HTMLPTableDefinitionElement;
+        new (): HTMLPTableDefinitionElement;
+    };
     interface HTMLPTagElement extends Components.PTag, HTMLStencilElement {
     }
     var HTMLPTagElement: {
@@ -945,6 +981,7 @@ declare global {
         "p-stepper-line": HTMLPStepperLineElement;
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
+        "p-table-definition": HTMLPTableDefinitionElement;
         "p-tag": HTMLPTagElement;
         "p-tooltip": HTMLPTooltipElement;
     }
@@ -1536,6 +1573,36 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
     }
+    interface PTableDefinition {
+        /**
+          * The alignment of the column
+         */
+        "align"?: 'start' | 'center' | 'end';
+        /**
+          * The name of the column
+         */
+        "name"?: string;
+        /**
+          * Event to let the table know it has to re render
+         */
+        "onTableDefinitionChanged"?: (event: PTableDefinitionCustomEvent<boolean>) => void;
+        /**
+          * The path of the value of the item you want to display
+         */
+        "path"?: string;
+        /**
+          * The sizes of the column
+         */
+        "sizes"?: 'auto' | number | TableDefinitionSizes;
+        /**
+          * The template for the data view
+         */
+        "template"?: templateFunc;
+        /**
+          * The type of the column
+         */
+        "type"?: 'td' | 'th';
+    }
     interface PTag {
         /**
           * Wether to add the circle or not
@@ -1621,6 +1688,7 @@ declare namespace LocalJSX {
         "p-stepper-line": PStepperLine;
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
+        "p-table-definition": PTableDefinition;
         "p-tag": PTag;
         "p-tooltip": PTooltip;
     }
@@ -1670,6 +1738,7 @@ declare module "@stencil/core" {
             "p-stepper-line": LocalJSX.PStepperLine & JSXBase.HTMLAttributes<HTMLPStepperLineElement>;
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
+            "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
             "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }

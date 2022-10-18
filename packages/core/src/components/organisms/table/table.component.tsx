@@ -351,7 +351,8 @@ export class Table {
             );
         }
 
-        const item = this._items[index];
+        const item = this._items[rowIndex];
+
         return (
             this.enableRowSelection &&
             index === 0 && (
@@ -425,6 +426,12 @@ export class Table {
 
     private _checkboxChange(target: any, index: number) {
         const row = this._items[index];
+
+        if (this.canSelectKey && !row[this.canSelectKey]) {
+            target.checked = false;
+            return;
+        }
+
         const value = this._getCheckedValue(target);
         const toAdd: string | number = this._getSelectionValue(row, index);
         if (value) {
@@ -496,9 +503,18 @@ export class Table {
     }
 
     private _rowClick($event, index) {
+        let checkbox = $event.target;
+
+        if (
+            checkbox.tagName.toLowerCase() === 'input' ||
+            checkbox.type === 'checkbox'
+        ) {
+            return this._checkboxChange(checkbox, index);
+        }
+
         const row = this._findRow($event.target);
 
-        const checkbox = row?.querySelector('input[type="checkbox"]');
+        checkbox = row?.querySelector('input[type="checkbox"]');
 
         if (!checkbox) {
             return;

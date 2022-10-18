@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.129 (2022-10-18)
+
+
+### Features
+
+* **Organisms:** Add table component ([99f9200](https://github.com/ionic-team/ionic/commit/99f92001afb5ee93a537eb132ff6bca2ffa17687))
+
+
+
+
+
 # 0.1.0-alpha.128 (2022-10-17)
 
 

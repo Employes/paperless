@@ -65,6 +65,10 @@ export const config: Config = {
                 { src: 'assets' },
                 { src: 'tailwind.config.js' },
                 { src: 'tailwind' },
+                {
+                    src: '**/*.i18n.*.json',
+                    dest: 'assets/i18n',
+                },
             ],
         },
     ],

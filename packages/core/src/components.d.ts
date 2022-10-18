@@ -6,11 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
-import { RotateOptions, TextSizeOptions } from "./utils/types";
+import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, PositioningStrategy } from "@popperjs/core";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
+import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
+import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -404,6 +406,32 @@ export namespace Components {
          */
         "target": string;
     }
+    interface PPageSizeSelect {
+        /**
+          * The size of the button
+         */
+        "buttonSize": 'small' | 'medium';
+        /**
+          * The template for the data view
+         */
+        "buttonTemplate": templateFunc;
+        /**
+          * Chevron position
+         */
+        "chevronPosition": 'start' | 'end';
+        /**
+          * The template for the data view
+         */
+        "itemTemplate": templateFunc;
+        /**
+          * The current page
+         */
+        "size": number;
+        /**
+          * The available sizes
+         */
+        "sizeOptions": number[];
+    }
     interface PPagination {
         /**
           * The current page
@@ -584,6 +612,10 @@ export interface PModalHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPModalHeaderElement;
 }
+export interface PPageSizeSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPPageSizeSelectElement;
+}
 export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
@@ -761,6 +793,12 @@ declare global {
         prototype: HTMLPNavigationItemElement;
         new (): HTMLPNavigationItemElement;
     };
+    interface HTMLPPageSizeSelectElement extends Components.PPageSizeSelect, HTMLStencilElement {
+    }
+    var HTMLPPageSizeSelectElement: {
+        prototype: HTMLPPageSizeSelectElement;
+        new (): HTMLPPageSizeSelectElement;
+    };
     interface HTMLPPaginationElement extends Components.PPagination, HTMLStencilElement {
     }
     var HTMLPPaginationElement: {
@@ -874,6 +912,7 @@ declare global {
         "p-modal-header": HTMLPModalHeaderElement;
         "p-navbar": HTMLPNavbarElement;
         "p-navigation-item": HTMLPNavigationItemElement;
+        "p-page-size-select": HTMLPPageSizeSelectElement;
         "p-pagination": HTMLPPaginationElement;
         "p-pagination-item": HTMLPPaginationItemElement;
         "p-profile": HTMLPProfileElement;
@@ -1303,6 +1342,36 @@ declare namespace LocalJSX {
          */
         "target"?: string;
     }
+    interface PPageSizeSelect {
+        /**
+          * The size of the button
+         */
+        "buttonSize"?: 'small' | 'medium';
+        /**
+          * The template for the data view
+         */
+        "buttonTemplate"?: templateFunc;
+        /**
+          * Chevron position
+         */
+        "chevronPosition"?: 'start' | 'end';
+        /**
+          * The template for the data view
+         */
+        "itemTemplate"?: templateFunc;
+        /**
+          * Event whenever the size changes
+         */
+        "onSizeChange"?: (event: PPageSizeSelectCustomEvent<number>) => void;
+        /**
+          * The current page
+         */
+        "size"?: number;
+        /**
+          * The available sizes
+         */
+        "sizeOptions"?: number[];
+    }
     interface PPagination {
         "onPageChange"?: (event: PPaginationCustomEvent<number>) => void;
         /**
@@ -1496,6 +1565,7 @@ declare namespace LocalJSX {
         "p-modal-header": PModalHeader;
         "p-navbar": PNavbar;
         "p-navigation-item": PNavigationItem;
+        "p-page-size-select": PPageSizeSelect;
         "p-pagination": PPagination;
         "p-pagination-item": PPaginationItem;
         "p-profile": PProfile;
@@ -1544,6 +1614,7 @@ declare module "@stencil/core" {
             "p-modal-header": LocalJSX.PModalHeader & JSXBase.HTMLAttributes<HTMLPModalHeaderElement>;
             "p-navbar": LocalJSX.PNavbar & JSXBase.HTMLAttributes<HTMLPNavbarElement>;
             "p-navigation-item": LocalJSX.PNavigationItem & JSXBase.HTMLAttributes<HTMLPNavigationItemElement>;
+            "p-page-size-select": LocalJSX.PPageSizeSelect & JSXBase.HTMLAttributes<HTMLPPageSizeSelectElement>;
             "p-pagination": LocalJSX.PPagination & JSXBase.HTMLAttributes<HTMLPPaginationElement>;
             "p-pagination-item": LocalJSX.PPaginationItem & JSXBase.HTMLAttributes<HTMLPPaginationItemElement>;
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;

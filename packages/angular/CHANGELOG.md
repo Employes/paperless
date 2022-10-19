@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.134 (2022-10-19)
+
+
+### Features
+
+* **Organisms/Table:** Add loading state ([72acbd5](https://github.com/Employes/Paperless/commit/72acbd5afe7985c3b16c1193f8fdafd456c711b5))
+
+
+
+
+
 # 0.1.0-alpha.133 (2022-10-19)
 
 

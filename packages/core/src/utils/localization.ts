@@ -62,7 +62,6 @@ export const getLocaleComponentStrings = async (
     }
 
     cache[componentName][componentLanguage] = strings;
-    // console.log(cache);
     return strings;
 };
 

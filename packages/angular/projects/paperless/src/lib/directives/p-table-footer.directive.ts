@@ -29,7 +29,6 @@ export class TableFooterDirective extends BaseValueAccessor {
 	}
 
 	override writeValue(value: any) {
-		console.log('??');
 		this.el.nativeElement.page = this.lastValue.page =
 			value?.page == null ? '' : value?.page;
 		this.el.nativeElement.pageSize = this.lastValue.pageSize =

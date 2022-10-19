@@ -279,7 +279,6 @@ export class Table {
 
     @Listen('tableDefinitionChanged', { target: 'body' })
     onTableDefinitionUpdated() {
-        console.log('tableDefinitionChanged');
         this._generateColumns();
     }
 
@@ -299,7 +298,6 @@ export class Table {
     }
 
     private _generateColumns() {
-        console.log('Generate columns');
         const definitions = this._el.querySelectorAll('p-table-definition');
         this._columns = Array.from(definitions);
     }
@@ -319,7 +317,6 @@ export class Table {
     }
 
     private _getRows() {
-        console.log('Getting rows');
         if (this.loading) {
             return Array.from(
                 {
@@ -367,7 +364,6 @@ export class Table {
     }
 
     private _getLoadingColumns(index) {
-        console.log('Getting loading columns');
         return this._columns.map((col: TableDefinition, colIndex) => {
             return (
                 <div class={this._getColumnClasses(col)}>

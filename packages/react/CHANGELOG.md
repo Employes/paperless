@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.133 (2022-10-19)
+
+
+### Features
+
+* **Core:** Remove p-table-definition from stencil config ([0ff1853](https://github.com/ionic-team/ionic/commit/0ff1853944b57da1188bbcdb18555193854fef29))
+
+
+
+
+
 # 0.1.0-alpha.132 (2022-10-18)
 
 

@@ -65,6 +65,11 @@ export class PageSizeSelect {
     @Element() private _el: HTMLElement;
 
     /**
+     * Wether to hide when there is only 1 page available
+     */
+    @Prop() hidden: boolean = false;
+
+    /**
      * Locales used for this component
      */
     @State() private _locales: any = {};
@@ -75,7 +80,7 @@ export class PageSizeSelect {
 
     render() {
         return (
-            <Host class="p-page-size-select">
+            <Host class={`p-page-size-select ${this.hidden && 'hidden'}`}>
                 <p-dropdown
                     placement="top-start"
                     chevronPosition={this.chevronPosition}

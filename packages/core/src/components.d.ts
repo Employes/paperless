@@ -443,6 +443,10 @@ export namespace Components {
          */
         "chevronPosition": 'start' | 'end';
         /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hidden": boolean;
+        /**
           * The template for the data view
          */
         "itemTemplate": templateFunc;
@@ -1669,6 +1673,10 @@ declare namespace LocalJSX {
           * Chevron position
          */
         "chevronPosition"?: 'start' | 'end';
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hidden"?: boolean;
         /**
           * The template for the data view
          */

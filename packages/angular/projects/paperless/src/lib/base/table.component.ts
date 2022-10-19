@@ -196,6 +196,10 @@ export abstract class BaseTableComponent
 
         let key: keyof TableOptions;
         for (key in next) {
+            if (key === 'selectedRows') {
+                continue;
+            }
+
             if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
                 changes[key] = next[key];
             }

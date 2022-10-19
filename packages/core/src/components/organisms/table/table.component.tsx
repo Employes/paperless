@@ -36,6 +36,11 @@ export class Table {
     @Prop() enableRowSelection: boolean = true;
 
     /**
+     * Wether to enable row clicking
+     */
+    @Prop() enableRowClick: boolean = false;
+
+    /**
      * The current selection of items
      */
     @Prop() selectedRows: any[] = [];
@@ -306,7 +311,7 @@ export class Table {
     private _getRows() {
         return this._items.map((item, index) => (
             <p-table-row
-                enableHover={this.enableRowSelection}
+                enableHover={this.enableRowSelection || this.enableRowClick}
                 onClick={(ev) => this._rowClick(ev, index)}
             >
                 {this._getRowColumns(item, index)}
@@ -385,6 +390,10 @@ export class Table {
     }
 
     private _selectAllChange($event: any) {
+        if (!this.enableRowSelection) {
+            return;
+        }
+
         const value = this._getCheckedValue($event.target);
         if (value) {
             for (let i = 0; i < this._items.length; i++) {
@@ -425,6 +434,10 @@ export class Table {
     }
 
     private _checkboxChange(target: any, index: number) {
+        if (!this.enableRowSelection) {
+            return;
+        }
+
         const row = this._items[index];
 
         if (this.canSelectKey && !row[this.canSelectKey]) {
@@ -433,9 +446,8 @@ export class Table {
         }
 
         const value = this._getCheckedValue(target);
-        const toAdd: string | number = this._getSelectionValue(row, index);
         if (value) {
-            this.selectedRows = [...this.selectedRows, toAdd];
+            this.selectedRows = [...this.selectedRows, row];
             this.selectedRowsChange.emit(this.selectedRows);
             this.rowSelected.emit(row);
             return;
@@ -460,8 +472,11 @@ export class Table {
     }
 
     private _selectionContains(row, index, returnIndex = false): any {
-        const toAdd = this._getSelectionValue(row, index);
-        const returnValue = this.selectedRows.indexOf(toAdd);
+        const returnValue = this.selectedRows.findIndex(
+            (item) =>
+                this._getSelectionValue(row, index) ===
+                this._getSelectionValue(item, index)
+        );
         return !returnIndex ? returnValue >= 0 : returnValue;
     }
 
@@ -503,18 +518,29 @@ export class Table {
     }
 
     private _rowClick($event, index) {
-        let checkbox = $event.target;
+        const target = $event.target;
 
         if (
-            checkbox.tagName.toLowerCase() === 'input' ||
-            checkbox.type === 'checkbox'
+            target.tagName.toLowerCase() === 'input' ||
+            target.type === 'checkbox'
         ) {
-            return this._checkboxChange(checkbox, index);
+            return this._checkboxChange(target, index);
         }
 
         const row = this._findRow($event.target);
 
-        checkbox = row?.querySelector('input[type="checkbox"]');
+        if (this.enableRowClick) {
+            if (
+                target.getAttribute('data-is-action') !== 'false' &&
+                target.getAttribute('data-is-action') !== false
+            ) {
+                return;
+            }
+
+            this.rowClick.emit(row);
+        }
+
+        const checkbox = row?.querySelector('input[type="checkbox"]');
 
         if (!checkbox) {
             return;

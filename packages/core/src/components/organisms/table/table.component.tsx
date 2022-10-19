@@ -43,7 +43,7 @@ export class Table {
     /**
      * Wether to enable row clicking
      */
-    @Prop() enableRowClick: boolean = false;
+    @Prop() enableRowClick: boolean = true;
 
     /**
      * The current selection of items

@@ -144,7 +144,8 @@ export class TableHeader {
                                 }
                                 onClick={() => this.quickFilter.emit(item)}
                             >
-                                {item.text} {item?.count && `(${item.count})`}
+                                {item.text}{' '}
+                                {item?.count >= 0 ? `(${item.count})` : ''}
                             </p-segment-item>
                         ))}
                     </p-segment-container>

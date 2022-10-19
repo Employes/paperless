@@ -617,6 +617,10 @@ export namespace Components {
          */
         "enablePagination": boolean;
         /**
+          * Wether to enable row clicking
+         */
+        "enableRowClick": boolean;
+        /**
           * Wether to enable selection
          */
         "enableRowSelection": boolean;
@@ -629,9 +633,17 @@ export namespace Components {
          */
         "filterButtonTemplate": templateFunc1;
         /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage": boolean;
+        /**
           * The items to be fed to the table
          */
         "items": string;
+        /**
+          * Wether data is loading
+         */
+        "loading": boolean;
         /**
           * The current page
          */
@@ -1860,6 +1872,10 @@ declare namespace LocalJSX {
          */
         "enablePagination"?: boolean;
         /**
+          * Wether to enable row clicking
+         */
+        "enableRowClick"?: boolean;
+        /**
           * Wether to enable selection
          */
         "enableRowSelection"?: boolean;
@@ -1872,9 +1888,17 @@ declare namespace LocalJSX {
          */
         "filterButtonTemplate"?: templateFunc1;
         /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage"?: boolean;
+        /**
           * The items to be fed to the table
          */
         "items"?: string;
+        /**
+          * Wether data is loading
+         */
+        "loading"?: boolean;
         /**
           * Event when the edit button is clicked
          */

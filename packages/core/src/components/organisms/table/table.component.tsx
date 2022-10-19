@@ -31,6 +31,11 @@ export class Table {
     @Prop() items: string;
 
     /**
+     * Wether data is loading
+     */
+    @Prop() loading: boolean = false;
+
+    /**
      * Wether to enable selection
      */
     @Prop() enableRowSelection: boolean = true;
@@ -194,6 +199,11 @@ export class Table {
     @Event() export: EventEmitter<number>;
 
     /**
+     * Wether to hide when there is only 1 page available
+     */
+    @Prop() hideOnSinglePage: boolean = true;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -245,6 +255,8 @@ export class Table {
                     <div class="flex flex-col">{this._getRows()}</div>
 
                     <p-table-footer
+                        // overall
+                        hideOnSinglePage={this.hideOnSinglePage}
                         // page size select
                         enablePageSize={this.enablePageSize}
                         pageSize={this.pageSize}
@@ -309,6 +321,15 @@ export class Table {
     }
 
     private _getRows() {
+        if (this.loading) {
+            return Array.from({ length: 10 }, (_, i) => (
+                <p-table-row
+                    enableHover={this.enableRowSelection || this.enableRowClick}
+                >
+                    {this._getLoadingColumns(i)}
+                </p-table-row>
+            ));
+        }
         return this._items.map((item, index) => (
             <p-table-row
                 enableHover={this.enableRowSelection || this.enableRowClick}
@@ -336,11 +357,34 @@ export class Table {
         });
     }
 
+    private _getLoadingColumns(index) {
+        return this._columns.map((col: TableDefinition, colIndex) => {
+            return (
+                <div class={this._getColumnClasses(col)}>
+                    {this._getCheckbox(colIndex, index, 'loading')}
+                    <p-loader
+                        variant="ghost"
+                        class="rounded flex-1 w-full h-6"
+                    />
+                </div>
+            );
+        });
+    }
+
     private _getCheckbox(
         index,
         rowIndex,
-        variant: 'header' | 'default' = 'default'
+        variant: 'header' | 'default' | 'loading' = 'default'
     ) {
+        if (variant === 'loading') {
+            return (
+                this.enableRowSelection &&
+                index === 0 && (
+                    <p-loader variant="ghost" class="rounded w-6 h-6" />
+                )
+            );
+        }
+
         if (variant === 'header') {
             return (
                 this.enableRowSelection &&
@@ -374,17 +418,17 @@ export class Table {
         );
     }
 
-    private _getColumnClasses(col: TableDefinition, isHeader = false) {
-        const sizes = this._getSizes(col);
+    private _getColumnClasses(col?: TableDefinition, isHeader = false) {
+        const sizes = col ? this._getSizes(col) : {};
         return {
             flex: true,
             'gap-4': true,
             'items-center': true,
-            'justify-start': !col.align || col.align === 'start',
-            'justify-center': col.align === 'center',
-            'justify-end': col.align === 'end',
-            'font-semibold': !isHeader && col.type === 'th',
-            'text-storm-dark': !isHeader && col.type === 'th',
+            'justify-start': !col?.align || col?.align === 'start',
+            'justify-center': col?.align === 'center',
+            'justify-end': col?.align === 'end',
+            'font-semibold': !isHeader && col?.type === 'th',
+            'text-storm-dark': !isHeader && col?.type === 'th',
             ...sizes,
         };
     }

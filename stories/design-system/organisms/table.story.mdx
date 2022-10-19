@@ -8,11 +8,70 @@ import Docs from '../../../packages/core/src/components/organisms/table/readme.m
 
 # Examples
 
+## Default with footer data
+
 <Canvas>
     <p-table
         can-select-key="canSelect"
         items='[{"date":"01\/01\/2022","hours":8,"status":"Ingediend", "canSelect": false},{"date":"02\/01\/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": false},{"date":"10\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
         total={32}
+    >
+        <p-table-definition
+            type="th"
+            name="Datum"
+            path="date"
+            sizes={8}
+        ></p-table-definition>
+        <p-table-definition
+            name="Uren"
+            path="hours"
+            align="end"
+            sizes={2}
+        ></p-table-definition>
+        <p-table-definition
+            path="status"
+            align="end"
+            sizes={2}
+        ></p-table-definition>
+    </p-table>
+</Canvas>
+
+## Loading
+
+<Canvas>
+    <p-table
+        can-select-key="canSelect"
+        items='[{"date":"01\/01\/2022","hours":8,"status":"Ingediend", "canSelect": false},{"date":"02\/01\/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": false},{"date":"10\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
+        total={32}
+        loading={true}
+    >
+        <p-table-definition
+            type="th"
+            name="Datum"
+            path="date"
+            sizes={8}
+        ></p-table-definition>
+        <p-table-definition
+            name="Uren"
+            path="hours"
+            align="end"
+            sizes={2}
+        ></p-table-definition>
+        <p-table-definition
+            path="status"
+            align="end"
+            sizes={2}
+        ></p-table-definition>
+    </p-table>
+</Canvas>
+
+## With a total of 5
+
+<Canvas>
+    <p-table
+        can-select-key="canSelect"
+        items='[{"date":"01\/01\/2022","hours":8,"status":"Ingediend", "canSelect": false},{"date":"02\/01\/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08\/01\/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": false},{"date":"10\/01\/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
+        total={5}
     >
         <p-table-definition
             type="th"

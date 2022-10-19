@@ -13,29 +13,32 @@
 
 ## Properties
 
-| Property                      | Attribute                        | Description                                 | Type                        | Default              |
-| ----------------------------- | -------------------------------- | ------------------------------------------- | --------------------------- | -------------------- |
-| `activeQuickFilterIdentifier` | `active-quick-filter-identifier` | Active quick filter identifier              | `string`                    | `undefined`          |
-| `canSelectKey`                | `can-select-key`                 | A key to determine if a row can be selected | `string`                    | `undefined`          |
-| `editButtonTemplate`          | --                               | The template for the edit button text       | `(value: number) => string` | `undefined`          |
-| `enableEdit`                  | `enable-edit`                    | Wether to show the edit button              | `boolean`                   | `true`               |
-| `enableExport`                | `enable-export`                  | Wether to enable export                     | `boolean`                   | `true`               |
-| `enableFilter`                | `enable-filter`                  | Wether to show the filter button            | `boolean`                   | `true`               |
-| `enablePageSize`              | `enable-page-size`               | Wether to enable page size select           | `boolean`                   | `true`               |
-| `enablePagination`            | `enable-pagination`              | Wether to enable pagination                 | `boolean`                   | `true`               |
-| `enableRowSelection`          | `enable-row-selection`           | Wether to enable selection                  | `boolean`                   | `true`               |
-| `enableSearch`                | `enable-search`                  | Wether to show the search input             | `boolean`                   | `true`               |
-| `filterButtonTemplate`        | --                               | The template for the filter button text     | `(value: number) => string` | `undefined`          |
-| `items`                       | `items`                          | The items to be fed to the table            | `string`                    | `undefined`          |
-| `page`                        | `page`                           | The current page                            | `number`                    | `1`                  |
-| `pageSize`                    | `page-size`                      | The amount of items per page                | `number`                    | `defaultSize`        |
-| `pageSizeOptions`             | --                               | The options for the page size               | `number[]`                  | `defaultSizeOptions` |
-| `query`                       | `query`                          | The query to show in the search bar         | `string`                    | `undefined`          |
-| `quickFilters`                | --                               | Quick filters to show                       | `QuickFilter[]`             | `[]`                 |
-| `selectedFiltersAmount`       | `selected-filters-amount`        | The amount of filters being selected        | `number`                    | `undefined`          |
-| `selectedRows`                | --                               | The current selection of items              | `any[]`                     | `[]`                 |
-| `selectionKey`                | `selection-key`                  | The key to determine if a row is selected   | `string`                    | `undefined`          |
-| `total` _(required)_          | `total`                          | The total amount of items                   | `number`                    | `undefined`          |
+| Property                      | Attribute                        | Description                                        | Type                        | Default              |
+| ----------------------------- | -------------------------------- | -------------------------------------------------- | --------------------------- | -------------------- |
+| `activeQuickFilterIdentifier` | `active-quick-filter-identifier` | Active quick filter identifier                     | `string`                    | `undefined`          |
+| `canSelectKey`                | `can-select-key`                 | A key to determine if a row can be selected        | `string`                    | `undefined`          |
+| `editButtonTemplate`          | --                               | The template for the edit button text              | `(value: number) => string` | `undefined`          |
+| `enableEdit`                  | `enable-edit`                    | Wether to show the edit button                     | `boolean`                   | `true`               |
+| `enableExport`                | `enable-export`                  | Wether to enable export                            | `boolean`                   | `true`               |
+| `enableFilter`                | `enable-filter`                  | Wether to show the filter button                   | `boolean`                   | `true`               |
+| `enablePageSize`              | `enable-page-size`               | Wether to enable page size select                  | `boolean`                   | `true`               |
+| `enablePagination`            | `enable-pagination`              | Wether to enable pagination                        | `boolean`                   | `true`               |
+| `enableRowClick`              | `enable-row-click`               | Wether to enable row clicking                      | `boolean`                   | `false`              |
+| `enableRowSelection`          | `enable-row-selection`           | Wether to enable selection                         | `boolean`                   | `true`               |
+| `enableSearch`                | `enable-search`                  | Wether to show the search input                    | `boolean`                   | `true`               |
+| `filterButtonTemplate`        | --                               | The template for the filter button text            | `(value: number) => string` | `undefined`          |
+| `hideOnSinglePage`            | `hide-on-single-page`            | Wether to hide when there is only 1 page available | `boolean`                   | `true`               |
+| `items`                       | `items`                          | The items to be fed to the table                   | `string`                    | `undefined`          |
+| `loading`                     | `loading`                        | Wether data is loading                             | `boolean`                   | `false`              |
+| `page`                        | `page`                           | The current page                                   | `number`                    | `1`                  |
+| `pageSize`                    | `page-size`                      | The amount of items per page                       | `number`                    | `defaultSize`        |
+| `pageSizeOptions`             | --                               | The options for the page size                      | `number[]`                  | `defaultSizeOptions` |
+| `query`                       | `query`                          | The query to show in the search bar                | `string`                    | `undefined`          |
+| `quickFilters`                | --                               | Quick filters to show                              | `QuickFilter[]`             | `[]`                 |
+| `selectedFiltersAmount`       | `selected-filters-amount`        | The amount of filters being selected               | `number`                    | `undefined`          |
+| `selectedRows`                | --                               | The current selection of items                     | `any[]`                     | `[]`                 |
+| `selectionKey`                | `selection-key`                  | The key to determine if a row is selected          | `string`                    | `undefined`          |
+| `total` _(required)_          | `total`                          | The total amount of items                          | `number`                    | `undefined`          |
 
 
 ## Events
@@ -63,6 +66,7 @@
 - [p-table-header](../../molecules/table-header)
 - [p-table-footer](../../molecules/table-footer)
 - [p-table-row](../../molecules/table-row)
+- [p-loader](../../atoms/loader)
 
 ### Graph
 ```mermaid
@@ -71,6 +75,7 @@ graph TD;
   p-table --> p-table-header
   p-table --> p-table-footer
   p-table --> p-table-row
+  p-table --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
   p-table-header --> p-input-group

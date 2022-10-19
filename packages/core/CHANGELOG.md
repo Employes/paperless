@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.142 (2022-10-19)
+
+
+### Features
+
+* **Molecules/Table Header:** Add ability to have quickfilter text func ([867497a](https://github.com/ionic-team/stencil-component-starter/commit/867497ac2d8687de768da22faa8cc22a9b4151c0))
+
+
+
+
+
 # 0.1.0-alpha.141 (2022-10-19)
 
 

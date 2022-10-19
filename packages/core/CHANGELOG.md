@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.137 (2022-10-19)
+
+
+### Features
+
+* **Organisms/Table:** Add more loggin ([9839d44](https://github.com/ionic-team/stencil-component-starter/commit/9839d44a66a326058594e2a2f2d4c663368996dd))
+
+
+
+
+
 # 0.1.0-alpha.136 (2022-10-19)
 
 

@@ -321,6 +321,7 @@ export class Table {
     }
 
     private _getRows() {
+        console.log('Getting rows');
         if (this.loading) {
             return Array.from({ length: 10 }, (_, i) => (
                 <p-table-row
@@ -330,6 +331,7 @@ export class Table {
                 </p-table-row>
             ));
         }
+
         return this._items.map((item, index) => (
             <p-table-row
                 enableHover={this.enableRowSelection || this.enableRowClick}
@@ -358,6 +360,7 @@ export class Table {
     }
 
     private _getLoadingColumns(index) {
+        console.log('Getting loading columns');
         return this._columns.map((col: TableDefinition, colIndex) => {
             return (
                 <div class={this._getColumnClasses(col)}>

@@ -1,4 +1,4 @@
-:host {
+:host(:not(.variant-ghost)) {
     .loader {
         @apply w-[1em] h-[1em] inline-block rounded-round;
         @apply animate-spin duration-500;
@@ -31,5 +31,33 @@
                 }
             }
         }
+    }
+}
+
+:host(.variant-ghost) {
+    @apply block box-border;
+
+    min-height: 1em;
+    min-width: 1em;
+
+    --loading-bg: #f7fafc;
+    --loading-stripe: rgba(252, 253, 254, 1);
+
+    background-color: var(--loading-bg);
+    background: linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0) 40%,
+            var(--loading-stripe) 50%,
+            rgba(255, 255, 255, 0) 60%
+        )
+        var(--loading-bg);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        background-position-x: -20%;
     }
 }

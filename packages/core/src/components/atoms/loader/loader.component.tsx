@@ -15,8 +15,12 @@ export class Loader {
     /**
      * Variant of loader
      */
-    @Prop() variant: 'inline' | 'full-width' | 'full-screen' | 'modal' =
-        'inline';
+    @Prop() variant:
+        | 'inline'
+        | 'full-width'
+        | 'full-screen'
+        | 'modal'
+        | 'ghost' = 'inline';
 
     /**
      * Color of the loader
@@ -49,6 +53,10 @@ export class Loader {
     render() {
         if (!this._show) {
             return;
+        }
+
+        if (this.variant === 'ghost') {
+            return <Host class="p-loader variant-ghost"></Host>;
         }
 
         if (this.variant === 'full-screen') {

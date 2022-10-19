@@ -339,7 +339,11 @@ export namespace Components {
         /**
           * Variant of loader
          */
-        "variant": 'inline' | 'full-width' | 'full-screen' | 'modal';
+        "variant": | 'inline'
+        | 'full-width'
+        | 'full-screen'
+        | 'modal'
+        | 'ghost';
     }
     interface PModal {
         /**
@@ -1554,7 +1558,11 @@ declare namespace LocalJSX {
         /**
           * Variant of loader
          */
-        "variant"?: 'inline' | 'full-width' | 'full-screen' | 'modal';
+        "variant"?: | 'inline'
+        | 'full-width'
+        | 'full-screen'
+        | 'modal'
+        | 'ghost';
     }
     interface PModal {
         /**

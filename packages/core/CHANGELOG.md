@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.140 (2022-10-19)
+
+
+### Features
+
+* **Helpers/Table Definition:** Make properties mutable ([00a0d93](https://github.com/ionic-team/stencil-component-starter/commit/00a0d932ed5103689c5d7ef8b57ba97bdc077f19))
+
+
+
+
+
 # 0.1.0-alpha.139 (2022-10-19)
 
 

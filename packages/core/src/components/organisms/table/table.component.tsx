@@ -213,10 +213,12 @@ export class Table {
 
     componentWillLoad() {
         this._parseItems(this.items);
+        this._generateColumns();
     }
 
     componentWillRender() {
-        this._generateColumns();
+        console.log('Will render');
+        // this._generateColumns();
     }
 
     componentShouldUpdate(previous, next, anythingElse) {
@@ -288,7 +290,8 @@ export class Table {
 
     @Listen('tableDefinitionChanged', { target: 'body' })
     onTableDefinitionUpdated() {
-        this._generateColumns();
+        console.log('tableDefinitionChanged');
+        // this._generateColumns();
     }
 
     @Watch('items')
@@ -307,8 +310,8 @@ export class Table {
     }
 
     private _generateColumns() {
+        console.log('Generate columns');
         const definitions = this._el.querySelectorAll('p-table-definition');
-
         this._columns = Array.from(definitions);
     }
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.136 (2022-10-19)
+
+
+### Bug Fixes
+
+* **Core:** Re add p-table-definition back ([ea7cf50](https://github.com/ionic-team/ionic/commit/ea7cf50dd8db6d24d0ead13f1a5baa9ad5af2f62))
+
+
+
+
+
 # 0.1.0-alpha.135 (2022-10-19)
 
 

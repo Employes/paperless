@@ -219,6 +219,12 @@ export class Table {
         this._generateColumns();
     }
 
+    componentShouldUpdate(previous, next, anythingElse) {
+        console.log('previous', previous);
+        console.log('next', next);
+        console.log('anythingElse', anythingElse);
+    }
+
     render() {
         return (
             <Host class="p-table">

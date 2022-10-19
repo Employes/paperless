@@ -216,17 +216,6 @@ export class Table {
         this._generateColumns();
     }
 
-    componentWillRender() {
-        console.log('Will render');
-        // this._generateColumns();
-    }
-
-    componentShouldUpdate(previous, next, anythingElse) {
-        console.log('previous', previous);
-        console.log('next', next);
-        console.log('anythingElse', anythingElse);
-    }
-
     render() {
         return (
             <Host class="p-table">
@@ -291,7 +280,7 @@ export class Table {
     @Listen('tableDefinitionChanged', { target: 'body' })
     onTableDefinitionUpdated() {
         console.log('tableDefinitionChanged');
-        // this._generateColumns();
+        this._generateColumns();
     }
 
     @Watch('items')
@@ -332,13 +321,22 @@ export class Table {
     private _getRows() {
         console.log('Getting rows');
         if (this.loading) {
-            return Array.from({ length: 10 }, (_, i) => (
-                <p-table-row
-                    enableHover={this.enableRowSelection || this.enableRowClick}
-                >
-                    {this._getLoadingColumns(i)}
-                </p-table-row>
-            ));
+            return Array.from(
+                {
+                    length: this.pageSizeOptions?.[0]
+                        ? this.pageSizeOptions?.[0] / 2
+                        : 4,
+                },
+                (_, i) => (
+                    <p-table-row
+                        enableHover={
+                            this.enableRowSelection || this.enableRowClick
+                        }
+                    >
+                        {this._getLoadingColumns(i)}
+                    </p-table-row>
+                )
+            );
         }
 
         return this._items.map((item, index) => (

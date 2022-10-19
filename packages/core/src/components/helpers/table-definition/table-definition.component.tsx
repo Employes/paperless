@@ -60,6 +60,7 @@ export class TableDefinition {
     tableDefinitionChanged: EventEmitter<boolean>;
 
     componentDidUpdate() {
+        console.log('Component did update');
         this.tableDefinitionChanged.emit(true);
     }
 

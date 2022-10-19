@@ -1,27 +1,22 @@
-# Table Footer
+# p-table-footer
 
-## Usage:
 
-```html
-<p-table-footer total="100">
-    <!-- content -->
-</p-table-footer>
-```
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-| Property             | Attribute           | Description                       | Type       | Default              |
-| -------------------- | ------------------- | --------------------------------- | ---------- | -------------------- |
-| `enableExport`       | `enable-export`     | Wether to enable export           | `boolean`  | `true`               |
-| `enablePageSize`     | `enable-page-size`  | Wether to enable page size select | `boolean`  | `true`               |
-| `enablePagination`   | `enable-pagination` | Wether to enable pagination       | `boolean`  | `true`               |
-| `page`               | `page`              | The current page                  | `number`   | `1`                  |
-| `pageSize`           | `page-size`         | The amount of items per page      | `number`   | `defaultSize`        |
-| `pageSizeOptions`    | --                  | The options for the page size     | `number[]` | `defaultSizeOptions` |
-| `total` _(required)_ | `total`             | The total amount of items         | `number`   | `undefined`          |
+| Property             | Attribute             | Description                                        | Type       | Default              |
+| -------------------- | --------------------- | -------------------------------------------------- | ---------- | -------------------- |
+| `enableExport`       | `enable-export`       | Wether to enable export                            | `boolean`  | `true`               |
+| `enablePageSize`     | `enable-page-size`    | Wether to enable page size select                  | `boolean`  | `true`               |
+| `enablePagination`   | `enable-pagination`   | Wether to enable pagination                        | `boolean`  | `true`               |
+| `hideOnSinglePage`   | `hide-on-single-page` | Wether to hide when there is only 1 page available | `boolean`  | `true`               |
+| `page`               | `page`                | The current page                                   | `number`   | `1`                  |
+| `pageSize`           | `page-size`           | The amount of items per page                       | `number`   | `defaultSize`        |
+| `pageSizeOptions`    | --                    | The options for the page size                      | `number[]` | `defaultSizeOptions` |
+| `total` _(required)_ | `total`               | The total amount of items                          | `number`   | `undefined`          |
 
 
 ## Events

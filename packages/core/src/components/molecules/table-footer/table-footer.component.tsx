@@ -72,6 +72,11 @@ export class TableFooter {
     @Event() export: EventEmitter<number>;
 
     /**
+     * Wether to hide when there is only 1 page available
+     */
+    @Prop() hideOnSinglePage: boolean = true;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -86,6 +91,8 @@ export class TableFooter {
     }
 
     render() {
+        const hidePageSizeSelect =
+            this.hideOnSinglePage && this.total < this.pageSizeOptions?.[0];
         return (
             <Host
                 class={`p-table-footer ${
@@ -96,7 +103,8 @@ export class TableFooter {
             >
                 {this.enablePagination && this.enablePageSize && (
                     <p-page-size-select
-                        class="hidden desktop-xs:flex"
+                        class={!hidePageSizeSelect && 'hidden desktop-xs:flex'}
+                        hidden={hidePageSizeSelect}
                         size={this.pageSize}
                         sizeOptions={this.pageSizeOptions}
                         onSizeChange={({ detail }) =>
@@ -109,7 +117,7 @@ export class TableFooter {
                         pageSize={this.pageSize}
                         total={this.total}
                         page={this.page}
-                        hideOnSinglePage={true}
+                        hideOnSinglePage={this.hideOnSinglePage}
                         onPageChange={({ detail }) =>
                             this.pageChange.emit(detail)
                         }

@@ -713,6 +713,10 @@ export namespace Components {
          */
         "enablePagination": boolean;
         /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage": boolean;
+        /**
           * The current page
          */
         "page": number;
@@ -1999,6 +2003,10 @@ declare namespace LocalJSX {
           * Wether to enable pagination
          */
         "enablePagination"?: boolean;
+        /**
+          * Wether to hide when there is only 1 page available
+         */
+        "hideOnSinglePage"?: boolean;
         /**
           * Event whenever the page changes
          */

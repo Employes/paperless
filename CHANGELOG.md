@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.139 (2022-10-19)
+
+
+### Features
+
+* **Organisms/Table:** Don't generate too many loadings ([b20931a](https://github.com/employes/paperless/commit/b20931a6e83d55a136b373aa17baea842a3d36f9))
+
+
+
+
+
 # 0.1.0-alpha.138 (2022-10-19)
 
 

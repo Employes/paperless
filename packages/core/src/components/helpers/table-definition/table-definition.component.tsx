@@ -61,12 +61,25 @@ export class TableDefinition {
     @Event({ bubbles: true, composed: true })
     tableDefinitionChanged: EventEmitter<boolean>;
 
+    componentWillRender() {
+        console.log('Will render');
+    }
+
+    componentDidRender() {
+        console.log('Did render');
+    }
+
+    componentWillUpdate() {
+        console.log('Will update');
+    }
+
     componentDidUpdate() {
         console.log('Component did update');
         this.tableDefinitionChanged.emit(true);
     }
 
     render() {
+        console.log('Render!');
         return <Host />;
     }
 }

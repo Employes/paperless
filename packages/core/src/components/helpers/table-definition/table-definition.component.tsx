@@ -31,27 +31,29 @@ export class TableDefinition {
     /**
      * The path of the value of the item you want to display
      */
-    @Prop({ reflect: true }) path: string;
+    @Prop({ reflect: true, mutable: true }) path: string;
 
     /**
      * The type of the column
      */
-    @Prop({ reflect: true }) type: 'td' | 'th' = 'td';
+    @Prop({ reflect: true, mutable: true }) type: 'td' | 'th' = 'td';
 
     /**
      * The name of the column
      */
-    @Prop({ reflect: true }) name: string;
+    @Prop({ reflect: true, mutable: true }) name: string;
 
     /**
      * The alignment of the column
      */
-    @Prop({ reflect: true }) align: 'start' | 'center' | 'end' = 'start';
+    @Prop({ reflect: true, mutable: true }) align: 'start' | 'center' | 'end' =
+        'start';
 
     /**
      * The sizes of the column
      */
-    @Prop() sizes: 'auto' | number | TableDefinitionSizes = 'auto';
+    @Prop({ mutable: true }) sizes: 'auto' | number | TableDefinitionSizes =
+        'auto';
 
     /**
      * Event to let the table know it has to re render

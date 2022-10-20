@@ -37,7 +37,7 @@ p-button {
 
         &.variant-primary,
         &.variant-secondary {
-            &:hover {
+            &:hover:not([disabled]) {
                 @apply filter drop-shadow-4;
             }
         }
@@ -101,7 +101,7 @@ p-button {
                 }
             }
 
-            &.variant-secondary:hover p-icon:last-child {
+            &.variant-secondary:hover:not([disabled]) p-icon:last-child {
                 @apply text-indigo;
             }
         }

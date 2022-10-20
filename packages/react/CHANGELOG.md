@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.150 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Angular:** Add onChanged function ([a78b62d](https://github.com/ionic-team/ionic/commit/a78b62d69fa0b690d41ec01bde12ac66eec29142))
+
+
+
+
+
 # 0.1.0-alpha.149 (2022-10-20)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.146 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Disable hover shadow & chevron on disabled state ([2cd8370](https://github.com/Employes/Paperless/commit/2cd8370e47335a18bec8571ada5be82dd994f261))
+
+
+
+
+
 # 0.1.0-alpha.145 (2022-10-20)
 
 

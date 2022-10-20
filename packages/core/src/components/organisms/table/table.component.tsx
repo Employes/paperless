@@ -588,6 +588,7 @@ export class Table {
 
             const item = this._items[index];
             this.rowClick.emit(item);
+            return;
         }
 
         const checkbox = row?.querySelector('input[type="checkbox"]');

@@ -6,34 +6,37 @@ export class BaseValueAccessor implements ControlValueAccessor {
     private onChange: (value: any) => void = () => {
         /**/
     };
+
     private onTouched: () => void = () => {
         /**/
     };
+
     protected lastValue: any;
 
     constructor(protected el: ElementRef) {}
 
-    writeValue(value: any) {
+    public writeValue(value: any) {
         this.el.nativeElement.value = this.lastValue =
             value == null ? '' : value;
     }
 
-    handleChangeEvent(value: any) {
+    public handleChangeEvent(value: any) {
         if (value !== this.lastValue) {
             this.lastValue = value;
             this.onChange(value);
         }
     }
 
-    @HostListener('focusout')
-    _handleBlurEvent() {
-        this.onTouched();
-    }
-
-    registerOnChange(fn: (value: any) => void) {
+    public registerOnChange(fn: (value: any) => void) {
         this.onChange = fn;
     }
-    registerOnTouched(fn: () => void) {
+
+    public registerOnTouched(fn: () => void) {
         this.onTouched = fn;
+    }
+
+    @HostListener('focusout')
+    private _handleBlurEvent() {
+        this.onTouched();
     }
 }

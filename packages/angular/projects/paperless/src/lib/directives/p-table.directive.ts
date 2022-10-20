@@ -1,5 +1,6 @@
 import { Directive, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 
 import { BaseValueAccessor } from '../base';
@@ -12,9 +13,11 @@ export interface TableDirectiveValue {
 	selectedRows?: any[];
 }
 
+@UntilDestroy({ checkProperties: true })
 @Directive({
 	/* tslint:disable-next-line:directive-selector */
 	selector: 'p-table',
+	inputs: ['formGroup'],
 	host: {
 		'(queryChange)': 'handleChange($event.detail, "query")',
 		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
@@ -39,11 +42,13 @@ export class TableDirective extends BaseValueAccessor {
 		selectedRows: [],
 	};
 
+	public formGroup?: FormGroup;
+
 	constructor(el: ElementRef) {
 		super(el);
 	}
 
-	override writeValue(value: TableDirectiveValue) {
+	public override writeValue(value: TableDirectiveValue) {
 		this.el.nativeElement.query = this.lastValue.query = value?.query;
 		this.lastValue.quickFilter = value?.quickFilter;
 
@@ -60,6 +65,14 @@ export class TableDirective extends BaseValueAccessor {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
 	}
+
+    public override registerOnChange(fn: (value: any) => void) {
+        this.formGroup?.valueChanges.pipe(untilDestroyed(this)).subscribe(fn);
+    }
+
+    public override registerOnTouched(fn: () => void) {
+        this.formGroup?.statusChanges.pipe(untilDestroyed(this)).subscribe(fn);
+    }
 
 	public handleChange(
 		value: number | string | QuickFilter,

@@ -34,7 +34,7 @@ export class TableHeaderDirective extends BaseValueAccessor {
 		super(el);
 	}
 
-	override writeValue(value: TableHeaderDirectiveValue) {
+	public override writeValue(value: TableHeaderDirectiveValue) {
 		this.el.nativeElement.query = this.lastValue.query = value?.query;
 		this.lastValue.quickFilter = value?.quickFilter;
 

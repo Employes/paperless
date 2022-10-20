@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.143 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Organisms/Table:** Fix row click event not emitting ([e732d43](https://github.com/employes/paperless/commit/e732d434dde80f37475c7042cbfb55c9ec4e4826))
+
+
+
+
+
 # 0.1.0-alpha.142 (2022-10-19)
 
 

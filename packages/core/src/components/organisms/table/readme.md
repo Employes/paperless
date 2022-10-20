@@ -23,7 +23,7 @@
 | `enableFilter`                | `enable-filter`                  | Wether to show the filter button                   | `boolean`                   | `true`               |
 | `enablePageSize`              | `enable-page-size`               | Wether to enable page size select                  | `boolean`                   | `true`               |
 | `enablePagination`            | `enable-pagination`              | Wether to enable pagination                        | `boolean`                   | `true`               |
-| `enableRowClick`              | `enable-row-click`               | Wether to enable row clicking                      | `boolean`                   | `false`              |
+| `enableRowClick`              | `enable-row-click`               | Wether to enable row clicking                      | `boolean`                   | `true`               |
 | `enableRowSelection`          | `enable-row-selection`           | Wether to enable selection                         | `boolean`                   | `true`               |
 | `enableSearch`                | `enable-search`                  | Wether to show the search input                    | `boolean`                   | `true`               |
 | `filterButtonTemplate`        | --                               | The template for the filter button text            | `(value: number) => string` | `undefined`          |

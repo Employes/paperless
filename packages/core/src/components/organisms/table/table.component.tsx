@@ -351,7 +351,7 @@ export class Table {
             return (
                 <div class={this._getColumnClasses(col)}>
                     {this._getCheckbox(colIndex, index)}
-                    <div class="flex">
+                    <div class="flex" data-is-action="true">
                         {col.template({
                             value: objectGetByPath(item, col.path),
                             item,
@@ -580,14 +580,14 @@ export class Table {
         const row = this._findRow($event.target);
 
         if (this.enableRowClick) {
-            if (
-                target.getAttribute('data-is-action') !== 'false' &&
-                target.getAttribute('data-is-action') !== false
-            ) {
+            const action = this._findRowAction($event.target);
+
+            if (action) {
                 return;
             }
 
-            this.rowClick.emit(row);
+            const item = this._items[index];
+            this.rowClick.emit(item);
         }
 
         const checkbox = row?.querySelector('input[type="checkbox"]');
@@ -610,6 +610,25 @@ export class Table {
         }
 
         return this._findRow(el?.parentElement);
+    }
+
+    private _findRowAction(el: HTMLElement) {
+        if (!el) {
+            return null;
+        }
+
+        if (
+            el.getAttribute('data-is-action') !== null &&
+            el.getAttribute('data-is-action') !== 'false'
+        ) {
+            return el;
+        }
+
+        if (el?.tagName?.toLowerCase() === 'p-table-row') {
+            return null;
+        }
+
+        return this._findRowAction(el?.parentElement);
     }
 
     /* 

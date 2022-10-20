@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.144 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Organisms/Table:** Don't select checkbox when row click is enabled ([e697bda](https://github.com/employes/paperless/commit/e697bda71c5b2bf49046dd1d49457996087d245e))
+
+
+
+
+
 # 0.1.0-alpha.143 (2022-10-20)
 
 

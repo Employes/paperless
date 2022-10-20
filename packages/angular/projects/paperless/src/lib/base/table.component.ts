@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
@@ -25,7 +25,7 @@ export abstract class BaseTableComponent
     protected quickFilters: any[] = [];
 
     public pageSizeDefault = 12;
-    public tableOptions?: FormGroup;
+    public tableOptions?: FormControl<TableOptions>;
 
     private _defaultTableValues: TableOptions = {
         pageSize: this.pageSizeDefault,
@@ -41,7 +41,7 @@ export abstract class BaseTableComponent
             return this._defaultTableValues.pageSize;
         }
 
-        return this.tableOptions.get('pageSize')?.value;
+        return this.tableOptions.value.pageSize;
     }
 
     get page() {
@@ -49,7 +49,7 @@ export abstract class BaseTableComponent
             return this._defaultTableValues.page;
         }
 
-        return this.tableOptions.get('page')?.value;
+        return this.tableOptions.value.page;
     }
 
     get quickFilter() {
@@ -57,7 +57,7 @@ export abstract class BaseTableComponent
             return this._defaultTableValues.quickFilter;
         }
 
-        return this.tableOptions.get('quickFilter')?.value;
+        return this.tableOptions.value.quickFilter;
     }
     set quickFilter(quickFilter: QuickFilter) {
         this.tableValues = {
@@ -70,7 +70,7 @@ export abstract class BaseTableComponent
             return this._defaultTableValues.query;
         }
 
-        return this.tableOptions.get('query')?.value;
+        return this.tableOptions.value.query;
     }
     set query(query: string) {
         this.tableValues = {
@@ -83,7 +83,7 @@ export abstract class BaseTableComponent
             return this._defaultTableValues.selectedRows;
         }
 
-        return this.tableOptions.get('selectedRows')?.value;
+        return this.tableOptions.value.selectedRows;
     }
     set selectedRows(selectedRows: any[]) {
         this.tableValues = {
@@ -101,7 +101,7 @@ export abstract class BaseTableComponent
     }
 
     get tableValues() {
-        return this.tableOptions?.value;
+        return this.tableOptions?.value ?? {};
     }
 
     set tableValues(values: Partial<TableOptions>) {
@@ -116,17 +116,13 @@ export abstract class BaseTableComponent
     }
 
     ngOnInit() {
-        this.tableOptions = new FormGroup({
-            pageSize: new FormControl(this.parsedDefaultTableValues.pageSize),
-            page: new FormControl(this.parsedDefaultTableValues.page),
-            quickFilter: new FormControl(
-                this.parsedDefaultTableValues.quickFilter
-            ),
-            query: new FormControl(this.parsedDefaultTableValues.query),
-            selectedRows: new FormControl(
-                this.parsedDefaultTableValues.selectedRows
-            ),
-        });
+        this.tableOptions = new FormControl<TableOptions>({
+            pageSize: this.parsedDefaultTableValues.pageSize,
+            page: this.parsedDefaultTableValues.page,
+            quickFilter: this.parsedDefaultTableValues.quickFilter,
+            query: this.parsedDefaultTableValues.query,
+            selectedRows: this.parsedDefaultTableValues.selectedRows,
+        }) as FormControl<TableOptions>;
 
         this.tableOptions.valueChanges
             .pipe(
@@ -188,7 +184,13 @@ export abstract class BaseTableComponent
     }
 
     private _setTableValues(data: Partial<TableOptions>, emitEvent = true) {
-        this.tableOptions?.setValue(data, { emitEvent });
+        this.tableOptions?.setValue(
+            {
+                ...this.tableOptions.value,
+                ...data,
+            },
+            { emitEvent }
+        );
     }
 
     private _getChanges(previous: TableOptions, next: TableOptions) {
@@ -201,6 +203,7 @@ export abstract class BaseTableComponent
             }
 
             if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
+                // @ts-ignore
                 changes[key] = next[key];
             }
         }

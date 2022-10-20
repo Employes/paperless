@@ -4,7 +4,7 @@ input[type='checkbox'].p-input {
     @apply appearance-none bg-center bg-no-repeat;
     @apply w-6 h-6 rounded bg-white;
     @apply border border-solid border-mystic-dark;
-    @apply outline-none;
+    @apply outline-none #{!important};
 
     background-size: 1rem;
 

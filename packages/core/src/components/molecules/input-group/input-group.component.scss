@@ -8,6 +8,7 @@
 
 :host {
     @apply flex flex-col w-full;
+    @apply outline-none #{!important};
 
     .input-label {
         @apply text-xs text-storm-vague font-semibold uppercase tracking-wider;
@@ -61,7 +62,10 @@
 
 :host(.focused),
 :host([focused]),
-:host(:focus-within) {
+:host(:focus-within),
+:host(:focus) {
+    @apply outline-none #{!important};
+
     .prefix,
     .suffix {
         @include inputFocusState();

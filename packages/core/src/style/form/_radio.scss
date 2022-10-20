@@ -2,7 +2,7 @@
     @apply appearance-none relative;
     @apply w-4 h-4 bg-white rounded-round;
     @apply border border-solid border-mystic-dark;
-    @apply outline-none;
+    @apply outline-none #{!important};
 
     &:after {
         @apply absolute top-1/2 left-1/2 bg-transparent;

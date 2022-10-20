@@ -64,13 +64,14 @@
     @apply bg-white px-4 w-full;
     @apply rounded-large;
     @apply border border-mystic-dark border-solid #{!important};
-    @apply outline-0 #{!important};
+    @apply outline-none #{!important};
 
     &::placeholder {
         @apply text-storm-medium;
     }
 
     &:focus,
+    &:focus-within,
     &:focus-visible,
     &.focus {
         @include inputFocusState();
@@ -83,6 +84,7 @@
 
 @mixin inputFocusState {
     @apply border-indigo #{!important};
+    @apply outline-none #{!important};
 }
 
 @mixin inputErrorState {

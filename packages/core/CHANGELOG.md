@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.148 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Disable active state on disabled ([fa348ec](https://github.com/ionic-team/stencil-component-starter/commit/fa348ec1b7c6f52f6cc07b4e1fa06304eaac99d7))
+
+
+
+
+
 # 0.1.0-alpha.147 (2022-10-20)
 
 

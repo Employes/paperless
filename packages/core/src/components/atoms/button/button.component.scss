@@ -47,7 +47,9 @@ p-button {
 
             &:active,
             &.active {
-                @apply bg-indigo-dark;
+                &:not([disabled]) {
+                    @apply bg-indigo-dark;
+                }
             }
         }
 
@@ -57,14 +59,16 @@ p-button {
 
             &:active,
             &.active {
-                @apply bg-mystic;
+                &:not([disabled]) {
+                    @apply bg-mystic;
+                }
             }
         }
 
         &.variant-text {
             @apply text-indigo;
 
-            &:hover {
+            &:hover:not([disabled]) {
                 @apply text-indigo-dark;
             }
         }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.149 (2022-10-20)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#63](https://github.com/Employes/Paperless/issues/63)) ([6b3b105](https://github.com/Employes/Paperless/commit/6b3b105ad3ec3a0d3697d8a6981d75d65866eff1))
+
+
+
+
+
 # 0.1.0-alpha.148 (2022-10-20)
 
 

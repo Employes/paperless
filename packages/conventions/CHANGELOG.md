@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.147 (2022-10-20)
+
+
+### Features
+
+* **Atoms/Loader:** Add will-change for performance ([3789118](https://github.com/Employes/Paperless/commit/378911895d2af3b2a0ea244cd7db3819d2c135d2))
+
+
+
+
+
 # 0.1.0-alpha.146 (2022-10-20)
 
 

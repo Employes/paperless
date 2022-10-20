@@ -4,6 +4,8 @@
         @apply animate-spin duration-500;
         @apply border-solid border-2 border-indigo-light border-t-indigo #{!important};
 
+        will-change: transform;
+
         &.color-storm {
             @apply border-storm-light/40 border-t-storm #{!important};
         }
@@ -36,6 +38,8 @@
 
 :host(.variant-ghost) {
     @apply block box-border;
+
+    will-change: background, background-position-x, background-color;
 
     min-height: 1em;
     min-width: 1em;

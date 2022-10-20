@@ -3,11 +3,11 @@ import { ControlValueAccessor } from '@angular/forms';
 
 @Directive({})
 export class BaseValueAccessor implements ControlValueAccessor {
-    private onChange: (value: any) => void = () => {
+    protected onChange: (value: any) => void = () => {
         /**/
     };
 
-    private onTouched: () => void = () => {
+    protected onTouched: () => void = () => {
         /**/
     };
 

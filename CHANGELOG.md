@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.145 (2022-10-20)
+
+
+### Features
+
+* **Organisms/Table:** Add property for amount of loading rows ([b2e5b30](https://github.com/employes/paperless/commit/b2e5b303b32853850195eadbdc2c73f292cfe716))
+
+
+
+
+
 # 0.1.0-alpha.144 (2022-10-20)
 
 

@@ -16,6 +16,7 @@
 | Property                      | Attribute                        | Description                                        | Type                        | Default              |
 | ----------------------------- | -------------------------------- | -------------------------------------------------- | --------------------------- | -------------------- |
 | `activeQuickFilterIdentifier` | `active-quick-filter-identifier` | Active quick filter identifier                     | `string`                    | `undefined`          |
+| `amountOfLoadingRows`         | `amount-of-loading-rows`         | The amount of loading rows to show                 | `number`                    | `4`                  |
 | `canSelectKey`                | `can-select-key`                 | A key to determine if a row can be selected        | `string`                    | `undefined`          |
 | `editButtonTemplate`          | --                               | The template for the edit button text              | `(value: number) => string` | `undefined`          |
 | `enableEdit`                  | `enable-edit`                    | Wether to show the edit button                     | `boolean`                   | `true`               |

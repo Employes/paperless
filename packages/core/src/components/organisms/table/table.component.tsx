@@ -385,45 +385,36 @@ export class Table {
         rowIndex,
         variant: 'header' | 'default' | 'loading' = 'default'
     ) {
+        if (!this.enableRowSelection || !this.selectionKey || index !== 0) {
+            return;
+        }
+
         if (variant === 'loading') {
-            return (
-                this.enableRowSelection &&
-                index === 0 && (
-                    <p-loader variant="ghost" class="rounded w-6 h-6" />
-                )
-            );
+            return <p-loader variant="ghost" class="rounded w-6 h-6" />;
         }
 
         if (variant === 'header') {
             return (
-                this.enableRowSelection &&
-                index === 0 && (
-                    <input
-                        class="p-input"
-                        type="checkbox"
-                        onChange={(ev) => this._selectAllChange(ev)}
-                        checked={this._selectionContainsAll()}
-                        indeterminate={this._selectionIndeterminate()}
-                    />
-                )
+                <input
+                    class="p-input"
+                    type="checkbox"
+                    onChange={(ev) => this._selectAllChange(ev)}
+                    checked={this._selectionContainsAll()}
+                    indeterminate={this._selectionIndeterminate()}
+                />
             );
         }
 
         const item = this._items[rowIndex];
 
         return (
-            this.enableRowSelection &&
-            index === 0 && (
-                <input
-                    class="p-input"
-                    type="checkbox"
-                    onChange={(ev) =>
-                        this._checkboxChange(ev?.target, rowIndex)
-                    }
-                    disabled={this.canSelectKey && !item[this.canSelectKey]}
-                    checked={this._selectionContains(item, rowIndex)}
-                />
-            )
+            <input
+                class="p-input"
+                type="checkbox"
+                onChange={(ev) => this._checkboxChange(ev?.target, rowIndex)}
+                disabled={this.canSelectKey && !item[this.canSelectKey]}
+                checked={this._selectionContains(item, rowIndex)}
+            />
         );
     }
 
@@ -449,22 +440,22 @@ export class Table {
 
         const value = this._getCheckedValue($event.target);
         if (value) {
+            const toAdd = [];
             for (let i = 0; i < this._items.length; i++) {
                 const row = this._items[i];
                 if (this.canSelectKey && !row[this.canSelectKey]) {
                     continue;
                 }
 
-                const key = this._getSelectionValue(row, i);
-
-                if (this.selectedRows.indexOf(key) >= 0) {
+                if (this._selectionContains(row, i)) {
                     continue;
                 }
 
-                this.selectedRows = [...this.selectedRows, key];
+                toAdd.push(row);
                 this.rowSelected.emit(row);
             }
 
+            this.selectedRows = [...this.selectedRows, ...toAdd];
             this.selectedRowsChange.emit(this.selectedRows);
             return;
         }
@@ -472,7 +463,9 @@ export class Table {
         for (let i = 0; i < this.selectedRows.length; i++) {
             const value = this.selectedRows[i];
             const row = this._items.find(
-                (d) => this._getSelectionValue(d, i) === value
+                (d) =>
+                    this._getSelectionValue(d, i) ===
+                    this._getSelectionValue(value, i)
             );
 
             if (!row) {
@@ -567,7 +560,7 @@ export class Table {
             }
         }
 
-        return containsCount > 0;
+        return containsCount > 0 && containsCount !== this._items.length;
     }
 
     private _rowClick($event, index) {
@@ -577,7 +570,7 @@ export class Table {
             target.tagName.toLowerCase() === 'input' ||
             target.type === 'checkbox'
         ) {
-            return this._checkboxChange(target, index);
+            return;
         }
 
         const row = this._findRow($event.target);
@@ -591,6 +584,10 @@ export class Table {
 
             const item = this._items[index];
             this.rowClick.emit(item);
+            return;
+        }
+
+        if (!this.enableRowSelection) {
             return;
         }
 

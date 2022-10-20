@@ -589,6 +589,10 @@ export namespace Components {
          */
         "activeQuickFilterIdentifier": string;
         /**
+          * The amount of loading rows to show
+         */
+        "amountOfLoadingRows": number;
+        /**
           * A key to determine if a row can be selected
          */
         "canSelectKey": string;
@@ -1843,6 +1847,10 @@ declare namespace LocalJSX {
           * Active quick filter identifier
          */
         "activeQuickFilterIdentifier"?: string;
+        /**
+          * The amount of loading rows to show
+         */
+        "amountOfLoadingRows"?: number;
         /**
           * A key to determine if a row can be selected
          */

@@ -36,6 +36,11 @@ export class Table {
     @Prop() loading: boolean = false;
 
     /**
+     * The amount of loading rows to show
+     */
+    @Prop() amountOfLoadingRows: number = 4;
+
+    /**
      * Wether to enable selection
      */
     @Prop() enableRowSelection: boolean = true;
@@ -320,9 +325,7 @@ export class Table {
         if (this.loading) {
             return Array.from(
                 {
-                    length: this.pageSizeOptions?.[0]
-                        ? this.pageSizeOptions?.[0] / 2
-                        : 4,
+                    length: this.amountOfLoadingRows,
                 },
                 (_, i) => (
                     <p-table-row

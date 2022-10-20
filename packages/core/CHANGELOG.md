@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.152 (2022-10-20)
+
+
+### Features
+
+* **Organisms/Table:** Improve selection changes ([3d15f3f](https://github.com/ionic-team/stencil-component-starter/commit/3d15f3fee0045980be3f6f30a3c54ae8b47491f0))
+
+
+
+
+
 # 0.1.0-alpha.151 (2022-10-20)
 
 

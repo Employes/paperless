@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0-alpha.151 (2022-10-20)
+
+
+### Bug Fixes
+
+* **Atoms/Input:** Fix outline problems ([ac33256](https://github.com/employes/paperless/commit/ac332563d9c0f87951735888349ea8ff1975f5f8))
+
+
+
+
+
 # 0.1.0-alpha.150 (2022-10-20)
 
 

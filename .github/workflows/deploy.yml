@@ -119,7 +119,7 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Download a single artifact
-              uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # tag=v3
+              uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # tag=v3
               with:
                   name: build-artifact
 
@@ -145,7 +145,7 @@ jobs:
                   fetch-depth: 0
 
             - name: Download a single artifact
-              uses: actions/download-artifact@fb598a63ae348fa914e94cd0ff38f362e927b741 # tag=v3
+              uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # tag=v3
               with:
                   name: build-artifact
 

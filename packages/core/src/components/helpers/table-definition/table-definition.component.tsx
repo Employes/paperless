@@ -30,6 +30,11 @@ export class TableDefinition {
     @Prop({ reflect: true, mutable: true }) name: string;
 
     /**
+     * The name of the column
+     */
+    @Prop({ reflect: true, mutable: true }) useSlot: boolean = false;
+
+    /**
      * The alignment of the column
      */
     @Prop({ reflect: true, mutable: true }) align: 'start' | 'center' | 'end' =

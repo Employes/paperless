@@ -384,11 +384,13 @@ export class Table {
                 <div class={this._getColumnClasses(col)}>
                     {this._getCheckbox(colIndex, index)}
                     <div class="flex" data-is-action="true">
-                        {col.template({
-                            value: objectGetByPath(item, col.path),
-                            item,
-                            index,
-                        })}
+                        {col.useSlot
+                            ? col
+                            : col.template({
+                                  value: objectGetByPath(item, col.path),
+                                  item,
+                                  index,
+                              })}
                     </div>
                 </div>
             );

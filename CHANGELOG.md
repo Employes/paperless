@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.161](https://github.com/employes/paperless/compare/v0.1.0-alpha.160...v0.1.0-alpha.161) (2022-10-21)
+
+
+### Bug Fixes
+
+* **CI:** Only publish changed packages ([9215719](https://github.com/employes/paperless/commit/9215719c25171a86a5900ef9fe8046abfd40ff75))
+
+
+### Features
+
+* **Molecules/Table Definition:** Move template func ([f958afe](https://github.com/employes/paperless/commit/f958afe019a74cade765c109a0d1355ca3c543eb))
+
+
+
+
+
 # [0.1.0-alpha.160](https://github.com/employes/paperless/compare/v0.1.0-alpha.159...v0.1.0-alpha.160) (2022-10-21)
 
 

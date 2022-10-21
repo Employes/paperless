@@ -12,7 +12,7 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
-import { QuickFilter } from "./types/table";
+import { QuickFilter, RowClickEvent } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
 import { TableDefinitionSizes, templateFunc as templateFunc2 } from "./components/helpers/table-definition/table-definition.component";
 import { buttonTemplateFunc, templateFunc as templateFunc3 } from "./components/molecules/table-header/table-header.component";
@@ -1938,7 +1938,7 @@ declare namespace LocalJSX {
         /**
           * Event whenever a row is clicked
          */
-        "onRowClick"?: (event: PTableCustomEvent<any>) => void;
+        "onRowClick"?: (event: PTableCustomEvent<RowClickEvent>) => void;
         /**
           * Event whenever a row is deselected
          */

@@ -10,7 +10,7 @@ import {
     State,
     Watch,
 } from '@stencil/core';
-import { QuickFilter } from '../../../types/table';
+import { QuickFilter, RowClickEvent } from '../../../types/table';
 import { objectGetByPath } from '../../../utils/object-get-by-path';
 import { TableDefinition } from '../../helpers/table-definition/table-definition.component';
 import {
@@ -73,7 +73,7 @@ export class Table {
     /**
      * Event whenever a row is clicked
      */
-    @Event() rowClick: EventEmitter<any>;
+    @Event() rowClick: EventEmitter<RowClickEvent>;
 
     /**
      * Event whenever a row is selected
@@ -216,6 +216,8 @@ export class Table {
     @State() private _columns: any[] = [];
     @State() private _items: any[] = [];
 
+    private _ctrlDown = false;
+
     componentWillLoad() {
         this._parseItems(this.items);
         this._generateColumns();
@@ -285,6 +287,24 @@ export class Table {
     @Listen('tableDefinitionChanged', { target: 'body' })
     onTableDefinitionUpdated() {
         this._generateColumns();
+    }
+
+    @Listen('keydown', { target: 'document' })
+    keyDown({ key }) {
+        if (key !== 'Control' || this._ctrlDown === true) {
+            return;
+        }
+
+        this._ctrlDown = true;
+    }
+
+    @Listen('keyup', { target: 'document' })
+    keyUp({ key }) {
+        if (key !== 'Control' || this._ctrlDown === false) {
+            return;
+        }
+
+        this._ctrlDown = false;
     }
 
     @Watch('items')
@@ -583,7 +603,10 @@ export class Table {
             }
 
             const item = this._items[index];
-            this.rowClick.emit(item);
+            this.rowClick.emit({
+                item,
+                ctrlDown: this._ctrlDown,
+            });
             return;
         }
 

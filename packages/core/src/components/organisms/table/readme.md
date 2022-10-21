@@ -44,19 +44,19 @@
 
 ## Events
 
-| Event                | Description                                    | Type                       |
-| -------------------- | ---------------------------------------------- | -------------------------- |
-| `edit`               | Event when the edit button is clicked          | `CustomEvent<null>`        |
-| `export`             | Event whenever the page changes                | `CustomEvent<number>`      |
-| `filter`             | Event when the filter button is clicked        | `CustomEvent<null>`        |
-| `pageChange`         | Event whenever the page changes                | `CustomEvent<number>`      |
-| `pageSizeChange`     | Event whenever the page changes                | `CustomEvent<number>`      |
-| `queryChange`        | Event when the query changes                   | `CustomEvent<string>`      |
-| `quickFilter`        | Event when one of the quick filters is clicked | `CustomEvent<QuickFilter>` |
-| `rowClick`           | Event whenever a row is clicked                | `CustomEvent<any>`         |
-| `rowDeselected`      | Event whenever a row is deselected             | `CustomEvent<any>`         |
-| `rowSelected`        | Event whenever a row is selected               | `CustomEvent<any>`         |
-| `selectedRowsChange` | Event whenever the current selection changes   | `CustomEvent<any>`         |
+| Event                | Description                                    | Type                         |
+| -------------------- | ---------------------------------------------- | ---------------------------- |
+| `edit`               | Event when the edit button is clicked          | `CustomEvent<null>`          |
+| `export`             | Event whenever the page changes                | `CustomEvent<number>`        |
+| `filter`             | Event when the filter button is clicked        | `CustomEvent<null>`          |
+| `pageChange`         | Event whenever the page changes                | `CustomEvent<number>`        |
+| `pageSizeChange`     | Event whenever the page changes                | `CustomEvent<number>`        |
+| `queryChange`        | Event when the query changes                   | `CustomEvent<string>`        |
+| `quickFilter`        | Event when one of the quick filters is clicked | `CustomEvent<QuickFilter>`   |
+| `rowClick`           | Event whenever a row is clicked                | `CustomEvent<RowClickEvent>` |
+| `rowDeselected`      | Event whenever a row is deselected             | `CustomEvent<any>`           |
+| `rowSelected`        | Event whenever a row is selected               | `CustomEvent<any>`           |
+| `selectedRowsChange` | Event whenever the current selection changes   | `CustomEvent<any>`           |
 
 
 ## Dependencies

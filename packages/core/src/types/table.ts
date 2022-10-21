@@ -5,3 +5,8 @@ export interface QuickFilter {
     text: string | QuickFilterTextFunction;
     count?: number;
 }
+
+export interface RowClickEvent {
+    item: any;
+    ctrlDown: boolean;
+}

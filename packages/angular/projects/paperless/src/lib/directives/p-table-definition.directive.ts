@@ -13,7 +13,7 @@ import {
 import { Components, TableDefinitionTemplateFuncData } from '@paperless/core';
 import { ProxyCmp, proxyOutputs } from '../stencil/angular-component-lib/utils';
 
-export declare interface PTableDefinition extends Components.PTableDefinition {
+export declare interface TableDefinition extends Components.PTableDefinition {
     /**
      * Event to let the table know it has to re render
      */
@@ -30,7 +30,7 @@ export declare interface PTableDefinition extends Components.PTableDefinition {
     template: '',
     inputs: ['align', 'name', 'path', 'sizes', 'type'],
 })
-export class PTableDefinition implements OnInit {
+export class TableDefinition implements OnInit {
     protected el: HTMLElement;
 
     @ContentChild(TemplateRef, { static: false })

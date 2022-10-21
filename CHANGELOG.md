@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.160](https://github.com/employes/paperless/compare/v0.1.0-alpha.159...v0.1.0-alpha.160) (2022-10-21)
+
+
+### Features
+
+* **Organisms/Table:** Reset `_ctrlDown` on tab change ([379ae20](https://github.com/employes/paperless/commit/379ae209b761778793275a94f3f28ccda2701577))
+
+
+
+
+
 # [0.1.0-alpha.159](https://github.com/employes/paperless/compare/v0.1.0-alpha.158...v0.1.0-alpha.159) (2022-10-21)
 
 

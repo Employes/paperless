@@ -8,10 +8,26 @@ import Docs from '../../../../packages/core/src/components/molecules/table-row/r
 
 # Examples
 
+## Variants
+
+### Default
+
 <Canvas>
     <div class="flex justify-center">
         <p-table-row>
-            <p-button size="small">Button</p-button>
+            <div class="w-1/2">Value</div>
+            <div class="w-1/2">Value</div>
+        </p-table-row>
+    </div>
+</Canvas>
+
+### Header
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-table-row variant="header">
+            <div class="w-1/2">Column</div>
+            <div class="w-1/2">Column</div>
         </p-table-row>
     </div>
 </Canvas>

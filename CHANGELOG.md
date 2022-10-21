@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.163](https://github.com/employes/paperless/compare/v0.1.0-alpha.162...v0.1.0-alpha.163) (2022-10-21)
+
+
+### Features
+
+* **Helpers/Table Definition:** Add slot and remove directive  ([c49a521](https://github.com/employes/paperless/commit/c49a521a701ab3d9eae74824149788392faef2b2))
+
+
+
+
+
 # [0.1.0-alpha.162](https://github.com/employes/paperless/compare/v0.1.0-alpha.161...v0.1.0-alpha.162) (2022-10-21)
 
 

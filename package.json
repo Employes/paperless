@@ -58,7 +58,7 @@
         "lerna:version:nopush": "yarn lerna:version --no-push",
         "lerna:lint": "lerna run lint",
         "lerna:lint:fix": "lerna run lint:fix",
-        "lerna:publish": "lerna run yarn:publish --stream",
+        "lerna:publish": "lerna run yarn:publish --stream --since",
         "lerna:build": "lerna run build --scope=@paperless/core && lerna run build --ignore=@paperless/core --stream",
         "lerna:build:prod": "lerna run build:prod --scope=@paperless/core && lerna run build:prod --ignore=@paperless/core --stream"
     },

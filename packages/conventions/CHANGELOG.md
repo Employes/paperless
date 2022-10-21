@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.159](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.158...v0.1.0-alpha.159) (2022-10-21)
+
+
+### Bug Fixes
+
+* Package versions ([b59472c](https://github.com/Employes/Paperless/commit/b59472c6234e60b959b8b6fe76bbe2c25120ad62))
+
+
+
+
+
 # [0.1.0-alpha.157](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.153...v0.1.0-alpha.157) (2022-10-21)
 
 **Note:** Version bump only for package @paperless/conventions

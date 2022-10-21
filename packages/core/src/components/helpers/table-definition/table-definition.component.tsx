@@ -1,22 +1,8 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
-
-export interface templateFuncData {
-    value: any;
-    item: any;
-    index: number;
-}
-
-export type templateFunc = (data: templateFuncData) => any;
-
-export interface TableDefinitionSizes {
-    default: number;
-    tablet?: number;
-    'desktop-xs'?: number;
-    'desktop-sm'?: number;
-    desktop?: number;
-    'desktop-lg'?: number;
-    'desktop-xl'?: number;
-}
+import {
+    TableDefinitionSizes,
+    TableDefinitionTemplateFunc,
+} from '../../../types/table';
 
 @Component({
     tag: 'p-table-definition',
@@ -26,7 +12,7 @@ export class TableDefinition {
     /**
      * The template for the data view
      */
-    @Prop() template: templateFunc = ({ value }) => value;
+    @Prop() template: TableDefinitionTemplateFunc = ({ value }) => value;
 
     /**
      * The path of the value of the item you want to display

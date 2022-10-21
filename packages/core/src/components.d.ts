@@ -12,10 +12,9 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
-import { QuickFilter, RowClickEvent } from "./types/table";
+import { QuickFilter, RowClickEvent, TableDefinitionSizes, TableDefinitionTemplateFunc } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
-import { TableDefinitionSizes, templateFunc as templateFunc2 } from "./components/helpers/table-definition/table-definition.component";
-import { buttonTemplateFunc, templateFunc as templateFunc3 } from "./components/molecules/table-header/table-header.component";
+import { buttonTemplateFunc, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -709,7 +708,7 @@ export namespace Components {
         /**
           * The template for the data view
          */
-        "template": templateFunc;
+        "template": TableDefinitionTemplateFunc;
         /**
           * The type of the column
          */
@@ -2016,7 +2015,7 @@ declare namespace LocalJSX {
         /**
           * The template for the data view
          */
-        "template"?: templateFunc;
+        "template"?: TableDefinitionTemplateFunc;
         /**
           * The type of the column
          */

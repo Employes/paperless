@@ -307,6 +307,15 @@ export class Table {
         this._ctrlDown = false;
     }
 
+    @Listen('visibilitychange', { target: 'document' })
+    visibilityChange() {
+        if (document.visibilityState !== 'hidden' || this._ctrlDown === false) {
+            return;
+        }
+
+        this._ctrlDown = false;
+    }
+
     @Watch('items')
     private _parseItems(items: string) {
         if (!items) {

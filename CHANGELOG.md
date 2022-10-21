@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.158](https://github.com/employes/paperless/compare/v0.1.0-alpha.157...v0.1.0-alpha.158) (2022-10-21)
+
+
+### Features
+
+* **Organisms/Table:** Add ctrlDown property to event & types ([e8f0715](https://github.com/employes/paperless/commit/e8f0715b06e7a00d8618af6b1ecfe5f24a7f4bf2))
+
+
+
+
+
 # [0.1.0-alpha.157](https://github.com/employes/paperless/compare/v0.1.0-alpha.153...v0.1.0-alpha.157) (2022-10-21)
 
 

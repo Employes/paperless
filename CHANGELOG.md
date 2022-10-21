@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.157](https://github.com/employes/paperless/compare/v0.1.0-alpha.153...v0.1.0-alpha.157) (2022-10-21)
+
+
+### Bug Fixes
+
+* **CI:** Fix fetch depth ([0ad3026](https://github.com/employes/paperless/commit/0ad3026395aaa202eb8626e3580972e71730a763))
+
+
+
+
+
 # 0.1.0-alpha.153 (2022-10-20)
 
 **Note:** Version bump only for package paperless

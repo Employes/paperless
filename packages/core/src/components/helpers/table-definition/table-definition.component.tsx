@@ -52,6 +52,10 @@ export class TableDefinition {
     }
 
     render() {
-        return <Host />;
+        return (
+            <Host>
+                <slot></slot>
+            </Host>
+        );
     }
 }

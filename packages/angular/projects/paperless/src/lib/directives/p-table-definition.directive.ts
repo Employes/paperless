@@ -36,6 +36,10 @@ export class TableDefinition implements OnInit {
     @ContentChild(TemplateRef, { static: false })
     templateRef?: TemplateRef<any>;
 
+    get template() {
+        return this._getTemplate;
+    }
+
     constructor(
         c: ChangeDetectorRef,
         r: ElementRef,
@@ -61,7 +65,7 @@ export class TableDefinition implements OnInit {
         );
     }
 
-    template(data: TableDefinitionTemplateFuncData) {
+    private _getTemplate(data: TableDefinitionTemplateFuncData) {
         if (!this.templateRef) {
             return;
         }

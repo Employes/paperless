@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.164](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.163...v0.1.0-alpha.164) (2022-10-21)
+
+
+### Features
+
+* **Helpers/Table Definition:** Test out `useSlot` property ([87223a5](https://github.com/ionic-team/stencil-component-starter/commit/87223a508eb8d2c8cf6f72d8c4d9e025e37c2854))
+
+
+
+
+
 # [0.1.0-alpha.163](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.162...v0.1.0-alpha.163) (2022-10-21)
 
 

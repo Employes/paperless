@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.166](https://github.com/employes/paperless/compare/v0.1.0-alpha.165...v0.1.0-alpha.166) (2022-10-24)
+
+
+### Bug Fixes
+
+* **Core:** Remove shadow dom of table components ([97033fc](https://github.com/employes/paperless/commit/97033fcbb9032b5b3895db6feb6ff8cbfe6b1461))
+
+
+
+
+
 # [0.1.0-alpha.165](https://github.com/employes/paperless/compare/v0.1.0-alpha.164...v0.1.0-alpha.165) (2022-10-24)
 
 

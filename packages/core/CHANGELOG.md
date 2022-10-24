@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.165](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.164...v0.1.0-alpha.165) (2022-10-24)
+
+
+### Bug Fixes
+
+* **Angular:** remove p-table-column from output ([dbb72f9](https://github.com/ionic-team/stencil-component-starter/commit/dbb72f99e0e796bfee6ef0097e2da2b752f89f4d))
+
+
+### Features
+
+* **Molecules:** Add table column component ([b5e58bb](https://github.com/ionic-team/stencil-component-starter/commit/b5e58bbee4510e23097297678b10c275b1803a4e))
+
+
+
+
+
 # [0.1.0-alpha.164](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.163...v0.1.0-alpha.164) (2022-10-21)
 
 

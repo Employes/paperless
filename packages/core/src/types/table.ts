@@ -11,15 +11,14 @@ export interface RowClickEvent {
     ctrlDown: boolean;
 }
 
-export interface TableDefinitionTemplateFuncData {
+export interface TableDefinitionData {
     value: any;
     item: any;
     index: number;
+    rowIndex: number;
 }
 
-export type TableDefinitionTemplateFunc = (
-    data: TableDefinitionTemplateFuncData
-) => any;
+export type TableDefinitionTemplateFunc = (data: TableDefinitionData) => any;
 
 export interface TableDefinitionSizes {
     default: number;

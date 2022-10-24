@@ -1,19 +1,11 @@
-import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
-import {
-    TableDefinitionSizes,
-    TableDefinitionTemplateFunc,
-} from '../../../types/table';
+import { Component, Event, EventEmitter, Prop } from '@stencil/core';
+import { TableDefinitionSizes } from '../../../types/table';
 
 @Component({
     tag: 'p-table-definition',
     shadow: true,
 })
 export class TableDefinition {
-    /**
-     * The template for the data view
-     */
-    @Prop() template: TableDefinitionTemplateFunc = ({ value }) => value;
-
     /**
      * The path of the value of the item you want to display
      */
@@ -30,7 +22,7 @@ export class TableDefinition {
     @Prop({ reflect: true, mutable: true }) name: string;
 
     /**
-     * The name of the column
+     * Wether the column should use the slot
      */
     @Prop({ reflect: true, mutable: true }) useSlot: boolean = false;
 
@@ -57,10 +49,6 @@ export class TableDefinition {
     }
 
     render() {
-        return (
-            <Host>
-                <slot></slot>
-            </Host>
-        );
+        return;
     }
 }

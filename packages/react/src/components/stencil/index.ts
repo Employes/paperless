@@ -51,6 +51,7 @@ export const PTabGroup = /*@__PURE__*/createReactComponent<JSX.PTabGroup, HTMLPT
 export const PTabItem = /*@__PURE__*/createReactComponent<JSX.PTabItem, HTMLPTabItemElement>('p-tab-item');
 export const PTable = /*@__PURE__*/createReactComponent<JSX.PTable, HTMLPTableElement>('p-table');
 export const PTableBody = /*@__PURE__*/createReactComponent<JSX.PTableBody, HTMLPTableBodyElement>('p-table-body');
+export const PTableColumn = /*@__PURE__*/createReactComponent<JSX.PTableColumn, HTMLPTableColumnElement>('p-table-column');
 export const PTableContainer = /*@__PURE__*/createReactComponent<JSX.PTableContainer, HTMLPTableContainerElement>('p-table-container');
 export const PTableDefinition = /*@__PURE__*/createReactComponent<JSX.PTableDefinition, HTMLPTableDefinitionElement>('p-table-definition');
 export const PTableFooter = /*@__PURE__*/createReactComponent<JSX.PTableFooter, HTMLPTableFooterElement>('p-table-footer');

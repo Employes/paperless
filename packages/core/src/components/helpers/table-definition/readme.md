@@ -11,14 +11,14 @@
 
 ## Properties
 
-| Property   | Attribute | Description                                           | Type                                             | Default                |
-| ---------- | --------- | ----------------------------------------------------- | ------------------------------------------------ | ---------------------- |
-| `align`    | `align`   | The alignment of the column                           | `"center" \| "end" \| "start"`                   | `'start'`              |
-| `name`     | `name`    | The name of the column                                | `string`                                         | `undefined`            |
-| `path`     | `path`    | The path of the value of the item you want to display | `string`                                         | `undefined`            |
-| `sizes`    | `sizes`   | The sizes of the column                               | `"auto" \| TableDefinitionSizes \| number`       | `'auto'`               |
-| `template` | --        | The template for the data view                        | `(data: TableDefinitionTemplateFuncData) => any` | `({ value }) => value` |
-| `type`     | `type`    | The type of the column                                | `"td" \| "th"`                                   | `'td'`                 |
+| Property  | Attribute  | Description                                           | Type                                       | Default     |
+| --------- | ---------- | ----------------------------------------------------- | ------------------------------------------ | ----------- |
+| `align`   | `align`    | The alignment of the column                           | `"center" \| "end" \| "start"`             | `'start'`   |
+| `name`    | `name`     | The name of the column                                | `string`                                   | `undefined` |
+| `path`    | `path`     | The path of the value of the item you want to display | `string`                                   | `undefined` |
+| `sizes`   | `sizes`    | The sizes of the column                               | `"auto" \| TableDefinitionSizes \| number` | `'auto'`    |
+| `type`    | `type`     | The type of the column                                | `"td" \| "th"`                             | `'td'`      |
+| `useSlot` | `use-slot` | Wether the column should use the slot                 | `boolean`                                  | `false`     |
 
 
 ## Events

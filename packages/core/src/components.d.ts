@@ -12,8 +12,10 @@ import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
-import { QuickFilter, RowClickEvent, TableDefinitionSizes, TableDefinitionTemplateFunc } from "./types/table";
+import { QuickFilter, RowClickEvent, TableDefinitionSizes } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
+import { TableDefinition } from "./components/helpers/table-definition/table-definition.component";
+import { TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { buttonTemplateFunc, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
@@ -686,6 +688,40 @@ export namespace Components {
     }
     interface PTableBody {
     }
+    interface PTableColumn {
+        /**
+          * The checkbox to show
+         */
+        "checkbox": any;
+        /**
+          * The definition of the table column
+         */
+        "definition"?: TableDefinition;
+        /**
+          * The index of the column
+         */
+        "index": number;
+        /**
+          * The item in question
+         */
+        "item": any;
+        /**
+          * The index of the row
+         */
+        "rowIndex": number;
+        /**
+          * The template to show
+         */
+        "template": TableDefinitionTemplateFunc;
+        /**
+          * The value of the column
+         */
+        "value": any;
+        /**
+          * The variant of the column
+         */
+        "variant": 'default' | 'loading' | 'header';
+    }
     interface PTableContainer {
     }
     interface PTableDefinition {
@@ -706,13 +742,13 @@ export namespace Components {
          */
         "sizes": 'auto' | number | TableDefinitionSizes;
         /**
-          * The template for the data view
-         */
-        "template": TableDefinitionTemplateFunc;
-        /**
           * The type of the column
          */
         "type": 'td' | 'th';
+        /**
+          * Wether the column should use the slot
+         */
+        "useSlot": boolean;
     }
     interface PTableFooter {
         /**
@@ -1151,6 +1187,12 @@ declare global {
         prototype: HTMLPTableBodyElement;
         new (): HTMLPTableBodyElement;
     };
+    interface HTMLPTableColumnElement extends Components.PTableColumn, HTMLStencilElement {
+    }
+    var HTMLPTableColumnElement: {
+        prototype: HTMLPTableColumnElement;
+        new (): HTMLPTableColumnElement;
+    };
     interface HTMLPTableContainerElement extends Components.PTableContainer, HTMLStencilElement {
     }
     var HTMLPTableContainerElement: {
@@ -1237,6 +1279,7 @@ declare global {
         "p-tab-item": HTMLPTabItemElement;
         "p-table": HTMLPTableElement;
         "p-table-body": HTMLPTableBodyElement;
+        "p-table-column": HTMLPTableColumnElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
         "p-table-footer": HTMLPTableFooterElement;
@@ -1989,6 +2032,40 @@ declare namespace LocalJSX {
     }
     interface PTableBody {
     }
+    interface PTableColumn {
+        /**
+          * The checkbox to show
+         */
+        "checkbox"?: any;
+        /**
+          * The definition of the table column
+         */
+        "definition"?: TableDefinition;
+        /**
+          * The index of the column
+         */
+        "index"?: number;
+        /**
+          * The item in question
+         */
+        "item"?: any;
+        /**
+          * The index of the row
+         */
+        "rowIndex"?: number;
+        /**
+          * The template to show
+         */
+        "template"?: TableDefinitionTemplateFunc;
+        /**
+          * The value of the column
+         */
+        "value"?: any;
+        /**
+          * The variant of the column
+         */
+        "variant"?: 'default' | 'loading' | 'header';
+    }
     interface PTableContainer {
     }
     interface PTableDefinition {
@@ -2013,13 +2090,13 @@ declare namespace LocalJSX {
          */
         "sizes"?: 'auto' | number | TableDefinitionSizes;
         /**
-          * The template for the data view
-         */
-        "template"?: TableDefinitionTemplateFunc;
-        /**
           * The type of the column
          */
         "type"?: 'td' | 'th';
+        /**
+          * Wether the column should use the slot
+         */
+        "useSlot"?: boolean;
     }
     interface PTableFooter {
         /**
@@ -2226,6 +2303,7 @@ declare namespace LocalJSX {
         "p-tab-item": PTabItem;
         "p-table": PTable;
         "p-table-body": PTableBody;
+        "p-table-column": PTableColumn;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
         "p-table-footer": PTableFooter;
@@ -2282,6 +2360,7 @@ declare module "@stencil/core" {
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-table": LocalJSX.PTable & JSXBase.HTMLAttributes<HTMLPTableElement>;
             "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
+            "p-table-column": LocalJSX.PTableColumn & JSXBase.HTMLAttributes<HTMLPTableColumnElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;
             "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;

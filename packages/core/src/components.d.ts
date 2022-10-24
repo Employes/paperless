@@ -686,8 +686,6 @@ export namespace Components {
          */
         "total": number;
     }
-    interface PTableBody {
-    }
     interface PTableColumn {
         /**
           * The checkbox to show
@@ -1181,12 +1179,6 @@ declare global {
         prototype: HTMLPTableElement;
         new (): HTMLPTableElement;
     };
-    interface HTMLPTableBodyElement extends Components.PTableBody, HTMLStencilElement {
-    }
-    var HTMLPTableBodyElement: {
-        prototype: HTMLPTableBodyElement;
-        new (): HTMLPTableBodyElement;
-    };
     interface HTMLPTableColumnElement extends Components.PTableColumn, HTMLStencilElement {
     }
     var HTMLPTableColumnElement: {
@@ -1278,7 +1270,6 @@ declare global {
         "p-tab-group": HTMLPTabGroupElement;
         "p-tab-item": HTMLPTabItemElement;
         "p-table": HTMLPTableElement;
-        "p-table-body": HTMLPTableBodyElement;
         "p-table-column": HTMLPTableColumnElement;
         "p-table-container": HTMLPTableContainerElement;
         "p-table-definition": HTMLPTableDefinitionElement;
@@ -2030,8 +2021,6 @@ declare namespace LocalJSX {
          */
         "total": number;
     }
-    interface PTableBody {
-    }
     interface PTableColumn {
         /**
           * The checkbox to show
@@ -2302,7 +2291,6 @@ declare namespace LocalJSX {
         "p-tab-group": PTabGroup;
         "p-tab-item": PTabItem;
         "p-table": PTable;
-        "p-table-body": PTableBody;
         "p-table-column": PTableColumn;
         "p-table-container": PTableContainer;
         "p-table-definition": PTableDefinition;
@@ -2359,7 +2347,6 @@ declare module "@stencil/core" {
             "p-tab-group": LocalJSX.PTabGroup & JSXBase.HTMLAttributes<HTMLPTabGroupElement>;
             "p-tab-item": LocalJSX.PTabItem & JSXBase.HTMLAttributes<HTMLPTabItemElement>;
             "p-table": LocalJSX.PTable & JSXBase.HTMLAttributes<HTMLPTableElement>;
-            "p-table-body": LocalJSX.PTableBody & JSXBase.HTMLAttributes<HTMLPTableBodyElement>;
             "p-table-column": LocalJSX.PTableColumn & JSXBase.HTMLAttributes<HTMLPTableColumnElement>;
             "p-table-container": LocalJSX.PTableContainer & JSXBase.HTMLAttributes<HTMLPTableContainerElement>;
             "p-table-definition": LocalJSX.PTableDefinition & JSXBase.HTMLAttributes<HTMLPTableDefinitionElement>;

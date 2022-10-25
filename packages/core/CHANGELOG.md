@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.167](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.166...v0.1.0-alpha.167) (2022-10-25)
+
+
+### Bug Fixes
+
+* **Core:** css incorrect usage of `:host` ([0164b70](https://github.com/ionic-team/stencil-component-starter/commit/0164b702e378a04909ce669d0af7962ab8c33b4c))
+
+
+
+
+
 # [0.1.0-alpha.166](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.165...v0.1.0-alpha.166) (2022-10-24)
 
 

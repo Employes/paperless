@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.168](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.167...v0.1.0-alpha.168) (2022-10-25)
+
+
+### Bug Fixes
+
+* **Molecules/Table Row:** css incorrect usage of `:host` ([d474971](https://github.com/ionic-team/stencil-component-starter/commit/d474971ea8792083ba730b88761c94536afa22a3))
+
+
+
+
+
 # [0.1.0-alpha.167](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.166...v0.1.0-alpha.167) (2022-10-25)
 
 

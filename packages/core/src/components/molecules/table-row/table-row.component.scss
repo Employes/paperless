@@ -6,18 +6,18 @@
     .content {
         @apply flex flex-nowrap justify-between gap-4 w-full items-center py-6;
     }
-}
 
-:host(.variant-header) {
-    @apply bg-mystic-light;
-    @apply text-xs font-semibold uppercase text-storm-vague;
-    @apply border-y border-solid border-y-mystic-dark #{!important};
+    &.variant-header {
+        @apply bg-mystic-light;
+        @apply text-xs font-semibold uppercase text-storm-vague;
+        @apply border-y border-solid border-y-mystic-dark #{!important};
 
-    .content {
-        @apply py-2;
+        .content {
+            @apply py-2;
+        }
     }
-}
 
-:host(.enable-hover:hover) {
-    @apply bg-indigo-light cursor-pointer;
+    &.enable-hover:hover {
+        @apply bg-indigo-light cursor-pointer;
+    }
 }

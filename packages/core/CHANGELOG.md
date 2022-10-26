@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.169](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.168...v0.1.0-alpha.169) (2022-10-26)
+
+
+### Features
+
+* **Atoms/Card Body:** Add 1.5rem vertical padding ([f33e0a8](https://github.com/ionic-team/stencil-component-starter/commit/f33e0a848199a7570246c2d072eda7955e51f1f9))
+
+
+
+
+
 # [0.1.0-alpha.168](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.167...v0.1.0-alpha.168) (2022-10-25)
 
 

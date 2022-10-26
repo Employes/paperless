@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.170](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.169...v0.1.0-alpha.170) (2022-10-26)
+
+
+### Features
+
+* **Atoms/Avatar:** Add xlarge size ([51906a4](https://github.com/ionic-team/stencil-component-starter/commit/51906a41b267c37119af9cf3aeac090d382dc150))
+
+
+
+
+
 # [0.1.0-alpha.169](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.168...v0.1.0-alpha.169) (2022-10-26)
 
 

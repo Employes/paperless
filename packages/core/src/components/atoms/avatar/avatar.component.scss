@@ -17,6 +17,10 @@ p-avatar {
         @apply w-16 h-16;
     }
 
+    &[size='xlarge'] > img {
+        @apply w-[6.5rem] h-[6.5rem];
+    }
+
     &[variant='company'] {
         > img {
             @apply rounded;

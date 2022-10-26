@@ -14,7 +14,8 @@ export class Avatar {
     /**
      * The size of the avatar
      */
-    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
+    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' | 'xlarge' =
+        'medium';
 
     /**
      * The default image to show on errors

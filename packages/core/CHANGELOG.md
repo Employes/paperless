@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.178](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.177...v0.1.0-alpha.178) (2022-10-28)
+
+
+### Bug Fixes
+
+* Remove shadow dom ([9274156](https://github.com/ionic-team/stencil-component-starter/commit/927415635e3f6b5adeb6c1a891419bcd59dec30b))
+
+
+
+
+
 # [0.1.0-alpha.177](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.175...v0.1.0-alpha.177) (2022-10-28)
 
 

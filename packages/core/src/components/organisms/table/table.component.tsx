@@ -83,6 +83,11 @@ export class Table {
      */
     @Event() rowDeselected: EventEmitter<any>;
 
+    /**
+     * Event when the table has rendered
+     */
+    @Event() hasRendered: EventEmitter<number>;
+
     /** START HEADER */
     /**
      * Quick filters to show
@@ -219,6 +224,10 @@ export class Table {
     componentWillLoad() {
         this._parseItems(this.items);
         this._generateColumns();
+    }
+
+    componentDidRender() {
+        this.hasRendered.emit();
     }
 
     render() {

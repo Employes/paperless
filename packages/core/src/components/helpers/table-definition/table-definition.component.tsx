@@ -3,7 +3,6 @@ import { TableDefinitionSizes } from '../../../types/table';
 
 @Component({
     tag: 'p-table-definition',
-    shadow: true,
 })
 export class TableDefinition {
     /**

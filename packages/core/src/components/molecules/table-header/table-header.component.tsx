@@ -22,7 +22,6 @@ export type buttonTemplateFunc = (amount: number) => string;
 @Component({
     tag: 'p-table-header',
     styleUrl: 'table-header.component.scss',
-    shadow: true,
 })
 export class TableHeader {
     /**

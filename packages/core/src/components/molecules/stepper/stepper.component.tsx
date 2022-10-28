@@ -70,28 +70,5 @@ export class Stepper {
         }
 
         return elements;
-
-        // return this._el
-        //     .querySelectorAll('p-stepper-step')
-        //     .map((child: any, index) => {
-        //         return (
-        //             <>
-        //                 {index > 0 && (
-        //                     <div
-        //                         className={`flex-auto transform ${
-        //                             direction === 'horizontal'
-        //                                 ? 'border-t-2 mb-3 -translate-y-1/2'
-        //                                 : 'border-r-2 ml-2 -translate-x-1/2'
-        //                         } transition duration-500 ease-in-out ${
-        //                             index <= activeStep
-        //                                 ? 'border-indigo'
-        //                                 : 'border-mystic-dark'
-        //                         }`}
-        //                     ></div>
-        //                 )}
-        //                 {child}
-        //             </>
-        //         );
-        //     });
     }
 }

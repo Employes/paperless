@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.171](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.170...v0.1.0-alpha.171) (2022-10-28)
+
+
+### Features
+
+* **Atoms/Table Container:** Enable shadow dom ([a1c96c6](https://github.com/ionic-team/stencil-component-starter/commit/a1c96c62b408843c8a5f2540901e910fa8beb9f4))
+* **Molecules/Table Column:** Enable shadow dom ([5dc02d2](https://github.com/ionic-team/stencil-component-starter/commit/5dc02d26afa95f165d628502ed1338b85eb68a26))
+* **Molecules/Table Column:** Make sure we render ([7630b73](https://github.com/ionic-team/stencil-component-starter/commit/7630b73df063376ccd707d7f4759c77a8da9c742))
+* **Molecules/Table Footer:** Enable shadow dom ([51545da](https://github.com/ionic-team/stencil-component-starter/commit/51545dabef228aed30123ca6ac7ba8753d236fb8))
+* **Molecules/Table Header:** Enable shadow dom ([98e7bfb](https://github.com/ionic-team/stencil-component-starter/commit/98e7bfb4008507a266bd65e782df2623268858b6))
+* **Molecules/Table Row:** Enable shadow dom ([0758e4a](https://github.com/ionic-team/stencil-component-starter/commit/0758e4a31610c557460f5ddee21388afa442a6d2))
+* **Organisms/Table:** Enable shadow dom ([a892265](https://github.com/ionic-team/stencil-component-starter/commit/a892265b5618b4e708f2730bf7c22458e39e3968))
+
+
+
+
+
 # [0.1.0-alpha.170](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.169...v0.1.0-alpha.170) (2022-10-26)
 
 

@@ -3,6 +3,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 @Component({
     tag: 'p-table-row',
     styleUrl: 'table-row.component.scss',
+    shadow: true,
 })
 export class TableRow {
     /**

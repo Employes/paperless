@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.174](https://github.com/employes/paperless/compare/v0.1.0-alpha.173...v0.1.0-alpha.174) (2022-10-28)
+
+
+### Bug Fixes
+
+* Duplicate versions in npm ([3ed8c6a](https://github.com/employes/paperless/commit/3ed8c6ab288d5e837c991a7267a9015c276447d1))
+
+
+### Reverts
+
+* Revert "fix(CI): Only publish changed packages" ([2084502](https://github.com/employes/paperless/commit/20845020c437afe62b1047bbd7dcab80f12f5a0e))
+
+
+
+
+
 # [0.1.0-alpha.173](https://github.com/employes/paperless/compare/v0.1.0-alpha.172...v0.1.0-alpha.173) (2022-10-28)
 
 

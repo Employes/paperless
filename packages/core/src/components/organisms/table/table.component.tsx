@@ -8,20 +8,20 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
 import { TableDefinition } from '../../helpers/table-definition/table-definition.component';
 import {
     defaultSize,
-    defaultSizeOptions,
+    defaultSizeOptions
 } from '../../molecules/page-size-select/constants';
 import { templateFunc } from '../../molecules/page-size-select/page-size-select.component';
 
 @Component({
     tag: 'p-table',
     styleUrl: 'table.component.scss',
-    shadow: false,
+    shadow: true
 })
 export class Table {
     /**

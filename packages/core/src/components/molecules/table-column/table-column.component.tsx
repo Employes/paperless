@@ -9,6 +9,7 @@ import { TableDefinition } from '../../helpers/table-definition/table-definition
 @Component({
     tag: 'p-table-column',
     styleUrl: 'table-column.component.scss',
+    shadow: true,
 })
 export class TableColumn {
     /**

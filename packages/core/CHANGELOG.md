@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.180](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.178...v0.1.0-alpha.180) (2022-10-28)
+
+
+### Bug Fixes
+
+* lerna force publish ([aea4935](https://github.com/ionic-team/stencil-component-starter/commit/aea4935dae31278fc51c97265dea12748ef1f520))
+
+
+
+
+
 # [0.1.0-alpha.178](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.177...v0.1.0-alpha.178) (2022-10-28)
 
 

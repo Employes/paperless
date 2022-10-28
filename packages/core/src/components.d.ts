@@ -44,7 +44,7 @@ export namespace Components {
         /**
           * The size of the avatar
          */
-        "size": 'small' | 'medium' | 'large';
+        "size": 'small' | 'medium' | 'large' | 'xlarge';
         /**
           * The image used for the avatar
          */
@@ -1311,7 +1311,7 @@ declare namespace LocalJSX {
         /**
           * The size of the avatar
          */
-        "size"?: 'small' | 'medium' | 'large';
+        "size"?: 'small' | 'medium' | 'large' | 'xlarge';
         /**
           * The image used for the avatar
          */

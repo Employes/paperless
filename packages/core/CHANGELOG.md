@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.181](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.180...v0.1.0-alpha.181) (2022-10-28)
+
+
+### Features
+
+* **Organisms/Table:** Added has rendered event ([4611389](https://github.com/ionic-team/stencil-component-starter/commit/46113898efb37f844e4f50686f124f46c97372e9))
+
+
+
+
+
 # [0.1.0-alpha.180](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.178...v0.1.0-alpha.180) (2022-10-28)
 
 

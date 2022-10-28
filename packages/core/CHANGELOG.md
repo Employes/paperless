@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.175](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.174...v0.1.0-alpha.175) (2022-10-28)
+
+
+### Features
+
+* **Core:** exclude table components from generating angular ([d8ea7e8](https://github.com/ionic-team/stencil-component-starter/commit/d8ea7e86bbd136d497ac8b5bf77bda236dbd1f8f))
+
+
+
+
+
 # [0.1.0-alpha.173](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.172...v0.1.0-alpha.173) (2022-10-28)
 
 

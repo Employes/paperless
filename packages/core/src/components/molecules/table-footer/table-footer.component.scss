@@ -1,4 +1,4 @@
-p-table-footer {
+:host {
     @apply grid grid-cols-1 gap-4;
     @apply w-full;
     @apply p-6;
@@ -23,12 +23,12 @@ p-table-footer {
             @apply justify-self-end col-start-3;
         }
     }
+}
 
-    &.page-size-disabled.export-disabled {
-        @apply grid-cols-1;
+:host(.page-size-disabled.export-disabled) {
+    @apply grid-cols-1;
 
-        > p-pagination {
-            @apply col-start-1;
-        }
+    > p-pagination {
+        @apply col-start-1;
     }
 }

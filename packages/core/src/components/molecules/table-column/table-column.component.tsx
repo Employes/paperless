@@ -71,6 +71,7 @@ export class TableColumn {
     }
 
     render() {
+        console.log('Table column render');
         return (
             <Host
                 class={{

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.184](https://github.com/employes/paperless/compare/v0.1.0-alpha.183...v0.1.0-alpha.184) (2022-10-31)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Use direct child for slot query selector ([3ae6dfd](https://github.com/employes/paperless/commit/3ae6dfdd21a2da4830a058f9a96cbf1cf034ec95))
+* **Molecules/Profile:** Use direct child for slot query selector ([ae1e924](https://github.com/employes/paperless/commit/ae1e924a4655267836388845e5018ce507458f29))
+* **Organisms/Modal:** Use direct child for slot query selector ([075a799](https://github.com/employes/paperless/commit/075a7999296dd63d1a183b52d69ebb48e0f1f10c))
+
+
+
+
+
 # [0.1.0-alpha.183](https://github.com/employes/paperless/compare/v0.1.0-alpha.182...v0.1.0-alpha.183) (2022-10-31)
 
 

@@ -54,9 +54,11 @@ export class Modal {
     @Element() private _el: HTMLElement;
 
     private _hasFooterSlot = false;
+    private _hasHeaderSlot = false;
 
     componentWillLoad() {
         this._hasFooterSlot = !!this._el.querySelector('[slot="footer"]');
+        this._hasHeaderSlot = !!this._el.querySelector('[slot="header"]');
     }
 
     render() {
@@ -72,12 +74,14 @@ export class Modal {
             <Host class="p-modal">
                 <p-modal-backdrop>
                     <p-modal-container size={this.size}>
-                        {(this.header || headerContent) && (
+                        {(this.header?.length || this._hasHeaderSlot) && (
                             <p-modal-header
                                 show-mobile-close={this.showMobileClose}
                                 onClose={() => this.close.emit()}
                             >
-                                {this.header ? this.header : headerContent}
+                                {this._hasHeaderSlot
+                                    ? headerContent
+                                    : this.header}
                             </p-modal-header>
                         )}
                         <p-modal-body variant={this.variant}>

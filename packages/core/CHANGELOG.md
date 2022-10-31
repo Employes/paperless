@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.183](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.182...v0.1.0-alpha.183) (2022-10-31)
+
+
+### Bug Fixes
+
+* **Organsisms/Modal:** Correctly check for header content ([0c336b8](https://github.com/ionic-team/stencil-component-starter/commit/0c336b8bb459a3051b8a924ab5c1aedf9235d25a))
+
+
+
+
+
 # [0.1.0-alpha.182](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.181...v0.1.0-alpha.182) (2022-10-31)
 
 

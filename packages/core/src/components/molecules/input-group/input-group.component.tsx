@@ -84,11 +84,21 @@ export class InputGroup {
     }
 
     render() {
-        const hasHelperSlot = !!this._el.querySelector('[slot="helper"]');
-        const hasLabelSlot = !!this._el.querySelector('[slot="label"]');
-        const hasPrefixSlot = !!this._el.querySelector('[slot="prefix"]');
-        const hasSuffixSlot = !!this._el.querySelector('[slot="suffix"]');
-        const hasHeaderSlot = !!this._el.querySelector('[slot="header"]');
+        const hasHelperSlot = !!this._el.querySelector(
+            ':scope > [slot="helper"]'
+        );
+        const hasLabelSlot = !!this._el.querySelector(
+            ':scope > [slot="label"]'
+        );
+        const hasPrefixSlot = !!this._el.querySelector(
+            ':scope > [slot="prefix"]'
+        );
+        const hasSuffixSlot = !!this._el.querySelector(
+            ':scope > [slot="suffix"]'
+        );
+        const hasHeaderSlot = !!this._el.querySelector(
+            ':scope > [slot="header"]'
+        );
 
         const helper = hasHelperSlot ? <slot name="helper" /> : this.helper;
         const label = hasLabelSlot ? <slot name="label" /> : this.label;
@@ -184,7 +194,7 @@ export class InputGroup {
     }
 
     private _setInputClasses() {
-        const input = this._el.querySelector('[slot="input"]');
+        const input = this._el.querySelector(':scope > [slot="input"]');
 
         if (!input.classList.contains('p-input')) {
             input.classList.add('p-input');

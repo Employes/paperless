@@ -28,7 +28,9 @@ export class Profile {
     }
 
     render() {
-        const hasDropdownSlot = !!this._el.querySelector('[slot="dropdown"]');
+        const hasDropdownSlot = !!this._el.querySelector(
+            ':scope > [slot="dropdown"]'
+        );
         const content = this._getContent(hasDropdownSlot);
         return (
             <Host

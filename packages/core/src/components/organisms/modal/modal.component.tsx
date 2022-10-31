@@ -26,7 +26,7 @@ export class Modal {
     /**
      * The Header of the modal
      */
-    @Prop() header: string;
+    @Prop() header?: string;
 
     /**
      * Wether to show the modal or not
@@ -72,12 +72,14 @@ export class Modal {
             <Host class="p-modal">
                 <p-modal-backdrop>
                     <p-modal-container size={this.size}>
-                        <p-modal-header
-                            show-mobile-close={this.showMobileClose}
-                            onClose={() => this.close.emit()}
-                        >
-                            {this.header ? this.header : headerContent}
-                        </p-modal-header>
+                        {(this.header || headerContent) && (
+                            <p-modal-header
+                                show-mobile-close={this.showMobileClose}
+                                onClose={() => this.close.emit()}
+                            >
+                                {this.header ? this.header : headerContent}
+                            </p-modal-header>
+                        )}
                         <p-modal-body variant={this.variant}>
                             {bodyContent}
                         </p-modal-body>

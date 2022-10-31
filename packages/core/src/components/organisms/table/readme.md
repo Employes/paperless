@@ -49,6 +49,7 @@
 | `edit`               | Event when the edit button is clicked          | `CustomEvent<null>`          |
 | `export`             | Event whenever the page changes                | `CustomEvent<number>`        |
 | `filter`             | Event when the filter button is clicked        | `CustomEvent<null>`          |
+| `hasRendered`        | Event when the table has rendered              | `CustomEvent<number>`        |
 | `pageChange`         | Event whenever the page changes                | `CustomEvent<number>`        |
 | `pageSizeChange`     | Event whenever the page changes                | `CustomEvent<number>`        |
 | `queryChange`        | Event when the query changes                   | `CustomEvent<string>`        |

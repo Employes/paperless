@@ -350,7 +350,7 @@ export namespace Components {
         /**
           * The Header of the modal
          */
-        "header": string;
+        "header"?: string;
         /**
           * Wether to show the modal or not
          */
@@ -1952,6 +1952,10 @@ declare namespace LocalJSX {
           * Event when the filter button is clicked
          */
         "onFilter"?: (event: PTableCustomEvent<null>) => void;
+        /**
+          * Event when the table has rendered
+         */
+        "onHasRendered"?: (event: PTableCustomEvent<number>) => void;
         /**
           * Event whenever the page changes
          */

@@ -11,6 +11,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property           | Attribute            | Description                                      | Type                           | Default     |
@@ -22,24 +23,25 @@
 | `size`             | `size`               | The size of the modal container                  | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
 | `variant`          | `variant`            | The variant of the modal body                    | `"default" \| "table"`         | `'default'` |
 
+
 ## Events
 
 | Event   | Description       | Type                      |
 | ------- | ----------------- | ------------------------- |
 | `close` | Close click event | `CustomEvent<MouseEvent>` |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [p-modal-backdrop](../../atoms/modal-backdrop)
--   [p-modal-container](../../atoms/modal-container)
--   [p-modal-header](../../atoms/modal-header)
--   [p-modal-body](../../atoms/modal-body)
--   [p-modal-footer](../../atoms/modal-footer)
+- [p-modal-backdrop](../../atoms/modal-backdrop)
+- [p-modal-container](../../atoms/modal-container)
+- [p-modal-header](../../atoms/modal-header)
+- [p-modal-body](../../atoms/modal-body)
+- [p-modal-footer](../../atoms/modal-footer)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-modal --> p-modal-backdrop
@@ -52,6 +54,6 @@ graph TD;
   style p-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

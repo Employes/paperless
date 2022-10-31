@@ -57,8 +57,12 @@ export class Modal {
     private _hasHeaderSlot = false;
 
     componentWillLoad() {
-        this._hasFooterSlot = !!this._el.querySelector('[slot="footer"]');
-        this._hasHeaderSlot = !!this._el.querySelector('[slot="header"]');
+        this._hasFooterSlot = !!this._el.querySelector(
+            ':scope > [slot="footer"]'
+        );
+        this._hasHeaderSlot = !!this._el.querySelector(
+            ':scope > [slot="header"]'
+        );
     }
 
     render() {

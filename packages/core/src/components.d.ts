@@ -314,6 +314,23 @@ export namespace Components {
          */
         "suffix": string;
     }
+    interface PLabel {
+        /**
+          * Wether to add the circle or not
+         */
+        "circle": boolean;
+        /**
+          * The size of the label
+         */
+        "size": 'small' | 'default';
+        /**
+          * Variant of the label
+         */
+        "variant": | 'positive'
+        | 'unbiased'
+        | 'negative'
+        | 'info';
+    }
     interface PLayout {
         /**
           * Variant of the layout
@@ -838,19 +855,6 @@ export namespace Components {
          */
         "variant": 'default' | 'header';
     }
-    interface PTag {
-        /**
-          * Wether to add the circle or not
-         */
-        "circle": boolean;
-        /**
-          * Variant of the tag
-         */
-        "variant": | 'positive'
-        | 'unbiased'
-        | 'negative'
-        | 'info';
-    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -1035,6 +1039,12 @@ declare global {
         prototype: HTMLPInputGroupElement;
         new (): HTMLPInputGroupElement;
     };
+    interface HTMLPLabelElement extends Components.PLabel, HTMLStencilElement {
+    }
+    var HTMLPLabelElement: {
+        prototype: HTMLPLabelElement;
+        new (): HTMLPLabelElement;
+    };
     interface HTMLPLayoutElement extends Components.PLayout, HTMLStencilElement {
     }
     var HTMLPLayoutElement: {
@@ -1215,12 +1225,6 @@ declare global {
         prototype: HTMLPTableRowElement;
         new (): HTMLPTableRowElement;
     };
-    interface HTMLPTagElement extends Components.PTag, HTMLStencilElement {
-    }
-    var HTMLPTagElement: {
-        prototype: HTMLPTagElement;
-        new (): HTMLPTagElement;
-    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -1246,6 +1250,7 @@ declare global {
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
         "p-input-group": HTMLPInputGroupElement;
+        "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal": HTMLPModalElement;
@@ -1276,7 +1281,6 @@ declare global {
         "p-table-footer": HTMLPTableFooterElement;
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
-        "p-tag": HTMLPTagElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -1588,6 +1592,23 @@ declare namespace LocalJSX {
           * The suffix of the input group
          */
         "suffix"?: string;
+    }
+    interface PLabel {
+        /**
+          * Wether to add the circle or not
+         */
+        "circle"?: boolean;
+        /**
+          * The size of the label
+         */
+        "size"?: 'small' | 'default';
+        /**
+          * Variant of the label
+         */
+        "variant"?: | 'positive'
+        | 'unbiased'
+        | 'negative'
+        | 'info';
     }
     interface PLayout {
         /**
@@ -2209,19 +2230,6 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'header';
     }
-    interface PTag {
-        /**
-          * Wether to add the circle or not
-         */
-        "circle"?: boolean;
-        /**
-          * Variant of the tag
-         */
-        "variant"?: | 'positive'
-        | 'unbiased'
-        | 'negative'
-        | 'info';
-    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -2271,6 +2279,7 @@ declare namespace LocalJSX {
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
         "p-input-group": PInputGroup;
+        "p-label": PLabel;
         "p-layout": PLayout;
         "p-loader": PLoader;
         "p-modal": PModal;
@@ -2301,7 +2310,6 @@ declare namespace LocalJSX {
         "p-table-footer": PTableFooter;
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
-        "p-tag": PTag;
         "p-tooltip": PTooltip;
     }
 }
@@ -2327,6 +2335,7 @@ declare module "@stencil/core" {
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
             "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
+            "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
@@ -2357,7 +2366,6 @@ declare module "@stencil/core" {
             "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
-            "p-tag": LocalJSX.PTag & JSXBase.HTMLAttributes<HTMLPTagElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

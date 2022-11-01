@@ -1,0 +1,91 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Label`} />
+
+<Docs />
+
+# Examples
+
+## Variants
+
+### Info
+
+<Canvas>
+    <div class="flex">
+        <p-label>Info</p-label>
+    </div>
+</Canvas>
+
+### Positive
+
+<Canvas>
+    <div class="flex">
+        <p-label variant="positive">Positive</p-label>
+    </div>
+</Canvas>
+
+### Unbiased
+
+<Canvas>
+    <div class="flex">
+        <p-label variant="unbiased">Unbiased</p-label>
+    </div>
+</Canvas>
+
+### Negative
+
+<Canvas>
+    <div class="flex">
+        <p-label variant="negative">Negative</p-label>
+    </div>
+</Canvas>
+
+## Size
+
+### Default
+
+### Default
+
+<Canvas>
+    <div class="flex">
+        <p-label>Info</p-label>
+    </div>
+</Canvas>
+
+### Small
+
+<Canvas>
+    <div class="flex">
+        <p-label size="small">Info</p-label>
+    </div>
+</Canvas>
+
+### Small with number and no circle
+
+<Canvas>
+    <div class="flex">
+        <p-label size="small" circle={false} variant="negative">
+            2
+        </p-label>
+    </div>
+</Canvas>
+
+## Circle
+
+### Default
+
+<Canvas>
+    <div class="flex">
+        <p-label>With a circle</p-label>
+    </div>
+</Canvas>
+
+### Without
+
+<Canvas>
+    <div class="flex">
+        <p-label circle={false}>Without a circle</p-label>
+    </div>
+</Canvas>

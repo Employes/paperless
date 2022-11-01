@@ -1,17 +1,17 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Tag } from '../tag.component';
+import { Label } from '../label.component';
 
-describe('p-tag', () => {
+describe('p-label', () => {
     it('renders', async () => {
         const { root } = await newSpecPage({
-            components: [Tag],
-            html: '<p-tag></p-tag>',
+            components: [Label],
+            html: '<p-label></p-label>',
         });
         expect(root).toEqualHtml(`
-      <p-tag class="p-tag">
+      <p-label class="p-label">
         <mock:shadow-root>
         </mock:shadow-root>
-      </p-tag>
+      </p-label>
     `);
     });
 });

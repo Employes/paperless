@@ -179,13 +179,14 @@ export class TableHeader {
                         >
                             {this.filterButtonTemplate()}
                             {this.selectedFiltersAmount && (
-                                <p-tag
+                                <p-label
+                                    size="small"
                                     variant="negative"
                                     circle={false}
                                     class="ml-1"
                                 >
                                     {this.selectedFiltersAmount}
-                                </p-tag>
+                                </p-label>
                             )}
                         </p-button>
                     )}

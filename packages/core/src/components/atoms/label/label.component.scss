@@ -1,7 +1,7 @@
 :host {
     @apply flex gap-1 items-center px-3 rounded;
     @apply h-[1.625rem];
-    @apply text-xs font-semibold;
+    @apply text-sm font-semibold;
 
     .circle {
         @apply hidden rounded-round h-2 w-2;
@@ -56,4 +56,10 @@
     .circle {
         @apply bg-negative;
     }
+}
+
+:host([size='small']) {
+    @apply h-4 min-w-[1rem] px-1 py-[1px];
+    @apply text-xs justify-center items-baseline;
+    @apply leading-3;
 }

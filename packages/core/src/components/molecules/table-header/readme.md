@@ -50,7 +50,7 @@
 - [p-segment-item](../../atoms/segment-item)
 - [p-input-group](../input-group)
 - [p-button](../../atoms/button)
-- [p-tag](../../atoms/tag)
+- [p-label](../../atoms/label)
 
 ### Graph
 ```mermaid
@@ -59,7 +59,7 @@ graph TD;
   p-table-header --> p-segment-item
   p-table-header --> p-input-group
   p-table-header --> p-button
-  p-table-header --> p-tag
+  p-table-header --> p-label
   p-segment-item --> p-icon
   p-input-group --> p-helper
   p-input-group --> p-icon

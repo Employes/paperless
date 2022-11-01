@@ -8,6 +8,7 @@ import {
     Host,
     Listen,
     Prop,
+    Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils/child-of';
 
@@ -31,6 +32,11 @@ export class Dropdown {
      * Wether to show the dropdown menu
      */
     @Prop() show: boolean = false;
+
+    /**
+     * Wether to automatically calculate the width of the menu based on the trigger
+     */
+    @Prop() calculateWidth: boolean = false;
 
     /**
      * Wether to automatically close the dropdown menu after clicking inside
@@ -64,13 +70,11 @@ export class Dropdown {
 
     private _loaded = false;
     private _popper: any;
+    private _trigger: HTMLElement;
     private _menu: HTMLElement;
 
     componentShouldUpdate() {
         this._setOptions();
-        if (this._loaded && this.show) {
-            this._show();
-        }
     }
 
     render() {
@@ -78,6 +82,7 @@ export class Dropdown {
             <Host class="p-dropdown">
                 <div
                     class="trigger"
+                    ref={(ref) => (this._trigger = ref)}
                     onClick={() => this._triggerClickHandler()}
                 >
                     <slot
@@ -87,6 +92,7 @@ export class Dropdown {
                 </div>
                 <p-dropdown-menu-container
                     role="popover"
+                    maxWidth={!this.calculateWidth}
                     ref={(el) => this._load(el)}
                     onClick={() => this._containerClickHandler()}
                 >
@@ -112,6 +118,32 @@ export class Dropdown {
         }
     }
 
+    @Watch('show')
+    protected onShowChange(show) {
+        if (!this._loaded) {
+            return;
+        }
+
+        if (!show) {
+            this._hide();
+            return;
+        }
+
+        this._show();
+    }
+
+    @Listen('click', { target: 'document', capture: true })
+    protected documentClickHandler({ target }) {
+        if (
+            !this._menu.hasAttribute('data-show') ||
+            childOf(target, this._el)
+        ) {
+            return;
+        }
+
+        this._hide();
+    }
+
     private _containerClickHandler() {
         if (this.insideClick) {
             return;
@@ -133,18 +165,6 @@ export class Dropdown {
         }
 
         this._show();
-    }
-
-    @Listen('click', { target: 'document', capture: true })
-    protected documentClickHandler({ target }) {
-        if (
-            !this._menu.hasAttribute('data-show') ||
-            childOf(target, this._el)
-        ) {
-            return;
-        }
-
-        this._hide();
     }
 
     private _load(popover: HTMLElement) {
@@ -187,6 +207,10 @@ export class Dropdown {
         }
 
         // Make the popover visible
+        if (this.calculateWidth) {
+            this._menu.style.width = `${this._trigger.clientWidth}px`;
+        }
+
         this._menu.setAttribute('data-show', '');
         this.isOpen.emit(true);
 

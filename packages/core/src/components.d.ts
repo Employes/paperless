@@ -180,6 +180,10 @@ export namespace Components {
     }
     interface PDropdown {
         /**
+          * Wether to automatically calculate the width of the menu based on the trigger
+         */
+        "calculateWidth": boolean;
+        /**
           * Chevron direction
          */
         "chevronDirection": 'up' | 'down';
@@ -1458,6 +1462,10 @@ declare namespace LocalJSX {
     interface PDivider {
     }
     interface PDropdown {
+        /**
+          * Wether to automatically calculate the width of the menu based on the trigger
+         */
+        "calculateWidth"?: boolean;
         /**
           * Chevron direction
          */

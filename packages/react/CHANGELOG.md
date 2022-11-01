@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.185](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.184...v0.1.0-alpha.185) (2022-11-01)
+
+
+### Features
+
+* **Atoms:** Rename tag to label & add small size ([f91f322](https://github.com/ionic-team/ionic/commit/f91f322ebf2049e15b4b12308fd2e4634632fb25))
+
+
+
+
+
 # [0.1.0-alpha.184](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.183...v0.1.0-alpha.184) (2022-10-31)
 
 **Note:** Version bump only for package @paperless/react

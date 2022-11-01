@@ -68,6 +68,16 @@ export class Select {
     @Prop() enableAutocomplete: boolean = true;
 
     /**
+     * Wether the input uses async filtering
+     */
+    @Prop() asyncFilter: boolean = false;
+
+    /**
+     * Wether to show loading items
+     */
+    @Prop() loading: boolean = false;
+
+    /**
      * Event when the query of the autocomplete changes
      */
     @Event() queryChange: EventEmitter<string>;
@@ -90,7 +100,7 @@ export class Select {
     private _inputRef: HTMLInputElement;
 
     get _items() {
-        if (!this.items) {
+        if (!this.items || this.loading) {
             return [];
         }
 
@@ -109,7 +119,7 @@ export class Select {
             }));
         }
 
-        if (this._isAutoCompleting && this.query?.length) {
+        if (this._isAutoCompleting && this.query?.length && !this.asyncFilter) {
             items = items.filter((item) => {
                 if (this.queryKey) {
                     return this._checkvalue(this.queryKey, item);
@@ -159,7 +169,6 @@ export class Select {
     render() {
         return (
             <Host class="p-select">
-                {JSON.stringify(this._showDropdown)}
                 <p-dropdown
                     disableTriggerClick={true}
                     calculateWidth={true}
@@ -186,13 +195,9 @@ export class Select {
                         />
                     </p-input-group>
                     <div slot="items">
-                        {this._items.map((item) => (
-                            <p-dropdown-menu-item
-                                onClick={() => this._selectValue(item)}
-                            >
-                                {item[this.displayKey]}
-                            </p-dropdown-menu-item>
-                        ))}
+                        {this.loading
+                            ? this._getLoadingItems()
+                            : this._getItems()}
                     </div>
                 </p-dropdown>
             </Host>
@@ -267,5 +272,21 @@ export class Select {
 
     private _checkvalue(key, item) {
         return item?.[key]?.toString()?.indexOf(this.query) >= 0;
+    }
+
+    private _getItems() {
+        return this._items.map((item) => (
+            <p-dropdown-menu-item onClick={() => this._selectValue(item)}>
+                {item[this.displayKey]}
+            </p-dropdown-menu-item>
+        ));
+    }
+
+    private _getLoadingItems() {
+        return [0, 0, 0].map(() => (
+            <p-dropdown-menu-item enableHover={false}>
+                <p-loader variant="ghost" class="w-full h-6 rounded" />
+            </p-dropdown-menu-item>
+        ));
     }
 }

@@ -25,6 +25,7 @@
 ### Used by
 
  - [p-button](../button)
+ - [p-select](../../molecules/select)
  - [p-table](../../organisms/table)
  - [p-table-column](../../molecules/table-column)
 
@@ -32,6 +33,7 @@
 ```mermaid
 graph TD;
   p-button --> p-loader
+  p-select --> p-loader
   p-table --> p-loader
   p-table-column --> p-loader
   style p-loader fill:#f9f,stroke:#333,stroke-width:4px

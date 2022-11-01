@@ -549,6 +549,10 @@ export namespace Components {
     }
     interface PSelect {
         /**
+          * Wether the input uses async filtering
+         */
+        "asyncFilter": boolean;
+        /**
           * Wether to automatically select the first item
          */
         "autoSelectFirst": boolean;
@@ -568,6 +572,10 @@ export namespace Components {
           * The items to show in the dropdown
          */
         "items": string | any[];
+        /**
+          * Wether to show loading items
+         */
+        "loading": boolean;
         /**
           * The placeholder of the input
          */
@@ -1913,6 +1921,10 @@ declare namespace LocalJSX {
     }
     interface PSelect {
         /**
+          * Wether the input uses async filtering
+         */
+        "asyncFilter"?: boolean;
+        /**
           * Wether to automatically select the first item
          */
         "autoSelectFirst"?: boolean;
@@ -1932,6 +1944,10 @@ declare namespace LocalJSX {
           * The items to show in the dropdown
          */
         "items"?: string | any[];
+        /**
+          * Wether to show loading items
+         */
+        "loading"?: boolean;
         /**
           * Event when the query of the autocomplete changes
          */

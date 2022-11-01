@@ -15,11 +15,13 @@
 
 | Property                  | Attribute                  | Description                                       | Type              | Default     |
 | ------------------------- | -------------------------- | ------------------------------------------------- | ----------------- | ----------- |
+| `asyncFilter`             | `async-filter`             | Wether the input uses async filtering             | `boolean`         | `false`     |
 | `autoSelectFirst`         | `auto-select-first`        | Wether to automatically select the first item     | `boolean`         | `true`      |
 | `autocompletePlaceholder` | `autocomplete-placeholder` | The placeholder of the input when auto completing | `string`          | `undefined` |
 | `displayKey`              | `display-key`              | The key of the object to display                  | `string`          | `'text'`    |
 | `enableAutocomplete`      | `enable-autocomplete`      | Wether to enable autocomplete                     | `boolean`         | `true`      |
 | `items`                   | `items`                    | The items to show in the dropdown                 | `any[] \| string` | `undefined` |
+| `loading`                 | `loading`                  | Wether to show loading items                      | `boolean`         | `false`     |
 | `placeholder`             | `placeholder`              | The placeholder of the input                      | `string`          | `undefined` |
 | `query`                   | `query`                    | The current query                                 | `string`          | `undefined` |
 | `queryKey`                | `query-key`                | The key of the object to display                  | `string`          | `undefined` |
@@ -42,6 +44,7 @@
 - [p-dropdown](../dropdown)
 - [p-input-group](../input-group)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu-item)
+- [p-loader](../../atoms/loader)
 
 ### Graph
 ```mermaid
@@ -49,6 +52,7 @@ graph TD;
   p-select --> p-dropdown
   p-select --> p-input-group
   p-select --> p-dropdown-menu-item
+  p-select --> p-loader
   p-dropdown --> p-dropdown-menu-container
   p-input-group --> p-helper
   p-input-group --> p-icon

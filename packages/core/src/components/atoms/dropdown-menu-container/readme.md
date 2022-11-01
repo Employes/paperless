@@ -13,6 +13,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property   | Attribute   | Description                                 | Type      | Default |
+| ---------- | ----------- | ------------------------------------------- | --------- | ------- |
+| `maxWidth` | `max-width` | Wether the container applies it's max width | `boolean` | `true`  |
+
+
 ## Dependencies
 
 ### Used by

@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
     tag: 'p-dropdown-menu-container',
@@ -6,9 +6,18 @@ import { Component, h, Host } from '@stencil/core';
     // shadow: true,
 })
 export class DropdownMenuContainer {
+    /**
+     * Wether the container applies it's max width
+     */
+    @Prop() maxWidth: boolean = true;
+
     render() {
         return (
-            <Host class="p-dropdown-menu-container">
+            <Host
+                class={`p-dropdown-menu-container ${
+                    this.maxWidth && 'max-width'
+                }`}
+            >
                 <slot />
             </Host>
         );

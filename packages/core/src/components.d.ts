@@ -209,6 +209,10 @@ export namespace Components {
         "strategy": PositioningStrategy;
     }
     interface PDropdownMenuContainer {
+        /**
+          * Wether the container applies it's max width
+         */
+        "maxWidth": boolean;
     }
     interface PDropdownMenuItem {
         /**
@@ -1488,6 +1492,10 @@ declare namespace LocalJSX {
         "strategy"?: PositioningStrategy;
     }
     interface PDropdownMenuContainer {
+        /**
+          * Wether the container applies it's max width
+         */
+        "maxWidth"?: boolean;
     }
     interface PDropdownMenuItem {
         /**

@@ -47,6 +47,11 @@ export class InputGroup {
     @Prop() iconRotate: RotateOptions;
 
     /**
+     * Icon position
+     */
+    @Prop() iconPosition: 'start' | 'end' = 'start';
+
+    /**
      * The label of the input group
      */
     @Prop() label: string;
@@ -136,7 +141,8 @@ export class InputGroup {
                     )}
                 </div>
                 <div class="content">
-                    {(prefix || this.icon) && (
+                    {(prefix ||
+                        (this.icon && this.iconPosition === 'start')) && (
                         <div class={`prefix size-${this.size}`}>
                             {this.icon ? (
                                 <p-icon
@@ -150,7 +156,9 @@ export class InputGroup {
                             )}
                         </div>
                     )}
-                    {(suffix || errorAndErrorIsNotBoolean) && (
+                    {(suffix ||
+                        errorAndErrorIsNotBoolean ||
+                        (this.icon && this.iconPosition === 'end')) && (
                         <div class={`suffix size-${this.size}`}>
                             {errorAndErrorIsNotBoolean ? (
                                 <p-tooltip
@@ -171,6 +179,13 @@ export class InputGroup {
                                         variant="explanation"
                                     />
                                 </p-tooltip>
+                            ) : this.icon ? (
+                                <p-icon
+                                    class="flex"
+                                    variant={this.icon}
+                                    rotate={this.iconRotate}
+                                    flip={this.iconFlip}
+                                />
                             ) : (
                                 suffix
                             )}

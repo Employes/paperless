@@ -302,6 +302,10 @@ export namespace Components {
          */
         "iconFlip": IconFlipOptions;
         /**
+          * Icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
           * Icon rotate
          */
         "iconRotate": RotateOptions;
@@ -1588,6 +1592,10 @@ declare namespace LocalJSX {
           * Icon flip
          */
         "iconFlip"?: IconFlipOptions;
+        /**
+          * Icon position
+         */
+        "iconPosition"?: 'start' | 'end';
         /**
           * Icon rotate
          */

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.188](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.187...v0.1.0-alpha.188) (2022-11-01)
+
+
+### Features
+
+* **Atoms/Dropdown menu item:** Add enable hover property ([04f0a80](https://github.com/ionic-team/stencil-component-starter/commit/04f0a80f094d70cb4e9c4b1c01faaf386e282c05))
+* **Molecules/Select:** Add async filter & loading   ([930ded1](https://github.com/ionic-team/stencil-component-starter/commit/930ded192c6ac8371ef6dfbce93e7a4b77578b7f))
+
+
+
+
+
 # [0.1.0-alpha.187](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.186...v0.1.0-alpha.187) (2022-11-01)
 
 

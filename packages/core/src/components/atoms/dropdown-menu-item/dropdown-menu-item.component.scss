@@ -4,7 +4,7 @@
     @apply cursor-pointer;
 }
 
-:host(:hover) {
+:host(.hover:hover) {
     @apply text-storm bg-indigo-light;
 }
 

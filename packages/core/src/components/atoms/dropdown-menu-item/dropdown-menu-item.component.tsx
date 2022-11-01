@@ -13,13 +13,22 @@ export class DropdownMenuItem {
     @Prop() active: boolean = false;
 
     /**
+     * Wether to enable the hover state
+     */
+    @Prop() enableHover: boolean = true;
+
+    /**
      * Icon of the navigation item
      */
     @Prop() icon: IconVariant;
 
     render() {
         return (
-            <Host class={`p-dropdown-menu-item ${this.active && 'active'}`}>
+            <Host
+                class={`p-dropdown-menu-item ${this.active && 'active'} ${
+                    this.enableHover && 'hover'
+                }`}
+            >
                 {this.icon && <p-icon variant={this.icon} />}
                 <slot />
             </Host>

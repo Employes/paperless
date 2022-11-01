@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.186](https://github.com/employes/paperless/compare/v0.1.0-alpha.185...v0.1.0-alpha.186) (2022-11-01)
+
+
+### Features
+
+* **Atoms/Dropdown menu container:** Add max width property ([7d9bf05](https://github.com/employes/paperless/commit/7d9bf05f47afc31200b6bc8253dee4c04da1eba1))
+* **Molecules/Dropdown:** Auto calculate container width & improve show/hide ([b5eec7d](https://github.com/employes/paperless/commit/b5eec7dc2727b2323b1ad61ea632f8499b451c5d))
+* **Molecules/Input group:** Add suffix icon ability ([4ff04a8](https://github.com/employes/paperless/commit/4ff04a8a4c7c386f61f3ce34d46e92d9010b6c6c))
+* **Molecules:** Add select component ([6c2a779](https://github.com/employes/paperless/commit/6c2a7790015f7cc578009031ee95bc2a6189a560))
+
+
+
+
+
 # [0.1.0-alpha.185](https://github.com/employes/paperless/compare/v0.1.0-alpha.184...v0.1.0-alpha.185) (2022-11-01)
 
 

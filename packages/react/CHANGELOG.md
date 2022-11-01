@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.186](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.185...v0.1.0-alpha.186) (2022-11-01)
+
+
+### Features
+
+* **Molecules:** Add select component ([6c2a779](https://github.com/ionic-team/ionic/commit/6c2a7790015f7cc578009031ee95bc2a6189a560))
+
+
+
+
+
 # [0.1.0-alpha.185](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.184...v0.1.0-alpha.185) (2022-11-01)
 
 

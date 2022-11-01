@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.187](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.186...v0.1.0-alpha.187) (2022-11-01)
+
+
+### Features
+
+* **Molecules/Select:** Improve auto hiding ([bcaa6bc](https://github.com/ionic-team/stencil-component-starter/commit/bcaa6bc24206851353a6b5f21f9c19f047b205d4))
+
+
+
+
+
 # [0.1.0-alpha.186](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.185...v0.1.0-alpha.186) (2022-11-01)
 
 

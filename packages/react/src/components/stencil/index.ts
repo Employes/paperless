@@ -43,6 +43,7 @@ export const PPaginationItem = /*@__PURE__*/createReactComponent<JSX.PPagination
 export const PProfile = /*@__PURE__*/createReactComponent<JSX.PProfile, HTMLPProfileElement>('p-profile');
 export const PSegmentContainer = /*@__PURE__*/createReactComponent<JSX.PSegmentContainer, HTMLPSegmentContainerElement>('p-segment-container');
 export const PSegmentItem = /*@__PURE__*/createReactComponent<JSX.PSegmentItem, HTMLPSegmentItemElement>('p-segment-item');
+export const PSelect = /*@__PURE__*/createReactComponent<JSX.PSelect, HTMLPSelectElement>('p-select');
 export const PSliderIndicator = /*@__PURE__*/createReactComponent<JSX.PSliderIndicator, HTMLPSliderIndicatorElement>('p-slider-indicator');
 export const PStatus = /*@__PURE__*/createReactComponent<JSX.PStatus, HTMLPStatusElement>('p-status');
 export const PStepper = /*@__PURE__*/createReactComponent<JSX.PStepper, HTMLPStepperElement>('p-stepper');

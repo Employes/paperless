@@ -73,7 +73,9 @@
     &:focus,
     &:focus-within,
     &:focus-visible,
-    &.focus {
+    &.focus,
+    &[active],
+    &.active {
         @include inputFocusState();
     }
 

@@ -543,6 +543,48 @@ export namespace Components {
          */
         "iconRotate": RotateOptions;
     }
+    interface PSelect {
+        /**
+          * Wether to automatically select the first item
+         */
+        "autoSelectFirst": boolean;
+        /**
+          * The placeholder of the input when auto completing
+         */
+        "autocompletePlaceholder": string;
+        /**
+          * The key of the object to display
+         */
+        "displayKey": string;
+        /**
+          * Wether to enable autocomplete
+         */
+        "enableAutocomplete": boolean;
+        /**
+          * The items to show in the dropdown
+         */
+        "items": string | any[];
+        /**
+          * The placeholder of the input
+         */
+        "placeholder": string;
+        /**
+          * The current query
+         */
+        "query": string;
+        /**
+          * The key of the object to display
+         */
+        "queryKey"?: string;
+        /**
+          * The current value
+         */
+        "value": any;
+        /**
+          * The key of the object to return
+         */
+        "valueKey": string;
+    }
     interface PSliderIndicator {
         /**
           * Wether the slider indicator is active
@@ -922,6 +964,10 @@ export interface PPaginationCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPPaginationElement;
 }
+export interface PSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPSelectElement;
+}
 export interface PTableCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableElement;
@@ -1153,6 +1199,12 @@ declare global {
         prototype: HTMLPSegmentItemElement;
         new (): HTMLPSegmentItemElement;
     };
+    interface HTMLPSelectElement extends Components.PSelect, HTMLStencilElement {
+    }
+    var HTMLPSelectElement: {
+        prototype: HTMLPSelectElement;
+        new (): HTMLPSelectElement;
+    };
     interface HTMLPSliderIndicatorElement extends Components.PSliderIndicator, HTMLStencilElement {
     }
     var HTMLPSliderIndicatorElement: {
@@ -1279,6 +1331,7 @@ declare global {
         "p-profile": HTMLPProfileElement;
         "p-segment-container": HTMLPSegmentContainerElement;
         "p-segment-item": HTMLPSegmentItemElement;
+        "p-select": HTMLPSelectElement;
         "p-slider-indicator": HTMLPSliderIndicatorElement;
         "p-status": HTMLPStatusElement;
         "p-stepper": HTMLPStepperElement;
@@ -1850,6 +1903,56 @@ declare namespace LocalJSX {
          */
         "iconRotate"?: RotateOptions;
     }
+    interface PSelect {
+        /**
+          * Wether to automatically select the first item
+         */
+        "autoSelectFirst"?: boolean;
+        /**
+          * The placeholder of the input when auto completing
+         */
+        "autocompletePlaceholder"?: string;
+        /**
+          * The key of the object to display
+         */
+        "displayKey"?: string;
+        /**
+          * Wether to enable autocomplete
+         */
+        "enableAutocomplete"?: boolean;
+        /**
+          * The items to show in the dropdown
+         */
+        "items"?: string | any[];
+        /**
+          * Event when the query of the autocomplete changes
+         */
+        "onQueryChange"?: (event: PSelectCustomEvent<string>) => void;
+        /**
+          * Event when the value changes
+         */
+        "onValueChange"?: (event: PSelectCustomEvent<any>) => void;
+        /**
+          * The placeholder of the input
+         */
+        "placeholder"?: string;
+        /**
+          * The current query
+         */
+        "query"?: string;
+        /**
+          * The key of the object to display
+         */
+        "queryKey"?: string;
+        /**
+          * The current value
+         */
+        "value"?: any;
+        /**
+          * The key of the object to return
+         */
+        "valueKey"?: string;
+    }
     interface PSliderIndicator {
         /**
           * Wether the slider indicator is active
@@ -2320,6 +2423,7 @@ declare namespace LocalJSX {
         "p-profile": PProfile;
         "p-segment-container": PSegmentContainer;
         "p-segment-item": PSegmentItem;
+        "p-select": PSelect;
         "p-slider-indicator": PSliderIndicator;
         "p-status": PStatus;
         "p-stepper": PStepper;
@@ -2376,6 +2480,7 @@ declare module "@stencil/core" {
             "p-profile": LocalJSX.PProfile & JSXBase.HTMLAttributes<HTMLPProfileElement>;
             "p-segment-container": LocalJSX.PSegmentContainer & JSXBase.HTMLAttributes<HTMLPSegmentContainerElement>;
             "p-segment-item": LocalJSX.PSegmentItem & JSXBase.HTMLAttributes<HTMLPSegmentItemElement>;
+            "p-select": LocalJSX.PSelect & JSXBase.HTMLAttributes<HTMLPSelectElement>;
             "p-slider-indicator": LocalJSX.PSliderIndicator & JSXBase.HTMLAttributes<HTMLPSliderIndicatorElement>;
             "p-status": LocalJSX.PStatus & JSXBase.HTMLAttributes<HTMLPStatusElement>;
             "p-stepper": LocalJSX.PStepper & JSXBase.HTMLAttributes<HTMLPStepperElement>;

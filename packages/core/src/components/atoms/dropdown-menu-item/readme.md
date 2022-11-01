@@ -18,6 +18,7 @@
 ### Used by
 
  - [p-page-size-select](../../molecules/page-size-select)
+ - [p-select](../../molecules/select)
 
 ### Depends on
 
@@ -28,6 +29,7 @@
 graph TD;
   p-dropdown-menu-item --> p-icon
   p-page-size-select --> p-dropdown-menu-item
+  p-select --> p-dropdown-menu-item
   style p-dropdown-menu-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,0 +1,86 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import Docs from '../../../packages/core/src/components/molecules/select/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Select`} />
+
+<Docs />
+
+# Examples
+
+## Autocomplete
+
+### Enabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="Click me to search"
+            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="Click me to select"
+            enable-autocomplete={false}
+            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>
+
+## Auto select first item
+
+### Enabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="Click me to search"
+            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="I have no auto selection"
+            auto-select-first={false}
+            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>
+
+## Autocomplete placeholder
+
+### Enabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            autocomplete-placeholder="Type something to search"
+            placeholder="Click me to search"
+            auto-select-first={false}
+            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="I have no autocomplete placeholder"
+            auto-select-first={false}
+            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>

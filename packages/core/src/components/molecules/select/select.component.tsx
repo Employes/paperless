@@ -1,12 +1,15 @@
 import {
     Component,
+    Element,
     Event,
     EventEmitter,
     h,
     Host,
+    Listen,
     Prop,
     State,
 } from '@stencil/core';
+import { childOf } from '../../../utils';
 
 @Component({
     tag: 'p-select',
@@ -73,6 +76,11 @@ export class Select {
      * Event when the value changes
      */
     @Event() valueChange: EventEmitter<any>;
+
+    /**
+     * The host element
+     */
+    @Element() private _el: HTMLElement;
 
     @State() private _showDropdown: any = false;
     @State() private _selectedItem: any = null;
@@ -144,7 +152,6 @@ export class Select {
         }
 
         if (this.autoSelectFirst) {
-            console.log('Auto selecting!', this.autoSelectFirst);
             this._selectedItem = this._items?.[0];
         }
     }
@@ -152,6 +159,7 @@ export class Select {
     render() {
         return (
             <Host class="p-select">
+                {JSON.stringify(this._showDropdown)}
                 <p-dropdown
                     disableTriggerClick={true}
                     calculateWidth={true}
@@ -171,6 +179,7 @@ export class Select {
                             value={this._displayValue}
                             class="p-input cursor-pointer"
                             onFocus={() => this._onFocus()}
+                            onMouseDown={(ev) => this._onMouseDown(ev)}
                             onClick={() => this._onClick()}
                             onInput={(ev) => this._onChange(ev)}
                             ref={(ref) => (this._inputRef = ref)}
@@ -190,6 +199,15 @@ export class Select {
         );
     }
 
+    @Listen('click', { target: 'document', capture: true })
+    protected documentClickHandler({ target }) {
+        if (!this._showDropdown || childOf(target, this._el)) {
+            return;
+        }
+
+        this._showDropdown = false;
+    }
+
     private _selectValue(item) {
         this._selectedItem = item;
         const value = item[this.valueKey];
@@ -202,6 +220,10 @@ export class Select {
 
     private _onFocus() {
         if (!this.enableAutocomplete) {
+            this._inputRef.blur();
+            if (!this._showDropdown) {
+                this._showDropdown = true;
+            }
             return;
         }
 
@@ -209,12 +231,19 @@ export class Select {
         this._showDropdown = true;
     }
 
+    private _onMouseDown(ev) {
+        if (this.enableAutocomplete) {
+            return;
+        }
+
+        ev.preventDefault();
+    }
+
     private _onClick() {
         if (this.enableAutocomplete) {
             return;
         }
 
-        this._inputRef.blur();
         this._showDropdown = true;
     }
 

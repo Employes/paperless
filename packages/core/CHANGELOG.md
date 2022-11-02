@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.193](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.192...v0.1.0-alpha.193) (2022-11-02)
+
+
+### Features
+
+* **Atoms:** Add toast-container component ([ed2d499](https://github.com/ionic-team/stencil-component-starter/commit/ed2d4993f3316999b31a9f581849a38d362b2d4d))
+* **Core:** Define z-index better ([dc160e0](https://github.com/ionic-team/stencil-component-starter/commit/dc160e04770ccc7bd5740079c35eeddacd516119))
+* **Core:** Remove toast from stencil output ([28c559c](https://github.com/ionic-team/stencil-component-starter/commit/28c559cf2fbd0e3d517dffeea9f9de4eab9bf2dd))
+* **Molecules:** Add toast component ([d6222a9](https://github.com/ionic-team/stencil-component-starter/commit/d6222a97512368ab6988b42364a785660871a5c7))
+
+
+
+
+
 # [0.1.0-alpha.192](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.191...v0.1.0-alpha.192) (2022-11-02)
 
 

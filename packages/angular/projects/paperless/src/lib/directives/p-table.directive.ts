@@ -4,7 +4,7 @@ import { QuickFilter } from '@paperless/core';
 
 import { BaseValueAccessor } from '../base';
 
-export interface TableDirectiveValue {
+export interface NGXTableDirectiveValue {
     query?: string;
     quickFilter?: QuickFilter;
     page?: number;
@@ -31,7 +31,7 @@ export interface TableDirectiveValue {
     ],
 })
 export class TableDirective extends BaseValueAccessor {
-    protected override lastValue: TableDirectiveValue = {
+    protected override lastValue: NGXTableDirectiveValue = {
         query: '',
         quickFilter: undefined,
         page: 1,
@@ -43,7 +43,7 @@ export class TableDirective extends BaseValueAccessor {
         super(el);
     }
 
-    public override writeValue(value: TableDirectiveValue) {
+    public override writeValue(value: NGXTableDirectiveValue) {
         this.el.nativeElement.query = this.lastValue.query = value?.query;
         this.lastValue.quickFilter = value?.quickFilter;
 

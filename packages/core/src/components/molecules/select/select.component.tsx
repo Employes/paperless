@@ -63,6 +63,11 @@ export class Select {
     @Prop() autoSelectFirst: boolean = true;
 
     /**
+     * The maximum amount of items to display
+     */
+    @Prop() maxDisplayedItems: number = 10;
+
+    /**
      * Wether to enable autocomplete
      */
     @Prop() enableAutocomplete: boolean = true;
@@ -132,7 +137,7 @@ export class Select {
             });
         }
 
-        return items;
+        return items?.slice(0, this.maxDisplayedItems);
     }
 
     get _displayValue() {
@@ -151,9 +156,11 @@ export class Select {
 
     componentDidLoad() {
         if (this.value) {
-            const value = isNaN(this.value)
-                ? this.value
-                : parseInt(this.value, 10);
+            const value =
+                typeof this._items?.[0]?.[this.valueKey] === 'number' &&
+                !isNaN(this.value)
+                    ? parseInt(this.value, 10)
+                    : this.value;
             this._selectedItem = this._items.find(
                 (i) => i?.[this.valueKey] === value
             );

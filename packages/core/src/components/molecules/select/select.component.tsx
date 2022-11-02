@@ -93,6 +93,36 @@ export class Select {
     @Event() valueChange: EventEmitter<any>;
 
     /**
+     * The size of the input group used by the select
+     */
+    @Prop() size: 'small' | 'medium' = 'medium';
+
+    /**
+     * The prefix of the input group used by the select
+     */
+    @Prop() prefix: string;
+
+    /**
+     * The label of the input group used by the select
+     */
+    @Prop() label: string;
+
+    /**
+     * The helper of the input group used by the select
+     */
+    @Prop() helper: string;
+
+    /**
+     * The helper of the input group used by the select
+     */
+    @Prop({ reflect: true }) error: string;
+
+    /**
+     * Wether the input group is disabled used by the select
+     */
+    @Prop({ reflect: true }) disabled: boolean = false;
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -186,6 +216,12 @@ export class Select {
                         slot="trigger"
                         icon="chevron"
                         iconPosition="end"
+                        size={this.size}
+                        prefix={this.prefix}
+                        label={this.label}
+                        helper={this.helper}
+                        error={this.error}
+                        disabled={this.disabled}
                         focused={this._showDropdown}
                     >
                         <input
@@ -218,6 +254,7 @@ export class Select {
         }
 
         this._showDropdown = false;
+        this._isAutoCompleting = false;
     }
 
     private _selectValue(item) {

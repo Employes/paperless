@@ -561,6 +561,10 @@ export namespace Components {
          */
         "autocompletePlaceholder": string;
         /**
+          * Wether the input group is disabled used by the select
+         */
+        "disabled": boolean;
+        /**
           * The key of the object to display
          */
         "displayKey": string;
@@ -569,17 +573,37 @@ export namespace Components {
          */
         "enableAutocomplete": boolean;
         /**
+          * The helper of the input group used by the select
+         */
+        "error": string;
+        /**
+          * The helper of the input group used by the select
+         */
+        "helper": string;
+        /**
           * The items to show in the dropdown
          */
         "items": string | any[];
+        /**
+          * The label of the input group used by the select
+         */
+        "label": string;
         /**
           * Wether to show loading items
          */
         "loading": boolean;
         /**
+          * The maximum amount of items to display
+         */
+        "maxDisplayedItems": number;
+        /**
           * The placeholder of the input
          */
         "placeholder": string;
+        /**
+          * The prefix of the input group used by the select
+         */
+        "prefix": string;
         /**
           * The current query
          */
@@ -588,6 +612,10 @@ export namespace Components {
           * The key of the object to display
          */
         "queryKey"?: string;
+        /**
+          * The size of the input group used by the select
+         */
+        "size": 'small' | 'medium';
         /**
           * The current value
          */
@@ -1933,6 +1961,10 @@ declare namespace LocalJSX {
          */
         "autocompletePlaceholder"?: string;
         /**
+          * Wether the input group is disabled used by the select
+         */
+        "disabled"?: boolean;
+        /**
           * The key of the object to display
          */
         "displayKey"?: string;
@@ -1941,13 +1973,29 @@ declare namespace LocalJSX {
          */
         "enableAutocomplete"?: boolean;
         /**
+          * The helper of the input group used by the select
+         */
+        "error"?: string;
+        /**
+          * The helper of the input group used by the select
+         */
+        "helper"?: string;
+        /**
           * The items to show in the dropdown
          */
         "items"?: string | any[];
         /**
+          * The label of the input group used by the select
+         */
+        "label"?: string;
+        /**
           * Wether to show loading items
          */
         "loading"?: boolean;
+        /**
+          * The maximum amount of items to display
+         */
+        "maxDisplayedItems"?: number;
         /**
           * Event when the query of the autocomplete changes
          */
@@ -1961,6 +2009,10 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
+          * The prefix of the input group used by the select
+         */
+        "prefix"?: string;
+        /**
           * The current query
          */
         "query"?: string;
@@ -1968,6 +2020,10 @@ declare namespace LocalJSX {
           * The key of the object to display
          */
         "queryKey"?: string;
+        /**
+          * The size of the input group used by the select
+         */
+        "size"?: 'small' | 'medium';
         /**
           * The current value
          */

@@ -41,6 +41,7 @@
  - [p-page-size-select](../../molecules/page-size-select)
  - [p-table-footer](../../molecules/table-footer)
  - [p-table-header](../../molecules/table-header)
+ - [p-toast](../../molecules/toast)
 
 ### Depends on
 
@@ -56,6 +57,7 @@ graph TD;
   p-page-size-select --> p-button
   p-table-footer --> p-button
   p-table-header --> p-button
+  p-toast --> p-button
   style p-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

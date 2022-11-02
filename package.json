@@ -87,6 +87,7 @@
         "commitizen": "4.2.5",
         "cz-conventional-changelog": "3.3.0",
         "cz-lerna-changelog": "2.0.3",
+        "fast-glob": "^3.2.12",
         "jest": "27.5.1",
         "jest-cli": "27.5.1",
         "lerna": "6.0.1",

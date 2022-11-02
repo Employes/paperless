@@ -43,7 +43,6 @@ export class TableColumn {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        console.log(this.el);
         proxyOutputs(this, this.el, ['tableDefinitionChanged']);
     }
 }

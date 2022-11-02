@@ -19,12 +19,9 @@ import { BaseValueAccessor } from '../base';
 export class SelectDirective extends BaseValueAccessor {
 	constructor(el: ElementRef) {
 		super(el);
-
-		console.log(el);
 	}
 
 	override writeValue(value: any) {
-		console.log(value);
 		this.el.nativeElement.value = this.lastValue =
 			value == null ? '' : value;
 	}

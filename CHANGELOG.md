@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.190](https://github.com/employes/paperless/compare/v0.1.0-alpha.189...v0.1.0-alpha.190) (2022-11-02)
+
+
+### Features
+
+* **Molecules/Select:** Extend properties with input-group props ([dcbf205](https://github.com/employes/paperless/commit/dcbf205cfe50e5ad6ad0cea20078b6e9ccc8a2d0))
+
+
+
+
+
 # [0.1.0-alpha.189](https://github.com/employes/paperless/compare/v0.1.0-alpha.188...v0.1.0-alpha.189) (2022-11-02)
 
 

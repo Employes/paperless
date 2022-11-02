@@ -30,7 +30,10 @@ export class DropdownMenuItem {
                 }`}
             >
                 {this.icon && <p-icon variant={this.icon} />}
-                <slot />
+
+                <div class="text-container">
+                    <slot />
+                </div>
             </Host>
         );
     }

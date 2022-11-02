@@ -8,7 +8,7 @@ import DropdownMenuItemDocs from '../../../../packages/core/src/components/atoms
 
 # Examples
 
-### Default
+## Default
 
 <Canvas>
     <div class="flex justify-center">
@@ -16,10 +16,31 @@ import DropdownMenuItemDocs from '../../../../packages/core/src/components/atoms
     </div>
 </Canvas>
 
-### Active
+## With icon
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-dropdown-menu-item icon="person">I am an item</p-dropdown-menu-item>
+    </div>
+</Canvas>
+
+## Active
 
 <Canvas>
     <div class="flex justify-center">
         <p-dropdown-menu-item active>I am an active item</p-dropdown-menu-item>
+    </div>
+</Canvas>
+
+## Very long text
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-dropdown-menu-item icon="negative">
+            I have a very long text that should be hidden with ellipsis on the
+            side I have a very long text that should be hidden with ellipsis on
+            the side I have a very long text that should be hidden with ellipsis
+            on the side
+        </p-dropdown-menu-item>
     </div>
 </Canvas>

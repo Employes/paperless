@@ -67,6 +67,7 @@ graph TD;
   p-helper --> p-tooltip
   p-button --> p-icon
   p-button --> p-loader
+  p-label --> p-icon
   p-table --> p-table-header
   style p-table-header fill:#f9f,stroke:#333,stroke-width:4px
 ```

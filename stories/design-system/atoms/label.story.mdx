@@ -66,7 +66,12 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
 
 <Canvas>
     <div class="flex">
-        <p-label size="small" circle={false} variant="negative">
+        <p-label
+            size="small"
+            mobile-icon={false}
+            circle={false}
+            variant="negative"
+        >
             2
         </p-label>
     </div>
@@ -87,5 +92,25 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
 <Canvas>
     <div class="flex">
         <p-label circle={false}>Without a circle</p-label>
+    </div>
+</Canvas>
+
+## Icon
+
+### Mobile icon (checkmark)
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark">View me on mobile</p-label>
+    </div>
+</Canvas>
+
+### Icon only
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" icon-only={true}>
+            Content hidden
+        </p-label>
     </div>
 </Canvas>

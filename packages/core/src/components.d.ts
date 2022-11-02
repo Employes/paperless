@@ -10,12 +10,12 @@ import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, PositioningStrategy } from "@popperjs/core";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
+import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
-import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { buttonTemplateFunc, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
@@ -335,6 +335,26 @@ export namespace Components {
           * Wether to add the circle or not
          */
         "circle": boolean;
+        /**
+          * Icon to show on the button
+         */
+        "icon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions;
+        /**
+          * Wether it's icon only
+         */
+        "iconOnly": boolean;
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions1;
+        /**
+          * Wether to show icon on mobile
+         */
+        "mobileIcon": boolean;
         /**
           * The size of the label
          */
@@ -1773,6 +1793,26 @@ declare namespace LocalJSX {
           * Wether to add the circle or not
          */
         "circle"?: boolean;
+        /**
+          * Icon to show on the button
+         */
+        "icon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions;
+        /**
+          * Wether it's icon only
+         */
+        "iconOnly"?: boolean;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions1;
+        /**
+          * Wether to show icon on mobile
+         */
+        "mobileIcon"?: boolean;
         /**
           * The size of the label
          */

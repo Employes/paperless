@@ -92,6 +92,7 @@ graph TD;
   p-helper --> p-tooltip
   p-button --> p-icon
   p-button --> p-loader
+  p-label --> p-icon
   p-table-footer --> p-page-size-select
   p-table-footer --> p-pagination
   p-table-footer --> p-button

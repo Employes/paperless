@@ -1,10 +1,18 @@
 :host {
-    @apply flex gap-1 items-center px-3 rounded;
+    @apply flex gap-1 justify-center items-center px-0 desktop-xs:px-3 rounded;
     @apply h-[1.625rem];
     @apply text-sm font-semibold;
 
+    .content {
+        @apply flex gap-1 items-center;
+    }
+
     .circle {
         @apply hidden rounded-round h-2 w-2;
+    }
+
+    p-icon {
+        @apply hidden #{!important};
     }
 }
 
@@ -62,4 +70,33 @@
     @apply h-4 min-w-[1rem] px-1 py-[1px];
     @apply text-xs justify-center items-baseline;
     @apply leading-3;
+}
+
+:host(.mobile-icon) {
+    @apply pl-0 desktop-xs:pl-2;
+    @apply w-[1.625rem] desktop-xs:w-auto;
+
+    .content {
+        @apply hidden desktop-xs:flex #{!important};
+    }
+
+    p-icon {
+        @apply flex desktop-xs:hidden #{!important};
+    }
+}
+
+:host(.icon-only) {
+    @apply pl-0 desktop-xs:pl-0 desktop-xs:w-[1.625rem] desktop-xs:px-0;
+
+    .content {
+        @apply hidden desktop-xs:hidden #{!important};
+    }
+
+    p-icon {
+        @apply flex desktop-xs:flex #{!important};
+    }
+}
+
+:host([size='small'].icon-only) {
+    @apply h-4 w-4;
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.192](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.191...v0.1.0-alpha.192) (2022-11-02)
+
+
+### Features
+
+* **Molecules/Select:** Add ellipsis to read version of input ([fd18420](https://github.com/ionic-team/stencil-component-starter/commit/fd184200318c336e7bff8ebd196c18592cea08f1))
+
+
+
+
+
 # [0.1.0-alpha.191](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.190...v0.1.0-alpha.191) (2022-11-02)
 
 

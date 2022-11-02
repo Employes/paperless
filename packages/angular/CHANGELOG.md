@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.192](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.191...v0.1.0-alpha.192) (2022-11-02)
+
+
+### Bug Fixes
+
+* **Angular:** Actually export the directive ([16eb672](https://github.com/Employes/Paperless/commit/16eb672f5b1cf16a89f41d5d26b3462fcfdb4567))
+
+
+### Features
+
+* **Angular:** Add select directive ([b58723b](https://github.com/Employes/Paperless/commit/b58723bec42674fe992581d238f6f50d90b8a54f))
+
+
+
+
+
 # [0.1.0-alpha.191](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.190...v0.1.0-alpha.191) (2022-11-02)
 
 **Note:** Version bump only for package @paperless/angular

@@ -1,0 +1,27 @@
+<ng-container *ngIf="checkbox">
+    <ng-container *ngTemplateOutlet="checkbox"></ng-container>
+</ng-container>
+
+<ng-container [ngSwitch]="variant">
+    <p-loader
+        *ngSwitchCase="'loading'"
+        variant="ghost"
+        class="rounded flex-1 w-full h-6"
+    ></p-loader>
+
+    <div *ngSwitchCase="'header'" class="flex">
+        <ng-container *ngTemplateOutlet="valueTemplate"></ng-container>
+    </div>
+
+    <div *ngSwitchCase="'default'" class="flex">
+        <ng-container *ngIf="template; else valueTemplate">
+            <ng-container
+                *ngTemplateOutlet="template; context: data"
+            ></ng-container>
+        </ng-container>
+    </div>
+</ng-container>
+
+<ng-template #valueTemplate>
+    {{ data.value }}
+</ng-template>

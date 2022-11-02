@@ -1,0 +1,108 @@
+<p-table-container>
+    <p-table-header
+        [quickFilters]="quickFilters"
+        [activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
+        (onQuickFilter)="(onQuickFilter)"
+        [enableSearch]="enableSearch"
+        [query]="query"
+        (onQueryChange)="(onQueryChange)"
+        [enableFilter]="enableFilter"
+        [selectedFiltersAmount]="selectedFiltersAmount"
+        [filterButtonTemplate]="filterButtonTemplate"
+        (onFilter)="filter.emit()"
+        [enableEdit]="enableEdit"
+        [canEdit]="!!selectedRows.length"
+        [editButtonTemplate]="editButtonTemplate"
+        (onEdit)="edit.emit()"
+        [itemsSelectedAmount]="selectedRows.length"
+    ></p-table-header>
+
+    <p-table-row variant="header">
+        <ng-container *ngFor="let col of columns; let index = index">
+            <p-table-cell-ngx
+                [definition]="col"
+                [value]="col.name"
+                variant="header"
+                [index]="index"
+                [checkbox]="index === 0 ? checkboxTemplate : undefined"
+            ></p-table-cell-ngx>
+            <ng-template #checkboxTemplate>
+                <input
+                    class="p-input"
+                    type="checkbox"
+                    (change)="_selectAllChange($event)"
+                    [checked]="_selectionContainsAll()"
+                    [indeterminate]="_selectionIndeterminate()"
+                />
+            </ng-template>
+        </ng-container>
+    </p-table-row>
+
+    <div class="flex flex-col">
+        <ng-container *ngIf="loading; else contentTemplate">
+            <p-table-row
+                *ngFor="let r of loadingRows; let rowIndex = index"
+                [enableHover]="enableRowSelection || enableRowClick"
+            >
+                <ng-container *ngFor="let col of columns; let index = index">
+                    <p-table-cell-ngx
+                        [definition]="col"
+                        variant="loading"
+                        [checkbox]="index === 0 ? checkboxTemplate : undefined"
+                        [index]="index"
+                        [rowIndex]="rowIndex"
+                    ></p-table-cell-ngx>
+                    <ng-template #checkboxTemplate>
+                        <p-loader
+                            variant="ghost"
+                            class="rounded w-6 h-6"
+                        ></p-loader>
+                    </ng-template>
+                </ng-container>
+            </p-table-row>
+        </ng-container>
+
+        <ng-template #contentTemplate>
+            <p-table-row
+                *ngFor="let item of items; let rowIndex = index"
+                [enableHover]="enableRowSelection || enableRowClick"
+                (click)="_rowClick($event, rowIndex)"
+            >
+                <ng-container *ngFor="let col of columns; let index = index">
+                    <p-table-cell-ngx
+                        [definition]="col"
+                        [item]="item"
+                        [checkbox]="index === 0 ? checkboxTemplate : undefined"
+                        [index]="index"
+                        [rowIndex]="rowIndex"
+                        [template]="col.template"
+                    ></p-table-cell-ngx>
+
+                    <ng-template #checkboxTemplate>
+                        <input
+                            class="p-input"
+                            type="checkbox"
+                            (change)="_checkboxChange($event.target, rowIndex)"
+                            [disabled]="_checkboxDisabled(item)"
+                            [checked]="_selectionContains(item, rowIndex)"
+                        />
+                    </ng-template>
+                </ng-container>
+            </p-table-row>
+        </ng-template>
+    </div>
+
+    <p-table-footer
+        [hideOnSinglePage]="hideOnSinglePage"
+        [enablePageSize]="enablePageSize"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (onPageSizeChange)="(pageSizeChange)"
+        [enablePagination]="enablePagination"
+        [page]="page"
+        [total]="total"
+        (onPageChange)="(pageChange)"
+        [enableExport]="enableExport"
+        (onExport)="export.emit()"
+    ></p-table-footer>
+</p-table-container>

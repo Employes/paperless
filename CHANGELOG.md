@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.189](https://github.com/employes/paperless/compare/v0.1.0-alpha.188...v0.1.0-alpha.189) (2022-11-02)
+
+
+### Features
+
+* **Atoms/Layout:** Shift topbar under sidebar for mobile ([7994576](https://github.com/employes/paperless/commit/7994576cbe97faf03887625d5be42b400e727342))
+* **Molecules/Select:** Add maximum of displayed items & fix number parse ([f48670b](https://github.com/employes/paperless/commit/f48670b8df75ec0631aebe647efee1e58a71fbea))
+
+
+
+
+
 # [0.1.0-alpha.188](https://github.com/employes/paperless/compare/v0.1.0-alpha.187...v0.1.0-alpha.188) (2022-11-01)
 
 

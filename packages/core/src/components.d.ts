@@ -15,7 +15,7 @@ import { templateFunc } from "./components/molecules/page-size-select/page-size-
 import { QuickFilter, RowClickEvent, TableDefinitionSizes } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
 import { TableDefinition } from "./components/helpers/table-definition/table-definition.component";
-import { TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
+import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { buttonTemplateFunc, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
@@ -949,6 +949,42 @@ export namespace Components {
          */
         "variant": 'default' | 'header';
     }
+    interface PToast {
+        /**
+          * Icon to show on the button
+         */
+        "actionIcon": IconVariant;
+        /**
+          * Icon flip
+         */
+        "actionIconFlip": IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "actionIconRotate": RotateOptions1;
+        /**
+          * The content of the toast
+         */
+        "content"?: string;
+        /**
+          * Wether to enable the close button
+         */
+        "enableAction": boolean;
+        /**
+          * The header of the toast
+         */
+        "header"?: string;
+        /**
+          * The variant of the toast
+         */
+        "variant": 'positive' | 'unbiased' | 'negative';
+    }
+    interface PToastContainer {
+        /**
+          * The placement of the container
+         */
+        "placement": 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -1023,6 +1059,10 @@ export interface PTableFooterCustomEvent<T> extends CustomEvent<T> {
 export interface PTableHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPTableHeaderElement;
+}
+export interface PToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPToastElement;
 }
 export interface PTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1329,6 +1369,18 @@ declare global {
         prototype: HTMLPTableRowElement;
         new (): HTMLPTableRowElement;
     };
+    interface HTMLPToastElement extends Components.PToast, HTMLStencilElement {
+    }
+    var HTMLPToastElement: {
+        prototype: HTMLPToastElement;
+        new (): HTMLPToastElement;
+    };
+    interface HTMLPToastContainerElement extends Components.PToastContainer, HTMLStencilElement {
+    }
+    var HTMLPToastContainerElement: {
+        prototype: HTMLPToastContainerElement;
+        new (): HTMLPToastContainerElement;
+    };
     interface HTMLPTooltipElement extends Components.PTooltip, HTMLStencilElement {
     }
     var HTMLPTooltipElement: {
@@ -1386,6 +1438,8 @@ declare global {
         "p-table-footer": HTMLPTableFooterElement;
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
+        "p-toast": HTMLPToastElement;
+        "p-toast-container": HTMLPToastContainerElement;
         "p-tooltip": HTMLPTooltipElement;
     }
 }
@@ -2437,6 +2491,46 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'header';
     }
+    interface PToast {
+        /**
+          * Icon to show on the button
+         */
+        "actionIcon"?: IconVariant;
+        /**
+          * Icon flip
+         */
+        "actionIconFlip"?: IconFlipOptions;
+        /**
+          * Icon rotate
+         */
+        "actionIconRotate"?: RotateOptions1;
+        /**
+          * The content of the toast
+         */
+        "content"?: string;
+        /**
+          * Wether to enable the close button
+         */
+        "enableAction"?: boolean;
+        /**
+          * The header of the toast
+         */
+        "header"?: string;
+        /**
+          * Button click event
+         */
+        "onAction"?: (event: PToastCustomEvent<MouseEvent>) => void;
+        /**
+          * The variant of the toast
+         */
+        "variant"?: 'positive' | 'unbiased' | 'negative';
+    }
+    interface PToastContainer {
+        /**
+          * The placement of the container
+         */
+        "placement"?: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
+    }
     interface PTooltip {
         /**
           * Wether to someone can manually close the popover
@@ -2518,6 +2612,8 @@ declare namespace LocalJSX {
         "p-table-footer": PTableFooter;
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
+        "p-toast": PToast;
+        "p-toast-container": PToastContainer;
         "p-tooltip": PTooltip;
     }
 }
@@ -2575,6 +2671,8 @@ declare module "@stencil/core" {
             "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
+            "p-toast": LocalJSX.PToast & JSXBase.HTMLAttributes<HTMLPToastElement>;
+            "p-toast-container": LocalJSX.PToastContainer & JSXBase.HTMLAttributes<HTMLPToastContainerElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;
         }
     }

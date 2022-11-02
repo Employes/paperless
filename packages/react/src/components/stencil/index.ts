@@ -58,4 +58,6 @@ export const PTableDefinition = /*@__PURE__*/createReactComponent<JSX.PTableDefi
 export const PTableFooter = /*@__PURE__*/createReactComponent<JSX.PTableFooter, HTMLPTableFooterElement>('p-table-footer');
 export const PTableHeader = /*@__PURE__*/createReactComponent<JSX.PTableHeader, HTMLPTableHeaderElement>('p-table-header');
 export const PTableRow = /*@__PURE__*/createReactComponent<JSX.PTableRow, HTMLPTableRowElement>('p-table-row');
+export const PToast = /*@__PURE__*/createReactComponent<JSX.PToast, HTMLPToastElement>('p-toast');
+export const PToastContainer = /*@__PURE__*/createReactComponent<JSX.PToastContainer, HTMLPToastContainerElement>('p-toast-container');
 export const PTooltip = /*@__PURE__*/createReactComponent<JSX.PTooltip, HTMLPTooltipElement>('p-tooltip');

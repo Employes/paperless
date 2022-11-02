@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.191](https://github.com/employes/paperless/compare/v0.1.0-alpha.190...v0.1.0-alpha.191) (2022-11-02)
+
+
+### Features
+
+* **Atoms/Dropdown menu item:** Hide overflowing text ([81bee34](https://github.com/employes/paperless/commit/81bee3472217319358bdfc43c25335642230b7d4))
+
+
+
+
+
 # [0.1.0-alpha.190](https://github.com/employes/paperless/compare/v0.1.0-alpha.189...v0.1.0-alpha.190) (2022-11-02)
 
 

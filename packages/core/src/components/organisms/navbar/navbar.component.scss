@@ -17,7 +17,7 @@
     }
 
     .sidebar {
-        @apply bg-white fixed top-0 left-0 h-screen w-60 z-50;
+        @apply bg-white fixed top-0 left-0 h-screen w-60 z-navbar;
         @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
 
         @apply will-change-transform;
@@ -62,7 +62,7 @@
     }
 
     .backdrop {
-        @apply fixed top-0 left-0 z-40;
+        @apply fixed top-0 left-0 z-backdrop;
         @apply h-screen w-screen;
         @apply backdrop-blur-xs bg-storm/50;
 

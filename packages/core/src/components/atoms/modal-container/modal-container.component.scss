@@ -1,5 +1,5 @@
 p-modal-container {
-    @apply flex flex-col w-full tablet:w-auto;
+    @apply flex flex-col w-full tablet:w-auto z-modal;
     @apply bg-white rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
     @apply overflow-hidden;
     @apply shadow-4 #{!important};

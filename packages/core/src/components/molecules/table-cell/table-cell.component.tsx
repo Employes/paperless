@@ -4,13 +4,13 @@ import {
     TableDefinitionTemplateFunc,
 } from '../../../types';
 import { objectGetByPath } from '../../../utils';
-import { TableDefinition } from '../../helpers/table-definition/table-definition.component';
+import { TableColumn } from '../../helpers/table-column/table-column.component';
 
 @Component({
-    tag: 'p-table-column',
-    styleUrl: 'table-column.component.scss',
+    tag: 'p-table-cell',
+    styleUrl: 'table-cell.component.scss',
 })
-export class TableColumn {
+export class TableCell {
     /**
      * The variant of the column
      */
@@ -29,7 +29,7 @@ export class TableColumn {
     /**
      * The definition of the table column
      */
-    @Prop() definition?: TableDefinition;
+    @Prop() definition?: TableColumn;
 
     /**
      * The item in question
@@ -70,11 +70,10 @@ export class TableColumn {
     }
 
     render() {
-        console.log('Table column render');
         return (
             <Host
                 class={{
-                    'p-table-column': true,
+                    'p-table-cell': true,
                     [`variant-${this.variant}`]: true,
                     ...this._getColumnClasses(),
                 }}
@@ -157,7 +156,7 @@ export class TableColumn {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
-    private _getSizes({ sizes }: TableDefinition) {
+    private _getSizes({ sizes }: TableColumn) {
         if (sizes === 'auto' || !sizes) {
             return {
                 'w-auto': true,

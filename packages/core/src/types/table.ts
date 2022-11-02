@@ -20,7 +20,7 @@ export interface TableDefinitionData {
 
 export type TableDefinitionTemplateFunc = (data: TableDefinitionData) => any;
 
-export interface TableDefinitionSizes {
+export interface TableColumnSizes {
     default: number;
     tablet?: number;
     'desktop-xs'?: number;

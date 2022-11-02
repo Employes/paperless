@@ -27,7 +27,7 @@
  - [p-button](../button)
  - [p-select](../../molecules/select)
  - [p-table](../../organisms/table)
- - [p-table-column](../../molecules/table-column)
+ - [p-table-cell](../../molecules/table-cell)
 
 ### Graph
 ```mermaid
@@ -35,7 +35,7 @@ graph TD;
   p-button --> p-loader
   p-select --> p-loader
   p-table --> p-loader
-  p-table-column --> p-loader
+  p-table-cell --> p-loader
   style p-loader fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

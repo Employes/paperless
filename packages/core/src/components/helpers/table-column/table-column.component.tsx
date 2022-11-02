@@ -1,10 +1,10 @@
 import { Component, Event, EventEmitter, Prop } from '@stencil/core';
-import { TableDefinitionSizes } from '../../../types/table';
+import { TableColumnSizes } from '../../../types/table';
 
 @Component({
-    tag: 'p-table-definition',
+    tag: 'p-table-column',
 })
-export class TableDefinition {
+export class TableColumn {
     /**
      * The path of the value of the item you want to display
      */
@@ -34,8 +34,7 @@ export class TableDefinition {
     /**
      * The sizes of the column
      */
-    @Prop({ mutable: true }) sizes: 'auto' | number | TableDefinitionSizes =
-        'auto';
+    @Prop({ mutable: true }) sizes: 'auto' | number | TableColumnSizes = 'auto';
 
     /**
      * Event to let the table know it has to re render

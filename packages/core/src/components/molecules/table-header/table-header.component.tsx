@@ -192,17 +192,14 @@ export class TableHeader {
                         </p-button>
                     )}
 
-                    {this.enableEdit && (
-                        <div>
-                            {this._buttonTemplate()}
-                            {this.canEdit && (
-                                <div class="fixed bottom-0 left-0 w-full p-4 bg-white border border-solid border-transparent border-t-mystic-dark block desktop-xs:hidden">
-                                    {this._buttonTemplate(true)}
-                                </div>
-                            )}
-                        </div>
-                    )}
+                    {this.enableEdit && this._buttonTemplate()}
                 </div>
+
+                {this.enableEdit && this.canEdit && (
+                    <div class="fixed bottom-0 left-0 w-full p-4 bg-white border border-solid border-transparent border-t-mystic-dark block desktop-xs:hidden">
+                        {this._buttonTemplate(true)}
+                    </div>
+                )}
             </Host>
         );
     }

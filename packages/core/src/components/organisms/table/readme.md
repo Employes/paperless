@@ -4,7 +4,7 @@
 
 ```html
 <p-table>
-    <p-table-definition />
+    <p-table-column />
 </p-table>
 ```
 
@@ -68,7 +68,7 @@
 - [p-table-header](../../molecules/table-header)
 - [p-table-footer](../../molecules/table-footer)
 - [p-table-row](../../molecules/table-row)
-- [p-table-column](../../molecules/table-column)
+- [p-table-cell](../../molecules/table-cell)
 - [p-loader](../../atoms/loader)
 
 ### Graph
@@ -78,7 +78,7 @@ graph TD;
   p-table --> p-table-header
   p-table --> p-table-footer
   p-table --> p-table-row
-  p-table --> p-table-column
+  p-table --> p-table-cell
   p-table --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
@@ -103,7 +103,7 @@ graph TD;
   p-pagination --> p-icon
   p-pagination --> p-pagination-item
   p-table-row --> p-divider
-  p-table-column --> p-loader
+  p-table-cell --> p-loader
   style p-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

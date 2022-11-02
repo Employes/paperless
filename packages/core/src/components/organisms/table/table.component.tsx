@@ -11,7 +11,7 @@ import {
     Watch,
 } from '@stencil/core';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
-import { TableDefinition } from '../../helpers/table-definition/table-definition.component';
+import { TableColumn } from '../../helpers/table-column/table-column.component';
 import {
     defaultSize,
     defaultSizeOptions,
@@ -339,21 +339,21 @@ export class Table {
     }
 
     private _generateColumns() {
-        const definitions = this._el.querySelectorAll('p-table-definition');
+        const definitions = this._el.querySelectorAll('p-table-column');
         this._columns = Array.from(definitions);
     }
 
     private _getHeader() {
         return (
             <p-table-row variant="header">
-                {this._columns.map((col: TableDefinition, index) => (
-                    <p-table-column
+                {this._columns.map((col: TableColumn, index) => (
+                    <p-table-cell
                         definition={col}
                         value={col.name}
                         variant="header"
                         checkbox={this._getCheckbox(index, null, 'header')}
                         index={index}
-                    ></p-table-column>
+                    ></p-table-cell>
                 ))}
             </p-table-row>
         );
@@ -388,29 +388,29 @@ export class Table {
     }
 
     private _getRowColumns(item, index) {
-        return this._columns.map((col: TableDefinition, colIndex) => {
+        return this._columns.map((col: TableColumn, colIndex) => {
             return (
-                <p-table-column
+                <p-table-cell
                     definition={col}
                     item={item}
                     checkbox={this._getCheckbox(colIndex, index)}
                     index={colIndex}
                     rowIndex={index}
-                ></p-table-column>
+                ></p-table-cell>
             );
         });
     }
 
     private _getLoadingColumns(index) {
-        return this._columns.map((col: TableDefinition, colIndex) => {
+        return this._columns.map((col: TableColumn, colIndex) => {
             return (
-                <p-table-column
+                <p-table-cell
                     definition={col}
                     variant="loading"
                     checkbox={this._getCheckbox(colIndex, index, 'loading')}
                     index={colIndex}
                     rowIndex={index}
-                ></p-table-column>
+                ></p-table-cell>
             );
         });
     }

@@ -1,11 +1,11 @@
-# Table Column
+# Table Cell
 
 ## Usage:
 
 ```html
-<p-table-column>
+<p-table-cell>
     <!-- content -->
-</p-table-column>
+</p-table-cell>
 ```
 
 <!-- Auto Generated Below -->
@@ -16,7 +16,7 @@
 | Property     | Attribute   | Description                        | Type                                 | Default                                                  |
 | ------------ | ----------- | ---------------------------------- | ------------------------------------ | -------------------------------------------------------- |
 | `checkbox`   | `checkbox`  | The checkbox to show               | `any`                                | `undefined`                                              |
-| `definition` | --          | The definition of the table column | `TableDefinition`                    | `undefined`                                              |
+| `definition` | --          | The definition of the table column | `TableColumn`                        | `undefined`                                              |
 | `index`      | `index`     | The index of the column            | `number`                             | `undefined`                                              |
 | `item`       | `item`      | The item in question               | `any`                                | `undefined`                                              |
 | `rowIndex`   | `row-index` | The index of the row               | `number`                             | `undefined`                                              |
@@ -38,9 +38,9 @@
 ### Graph
 ```mermaid
 graph TD;
-  p-table-column --> p-loader
-  p-table --> p-table-column
-  style p-table-column fill:#f9f,stroke:#333,stroke-width:4px
+  p-table-cell --> p-loader
+  p-table --> p-table-cell
+  style p-table-cell fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

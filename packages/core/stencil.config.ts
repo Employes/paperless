@@ -38,7 +38,12 @@ export const config: Config = {
                 '../angular/projects/paperless/src/lib/stencil/components.ts',
             directivesArrayFile:
                 '../angular/projects/paperless/src/lib/stencil/index.ts',
-            excludeComponents: ['p-table', 'p-table-definition', 'p-toast'],
+            excludeComponents: [
+                'p-table',
+                'p-table-column',
+                'p-table-cell',
+                'p-toast',
+            ],
         }),
         react({
             componentCorePackage: '@paperless/core',

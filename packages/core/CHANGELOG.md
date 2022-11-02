@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.196](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.195...v0.1.0-alpha.196) (2022-11-02)
+
+
+### Features
+
+* **Angular:** Add ngx table ([bccf3d1](https://github.com/ionic-team/stencil-component-starter/commit/bccf3d16fae35abdb65cefa59e5ac0704645d12f))
+
+
+
+
+
 # [0.1.0-alpha.195](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.194...v0.1.0-alpha.195) (2022-11-02)
 
 

@@ -229,7 +229,9 @@ export class Select {
                             type="text"
                             placeholder={this._placeholder}
                             value={this._displayValue}
-                            class="p-input cursor-pointer"
+                            class={`p-input cursor-pointer ${
+                                !this._isAutoCompleting && 'read-only'
+                            }`}
                             onFocus={() => this._onFocus()}
                             onMouseDown={(ev) => this._onMouseDown(ev)}
                             onClick={() => this._onClick()}

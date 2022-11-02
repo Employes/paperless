@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.194](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.193...v0.1.0-alpha.194) (2022-11-02)
+
+**Note:** Version bump only for package @paperless/react
+
+
+
+
+
 # [0.1.0-alpha.193](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.192...v0.1.0-alpha.193) (2022-11-02)
 
 

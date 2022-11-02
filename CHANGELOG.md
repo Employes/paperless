@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.194](https://github.com/employes/paperless/compare/v0.1.0-alpha.193...v0.1.0-alpha.194) (2022-11-02)
+
+
+### Features
+
+* **Core:** Also copy style to output ([13ab681](https://github.com/employes/paperless/commit/13ab681b3be753799f95244014d61b62f5737b55))
+* **Core:** re-enable shadow for several components ([615e1ed](https://github.com/employes/paperless/commit/615e1ed17034df9743c9086ef45f03774a0be192))
+
+
+
+
+
 # [0.1.0-alpha.193](https://github.com/employes/paperless/compare/v0.1.0-alpha.192...v0.1.0-alpha.193) (2022-11-02)
 
 

@@ -5,8 +5,8 @@
     grid-template-rows: repeat(1fr, 3);
     gap: 0;
     grid-template-areas:
-        'topbar'
         'sidebar'
+        'topbar'
         'content';
 
     @screen desktop-xs {

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.195](https://github.com/employes/paperless/compare/v0.1.0-alpha.194...v0.1.0-alpha.195) (2022-11-02)
+
+
+### Features
+
+* **Atoms/Label:** Add mobile icon ([4342532](https://github.com/employes/paperless/commit/434253208b62abc27e413446015be360c3627e6e))
+* **Core:** renaming a bunch of items ([8b2b913](https://github.com/employes/paperless/commit/8b2b9137130731cbffbe4123be229d49bfab9d3e))
+
+
+
+
+
 # [0.1.0-alpha.194](https://github.com/employes/paperless/compare/v0.1.0-alpha.193...v0.1.0-alpha.194) (2022-11-02)
 
 

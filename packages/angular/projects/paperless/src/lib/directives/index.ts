@@ -1,5 +1,6 @@
 export * from './p-page-size-select.directive';
 export * from './p-pagination.directive';
+export * from './p-select.directive';
 export * from './p-table-footer.directive';
 export * from './p-table-header.directive';
 export * from './p-table.directive';

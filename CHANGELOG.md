@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.197](https://github.com/employes/paperless/compare/v0.1.0-alpha.196...v0.1.0-alpha.197) (2022-11-02)
+
+
+### Bug Fixes
+
+* **Angular:** add tailwind ([b1546fa](https://github.com/employes/paperless/commit/b1546fad810b8207990013ce1da82e62effdab22))
+* Remove console.logs ([74381e1](https://github.com/employes/paperless/commit/74381e1bcc22b7a61fb792712594e91c32287e67))
+
+
+
+
+
 # [0.1.0-alpha.196](https://github.com/employes/paperless/compare/v0.1.0-alpha.195...v0.1.0-alpha.196) (2022-11-02)
 
 

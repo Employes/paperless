@@ -18,6 +18,7 @@ import { defaultSize, defaultSizeOptions } from '../page-size-select/constants';
 @Component({
     tag: 'p-table-footer',
     styleUrl: 'table-footer.component.scss',
+    shadow: true,
 })
 export class TableFooter {
     /**

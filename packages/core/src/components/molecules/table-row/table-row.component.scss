@@ -1,4 +1,4 @@
-p-table-row {
+:host {
     @apply w-full flex flex-col;
     @apply text-sm text-storm-medium;
     @apply px-6;
@@ -8,7 +8,7 @@ p-table-row {
     }
 }
 
-p-table-row.variant-header {
+:host(.variant-header) {
     @apply bg-mystic-light;
     @apply text-xs font-semibold uppercase text-storm-vague;
     @apply border-y border-x-0 border-solid border-y-mystic-dark #{!important};
@@ -18,6 +18,6 @@ p-table-row.variant-header {
     }
 }
 
-p-table-row.enable-hover:hover {
+:host(.enable-hover:hover) {
     @apply bg-indigo-light cursor-pointer;
 }

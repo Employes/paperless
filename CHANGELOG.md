@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.202](https://github.com/employes/paperless/compare/v0.1.0-alpha.201...v0.1.0-alpha.202) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Tailwind:** fix z-index order ([19d474c](https://github.com/employes/paperless/commit/19d474cb7bb1f59bb6bf976cc2af29846b049e98))
+
+
+### Features
+
+* **Atoms/Modal Header:** Update modal header styling ([0068bb8](https://github.com/employes/paperless/commit/0068bb81cb9963c7af989c1690dd248e1db34670))
+
+
+
+
+
 # [0.1.0-alpha.201](https://github.com/employes/paperless/compare/v0.1.0-alpha.200...v0.1.0-alpha.201) (2022-11-03)
 
 

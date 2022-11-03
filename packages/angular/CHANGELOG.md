@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.207](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.206...v0.1.0-alpha.207) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular:** Export stencil module ([a567ecb](https://github.com/Employes/Paperless/commit/a567ecbbfcb6f93ffe3c5effb7654866282253d3))
+
+
+
+
+
 # [0.1.0-alpha.206](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.205...v0.1.0-alpha.206) (2022-11-03)
 
 

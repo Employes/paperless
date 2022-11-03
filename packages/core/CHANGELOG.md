@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.219](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.218...v0.1.0-alpha.219) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Atoms/Toast Container:** Have max width based on position ([02bd7eb](https://github.com/ionic-team/stencil-component-starter/commit/02bd7ebe71922c2d46d10dc4fd0bf57a61f4323b))
+
+
+
+
+
 # [0.1.0-alpha.218](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.217...v0.1.0-alpha.218) (2022-11-03)
 
 

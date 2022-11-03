@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.218](https://github.com/employes/paperless/compare/v0.1.0-alpha.217...v0.1.0-alpha.218) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Atoms/Toast Container:** Fix alignment & remove padding ([e3b1413](https://github.com/employes/paperless/commit/e3b14138a76dc8f6ef6c6edfdf077678890a083d))
+
+
+
+
+
 # [0.1.0-alpha.217](https://github.com/employes/paperless/compare/v0.1.0-alpha.216...v0.1.0-alpha.217) (2022-11-03)
 
 

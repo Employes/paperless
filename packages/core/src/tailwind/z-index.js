@@ -1,10 +1,10 @@
 module.exports = {
-    backdrop: 300,
+    navbar: 300,
 
-    modal: 500,
+    backdrop: 400,
 
-    drawer: 400,
-    navbar: 400,
+    drawer: 500,
+    modal: 600,
 
-    toast: 600,
+    toast: 700,
 };

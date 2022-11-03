@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.204](https://github.com/employes/paperless/compare/v0.1.0-alpha.203...v0.1.0-alpha.204) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Molecules/Toast:** Add action emitter ([7391332](https://github.com/employes/paperless/commit/73913329ad1d01553ebbec168197be3e579fa884))
+
+
+
+
+
 # [0.1.0-alpha.203](https://github.com/employes/paperless/compare/v0.1.0-alpha.202...v0.1.0-alpha.203) (2022-11-03)
 
 

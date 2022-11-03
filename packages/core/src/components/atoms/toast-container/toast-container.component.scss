@@ -5,11 +5,17 @@
 
     width: calc(
         100% -
-            (env(safe-area-inset-top, 0) + env(safe-area-inset-top, 0) + 2rem)
+            (
+                env(safe-area-inset-left, 0) + env(safe-area-inset-right, 0) +
+                    2rem
+            )
     );
     max-width: calc(
         100% -
-            (env(safe-area-inset-top, 0) + env(safe-area-inset-top, 0) + 2rem)
+            (
+                env(safe-area-inset-left, 0) + env(safe-area-inset-right, 0) +
+                    2rem
+            )
     );
 }
 

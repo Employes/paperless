@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.200](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.199...v0.1.0-alpha.200) (2022-11-03)
+
+
+### Features
+
+* **Angular:** Add pipes ([75fe34a](https://github.com/ionic-team/stencil-component-starter/commit/75fe34ad7b0b40b79bc630dcb40b4cca2f9cb18e))
+
+
+
+
+
 # [0.1.0-alpha.199](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.198...v0.1.0-alpha.199) (2022-11-03)
 
 

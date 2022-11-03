@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.200](https://github.com/employes/paperless/compare/v0.1.0-alpha.199...v0.1.0-alpha.200) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular:** Actually export the pipes ([5d59e12](https://github.com/employes/paperless/commit/5d59e126c6271791144c851dd6dfa9bf8a8b0698))
+
+
+### Features
+
+* **Angular:** Add pipes ([75fe34a](https://github.com/employes/paperless/commit/75fe34ad7b0b40b79bc630dcb40b4cca2f9cb18e))
+
+
+
+
+
 # [0.1.0-alpha.199](https://github.com/employes/paperless/compare/v0.1.0-alpha.198...v0.1.0-alpha.199) (2022-11-03)
 
 

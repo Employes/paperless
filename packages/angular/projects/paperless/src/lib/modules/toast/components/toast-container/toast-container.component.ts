@@ -5,7 +5,8 @@ import {
     NgZone,
 } from '@angular/core';
 import { Components } from '@paperless/core';
-import { SLIDE_IN_BOTTOM_OUT_TOP } from '../../../../animations';
+import { map } from 'rxjs';
+import { SLIDE_IN_TOP_OUT_BOTTOM } from '../../../../animations';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 import { ToastService } from '../../services/toast.service';
 
@@ -23,10 +24,12 @@ export declare interface PToastContainer extends Components.PToastContainer {
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './toast-container.component.html',
     inputs: ['placement'],
-    animations: [SLIDE_IN_BOTTOM_OUT_TOP],
+    animations: [SLIDE_IN_TOP_OUT_BOTTOM],
 })
 export class ToastContainer {
-    public toasts$ = this._toastService.toasts$;
+    public toasts$ = this._toastService.toasts$.pipe(
+        map((arr) => arr.reverse())
+    );
 
     protected el: HTMLElement;
     constructor(

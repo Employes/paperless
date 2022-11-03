@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'p-date',
+    name: 'pdate',
 })
 export class CustomDatePipe implements PipeTransform {
     constructor(private _datePipe: DatePipe) {}

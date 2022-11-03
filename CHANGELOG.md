@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.216](https://github.com/employes/paperless/compare/v0.1.0-alpha.215...v0.1.0-alpha.216) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Atoms/Label:** Fix padding on label for desktop ([41279e8](https://github.com/employes/paperless/commit/41279e87db749056be36b22f044582b908deb305))
+
+
+
+
+
 # [0.1.0-alpha.215](https://github.com/employes/paperless/compare/v0.1.0-alpha.214...v0.1.0-alpha.215) (2022-11-03)
 
 

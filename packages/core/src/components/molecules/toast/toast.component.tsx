@@ -77,6 +77,7 @@ export class Toast {
                         icon={this.actionIcon}
                         iconFlip={this.actionIconFlip}
                         iconRotate={this.actionIconRotate}
+                        onClick={() => this.action.emit()}
                     />
                 )}
             </Host>

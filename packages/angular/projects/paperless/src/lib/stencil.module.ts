@@ -5,4 +5,4 @@ import { DIRECTIVES } from './stencil';
     declarations: [...DIRECTIVES],
     exports: [...DIRECTIVES],
 })
-export class PaperlessStencilModule {}
+export class StencilModule {}

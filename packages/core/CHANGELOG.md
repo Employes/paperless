@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.199](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.198...v0.1.0-alpha.199) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Core:** Remove toast-container from output ([6d50624](https://github.com/ionic-team/stencil-component-starter/commit/6d50624044af61fd78d2d3f4ac913c4df6b1e287))
+
+
+
+
+
 # [0.1.0-alpha.198](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.197...v0.1.0-alpha.198) (2022-11-02)
 
 **Note:** Version bump only for package @paperless/core

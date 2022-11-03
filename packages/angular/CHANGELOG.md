@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.201](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.200...v0.1.0-alpha.201) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular:** Remove hyphen from angular pipes ([852f64e](https://github.com/Employes/Paperless/commit/852f64e8d49c29a6b4523cc5f445d0bceba61c70))
+
+
+
+
+
 # [0.1.0-alpha.200](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.199...v0.1.0-alpha.200) (2022-11-03)
 
 

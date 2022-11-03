@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.215](https://github.com/employes/paperless/compare/v0.1.0-alpha.214...v0.1.0-alpha.215) (2022-11-03)
+
+
+### Features
+
+* **Angular/Toast:** Reverse incoming toasts ([6fa4bfe](https://github.com/employes/paperless/commit/6fa4bfe4cfc65f9ade52e29967f9daed530f3b40))
+
+
+
+
+
 # [0.1.0-alpha.214](https://github.com/employes/paperless/compare/v0.1.0-alpha.213...v0.1.0-alpha.214) (2022-11-03)
 
 

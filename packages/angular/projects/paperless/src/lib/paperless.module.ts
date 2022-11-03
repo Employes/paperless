@@ -15,7 +15,7 @@ const NGX_PIPES = [DatePipe, CurrencyPipe];
         PaperlessToastModule,
     ],
     declarations: [...DIRECTIVES, ...PIPES],
-    exports: [...DIRECTIVES, ...PIPES],
+    exports: [PaperlessStencilModule, ...DIRECTIVES, ...PIPES],
     providers: [...NGX_PIPES, ...PIPES],
 })
 export class PaperlessModule {}

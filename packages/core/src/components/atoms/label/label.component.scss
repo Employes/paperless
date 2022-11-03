@@ -1,5 +1,5 @@
 :host {
-    @apply flex gap-1 justify-center items-center px-0 desktop-xs:px-3 rounded;
+    @apply flex gap-1 justify-center items-center px-2 desktop-xs:px-3 rounded;
     @apply h-[1.625rem];
     @apply text-sm font-semibold;
 
@@ -17,8 +17,6 @@
 }
 
 :host([circle]) {
-    @apply pl-2;
-
     .circle {
         @apply block;
     }
@@ -73,7 +71,7 @@
 }
 
 :host(.mobile-icon) {
-    @apply pl-0 desktop-xs:pl-2;
+    @apply px-0 desktop-xs:px-3;
     @apply w-[1.625rem] desktop-xs:w-auto;
 
     .content {
@@ -86,7 +84,7 @@
 }
 
 :host(.icon-only) {
-    @apply pl-0 desktop-xs:pl-0 desktop-xs:w-[1.625rem] desktop-xs:px-0;
+    @apply px-0 desktop-xs:px-0 desktop-xs:w-[1.625rem];
 
     .content {
         @apply hidden desktop-xs:hidden #{!important};

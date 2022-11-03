@@ -14,16 +14,7 @@ export class ToastContainer {
 
     render() {
         return (
-            <Host
-                class={{
-                    'p-toast-container': true,
-                    fixed: true,
-                    'top-0': this.placement.indexOf('top') === 0,
-                    'bottom-0': this.placement.indexOf('bottom') === 0,
-                    'left-0': this.placement.indexOf('start') > 0,
-                    'right-0': this.placement.indexOf('end') > 0,
-                }}
-            >
+            <Host class={`p-toast-container placement-${this.placement}`}>
                 <slot />
             </Host>
         );

@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {
-    ToastData,
-    ToastOptions,
-    ToastVariants,
-} from '../components/toast-container/types';
+import { ToastData, ToastOptions, ToastVariants } from '../types';
 
 @Injectable({
     providedIn: 'root',

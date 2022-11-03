@@ -2,8 +2,8 @@
 import { Directive, ElementRef, Host } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { QuickFilter } from '@paperless/core';
-import { BaseValueAccessor } from '../base';
-import { TableComponent } from '../components/table/table.component';
+import { BaseValueAccessor } from '../../../base';
+import { Table } from '../components/table/table.component';
 
 export interface TableDirectiveValue {
 	query?: string;
@@ -39,7 +39,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		selectedRows: [],
 	};
 
-	constructor(el: ElementRef, @Host() private _base: TableComponent) {
+	constructor(el: ElementRef, @Host() private _base: Table) {
 		super(el);
 	}
 

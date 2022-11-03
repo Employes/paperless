@@ -2,7 +2,7 @@ import { Directive, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { QuickFilter } from '@paperless/core';
 
-import { BaseValueAccessor } from '../base';
+import { BaseValueAccessor } from '../../../base';
 
 export interface TableHeaderDirectiveValue {
 	query?: string;

@@ -23,7 +23,7 @@ import { defaultSize, defaultSizeOptions } from './constants';
     styleUrls: ['table.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableComponent implements OnInit, OnChanges {
+export class Table implements OnInit, OnChanges {
     /**
      * The items to be fed to the table
      */

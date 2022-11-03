@@ -4,6 +4,6 @@ export * from './table/table.component';
 
 import { TableCell } from './table-cell/table-cell.component';
 import { TableColumn } from './table-column/table-column.component';
-import { TableComponent } from './table/table.component';
+import { Table } from './table/table.component';
 
-export const COMPONENTS = [TableComponent, TableColumn, TableCell];
+export const TABLE_COMPONENTS = [Table, TableCell, TableColumn];

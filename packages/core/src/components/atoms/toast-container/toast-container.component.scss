@@ -1,5 +1,5 @@
 :host {
     @apply p-4 w-full flex flex-col gap-4 z-toast;
-    @apply max-w-[26.5rem];
+    @apply max-w-full tablet:max-w-[26.5rem];
     @apply z-[600];
 }

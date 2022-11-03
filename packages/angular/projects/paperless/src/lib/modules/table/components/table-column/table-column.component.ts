@@ -12,7 +12,7 @@ import { Components } from '@paperless/core';
 import {
     ProxyCmp,
     proxyOutputs,
-} from '../../stencil/angular-component-lib/utils';
+} from '../../../../stencil/angular-component-lib/utils';
 
 export declare interface PTableColumn extends Components.PTableColumn {
     /**

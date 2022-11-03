@@ -27,10 +27,10 @@ export class ToastService {
         options: ToastOptions = {}
     ) {
         options = {
-            ...options,
             ...this.defaultOptions,
+            ...options,
             icon: options?.icon
-                ? { ...options.icon, ...this.defaultOptions.icon }
+                ? { ...this.defaultOptions.icon, ...options.icon }
                 : this.defaultOptions.icon,
         };
 

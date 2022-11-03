@@ -42,7 +42,7 @@ export const config: Config = {
                 'p-table',
                 'p-table-column',
                 'p-table-cell',
-                'p-toast',
+                'p-toast-container',
             ],
         }),
         react({

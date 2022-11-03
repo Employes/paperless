@@ -24,9 +24,13 @@ export class ModalHeader {
                 </span>
 
                 {this.showMobileClose && (
-                    <div class="close" onClick={() => this.close.emit()}>
-                        <p-icon variant="negative" />
-                    </div>
+                    <p-button
+                        variant="secondary"
+                        icon="negative"
+                        iconOnly={true}
+                        onClick={() => this.close.emit()}
+                        size="small"
+                    ></p-button>
                 )}
             </Host>
         );

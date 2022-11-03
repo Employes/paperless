@@ -33,12 +33,14 @@
 
 ### Depends on
 
-- [p-icon](../icon)
+- [p-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
-  p-modal-header --> p-icon
+  p-modal-header --> p-button
+  p-button --> p-icon
+  p-button --> p-loader
   p-modal --> p-modal-header
   style p-modal-header fill:#f9f,stroke:#333,stroke-width:4px
 ```

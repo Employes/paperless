@@ -1,20 +1,8 @@
 :host {
-    @apply bg-white;
-    @apply desktop-xs:bg-mystic;
-    @apply flex justify-between items-center mx-4 py-4;
-    @apply desktop-xs:mx-0 desktop-xs:px-8 desktop-xs:py-6;
+    @apply bg-mystic;
+    @apply flex justify-between items-center;
+    @apply p-4 desktop-xs:p-6;
 
     @apply text-storm-dark text-xl font-semibold;
     @apply desktop-xs:text-3xl desktop-xs:font-bold;
-
-    @apply border-0 border-b border-solid border-b-mystic-medium #{!important};
-
-    .close {
-        @apply flex justify-center items-center w-7 h-7 rounded bg-indigo-light text-storm-vague cursor-pointer;
-        @apply desktop-xs:hidden;
-
-        &:hover {
-            @apply bg-indigo/20;
-        }
-    }
 }

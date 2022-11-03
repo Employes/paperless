@@ -49,7 +49,9 @@ graph TD;
   p-modal --> p-modal-header
   p-modal --> p-modal-body
   p-modal --> p-modal-footer
-  p-modal-header --> p-icon
+  p-modal-header --> p-button
+  p-button --> p-icon
+  p-button --> p-loader
   p-modal-footer --> p-divider
   style p-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```

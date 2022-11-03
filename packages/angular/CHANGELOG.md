@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.210](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.209...v0.1.0-alpha.210) (2022-11-03)
+
+
+### Features
+
+* **Angular:** Move providers to `forRoot` ([9a9ba6f](https://github.com/Employes/Paperless/commit/9a9ba6f5f819d61f368a8ee0b53efcbb9a209da1))
+
+
+
+
+
 # [0.1.0-alpha.209](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.208...v0.1.0-alpha.209) (2022-11-03)
 
 

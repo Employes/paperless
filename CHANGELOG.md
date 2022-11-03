@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.220](https://github.com/employes/paperless/compare/v0.1.0-alpha.219...v0.1.0-alpha.220) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Atoms/Toast Container:** Use inset left & right ([1ccd848](https://github.com/employes/paperless/commit/1ccd84817184b6f5971c1355fb34d7e4f9272c3a))
+
+
+
+
+
 # [0.1.0-alpha.219](https://github.com/employes/paperless/compare/v0.1.0-alpha.218...v0.1.0-alpha.219) (2022-11-03)
 
 

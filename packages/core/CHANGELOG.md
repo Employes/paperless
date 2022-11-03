@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.217](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.216...v0.1.0-alpha.217) (2022-11-03)
+
+
+### Features
+
+* **Atoms/Toast Container:** Make use of placement class ([3199fe9](https://github.com/ionic-team/stencil-component-starter/commit/3199fe9e8d511cffce7765f67500062051ed10e1))
+
+
+
+
+
 # [0.1.0-alpha.216](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.215...v0.1.0-alpha.216) (2022-11-03)
 
 

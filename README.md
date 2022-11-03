@@ -91,7 +91,15 @@ import { PaperlessModule } from '@employes/paperless-ngx';
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, PaperlessModule],
+    imports: [
+        BrowserModule,
+
+        // add this in your app module
+        PaperlessModule.forRoot(),
+
+        // add this in any module using paperless components
+        PaperlessModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.212](https://github.com/employes/paperless/compare/v0.1.0-alpha.211...v0.1.0-alpha.212) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular/Toast:** Remove console log from toast container ([851a03b](https://github.com/employes/paperless/commit/851a03b32fd0af1607a0e28e6ae66134f9630883))
+
+
+
+
+
 # [0.1.0-alpha.211](https://github.com/employes/paperless/compare/v0.1.0-alpha.210...v0.1.0-alpha.211) (2022-11-03)
 
 **Note:** Version bump only for package paperless

@@ -35,12 +35,6 @@ export class ToastContainer {
         private _toastService: ToastService
     ) {
         this.el = r.nativeElement;
-
-        console.log('Toast container created!');
-
-        this.toasts$.subscribe((toasts) =>
-            console.log('Toasts updated', toasts.length)
-        );
     }
 
     dismiss(index: number) {

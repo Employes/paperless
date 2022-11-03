@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.203](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.202...v0.1.0-alpha.203) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Atoms/Toast Container:** Actually use fixed container ([dea365c](https://github.com/ionic-team/stencil-component-starter/commit/dea365c7d25823ec1da225ef225bc205e6ab2349))
+
+
+
+
+
 # [0.1.0-alpha.202](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.201...v0.1.0-alpha.202) (2022-11-03)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.208](https://github.com/employes/paperless/compare/v0.1.0-alpha.207...v0.1.0-alpha.208) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular:** Rename modules & fix imports ([3c9dc2c](https://github.com/employes/paperless/commit/3c9dc2c66309c30068ad586801b47200f1767e72))
+
+
+### Features
+
+* **Angular:** Export sub modules ([65fa8e7](https://github.com/employes/paperless/commit/65fa8e777790941dc1b368cad5ebf0fe2bce07e2))
+
+
+
+
+
 # [0.1.0-alpha.207](https://github.com/employes/paperless/compare/v0.1.0-alpha.206...v0.1.0-alpha.207) (2022-11-03)
 
 

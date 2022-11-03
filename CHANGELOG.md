@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.206](https://github.com/employes/paperless/compare/v0.1.0-alpha.205...v0.1.0-alpha.206) (2022-11-03)
+
+
+### Features
+
+* **Angular/Toast:** Export types ([4b1c5fc](https://github.com/employes/paperless/commit/4b1c5fc2b2f854df9635a3e41f89dad2970bbfc0))
+
+
+
+
+
 # [0.1.0-alpha.205](https://github.com/employes/paperless/compare/v0.1.0-alpha.204...v0.1.0-alpha.205) (2022-11-03)
 
 

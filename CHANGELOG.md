@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.213](https://github.com/employes/paperless/compare/v0.1.0-alpha.212...v0.1.0-alpha.213) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular/Toast:** Make sure options aren't overwritten by default ([644b007](https://github.com/employes/paperless/commit/644b0070a0b883aea0008cf276cbdbeb098dae73))
+
+
+
+
+
 # [0.1.0-alpha.212](https://github.com/employes/paperless/compare/v0.1.0-alpha.211...v0.1.0-alpha.212) (2022-11-03)
 
 

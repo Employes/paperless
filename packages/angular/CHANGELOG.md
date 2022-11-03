@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.205](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.204...v0.1.0-alpha.205) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Angular:** Create a shared stencil module ([41eb235](https://github.com/Employes/Paperless/commit/41eb235029fc977b766a197677d11d6583afb1cb))
+* **Angular:** Incorrect import on toast component ([76881f8](https://github.com/Employes/Paperless/commit/76881f87dacb3ebeee268d48023914d70a2f6a1c))
+
+
+### Features
+
+* **Angular:** Add toast module & cleanup code ([74bf1c4](https://github.com/Employes/Paperless/commit/74bf1c4ca9187eab3c8f3a7a2486b13acc21fbe9))
+
+
+
+
+
 # [0.1.0-alpha.204](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.203...v0.1.0-alpha.204) (2022-11-03)
 
 **Note:** Version bump only for package @paperless/angular

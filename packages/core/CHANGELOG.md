@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.205](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.204...v0.1.0-alpha.205) (2022-11-03)
+
+
+### Features
+
+* **Angular:** Add toast module & cleanup code ([74bf1c4](https://github.com/ionic-team/stencil-component-starter/commit/74bf1c4ca9187eab3c8f3a7a2486b13acc21fbe9))
+
+
+
+
+
 # [0.1.0-alpha.204](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.203...v0.1.0-alpha.204) (2022-11-03)
 
 

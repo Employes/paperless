@@ -12,15 +12,12 @@ export class ToastContainer {
     @Prop() placement: 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' =
         'top-end';
 
-    /**
-     * top-0 bottom-0 left-0 right-0 static
-     */
     render() {
         return (
             <Host
                 class={{
                     'p-toast-container': true,
-                    static: true,
+                    fixed: true,
                     'top-0': this.placement.indexOf('top') === 0,
                     'bottom-0': this.placement.indexOf('bottom') === 0,
                     'left-0': this.placement.indexOf('start') > 0,

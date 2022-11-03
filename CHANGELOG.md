@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.214](https://github.com/employes/paperless/compare/v0.1.0-alpha.213...v0.1.0-alpha.214) (2022-11-03)
+
+
+### Bug Fixes
+
+* **Organisms/Navbar:** Make sure the backdrop isn't on same level as nav ([a87f47e](https://github.com/employes/paperless/commit/a87f47e5d6b6df8c41f922eb9513b8def555f1d8))
+
+
+### Features
+
+* **Atoms/Toast Container:** Add safe-inset to toasts ([e81b18a](https://github.com/employes/paperless/commit/e81b18a747fea80e73a505f9264598cc071b9e4d))
+
+
+
+
+
 # [0.1.0-alpha.213](https://github.com/employes/paperless/compare/v0.1.0-alpha.212...v0.1.0-alpha.213) (2022-11-03)
 
 

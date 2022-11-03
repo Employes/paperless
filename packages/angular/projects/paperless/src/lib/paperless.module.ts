@@ -1,7 +1,7 @@
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { DIRECTIVES } from './directives';
-import { MODULES } from './modules';
+import { MODULES, TOAST_SERVICES } from './modules';
 import { PIPES } from './pipes';
 import { StencilModule } from './stencil.module';
 
@@ -13,4 +13,11 @@ const NGX_PIPES = [DatePipe, CurrencyPipe];
     exports: [StencilModule, ...MODULES, ...DIRECTIVES, ...PIPES],
     providers: [...NGX_PIPES, ...PIPES],
 })
-export class PaperlessModule {}
+export class PaperlessModule {
+    static forRoot(): ModuleWithProviders<PaperlessModule> {
+        return {
+            ngModule: PaperlessModule,
+            providers: [...TOAST_SERVICES],
+        };
+    }
+}

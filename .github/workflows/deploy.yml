@@ -51,7 +51,7 @@ jobs:
 
             - uses: c-hive/gha-yarn-cache@d528cd63c28aed0a9f44b1cada95050d7aa95c2e # tag=v2
 
-            - uses: oleksiyrudenko/gha-git-credentials@1b0fce528e893ad7a9903c84e0055890d75e29e3 # tag=v2-latest
+            - uses: oleksiyrudenko/gha-git-credentials@6132cfce45156e2c1562673f9be1a91a575ce879 # v2-latest
               with:
                   name: 'Github Actions'
                   email: 'actions@github.com'

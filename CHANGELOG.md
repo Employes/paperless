@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.222](https://github.com/employes/paperless/compare/v0.1.0-alpha.221...v0.1.0-alpha.222) (2022-11-07)
+
+
+### Features
+
+* **Molecules/Input Group:** Add 2px margin to label ([a170a53](https://github.com/employes/paperless/commit/a170a53dd36232927c6ea49ef8c7c079acf6a66f))
+
+
+
+
+
 # [0.1.0-alpha.221](https://github.com/employes/paperless/compare/v0.1.0-alpha.220...v0.1.0-alpha.221) (2022-11-07)
 
 

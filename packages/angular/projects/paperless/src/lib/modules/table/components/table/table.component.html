@@ -24,7 +24,11 @@
                 [value]="col.name"
                 variant="header"
                 [index]="index"
-                [checkbox]="index === 0 ? checkboxTemplate : undefined"
+                [checkbox]="
+                    index === 0 && enableRowSelection
+                        ? checkboxTemplate
+                        : undefined
+                "
             ></p-table-cell-ngx>
             <ng-template #checkboxTemplate>
                 <input
@@ -48,7 +52,11 @@
                     <p-table-cell-ngx
                         [definition]="col"
                         variant="loading"
-                        [checkbox]="index === 0 ? checkboxTemplate : undefined"
+                        [checkbox]="
+                            index === 0 && enableRowSelection
+                                ? checkboxTemplate
+                                : undefined
+                        "
                         [index]="index"
                         [rowIndex]="rowIndex"
                     ></p-table-cell-ngx>
@@ -72,7 +80,11 @@
                     <p-table-cell-ngx
                         [definition]="col"
                         [item]="item"
-                        [checkbox]="index === 0 ? checkboxTemplate : undefined"
+                        [checkbox]="
+                            index === 0 && enableRowSelection
+                                ? checkboxTemplate
+                                : undefined
+                        "
                         [index]="index"
                         [rowIndex]="rowIndex"
                         [template]="col.template"

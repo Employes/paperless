@@ -11,7 +11,7 @@
     @apply outline-none #{!important};
 
     .input-label {
-        @apply text-xs text-storm-vague font-semibold uppercase tracking-wider;
+        @apply text-xs text-storm-vague font-semibold uppercase tracking-wider mb-[2px];
     }
 
     .input-header {

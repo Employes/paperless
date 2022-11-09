@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.224](https://github.com/employes/paperless/compare/v0.1.0-alpha.223...v0.1.0-alpha.224) (2022-11-09)
+
+
+### Features
+
+* **Angular/Toast:** Add ability for toast context data ([c8dacaf](https://github.com/employes/paperless/commit/c8dacafbd6e1d7e1d02312b6c939622f96794ff0))
+
+
+
+
+
 # [0.1.0-alpha.223](https://github.com/employes/paperless/compare/v0.1.0-alpha.222...v0.1.0-alpha.223) (2022-11-09)
 
 

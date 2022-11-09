@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.223](https://github.com/employes/paperless/compare/v0.1.0-alpha.222...v0.1.0-alpha.223) (2022-11-09)
+
+
+### Features
+
+* **Angular/Toast:** Add action func ([5867556](https://github.com/employes/paperless/commit/586755673134205c212ae91c0f70b278ad3fe5e0))
+
+
+
+
+
 # [0.1.0-alpha.222](https://github.com/employes/paperless/compare/v0.1.0-alpha.221...v0.1.0-alpha.222) (2022-11-07)
 
 

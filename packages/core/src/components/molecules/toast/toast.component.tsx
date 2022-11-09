@@ -50,7 +50,10 @@ export class Toast {
 
     render() {
         return (
-            <Host class={`p-toast variant-${this.variant}`}>
+            <Host
+                class={`p-toast variant-${this.variant}`}
+                onClick={() => this._onClick()}
+            >
                 <div class="flex flex-col w-full min-w-0">
                     <p class="font-semibold text-storm">
                         {this.header?.length ? (
@@ -77,10 +80,15 @@ export class Toast {
                         icon={this.actionIcon}
                         iconFlip={this.actionIconFlip}
                         iconRotate={this.actionIconRotate}
-                        onClick={() => this.action.emit()}
                     />
                 )}
             </Host>
         );
+    }
+
+    private _onClick() {
+        if (this.enableAction) {
+            this.action.emit();
+        }
     }
 }

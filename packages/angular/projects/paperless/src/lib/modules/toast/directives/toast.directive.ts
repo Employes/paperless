@@ -12,6 +12,7 @@ export class ToastDirective {
     @Input() index: number = 0;
     @Input() dismissOnAction: boolean = true;
     @Input() actionFunc?: ToastActionFunction;
+    @Input() actionData: any = {};
 
     @Output() dismiss: EventEmitter<number> = new EventEmitter();
 
@@ -29,7 +30,7 @@ export class ToastDirective {
         }
 
         if (this.actionFunc) {
-            this.actionFunc(this);
+            this.actionFunc(this, this.actionData);
         }
     }
 

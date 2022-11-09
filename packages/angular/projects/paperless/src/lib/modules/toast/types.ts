@@ -14,7 +14,10 @@ export enum ToastVariants {
     Negative = 'negative',
 }
 
-export type ToastActionFunction = (directive?: ToastDirective) => void;
+export type ToastActionFunction = (
+    directive?: ToastDirective,
+    data?: any
+) => void;
 
 export interface ToastOptions {
     delay?: number | 'infinite';
@@ -22,6 +25,7 @@ export interface ToastOptions {
 
     enableAction?: boolean;
     action?: ToastActionFunction;
+    actionData?: any;
 
     icon?: {
         variant?: IconVariant;

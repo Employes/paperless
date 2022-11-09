@@ -1,4 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
+import { ToastActionFunction } from '../types';
 
 @Directive({
     selector: 'p-toast',
@@ -10,6 +11,7 @@ export class ToastDirective {
     @Input() delay: number | 'infinite' = 5000;
     @Input() index: number = 0;
     @Input() dismissOnAction: boolean = true;
+    @Input() actionFunc?: ToastActionFunction;
 
     @Output() dismiss: EventEmitter<number> = new EventEmitter();
 
@@ -22,8 +24,12 @@ export class ToastDirective {
     }
 
     onAction() {
-        if (this.dismissOnAction) {
-            this.doDismiss();
+        if (this.dismissOnAction && !this.actionFunc) {
+            return this.doDismiss();
+        }
+
+        if (this.actionFunc) {
+            this.actionFunc(this);
         }
     }
 

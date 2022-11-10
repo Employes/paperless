@@ -64,6 +64,8 @@ export class TableNgxDirective extends BaseValueAccessor {
 		if (value?.quickFilter) {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
+		
+		this._checkEmptyStateType();
 	}
 
 	public override registerOnChange(fn: (value: any) => void) {
@@ -86,11 +88,22 @@ export class TableNgxDirective extends BaseValueAccessor {
 		if (type === 'quickFilter' && typeof value === 'object') {
 			this._setActiveQuickFilter(value);
 		}
+		
+		this._checkEmptyStateType();
 	}
 
 	private _setActiveQuickFilter(quickFilter: QuickFilter) {
 		this._base.activeQuickFilterIdentifier = quickFilter?.identifier;
 		// this.el.nativeElement.activeQuickFilterIdentifier =
 		// 	quickFilter?.identifier;
+	}
+
+	private _checkEmptyStateType() {
+		if(this.lastValue.query?.length || !this.lastValue.quickFilter?.default || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0)) {
+			this._base.emptyStateType = 'filtered';
+			return;
+		}
+
+		this._base.emptyStateType = 'no_filter';
 	}
 }

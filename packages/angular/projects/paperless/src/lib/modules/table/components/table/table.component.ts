@@ -208,6 +208,7 @@ export class Table implements OnInit, OnChanges {
     @Input() hideOnSinglePage: boolean = true;
 
     /* Empty state start */
+    @Input() emptyStateType: 'no_filter' | 'filtered' = 'no_filter';
 
     @Input() emptyStateHeader!: string;
     @Input() emptyStateContent!: string;

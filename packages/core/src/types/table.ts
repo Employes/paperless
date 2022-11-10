@@ -4,6 +4,7 @@ export interface QuickFilter {
     identifier: string;
     text: string | QuickFilterTextFunction;
     count?: number;
+    default?: boolean;
 }
 
 export interface RowClickEvent {

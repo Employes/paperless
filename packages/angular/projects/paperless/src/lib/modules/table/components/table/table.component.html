@@ -127,10 +127,7 @@
 
 <ng-template #emptyStateTemplate>
     <div
-        *ngIf="
-            query?.length || selectedFiltersAmount;
-            else emptyStateNonFilterTemplate
-        "
+        *ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
         class="
             flex flex-col
             items-center

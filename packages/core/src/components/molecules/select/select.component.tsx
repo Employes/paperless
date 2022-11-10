@@ -295,7 +295,7 @@ export class Select {
             return;
         }
 
-        this._showDropdown = true;
+        this._showDropdown = !this._showDropdown;
     }
 
     private _onBlur(force = false) {
@@ -317,12 +317,22 @@ export class Select {
     }
 
     private _checkvalue(key, item) {
-        return item?.[key]?.toString()?.indexOf(this.query) >= 0;
+        return (
+            item?.[key]
+                ?.toString()
+                ?.toLowerCase()
+                .indexOf(this.query?.toLowerCase()) >= 0
+        );
     }
 
     private _getItems() {
         return this._items.map((item) => (
-            <p-dropdown-menu-item onClick={() => this._selectValue(item)}>
+            <p-dropdown-menu-item
+                onClick={() => this._selectValue(item)}
+                active={
+                    item[this.valueKey] === this._selectedItem?.[this.valueKey]
+                }
+            >
                 {item[this.displayKey]}
             </p-dropdown-menu-item>
         ));

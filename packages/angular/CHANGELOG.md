@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.225](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.224...v0.1.0-alpha.225) (2022-11-10)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Fix templating error ([b35ac38](https://github.com/Employes/Paperless/commit/b35ac389b03e6cca172720e50ff85bc39f3daab8))
+
+
+### Features
+
+* **Organisms/Table:** Add empty state ([be0f908](https://github.com/Employes/Paperless/commit/be0f9088c129f6976091b3f0dfbd1ae6e7359817))
+
+
+
+
+
 # [0.1.0-alpha.224](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.223...v0.1.0-alpha.224) (2022-11-09)
 
 

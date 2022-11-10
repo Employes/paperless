@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.225](https://github.com/employes/paperless/compare/v0.1.0-alpha.224...v0.1.0-alpha.225) (2022-11-10)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Fix templating error ([b35ac38](https://github.com/employes/paperless/commit/b35ac389b03e6cca172720e50ff85bc39f3daab8))
+
+
+### Features
+
+* **Atoms/Illustartions:** Add empty state overview & search ([95a5ed9](https://github.com/employes/paperless/commit/95a5ed9b9364f48318b729afaeded5355b8f49f5))
+* **Molecules/Select:** Active item, click to close & filter improvement ([477d731](https://github.com/employes/paperless/commit/477d731f19f5f6c4e1df872ed188d1b72ee23b80))
+* **Organisms/Table:** Add empty state ([be0f908](https://github.com/employes/paperless/commit/be0f9088c129f6976091b3f0dfbd1ae6e7359817))
+
+
+
+
+
 # [0.1.0-alpha.224](https://github.com/employes/paperless/compare/v0.1.0-alpha.223...v0.1.0-alpha.224) (2022-11-09)
 
 

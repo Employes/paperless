@@ -248,12 +248,22 @@ export class Table implements OnInit, OnChanges {
 
     ngOnInit() {
         this._parseItems(this.items);
+
+        this.loadingRows = Array.from({
+            length: this.amountOfLoadingRows,
+        });
         // this._generateColumns();
     }
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes['items']) {
             this._parseItems(changes['items'].currentValue);
+        }
+
+        if (changes['amountOfLoadingRows']) {
+            this.loadingRows = Array.from({
+                length: changes['amountOfLoadingRows'].currentValue,
+            });
         }
     }
 

@@ -39,7 +39,7 @@ export class Table {
     /**
      * The amount of loading rows to show
      */
-    @Prop() amountOfLoadingRows: number = 4;
+    @Prop() amountOfLoadingRows: number = 6;
 
     /**
      * Wether to enable selection

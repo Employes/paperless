@@ -37,7 +37,7 @@ export class Table implements OnInit, OnChanges {
     /**
      * The amount of loading rows to show
      */
-    @Input() amountOfLoadingRows: number = 4;
+    @Input() amountOfLoadingRows: number = 6;
 
     /**
      * Wether to enable selection

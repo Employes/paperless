@@ -11,12 +11,15 @@ import {
     Watch,
 } from '@stencil/core';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
+import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
 import {
     defaultSize,
     defaultSizeOptions,
 } from '../../molecules/page-size-select/constants';
-import { templateFunc } from '../../molecules/page-size-select/page-size-select.component';
+import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
+
+export type templateFunc = () => string;
 
 @Component({
     tag: 'p-table',
@@ -132,7 +135,7 @@ export class Table {
     /**
      * The template for the edit button text
      */
-    @Prop() editButtonTemplate: templateFunc;
+    @Prop() editButtonTemplate: buttonTemplateFunc;
 
     /**
      * Event when one of the quick filters is clicked
@@ -211,10 +214,36 @@ export class Table {
      */
     @Prop() hideOnSinglePage: boolean = true;
 
+    /* Empty state start */
+
+    @Prop() emptyStateHeader: templateFunc = () =>
+        formatTranslation(this._locales.empty_state?.no_filter.header);
+    @Prop() emptyStateContent: templateFunc = () =>
+        formatTranslation(this._locales.empty_state?.no_filter.content);
+    @Prop() emptyStateAction: templateFunc = () =>
+        formatTranslation(this._locales.empty_state?.no_filter.action);
+
+    @Prop() emptyStateFilteredHeader: templateFunc = () =>
+        formatTranslation(this._locales.empty_state.filtered.header);
+    @Prop() emptyStateFilteredContent: templateFunc = () =>
+        formatTranslation(this._locales.empty_state.filtered.content);
+
+    /**
+     * Event whenever the empty state is clicked
+     */
+    @Event() emptyStateActionClick: EventEmitter<null>;
+
+    /* Empty state end */
+
     /**
      * The host element
      */
     @Element() private _el: HTMLElement;
+
+    /**
+     * Locales used for this component
+     */
+    @State() private _locales: any = {};
 
     @State() private _columns: any[] = [];
     @State() private _items: any[] = [];
@@ -222,6 +251,7 @@ export class Table {
     private _ctrlDown = false;
 
     componentWillLoad() {
+        this._setLocales();
         this._parseItems(this.items);
         this._generateColumns();
     }
@@ -289,6 +319,11 @@ export class Table {
                 </p-table-container>
             </Host>
         );
+    }
+
+    @Listen('localeChanged', { target: 'body' })
+    private async _setLocales(): Promise<void> {
+        this._locales = await getLocaleComponentStrings(this._el);
     }
 
     @Listen('tableDefinitionChanged', { target: 'body' })
@@ -377,6 +412,10 @@ export class Table {
             );
         }
 
+        if (!this._items.length) {
+            return this._getEmptyState();
+        }
+
         return this._items.map((item, index) => (
             <p-table-row
                 enableHover={this.enableRowSelection || this.enableRowClick}
@@ -450,6 +489,46 @@ export class Table {
                 disabled={this.canSelectKey && !item[this.canSelectKey]}
                 checked={this._selectionContains(item, rowIndex)}
             />
+        );
+    }
+
+    private _getEmptyState() {
+        if (this.query?.length || this.selectedFiltersAmount) {
+            return (
+                <div class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+                    <p-illustration variant="empty-state-search" class="mb-6" />
+                    <p class="font-semibold text-storm-default">
+                        {this.emptyStateFilteredHeader()}
+                    </p>
+                    <p class="text-sm text-storm-medium mb-14">
+                        {this.emptyStateFilteredContent()}
+                    </p>
+                </div>
+            );
+        }
+
+        return (
+            <div class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+                <p-illustration
+                    variant="empty-state-overview"
+                    class="cursor-pointer mb-6"
+                    onClick={() => this.emptyStateActionClick.emit(null)}
+                />
+                <p class="font-semibold text-storm-default">
+                    {this.emptyStateHeader()}
+                </p>
+                <p class="text-sm text-storm-medium mb-6">
+                    {this.emptyStateContent()}
+                </p>
+                <p-button
+                    variant="secondary"
+                    icon="plus"
+                    size="small"
+                    onClick={() => this.emptyStateActionClick.emit(null)}
+                >
+                    {this.emptyStateAction()}
+                </p-button>
+            </div>
         );
     }
 

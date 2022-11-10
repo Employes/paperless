@@ -102,3 +102,35 @@ import Docs from '../../../packages/core/src/components/organisms/table/readme.m
         </p-table>
     </div>
 </Canvas>
+
+## Empty state
+
+<Canvas>
+    <div class="h-[38rem] w-full">
+        <p-table
+            enable-row-selection={false}
+            selection-key="date"
+            can-select-key="canSelect"
+            items="[]"
+            total={32}
+        >
+            <p-table-column
+                type="th"
+                name="Datum"
+                path="date"
+                sizes={8}
+            ></p-table-column>
+            <p-table-column
+                name="Uren"
+                path="hours"
+                align="end"
+                sizes={2}
+            ></p-table-column>
+            <p-table-column
+                path="status"
+                align="end"
+                sizes={2}
+            ></p-table-column>
+        </p-table>
+    </div>
+</Canvas>

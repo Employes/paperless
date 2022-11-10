@@ -1,0 +1,13 @@
+{
+    "empty_state": {
+        "filtered": {
+            "header": "No results found",
+            "content": "There have been no results based on the provided criteria. Try again later."
+        },
+        "no_filter": {
+            "header": "Nothing submitted yet",
+            "content": "We can't show a overview when there is nothing submitted. Start with submitting.",
+            "action": "New"
+        }
+    }
+}

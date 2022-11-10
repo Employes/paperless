@@ -71,6 +71,7 @@
         </ng-container>
 
         <ng-template #contentTemplate>
+            <ng-container *ngIf="items?.length; else emptyStateTemplate">
             <p-table-row
                 *ngFor="let item of items; let rowIndex = index"
                 [enableHover]="enableRowSelection || enableRowClick"
@@ -101,6 +102,7 @@
                     </ng-template>
                 </ng-container>
             </p-table-row>
+            </ng-container>
         </ng-template>
     </div>
 
@@ -118,3 +120,39 @@
         (onExport)="export.emit()"
     ></p-table-footer>
 </p-table-container>
+
+<ng-template #emptyStateTemplate>
+    <div *ngIf="query?.length || selectedFiltersAmount; else emptyStateNonFilterTemplate" class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+        <p-illustration variant="empty-state-search" class="mb-6" />
+        <p class="font-semibold text-storm-default">
+            {{emptyStateFilteredHeader}}
+        </p>
+        <p class="text-sm text-storm-medium mb-14">
+            {{emptyStateFilteredContent}}
+        </p>
+    </div>
+</ng-template>
+
+<ng-template #emptyStateNonFilterTemplate>
+    <div class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+        <p-illustration
+            variant="empty-state-overview"
+            class="cursor-pointer mb-6"
+            (click)="emptyStateActionClick.emit()"
+        />
+        <p class="font-semibold text-storm-default">
+            {{emptyStateHeader}}
+        </p>
+        <p class="text-sm text-storm-medium mb-6">
+            {{emptyStateContent}}
+        </p>
+        <p-button
+            variant="secondary"
+            icon="plus"
+            size="small"
+            (click)="emptyStateActionClick.emit()"
+        >
+            {{emptyStateAction}}
+        </p-button>
+    </div>
+</ng-template>

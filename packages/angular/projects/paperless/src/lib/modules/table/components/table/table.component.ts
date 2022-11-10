@@ -207,6 +207,22 @@ export class Table implements OnInit, OnChanges {
      */
     @Input() hideOnSinglePage: boolean = true;
 
+    /* Empty state start */
+
+    @Input() emptyStateHeader!: string;
+    @Input() emptyStateContent!: string;
+    @Input() emptyStateAction!: string;
+
+    @Input() emptyStateFilteredHeader!: string;
+    @Input() emptyStateFilteredContent!: string;
+
+    /**
+     * Event whenever the empty state is clicked
+     */
+    @Output() emptyStateActionClick: EventEmitter<null> = new EventEmitter();
+
+    /* Empty state end */
+
     public columns: any[] = [];
     public parsedItems: any[] = [];
     public loadingRows = Array.from({

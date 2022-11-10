@@ -1,0 +1,13 @@
+{
+    "empty_state": {
+        "filtered": {
+            "header": "Geen resultaten gevonden",
+            "content": "Er zijn geen resultaten gevonden op basis van de ingevoerde criteria. Probeer het nog eens."
+        },
+        "no_filter": {
+            "header": "Nog niks ingediend",
+            "content": "Er kan geen overzicht worden getoond tot er iets wordt ingediend. Begin met indienen.",
+            "action": "Nieuw"
+        }
+    }
+}

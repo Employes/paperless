@@ -14,9 +14,10 @@ import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTe
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-import { templateFunc as templateFunc1 } from "./components/molecules/page-size-select/page-size-select.component";
+import { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
-import { buttonTemplateFunc, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -731,7 +732,12 @@ export namespace Components {
         /**
           * The template for the edit button text
          */
-        "editButtonTemplate": templateFunc1;
+        "editButtonTemplate": buttonTemplateFunc;
+        "emptyStateAction": templateFunc;
+        "emptyStateContent": templateFunc;
+        "emptyStateFilteredContent": templateFunc;
+        "emptyStateFilteredHeader": templateFunc;
+        "emptyStateHeader": templateFunc;
         /**
           * Wether to show the edit button
          */
@@ -767,7 +773,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc1;
+        "filterButtonTemplate": templateFunc;
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -2213,7 +2219,12 @@ declare namespace LocalJSX {
         /**
           * The template for the edit button text
          */
-        "editButtonTemplate"?: templateFunc1;
+        "editButtonTemplate"?: buttonTemplateFunc;
+        "emptyStateAction"?: templateFunc;
+        "emptyStateContent"?: templateFunc;
+        "emptyStateFilteredContent"?: templateFunc;
+        "emptyStateFilteredHeader"?: templateFunc;
+        "emptyStateHeader"?: templateFunc;
         /**
           * Wether to show the edit button
          */
@@ -2249,7 +2260,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc1;
+        "filterButtonTemplate"?: templateFunc;
         /**
           * Wether to hide when there is only 1 page available
          */
@@ -2266,6 +2277,10 @@ declare namespace LocalJSX {
           * Event when the edit button is clicked
          */
         "onEdit"?: (event: PTableCustomEvent<null>) => void;
+        /**
+          * Event whenever the empty state is clicked
+         */
+        "onEmptyStateActionClick"?: (event: PTableCustomEvent<null>) => void;
         /**
           * Event whenever the page changes
          */

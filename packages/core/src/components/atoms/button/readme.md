@@ -40,6 +40,7 @@
  - [p-modal-header](../modal-header)
  - [p-navbar](../../organisms/navbar)
  - [p-page-size-select](../../molecules/page-size-select)
+ - [p-table](../../organisms/table)
  - [p-table-footer](../../molecules/table-footer)
  - [p-table-header](../../molecules/table-header)
  - [p-toast](../../molecules/toast)
@@ -57,6 +58,7 @@ graph TD;
   p-modal-header --> p-button
   p-navbar --> p-button
   p-page-size-select --> p-button
+  p-table --> p-button
   p-table-footer --> p-button
   p-table-header --> p-button
   p-toast --> p-button

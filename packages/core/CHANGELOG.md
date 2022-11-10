@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.228](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.227...v0.1.0-alpha.228) (2022-11-10)
+
+
+### Features
+
+* **Organisms/Table:** Default `amountOfLoadingRows` to 6 ([509439b](https://github.com/ionic-team/stencil-component-starter/commit/509439bc50aa17af994a7b6a86d44903a3f30377))
+
+
+
+
+
 # [0.1.0-alpha.227](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.226...v0.1.0-alpha.227) (2022-11-10)
 
 

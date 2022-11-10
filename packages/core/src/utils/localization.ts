@@ -41,14 +41,6 @@ export const getLocaleComponentStrings = async (
         return cache[componentName][componentLanguage];
     }
 
-    if (!cache[componentName]) {
-        cache[componentName] = {};
-    }
-
-    if (!cache[componentName][componentLanguage]) {
-        cache[componentName][componentLanguage] = {};
-    }
-
     try {
         strings = await fetchLocaleStringsForComponent(
             componentName,
@@ -59,6 +51,14 @@ export const getLocaleComponentStrings = async (
             `no locale for ${componentName} (${componentLanguage}) loading default locale en.`
         );
         strings = await fetchLocaleStringsForComponent(componentName, 'en');
+    }
+
+    if (!cache[componentName]) {
+        cache[componentName] = {};
+    }
+
+    if (!cache[componentName][componentLanguage]) {
+        cache[componentName][componentLanguage] = {};
     }
 
     cache[componentName][componentLanguage] = strings;

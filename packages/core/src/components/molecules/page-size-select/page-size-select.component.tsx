@@ -22,6 +22,10 @@ export type templateFunc = (value: number) => string;
     shadow: true,
 })
 export class PageSizeSelect {
+    private _defaultButtonTemplate: templateFunc = (size) =>
+        formatTranslation(this._locales.item, { size });
+    private _defaultItemTemplate: templateFunc = (size) =>
+        formatTranslation(this._locales.item, { size });
     /**
      * The current page
      */
@@ -50,14 +54,12 @@ export class PageSizeSelect {
     /**
      * The template for the data view
      */
-    @Prop() buttonTemplate: templateFunc = (size) =>
-        formatTranslation(this._locales.button, { size });
+    @Prop() buttonTemplate: templateFunc = this._defaultButtonTemplate;
 
     /**
      * The template for the data view
      */
-    @Prop() itemTemplate: templateFunc = (size) =>
-        formatTranslation(this._locales.item, { size });
+    @Prop() itemTemplate: templateFunc = this._defaultItemTemplate;
 
     /**
      * The host element
@@ -91,7 +93,9 @@ export class PageSizeSelect {
                         slot="trigger"
                         size={this.buttonSize}
                     >
-                        {this.buttonTemplate(this.size)}
+                        {this.buttonTemplate
+                            ? this.buttonTemplate(this.size)
+                            : this._defaultButtonTemplate(this.size)}
                     </p-button>
                     <slot slot="items">
                         {this.sizeOptions.map((option) => (
@@ -99,7 +103,9 @@ export class PageSizeSelect {
                                 active={option === this.size}
                                 onClick={() => this._changeSize(option)}
                             >
-                                {this.itemTemplate(option)}
+                                {this.itemTemplate
+                                    ? this.itemTemplate(this.size)
+                                    : this._defaultItemTemplate(option)}
                             </p-dropdown-menu-item>
                         ))}
                     </slot>

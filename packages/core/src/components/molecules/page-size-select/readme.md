@@ -7,15 +7,15 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                        | Type                        | Default                                                               |
-| ----------------- | ------------------ | -------------------------------------------------- | --------------------------- | --------------------------------------------------------------------- |
-| `buttonSize`      | `button-size`      | The size of the button                             | `"medium" \| "small"`       | `'small'`                                                             |
-| `buttonTemplate`  | --                 | The template for the data view                     | `(value: number) => string` | `(size) =>         formatTranslation(this._locales.button, { size })` |
-| `chevronPosition` | `chevron-position` | Chevron position                                   | `"end" \| "start"`          | `'start'`                                                             |
-| `hidden`          | `hidden`           | Wether to hide when there is only 1 page available | `boolean`                   | `false`                                                               |
-| `itemTemplate`    | --                 | The template for the data view                     | `(value: number) => string` | `(size) =>         formatTranslation(this._locales.item, { size })`   |
-| `size`            | `size`             | The current page                                   | `number`                    | `defaultSize`                                                         |
-| `sizeOptions`     | --                 | The available sizes                                | `number[]`                  | `defaultSizeOptions`                                                  |
+| Property          | Attribute          | Description                                        | Type                        | Default                       |
+| ----------------- | ------------------ | -------------------------------------------------- | --------------------------- | ----------------------------- |
+| `buttonSize`      | `button-size`      | The size of the button                             | `"medium" \| "small"`       | `'small'`                     |
+| `buttonTemplate`  | --                 | The template for the data view                     | `(value: number) => string` | `this._defaultButtonTemplate` |
+| `chevronPosition` | `chevron-position` | Chevron position                                   | `"end" \| "start"`          | `'start'`                     |
+| `hidden`          | `hidden`           | Wether to hide when there is only 1 page available | `boolean`                   | `false`                       |
+| `itemTemplate`    | --                 | The template for the data view                     | `(value: number) => string` | `this._defaultItemTemplate`   |
+| `size`            | `size`             | The current page                                   | `number`                    | `defaultSize`                 |
+| `sizeOptions`     | --                 | The available sizes                                | `number[]`                  | `defaultSizeOptions`          |
 
 
 ## Events

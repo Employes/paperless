@@ -25,6 +25,18 @@ export type buttonTemplateFunc = (amount: number) => string;
     shadow: true,
 })
 export class TableHeader {
+    private _defaultFilterButtonTemplate: templateFunc = () =>
+        formatTranslation(this._locales.filter);
+    private _defaultEditButtonTemplate: buttonTemplateFunc = (amount: number) =>
+        formatTranslation(
+            amount === 0
+                ? this._locales.edit
+                : amount === 1
+                ? this._locales.edit_single
+                : this._locales.edit_plural,
+            { amount }
+        );
+
     /**
      * Quick filters to show
      */
@@ -63,8 +75,8 @@ export class TableHeader {
     /**
      * The template for the filter button text
      */
-    @Prop() filterButtonTemplate: templateFunc = () =>
-        formatTranslation(this._locales.filter);
+    @Prop() filterButtonTemplate: templateFunc =
+        this._defaultFilterButtonTemplate;
 
     /**
      * Wether to show the edit button
@@ -79,15 +91,8 @@ export class TableHeader {
     /**
      * The template for the edit button text
      */
-    @Prop() editButtonTemplate: buttonTemplateFunc = (amount: number) =>
-        formatTranslation(
-            amount === 0
-                ? this._locales.edit
-                : amount === 1
-                ? this._locales.edit_single
-                : this._locales.edit_plural,
-            { amount }
-        );
+    @Prop() editButtonTemplate: buttonTemplateFunc =
+        this._defaultEditButtonTemplate;
 
     /**
      * Event when one of the quick filters is clicked
@@ -178,7 +183,9 @@ export class TableHeader {
                             class="w-full desktop-xs:w-auto"
                             onClick={() => this.filter.emit()}
                         >
-                            {this.filterButtonTemplate()}
+                            {this.filterButtonTemplate
+                                ? this.filterButtonTemplate()
+                                : this._defaultFilterButtonTemplate()}
                             {this.selectedFiltersAmount && (
                                 <p-label
                                     size="small"
@@ -220,7 +227,13 @@ export class TableHeader {
                 disabled={!this.canEdit}
                 onClick={() => this.edit.emit()}
             >
-                {this.editButtonTemplate(mobile ? this.itemsSelectedAmount : 0)}
+                {this.editButtonTemplate
+                    ? this.editButtonTemplate(
+                          mobile ? this.itemsSelectedAmount : 0
+                      )
+                    : this._defaultEditButtonTemplate(
+                          mobile ? this.itemsSelectedAmount : 0
+                      )}
             </p-button>
         );
     }

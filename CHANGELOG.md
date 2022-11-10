@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.227](https://github.com/employes/paperless/compare/v0.1.0-alpha.226...v0.1.0-alpha.227) (2022-11-10)
+
+
+### Bug Fixes
+
+* **Core:** Localization problems ([5142f92](https://github.com/employes/paperless/commit/5142f92e91f69a90a22a8c177f5e5249bd9e71c6))
+
+
+
+
+
 # [0.1.0-alpha.226](https://github.com/employes/paperless/compare/v0.1.0-alpha.225...v0.1.0-alpha.226) (2022-11-10)
 
 

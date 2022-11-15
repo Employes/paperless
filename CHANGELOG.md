@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.229](https://github.com/employes/paperless/compare/v0.1.0-alpha.228...v0.1.0-alpha.229) (2022-11-15)
+
+
+### Features
+
+* **Molecules/Input Group:** Add required property ([f5fe94b](https://github.com/employes/paperless/commit/f5fe94b3d7697dde5b70cf8080e0cfbac8bc81c1))
+
+
+
+
+
 # [0.1.0-alpha.228](https://github.com/employes/paperless/compare/v0.1.0-alpha.227...v0.1.0-alpha.228) (2022-11-10)
 
 

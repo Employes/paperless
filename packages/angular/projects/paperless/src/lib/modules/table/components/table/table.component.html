@@ -6,7 +6,7 @@
         [enableSearch]="enableSearch"
         [query]="query"
         (onQueryChange)="(onQueryChange)"
-        [enableFilter]="!!filterModalTemplate"
+        [enableFilter]="filterModalTemplate"
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
         (onFilter)="filterModalShow = !filterModalShow"
@@ -125,7 +125,7 @@
     ></p-table-footer>
 </p-table-container>
 
-<ng-container *ngIf="!!filterModalTemplate">
+<ng-container *ngIf="filterModalTemplate">
     <p-modal [header]="filterModalHeaderText" [show]="filterModalShow">
         <div slot="content">
             <ng-container

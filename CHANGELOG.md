@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.231](https://github.com/employes/paperless/compare/v0.1.0-alpha.230...v0.1.0-alpha.231) (2022-11-15)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Add brackets aroun directive selector ([5e708d3](https://github.com/employes/paperless/commit/5e708d39edf90f0656ab582a66811516f255e706))
+
+
+
+
+
 # [0.1.0-alpha.230](https://github.com/employes/paperless/compare/v0.1.0-alpha.229...v0.1.0-alpha.230) (2022-11-15)
 
 

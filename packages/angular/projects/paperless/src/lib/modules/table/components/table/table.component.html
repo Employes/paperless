@@ -2,18 +2,18 @@
     <p-table-header
         [quickFilters]="quickFilters"
         [activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
-        (onQuickFilter)="(onQuickFilter)"
+        (quickFilter)="(onQuickFilter)"
         [enableSearch]="enableSearch"
         [query]="query"
-        (onQueryChange)="(onQueryChange)"
+        (queryChange)="(onQueryChange)"
         [enableFilter]="filterModalTemplate"
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
-        (onFilter)="filterModalShow$.next(true)"
+        (filter)="filterModalShow$.next(true)"
         [enableEdit]="enableEdit"
         [canEdit]="!!selectedRows.length"
         [editButtonTemplate]="editButtonTemplate"
-        (onEdit)="edit.emit()"
+        (edit)="edit.emit()"
         [itemsSelectedAmount]="selectedRows.length"
     ></p-table-header>
 
@@ -117,13 +117,13 @@
         [enablePageSize]="enablePageSize"
         [pageSize]="pageSize"
         [pageSizeOptions]="pageSizeOptions"
-        (onPageSizeChange)="(pageSizeChange)"
+        (pageSizeChange)="(pageSizeChange)"
         [enablePagination]="enablePagination"
         [page]="page"
         [total]="total"
-        (onPageChange)="(pageChange)"
+        (pageChange)="(pageChange)"
         [enableExport]="enableExport"
-        (onExport)="export.emit()"
+        (export)="export.emit()"
     ></p-table-footer>
 </p-table-container>
 
@@ -190,7 +190,7 @@
         <p-illustration
             variant="empty-state-overview"
             class="cursor-pointer mb-6"
-            (click)="emptyStateActionClick.emit()"
+            (onClick)="emptyStateActionClick.emit()"
         ></p-illustration>
         <p class="font-semibold text-storm-default">
             {{ emptyStateHeader }}
@@ -202,7 +202,7 @@
             variant="secondary"
             icon="plus"
             size="small"
-            (click)="emptyStateActionClick.emit()"
+            (onClick)="emptyStateActionClick.emit()"
         >
             {{ emptyStateAction }}
         </p-button>

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.232](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.231...v0.1.0-alpha.232) (2022-11-15)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Use `BehaviorSubject` for `onPush` strategy ([9018c5d](https://github.com/Employes/Paperless/commit/9018c5d2efc6008917138cb4b6f93b541ad74712))
+
+
+
+
+
 # [0.1.0-alpha.231](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.230...v0.1.0-alpha.231) (2022-11-15)
 
 

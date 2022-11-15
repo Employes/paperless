@@ -6,10 +6,15 @@ import { timer } from 'rxjs';
 import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
 import { FormBaseComponent } from './form.component';
 
+export type TableQuickFilter = QuickFilter & {
+    value: string;
+    metricName?: string;
+};
+
 export interface TableOptions {
     pageSize: number;
     page: number;
-    quickFilter: any | string;
+    quickFilter: TableQuickFilter | string | null;
     query: string;
     filters: any[];
     selectedRows: any[];
@@ -61,7 +66,7 @@ export abstract class BaseTableComponent
 
         return this.tableOptions.value.quickFilter;
     }
-    set quickFilter(quickFilter: QuickFilter) {
+    set quickFilter(quickFilter: TableQuickFilter | string | null) {
         this.tableValues = {
             quickFilter,
         };

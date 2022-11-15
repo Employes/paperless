@@ -11,10 +11,11 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef,
+    TemplateRef
 } from '@angular/core';
-import { UntilDestroy } from '@ngneat/until-destroy';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
+import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import { TableFilterModalDirective } from '../../directives/p-table-filter-modal.directive';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -253,21 +254,14 @@ export class Table implements OnInit, OnChanges {
         static: true,
     })
     public filterModalTemplate: TemplateRef<any> | undefined;
-    private _filterModalShow = false;
-
-    set filterModalShow(value: boolean) {
-        this._filterModalShow = value;
-        this.filterModalShown.next(this._filterModalShow);
-    }
-    get filterModalShow() {
-        return this._filterModalShow;
-    }
+    
+    public filterModalShow$ = new BehaviorSubject(false);
 
     @Input() filterModalHeaderText: string = 'Filters';
     @Input() filterModalSaveText: string = 'Save';
     @Input() filterModalCancelText: string = 'Cancel';
 
-    @Output() filterModalShown: EventEmitter<boolean> = new EventEmitter();
+    @Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
 
     constructor() {}
 
@@ -277,6 +271,11 @@ export class Table implements OnInit, OnChanges {
         this.loadingRows = Array.from({
             length: this.amountOfLoadingRows,
         });
+
+        this.filterModalShow$.pipe(
+            untilDestroyed(this),
+            distinctUntilChanged()
+        ).subscribe(value => this.filterModalShow.next(value))
         // this._generateColumns();
     }
 
@@ -342,7 +341,7 @@ export class Table implements OnInit, OnChanges {
 
     filterModalSave() {
         this.filter.emit();
-        this.filterModalShow = false;
+        this.filterModalShow$.next(false)
     }
 
     private _parseItems(items: string) {

@@ -9,7 +9,7 @@
         [enableFilter]="filterModalTemplate"
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
-        (onFilter)="filterModalShow = !filterModalShow"
+        (onFilter)="filterModalShow$.next(true)"
         [enableEdit]="enableEdit"
         [canEdit]="!!selectedRows.length"
         [editButtonTemplate]="editButtonTemplate"
@@ -126,7 +126,7 @@
 </p-table-container>
 
 <ng-container *ngIf="filterModalTemplate">
-    <p-modal [header]="filterModalHeaderText" [show]="filterModalShow">
+    <p-modal [header]="filterModalHeaderText" [show]="filterModalShow$ | async">
         <div slot="content">
             <ng-container
                 *ngTemplateOutlet="filterModalTemplate"
@@ -138,6 +138,7 @@
                 icon="arrow"
                 icon-position="start"
                 icon-flip="horizontal"
+                (onClick)="filterModalShow$.next(false)"
             >
                 {{ filterModalCancelText }}
             </p-button>

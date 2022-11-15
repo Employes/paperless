@@ -10,7 +10,7 @@
     ],
     "resolutions": {
         "@types/react": "18.0.25",
-        "@types/react-dom": "18.0.8"
+        "@types/react-dom": "18.0.9"
     },
     "publishConfig": {
         "access": "public",
@@ -80,7 +80,7 @@
         "@storybook/testing-library": "0.0.13",
         "@types/jest": "27.5.2",
         "@types/react": "18.0.25",
-        "@types/react-dom": "18.0.8",
+        "@types/react-dom": "18.0.9",
         "autoprefixer": "10.4.13",
         "babel-loader": "9.1.0",
         "codemirror": "6.0.1",

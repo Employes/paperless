@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.230](https://github.com/employes/paperless/compare/v0.1.0-alpha.229...v0.1.0-alpha.230) (2022-11-15)
+
+
+### Features
+
+* **Angular/Table:** Implement  filter modal ([1b2ae9d](https://github.com/employes/paperless/commit/1b2ae9da59c577eaf00d5304a5193087061a031b))
+
+
+
+
+
 # [0.1.0-alpha.229](https://github.com/employes/paperless/compare/v0.1.0-alpha.228...v0.1.0-alpha.229) (2022-11-15)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.235](https://github.com/employes/paperless/compare/v0.1.0-alpha.234...v0.1.0-alpha.235) (2022-11-15)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove debugging & fix modal buttons + close ([acb975b](https://github.com/employes/paperless/commit/acb975b34d29d7353208c5f1b157156753a0c8ec))
+* **Atoms/Modal Header:** Don't show x when no needed. ([046ccec](https://github.com/employes/paperless/commit/046cceceab2fb87926487e179c1e60ca2bd1a0fe))
+
+
+
+
+
 # [0.1.0-alpha.234](https://github.com/employes/paperless/compare/v0.1.0-alpha.233...v0.1.0-alpha.234) (2022-11-15)
 
 

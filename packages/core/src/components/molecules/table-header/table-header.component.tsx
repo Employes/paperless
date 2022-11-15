@@ -190,7 +190,7 @@ export class TableHeader {
                                 <p-label
                                     size="small"
                                     variant="negative"
-                                    mobile-icon={false}
+                                    mobileIcon={false}
                                     circle={false}
                                     class="ml-1"
                                 >

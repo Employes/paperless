@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.237](https://github.com/employes/paperless/compare/v0.1.0-alpha.236...v0.1.0-alpha.237) (2022-11-15)
+
+
+### Bug Fixes
+
+* **Molecules/Table Header:** filter label property fix ([debcb21](https://github.com/employes/paperless/commit/debcb215cc695199d2f539bacf1fde8bbd541ede))
+
+
+
+
+
 # [0.1.0-alpha.236](https://github.com/employes/paperless/compare/v0.1.0-alpha.235...v0.1.0-alpha.236) (2022-11-15)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.236](https://github.com/employes/paperless/compare/v0.1.0-alpha.235...v0.1.0-alpha.236) (2022-11-15)
+
+
+### Features
+
+* **Angular/Table:** Auto set `selectedFiltersAmount` ([b1fafba](https://github.com/employes/paperless/commit/b1fafba555a6d52977d4e4a330457427bcfe31e9))
+
+
+
+
+
 # [0.1.0-alpha.235](https://github.com/employes/paperless/compare/v0.1.0-alpha.234...v0.1.0-alpha.235) (2022-11-15)
 
 

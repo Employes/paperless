@@ -17,6 +17,8 @@
         [itemsSelectedAmount]="selectedRows.length"
     ></p-table-header>
 
+    {{ filterModalShow$ | async }}
+
     <p-table-row variant="header">
         <ng-container *ngFor="let col of columns; let index = index">
             <p-table-cell-ngx

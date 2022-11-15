@@ -11,11 +11,11 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef
+    TemplateRef,
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
-import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, tap } from 'rxjs';
 import { TableFilterModalDirective } from '../../directives/p-table-filter-modal.directive';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -254,7 +254,7 @@ export class Table implements OnInit, OnChanges {
         static: true,
     })
     public filterModalTemplate: TemplateRef<any> | undefined;
-    
+
     public filterModalShow$ = new BehaviorSubject(false);
 
     @Input() filterModalHeaderText: string = 'Filters';
@@ -272,10 +272,13 @@ export class Table implements OnInit, OnChanges {
             length: this.amountOfLoadingRows,
         });
 
-        this.filterModalShow$.pipe(
-            untilDestroyed(this),
-            distinctUntilChanged()
-        ).subscribe(value => this.filterModalShow.next(value))
+        this.filterModalShow$
+            .pipe(
+                untilDestroyed(this),
+                distinctUntilChanged(),
+                tap((value) => console.log(`filterModalShow$ changed`, value))
+            )
+            .subscribe((value) => this.filterModalShow.next(value));
         // this._generateColumns();
     }
 
@@ -341,7 +344,7 @@ export class Table implements OnInit, OnChanges {
 
     filterModalSave() {
         this.filter.emit();
-        this.filterModalShow$.next(false)
+        this.filterModalShow$.next(false);
     }
 
     private _parseItems(items: string) {

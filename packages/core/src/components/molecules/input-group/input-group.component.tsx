@@ -62,6 +62,11 @@ export class InputGroup {
     @Prop() helper: string;
 
     /**
+     * Wether the field is required
+     */
+    @Prop({ reflect: true }) required: boolean;
+
+    /**
      * The helper of the input group
      */
     @Prop({ reflect: true }) error: string;
@@ -122,7 +127,14 @@ export class InputGroup {
                 } ${this.focused && 'focused'} size-${this.size}`}
             >
                 <div class="flex justify-between items-end">
-                    {label && <div class="input-label">{label}</div>}
+                    {label && (
+                        <div class="input-label">
+                            {label}
+                            {this.required && (
+                                <span class="text-negative">*</span>
+                            )}
+                        </div>
+                    )}
 
                     {(helper || hasHeaderSlot) && (
                         <div class="input-header">

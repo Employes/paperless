@@ -25,6 +25,7 @@ export class ModalHeader {
 
                 {this.showMobileClose && (
                     <p-button
+                        class="flex desktop-xs:hidden"
                         variant="secondary"
                         icon="negative"
                         iconOnly={true}

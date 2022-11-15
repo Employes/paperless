@@ -323,6 +323,10 @@ export namespace Components {
          */
         "prefix": string;
         /**
+          * Wether the field is required
+         */
+        "required": boolean;
+        /**
           * The size of the input group
          */
         "size": 'small' | 'medium';
@@ -1785,6 +1789,10 @@ declare namespace LocalJSX {
           * The prefix of the input group
          */
         "prefix"?: string;
+        /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
         /**
           * The size of the input group
          */

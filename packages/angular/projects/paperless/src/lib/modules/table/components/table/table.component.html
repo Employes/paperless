@@ -6,10 +6,10 @@
         [enableSearch]="enableSearch"
         [query]="query"
         (onQueryChange)="(onQueryChange)"
-        [enableFilter]="enableFilter"
+        [enableFilter]="!!filterModalTemplate"
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
-        (onFilter)="filter.emit()"
+        (onFilter)="filterModalShow = !filterModalShow"
         [enableEdit]="enableEdit"
         [canEdit]="!!selectedRows.length"
         [editButtonTemplate]="editButtonTemplate"
@@ -124,6 +124,29 @@
         (onExport)="export.emit()"
     ></p-table-footer>
 </p-table-container>
+
+<ng-container *ngIf="!!filterModalTemplate">
+    <p-modal [header]="filterModalHeaderText" [show]="filterModalShow">
+        <div slot="content">
+            <ng-container
+                *ngTemplateOutlet="filterModalTemplate"
+            ></ng-container>
+        </div>
+        <div slot="footer" class="flex justify-between w-full">
+            <p-button
+                variant="secondary"
+                icon="arrow"
+                icon-position="start"
+                icon-flip="horizontal"
+            >
+                {{ filterModalCancelText }}
+            </p-button>
+            <p-button icon="arrow" (onClick)="filterModalSave()">
+                {{ filterModalSaveText }}
+            </p-button>
+        </div>
+    </p-modal>
+</ng-container>
 
 <ng-template #emptyStateTemplate>
     <div

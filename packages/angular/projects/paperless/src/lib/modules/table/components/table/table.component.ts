@@ -1,6 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    ContentChild,
     ContentChildren,
     EventEmitter,
     HostListener,
@@ -10,9 +11,11 @@ import {
     Output,
     QueryList,
     SimpleChanges,
+    TemplateRef,
 } from '@angular/core';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
+import { TableFilterModalDirective } from '../../directives/p-table-filter-modal.directive';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 
@@ -244,6 +247,28 @@ export class Table implements OnInit, OnChanges {
         return this._columnDefinitions;
     }
 
+    // filter modal
+    @ContentChild(TableFilterModalDirective, {
+        read: TemplateRef,
+        static: true,
+    })
+    public filterModalTemplate: TemplateRef<any> | undefined;
+    private _filterModalShow = false;
+
+    set filterModalShow(value: boolean) {
+        this._filterModalShow = value;
+        this.filterModalShown.next(this._filterModalShow);
+    }
+    get filterModalShow() {
+        return this._filterModalShow;
+    }
+
+    @Input() filterModalHeaderText: string = 'Filters';
+    @Input() filterModalSaveText: string = 'Save';
+    @Input() filterModalCancelText: string = 'Cancel';
+
+    @Output() filterModalShown: EventEmitter<boolean> = new EventEmitter();
+
     constructor() {}
 
     ngOnInit() {
@@ -313,6 +338,11 @@ export class Table implements OnInit, OnChanges {
 
     onPageChange({ detail }: CustomEvent<number>) {
         this.pageChange.emit(detail);
+    }
+
+    filterModalSave() {
+        this.filter.emit();
+        this.filterModalShow = false;
     }
 
     private _parseItems(items: string) {

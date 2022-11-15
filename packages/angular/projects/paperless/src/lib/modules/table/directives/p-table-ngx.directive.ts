@@ -8,6 +8,7 @@ import { Table } from '../components/table/table.component';
 export interface TableDirectiveValue {
 	query?: string;
 	quickFilter?: QuickFilter;
+	filters?: any[];
 	page?: number;
 	pageSize?: number;
 	selectedRows?: any[];
@@ -34,6 +35,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 	protected override lastValue: TableDirectiveValue = {
 		query: '',
 		quickFilter: undefined,
+		filters: [],
 		page: 1,
 		pageSize: 12,
 		selectedRows: [],
@@ -99,7 +101,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 	}
 
 	private _checkEmptyStateType() {
-		if(this.lastValue.query?.length || !this.lastValue.quickFilter?.default || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0)) {
+		if(this.lastValue.query?.length || !this.lastValue.quickFilter?.default || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0) || this.lastValue.filters?.length) {
 			this._base.emptyStateType = 'filtered';
 			return;
 		}

@@ -11,6 +11,7 @@ export interface TableOptions {
     page: number;
     quickFilter: any | string;
     query: string;
+    filters: any[];
     selectedRows: any[];
 }
 
@@ -32,6 +33,7 @@ export abstract class BaseTableComponent
         page: 1,
         quickFilter: null,
         query: '',
+        filters: [],
         selectedRows: [],
     };
     public defaultTableValues: Partial<TableOptions> = {};
@@ -78,6 +80,19 @@ export abstract class BaseTableComponent
         };
     }
 
+    get filters() {
+        if (!this.tableOptions) {
+            return this._defaultTableValues.filters;
+        }
+
+        return this.tableOptions.value.filters;
+    }
+    set filters(filters: any[]) {
+        this.tableValues = {
+            filters,
+        };
+    }
+
     get selectedRows() {
         if (!this.tableOptions) {
             return this._defaultTableValues.selectedRows;
@@ -121,6 +136,7 @@ export abstract class BaseTableComponent
             page: this.parsedDefaultTableValues.page,
             quickFilter: this.parsedDefaultTableValues.quickFilter,
             query: this.parsedDefaultTableValues.query,
+            filters: this.parsedDefaultTableValues.filters,
             selectedRows: this.parsedDefaultTableValues.selectedRows,
         }) as FormControl<TableOptions>;
 

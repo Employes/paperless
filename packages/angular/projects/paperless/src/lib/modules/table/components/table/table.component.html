@@ -17,8 +17,6 @@
         [itemsSelectedAmount]="selectedRows.length"
     ></p-table-header>
 
-    {{ filterModalShow$ | async }}
-
     <p-table-row variant="header">
         <ng-container *ngFor="let col of columns; let index = index">
             <p-table-cell-ngx
@@ -128,7 +126,11 @@
 </p-table-container>
 
 <ng-container *ngIf="filterModalTemplate">
-    <p-modal [header]="filterModalHeaderText" [show]="filterModalShow$ | async">
+    <p-modal
+        [header]="filterModalHeaderText"
+        [show]="filterModalShow$ | async"
+        (close)="filterModalShow$.next(false)"
+    >
         <div slot="content">
             <ng-container
                 *ngTemplateOutlet="filterModalTemplate"
@@ -137,14 +139,11 @@
         <div slot="footer" class="flex justify-between w-full">
             <p-button
                 variant="secondary"
-                icon="arrow"
-                icon-position="start"
-                icon-flip="horizontal"
                 (onClick)="filterModalShow$.next(false)"
             >
                 {{ filterModalCancelText }}
             </p-button>
-            <p-button icon="arrow" (onClick)="filterModalSave()">
+            <p-button icon="checkmark" (onClick)="filterModalSave()">
                 {{ filterModalSaveText }}
             </p-button>
         </div>

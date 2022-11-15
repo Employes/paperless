@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
-import { BehaviorSubject, distinctUntilChanged, tap } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import { TableFilterModalDirective } from '../../directives/p-table-filter-modal.directive';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -273,11 +273,7 @@ export class Table implements OnInit, OnChanges {
         });
 
         this.filterModalShow$
-            .pipe(
-                untilDestroyed(this),
-                distinctUntilChanged(),
-                tap((value) => console.log(`filterModalShow$ changed`, value))
-            )
+            .pipe(untilDestroyed(this), distinctUntilChanged())
             .subscribe((value) => this.filterModalShow.next(value));
         // this._generateColumns();
     }

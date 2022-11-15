@@ -66,6 +66,10 @@ export class TableNgxDirective extends BaseValueAccessor {
 		if (value?.quickFilter) {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
+
+		if(value?.filters?.length) {
+			this._base.selectedFiltersAmount = value.filters.length;
+		}
 		
 		this._checkEmptyStateType();
 	}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.252](https://github.com/employes/paperless/compare/v0.1.0-alpha.251...v0.1.0-alpha.252) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Fix shared classes ([27c0703](https://github.com/employes/paperless/commit/27c0703863a9decd2c6bfb741b9661db8298da5b))
+
+
+
+
+
 # [0.1.0-alpha.251](https://github.com/employes/paperless/compare/v0.1.0-alpha.250...v0.1.0-alpha.251) (2022-11-16)
 
 

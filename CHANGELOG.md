@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.251](https://github.com/employes/paperless/compare/v0.1.0-alpha.250...v0.1.0-alpha.251) (2022-11-16)
+
+
+### Features
+
+* **Core:** Several improvements ([64b0774](https://github.com/employes/paperless/commit/64b07743d28dac79c81a2c191a0efd4751a77865))
+
+
+
+
+
 # [0.1.0-alpha.250](https://github.com/employes/paperless/compare/v0.1.0-alpha.249...v0.1.0-alpha.250) (2022-11-16)
 
 

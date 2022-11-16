@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.244](https://github.com/employes/paperless/compare/v0.1.0-alpha.243...v0.1.0-alpha.244) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Molecules/Table Header:** `NaN` issue ([1f9c238](https://github.com/employes/paperless/commit/1f9c238f0114f0dfc9eac8fb8c7a3039964a1b55))
+
+
+
+
+
 # [0.1.0-alpha.243](https://github.com/employes/paperless/compare/v0.1.0-alpha.242...v0.1.0-alpha.243) (2022-11-16)
 
 

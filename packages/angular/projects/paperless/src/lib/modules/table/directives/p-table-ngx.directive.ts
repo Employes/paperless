@@ -68,7 +68,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		}
 
 		if(value?.filters) {
-			this._base.selectedFiltersAmount = value.filters.length;
+			this._base.selectedFiltersAmount = value.filters.length === 0 ? undefined : value.filters.length;
 		}
 		
 		this._checkEmptyStateType();

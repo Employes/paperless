@@ -67,7 +67,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
 
-		if(value?.filters?.length) {
+		if(value?.filters) {
 			this._base.selectedFiltersAmount = value.filters.length;
 		}
 		

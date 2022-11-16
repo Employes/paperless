@@ -339,7 +339,9 @@ export class Table implements OnInit, OnChanges {
     }
 
     filterModalSave() {
+        console.log('filterModalSave');
         this.filter.emit();
+        console.log('Filter emitted');
         this.filterModalShow$.next(false);
     }
 

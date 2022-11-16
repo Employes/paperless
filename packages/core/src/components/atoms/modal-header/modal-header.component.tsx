@@ -9,7 +9,7 @@ export class ModalHeader {
     /**
      * Wether to show the close button on mobile
      */
-    @Prop() showMobileClose = true;
+    @Prop() showClose = true;
 
     /**
      * Close click event
@@ -23,9 +23,8 @@ export class ModalHeader {
                     <slot />
                 </span>
 
-                {this.showMobileClose && (
+                {this.showClose && (
                     <p-button
-                        class="flex desktop-xs:hidden"
                         variant="secondary"
                         icon="negative"
                         iconOnly={true}

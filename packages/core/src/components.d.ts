@@ -118,10 +118,6 @@ export namespace Components {
           * The variant of the button
          */
         "variant": 'primary' | 'secondary' | 'text';
-        /**
-          * The width of the button
-         */
-        "width": 'auto' | 'full';
     }
     interface PCardBody {
         /**
@@ -445,16 +441,12 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg' | 'xl';
     }
     interface PModalFooter {
-        /**
-          * Wether to show the footer on mobile
-         */
-        "hideOnMobile": boolean;
     }
     interface PModalHeader {
         /**
           * Wether to show the close button on mobile
          */
-        "showMobileClose": boolean;
+        "showClose": boolean;
     }
     interface PNavbar {
         /**
@@ -1581,10 +1573,6 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
-        /**
-          * The width of the button
-         */
-        "width"?: 'auto' | 'full';
     }
     interface PCardBody {
         /**
@@ -1916,10 +1904,6 @@ declare namespace LocalJSX {
         "size"?: 'sm' | 'md' | 'lg' | 'xl';
     }
     interface PModalFooter {
-        /**
-          * Wether to show the footer on mobile
-         */
-        "hideOnMobile"?: boolean;
     }
     interface PModalHeader {
         /**
@@ -1929,7 +1913,7 @@ declare namespace LocalJSX {
         /**
           * Wether to show the close button on mobile
          */
-        "showMobileClose"?: boolean;
+        "showClose"?: boolean;
     }
     interface PNavbar {
         /**

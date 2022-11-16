@@ -142,7 +142,7 @@ export class TableHeader {
         );
         const mobileTotal =
             (this.selectedFiltersAmount || 0) +
-            (activeQuickFilter.default ? 0 : 1);
+            (activeQuickFilter?.default ? 0 : 1);
 
         return (
             <Host class="p-table-header">
@@ -220,10 +220,9 @@ export class TableHeader {
     private _buttonTemplate(mobile = false) {
         return (
             <p-button
-                class={!mobile && 'hidden desktop-xs:flex'}
+                class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
                 icon="pencil"
                 size="small"
-                width={mobile ? 'full' : 'auto'}
                 disabled={!this.canEdit}
                 onClick={() => this.edit.emit()}
             >

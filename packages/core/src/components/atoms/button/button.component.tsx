@@ -38,11 +38,6 @@ export class Button {
     @Prop() size: 'small' | 'medium' = 'medium';
 
     /**
-     * The width of the button
-     */
-    @Prop() width: 'auto' | 'full' = 'auto';
-
-    /**
      * Wether to show a loader or not
      */
     @Prop() loading: boolean = false;
@@ -102,6 +97,15 @@ export class Button {
      */
     @Element() private _el: HTMLElement;
 
+    private _displayClasses = [
+        'flex',
+        'inline-flex',
+        'block',
+        'inline-block',
+        'inline',
+        'hidden',
+    ];
+
     render() {
         let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
         switch (this.variant) {
@@ -115,18 +119,29 @@ export class Button {
 
         const VariableTag = this.variant === 'text' ? 'a' : 'button';
 
+        const classes = this._el.classList.value;
+        const sharedClasses = classes
+            .split(' ')
+            .filter(
+                (c) =>
+                    c.indexOf('w-') >= 0 ||
+                    this._displayClasses.filter((dc) => c.indexOf(dc) >= 0)
+                        ?.length > 0
+            )
+            .join(' ');
+
+        this._el.className = '';
+
         return (
-            <Host class={`p-button ${this.width === 'full' && 'w-full'}`}>
+            <Host class={`p-button ${sharedClasses}`}>
                 <VariableTag
-                    class={`variant-${this.variant} size-${this.size} ${
-                        this.width === 'full' && 'w-full'
+                    class={`variant-${this.variant} size-${
+                        this.size
                     } icon-position-${this.iconPosition} ${
                         this.chevron && 'has-chevron'
                     } chevron-position-${this.chevronPosition} ${
                         this.iconOnly && 'has-icon-only'
-                    } ${this.inheritText && 'should-inherit-text'} ${
-                        this._el.classList.value
-                    }`}
+                    } ${this.inheritText && 'should-inherit-text'} ${classes}`}
                     disabled={this.disabled}
                     href={this.href}
                     target={this.target}

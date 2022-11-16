@@ -1,8 +1,8 @@
 p-button {
     @apply inline-block;
 
-    > button,
-    > a {
+    button,
+    a {
         outline: 0;
         border: 0;
         @apply h-10 rounded-large w-auto;

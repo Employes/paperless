@@ -13,9 +13,9 @@
 
 ## Properties
 
-| Property          | Attribute           | Description                               | Type      | Default |
-| ----------------- | ------------------- | ----------------------------------------- | --------- | ------- |
-| `showMobileClose` | `show-mobile-close` | Wether to show the close button on mobile | `boolean` | `true`  |
+| Property    | Attribute    | Description                               | Type      | Default |
+| ----------- | ------------ | ----------------------------------------- | --------- | ------- |
+| `showClose` | `show-close` | Wether to show the close button on mobile | `boolean` | `true`  |
 
 
 ## Events

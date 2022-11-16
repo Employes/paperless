@@ -9,19 +9,21 @@ import ModalDocs from '../../../packages/core/src/components/organisms/modal/rea
 # Examples
 
 <Canvas>
-    <div class="flex justify-center">
+    <div class="flex justify-center h-screen">
         <p-modal header="Modal header" show>
             <div slot="content">Content</div>
-            <div slot="footer" class="flex justify-between w-full">
+            <div slot="footer" class="flex justify-between w-full gap-4">
                 <p-button
                     variant="secondary"
-                    icon="arrow"
+                    class="w-full desktop-xs:w-auto"
+                    icon="trash"
                     icon-position="start"
-                    icon-flip="horizontal"
                 >
-                    Cancel
+                    Delete
                 </p-button>
-                <p-button icon="arrow">Confirm</p-button>
+                <p-button icon="arrow" class="w-full desktop-xs:w-auto">
+                    Confirm
+                </p-button>
             </div>
         </p-modal>
     </div>

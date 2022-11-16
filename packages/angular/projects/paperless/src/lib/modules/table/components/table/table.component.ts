@@ -11,7 +11,7 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef,
+    TemplateRef
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
@@ -262,6 +262,7 @@ export class Table implements OnInit, OnChanges {
     @Input() filterModalCancelText: string = 'Cancel';
 
     @Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
+    @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
 
     constructor() {}
 
@@ -338,9 +339,9 @@ export class Table implements OnInit, OnChanges {
         this.pageChange.emit(detail);
     }
 
-    filterModalSave() {
+    onFilterModalSave() {
         console.log('filterModalSave');
-        this.filter.emit();
+        this.filterModalSave.next();
         console.log('Filter emitted');
         this.filterModalShow$.next(false);
     }

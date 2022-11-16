@@ -1,6 +1,5 @@
 import {
     Component,
-    Element,
     Event,
     EventEmitter,
     h,
@@ -92,22 +91,6 @@ export class Button {
      */
     @Event() onClick: EventEmitter<MouseEvent>;
 
-    /**
-     * The host element
-     */
-    @Element() private _el: HTMLElement;
-
-    private _sharedClasses = [
-        'hydrated',
-        'w-',
-        'flex',
-        'inline-flex',
-        'block',
-        'inline-block',
-        'inline',
-        'hidden',
-    ];
-
     render() {
         let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
         switch (this.variant) {
@@ -121,28 +104,16 @@ export class Button {
 
         const VariableTag = this.variant === 'text' ? 'a' : 'button';
 
-        const classes = this._el.classList.value;
-        const sharedClasses = classes
-            .split(' ')
-            .filter(
-                (c) =>
-                    this._sharedClasses.filter((sc) => c.indexOf(sc) >= 0)
-                        ?.length > 0
-            )
-            .join(' ');
-
-        this._el.className = `p-button ${sharedClasses}`;
-
         return (
-            <Host>
+            <Host class={`p-button size-${this.size}`}>
                 <VariableTag
-                    class={`variant-${this.variant} size-${
-                        this.size
-                    } icon-position-${this.iconPosition} ${
-                        this.chevron && 'has-chevron'
-                    } chevron-position-${this.chevronPosition} ${
-                        this.iconOnly && 'has-icon-only'
-                    } ${this.inheritText && 'should-inherit-text'} ${classes}`}
+                    class={`variant-${this.variant}  icon-position-${
+                        this.iconPosition
+                    } ${this.chevron && 'has-chevron'} chevron-position-${
+                        this.chevronPosition
+                    } ${this.iconOnly && 'has-icon-only'} ${
+                        this.inheritText && 'should-inherit-text'
+                    }`}
                     disabled={this.disabled}
                     href={this.href}
                     target={this.target}

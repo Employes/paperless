@@ -1,11 +1,11 @@
 p-button {
-    @apply inline-block;
+    @apply flex h-10 w-auto;
 
     button,
     a {
         outline: 0;
         border: 0;
-        @apply h-10 rounded-large w-auto;
+        @apply h-full w-full rounded-large;
         @apply font-semibold leading-4;
         @apply flex items-center justify-center;
         @apply cursor-pointer;
@@ -73,16 +73,6 @@ p-button {
             }
         }
 
-        // sizes
-        &.size-small {
-            @apply h-8 text-sm;
-        }
-
-        // widths
-        &.width-full {
-            @apply w-full;
-        }
-
         &[disabled] {
             @apply opacity-40;
         }
@@ -122,6 +112,16 @@ p-button {
             color: inherit #{!important};
             font-size: inherit #{!important};
             font-weight: inherit #{!important};
+        }
+    }
+
+    // sizes
+    &.size-small {
+        @apply h-8;
+
+        button,
+        a {
+            @apply text-sm;
         }
     }
 }

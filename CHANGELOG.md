@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.250](https://github.com/employes/paperless/compare/v0.1.0-alpha.249...v0.1.0-alpha.250) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Add debugging ([90f82bb](https://github.com/employes/paperless/commit/90f82bb950a3a422b1069258888855bdd3ee78d9))
+* **Angular/Table:** Remove second parameter to json ([eed4e58](https://github.com/employes/paperless/commit/eed4e582f2dce82c89abba99761d2a724b87bacf))
+
+
+
+
+
 # [0.1.0-alpha.249](https://github.com/employes/paperless/compare/v0.1.0-alpha.248...v0.1.0-alpha.249) (2022-11-16)
 
 

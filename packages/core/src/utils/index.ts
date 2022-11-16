@@ -3,3 +3,4 @@ export * from './icons';
 export * from './illustrations';
 export * from './localization';
 export * from './object-get-by-path';
+export * from './transformers';

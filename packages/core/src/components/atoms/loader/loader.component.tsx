@@ -40,7 +40,11 @@ export class Loader {
     private _show = this.show;
     private _showSubscriber: Subscription;
 
-    private _loader = (<div class={`loader color-${this.color}`}></div>);
+    private _loader = (
+        <div
+            class={`loader animate-spin duration-500 color-${this.color}`}
+        ></div>
+    );
 
     componentWillRender() {
         this._checkShow();
@@ -75,7 +79,7 @@ export class Loader {
 
         return (
             <Host
-                class={`p-loader flex ${
+                class={`p-loader variant-default flex ${
                     this.variant === 'full-width' &&
                     'w-full flex justify-center text-4xl'
                 }`}

@@ -1,7 +1,6 @@
-:host(:not(.variant-ghost)) {
+:host {
     .loader {
         @apply w-[1em] h-[1em] inline-block rounded-round;
-        @apply animate-spin duration-500;
         @apply border-solid border-2 border-indigo-light border-t-indigo #{!important};
 
         will-change: transform;

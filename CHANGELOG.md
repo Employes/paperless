@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.243](https://github.com/employes/paperless/compare/v0.1.0-alpha.242...v0.1.0-alpha.243) (2022-11-16)
+
+
+### Features
+
+* **Molecules/Table Header:** Implement quick filter label for mobile ([00580b5](https://github.com/employes/paperless/commit/00580b5103208b05b62f8fca5d50bac0455bc226))
+
+
+
+
+
 # [0.1.0-alpha.242](https://github.com/employes/paperless/compare/v0.1.0-alpha.241...v0.1.0-alpha.242) (2022-11-16)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.242](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.241...v0.1.0-alpha.242) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Fix slot name & class ([1e3ba7f](https://github.com/Employes/Paperless/commit/1e3ba7f937fb6ca2604b54cbe12f3b467b003fcc))
+
+
+
+
+
 # [0.1.0-alpha.241](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.240...v0.1.0-alpha.241) (2022-11-16)
 
 

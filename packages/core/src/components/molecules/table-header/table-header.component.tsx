@@ -140,6 +140,9 @@ export class TableHeader {
         const activeQuickFilter = this.quickFilters.find(
             (f) => f.identifier === this.activeQuickFilterIdentifier
         );
+        const mobileTotal =
+            (this.selectedFiltersAmount || 0) +
+            (activeQuickFilter.default ? 0 : 1);
 
         return (
             <Host class="p-table-header">
@@ -192,11 +195,8 @@ export class TableHeader {
                                 : this._defaultFilterButtonTemplate()}
                             {this.selectedFiltersAmount &&
                                 this._getLabel(this.selectedFiltersAmount)}
-                            {this._getLabel(
-                                this.selectedFiltersAmount +
-                                    (activeQuickFilter.default ? 0 : 1),
-                                'mobile'
-                            )}
+                            {mobileTotal > 0 &&
+                                this._getLabel(mobileTotal, 'mobile')}
                         </p-button>
                     )}
 

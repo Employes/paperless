@@ -136,6 +136,9 @@
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>
 
+            <pre>{{ filterModalShowReset$ | async | json: 2 }}</pre>
+            <pre>{{ filterModalShowResetMobile$ | async | json: 2 }}</pre>
+
             <div class="flex desktop-xs:hidden gap-4 w-full">
                 <p-button
                     *ngIf="filterModalShowResetMobile$ | async"

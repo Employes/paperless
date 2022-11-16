@@ -3,7 +3,7 @@ import { TableQuickFilter } from './base';
 export const createFormFilters = (
     values: { [key: string]: any },
     quickFilters: TableQuickFilter[],
-    quickFilterKey: string
+    quickFilterKey?: string
 ) => {
     const filters = [];
     let quickFilter = null;
@@ -14,7 +14,7 @@ export const createFormFilters = (
             continue;
         }
 
-        if (key === quickFilterKey) {
+        if (quickFilterKey && key === quickFilterKey) {
             quickFilter = quickFilters.find((f) => f.value === value);
 
             continue;

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
 import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
+import { createFormFilters } from '../utils';
 import { FormBaseComponent } from './form.component';
 
 export type TableQuickFilter = QuickFilter & {
@@ -29,6 +30,10 @@ export abstract class BaseTableComponent
     implements OnInit
 {
     protected quickFilters: any[] = [];
+
+    public filterForm = new FormGroup({});
+    public filterFormQuickFilterKey?: string;
+    public defaultFilterFormValues: any = {};
 
     public pageSizeDefault = 12;
     public tableOptions?: FormControl<TableOptions>;
@@ -185,6 +190,41 @@ export abstract class BaseTableComponent
         if (forceRefresh) {
             this._refresh();
         }
+    }
+
+    applyFormFilters(values: any = null) {
+        values = values ?? this.filterForm.value;
+
+        const { filters, quickFilter } = createFormFilters(
+            values,
+            this.quickFilters,
+            this.filterFormQuickFilterKey
+        );
+
+        if (quickFilter) {
+            this.quickFilter = quickFilter;
+        }
+
+        this.filters = filters;
+    }
+
+    resetFormFilters(resetQuickFilter: boolean = false) {
+        const values: any = this.filterForm.value;
+        const defaultQuickFilter = this.quickFilters.find((f) => f.default);
+
+        for (const key of Object.keys(values)) {
+            if (key === this.filterFormQuickFilterKey) {
+                if (resetQuickFilter) {
+                    values[key] = defaultQuickFilter.value;
+                }
+                continue;
+            }
+
+            values[key] = this.defaultFilterFormValues[key] ?? null;
+        }
+
+        this.filterForm.setValue(values);
+        this.applyFormFilters(values);
     }
 
     protected _refresh() {

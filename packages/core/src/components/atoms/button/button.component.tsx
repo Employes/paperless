@@ -97,7 +97,9 @@ export class Button {
      */
     @Element() private _el: HTMLElement;
 
-    private _displayClasses = [
+    private _sharedClasses = [
+        'hydrated',
+        'w-',
         'flex',
         'inline-flex',
         'block',
@@ -124,16 +126,15 @@ export class Button {
             .split(' ')
             .filter(
                 (c) =>
-                    c.indexOf('w-') >= 0 ||
-                    this._displayClasses.filter((dc) => c.indexOf(dc) >= 0)
+                    this._sharedClasses.filter((sc) => c.indexOf(sc) >= 0)
                         ?.length > 0
             )
             .join(' ');
 
-        this._el.className = '';
+        this._el.className = `p-button ${sharedClasses}`;
 
         return (
-            <Host class={`p-button ${sharedClasses}`}>
+            <Host>
                 <VariableTag
                     class={`variant-${this.variant} size-${
                         this.size

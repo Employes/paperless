@@ -264,7 +264,7 @@ export class Table implements OnInit, OnChanges {
 
     @Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
     @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
-    @Output() filterModalReset: EventEmitter<void> = new EventEmitter();
+    @Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
     public filterModalShowReset$ = new BehaviorSubject(false);
     public filterModalShowResetMobile$ = new BehaviorSubject(false);
@@ -370,8 +370,8 @@ export class Table implements OnInit, OnChanges {
         this.filterModalShow$.next(false);
     }
 
-    onFilterModalReset() {
-        this.filterModalReset.next();
+    onFilterModalReset(resetQuickFilter = false) {
+        this.filterModalReset.next(resetQuickFilter);
         this.filterModalShow$.next(false);
     }
 

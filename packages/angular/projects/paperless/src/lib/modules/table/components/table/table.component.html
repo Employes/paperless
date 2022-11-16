@@ -131,10 +131,19 @@
         [show]="filterModalShow$ | async"
         (close)="filterModalShow$.next(false)"
     >
-        <div slot="content">
+        <div slot="content flex flex-col gap-6">
             <ng-container
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>
+
+            <p-button
+                class="flex desktop-xs:hidden"
+                width="full"
+                icon="checkmark"
+                (onClick)="onFilterModalSave()"
+            >
+                {{ filterModalSaveText }}
+            </p-button>
         </div>
         <div slot="footer" class="flex justify-between w-full">
             <p-button

@@ -31,7 +31,7 @@ export abstract class BaseTableComponent
 {
     protected quickFilters: any[] = [];
 
-    public filterForm = new FormGroup({});
+    public filterForm: FormGroup<any> = new FormGroup<any>({});
     public filterFormQuickFilterKey?: string;
     public defaultFilterFormValues: any = {};
 

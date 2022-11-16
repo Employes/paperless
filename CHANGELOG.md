@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.248](https://github.com/employes/paperless/compare/v0.1.0-alpha.247...v0.1.0-alpha.248) (2022-11-16)
+
+
+### Features
+
+* **Angular/Base/Table:** Add `applyFormFilters` & `resetFormFilters` ([d9d0cd6](https://github.com/employes/paperless/commit/d9d0cd60d42fac9bdfcd6752b995edd611c319e7))
+
+
+
+
+
 # [0.1.0-alpha.247](https://github.com/employes/paperless/compare/v0.1.0-alpha.246...v0.1.0-alpha.247) (2022-11-16)
 
 

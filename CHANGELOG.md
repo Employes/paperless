@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.247](https://github.com/employes/paperless/compare/v0.1.0-alpha.246...v0.1.0-alpha.247) (2022-11-16)
+
+
+### Features
+
+* **Angular/Table:** Add option wether to reset quick filter or not ([cd51ba2](https://github.com/employes/paperless/commit/cd51ba2b0e6d41d54744dd830792c5a7a9b91ba8))
+* **Angular/Table:** Add reset buttons ([7d2eda4](https://github.com/employes/paperless/commit/7d2eda4358727620794b859fac83b2a212f6d06f))
+
+
+
+
+
 # [0.1.0-alpha.246](https://github.com/employes/paperless/compare/v0.1.0-alpha.245...v0.1.0-alpha.246) (2022-11-16)
 
 

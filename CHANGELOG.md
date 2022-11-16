@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.246](https://github.com/employes/paperless/compare/v0.1.0-alpha.245...v0.1.0-alpha.246) (2022-11-16)
+
+
+### Features
+
+* **Core/utils:** Add transformers ([ca9a8ff](https://github.com/employes/paperless/commit/ca9a8ff32b30add62258e465b09cb0a79433e93d))
+
+
+
+
+
 # [0.1.0-alpha.245](https://github.com/employes/paperless/compare/v0.1.0-alpha.244...v0.1.0-alpha.245) (2022-11-16)
 
 

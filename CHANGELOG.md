@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.253](https://github.com/employes/paperless/compare/v0.1.0-alpha.252...v0.1.0-alpha.253) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Small fix on classes ([b2773ca](https://github.com/employes/paperless/commit/b2773ca61ba05a4045d38469f6ab758537fedf53))
+* **Atoms/Loader:** Move animation to class ([72b0e9f](https://github.com/employes/paperless/commit/72b0e9fb836db0681652c641dea5c127c0262983))
+
+
+
+
+
 # [0.1.0-alpha.252](https://github.com/employes/paperless/compare/v0.1.0-alpha.251...v0.1.0-alpha.252) (2022-11-16)
 
 

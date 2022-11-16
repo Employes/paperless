@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.239](https://github.com/employes/paperless/compare/v0.1.0-alpha.238...v0.1.0-alpha.239) (2022-11-16)
+
+
+### Features
+
+* **Angular/Table:** Use different output ([dfd3cb3](https://github.com/employes/paperless/commit/dfd3cb3ad2ec8a94720f048b4086080929089fbc))
+
+
+
+
+
 # [0.1.0-alpha.238](https://github.com/employes/paperless/compare/v0.1.0-alpha.237...v0.1.0-alpha.238) (2022-11-16)
 
 

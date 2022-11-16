@@ -131,7 +131,7 @@
         [show]="filterModalShow$ | async"
         (close)="filterModalShow$.next(false)"
     >
-        <div slot="content flex flex-col gap-6">
+        <div slot="content" class="flex flex-col gap-6">
             <ng-container
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>

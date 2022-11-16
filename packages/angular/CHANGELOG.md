@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.241](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.240...v0.1.0-alpha.241) (2022-11-16)
+
+
+### Features
+
+* **Angular/Table:** Add mobile save button for filters ([8e0e042](https://github.com/Employes/Paperless/commit/8e0e0429778aa3978b29d24848afa9332a986ee9))
+
+
+
+
+
 # [0.1.0-alpha.240](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.239...v0.1.0-alpha.240) (2022-11-16)
 
 

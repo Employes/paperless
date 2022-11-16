@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.245](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.244...v0.1.0-alpha.245) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Rename `util.ts` to `utils.ts` ([cd45d82](https://github.com/Employes/Paperless/commit/cd45d820e841bece9a16b734bc09980d426ef442))
+
+
+### Features
+
+* **Angular/Table:** Add utility ([3e8fb90](https://github.com/Employes/Paperless/commit/3e8fb90b075c218904f7fee15e2a6e37f8c63d8e))
+
+
+
+
+
 # [0.1.0-alpha.244](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.243...v0.1.0-alpha.244) (2022-11-16)
 
 **Note:** Version bump only for package @paperless/angular

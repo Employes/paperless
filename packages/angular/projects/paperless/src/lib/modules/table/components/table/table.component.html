@@ -136,14 +136,23 @@
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>
 
-            <p-button
-                class="flex desktop-xs:hidden"
-                width="full"
-                icon="checkmark"
-                (onClick)="onFilterModalSave()"
-            >
-                {{ filterModalSaveText }}
-            </p-button>
+            <div class="flex desktop-xs:hidden gap-4 w-full">
+                <p-button
+                    *ngIf="filterModalShowResetMobile$ | async"
+                    variant="secondary"
+                    width="full"
+                    (onClick)="onFilterModalReset()"
+                >
+                    {{ filterModalResetText }}
+                </p-button>
+                <p-button
+                    width="full"
+                    icon="checkmark"
+                    (onClick)="onFilterModalSave()"
+                >
+                    {{ filterModalSaveText }}
+                </p-button>
+            </div>
         </div>
         <div slot="footer" class="flex justify-between w-full">
             <p-button
@@ -152,9 +161,19 @@
             >
                 {{ filterModalCancelText }}
             </p-button>
-            <p-button icon="checkmark" (onClick)="onFilterModalSave()">
-                {{ filterModalSaveText }}
-            </p-button>
+
+            <div class="flex gap-4">
+                <p-button
+                    *ngIf="filterModalShowReset$ | async"
+                    variant="secondary"
+                    (onClick)="onFilterModalReset()"
+                >
+                    {{ filterModalResetText }}
+                </p-button>
+                <p-button icon="checkmark" (onClick)="onFilterModalSave()">
+                    {{ filterModalSaveText }}
+                </p-button>
+            </div>
         </div>
     </p-modal>
 </ng-container>

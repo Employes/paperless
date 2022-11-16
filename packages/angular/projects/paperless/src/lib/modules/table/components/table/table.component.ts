@@ -260,9 +260,14 @@ export class Table implements OnInit, OnChanges {
     @Input() filterModalHeaderText: string = 'Filters';
     @Input() filterModalSaveText: string = 'Save';
     @Input() filterModalCancelText: string = 'Cancel';
+    @Input() filterModalResetText: string = 'Reset filters';
 
     @Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
     @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
+    @Output() filterModalReset: EventEmitter<void> = new EventEmitter();
+
+    public filterModalShowReset$ = new BehaviorSubject(false);
+    public filterModalShowResetMobile$ = new BehaviorSubject(false);
 
     constructor() {}
 
@@ -288,6 +293,27 @@ export class Table implements OnInit, OnChanges {
             this.loadingRows = Array.from({
                 length: changes['amountOfLoadingRows'].currentValue,
             });
+        }
+
+        if (
+            changes['activeQuickFilterIdentifier'] ||
+            changes['selectedFiltersAmount']
+        ) {
+            const selectedFiltersAmount =
+                changes['activeQuickFilterIdentifier'].currentValue;
+
+            if (selectedFiltersAmount > 0) {
+                this.filterModalShowReset$.next(true);
+            }
+
+            const activeQuickFilterIdentifier =
+                changes['activeQuickFilterIdentifier'].currentValue;
+            const activeQuickFilter = this.quickFilters.find(
+                (f) => (f.identifier = activeQuickFilterIdentifier)
+            );
+            if (selectedFiltersAmount > 0 || !activeQuickFilter?.default) {
+                this.filterModalShowResetMobile$.next(true);
+            }
         }
     }
 
@@ -341,6 +367,11 @@ export class Table implements OnInit, OnChanges {
 
     onFilterModalSave() {
         this.filterModalSave.next();
+        this.filterModalShow$.next(false);
+    }
+
+    onFilterModalReset() {
+        this.filterModalReset.next();
         this.filterModalShow$.next(false);
     }
 

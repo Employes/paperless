@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.249](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.248...v0.1.0-alpha.249) (2022-11-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Allow any kind of filter form ([575ede8](https://github.com/Employes/Paperless/commit/575ede8a1dd6e78100a233235ead7e79ddeff7e8))
+
+
+
+
+
 # [0.1.0-alpha.248](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.247...v0.1.0-alpha.248) (2022-11-16)
 
 

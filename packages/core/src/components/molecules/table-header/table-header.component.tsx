@@ -137,6 +137,10 @@ export class TableHeader {
     }
 
     render() {
+        const activeQuickFilter = this.quickFilters.find(
+            (f) => f.identifier === this.activeQuickFilterIdentifier
+        );
+
         return (
             <Host class="p-table-header">
                 {this.quickFilters.length > 0 && (
@@ -186,16 +190,12 @@ export class TableHeader {
                             {this.filterButtonTemplate
                                 ? this.filterButtonTemplate()
                                 : this._defaultFilterButtonTemplate()}
-                            {this.selectedFiltersAmount && (
-                                <p-label
-                                    size="small"
-                                    variant="negative"
-                                    mobileIcon={false}
-                                    circle={false}
-                                    class="ml-1"
-                                >
-                                    {this.selectedFiltersAmount}
-                                </p-label>
+                            {this.selectedFiltersAmount &&
+                                this._getLabel(this.selectedFiltersAmount)}
+                            {this._getLabel(
+                                this.selectedFiltersAmount +
+                                    (activeQuickFilter.default ? 0 : 1),
+                                'mobile'
                             )}
                         </p-button>
                     )}
@@ -235,6 +235,24 @@ export class TableHeader {
                           mobile ? this.itemsSelectedAmount : 0
                       )}
             </p-button>
+        );
+    }
+
+    private _getLabel(amount, variant: 'mobile' | 'default' = 'default') {
+        return (
+            <p-label
+                size="small"
+                variant="negative"
+                mobileIcon={false}
+                circle={false}
+                class={`ml-1 ${
+                    variant === 'default'
+                        ? 'hidden desktop-xs:flex'
+                        : 'flex desktop-xs:hidden'
+                }`}
+            >
+                {amount}
+            </p-label>
         );
     }
 }

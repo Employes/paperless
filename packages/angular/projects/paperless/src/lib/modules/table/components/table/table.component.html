@@ -142,7 +142,7 @@
         <div slot="footer" class="flex justify-between gap-4 w-full">
             <p-button
                 *ngIf="filterModalShowResetMobile"
-                class="flex desktop-xs:hidden"
+                class="flex desktop-xs:hidden w-full tablet:w-auto"
                 variant="secondary"
                 (onClick)="onFilterModalReset(true)"
             >
@@ -150,14 +150,14 @@
             </p-button>
             <p-button
                 *ngIf="filterModalShowReset"
-                class="hidden desktop-xs:flex"
+                class="hidden desktop-xs:flex w-full tablet:w-auto"
                 variant="secondary"
                 (onClick)="onFilterModalReset()"
             >
                 {{ filterModalResetText }}
             </p-button>
             <p-button
-                class="ml-auto"
+                class="ml-auto w-full tablet:w-auto"
                 icon="checkmark"
                 (onClick)="onFilterModalSave()"
             >

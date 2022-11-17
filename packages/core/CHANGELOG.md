@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.255](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.254...v0.1.0-alpha.255) (2022-11-17)
+
+
+### Bug Fixes
+
+* **Atoms/Loader:** Fix spin ([23c312a](https://github.com/ionic-team/stencil-component-starter/commit/23c312aeb42b932ddcdbbbaac72a02647058089e))
+
+
+
+
+
 # [0.1.0-alpha.254](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.253...v0.1.0-alpha.254) (2022-11-17)
 
 **Note:** Version bump only for package @paperless/core

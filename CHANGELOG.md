@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.255](https://github.com/employes/paperless/compare/v0.1.0-alpha.254...v0.1.0-alpha.255) (2022-11-17)
+
+
+### Bug Fixes
+
+* **Atoms/Loader:** Fix spin ([23c312a](https://github.com/employes/paperless/commit/23c312aeb42b932ddcdbbbaac72a02647058089e))
+* **deps:** update angular monorepo to v15 ([#82](https://github.com/employes/paperless/issues/82)) ([af1e7fa](https://github.com/employes/paperless/commit/af1e7fa9b9d9cc92d49e0b9b91e2659775d4c4bc))
+* Update typescript ([4bd9ca6](https://github.com/employes/paperless/commit/4bd9ca619c4f9c8f0967b71faa0db07531b7aa3d))
+
+
+
+
+
 # [0.1.0-alpha.254](https://github.com/employes/paperless/compare/v0.1.0-alpha.253...v0.1.0-alpha.254) (2022-11-17)
 
 

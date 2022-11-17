@@ -72,6 +72,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		}
 		
 		this._checkEmptyStateType();
+		this._checkResetButtons();
 	}
 
 	public override registerOnChange(fn: (value: any) => void) {
@@ -96,6 +97,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		}
 		
 		this._checkEmptyStateType();
+		this._checkResetButtons();
 	}
 
 	private _setActiveQuickFilter(quickFilter: QuickFilter) {
@@ -111,5 +113,29 @@ export class TableNgxDirective extends BaseValueAccessor {
 		}
 
 		this._base.emptyStateType = 'no_filter';
+	}
+
+	private _checkResetButtons() {
+		const activeQuickFilter = this.lastValue.quickFilter;
+		const selectedFiltersAmount = this._base.selectedFiltersAmount;
+
+		if (
+            activeQuickFilter ||
+            selectedFiltersAmount
+        ) {
+            if (selectedFiltersAmount && selectedFiltersAmount > 0) {
+                console.log('Setting filterModalShowReset to true');
+                this._base.filterModalShowReset = true;
+            } else {
+				this._base.filterModalShowReset = false;
+			}
+
+            if (selectedFiltersAmount && selectedFiltersAmount > 0 || !activeQuickFilter?.default) {
+                console.log('Setting filterModalShowResetMobile to true');
+                this._base.filterModalShowResetMobile = true;
+            } else {
+				this._base.filterModalShowResetMobile = false;
+			}
+        }
 	}
 }

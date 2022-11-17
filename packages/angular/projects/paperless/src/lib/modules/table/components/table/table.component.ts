@@ -262,12 +262,12 @@ export class Table implements OnInit, OnChanges {
     @Input() filterModalCancelText: string = 'Cancel';
     @Input() filterModalResetText: string = 'Reset filters';
 
+    @Input() filterModalShowReset: boolean = false;
+    @Input() filterModalShowResetMobile: boolean = false;
+
     @Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
     @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
     @Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
-
-    public filterModalShowReset$ = new BehaviorSubject(false);
-    public filterModalShowResetMobile$ = new BehaviorSubject(false);
 
     constructor() {}
 
@@ -293,38 +293,6 @@ export class Table implements OnInit, OnChanges {
             this.loadingRows = Array.from({
                 length: changes['amountOfLoadingRows'].currentValue,
             });
-        }
-
-        console.log('ngOnChanges', changes);
-        if (
-            changes['activeQuickFilterIdentifier'] ||
-            changes['selectedFiltersAmount']
-        ) {
-            const selectedFiltersAmount =
-                changes['activeQuickFilterIdentifier'].currentValue;
-
-            if (selectedFiltersAmount > 0) {
-                console.log('Setting filterModalShowReset to true');
-                this.filterModalShowReset$.next(true);
-            }
-
-            const activeQuickFilterIdentifier =
-                changes['activeQuickFilterIdentifier'].currentValue;
-            const activeQuickFilter = this.quickFilters.find(
-                (f) => (f.identifier = activeQuickFilterIdentifier)
-            );
-
-            console.log('activeQuickFilter', activeQuickFilter);
-
-            if (selectedFiltersAmount > 0 || !activeQuickFilter?.default) {
-                console.log('Setting filterModalShowResetMobile to true');
-                this.filterModalShowResetMobile$.next(true);
-                return;
-            }
-
-            console.log('Hiding reset buttonts');
-            this.filterModalShowReset$.next(false);
-            this.filterModalShowResetMobile$.next(false);
         }
     }
 

@@ -136,12 +136,21 @@
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>
 
-            <pre>{{ filterModalShowReset$ | async | json }}</pre>
-            <pre>{{ filterModalShowResetMobile$ | async | json }}</pre>
+            <pre>{{ filterModalShowReset | json }}</pre>
+            <pre>{{ filterModalShowResetMobile | json }}</pre>
         </div>
         <div slot="footer" class="flex justify-between gap-4 w-full">
             <p-button
-                *ngIf="filterModalShowReset$ | async"
+                *ngIf="filterModalShowResetMobile"
+                class="flex desktop-xs:hidden"
+                variant="secondary"
+                (onClick)="onFilterModalReset(true)"
+            >
+                {{ filterModalResetText }}
+            </p-button>
+            <p-button
+                *ngIf="filterModalShowReset"
+                class="hidden desktop-xs:flex"
                 variant="secondary"
                 (onClick)="onFilterModalReset()"
             >

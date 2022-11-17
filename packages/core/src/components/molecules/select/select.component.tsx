@@ -8,6 +8,7 @@ import {
     Listen,
     Prop,
     State,
+    Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 
@@ -186,15 +187,7 @@ export class Select {
 
     componentDidLoad() {
         if (this.value) {
-            const value =
-                typeof this._items?.[0]?.[this.valueKey] === 'number' &&
-                !isNaN(this.value)
-                    ? parseInt(this.value, 10)
-                    : this.value;
-            this._selectedItem = this._items.find(
-                (i) => i?.[this.valueKey] === value
-            );
-
+            this._selectItem(this.value);
             return;
         }
 
@@ -257,6 +250,19 @@ export class Select {
 
         this._showDropdown = false;
         this._isAutoCompleting = false;
+    }
+
+    @Watch('value')
+    private _selectItem(value: any) {
+        const parsedValue =
+            typeof this._items?.[0]?.[this.valueKey] === 'number' &&
+            !isNaN(value)
+                ? parseInt(value, 10)
+                : value;
+
+        this._selectedItem = this._items.find(
+            (i) => i?.[this.valueKey] === parsedValue
+        );
     }
 
     private _selectValue(item) {

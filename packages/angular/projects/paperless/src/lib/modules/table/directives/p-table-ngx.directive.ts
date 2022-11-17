@@ -124,14 +124,12 @@ export class TableNgxDirective extends BaseValueAccessor {
             selectedFiltersAmount
         ) {
             if (selectedFiltersAmount && selectedFiltersAmount > 0) {
-                console.log('Setting filterModalShowReset to true');
                 this._base.filterModalShowReset = true;
             } else {
 				this._base.filterModalShowReset = false;
 			}
 
             if (selectedFiltersAmount && selectedFiltersAmount > 0 || !activeQuickFilter?.default) {
-                console.log('Setting filterModalShowResetMobile to true');
                 this._base.filterModalShowResetMobile = true;
             } else {
 				this._base.filterModalShowResetMobile = false;

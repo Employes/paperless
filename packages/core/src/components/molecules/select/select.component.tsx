@@ -254,20 +254,26 @@ export class Select {
 
     @Watch('value')
     private _valueChange(value: any) {
-        console.log('value change', value);
+        this._preselectItem(value);
+    }
+
+    @Watch('items')
+    public itemChanges() {
+        this._preselectItem();
+    }
+
+    private _preselectItem(value?: any) {
+        value = value ?? this.value;
+
         const parsedValue =
             typeof this._items?.[0]?.[this.valueKey] === 'number' &&
             !isNaN(value)
                 ? parseInt(value, 10)
                 : value;
 
-        console.log('parsed value', parsedValue);
-
         const item = this._items.find(
             (i) => i?.[this.valueKey] === parsedValue
         );
-
-        console.log('Item', item);
 
         this._selectedItem = item;
     }

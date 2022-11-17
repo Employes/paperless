@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.257](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.256...v0.1.0-alpha.257) (2022-11-17)
+
+
+### Features
+
+* **Angular/Table:** Correct sizing of filter modal buttons ([06a68bd](https://github.com/Employes/Paperless/commit/06a68bd45738c750021ea68ebc11e181e98cd9aa))
+
+
+
+
+
 # [0.1.0-alpha.256](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.255...v0.1.0-alpha.256) (2022-11-17)
 
 

@@ -1,6 +1,6 @@
 :host {
     @apply h-6 flex items-center px-2 rounded font-medium mr-1;
-    @apply text-storm-light text-sm;
+    @apply text-storm-light text-sm whitespace-nowrap;
     @apply cursor-pointer;
 }
 

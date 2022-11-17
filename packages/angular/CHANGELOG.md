@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.259](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.258...v0.1.0-alpha.259) (2022-11-17)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove debugging ([b6a53be](https://github.com/Employes/Paperless/commit/b6a53be173af5f8371d5a826a5de0796d362ccc8))
+* **Angular/Table:** Remove more debugging ([db09608](https://github.com/Employes/Paperless/commit/db09608e848849d2993bd5e1f855496af6a05bfa))
+
+
+
+
+
 # [0.1.0-alpha.258](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.257...v0.1.0-alpha.258) (2022-11-17)
 
 **Note:** Version bump only for package @paperless/angular

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.259](https://github.com/employes/paperless/compare/v0.1.0-alpha.258...v0.1.0-alpha.259) (2022-11-17)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove debugging ([b6a53be](https://github.com/employes/paperless/commit/b6a53be173af5f8371d5a826a5de0796d362ccc8))
+* **Angular/Table:** Remove more debugging ([db09608](https://github.com/employes/paperless/commit/db09608e848849d2993bd5e1f855496af6a05bfa))
+* **Molecules/Select:** Auto select item when provided value ([3080eab](https://github.com/employes/paperless/commit/3080eab975947d37d4b9ccfd692cb29dfc24cd13))
+
+
+
+
+
 # [0.1.0-alpha.258](https://github.com/employes/paperless/compare/v0.1.0-alpha.257...v0.1.0-alpha.258) (2022-11-17)
 
 

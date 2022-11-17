@@ -187,7 +187,7 @@ export class Select {
 
     componentDidLoad() {
         if (this.value) {
-            this._selectItem(this.value);
+            this._valueChange(this.value);
             return;
         }
 
@@ -253,16 +253,23 @@ export class Select {
     }
 
     @Watch('value')
-    private _selectItem(value: any) {
+    private _valueChange(value: any) {
+        console.log('value change', value);
         const parsedValue =
             typeof this._items?.[0]?.[this.valueKey] === 'number' &&
             !isNaN(value)
                 ? parseInt(value, 10)
                 : value;
 
-        this._selectedItem = this._items.find(
+        console.log('parsed value', parsedValue);
+
+        const item = this._items.find(
             (i) => i?.[this.valueKey] === parsedValue
         );
+
+        console.log('Item', item);
+
+        this._selectedItem = item;
     }
 
     private _selectValue(item) {

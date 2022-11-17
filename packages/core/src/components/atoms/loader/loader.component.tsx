@@ -40,11 +40,7 @@ export class Loader {
     private _show = this.show;
     private _showSubscriber: Subscription;
 
-    private _loader = (
-        <div
-            class={`loader animate-spin duration-500 color-${this.color}`}
-        ></div>
-    );
+    private _loader = (<div class={`loader color-${this.color}`}></div>);
 
     componentWillRender() {
         this._checkShow();

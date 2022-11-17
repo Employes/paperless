@@ -1,7 +1,8 @@
 :host {
     .loader {
         @apply w-[1em] h-[1em] inline-block rounded-round;
-        @apply border-solid border-2 border-indigo-light border-t-indigo #{!important};
+        @apply border-2 border-solid border-indigo-light border-t-indigo;
+        animation: 500ms spin linear infinite;
 
         will-change: transform;
 
@@ -62,5 +63,11 @@
 @keyframes loading {
     to {
         background-position-x: -20%;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
     }
 }

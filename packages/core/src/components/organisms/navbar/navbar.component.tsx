@@ -21,10 +21,13 @@ export class Navbar {
     render() {
         return (
             <Host class="p-navbar">
-                <div
-                    class={`backdrop ${this._showMenu && 'show'}`}
+                <p-backdrop
+                    applyBlur={true}
+                    class={`z-navbar-backdrop desktop-xs:hidden pointer-events-none ${
+                        this._showMenu && 'show'
+                    }`}
                     onClick={() => (this._showMenu = false)}
-                ></div>
+                ></p-backdrop>
                 <div class={`sidebar ${this._showMenu && 'show'}`}>
                     <div class="header">
                         <p class="text-xl m-0 font-semibold text-storm-dark">

@@ -405,6 +405,10 @@ export namespace Components {
     }
     interface PModal {
         /**
+          * Wether to apply blur to the backdrop
+         */
+        "applyBlur": boolean;
+        /**
           * The Header of the modal
          */
         "header"?: string;
@@ -1864,6 +1868,10 @@ declare namespace LocalJSX {
         | 'ghost';
     }
     interface PModal {
+        /**
+          * Wether to apply blur to the backdrop
+         */
+        "applyBlur"?: boolean;
         /**
           * The Header of the modal
          */

@@ -16,6 +16,7 @@
 
 | Property           | Attribute            | Description                                      | Type                           | Default     |
 | ------------------ | -------------------- | ------------------------------------------------ | ------------------------------ | ----------- |
+| `applyBlur`        | `apply-blur`         | Wether to apply blur to the backdrop             | `boolean`                      | `false`     |
 | `header`           | `header`             | The Header of the modal                          | `string`                       | `undefined` |
 | `show`             | `show`               | Wether to show the modal or not                  | `boolean`                      | `false`     |
 | `showMobileClose`  | `show-mobile-close`  | Wether to show the close on mobile in the header | `boolean`                      | `true`      |

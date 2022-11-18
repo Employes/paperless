@@ -15,11 +15,13 @@
 
 ### Depends on
 
+- [p-backdrop](../../atoms/backdrop)
 - [p-button](../../atoms/button)
 
 ### Graph
 ```mermaid
 graph TD;
+  p-navbar --> p-backdrop
   p-navbar --> p-button
   p-button --> p-icon
   p-button --> p-loader

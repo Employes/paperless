@@ -61,17 +61,9 @@
         @apply desktop-xs:hidden;
     }
 
-    .backdrop {
-        @apply fixed top-0 left-0 z-navbar-backdrop;
-        @apply h-screen w-screen;
-        @apply backdrop-blur-xs bg-storm-dark/50;
-
+    p-backdrop {
         will-change: opacity;
         @apply transition-opacity opacity-0;
-
-        @apply desktop-xs:hidden;
-
-        @apply pointer-events-none;
 
         &.show {
             @apply pointer-events-auto opacity-100;

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.262](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.261...v0.1.0-alpha.262) (2022-11-18)
+
+
+### Features
+
+* **Organisms/Navbar:** Make use of backdrop component ([d1bb65f](https://github.com/ionic-team/stencil-component-starter/commit/d1bb65f488e49c8fae8c4c123949336922c808eb))
+
+
+
+
+
 # [0.1.0-alpha.261](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.260...v0.1.0-alpha.261) (2022-11-18)
 
 

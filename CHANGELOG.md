@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.261](https://github.com/employes/paperless/compare/v0.1.0-alpha.260...v0.1.0-alpha.261) (2022-11-18)
+
+
+### Features
+
+* **Organisms/Modal:** Add blur property for backdrop ([c47d3f4](https://github.com/employes/paperless/commit/c47d3f4571bcca61c3b7e12d09ce9095611aff9d))
+
+
+
+
+
 # [0.1.0-alpha.260](https://github.com/employes/paperless/compare/v0.1.0-alpha.259...v0.1.0-alpha.260) (2022-11-18)
 
 

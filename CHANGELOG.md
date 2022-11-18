@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.260](https://github.com/employes/paperless/compare/v0.1.0-alpha.259...v0.1.0-alpha.260) (2022-11-18)
+
+
+### Features
+
+* **Atoms/Buttons:** Fix shadows & remove shadows on mobile ([1dbcfd9](https://github.com/employes/paperless/commit/1dbcfd95d3f50fdb3d81729e47c4b3bfc682a0af))
+* **Atoms:** Move modal-backdrop to general use backdrop ([72c5691](https://github.com/employes/paperless/commit/72c5691cc9621481100cf97bc86d22276008cb42))
+
+
+
+
+
 # [0.1.0-alpha.259](https://github.com/employes/paperless/compare/v0.1.0-alpha.258...v0.1.0-alpha.259) (2022-11-17)
 
 

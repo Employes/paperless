@@ -35,7 +35,7 @@
 
 ### Depends on
 
-- [p-modal-backdrop](../../atoms/modal-backdrop)
+- [p-backdrop](../../atoms/backdrop)
 - [p-modal-container](../../atoms/modal-container)
 - [p-modal-header](../../atoms/modal-header)
 - [p-modal-body](../../atoms/modal-body)
@@ -44,7 +44,7 @@
 ### Graph
 ```mermaid
 graph TD;
-  p-modal --> p-modal-backdrop
+  p-modal --> p-backdrop
   p-modal --> p-modal-container
   p-modal --> p-modal-header
   p-modal --> p-modal-body

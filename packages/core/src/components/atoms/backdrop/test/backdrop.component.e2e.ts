@@ -1,20 +1,20 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('p-modal-backdrop', () => {
+describe('p-backdrop', () => {
     it('renders', async () => {
         const page = await newE2EPage();
 
-        await page.setContent('<p-modal-backdrop></p-modal-backdrop>');
-        const element = await page.find('p-modal-backdrop');
+        await page.setContent('<p-backdrop></p-backdrop>');
+        const element = await page.find('p-backdrop');
         expect(element).toHaveClass('hydrated');
     });
 
     it('renders changes to the content', async () => {
         const page = await newE2EPage();
 
-        await page.setContent('<p-modal-backdrop></p-modal-backdrop>');
+        await page.setContent('<p-backdrop></p-backdrop>');
         // const component = await page.find('p-button');
-        const element = await page.find('p-modal-backdrop');
+        const element = await page.find('p-backdrop');
         expect(element.textContent).toEqual(``);
 
         // component.setProperty('name', 'World');

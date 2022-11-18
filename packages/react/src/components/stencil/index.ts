@@ -11,6 +11,7 @@ defineCustomElements();
 export const PAccordion = /*@__PURE__*/createReactComponent<JSX.PAccordion, HTMLPAccordionElement>('p-accordion');
 export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvatarElement>('p-avatar');
 export const PAvatarGroup = /*@__PURE__*/createReactComponent<JSX.PAvatarGroup, HTMLPAvatarGroupElement>('p-avatar-group');
+export const PBackdrop = /*@__PURE__*/createReactComponent<JSX.PBackdrop, HTMLPBackdropElement>('p-backdrop');
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
 export const PCardBody = /*@__PURE__*/createReactComponent<JSX.PCardBody, HTMLPCardBodyElement>('p-card-body');
 export const PCardContainer = /*@__PURE__*/createReactComponent<JSX.PCardContainer, HTMLPCardContainerElement>('p-card-container');
@@ -30,7 +31,6 @@ export const PLabel = /*@__PURE__*/createReactComponent<JSX.PLabel, HTMLPLabelEl
 export const PLayout = /*@__PURE__*/createReactComponent<JSX.PLayout, HTMLPLayoutElement>('p-layout');
 export const PLoader = /*@__PURE__*/createReactComponent<JSX.PLoader, HTMLPLoaderElement>('p-loader');
 export const PModal = /*@__PURE__*/createReactComponent<JSX.PModal, HTMLPModalElement>('p-modal');
-export const PModalBackdrop = /*@__PURE__*/createReactComponent<JSX.PModalBackdrop, HTMLPModalBackdropElement>('p-modal-backdrop');
 export const PModalBody = /*@__PURE__*/createReactComponent<JSX.PModalBody, HTMLPModalBodyElement>('p-modal-body');
 export const PModalContainer = /*@__PURE__*/createReactComponent<JSX.PModalContainer, HTMLPModalContainerElement>('p-modal-container');
 export const PModalFooter = /*@__PURE__*/createReactComponent<JSX.PModalFooter, HTMLPModalFooterElement>('p-modal-footer');

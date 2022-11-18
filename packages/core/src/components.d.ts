@@ -61,6 +61,9 @@ export namespace Components {
          */
         "extra": number;
     }
+    interface PBackdrop {
+        "applyBlur": boolean;
+    }
     interface PButton {
         /**
           * Wether to show a chevron or not
@@ -425,8 +428,6 @@ export namespace Components {
           * The variant of the modal body
          */
         "variant": 'default' | 'table';
-    }
-    interface PModalBackdrop {
     }
     interface PModalBody {
         /**
@@ -1109,6 +1110,12 @@ declare global {
         prototype: HTMLPAvatarGroupElement;
         new (): HTMLPAvatarGroupElement;
     };
+    interface HTMLPBackdropElement extends Components.PBackdrop, HTMLStencilElement {
+    }
+    var HTMLPBackdropElement: {
+        prototype: HTMLPBackdropElement;
+        new (): HTMLPBackdropElement;
+    };
     interface HTMLPButtonElement extends Components.PButton, HTMLStencilElement {
     }
     var HTMLPButtonElement: {
@@ -1222,12 +1229,6 @@ declare global {
     var HTMLPModalElement: {
         prototype: HTMLPModalElement;
         new (): HTMLPModalElement;
-    };
-    interface HTMLPModalBackdropElement extends Components.PModalBackdrop, HTMLStencilElement {
-    }
-    var HTMLPModalBackdropElement: {
-        prototype: HTMLPModalBackdropElement;
-        new (): HTMLPModalBackdropElement;
     };
     interface HTMLPModalBodyElement extends Components.PModalBody, HTMLStencilElement {
     }
@@ -1413,6 +1414,7 @@ declare global {
         "p-accordion": HTMLPAccordionElement;
         "p-avatar": HTMLPAvatarElement;
         "p-avatar-group": HTMLPAvatarGroupElement;
+        "p-backdrop": HTMLPBackdropElement;
         "p-button": HTMLPButtonElement;
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
@@ -1432,7 +1434,6 @@ declare global {
         "p-layout": HTMLPLayoutElement;
         "p-loader": HTMLPLoaderElement;
         "p-modal": HTMLPModalElement;
-        "p-modal-backdrop": HTMLPModalBackdropElement;
         "p-modal-body": HTMLPModalBodyElement;
         "p-modal-container": HTMLPModalContainerElement;
         "p-modal-footer": HTMLPModalFooterElement;
@@ -1511,6 +1512,9 @@ declare namespace LocalJSX {
           * The amount to show after the avatars
          */
         "extra"?: number;
+    }
+    interface PBackdrop {
+        "applyBlur"?: boolean;
     }
     interface PButton {
         /**
@@ -1888,8 +1892,6 @@ declare namespace LocalJSX {
           * The variant of the modal body
          */
         "variant"?: 'default' | 'table';
-    }
-    interface PModalBackdrop {
     }
     interface PModalBody {
         /**
@@ -2612,6 +2614,7 @@ declare namespace LocalJSX {
         "p-accordion": PAccordion;
         "p-avatar": PAvatar;
         "p-avatar-group": PAvatarGroup;
+        "p-backdrop": PBackdrop;
         "p-button": PButton;
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
@@ -2631,7 +2634,6 @@ declare namespace LocalJSX {
         "p-layout": PLayout;
         "p-loader": PLoader;
         "p-modal": PModal;
-        "p-modal-backdrop": PModalBackdrop;
         "p-modal-body": PModalBody;
         "p-modal-container": PModalContainer;
         "p-modal-footer": PModalFooter;
@@ -2671,6 +2673,7 @@ declare module "@stencil/core" {
             "p-accordion": LocalJSX.PAccordion & JSXBase.HTMLAttributes<HTMLPAccordionElement>;
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
+            "p-backdrop": LocalJSX.PBackdrop & JSXBase.HTMLAttributes<HTMLPBackdropElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;
@@ -2690,7 +2693,6 @@ declare module "@stencil/core" {
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;
             "p-loader": LocalJSX.PLoader & JSXBase.HTMLAttributes<HTMLPLoaderElement>;
             "p-modal": LocalJSX.PModal & JSXBase.HTMLAttributes<HTMLPModalElement>;
-            "p-modal-backdrop": LocalJSX.PModalBackdrop & JSXBase.HTMLAttributes<HTMLPModalBackdropElement>;
             "p-modal-body": LocalJSX.PModalBody & JSXBase.HTMLAttributes<HTMLPModalBodyElement>;
             "p-modal-container": LocalJSX.PModalContainer & JSXBase.HTMLAttributes<HTMLPModalContainerElement>;
             "p-modal-footer": LocalJSX.PModalFooter & JSXBase.HTMLAttributes<HTMLPModalFooterElement>;

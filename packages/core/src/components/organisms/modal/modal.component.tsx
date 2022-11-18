@@ -34,6 +34,11 @@ export class Modal {
     @Prop() show: boolean = false;
 
     /**
+     * Wether to apply blur to the backdrop
+     */
+    @Prop() applyBlur: boolean = false;
+
+    /**
      * Wether to show the close on mobile in the header
      */
     @Prop() showMobileClose = true;
@@ -76,7 +81,7 @@ export class Modal {
 
         return (
             <Host class="p-modal">
-                <p-backdrop>
+                <p-backdrop applyBlur={this.applyBlur}>
                     <p-modal-container size={this.size}>
                         {(this.header?.length || this._hasHeaderSlot) && (
                             <p-modal-header

@@ -8,4 +8,6 @@ module.exports = {
     ],
     5: '0px 0.1875rem 1rem rgba(0,24,98, 0.3)',
     transparent: 'transparent',
+    'button-primary-hover': '0px 2px 4px rgba(44,75,169, 0.4)',
+    'button-secondary-hover': '0px 2px 4px rgba(176,178,203, 0.4)',
 };

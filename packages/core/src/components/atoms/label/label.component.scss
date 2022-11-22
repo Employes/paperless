@@ -4,7 +4,7 @@
     @apply text-sm font-semibold;
 
     .content {
-        @apply flex gap-1 items-center;
+        @apply hidden desktop-xs:flex items-center;
     }
 
     .circle {
@@ -13,32 +13,6 @@
 
     p-icon {
         @apply hidden #{!important};
-    }
-}
-
-:host([circle]),
-:host([circle='true']) {
-    .circle {
-        @apply block;
-    }
-}
-
-:host([icon]) {
-    p-icon {
-        @apply flex #{!important};
-    }
-}
-
-:host([icon*='']):host([circle]),
-:host([icon*='']):host([circle='true']) {
-    p-icon {
-        @apply hidden #{!important};
-    }
-}
-
-:host([circle='false']) {
-    .circle {
-        @apply hidden;
     }
 }
 
@@ -80,16 +54,46 @@
 
 :host([size='small']) {
     @apply h-4 min-w-[1rem] px-1 py-[1px];
-    @apply text-xs justify-center items-baseline;
+    @apply text-xs justify-center;
     @apply leading-3;
 }
 
-:host(.mobile-icon) {
+:host([behavior='circle']) {
+    .circle {
+        @apply block desktop-xs:block;
+    }
+}
+
+:host([behavior='icon']) {
+    p-icon {
+        @apply flex desktop-xs:flex #{!important};
+    }
+}
+
+:host([behavior='text']) {
+    p-icon {
+        @apply hidden desktop-xs:hidden #{!important};
+    }
+
+    .circle {
+        @apply hidden desktop-xs:hidden;
+    }
+
+    .content {
+        @apply flex desktop-xs:flex;
+    }
+}
+
+:host([behavior='text'][size='small']) {
+    @apply items-baseline;
+}
+
+:host([behavior='combination']) {
     @apply px-0 desktop-xs:px-3;
     @apply w-[1.625rem] desktop-xs:w-auto;
 
-    .content {
-        @apply hidden desktop-xs:flex #{!important};
+    .circle {
+        @apply hidden desktop-xs:block;
     }
 
     p-icon {
@@ -97,11 +101,12 @@
     }
 }
 
-:host(.icon-only) {
-    @apply px-0 desktop-xs:px-0 desktop-xs:w-[1.625rem];
+:host([behavior='icon-only']) {
+    @apply px-0 desktop-xs:px-0;
+    @apply w-[1.625rem];
 
     .content {
-        @apply hidden desktop-xs:hidden #{!important};
+        @apply hidden desktop-xs:hidden;
     }
 
     p-icon {
@@ -109,6 +114,13 @@
     }
 }
 
-:host([size='small'].icon-only) {
+:host([behavior='icon-only'][size='small']) {
     @apply h-4 w-4;
+}
+
+:host([keep-mobile-content]),
+:host([keep-mobile-content='true']) {
+    .content {
+        @apply flex desktop-xs:flex;
+    }
 }

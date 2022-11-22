@@ -18,29 +18,19 @@ export class Label {
         | 'info' = 'info';
 
     /**
-     * Wether to add the circle
+     * Define the behavior of the label
      */
-    @Prop({ reflect: true }) circle: boolean = false;
+    @Prop({ reflect: true }) behavior:
+        | 'icon'
+        | 'circle'
+        | 'combination'
+        | 'text'
+        | 'icon-only' = 'circle';
 
     /**
      * Icon to show on the label
      */
     @Prop({ reflect: true }) icon: IconVariant;
-
-    /**
-     * The size of the label
-     */
-    @Prop({ reflect: true }) size: 'small' | 'default' = 'default';
-
-    /**
-     * Wether to show only the icon on mobile
-     */
-    @Prop({ reflect: true }) mobileIcon: boolean = false;
-
-    /**
-     * Wether it's icon only
-     */
-    @Prop({ reflect: true }) iconOnly: boolean = false;
 
     /**
      * Icon flip
@@ -52,13 +42,19 @@ export class Label {
      */
     @Prop() iconRotate: RotateOptions;
 
+    /**
+     * The size of the label
+     */
+    @Prop({ reflect: true }) size: 'small' | 'default' = 'default';
+
+    /**
+     * Wether to keep the content on mobile
+     */
+    @Prop({ reflect: true }) keepMobileContent: boolean = false;
+
     render() {
         return (
-            <Host
-                class={`p-label ${this.mobileIcon && 'mobile-icon'} ${
-                    this.iconOnly && 'icon-only'
-                }`}
-            >
+            <Host class="p-label">
                 {this.icon && (
                     <p-icon
                         variant={this.icon}
@@ -66,8 +62,11 @@ export class Label {
                         rotate={this.iconRotate}
                     />
                 )}
+                {(this.behavior === 'circle' ||
+                    this.behavior === 'combination') && (
+                    <div class="circle"></div>
+                )}
                 <div class="content">
-                    {this.circle && <div class="circle"></div>}
                     <slot />
                 </div>
             </Host>

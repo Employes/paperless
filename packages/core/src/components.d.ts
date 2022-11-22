@@ -336,11 +336,15 @@ export namespace Components {
     }
     interface PLabel {
         /**
-          * Wether to add the circle or not
+          * Define the behavior of the label
          */
-        "circle": boolean;
+        "behavior": | 'icon'
+        | 'circle'
+        | 'combination'
+        | 'text'
+        | 'icon-only';
         /**
-          * Icon to show on the button
+          * Icon to show on the label
          */
         "icon": IconVariant;
         /**
@@ -348,17 +352,13 @@ export namespace Components {
          */
         "iconFlip": IconFlipOptions;
         /**
-          * Wether it's icon only
-         */
-        "iconOnly": boolean;
-        /**
           * Icon rotate
          */
         "iconRotate": RotateOptions1;
         /**
-          * Wether to show icon on mobile
+          * Wether to keep the content on mobile
          */
-        "mobileIcon": boolean;
+        "keepMobileContent": boolean;
         /**
           * The size of the label
          */
@@ -1800,11 +1800,15 @@ declare namespace LocalJSX {
     }
     interface PLabel {
         /**
-          * Wether to add the circle or not
+          * Define the behavior of the label
          */
-        "circle"?: boolean;
+        "behavior"?: | 'icon'
+        | 'circle'
+        | 'combination'
+        | 'text'
+        | 'icon-only';
         /**
-          * Icon to show on the button
+          * Icon to show on the label
          */
         "icon"?: IconVariant;
         /**
@@ -1812,17 +1816,13 @@ declare namespace LocalJSX {
          */
         "iconFlip"?: IconFlipOptions;
         /**
-          * Wether it's icon only
-         */
-        "iconOnly"?: boolean;
-        /**
           * Icon rotate
          */
         "iconRotate"?: RotateOptions1;
         /**
-          * Wether to show icon on mobile
+          * Wether to keep the content on mobile
          */
-        "mobileIcon"?: boolean;
+        "keepMobileContent"?: boolean;
         /**
           * The size of the label
          */

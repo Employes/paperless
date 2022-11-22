@@ -242,8 +242,7 @@ export class TableHeader {
             <p-label
                 size="small"
                 variant="negative"
-                mobileIcon={false}
-                circle={false}
+                behavior="text"
                 class={`ml-1 ${
                     variant === 'default'
                         ? 'hidden desktop-xs:flex'

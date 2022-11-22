@@ -42,9 +42,57 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
     </div>
 </Canvas>
 
-## Size
+## Behaviors
 
-### Default
+### Circle
+
+<Canvas>
+    <div class="flex">
+        <p-label>Circle behavior</p-label>
+    </div>
+</Canvas>
+
+### Icon
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" behavior="icon">
+            Icon behavior
+        </p-label>
+    </div>
+</Canvas>
+
+### Combination
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" behavior="combination">
+            Combination behavior
+        </p-label>
+    </div>
+</Canvas>
+
+### Text
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" behavior="text">
+            Text behavior
+        </p-label>
+    </div>
+</Canvas>
+
+## Icon only
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" behavior="icon-only">
+            Content hidden
+        </p-label>
+    </div>
+</Canvas>
+
+## Size
 
 ### Default
 
@@ -62,67 +110,30 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
     </div>
 </Canvas>
 
-### Small with number
+### Small with text only
 
 <Canvas>
     <div class="flex">
-        <p-label
-            size="small"
-            mobile-icon={false}
-            circle={false}
-            variant="negative"
-        >
+        <p-label size="small" behavior="text" variant="negative">
             2
         </p-label>
     </div>
 </Canvas>
 
-## Circle
-
-### With a circle
-
-<Canvas>
-    <div class="flex">
-        <p-label circle={true}>With a circle</p-label>
-    </div>
-</Canvas>
-
-### Without
-
-<Canvas>
-    <div class="flex">
-        <p-label>Without a circle</p-label>
-    </div>
-</Canvas>
-
-## Icon
+## Keep mobile content
 
 ### Default
 
 <Canvas>
     <div class="flex">
-        <p-label icon="checkmark" mobile-icon={true}>
-            I have a checkmark
-        </p-label>
+        <p-label>This will be hidden</p-label>
     </div>
 </Canvas>
 
-### With circle and mobile icon
+### Keep
 
 <Canvas>
     <div class="flex">
-        <p-label icon="checkmark" circle={true} mobile-icon={true}>
-            View me on mobile
-        </p-label>
-    </div>
-</Canvas>
-
-### Icon only
-
-<Canvas>
-    <div class="flex">
-        <p-label icon="checkmark" icon-only={true}>
-            Content hidden
-        </p-label>
+        <p-label keep-mobile-content={true}>This will stay around</p-label>
     </div>
 </Canvas>

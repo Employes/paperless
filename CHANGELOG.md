@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.264](https://github.com/employes/paperless/compare/v0.1.0-alpha.263...v0.1.0-alpha.264) (2022-11-22)
+
+
+### Features
+
+* **Atoms/Label:** Completely redo behavior ([f83c56b](https://github.com/employes/paperless/commit/f83c56bbeb650047b39881b64ec623528014eb91))
+
+
+
+
+
 # [0.1.0-alpha.263](https://github.com/employes/paperless/compare/v0.1.0-alpha.262...v0.1.0-alpha.263) (2022-11-22)
 
 

@@ -62,7 +62,7 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
     </div>
 </Canvas>
 
-### Small with number and no circle
+### Small with number
 
 <Canvas>
     <div class="flex">
@@ -79,11 +79,11 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
 
 ## Circle
 
-### Default
+### With a circle
 
 <Canvas>
     <div class="flex">
-        <p-label>With a circle</p-label>
+        <p-label circle={true}>With a circle</p-label>
     </div>
 </Canvas>
 
@@ -91,17 +91,29 @@ import Docs from '../../../packages/core/src/components/atoms/label/readme.md';
 
 <Canvas>
     <div class="flex">
-        <p-label circle={false}>Without a circle</p-label>
+        <p-label>Without a circle</p-label>
     </div>
 </Canvas>
 
 ## Icon
 
-### Mobile icon (checkmark)
+### Default
 
 <Canvas>
     <div class="flex">
-        <p-label icon="checkmark">View me on mobile</p-label>
+        <p-label icon="checkmark" mobile-icon={true}>
+            I have a checkmark
+        </p-label>
+    </div>
+</Canvas>
+
+### With circle and mobile icon
+
+<Canvas>
+    <div class="flex">
+        <p-label icon="checkmark" circle={true} mobile-icon={true}>
+            View me on mobile
+        </p-label>
     </div>
 </Canvas>
 

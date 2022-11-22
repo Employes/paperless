@@ -20,7 +20,7 @@ export class Label {
     /**
      * Wether to add the circle or not
      */
-    @Prop({ reflect: true }) circle: boolean = true;
+    @Prop({ reflect: true }) circle: boolean = false;
 
     /**
      * The size of the label
@@ -30,7 +30,7 @@ export class Label {
     /**
      * Wether to show icon on mobile
      */
-    @Prop({ reflect: true }) mobileIcon: boolean = true;
+    @Prop({ reflect: true }) mobileIcon: boolean = false;
 
     /**
      * Wether it's icon only
@@ -40,7 +40,7 @@ export class Label {
     /**
      * Icon to show on the button
      */
-    @Prop() icon: IconVariant = 'plus';
+    @Prop({ reflect: true }) icon: IconVariant;
 
     /**
      * Icon flip
@@ -59,13 +59,15 @@ export class Label {
                     this.iconOnly && 'icon-only'
                 }`}
             >
-                <p-icon
-                    variant={this.icon}
-                    flip={this.iconFlip}
-                    rotate={this.iconRotate}
-                />
+                {this.icon && (
+                    <p-icon
+                        variant={this.icon}
+                        flip={this.iconFlip}
+                        rotate={this.iconRotate}
+                    />
+                )}
                 <div class="content">
-                    <div class="circle"></div>
+                    {this.circle && <div class="circle"></div>}
                     <slot />
                 </div>
             </Host>

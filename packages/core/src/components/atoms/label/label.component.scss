@@ -16,9 +16,23 @@
     }
 }
 
-:host([circle]) {
+:host([circle]),
+:host([circle='true']) {
     .circle {
         @apply block;
+    }
+}
+
+:host([icon]) {
+    p-icon {
+        @apply flex #{!important};
+    }
+}
+
+:host([icon*='']):host([circle]),
+:host([icon*='']):host([circle='true']) {
+    p-icon {
+        @apply hidden #{!important};
     }
 }
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.263](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.262...v0.1.0-alpha.263) (2022-11-22)
+
+
+### Features
+
+* **Atoms/Label:** Change behavior of icon/circle/mobile-icon ([08b7fe2](https://github.com/ionic-team/stencil-component-starter/commit/08b7fe29ac18397172bb165f10331d585fd83778))
+* **Atoms/Label:** Update descriptions ([d568627](https://github.com/ionic-team/stencil-component-starter/commit/d5686279d1fd47e48ff3eac9762682e0a4b8a8c1))
+
+
+
+
+
 # [0.1.0-alpha.262](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.261...v0.1.0-alpha.262) (2022-11-18)
 
 

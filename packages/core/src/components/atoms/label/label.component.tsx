@@ -18,9 +18,14 @@ export class Label {
         | 'info' = 'info';
 
     /**
-     * Wether to add the circle or not
+     * Wether to add the circle
      */
     @Prop({ reflect: true }) circle: boolean = false;
+
+    /**
+     * Icon to show on the label
+     */
+    @Prop({ reflect: true }) icon: IconVariant;
 
     /**
      * The size of the label
@@ -28,7 +33,7 @@ export class Label {
     @Prop({ reflect: true }) size: 'small' | 'default' = 'default';
 
     /**
-     * Wether to show icon on mobile
+     * Wether to show only the icon on mobile
      */
     @Prop({ reflect: true }) mobileIcon: boolean = false;
 
@@ -36,11 +41,6 @@ export class Label {
      * Wether it's icon only
      */
     @Prop({ reflect: true }) iconOnly: boolean = false;
-
-    /**
-     * Icon to show on the button
-     */
-    @Prop({ reflect: true }) icon: IconVariant;
 
     /**
      * Icon flip

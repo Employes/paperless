@@ -8,11 +8,11 @@
     }
 
     .circle {
-        @apply hidden rounded-round h-2 w-2;
+        @apply hidden rounded-round h-[0.625rem] w-[0.625rem];
     }
 
     p-icon {
-        @apply hidden #{!important};
+        @apply hidden text-xs #{!important};
     }
 }
 

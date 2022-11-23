@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.267](https://github.com/employes/paperless/compare/v0.1.0-alpha.266...v0.1.0-alpha.267) (2022-11-23)
+
+
+### Features
+
+* **Molecules/Select:** Use `JSON.stringify` to preselect item ([220f694](https://github.com/employes/paperless/commit/220f6940781ce7aa8c7a40b09636207bd16bdded))
+
+
+
+
+
 # [0.1.0-alpha.266](https://github.com/employes/paperless/compare/v0.1.0-alpha.265...v0.1.0-alpha.266) (2022-11-23)
 
 

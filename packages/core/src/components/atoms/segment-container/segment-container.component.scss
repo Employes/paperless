@@ -1,5 +1,5 @@
 p-segment-container {
-    @apply flex bg-white rounded;
-    @apply filter drop-shadow-4;
+    @apply flex bg-white rounded-large gap-1;
     @apply h-8 p-1;
+    @apply border border-solid border-mystic-dark;
 }

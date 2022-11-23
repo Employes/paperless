@@ -263,22 +263,13 @@ export class Select {
     }
 
     private _preselectItem(value?: any) {
-        console.log('Preselect', value);
-        value = JSON.stringify(!!value || value === null ? value : this.value);
+        const parsedValue = !!this.value
+            ? JSON.stringify(this.value)
+            : JSON.stringify(value);
 
-        console.log('Parsed value', value);
-
-        const item = this._items.find((i) => {
-            console.log(
-                'Itterating item',
-                i?.[this.displayKey],
-                JSON.stringify(i?.[this.valueKey]),
-                JSON.stringify(i?.[this.valueKey]) === value
-            );
-            return JSON.stringify(i?.[this.valueKey]) === value;
-        });
-
-        console.log('Selected item', item);
+        const item = this._items.find(
+            (i) => JSON.stringify(i?.[this.valueKey]) === parsedValue
+        );
 
         this._selectedItem = item;
     }

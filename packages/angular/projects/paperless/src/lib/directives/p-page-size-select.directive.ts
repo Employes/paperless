@@ -24,10 +24,10 @@ export class PageSizeSelectDirective extends BaseValueAccessor {
 
     override writeValue(value: any) {
         this.el.nativeElement.page = this.lastValue =
-            value == null ? '' : value;
+            value == null ? 12 : value;
     }
 
     override registerOnChange(fn: (_: number | null) => void) {
-        super.registerOnChange((value) => fn(value === '' ? null : parseInt(value, 10)));
+        super.registerOnChange((value) => fn(parseInt(value, 10)));
     }
 }

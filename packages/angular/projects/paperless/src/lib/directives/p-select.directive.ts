@@ -22,7 +22,6 @@ export class SelectDirective extends BaseValueAccessor {
 	}
 
 	override writeValue(value: any) {
-		this.el.nativeElement.value = this.lastValue =
-			value == null ? '' : value;
+		this.el.nativeElement.value = this.lastValue = value;
 	}
 }

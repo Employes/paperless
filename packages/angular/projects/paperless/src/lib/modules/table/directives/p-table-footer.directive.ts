@@ -30,9 +30,9 @@ export class TableFooterDirective extends BaseValueAccessor {
 
 	public override writeValue(value: any) {
 		this.el.nativeElement.page = this.lastValue.page =
-			value?.page == null ? '' : value?.page;
+			value?.page == null ? 1 : value?.page;
 		this.el.nativeElement.pageSize = this.lastValue.pageSize =
-			value?.pageSize == null ? '' : value?.pageSize;
+			value?.pageSize == null ? 12 : value?.pageSize;
 	}
 
 	public handleChange(value: number, type: 'page' | 'pageSize') {

@@ -24,10 +24,10 @@ export class PaginationDirective extends BaseValueAccessor {
 
     public override writeValue(value: any) {
         this.el.nativeElement.page = this.lastValue =
-            value == null ? '' : value;
+            value == null ? 1 : value;
     }
 
     public override registerOnChange(fn: (_: number | null) => void) {
-        super.registerOnChange((value) => fn(value === '' ? null : parseInt(value, 10)));
+        super.registerOnChange((value) => fn(parseInt(value, 10)));
     }
 }

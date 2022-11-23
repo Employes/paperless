@@ -263,13 +263,24 @@ export class Select {
     }
 
     private _preselectItem(value?: any) {
+        console.log('Preselect item', value);
         const parsedValue = !!this.value
             ? JSON.stringify(this.value)
             : JSON.stringify(value);
 
-        const item = this._items.find(
-            (i) => JSON.stringify(i?.[this.valueKey]) === parsedValue
-        );
+        console.log(parsedValue);
+
+        const item = this._items.find((i) => {
+            console.log(
+                'Item',
+                i?.[this.displayKey],
+                JSON.stringify(i?.[this.valueKey]),
+                JSON.stringify(i?.[this.valueKey]) === parsedValue
+            );
+            return JSON.stringify(i?.[this.valueKey]) === parsedValue;
+        });
+
+        console.log('Selected item', item);
 
         this._selectedItem = item;
     }

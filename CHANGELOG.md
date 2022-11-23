@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.272](https://github.com/employes/paperless/compare/v0.1.0-alpha.271...v0.1.0-alpha.272) (2022-11-23)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Add debugging ([45cc787](https://github.com/employes/paperless/commit/45cc787eaae2dce6432e3e263a200e68526b0288))
+
+
+
+
+
 # [0.1.0-alpha.271](https://github.com/employes/paperless/compare/v0.1.0-alpha.270...v0.1.0-alpha.271) (2022-11-23)
 
 

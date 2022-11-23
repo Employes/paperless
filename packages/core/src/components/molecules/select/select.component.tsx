@@ -263,16 +263,10 @@ export class Select {
     }
 
     private _preselectItem(value?: any) {
-        value = value ?? this.value;
-
-        const parsedValue =
-            typeof this._items?.[0]?.[this.valueKey] === 'number' &&
-            !isNaN(value)
-                ? parseInt(value, 10)
-                : value;
+        value = JSON.stringify(!!value || value === null ? value : this.value);
 
         const item = this._items.find(
-            (i) => i?.[this.valueKey] === parsedValue
+            (i) => JSON.stringify(i?.[this.valueKey]) === value
         );
 
         this._selectedItem = item;

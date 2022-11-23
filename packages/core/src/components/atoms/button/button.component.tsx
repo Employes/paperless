@@ -105,15 +105,17 @@ export class Button {
         const VariableTag = this.variant === 'text' ? 'a' : 'button';
 
         return (
-            <Host class={`p-button size-${this.size}`}>
+            <Host
+                class={`p-button size-${this.size} ${
+                    this.iconOnly && 'has-icon-only'
+                } `}
+            >
                 <VariableTag
                     class={`variant-${this.variant}  icon-position-${
                         this.iconPosition
                     } ${this.chevron && 'has-chevron'} chevron-position-${
                         this.chevronPosition
-                    } ${this.iconOnly && 'has-icon-only'} ${
-                        this.inheritText && 'should-inherit-text'
-                    }`}
+                    } ${this.inheritText && 'should-inherit-text'}`}
                     disabled={this.disabled}
                     href={this.href}
                     target={this.target}

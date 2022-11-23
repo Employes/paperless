@@ -113,18 +113,23 @@ p-button {
             }
         }
 
-        &.has-icon-only {
-            @apply px-2;
-
-            > p-icon:first-child {
-                @apply mx-0;
-            }
-        }
-
         &.should-inherit-text {
             color: inherit #{!important};
             font-size: inherit #{!important};
             font-weight: inherit #{!important};
+        }
+    }
+
+    &.has-icon-only {
+        @apply w-10;
+
+        a,
+        button {
+            @apply p-0;
+
+            > p-icon:first-child {
+                @apply mx-0;
+            }
         }
     }
 
@@ -135,6 +140,14 @@ p-button {
         button,
         a {
             @apply text-sm;
+
+            > p-icon:first-child {
+                @apply text-base;
+            }
+        }
+
+        &.has-icon-only {
+            @apply w-8;
         }
     }
 }

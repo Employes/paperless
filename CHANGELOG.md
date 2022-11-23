@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.266](https://github.com/employes/paperless/compare/v0.1.0-alpha.265...v0.1.0-alpha.266) (2022-11-23)
+
+
+### Features
+
+* **Atoms/Segment Container:** Fix centering ([a7f121d](https://github.com/employes/paperless/commit/a7f121da155c0f32a33eee917fa9c310959d8a93))
+
+
+
+
+
 # [0.1.0-alpha.265](https://github.com/employes/paperless/compare/v0.1.0-alpha.264...v0.1.0-alpha.265) (2022-11-23)
 
 

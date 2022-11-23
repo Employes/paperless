@@ -254,36 +254,30 @@ export class Select {
 
     @Watch('value')
     private _valueChange(value: any) {
-        console.log('Watch value');
         this._preselectItem(value);
     }
 
     @Watch('items')
     public itemChanges() {
-        console.log('Watch items');
         this._preselectItem();
     }
 
     private _preselectItem(value?: any) {
         value = value === undefined ? null : value;
-        console.log('Preselect item', value);
         const parsedValue = !!this.value
             ? JSON.stringify(this.value)
             : JSON.stringify(value);
 
-        console.log(parsedValue);
+        if (
+            this._selectedItem &&
+            JSON.stringify(this._selectedItem[this.valueKey]) === parsedValue
+        ) {
+            return;
+        }
 
-        const item = this._items.find((i) => {
-            console.log(
-                'Item',
-                i?.[this.displayKey],
-                JSON.stringify(i?.[this.valueKey]),
-                JSON.stringify(i?.[this.valueKey]) === parsedValue
-            );
-            return JSON.stringify(i?.[this.valueKey]) === parsedValue;
-        });
-
-        console.log('Selected item', item);
+        const item = this._items.find(
+            (i) => JSON.stringify(i?.[this.valueKey]) === parsedValue
+        );
 
         this._selectedItem = item;
     }

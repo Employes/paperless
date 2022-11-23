@@ -1,6 +1,6 @@
 :host {
-    @apply h-6 flex items-center px-2 rounded font-medium mr-1;
-    @apply text-storm-light text-sm whitespace-nowrap;
+    @apply h-6 flex items-center px-2 rounded-large;
+    @apply text-storm text-sm font-semibold whitespace-nowrap;
     @apply cursor-pointer;
 }
 
@@ -9,13 +9,9 @@
 }
 
 :host(:hover) {
-    @apply text-storm-medium;
+    @apply bg-indigo-light;
 }
 
 :host(.active) {
     @apply text-indigo bg-indigo-light;
-}
-
-:host(:last-child) {
-    @apply mr-0;
 }

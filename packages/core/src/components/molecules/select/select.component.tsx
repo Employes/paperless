@@ -254,11 +254,13 @@ export class Select {
 
     @Watch('value')
     private _valueChange(value: any) {
+        console.log('Watch value');
         this._preselectItem(value);
     }
 
     @Watch('items')
     public itemChanges() {
+        console.log('Watch items');
         this._preselectItem();
     }
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.265](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.264...v0.1.0-alpha.265) (2022-11-23)
+
+
+### Features
+
+* **Atoms/Segment Container:** Update visuals ([952442e](https://github.com/ionic-team/stencil-component-starter/commit/952442e62c9f33b4cfed044149578c34e99b14a3))
+* **Atoms/Segment Item:** Update visuals ([07adfa5](https://github.com/ionic-team/stencil-component-starter/commit/07adfa5ee91746500a8351fd93fab65d0ca7db0d))
+
+
+
+
+
 # [0.1.0-alpha.264](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.263...v0.1.0-alpha.264) (2022-11-22)
 
 

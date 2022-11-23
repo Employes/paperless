@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.268](https://github.com/employes/paperless/compare/v0.1.0-alpha.267...v0.1.0-alpha.268) (2022-11-23)
+
+
+### Features
+
+* **Angular:** Process tailwind classes ([2e286df](https://github.com/employes/paperless/commit/2e286dfbbb7ed67e8f4c047aaecb5c97f0e622e3))
+
+
+
+
+
 # [0.1.0-alpha.267](https://github.com/employes/paperless/compare/v0.1.0-alpha.266...v0.1.0-alpha.267) (2022-11-23)
 
 

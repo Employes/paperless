@@ -265,6 +265,7 @@ export class Select {
     }
 
     private _preselectItem(value?: any) {
+        value = value === undefined ? null : value;
         console.log('Preselect item', value);
         const parsedValue = !!this.value
             ? JSON.stringify(this.value)

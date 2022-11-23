@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.274](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.273...v0.1.0-alpha.274) (2022-11-23)
+
+
+### Bug Fixes
+
+* **Atoms/Label:** Icon size ([87a6070](https://github.com/ionic-team/stencil-component-starter/commit/87a6070d34a2b03321d1c01477d450cd91f571b1))
+
+
+### Features
+
+* **Atoms/Button:** Fixed size for icon-only  ([d4407f1](https://github.com/ionic-team/stencil-component-starter/commit/d4407f127711d833b2bca3245360ecdf771fcfb1))
+
+
+
+
+
 # [0.1.0-alpha.273](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.272...v0.1.0-alpha.273) (2022-11-23)
 
 

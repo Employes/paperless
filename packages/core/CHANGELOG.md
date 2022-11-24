@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.277](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.276...v0.1.0-alpha.277) (2022-11-24)
+
+
+### Bug Fixes
+
+* **Atoms/Label:** Remove align items baseline ([0e84f5e](https://github.com/ionic-team/stencil-component-starter/commit/0e84f5e87d187f4c17679f2ae90ed3791aca5b50))
+
+
+
+
+
 # [0.1.0-alpha.276](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.275...v0.1.0-alpha.276) (2022-11-24)
 
 

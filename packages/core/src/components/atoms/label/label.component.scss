@@ -84,10 +84,6 @@
     }
 }
 
-:host([behavior='text'][size='small']) {
-    @apply items-baseline;
-}
-
 :host([behavior='combination']) {
     @apply px-0 desktop-xs:px-3;
     @apply w-[1.625rem] desktop-xs:w-auto;

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.276](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.275...v0.1.0-alpha.276) (2022-11-24)
+
+
+### Features
+
+* **Atoms/Icon:** Update filter icon ([2bb5086](https://github.com/ionic-team/stencil-component-starter/commit/2bb5086a2e215805ce603df33b0df97d3b445d04))
+
+
+
+
+
 # [0.1.0-alpha.275](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.274...v0.1.0-alpha.275) (2022-11-23)
 
 

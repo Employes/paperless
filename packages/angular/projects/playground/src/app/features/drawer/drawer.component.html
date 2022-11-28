@@ -1,3 +1,11 @@
+<p-drawer header="Drawer header" [show]="show" (close)="show = false">
+    <div slot="content">
+        <span>Content</span>
+        <div class="h-[300vh]"></div>
+        <span>The end!</span>
+    </div>
+</p-drawer>
+
 <div class="w-full flex">
     <p-button (onClick)="show = true"> Show drawer </p-button>
 </div>

@@ -185,6 +185,42 @@ export namespace Components {
     }
     interface PDivider {
     }
+    interface PDrawer {
+        /**
+          * Wether to apply blur to the backdrop
+         */
+        "applyBlur": boolean;
+        /**
+          * Wether to hide the drawer when the backdrop is clicked
+         */
+        "backdropClickClose": boolean;
+        /**
+          * The Header of the drawer
+         */
+        "header"?: string;
+        /**
+          * Wether to show the drawer or not
+         */
+        "show": boolean;
+        /**
+          * Wether to show the close on mobile in the header
+         */
+        "showClose": boolean;
+    }
+    interface PDrawerBody {
+        /**
+          * The variant of the modal body
+         */
+        "variant": 'default' | 'table';
+    }
+    interface PDrawerContainer {
+    }
+    interface PDrawerHeader {
+        /**
+          * Wether to show the close button on mobile
+         */
+        "showClose": boolean;
+    }
     interface PDropdown {
         /**
           * Wether to automatically calculate the width of the menu based on the trigger
@@ -1062,6 +1098,10 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
 }
+export interface PDrawerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPDrawerElement;
+}
 export interface PDrawerHeaderCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDrawerHeaderElement;
@@ -1180,6 +1220,12 @@ declare global {
     var HTMLPDividerElement: {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
+    };
+    interface HTMLPDrawerElement extends Components.PDrawer, HTMLStencilElement {
+    }
+    var HTMLPDrawerElement: {
+        prototype: HTMLPDrawerElement;
+        new (): HTMLPDrawerElement;
     };
     interface HTMLPDrawerBodyElement extends Components.PDrawerBody, HTMLStencilElement {
     }
@@ -1463,8 +1509,10 @@ declare global {
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
+        "p-drawer": HTMLPDrawerElement;
         "p-drawer-body": HTMLPDrawerBodyElement;
         "p-drawer-container": HTMLPDrawerContainerElement;
+        "p-drawer-header": HTMLPDrawerHeaderElement;
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
@@ -1687,6 +1735,50 @@ declare namespace LocalJSX {
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
     }
     interface PDivider {
+    }
+    interface PDrawer {
+        /**
+          * Wether to apply blur to the backdrop
+         */
+        "applyBlur"?: boolean;
+        /**
+          * Wether to hide the drawer when the backdrop is clicked
+         */
+        "backdropClickClose"?: boolean;
+        /**
+          * The Header of the drawer
+         */
+        "header"?: string;
+        /**
+          * Close click event
+         */
+        "onClose"?: (event: PDrawerCustomEvent<MouseEvent>) => void;
+        /**
+          * Wether to show the drawer or not
+         */
+        "show"?: boolean;
+        /**
+          * Wether to show the close on mobile in the header
+         */
+        "showClose"?: boolean;
+    }
+    interface PDrawerBody {
+        /**
+          * The variant of the modal body
+         */
+        "variant"?: 'default' | 'table';
+    }
+    interface PDrawerContainer {
+    }
+    interface PDrawerHeader {
+        /**
+          * Close click event
+         */
+        "onClose"?: (event: PDrawerHeaderCustomEvent<MouseEvent>) => void;
+        /**
+          * Wether to show the close button on mobile
+         */
+        "showClose"?: boolean;
     }
     interface PDropdown {
         /**
@@ -2684,6 +2776,7 @@ declare namespace LocalJSX {
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
         "p-divider": PDivider;
+        "p-drawer": PDrawer;
         "p-drawer-body": PDrawerBody;
         "p-drawer-container": PDrawerContainer;
         "p-drawer-header": PDrawerHeader;
@@ -2746,6 +2839,7 @@ declare module "@stencil/core" {
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
+            "p-drawer": LocalJSX.PDrawer & JSXBase.HTMLAttributes<HTMLPDrawerElement>;
             "p-drawer-body": LocalJSX.PDrawerBody & JSXBase.HTMLAttributes<HTMLPDrawerBodyElement>;
             "p-drawer-container": LocalJSX.PDrawerContainer & JSXBase.HTMLAttributes<HTMLPDrawerContainerElement>;
             "p-drawer-header": LocalJSX.PDrawerHeader & JSXBase.HTMLAttributes<HTMLPDrawerHeaderElement>;

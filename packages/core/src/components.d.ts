@@ -416,6 +416,10 @@ export namespace Components {
          */
         "applyBlur": boolean;
         /**
+          * Wether to hide the modal when the backdrop is clicked
+         */
+        "backdropClickClose": boolean;
+        /**
           * The Header of the modal
          */
         "header"?: string;
@@ -1894,6 +1898,10 @@ declare namespace LocalJSX {
           * Wether to apply blur to the backdrop
          */
         "applyBlur"?: boolean;
+        /**
+          * Wether to hide the modal when the backdrop is clicked
+         */
+        "backdropClickClose"?: boolean;
         /**
           * The Header of the modal
          */

@@ -14,15 +14,16 @@
 
 ## Properties
 
-| Property           | Attribute            | Description                                      | Type                           | Default     |
-| ------------------ | -------------------- | ------------------------------------------------ | ------------------------------ | ----------- |
-| `applyBlur`        | `apply-blur`         | Wether to apply blur to the backdrop             | `boolean`                      | `false`     |
-| `header`           | `header`             | The Header of the modal                          | `string`                       | `undefined` |
-| `show`             | `show`               | Wether to show the modal or not                  | `boolean`                      | `false`     |
-| `showMobileClose`  | `show-mobile-close`  | Wether to show the close on mobile in the header | `boolean`                      | `true`      |
-| `showMobileFooter` | `show-mobile-footer` | Wether to show the footer on mobile              | `boolean`                      | `false`     |
-| `size`             | `size`               | The size of the modal container                  | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
-| `variant`          | `variant`            | The variant of the modal body                    | `"default" \| "table"`         | `'default'` |
+| Property             | Attribute              | Description                                           | Type                           | Default     |
+| -------------------- | ---------------------- | ----------------------------------------------------- | ------------------------------ | ----------- |
+| `applyBlur`          | `apply-blur`           | Wether to apply blur to the backdrop                  | `boolean`                      | `false`     |
+| `backdropClickClose` | `backdrop-click-close` | Wether to hide the modal when the backdrop is clicked | `boolean`                      | `true`      |
+| `header`             | `header`               | The Header of the modal                               | `string`                       | `undefined` |
+| `show`               | `show`                 | Wether to show the modal or not                       | `boolean`                      | `false`     |
+| `showMobileClose`    | `show-mobile-close`    | Wether to show the close on mobile in the header      | `boolean`                      | `true`      |
+| `showMobileFooter`   | `show-mobile-footer`   | Wether to show the footer on mobile                   | `boolean`                      | `false`     |
+| `size`               | `size`                 | The size of the modal container                       | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
+| `variant`            | `variant`              | The variant of the modal body                         | `"default" \| "table"`         | `'default'` |
 
 
 ## Events

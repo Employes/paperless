@@ -17,7 +17,7 @@
 
 | Event     | Description                  | Type                      |
 | --------- | ---------------------------- | ------------------------- |
-| `onClick` | When the backdrop is clicked | `CustomEvent<MouseEvent>` |
+| `clicked` | When the backdrop is clicked | `CustomEvent<MouseEvent>` |
 
 
 ## Dependencies

@@ -88,7 +88,7 @@ export class Modal {
             <Host class="p-modal">
                 <p-backdrop
                     applyBlur={this.applyBlur}
-                    onClick={() => this.backdropClickClose && this.close.emit()}
+                    onClicked={() => this._backdropClick()}
                 >
                     <p-modal-container size={this.size}>
                         {(this.header?.length || this._hasHeaderSlot) && (
@@ -115,5 +115,13 @@ export class Modal {
                 </p-backdrop>
             </Host>
         );
+    }
+
+    private _backdropClick() {
+        if (!this.backdropClickClose) {
+            return;
+        }
+
+        this.close.emit();
     }
 }

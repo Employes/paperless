@@ -155,6 +155,7 @@ export class Button {
     @Listen('click', { capture: true })
     handleClick(ev: MouseEvent) {
         if (this.loading || this.disabled) {
+            ev.preventDefault();
             return;
         }
 

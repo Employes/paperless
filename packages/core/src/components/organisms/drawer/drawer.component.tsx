@@ -69,7 +69,7 @@ export class Drawer {
                 <p-backdrop
                     variant="drawer"
                     applyBlur={this.applyBlur}
-                    onClick={() => this.backdropClickClose && this.close.emit()}
+                    onClicked={() => this._backdropClick()}
                 >
                     <p-drawer-container>
                         {(this.header?.length || this._hasHeaderSlot) && (
@@ -87,5 +87,13 @@ export class Drawer {
                 </p-backdrop>
             </Host>
         );
+    }
+
+    private _backdropClick() {
+        if (!this.backdropClickClose) {
+            return;
+        }
+
+        this.close.emit();
     }
 }

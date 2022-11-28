@@ -1612,7 +1612,7 @@ declare namespace LocalJSX {
         /**
           * When the backdrop is clicked
          */
-        "onOnClick"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
+        "onClicked"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
         /**
           * The variant of the backdrop
          */

@@ -28,7 +28,7 @@ export class Backdrop {
     /**
      * When the backdrop is clicked
      */
-    @Event() onClick: EventEmitter<MouseEvent>;
+    @Event() clicked: EventEmitter<MouseEvent>;
 
     /**
      * The host element
@@ -47,12 +47,12 @@ export class Backdrop {
         );
     }
 
-    @Listen('click')
-    protected _handleClick($event) {
-        if ($event.target !== this._el) {
+    @Listen('click', { capture: true })
+    handleClick(ev: MouseEvent) {
+        if (ev.target !== this._el) {
             return;
         }
 
-        this.onClick.emit();
+        this.clicked.emit(ev);
     }
 }

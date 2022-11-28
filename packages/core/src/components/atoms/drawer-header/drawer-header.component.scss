@@ -1,0 +1,13 @@
+:host {
+    @apply bg-white;
+    @apply sticky top-0 flex justify-center items-center;
+    @apply p-4;
+
+    @apply text-storm-dark text-xl font-semibold;
+
+    @apply border-0 border-b border-b-mystic-dark border-solid #{!important};
+
+    p-button {
+        @apply absolute top-4 left-4;
+    }
+}

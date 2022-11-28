@@ -1062,6 +1062,10 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
 }
+export interface PDrawerHeaderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPDrawerHeaderElement;
+}
 export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
@@ -1188,6 +1192,12 @@ declare global {
     var HTMLPDrawerContainerElement: {
         prototype: HTMLPDrawerContainerElement;
         new (): HTMLPDrawerContainerElement;
+    };
+    interface HTMLPDrawerHeaderElement extends Components.PDrawerHeader, HTMLStencilElement {
+    }
+    var HTMLPDrawerHeaderElement: {
+        prototype: HTMLPDrawerHeaderElement;
+        new (): HTMLPDrawerHeaderElement;
     };
     interface HTMLPDropdownElement extends Components.PDropdown, HTMLStencilElement {
     }
@@ -2676,6 +2686,7 @@ declare namespace LocalJSX {
         "p-divider": PDivider;
         "p-drawer-body": PDrawerBody;
         "p-drawer-container": PDrawerContainer;
+        "p-drawer-header": PDrawerHeader;
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
@@ -2737,6 +2748,7 @@ declare module "@stencil/core" {
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-drawer-body": LocalJSX.PDrawerBody & JSXBase.HTMLAttributes<HTMLPDrawerBodyElement>;
             "p-drawer-container": LocalJSX.PDrawerContainer & JSXBase.HTMLAttributes<HTMLPDrawerContainerElement>;
+            "p-drawer-header": LocalJSX.PDrawerHeader & JSXBase.HTMLAttributes<HTMLPDrawerHeaderElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;

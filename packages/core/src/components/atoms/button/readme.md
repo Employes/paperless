@@ -36,6 +36,7 @@
 
 ### Used by
 
+ - [p-drawer-header](../drawer-header)
  - [p-modal-header](../modal-header)
  - [p-navbar](../../organisms/navbar)
  - [p-page-size-select](../../molecules/page-size-select)
@@ -54,6 +55,7 @@
 graph TD;
   p-button --> p-icon
   p-button --> p-loader
+  p-drawer-header --> p-button
   p-modal-header --> p-button
   p-navbar --> p-button
   p-page-size-select --> p-button

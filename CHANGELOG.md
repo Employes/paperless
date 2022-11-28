@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.279](https://github.com/employes/paperless/compare/v0.1.0-alpha.278...v0.1.0-alpha.279) (2022-11-28)
+
+
+### Bug Fixes
+
+* **Angular:** Use correct tailwind config ([6c2ba6b](https://github.com/employes/paperless/commit/6c2ba6bf7026e1b65ef6427b2eb25640602efd82))
+* **Atoms/Backdrop:** Fix click event ([9b545cb](https://github.com/employes/paperless/commit/9b545cb3af04ae7e8d273c7df772db186a7668fd))
+
+
+### Features
+
+* **Atoms/Backdrop:** Add backdrop click event & drawer variant ([03e736e](https://github.com/employes/paperless/commit/03e736e9bdb3890cd4c306fc28aa80498dba0a3d))
+* **Atoms:** Add drawer body component ([6bfa56a](https://github.com/employes/paperless/commit/6bfa56a2d888bab308adb484154dcead06a0e7f5))
+* **Atoms:** Add drawer container component ([994d596](https://github.com/employes/paperless/commit/994d5968439b1c8bc6ac7e996b21bf8f332492cc))
+* **Atoms:** Add drawer header component ([05f9016](https://github.com/employes/paperless/commit/05f9016611c0497f5eb6145e428585c3b30d7d55))
+* **Organisms/Modal:** Add backdrop click event ([8608666](https://github.com/employes/paperless/commit/860866614a780b1dcdd7e360081a17ffb8e27158))
+* **Organisms:** Add drawer component ([292bc04](https://github.com/employes/paperless/commit/292bc04e0afcb62e43caab24718891a2a7737eaf))
+
+
+
+
+
 # [0.1.0-alpha.278](https://github.com/employes/paperless/compare/v0.1.0-alpha.277...v0.1.0-alpha.278) (2022-11-28)
 
 

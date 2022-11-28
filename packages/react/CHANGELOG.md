@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.279](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.278...v0.1.0-alpha.279) (2022-11-28)
+
+
+### Features
+
+* **Atoms:** Add drawer container component ([994d596](https://github.com/ionic-team/ionic/commit/994d5968439b1c8bc6ac7e996b21bf8f332492cc))
+* **Atoms:** Add drawer header component ([05f9016](https://github.com/ionic-team/ionic/commit/05f9016611c0497f5eb6145e428585c3b30d7d55))
+* **Organisms:** Add drawer component ([292bc04](https://github.com/ionic-team/ionic/commit/292bc04e0afcb62e43caab24718891a2a7737eaf))
+
+
+
+
+
 # [0.1.0-alpha.278](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.277...v0.1.0-alpha.278) (2022-11-28)
 
 **Note:** Version bump only for package @paperless/react

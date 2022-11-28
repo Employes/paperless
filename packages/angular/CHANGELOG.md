@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.279](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.278...v0.1.0-alpha.279) (2022-11-28)
+
+
+### Bug Fixes
+
+* **Angular:** Use correct tailwind config ([6c2ba6b](https://github.com/Employes/Paperless/commit/6c2ba6bf7026e1b65ef6427b2eb25640602efd82))
+
+
+
+
+
 # [0.1.0-alpha.278](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.277...v0.1.0-alpha.278) (2022-11-28)
 
 **Note:** Version bump only for package @paperless/angular

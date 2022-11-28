@@ -73,7 +73,6 @@ export class Toast {
 
                 {this.enableAction && (
                     <p-button
-                        class="flex-1"
                         variant="secondary"
                         iconOnly
                         size="small"

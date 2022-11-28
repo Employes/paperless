@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.278](https://github.com/employes/paperless/compare/v0.1.0-alpha.277...v0.1.0-alpha.278) (2022-11-28)
+
+
+### Bug Fixes
+
+* **Molecules/Toast:** Fix close icon ([497d155](https://github.com/employes/paperless/commit/497d155f59a33a8871a5b9851a05391579213fee))
+
+
+
+
+
 # [0.1.0-alpha.277](https://github.com/employes/paperless/compare/v0.1.0-alpha.276...v0.1.0-alpha.277) (2022-11-24)
 
 

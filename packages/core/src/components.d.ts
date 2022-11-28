@@ -62,7 +62,14 @@ export namespace Components {
         "extra": number;
     }
     interface PBackdrop {
+        /**
+          * Wether to apply blur on the background of the backdrop
+         */
         "applyBlur": boolean;
+        /**
+          * The variant of the backdrop
+         */
+        "variant": 'modal' | 'drawer';
     }
     interface PButton {
         /**
@@ -1043,6 +1050,10 @@ export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPAccordionElement;
 }
+export interface PBackdropCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPBackdropElement;
+}
 export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
@@ -1518,7 +1529,18 @@ declare namespace LocalJSX {
         "extra"?: number;
     }
     interface PBackdrop {
+        /**
+          * Wether to apply blur on the background of the backdrop
+         */
         "applyBlur"?: boolean;
+        /**
+          * When the backdrop is clicked
+         */
+        "onOnClick"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
+        /**
+          * The variant of the backdrop
+         */
+        "variant"?: 'modal' | 'drawer';
     }
     interface PButton {
         /**

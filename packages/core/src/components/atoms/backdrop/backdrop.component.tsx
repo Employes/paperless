@@ -1,4 +1,13 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import {
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Listen,
+    Prop,
+} from '@stencil/core';
 
 @Component({
     tag: 'p-backdrop',
@@ -6,13 +15,44 @@ import { Component, h, Host, Prop } from '@stencil/core';
     shadow: true,
 })
 export class Backdrop {
+    /**
+     * The variant of the backdrop
+     */
+    @Prop() variant: 'modal' | 'drawer' = 'modal';
+
+    /**
+     * Wether to apply blur on the background of the backdrop
+     */
     @Prop() applyBlur: boolean = false;
+
+    /**
+     * When the backdrop is clicked
+     */
+    @Event() onClick: EventEmitter<MouseEvent>;
+
+    /**
+     * The host element
+     */
+    @Element() private _el: HTMLElement;
 
     render() {
         return (
-            <Host class={`p-backdrop ${this.applyBlur && 'blurred'}`}>
+            <Host
+                class={`p-backdrop variant-${this.variant} ${
+                    this.applyBlur && 'blurred'
+                }`}
+            >
                 <slot />
             </Host>
         );
+    }
+
+    @Listen('click')
+    protected _handleClick($event) {
+        if ($event.target !== this._el) {
+            return;
+        }
+
+        this.onClick.emit();
     }
 }

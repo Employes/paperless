@@ -1177,6 +1177,12 @@ declare global {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
     };
+    interface HTMLPDrawerBodyElement extends Components.PDrawerBody, HTMLStencilElement {
+    }
+    var HTMLPDrawerBodyElement: {
+        prototype: HTMLPDrawerBodyElement;
+        new (): HTMLPDrawerBodyElement;
+    };
     interface HTMLPDrawerContainerElement extends Components.PDrawerContainer, HTMLStencilElement {
     }
     var HTMLPDrawerContainerElement: {
@@ -1447,6 +1453,7 @@ declare global {
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
+        "p-drawer-body": HTMLPDrawerBodyElement;
         "p-drawer-container": HTMLPDrawerContainerElement;
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
@@ -2667,6 +2674,7 @@ declare namespace LocalJSX {
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
         "p-divider": PDivider;
+        "p-drawer-body": PDrawerBody;
         "p-drawer-container": PDrawerContainer;
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
@@ -2727,6 +2735,7 @@ declare module "@stencil/core" {
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
+            "p-drawer-body": LocalJSX.PDrawerBody & JSXBase.HTMLAttributes<HTMLPDrawerBodyElement>;
             "p-drawer-container": LocalJSX.PDrawerContainer & JSXBase.HTMLAttributes<HTMLPDrawerContainerElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;

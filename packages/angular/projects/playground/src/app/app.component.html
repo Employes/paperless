@@ -1,0 +1,85 @@
+<p-layout>
+    <p-navbar slot="sidebar">
+        <p-profile variant="company" slot="company">
+            <p-avatar
+                slot="avatar"
+                src="https://christianliebel.com/wp-content/uploads/2016/02/Angular2.png"
+            ></p-avatar>
+            <span slot="title">Paperless NGX</span>
+        </p-profile>
+
+        <div class="flex flex-col" slot="content">
+            <p class="text-storm-vague text-xs font-semibold uppercase mb-2">
+                Overview
+            </p>
+            <p-navigation-item
+                icon="tachometer"
+                routerLink="./"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Home
+            </p-navigation-item>
+
+            <p
+                class="
+                    text-storm-vague text-xs
+                    font-semibold
+                    uppercase
+                    mb-2
+                    mt-4
+                "
+            >
+                Overlays
+            </p>
+            <p-navigation-item
+                icon="envelope"
+                routerLink="./modal"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Modal
+            </p-navigation-item>
+            <p-navigation-item
+                icon="menu"
+                routerLink="./drawer"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Drawer
+            </p-navigation-item>
+            <p-navigation-item
+                icon="megaphone"
+                routerLink="./toast"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Toast
+            </p-navigation-item>
+
+            <p
+                class="
+                    text-storm-vague text-xs
+                    font-semibold
+                    uppercase
+                    mb-2
+                    mt-4
+                "
+            >
+                Components
+            </p>
+            <p-navigation-item
+                icon="list"
+                routerLink="./table"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Table
+            </p-navigation-item>
+        </div>
+    </p-navbar>
+
+    <slot slot="content">
+        <router-outlet></router-outlet>
+    </slot>
+</p-layout>

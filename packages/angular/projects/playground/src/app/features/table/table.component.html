@@ -1,0 +1,20 @@
+<p-table-ngx
+    selectionKey="date"
+    canSelectLey="canSelect"
+    [items]="items"
+    [total]="32"
+>
+    <p-table-column
+        type="th"
+        name="Datum"
+        path="date"
+        [sizes]="8"
+    ></p-table-column>
+    <p-table-column
+        name="Uren"
+        path="hours"
+        align="end"
+        [sizes]="2"
+    ></p-table-column>
+    <p-table-column path="status" align="end" [sizes]="2"></p-table-column>
+</p-table-ngx>

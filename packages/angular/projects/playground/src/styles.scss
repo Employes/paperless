@@ -1,0 +1,10 @@
+@import '@paperless/core/dist/paperless/paperless';
+@import '../../paperless//src/paperless.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+    @apply text-5xl bg-negative-dark #{!important};
+}

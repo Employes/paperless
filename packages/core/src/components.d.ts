@@ -1177,6 +1177,12 @@ declare global {
         prototype: HTMLPDividerElement;
         new (): HTMLPDividerElement;
     };
+    interface HTMLPDrawerContainerElement extends Components.PDrawerContainer, HTMLStencilElement {
+    }
+    var HTMLPDrawerContainerElement: {
+        prototype: HTMLPDrawerContainerElement;
+        new (): HTMLPDrawerContainerElement;
+    };
     interface HTMLPDropdownElement extends Components.PDropdown, HTMLStencilElement {
     }
     var HTMLPDropdownElement: {
@@ -1441,6 +1447,7 @@ declare global {
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
         "p-divider": HTMLPDividerElement;
+        "p-drawer-container": HTMLPDrawerContainerElement;
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
@@ -2660,6 +2667,7 @@ declare namespace LocalJSX {
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
         "p-divider": PDivider;
+        "p-drawer-container": PDrawerContainer;
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
@@ -2719,6 +2727,7 @@ declare module "@stencil/core" {
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
+            "p-drawer-container": LocalJSX.PDrawerContainer & JSXBase.HTMLAttributes<HTMLPDrawerContainerElement>;
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;

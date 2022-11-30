@@ -3,8 +3,6 @@
     @apply h-full w-full tablet:px-16 desktop-xs:p-16;
     @apply bg-storm-dark/50 overflow-y-auto;
 
-    // height: -webkit-fill-available;
-
     @apply flex justify-center items-end desktop-xs:items-center;
 
     @apply animate-fade-in;

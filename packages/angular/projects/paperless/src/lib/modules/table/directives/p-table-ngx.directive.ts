@@ -49,6 +49,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		this._base.query = this.lastValue.query = value?.query;
 		// this.el.nativeElement.query = this.lastValue.query = value?.query;
 		this.lastValue.quickFilter = value?.quickFilter;
+		this.lastValue.filters = value?.filters;
 
 		this._base.page = this.lastValue.page =
 			value?.page == null ? 1 : value?.page;
@@ -67,9 +68,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
 
-		if(value?.filters) {
-			this._base.selectedFiltersAmount = value.filters.length === 0 ? undefined : value.filters.length;
-		}
+		this._base.selectedFiltersAmount = !value.filters || value.filters.length === 0 ? undefined : value.filters.length;
 		
 		this._checkEmptyStateType();
 		this._checkResetButtons();

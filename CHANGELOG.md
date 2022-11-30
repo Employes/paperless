@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.280](https://github.com/employes/paperless/compare/v0.1.0-alpha.279...v0.1.0-alpha.280) (2022-11-30)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Do not reset filters every time something changes ([4ea8acc](https://github.com/employes/paperless/commit/4ea8acc9add092d8db69b4e698212a88aa533235))
+
+
+
+
+
 # [0.1.0-alpha.279](https://github.com/employes/paperless/compare/v0.1.0-alpha.278...v0.1.0-alpha.279) (2022-11-28)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.281](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.280...v0.1.0-alpha.281) (2022-12-01)
+
+
+### Bug Fixes
+
+* **Organisms/Navbar:** Fix backdrop click to close ([64faff3](https://github.com/ionic-team/stencil-component-starter/commit/64faff3fd4baec5876f2eacc816f65f77e4a91a8))
+
+
+
+
+
 # [0.1.0-alpha.280](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.279...v0.1.0-alpha.280) (2022-11-30)
 
 **Note:** Version bump only for package @paperless/core

@@ -1,10 +1,3 @@
-<p-modal header="Modal header" [show]="show" (close)="show = false">
-    <div slot="content">Content</div>
-    <div slot="footer" class="flex justify-between w-full gap-4">
-        <p-button class="w-full desktop-xs:w-auto ml-auto">Confirm</p-button>
-    </div>
-</p-modal>
-
 <div class="w-full flex">
-    <p-button (onClick)="show = true"> Show modal </p-button>
+    <p-button (onClick)="showModal()"> Show modal </p-button>
 </div>

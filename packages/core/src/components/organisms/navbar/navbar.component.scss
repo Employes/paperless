@@ -62,11 +62,10 @@
     }
 
     p-backdrop {
-        will-change: opacity;
-        @apply transition-opacity opacity-0;
+        @apply hidden;
 
         &.show {
-            @apply pointer-events-auto opacity-100;
+            @apply block;
         }
     }
 }

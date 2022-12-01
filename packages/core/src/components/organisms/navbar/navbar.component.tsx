@@ -23,10 +23,10 @@ export class Navbar {
             <Host class="p-navbar">
                 <p-backdrop
                     applyBlur={true}
-                    class={`z-navbar-backdrop desktop-xs:hidden pointer-events-none ${
+                    class={`z-navbar-backdrop desktop-xs:hidden ${
                         this._showMenu && 'show'
                     }`}
-                    onClick={() => (this._showMenu = false)}
+                    onClicked={() => (this._showMenu = false)}
                 ></p-backdrop>
                 <div class={`sidebar ${this._showMenu && 'show'}`}>
                     <div class="header">

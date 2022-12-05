@@ -5,9 +5,11 @@ import { PaperlessModule } from 'projects/paperless/src/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DrawerComponent } from './features/drawer/modal.component';
+import { DrawerComponent } from './features/drawer/drawer.component';
+import { TestDrawerComponent } from './features/drawer/test-drawer.component';
 import { HomeComponent } from './features/home/home.component';
 import { ModalComponent } from './features/modal/modal.component';
+import { TestModalComponent } from './features/modal/test-modal.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
 
@@ -16,7 +18,9 @@ import { ToastComponent } from './features/toast/toast.component';
     declarations: [
         AppComponent,
         HomeComponent,
+        TestModalComponent,
         ModalComponent,
+        TestDrawerComponent,
         DrawerComponent,
         ToastComponent,
         TableComponent,

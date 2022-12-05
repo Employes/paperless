@@ -5,4 +5,8 @@ p-drawer-container {
     @apply animate-slide-in-right;
 
     @apply shadow-4 #{!important};
+
+    &.closing {
+        @apply animate-slide-out-right;
+    }
 }

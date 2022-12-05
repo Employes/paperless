@@ -2,14 +2,17 @@
     @apply fixed top-0 left-0 z-backdrop;
     @apply h-full w-full tablet:px-16 desktop-xs:p-16;
     @apply bg-storm-dark/50 overflow-y-auto;
+    @apply animate-fade-in;
 
     @apply flex justify-center items-end desktop-xs:items-center;
-
-    @apply animate-fade-in;
 }
 
 :host(.blurred) {
     @apply backdrop-blur-xs;
+}
+
+:host(.closing) {
+    @apply animate-fade-out overflow-hidden;
 }
 
 :host(.variant-drawer) {

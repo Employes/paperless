@@ -1,11 +1,20 @@
-<p-drawer header="Drawer header" [show]="show" (close)="show = false">
-    <div slot="content">
-        <span>Content</span>
-        <div class="h-[300vh]"></div>
-        <span>The end!</span>
-    </div>
-</p-drawer>
-
-<div class="w-full flex">
-    <p-button (onClick)="show = true"> Show drawer </p-button>
+<div class="w-full flex flex-col items-start gap-4">
+    <p-button (onClick)="showDrawer()"> Show drawer </p-button>
+    <p-button (onClick)="showTemplateDrawer(drawerTemplate)">
+        Show template drawer
+    </p-button>
 </div>
+
+<ng-template cdkPortal #drawerTemplate="cdkPortal">
+    <p-drawer
+        header="Drawer header template version"
+        [show]="true"
+        (closed)="closeTemplateDrawer()"
+    >
+        <div slot="content">
+            <span>Content template</span>
+            <div class="h-[300vh]"></div>
+            <span>The end!</span>
+        </div>
+    </p-drawer>
+</ng-template>

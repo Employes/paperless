@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DrawerComponent } from './features/drawer/modal.component';
+import { DrawerComponent } from './features/drawer/drawer.component';
 import { HomeComponent } from './features/home/home.component';
 import { ModalComponent } from './features/modal/modal.component';
 import { TableComponent } from './features/table/table.component';

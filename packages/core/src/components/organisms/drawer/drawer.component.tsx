@@ -6,6 +6,7 @@ import {
     h,
     Host,
     Prop,
+    State,
 } from '@stencil/core';
 
 @Component({
@@ -41,7 +42,12 @@ export class Drawer {
     /**
      * Close click event
      */
-    @Event() close: EventEmitter<MouseEvent>;
+    @Event() closeClicked: EventEmitter<MouseEvent>;
+
+    /**
+     * Closed event
+     */
+    @Event() closed: EventEmitter<null>;
 
     /**
      * The host element
@@ -49,6 +55,8 @@ export class Drawer {
     @Element() private _el: HTMLElement;
 
     private _hasHeaderSlot = false;
+
+    @State() private _closing = false;
 
     componentWillLoad() {
         this._hasHeaderSlot = !!this._el.querySelector(
@@ -69,13 +77,14 @@ export class Drawer {
                 <p-backdrop
                     variant="drawer"
                     applyBlur={this.applyBlur}
-                    onClicked={() => this._backdropClick()}
+                    onClicked={(ev) => this._backdropClick(ev.detail)}
+                    closing={this._closing}
                 >
-                    <p-drawer-container>
+                    <p-drawer-container closing={this._closing}>
                         {(this.header?.length || this._hasHeaderSlot) && (
                             <p-drawer-header
                                 show-close={this.showClose}
-                                onClose={() => this.close.emit()}
+                                onClose={(ev) => this.close(ev.detail)}
                             >
                                 {this._hasHeaderSlot
                                     ? headerContent
@@ -89,11 +98,23 @@ export class Drawer {
         );
     }
 
-    private _backdropClick() {
+    private _backdropClick(ev) {
         if (!this.backdropClickClose) {
             return;
         }
 
-        this.close.emit();
+        this.close(ev);
+    }
+
+    public close(ev: MouseEvent) {
+        this.closeClicked.emit(ev);
+
+        this._closing = true;
+
+        setTimeout(() => {
+            this.show = false;
+            this._closing = false;
+            this.closed.emit();
+        }, 250);
     }
 }

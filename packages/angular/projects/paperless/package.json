@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "peerDependencies": {
         "@angular/common": "^13.3.0 || ^14.0.0 || ^15.0.0",
-        "@angular/core": "^13.3.0 || ^14.0.0 || ^15.0.0"
+        "@angular/core": "^13.3.0 || ^14.0.0 || ^15.0.0",
+        "@angular/cdk": "^13.3.0 || ^14.0.0 || ^15.0.0"
     },
     "dependencies": {
         "@ngneat/until-destroy": "9.2.2",

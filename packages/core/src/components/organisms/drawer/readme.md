@@ -1,12 +1,6 @@
-# Drawer
+# p-drawer
 
-## Usage:
 
-```html
-<p-drawer header="Title">
-    <div slot="body">Content</div>
-</p-drawer>
-```
 
 <!-- Auto Generated Below -->
 
@@ -24,9 +18,10 @@
 
 ## Events
 
-| Event   | Description       | Type                      |
-| ------- | ----------------- | ------------------------- |
-| `close` | Close click event | `CustomEvent<MouseEvent>` |
+| Event          | Description       | Type                      |
+| -------------- | ----------------- | ------------------------- |
+| `closeClicked` | Close click event | `CustomEvent<MouseEvent>` |
+| `closed`       | Closed event      | `CustomEvent<null>`       |
 
 
 ## Dependencies

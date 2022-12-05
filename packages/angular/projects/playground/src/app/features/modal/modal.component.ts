@@ -1,16 +1,29 @@
+import { TemplatePortal } from '@angular/cdk/portal';
 import { Component } from '@angular/core';
-import { ModalService } from '../../services/modal.sevice';
+import { OverlayRef, OverlayService } from 'projects/paperless/src/public-api';
 import { TestModalComponent } from './test-modal.component';
 
 @Component({
     templateUrl: 'modal.component.html',
 })
 export class ModalComponent {
-    constructor(private _modal: ModalService) {}
+    private _templateModalRef!: OverlayRef;
+
+    constructor(private _overlay: OverlayService) {}
 
     showModal() {
-        this._modal.create({
-            component: TestModalComponent,
-        });
+        this._overlay.open<TestModalComponent>(TestModalComponent);
+    }
+
+    showTemplateModal(template: TemplatePortal) {
+        this._templateModalRef = this._overlay.open(template);
+    }
+
+    closeTemplateModal() {
+        if (!this._templateModalRef) {
+            return;
+        }
+
+        this._templateModalRef.close();
     }
 }

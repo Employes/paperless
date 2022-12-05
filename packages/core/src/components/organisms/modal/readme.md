@@ -28,9 +28,10 @@
 
 ## Events
 
-| Event   | Description       | Type                      |
-| ------- | ----------------- | ------------------------- |
-| `close` | Close click event | `CustomEvent<MouseEvent>` |
+| Event          | Description       | Type                      |
+| -------------- | ----------------- | ------------------------- |
+| `closeClicked` | Close click event | `CustomEvent<MouseEvent>` |
+| `closed`       | Closed event      | `CustomEvent<null>`       |
 
 
 ## Dependencies

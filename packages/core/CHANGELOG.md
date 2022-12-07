@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.284](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.283...v0.1.0-alpha.284) (2022-12-07)
+
+
+### Bug Fixes
+
+* **Molecules/Toast:** Add `flex-shrink-0` to button ([10d64d6](https://github.com/ionic-team/stencil-component-starter/commit/10d64d69bc8a128044a49df3025c8f56d2bb648d))
+
+
+
+
+
 # [0.1.0-alpha.283](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.282...v0.1.0-alpha.283) (2022-12-07)
 
 

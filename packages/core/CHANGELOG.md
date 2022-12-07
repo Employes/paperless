@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.283](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.282...v0.1.0-alpha.283) (2022-12-07)
+
+
+### Features
+
+* **Atoms/Icon:** Add reload icon ([928992c](https://github.com/ionic-team/stencil-component-starter/commit/928992c34ffc49804e0d7ba137835d4475f000c5))
+
+
+
+
+
 # [0.1.0-alpha.282](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.281...v0.1.0-alpha.282) (2022-12-07)
 
 

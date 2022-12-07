@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.282](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.281...v0.1.0-alpha.282) (2022-12-07)
+
+
+### Features
+
+* **Angular:** Overlay service & Modal/Drawer animations ([#90](https://github.com/ionic-team/ionic/issues/90)) ([93dd792](https://github.com/ionic-team/ionic/commit/93dd7921120a929c31ddf5d093b4380566c40ec9))
+
+
+
+
+
 # [0.1.0-alpha.281](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.280...v0.1.0-alpha.281) (2022-12-01)
 
 **Note:** Version bump only for package @paperless/react

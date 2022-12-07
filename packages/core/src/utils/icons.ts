@@ -34,6 +34,7 @@ import person from '../assets/icons/person.svg';
 import plus from '../assets/icons/plus.svg';
 import question from '../assets/icons/question.svg';
 import receipt from '../assets/icons/receipt.svg';
+import reload from '../assets/icons/reload.svg';
 import report from '../assets/icons/report.svg';
 import search from '../assets/icons/search.svg';
 import settings from '../assets/icons/settings.svg';
@@ -85,6 +86,7 @@ export default {
     person,
     plus,
     question,
+    reload,
     receipt,
     report,
     search,

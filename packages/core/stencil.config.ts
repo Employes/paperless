@@ -3,8 +3,19 @@ import { Config } from '@stencil/core';
 import { reactOutputTarget as react } from '@stencil/react-output-target';
 import { sass } from '@stencil/sass';
 import { inlineSvg } from 'stencil-inline-svg';
-import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
+import tailwind, {
+    setPluginConfigurationDefaults,
+    tailwindGlobal,
+    tailwindHMR,
+} from 'stencil-tailwind-plugin';
 import tailwindConf from './src/tailwind.config';
+
+setPluginConfigurationDefaults({
+    // enableDebug: true,
+    tailwindCssContents:
+        '@tailwind utilities;@tailwind components; * { @apply box-border; }',
+    tailwindConf: tailwindConf as any,
+});
 
 export const config: Config = {
     namespace: 'paperless',
@@ -12,17 +23,7 @@ export const config: Config = {
     extras: {
         experimentalImportInjection: true,
     },
-    plugins: [
-        sass(),
-        tailwind({
-            // enableDebug: true,
-            tailwindCssContents:
-                '@tailwind utilities;@tailwind components; * { @apply box-border; }',
-            tailwindConf: tailwindConf as any,
-        }),
-        tailwindHMR(),
-        inlineSvg(),
-    ],
+    plugins: [sass(), tailwindGlobal(), tailwind(), tailwindHMR(), inlineSvg()],
     devServer: {
         address: '0.0.0.0',
         port: 8080,

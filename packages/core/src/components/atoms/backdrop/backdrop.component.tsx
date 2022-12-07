@@ -26,6 +26,11 @@ export class Backdrop {
     @Prop() applyBlur: boolean = false;
 
     /**
+     * Wether the backdrop is closing
+     */
+    @Prop() closing: boolean = false;
+
+    /**
      * When the backdrop is clicked
      */
     @Event() clicked: EventEmitter<MouseEvent>;
@@ -40,7 +45,7 @@ export class Backdrop {
             <Host
                 class={`p-backdrop variant-${this.variant} ${
                     this.applyBlur && 'blurred'
-                }`}
+                } ${this.closing && 'closing'}`}
             >
                 <slot />
             </Host>

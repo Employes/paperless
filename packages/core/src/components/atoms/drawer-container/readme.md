@@ -1,14 +1,15 @@
-# Modal Container
+# p-drawer-container
 
-## Usage:
 
-```html
-<p-drawer-container>
-    <!-- content -->
-</p-drawer-container>
-```
 
 <!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property  | Attribute | Description                     | Type      | Default |
+| --------- | --------- | ------------------------------- | --------- | ------- |
+| `closing` | `closing` | Wether the container is closing | `boolean` | `false` |
 
 
 ## Dependencies

@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 // $drawer-xs: 20rem;
 // $drawer-sm: 33.5rem;
@@ -11,9 +11,14 @@ import { Component, h, Host } from '@stencil/core';
     styleUrl: 'drawer-container.component.scss',
 })
 export class ModalContainer {
+    /**
+     * Wether the container is closing
+     */
+    @Prop() closing: boolean = false;
+
     render() {
         return (
-            <Host class="p-drawer-container">
+            <Host class={`p-drawer-container ${this.closing && 'closing'}`}>
                 <slot />
             </Host>
         );

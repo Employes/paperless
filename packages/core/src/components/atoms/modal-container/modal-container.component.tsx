@@ -23,11 +23,20 @@ export class ModalContainer {
      */
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
+    /**
+     * Wether the container is closing
+     */
+    @Prop() closing: boolean = false;
+
     render() {
         const sizeClass = modalSizes[this.size];
 
         return (
-            <Host class={`p-modal-container ${sizeClass}`}>
+            <Host
+                class={`p-modal-container ${
+                    this.closing && 'closing'
+                } ${sizeClass}`}
+            >
                 <slot />
             </Host>
         );

@@ -67,6 +67,10 @@ export namespace Components {
          */
         "applyBlur": boolean;
         /**
+          * Wether the backdrop is closing
+         */
+        "closing": boolean;
+        /**
           * The variant of the backdrop
          */
         "variant": 'modal' | 'drawer';
@@ -214,6 +218,10 @@ export namespace Components {
         "variant": 'default' | 'table';
     }
     interface PDrawerContainer {
+        /**
+          * Wether the container is closing
+         */
+        "closing": boolean;
     }
     interface PDrawerHeader {
         /**
@@ -487,6 +495,10 @@ export namespace Components {
         "variant": 'default' | 'table';
     }
     interface PModalContainer {
+        /**
+          * Wether the container is closing
+         */
+        "closing": boolean;
         /**
           * The size of the modal container
          */
@@ -1610,6 +1622,10 @@ declare namespace LocalJSX {
          */
         "applyBlur"?: boolean;
         /**
+          * Wether the backdrop is closing
+         */
+        "closing"?: boolean;
+        /**
           * When the backdrop is clicked
          */
         "onClicked"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
@@ -1752,7 +1768,11 @@ declare namespace LocalJSX {
         /**
           * Close click event
          */
-        "onClose"?: (event: PDrawerCustomEvent<MouseEvent>) => void;
+        "onCloseClicked"?: (event: PDrawerCustomEvent<MouseEvent>) => void;
+        /**
+          * Closed event
+         */
+        "onClosed"?: (event: PDrawerCustomEvent<null>) => void;
         /**
           * Wether to show the drawer or not
          */
@@ -1769,6 +1789,10 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'table';
     }
     interface PDrawerContainer {
+        /**
+          * Wether the container is closing
+         */
+        "closing"?: boolean;
     }
     interface PDrawerHeader {
         /**
@@ -2025,7 +2049,11 @@ declare namespace LocalJSX {
         /**
           * Close click event
          */
-        "onClose"?: (event: PModalCustomEvent<MouseEvent>) => void;
+        "onCloseClicked"?: (event: PModalCustomEvent<MouseEvent>) => void;
+        /**
+          * Closed event
+         */
+        "onClosed"?: (event: PModalCustomEvent<null>) => void;
         /**
           * Wether to show the modal or not
          */
@@ -2054,6 +2082,10 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'table';
     }
     interface PModalContainer {
+        /**
+          * Wether the container is closing
+         */
+        "closing"?: boolean;
         /**
           * The size of the modal container
          */

@@ -1,1 +1,9 @@
 <h1 class="font-semibold text-4xl">Home</h1>
+
+<p-modal header="Modal header" [show]="show" (close)="show = false" #modal>
+</p-modal>
+
+<ng-template #testTemplate>
+    <div slot="content">{{ text }}</div>
+    <div slot="footer">Footer</div>
+</ng-template>

@@ -13,9 +13,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                     | Type                           | Default |
-| -------- | --------- | ------------------------------- | ------------------------------ | ------- |
-| `size`   | `size`    | The size of the modal container | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`  |
+| Property  | Attribute | Description                     | Type                           | Default |
+| --------- | --------- | ------------------------------- | ------------------------------ | ------- |
+| `closing` | `closing` | Wether the container is closing | `boolean`                      | `false` |
+| `size`    | `size`    | The size of the modal container | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`  |
 
 
 ## Dependencies

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.286](https://github.com/employes/paperless/compare/v0.1.0-alpha.285...v0.1.0-alpha.286) (2022-12-08)
+
+
+### Features
+
+* **Organisms/Drawer:** Add `canClose` input ([807f0b9](https://github.com/employes/paperless/commit/807f0b981b753adacaef2616edc779ae9783be30))
+
+
+
+
+
 # [0.1.0-alpha.285](https://github.com/employes/paperless/compare/v0.1.0-alpha.284...v0.1.0-alpha.285) (2022-12-08)
 
 

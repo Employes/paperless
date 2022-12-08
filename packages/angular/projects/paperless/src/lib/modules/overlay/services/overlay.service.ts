@@ -13,51 +13,57 @@ import {
 import { OverlayRef } from '../overlay.ref';
 
 interface ModalOptions {
+    data?: any;
     providers?: StaticProvider[];
 }
 
 @Injectable()
 export class OverlayService {
-    public overlayRef!: OverlayRef;
+    public overlayRef!: OverlayRef<any>;
     constructor(private injector: Injector, private overlay: Overlay) {}
 
     open<T>(
         component: ComponentType<T> | CdkPortal,
         options: ModalOptions = {}
     ) {
-        const overlay = this.createOverlay();
-        const overlayRef = new OverlayRef(overlay);
+        const overlay = this._createOverlay();
+        const overlayRef = new OverlayRef<T>(overlay);
 
-        this.attachModalContainer<T>(
+        this._attachModalContainer<T>(
             overlay,
             overlayRef,
             component,
             options.providers ?? []
         );
 
+        this._attachData<T>(overlayRef, options);
+
         this.overlayRef = overlayRef;
         return overlayRef;
     }
 
     // tslint:disable-next-line:max-line-length
-    private attachModalContainer<T>(
+    private _attachModalContainer<T>(
         overlay: CDKOverlayRef,
-        overlayRef: OverlayRef,
+        overlayRef: OverlayRef<T>,
         component: ComponentType<T> | CdkPortal,
         providers: StaticProvider[]
     ) {
-        const injector = this.createInjector(overlayRef, providers);
+        const injector = this._createInjector<T>(overlayRef, providers);
 
         const containerPortal =
             component instanceof CdkPortal
                 ? component
                 : new ComponentPortal(component, null, injector);
         const containerRef: ComponentRef<T> = overlay.attach(containerPortal);
+
+        overlayRef.instance = containerRef.instance;
+
         return containerRef.instance;
     }
 
-    private createInjector(
-        overlayRef: OverlayRef,
+    private _createInjector<T>(
+        overlayRef: OverlayRef<T>,
         providers: StaticProvider[]
     ): Injector {
         return Injector.create({
@@ -72,7 +78,7 @@ export class OverlayService {
         });
     }
 
-    private getOverlayConfig(): OverlayConfig {
+    private _getOverlayConfig(): OverlayConfig {
         const positionStrategy = this.overlay
             .position()
             .global()
@@ -88,11 +94,19 @@ export class OverlayService {
         return overlayConfig;
     }
 
-    private createOverlay() {
+    private _createOverlay() {
         // Returns an OverlayConfig
-        const overlayConfig = this.getOverlayConfig();
+        const overlayConfig = this._getOverlayConfig();
 
         // Returns an OverlayRef
         return this.overlay.create(overlayConfig);
+    }
+
+    private _attachData<T>(overlayRef: OverlayRef<T>, options: ModalOptions) {
+        if (options.data && typeof options.data === 'object') {
+            for (const key of Object.keys(options.data)) {
+                (overlayRef.instance as any)[key] = options.data[key];
+            }
+        }
     }
 }

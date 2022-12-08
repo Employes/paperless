@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.285](https://github.com/employes/paperless/compare/v0.1.0-alpha.284...v0.1.0-alpha.285) (2022-12-08)
+
+
+### Features
+
+* **Angular/Overlay:** Make instance available and set data ([2b6c634](https://github.com/employes/paperless/commit/2b6c634c86205beab9c783f586672907187b52d0))
+
+
+
+
+
 # [0.1.0-alpha.284](https://github.com/employes/paperless/compare/v0.1.0-alpha.283...v0.1.0-alpha.284) (2022-12-07)
 
 

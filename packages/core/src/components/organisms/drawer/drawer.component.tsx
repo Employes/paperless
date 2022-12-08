@@ -40,9 +40,17 @@ export class Drawer {
     @Prop() backdropClickClose = true;
 
     /**
+     * Wether the drawer can be closed
+     */
+    @Prop() canClose: boolean = true;
+
+    /**
      * Close click event
      */
-    @Event() closeClicked: EventEmitter<MouseEvent>;
+    @Event() closeClicked: EventEmitter<{
+        event: MouseEvent;
+        canClose: boolean;
+    }>;
 
     /**
      * Closed event
@@ -107,7 +115,14 @@ export class Drawer {
     }
 
     public close(ev: MouseEvent) {
-        this.closeClicked.emit(ev);
+        this.closeClicked.emit({
+            event: ev,
+            canClose: this.canClose,
+        });
+
+        if (!this.canClose) {
+            return;
+        }
 
         this._closing = true;
 

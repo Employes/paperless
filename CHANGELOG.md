@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.289](https://github.com/employes/paperless/compare/v0.1.0-alpha.288...v0.1.0-alpha.289) (2022-12-09)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Correctly overwrite text size on small variant ([e08b703](https://github.com/employes/paperless/commit/e08b7034e90341081e4e561115c3cabe4543b249))
+
+
+
+
+
 # [0.1.0-alpha.288](https://github.com/employes/paperless/compare/v0.1.0-alpha.287...v0.1.0-alpha.288) (2022-12-09)
 
 

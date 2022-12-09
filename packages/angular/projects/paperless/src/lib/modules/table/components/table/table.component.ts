@@ -39,6 +39,16 @@ export class Table implements OnInit, OnChanges {
     @Input() loading: boolean = false;
 
     /**
+     * Wether the header should show loading state
+     */
+    @Input() headerLoading: boolean = false;
+
+    /**
+     * Wether the footer should show loading state
+     */
+    @Input() footerLoading: boolean = false;
+
+    /**
      * The amount of loading rows to show
      */
     @Input() amountOfLoadingRows: number = 6;

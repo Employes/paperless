@@ -15,6 +15,7 @@
         [editButtonTemplate]="editButtonTemplate"
         (edit)="edit.emit()"
         [itemsSelectedAmount]="selectedRows.length"
+        [loading]="headerLoading"
     ></p-table-header>
 
     <p-table-row variant="header">
@@ -122,6 +123,7 @@
         (pageChange)="(pageChange)"
         [enableExport]="enableExport"
         (export)="export.emit()"
+        [loading]="footerLoading"
     ></p-table-footer>
 </p-table-container>
 

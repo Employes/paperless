@@ -60,14 +60,14 @@
 
 @mixin inputDefaultState {
     @apply flex justify-start items-center h-10;
-    @apply text-storm-dark;
+    @apply text-storm-dark text-base;
     @apply bg-white px-4 w-full;
     @apply rounded-large;
     @apply border border-mystic-dark border-solid #{!important};
     @apply outline-none #{!important};
 
     &::placeholder {
-        @apply text-storm-medium;
+        @apply text-storm-medium text-base;
     }
 
     &:focus,

@@ -37,6 +37,16 @@ export class Table {
     @Prop() loading: boolean = false;
 
     /**
+     * Wether the header should show loading state
+     */
+    @Prop() headerLoading: boolean = false;
+
+    /**
+     * Wether the footer should show loading state
+     */
+    @Prop() footerLoading: boolean = false;
+
+    /**
      * The amount of loading rows to show
      */
     @Prop() amountOfLoadingRows: number = 6;
@@ -290,6 +300,8 @@ export class Table {
                         editButtonTemplate={this.editButtonTemplate}
                         onEdit={() => this.edit.emit()}
                         itemsSelectedAmount={this.selectedRows?.length}
+                        //loading
+                        loading={this.headerLoading}
                     ></p-table-header>
 
                     {this._getHeader()}
@@ -315,6 +327,8 @@ export class Table {
                         // export
                         enableExport={this.enableExport}
                         onExport={() => this.export.emit()}
+                        //loading
+                        loading={this.footerLoading}
                     ></p-table-footer>
                 </p-table-container>
             </Host>

@@ -839,6 +839,14 @@ export namespace Components {
          */
         "filterButtonTemplate": templateFunc;
         /**
+          * Wether the footer should show loading state
+         */
+        "footerLoading": boolean;
+        /**
+          * Wether the header should show loading state
+         */
+        "headerLoading": boolean;
+        /**
           * Wether to hide when there is only 1 page available
          */
         "hideOnSinglePage": boolean;
@@ -2460,6 +2468,14 @@ declare namespace LocalJSX {
           * The template for the filter button text
          */
         "filterButtonTemplate"?: templateFunc;
+        /**
+          * Wether the footer should show loading state
+         */
+        "footerLoading"?: boolean;
+        /**
+          * Wether the header should show loading state
+         */
+        "headerLoading"?: boolean;
         /**
           * Wether to hide when there is only 1 page available
          */

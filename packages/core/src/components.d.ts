@@ -199,6 +199,10 @@ export namespace Components {
          */
         "backdropClickClose": boolean;
         /**
+          * Wether the drawer can be closed
+         */
+        "canClose": boolean;
+        /**
           * The Header of the drawer
          */
         "header"?: string;
@@ -1762,13 +1766,20 @@ declare namespace LocalJSX {
          */
         "backdropClickClose"?: boolean;
         /**
+          * Wether the drawer can be closed
+         */
+        "canClose"?: boolean;
+        /**
           * The Header of the drawer
          */
         "header"?: string;
         /**
           * Close click event
          */
-        "onCloseClicked"?: (event: PDrawerCustomEvent<MouseEvent>) => void;
+        "onCloseClicked"?: (event: PDrawerCustomEvent<{
+        event: MouseEvent;
+        canClose: boolean;
+    }>) => void;
         /**
           * Closed event
          */

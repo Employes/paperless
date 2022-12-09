@@ -33,6 +33,8 @@
 | `enableRowSelection`          | `enable-row-selection`           | Wether to enable selection                         | `boolean`                    | `true`                                                                          |
 | `enableSearch`                | `enable-search`                  | Wether to show the search input                    | `boolean`                    | `true`                                                                          |
 | `filterButtonTemplate`        | --                               | The template for the filter button text            | `() => string`               | `undefined`                                                                     |
+| `footerLoading`               | `footer-loading`                 | Wether the footer should show loading state        | `boolean`                    | `false`                                                                         |
+| `headerLoading`               | `header-loading`                 | Wether the header should show loading state        | `boolean`                    | `false`                                                                         |
 | `hideOnSinglePage`            | `hide-on-single-page`            | Wether to hide when there is only 1 page available | `boolean`                    | `true`                                                                          |
 | `items`                       | `items`                          | The items to be fed to the table                   | `string`                     | `undefined`                                                                     |
 | `loading`                     | `loading`                        | Wether data is loading                             | `boolean`                    | `false`                                                                         |
@@ -90,6 +92,7 @@ graph TD;
   p-table --> p-loader
   p-table --> p-illustration
   p-table --> p-button
+  p-table-header --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
   p-table-header --> p-input-group
@@ -104,6 +107,7 @@ graph TD;
   p-button --> p-loader
   p-label --> p-icon
   p-table-footer --> p-page-size-select
+  p-table-footer --> p-loader
   p-table-footer --> p-pagination
   p-table-footer --> p-button
   p-page-size-select --> p-dropdown

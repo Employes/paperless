@@ -11,6 +11,7 @@
 | -------------------- | ---------------------- | ------------------------------------------------------ | --------- | ----------- |
 | `applyBlur`          | `apply-blur`           | Wether to apply blur to the backdrop                   | `boolean` | `false`     |
 | `backdropClickClose` | `backdrop-click-close` | Wether to hide the drawer when the backdrop is clicked | `boolean` | `true`      |
+| `canClose`           | `can-close`            | Wether the drawer can be closed                        | `boolean` | `true`      |
 | `header`             | `header`               | The Header of the drawer                               | `string`  | `undefined` |
 | `show`               | `show`                 | Wether to show the drawer or not                       | `boolean` | `false`     |
 | `showClose`          | `show-close`           | Wether to show the close on mobile in the header       | `boolean` | `true`      |
@@ -18,10 +19,10 @@
 
 ## Events
 
-| Event          | Description       | Type                      |
-| -------------- | ----------------- | ------------------------- |
-| `closeClicked` | Close click event | `CustomEvent<MouseEvent>` |
-| `closed`       | Closed event      | `CustomEvent<null>`       |
+| Event          | Description       | Type                                                     |
+| -------------- | ----------------- | -------------------------------------------------------- |
+| `closeClicked` | Close click event | `CustomEvent<{ event: MouseEvent; canClose: boolean; }>` |
+| `closed`       | Closed event      | `CustomEvent<null>`                                      |
 
 
 ## Dependencies

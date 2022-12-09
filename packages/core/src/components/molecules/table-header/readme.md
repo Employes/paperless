@@ -23,6 +23,7 @@
 | `enableSearch`                | `enable-search`                  | Wether to show the search input         | `boolean`                    | `true`                              |
 | `filterButtonTemplate`        | --                               | The template for the filter button text | `() => string`               | `this._defaultFilterButtonTemplate` |
 | `itemsSelectedAmount`         | `items-selected-amount`          | The amount of items that are selected   | `number`                     | `0`                                 |
+| `loading`                     | `loading`                        | Wether we want to show loading state    | `boolean`                    | `false`                             |
 | `query`                       | `query`                          | The query to show in the search bar     | `string`                     | `undefined`                         |
 | `quickFilters`                | --                               | Quick filters to show                   | `QuickFilter[]`              | `[]`                                |
 | `selectedFiltersAmount`       | `selected-filters-amount`        | The amount of filters being selected    | `number`                     | `undefined`                         |
@@ -46,6 +47,7 @@
 
 ### Depends on
 
+- [p-loader](../../atoms/loader)
 - [p-segment-container](../../atoms/segment-container)
 - [p-segment-item](../../atoms/segment-item)
 - [p-input-group](../input-group)
@@ -55,6 +57,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  p-table-header --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item
   p-table-header --> p-input-group

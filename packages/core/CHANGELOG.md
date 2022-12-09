@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.287](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.286...v0.1.0-alpha.287) (2022-12-09)
+
+
+### Features
+
+* **Atoms/Input:** Set base text size for inputs ([91c2fe9](https://github.com/ionic-team/stencil-component-starter/commit/91c2fe999209d7ccb5ae1065540375fa602f827b))
+
+
+
+
+
 # [0.1.0-alpha.286](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.285...v0.1.0-alpha.286) (2022-12-08)
 
 

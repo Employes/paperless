@@ -1021,6 +1021,10 @@ export namespace Components {
          */
         "itemsSelectedAmount": number;
         /**
+          * Wether we want to show loading state
+         */
+        "loading": boolean;
+        /**
           * The query to show in the search bar
          */
         "query": string;
@@ -2706,6 +2710,10 @@ declare namespace LocalJSX {
           * The amount of items that are selected
          */
         "itemsSelectedAmount"?: number;
+        /**
+          * Wether we want to show loading state
+         */
+        "loading"?: boolean;
         /**
           * Event when the edit button is clicked
          */

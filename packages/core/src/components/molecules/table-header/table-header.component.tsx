@@ -48,6 +48,11 @@ export class TableHeader {
     @Prop() activeQuickFilterIdentifier: string;
 
     /**
+     * Wether we want to show loading state
+     */
+    @Prop() loading: boolean = false;
+
+    /**
      * Wether to show the search input
      */
     @Prop() enableSearch: boolean = true;
@@ -146,7 +151,14 @@ export class TableHeader {
 
         return (
             <Host class="p-table-header">
-                {this.quickFilters.length > 0 && (
+                {this.loading && (
+                    <p-loader
+                        variant="ghost"
+                        class="hidden desktop-xs:flex rounded w-3/4 h-8"
+                    ></p-loader>
+                )}
+
+                {!this.loading && this.quickFilters.length > 0 && (
                     <p-segment-container class="hidden desktop-xs:flex">
                         {this.quickFilters.map((item) => (
                             <p-segment-item

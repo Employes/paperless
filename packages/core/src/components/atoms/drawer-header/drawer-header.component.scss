@@ -3,6 +3,8 @@
     @apply sticky top-0 flex justify-center items-center;
     @apply p-4;
 
+    padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
+
     @apply text-storm-dark text-xl font-semibold;
 
     @apply border-0 border-b border-b-mystic-dark border-solid #{!important};

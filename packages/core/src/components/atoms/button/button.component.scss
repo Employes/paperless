@@ -135,12 +135,10 @@ p-button {
 
     // sizes
     &.size-small {
-        @apply h-8;
+        @apply h-8 text-sm;
 
         button,
         a {
-            @apply text-sm;
-
             > p-icon:first-child {
                 @apply text-base;
             }

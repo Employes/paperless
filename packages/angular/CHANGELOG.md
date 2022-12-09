@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.290](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.289...v0.1.0-alpha.290) (2022-12-09)
+
+
+### Features
+
+* **Angular/Table:** Add header/footer loading state inputs ([4e72291](https://github.com/Employes/Paperless/commit/4e722910c7ab22d9997fc6572299a459a2ee5595))
+
+
+
+
+
 # [0.1.0-alpha.289](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.288...v0.1.0-alpha.289) (2022-12-09)
 
 **Note:** Version bump only for package @paperless/angular

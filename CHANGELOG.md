@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.290](https://github.com/employes/paperless/compare/v0.1.0-alpha.289...v0.1.0-alpha.290) (2022-12-09)
+
+
+### Features
+
+* **Angular/Table:** Add header/footer loading state inputs ([4e72291](https://github.com/employes/paperless/commit/4e722910c7ab22d9997fc6572299a459a2ee5595))
+* **Molecules/Table Footer:** Add loading state ([a4dce7d](https://github.com/employes/paperless/commit/a4dce7d4ad13d0aa19c8e9b9adb807d4b13e6a13))
+* **Molecules/Table Header:** Add loading state ([ef87592](https://github.com/employes/paperless/commit/ef87592e239eb19266d2745d13daac899377124e))
+* **Organisms/Table:** Add header/footer loading state properties ([7fc55c5](https://github.com/employes/paperless/commit/7fc55c5ed508d83c560635eb4a73aebcbc41ac4f))
+
+
+
+
+
 # [0.1.0-alpha.289](https://github.com/employes/paperless/compare/v0.1.0-alpha.288...v0.1.0-alpha.289) (2022-12-09)
 
 

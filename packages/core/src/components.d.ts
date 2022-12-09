@@ -967,6 +967,10 @@ export namespace Components {
          */
         "hideOnSinglePage": boolean;
         /**
+          * Wether we want to show loading state
+         */
+        "loading": boolean;
+        /**
           * The current page
          */
         "page": number;
@@ -2636,6 +2640,10 @@ declare namespace LocalJSX {
           * Wether to hide when there is only 1 page available
          */
         "hideOnSinglePage"?: boolean;
+        /**
+          * Wether we want to show loading state
+         */
+        "loading"?: boolean;
         /**
           * Event whenever the page changes
          */

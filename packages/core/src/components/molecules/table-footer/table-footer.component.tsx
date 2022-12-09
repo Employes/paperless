@@ -37,6 +37,11 @@ export class TableFooter {
     @Prop() enableExport: boolean = true;
 
     /**
+     * Wether we want to show loading state
+     */
+    @Prop() loading: boolean = false;
+
+    /**
      * The current page
      */
     @Prop({ mutable: true, reflect: true }) page: number = 1;
@@ -101,18 +106,30 @@ export class TableFooter {
                     !this.enableExport && 'export-disabled'
                 }`}
             >
-                {this.enablePagination && this.enablePageSize && (
-                    <p-page-size-select
-                        class={!hidePageSizeSelect && 'hidden desktop-xs:flex'}
-                        hidden={hidePageSizeSelect}
-                        size={this.pageSize}
-                        sizeOptions={this.pageSizeOptions}
-                        onSizeChange={({ detail }) =>
-                            this._changePageSize(detail)
-                        }
-                    />
+                {!this.loading &&
+                    this.enablePagination &&
+                    this.enablePageSize && (
+                        <p-page-size-select
+                            class={
+                                !hidePageSizeSelect && 'hidden desktop-xs:flex'
+                            }
+                            hidden={hidePageSizeSelect}
+                            size={this.pageSize}
+                            sizeOptions={this.pageSizeOptions}
+                            onSizeChange={({ detail }) =>
+                                this._changePageSize(detail)
+                            }
+                        />
+                    )}
+
+                {this.loading && (
+                    <p-loader
+                        variant="ghost"
+                        class="rounded w-full h-8"
+                    ></p-loader>
                 )}
-                {this.enablePagination && (
+
+                {!this.loading && this.enablePagination && (
                     <p-pagination
                         pageSize={this.pageSize}
                         total={this.total}
@@ -123,7 +140,7 @@ export class TableFooter {
                         }
                     />
                 )}
-                {this.enableExport && (
+                {!this.loading && this.enableExport && (
                     <p-button
                         class="hidden desktop-xs:flex"
                         variant="secondary"

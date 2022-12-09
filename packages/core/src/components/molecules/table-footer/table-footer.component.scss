@@ -7,6 +7,10 @@
         @apply flex justify-self-center col-start-1;
     }
 
+    > p-loader {
+        @apply col-start-1;
+    }
+
     @screen desktop-xs {
         @apply grid-cols-3;
         grid-template-areas: 'page-size pagination export';
@@ -16,6 +20,10 @@
         }
 
         > p-pagination {
+            @apply col-start-2;
+        }
+
+        > p-loader {
             @apply col-start-2;
         }
 

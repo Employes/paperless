@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.292](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.291...v0.1.0-alpha.292) (2022-12-10)
+
+
+### Bug Fixes
+
+* **Atoms/Drawer Header:** Add safe inset to button top position ([c25205f](https://github.com/ionic-team/stencil-component-starter/commit/c25205fe8da1fd9e3242fc5a21f773228805a3c7))
+
+
+
+
+
 # [0.1.0-alpha.291](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.290...v0.1.0-alpha.291) (2022-12-09)
 
 

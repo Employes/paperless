@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.298](https://github.com/employes/paperless/compare/v0.1.0-alpha.297...v0.1.0-alpha.298) (2022-12-13)
+
+
+### Features
+
+* **Atoms/Backdrop:** Add backdrop background ([31ce5aa](https://github.com/employes/paperless/commit/31ce5aa2529e2275a00852644f4002ee560ef5d3))
+
+
+
+
+
 # [0.1.0-alpha.297](https://github.com/employes/paperless/compare/v0.1.0-alpha.296...v0.1.0-alpha.297) (2022-12-13)
 
 

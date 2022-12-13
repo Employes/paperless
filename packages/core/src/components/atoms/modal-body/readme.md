@@ -13,9 +13,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description                   | Type                   | Default     |
-| --------- | --------- | ----------------------------- | ---------------------- | ----------- |
-| `variant` | `variant` | The variant of the modal body | `"default" \| "table"` | `'default'` |
+| Property  | Attribute | Description                                           | Type                   | Default     |
+| --------- | --------- | ----------------------------------------------------- | ---------------------- | ----------- |
+| `rounded` | `rounded` | Wether the modal body should be rounded at the bottom | `boolean`              | `false`     |
+| `variant` | `variant` | The variant of the modal body                         | `"default" \| "table"` | `'default'` |
 
 
 ## Dependencies

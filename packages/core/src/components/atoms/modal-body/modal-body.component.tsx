@@ -11,9 +11,18 @@ export class ModalBody {
      */
     @Prop() variant: 'default' | 'table' = 'default';
 
+    /**
+     * Wether the modal body should be rounded at the bottom
+     */
+    @Prop() rounded: boolean = false;
+
     render() {
         return (
-            <Host class={`p-modal-body variant-${this.variant}`}>
+            <Host
+                class={`p-modal-body variant-${this.variant} ${
+                    this.rounded && 'is-rounded'
+                }`}
+            >
                 <slot />
             </Host>
         );

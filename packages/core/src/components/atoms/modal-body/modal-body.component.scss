@@ -6,3 +6,7 @@
 :host(.variant-table) {
     @apply px-6;
 }
+
+:host(.is-rounded) {
+    @apply rounded-b-none desktop-xs:rounded-b-xxlarge;
+}

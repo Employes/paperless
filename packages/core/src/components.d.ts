@@ -494,6 +494,10 @@ export namespace Components {
     }
     interface PModalBody {
         /**
+          * Wether the modal body should be rounded at the bottom
+         */
+        "rounded": boolean;
+        /**
           * The variant of the modal body
          */
         "variant": 'default' | 'table';
@@ -2103,6 +2107,10 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'table';
     }
     interface PModalBody {
+        /**
+          * Wether the modal body should be rounded at the bottom
+         */
+        "rounded"?: boolean;
         /**
           * The variant of the modal body
          */

@@ -1,4 +1,4 @@
-import { TemplatePortal } from '@angular/cdk/portal';
+import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { Component } from '@angular/core';
 import { OverlayRef, OverlayService } from 'projects/paperless/src/public-api';
 import { TestDrawerComponent } from './test-drawer.component';
@@ -7,7 +7,7 @@ import { TestDrawerComponent } from './test-drawer.component';
     templateUrl: 'drawer.component.html',
 })
 export class DrawerComponent {
-    private _templateDrawerRef!: OverlayRef;
+    private _templateDrawerRef!: OverlayRef<CdkPortal>;
 
     constructor(private _overlay: OverlayService) {}
 

@@ -1,4 +1,4 @@
-import { TemplatePortal } from '@angular/cdk/portal';
+import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { Component } from '@angular/core';
 import { OverlayRef, OverlayService } from 'projects/paperless/src/public-api';
 import { TestModalComponent } from './test-modal.component';
@@ -7,7 +7,7 @@ import { TestModalComponent } from './test-modal.component';
     templateUrl: 'modal.component.html',
 })
 export class ModalComponent {
-    private _templateModalRef!: OverlayRef;
+    private _templateModalRef!: OverlayRef<CdkPortal>;
 
     constructor(private _overlay: OverlayService) {}
 

@@ -14,7 +14,7 @@ import { OverlayRef } from 'projects/paperless/src/public-api';
     `,
 })
 export class TestModalComponent {
-    constructor(public _overlayRef: OverlayRef) {}
+    constructor(public _overlayRef: OverlayRef<TestModalComponent>) {}
 
     close() {
         this._overlayRef.close();

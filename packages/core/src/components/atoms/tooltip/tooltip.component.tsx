@@ -34,7 +34,7 @@ export class Tooltip {
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: PositioningStrategy = 'fixed';
+    @Prop() strategy: PositioningStrategy = 'absolute';
 
     /**
      * Wether to show the popover

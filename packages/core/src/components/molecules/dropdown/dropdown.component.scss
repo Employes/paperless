@@ -1,12 +1,12 @@
 :host {
-    @apply relative;
+    @apply block relative;
 
     .trigger {
-        @apply w-auto h-auto;
+        @apply block relative w-auto h-auto;
     }
 
     p-dropdown-menu-container {
-        @apply hidden;
+        @apply hidden z-dropdown;
 
         &[data-show] {
             @apply flex;

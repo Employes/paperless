@@ -1,7 +1,6 @@
 p-modal-container {
     @apply flex flex-col w-full tablet:w-auto z-modal;
-    @apply bg-white rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
-    @apply overflow-hidden;
+    @apply rounded-b-none rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
 
     @apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small #{!important};
 

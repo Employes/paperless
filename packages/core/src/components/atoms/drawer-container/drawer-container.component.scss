@@ -1,5 +1,6 @@
 p-drawer-container {
-    @apply relative flex flex-col z-drawer;
+    @apply flex flex-col z-drawer;
+    // tablet:w-[22.5rem]
     @apply w-full tablet:w-[22.5rem] min-h-[100vh];
     @apply bg-white;
     @apply animate-slide-in-right;

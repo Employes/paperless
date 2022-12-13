@@ -1,11 +1,17 @@
 module.exports = {
+    dropdown: 200,
+
     'navbar-backdrop': 290,
     navbar: 300,
 
     backdrop: 490,
 
     drawer: 500,
+    'drawer-header': 501,
+
     modal: 600,
+
+    tooltip: 601,
 
     toast: 700,
 };

@@ -1,7 +1,7 @@
 :host {
     @apply bg-white;
     @apply sticky top-0 flex justify-center items-center;
-    @apply p-4;
+    @apply p-4 z-drawer-header;
 
     padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
 

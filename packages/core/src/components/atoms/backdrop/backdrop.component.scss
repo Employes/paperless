@@ -16,6 +16,6 @@
 }
 
 :host(.variant-drawer) {
-    @apply justify-end items-start desktop-xs:items-start;
+    @apply justify-end items-start;
     @apply p-0 tablet:p-0 desktop-xs:p-0;
 }

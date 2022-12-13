@@ -26,7 +26,7 @@ export class Dropdown {
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: PositioningStrategy = 'fixed';
+    @Prop() strategy: PositioningStrategy = 'absolute';
 
     /**
      * Wether to show the dropdown menu

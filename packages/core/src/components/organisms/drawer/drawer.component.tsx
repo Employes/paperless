@@ -11,6 +11,7 @@ import {
 
 @Component({
     tag: 'p-drawer',
+    styleUrl: 'drawer.component.scss',
     shadow: true,
 })
 export class Drawer {

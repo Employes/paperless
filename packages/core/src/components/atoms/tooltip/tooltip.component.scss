@@ -4,7 +4,7 @@
     .popover-container {
         @apply w-0 h-0 relative;
         .popover {
-            @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4;
+            @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4 z-tooltip;
             max-width: 14.5rem;
 
             &.variant-hover,
@@ -17,7 +17,7 @@
             }
 
             &[data-show] {
-                @apply block;
+                @apply inline-block;
             }
 
             .arrow,

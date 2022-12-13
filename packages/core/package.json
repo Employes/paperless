@@ -39,7 +39,7 @@
         "yarn:publish": "yarn publish"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.5",
+        "@popperjs/core": "^2.11.6",
         "@stencil/core": "^2.16.0",
         "rxjs": "^7.5.5"
     },

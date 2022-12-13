@@ -26,7 +26,6 @@ export class HomeComponent implements AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => (this.text = 'content but changed'), 2000);
 
-        console.log(this.testTemplateRef);
         this.viewContainerRef.createEmbeddedView(this.testTemplateRef);
     }
 }

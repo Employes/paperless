@@ -5,12 +5,21 @@ p-card-header {
     @apply border-b border-b-mystic-medium #{!important};
 
     .title {
+        @apply order-2;
         @apply flex items-center text-storm;
         @apply font-semibold;
 
         > p-icon {
             @apply ml-2 text-mystic-dark;
         }
+    }
+
+    [slot='prefix'] {
+        @apply order-1;
+    }
+
+    [slot='suffix'] {
+        @apply order-3;
     }
 }
 

@@ -110,7 +110,10 @@ export class Modal {
                                     : this.header}
                             </p-modal-header>
                         )}
-                        <p-modal-body variant={this.variant}>
+                        <p-modal-body
+                            variant={this.variant}
+                            rounded={!this._hasFooterSlot}
+                        >
                             {bodyContent}
                         </p-modal-body>
                         {this._hasFooterSlot && (

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.294](https://github.com/employes/paperless/compare/v0.1.0-alpha.293...v0.1.0-alpha.294) (2022-12-13)
+
+
+### Bug Fixes
+
+* **Popper:** Fix several popper issues ([ee9540b](https://github.com/employes/paperless/commit/ee9540bf2956bac419aa90e56ee25cd1554dc5a7))
+
+
+
+
+
 # [0.1.0-alpha.293](https://github.com/employes/paperless/compare/v0.1.0-alpha.292...v0.1.0-alpha.293) (2022-12-13)
 
 

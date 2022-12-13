@@ -8,7 +8,7 @@ p-button {
         @apply h-full w-full rounded-large;
         @apply font-semibold leading-4;
         @apply flex items-center justify-center;
-        @apply cursor-pointer;
+        @apply cursor-pointer text-base;
 
         will-change: filter;
 
@@ -135,11 +135,13 @@ p-button {
 
     // sizes
     &.size-small {
-        @apply h-8 text-sm;
+        @apply h-8;
 
         button,
         a {
-            > p-icon:first-child {
+            @apply text-sm;
+
+            > p-icon {
                 @apply text-base;
             }
         }

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.296](https://github.com/employes/paperless/compare/v0.1.0-alpha.295...v0.1.0-alpha.296) (2022-12-13)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Fix font sizing ([302f9db](https://github.com/employes/paperless/commit/302f9db5756b4d04a36dcdb58c7fb400990bbcd4))
+* **Molecules/Modal Body:** Add rounding property ([f8310c4](https://github.com/employes/paperless/commit/f8310c4e20c9076ee4875de9a8a9bcf8dfea6d70))
+* **Organisms/Modal:** Apply rounding to body when no footer is present ([deea170](https://github.com/employes/paperless/commit/deea1708acbb9435661c5f41c894d23f315ba331))
+
+
+
+
+
 # [0.1.0-alpha.295](https://github.com/employes/paperless/compare/v0.1.0-alpha.294...v0.1.0-alpha.295) (2022-12-13)
 
 

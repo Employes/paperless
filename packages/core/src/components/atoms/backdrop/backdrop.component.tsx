@@ -47,7 +47,9 @@ export class Backdrop {
                     this.applyBlur && 'blurred'
                 } ${this.closing && 'closing'}`}
             >
-                <slot />
+                <div class="content-container">
+                    <slot />
+                </div>
             </Host>
         );
     }

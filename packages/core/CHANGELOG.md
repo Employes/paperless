@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.297](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.296...v0.1.0-alpha.297) (2022-12-13)
+
+
+### Features
+
+* **Tailwind:** Make animations really long for debugging ([e7332dc](https://github.com/ionic-team/stencil-component-starter/commit/e7332dc0571460a5f9bf53d239fec099401bb454))
+
+
+
+
+
 # [0.1.0-alpha.296](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.295...v0.1.0-alpha.296) (2022-12-13)
 
 

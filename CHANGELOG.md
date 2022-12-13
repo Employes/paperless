@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.299](https://github.com/employes/paperless/compare/v0.1.0-alpha.298...v0.1.0-alpha.299) (2022-12-13)
+
+
+### Bug Fixes
+
+* **Atoms/Backdrop:** Add back background color ([4aa17d0](https://github.com/employes/paperless/commit/4aa17d0d18e0796a2e0f9b1b78eb4ef981ab71d3))
+
+
+### Features
+
+* **Atoms/Backdrop:** Add `transform-style` & `backface-visibility` ([937ce9e](https://github.com/employes/paperless/commit/937ce9ec7e2bd6c25fffb5349c012a55a489a895))
+* **Atoms/Backdrop:** Remove background ([8330c48](https://github.com/employes/paperless/commit/8330c48b34f333b56a524b6d6e63b6dec3974a29))
+
+
+
+
+
 # [0.1.0-alpha.298](https://github.com/employes/paperless/compare/v0.1.0-alpha.297...v0.1.0-alpha.298) (2022-12-13)
 
 

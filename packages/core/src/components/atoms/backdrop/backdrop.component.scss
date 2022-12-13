@@ -5,6 +5,11 @@
     @apply animate-fade-in;
 
     @apply flex justify-center items-end desktop-xs:items-center;
+
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 :host(.blurred) {

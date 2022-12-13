@@ -1,7 +1,7 @@
 :host {
     @apply fixed top-0 left-0 z-backdrop;
     @apply h-full w-full tablet:px-16 desktop-xs:p-16;
-    @apply bg-storm-dark overflow-y-auto;
+    @apply overflow-y-auto;
     @apply animate-fade-in;
 
     @apply flex justify-center items-end desktop-xs:items-center;

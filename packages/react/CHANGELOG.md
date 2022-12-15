@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.304](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.303...v0.1.0-alpha.304) (2022-12-15)
+
+
+### Features
+
+* **Molecules:** Add calendar component ([c87ac6f](https://github.com/ionic-team/ionic/commit/c87ac6f5d354dcc244faedc04a82192399906c28))
+
+
+
+
+
 # [0.1.0-alpha.303](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.302...v0.1.0-alpha.303) (2022-12-15)
 
 **Note:** Version bump only for package @paperless/react

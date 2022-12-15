@@ -71,6 +71,10 @@ export namespace Components {
          */
         "closing": boolean;
         /**
+          * Wether we should scroll lock the body
+         */
+        "scrollLock": boolean;
+        /**
           * The variant of the backdrop
          */
         "variant": 'modal' | 'drawer';
@@ -1653,6 +1657,10 @@ declare namespace LocalJSX {
           * When the backdrop is clicked
          */
         "onClicked"?: (event: PBackdropCustomEvent<MouseEvent>) => void;
+        /**
+          * Wether we should scroll lock the body
+         */
+        "scrollLock"?: boolean;
         /**
           * The variant of the backdrop
          */

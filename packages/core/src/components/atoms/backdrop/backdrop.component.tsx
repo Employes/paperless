@@ -31,6 +31,11 @@ export class Backdrop {
     @Prop() closing: boolean = false;
 
     /**
+     * Wether we should scroll lock the body
+     */
+    @Prop() scrollLock: boolean = true;
+
+    /**
      * When the backdrop is clicked
      */
     @Event() clicked: EventEmitter<MouseEvent>;
@@ -39,6 +44,18 @@ export class Backdrop {
      * The host element
      */
     @Element() private _el: HTMLElement;
+
+    componentWillLoad() {
+        if (this.scrollLock) {
+            document.querySelector(':root').classList.add('scroll-lock');
+        }
+    }
+
+    disconnectedCallback() {
+        if (this.scrollLock) {
+            document.querySelector(':root').classList.remove('scroll-lock');
+        }
+    }
 
     render() {
         return (

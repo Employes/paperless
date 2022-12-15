@@ -1,12 +1,12 @@
 :host {
     @apply flex;
     @apply fixed top-0 left-0 z-backdrop;
-    @apply h-screen w-screen;
+    @apply h-full w-full;
     @apply overflow-hidden;
     @apply bg-storm-dark/50 animate-fade-in;
 
     .content-container {
-        @apply overflow-y-auto w-screen h-screen;
+        @apply overflow-y-auto w-full h-full;
         @apply tablet:px-16 desktop-xs:p-16;
         @apply flex justify-center items-end desktop-xs:items-center;
     }

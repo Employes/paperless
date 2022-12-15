@@ -7,7 +7,7 @@ import {
     Host,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import {
     addDays,
@@ -27,7 +27,7 @@ import {
     setDate,
     setMonth,
     setYear,
-    startOfMonth
+    startOfMonth,
 } from 'date-fns';
 
 // With this, we shall hack the system in ways no one would ever have thought.
@@ -42,7 +42,7 @@ export class Calendar {
     /**
      * The variant of the button
      */
-    @Prop() variant: 'default' | 'inline' = 'default';
+    @Prop() variant: 'default' | 'embedded' = 'default';
 
     /**
      * The current value

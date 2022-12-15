@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.306](https://github.com/employes/paperless/compare/v0.1.0-alpha.305...v0.1.0-alpha.306) (2022-12-15)
+
+
+### Features
+
+* **Molecules/Calendar:** Add hover state to month & year ([6ec7cfc](https://github.com/employes/paperless/commit/6ec7cfc3143a08ef4e84895477c4dcafa5eb9133))
+
+
+
+
+
 # [0.1.0-alpha.305](https://github.com/employes/paperless/compare/v0.1.0-alpha.304...v0.1.0-alpha.305) (2022-12-15)
 
 

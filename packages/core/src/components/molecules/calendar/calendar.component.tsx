@@ -229,7 +229,7 @@ export class Calendar {
                             onClick={() => this._changeView('month')}
                             class={!this._canChangeView('month') && 'disabled'}
                         >
-                            {format(this._viewDate, 'MMMM')}{' '}
+                            {format(this._viewDate, 'MMMM')}
                         </span>
                         <span
                             onClick={() => this._changeView('year')}
@@ -465,7 +465,6 @@ export class Calendar {
 
         const active = items.querySelector('.year.active') as HTMLElement;
         if (active) {
-            console.log('active', active, active.scrollTop);
             return items.scrollTo({
                 top: active.offsetTop,
             });

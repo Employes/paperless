@@ -15,10 +15,14 @@
         @apply w-full;
 
         span {
-            @apply cursor-pointer;
+            @apply cursor-pointer h-8 px-2 rounded text-storm;
 
             &.disabled {
                 @apply cursor-default;
+            }
+
+            &:hover:not(.disabled) {
+                @apply bg-indigo-light;
             }
 
             &.year {
@@ -34,7 +38,7 @@
             transition-duration: 0.2s;
 
             &:hover:not(.disabled) {
-                @apply bg-mystic-dark;
+                @apply bg-indigo-light;
             }
 
             &.disabled {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.307](https://github.com/employes/paperless/compare/v0.1.0-alpha.306...v0.1.0-alpha.307) (2022-12-15)
+
+
+### Features
+
+* **Molecules/Dates:** Cleaning up some weird quirks ([c890c95](https://github.com/employes/paperless/commit/c890c9527b5ebbecab24c667f2262b014988ac66))
+
+
+
+
+
 # [0.1.0-alpha.306](https://github.com/employes/paperless/compare/v0.1.0-alpha.305...v0.1.0-alpha.306) (2022-12-15)
 
 

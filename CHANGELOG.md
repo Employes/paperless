@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.303](https://github.com/employes/paperless/compare/v0.1.0-alpha.302...v0.1.0-alpha.303) (2022-12-15)
+
+
+### Features
+
+* **Atoms/Input:** Add toggle variant of checkbox ([232fbc3](https://github.com/employes/paperless/commit/232fbc3934462ad326dfce92c6583b0dea7de70d))
+
+
+
+
+
 # [0.1.0-alpha.302](https://github.com/employes/paperless/compare/v0.1.0-alpha.301...v0.1.0-alpha.302) (2022-12-15)
 
 

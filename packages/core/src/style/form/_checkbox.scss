@@ -71,16 +71,16 @@ input[type='checkbox'].p-toggle {
     &:after {
         content: '';
         @apply block w-4 h-4 rounded-round;
-        @apply bg-mystic-dark;
+        @apply bg-mystic-dark transition-transform duration-100 translate-x-0;
     }
 
     &[checked],
     &:checked,
     &.checked {
-        @apply justify-end bg-indigo border-indigo;
+        @apply bg-indigo border-indigo;
 
         &:after {
-            @apply bg-white;
+            @apply bg-white translate-x-3;
         }
     }
 

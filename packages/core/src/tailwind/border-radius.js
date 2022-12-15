@@ -1,4 +1,5 @@
 module.exports = {
+    xxxlarge: '1.5625rem',
     xxlarge: '0.75rem',
     xlarge: '0.5625rem',
     large: '0.375rem',

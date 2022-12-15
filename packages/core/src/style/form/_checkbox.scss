@@ -60,3 +60,52 @@ input[type='checkbox'].p-input {
         }
     }
 }
+
+input[type='checkbox'].p-toggle {
+    @apply appearance-none;
+    @apply bg-white h-6 w-[2.375rem] p-1;
+    @apply flex justify-start items-center;
+    @apply rounded-xxxlarge;
+    @apply border border-mystic-dark border-solid;
+
+    &:after {
+        content: '';
+        @apply block w-4 h-4 rounded-round;
+        @apply bg-mystic-dark;
+    }
+
+    &[checked],
+    &:checked,
+    &.checked {
+        @apply justify-end bg-indigo border-indigo;
+
+        &:after {
+            @apply bg-white;
+        }
+    }
+
+    &[disabled],
+    &:disabled,
+    &.disabled {
+        @include inputDisabledState();
+    }
+
+    &:hover:not(:disabled):not([disabled]):not(.disabled) {
+        @apply cursor-pointer;
+    }
+
+    &:hover:not(:disabled):not([disabled]):not(.disabled):not(:checked):not([checked]):not(.checked) {
+        @apply border-indigo;
+    }
+
+    &[error],
+    &.error {
+        @include inputErrorState();
+
+        &[checked],
+        &:checked,
+        &.checked {
+            @apply bg-negative;
+        }
+    }
+}

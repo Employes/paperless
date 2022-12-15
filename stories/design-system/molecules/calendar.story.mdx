@@ -1,0 +1,77 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../categories';
+import Docs from '../../../packages/core/src/components/molecules/calendar/readme.md';
+
+<Meta title={`${StoryCategories.Molecules}/Calendar`} />
+
+<Docs />
+
+# Examples
+
+## Modes
+
+### Day
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar />
+    </div>
+</Canvas>
+
+### Month
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar mode="month" />
+    </div>
+</Canvas>
+
+### Year
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar mode="year" />
+    </div>
+</Canvas>
+
+## Other options
+
+### Prefilled on 2022-12-15
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar value="2022-12-15" />
+    </div>
+</Canvas>
+
+### Min date on 2022-12-15
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar min-date="2022-12-15" />
+    </div>
+</Canvas>
+
+### Max date on 2022-12-15
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar max-date="2022-12-15" />
+    </div>
+</Canvas>
+
+### Between 2022-01-01 and 2022-12-31
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar min-date="2022-01-01" max-date="2022-12-31" />
+    </div>
+</Canvas>
+
+### Between 2022-12-01 and 2022-12-31
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar min-date="2022-12-01" max-date="2022-12-31" />
+    </div>
+</Canvas>

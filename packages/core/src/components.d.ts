@@ -137,6 +137,32 @@ export namespace Components {
          */
         "variant": 'primary' | 'secondary' | 'text';
     }
+    interface PCalendar {
+        /**
+          * Disabled dates
+         */
+        "disabledDates"?: Array<Date | 'string'>;
+        /**
+          * Max date
+         */
+        "maxDate": Date | 'string';
+        /**
+          * Min date
+         */
+        "minDate": Date | 'string';
+        /**
+          * The mode of the datepicker
+         */
+        "mode": 'year' | 'month' | 'day';
+        /**
+          * The current value
+         */
+        "value"?: Date | 'string';
+        /**
+          * The variant of the button
+         */
+        "variant": 'default' | 'inline';
+    }
     interface PCardBody {
         /**
           * Wether the button should inherit text styles
@@ -1146,6 +1172,10 @@ export interface PButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPButtonElement;
 }
+export interface PCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPCalendarElement;
+}
 export interface PDrawerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDrawerElement;
@@ -1232,6 +1262,12 @@ declare global {
     var HTMLPButtonElement: {
         prototype: HTMLPButtonElement;
         new (): HTMLPButtonElement;
+    };
+    interface HTMLPCalendarElement extends Components.PCalendar, HTMLStencilElement {
+    }
+    var HTMLPCalendarElement: {
+        prototype: HTMLPCalendarElement;
+        new (): HTMLPCalendarElement;
     };
     interface HTMLPCardBodyElement extends Components.PCardBody, HTMLStencilElement {
     }
@@ -1551,6 +1587,7 @@ declare global {
         "p-avatar-group": HTMLPAvatarGroupElement;
         "p-backdrop": HTMLPBackdropElement;
         "p-button": HTMLPButtonElement;
+        "p-calendar": HTMLPCalendarElement;
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
         "p-card-header": HTMLPCardHeaderElement;
@@ -1735,6 +1772,36 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
+    }
+    interface PCalendar {
+        /**
+          * Disabled dates
+         */
+        "disabledDates"?: Array<Date | 'string'>;
+        /**
+          * Max date
+         */
+        "maxDate"?: Date | 'string';
+        /**
+          * Min date
+         */
+        "minDate"?: Date | 'string';
+        /**
+          * The mode of the datepicker
+         */
+        "mode"?: 'year' | 'month' | 'day';
+        /**
+          * Event when the value changes
+         */
+        "onValueChange"?: (event: PCalendarCustomEvent<any>) => void;
+        /**
+          * The current value
+         */
+        "value"?: Date | 'string';
+        /**
+          * The variant of the button
+         */
+        "variant"?: 'default' | 'inline';
     }
     interface PCardBody {
         /**
@@ -2877,6 +2944,7 @@ declare namespace LocalJSX {
         "p-avatar-group": PAvatarGroup;
         "p-backdrop": PBackdrop;
         "p-button": PButton;
+        "p-calendar": PCalendar;
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
         "p-card-header": PCardHeader;
@@ -2940,6 +3008,7 @@ declare module "@stencil/core" {
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-backdrop": LocalJSX.PBackdrop & JSXBase.HTMLAttributes<HTMLPBackdropElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
+            "p-calendar": LocalJSX.PCalendar & JSXBase.HTMLAttributes<HTMLPCalendarElement>;
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;

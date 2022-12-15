@@ -46,6 +46,11 @@ export class Drawer {
     @Prop() canClose: boolean = true;
 
     /**
+     * Wether we should scroll lock the body
+     */
+    @Prop() scrollLock: boolean = true;
+
+    /**
      * Close click event
      */
     @Event() closeClicked: EventEmitter<{
@@ -88,6 +93,7 @@ export class Drawer {
                     applyBlur={this.applyBlur}
                     onClicked={(ev) => this._backdropClick(ev.detail)}
                     closing={this._closing}
+                    scrollLock={this.scrollLock}
                 >
                     <p-drawer-container closing={this._closing}>
                         {(this.header?.length || this._hasHeaderSlot) && (

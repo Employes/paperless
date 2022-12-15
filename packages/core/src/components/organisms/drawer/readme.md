@@ -13,6 +13,7 @@
 | `backdropClickClose` | `backdrop-click-close` | Wether to hide the drawer when the backdrop is clicked | `boolean` | `true`      |
 | `canClose`           | `can-close`            | Wether the drawer can be closed                        | `boolean` | `true`      |
 | `header`             | `header`               | The Header of the drawer                               | `string`  | `undefined` |
+| `scrollLock`         | `scroll-lock`          | Wether we should scroll lock the body                  | `boolean` | `true`      |
 | `show`               | `show`                 | Wether to show the drawer or not                       | `boolean` | `false`     |
 | `showClose`          | `show-close`           | Wether to show the close on mobile in the header       | `boolean` | `true`      |
 

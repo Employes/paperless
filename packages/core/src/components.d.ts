@@ -211,6 +211,10 @@ export namespace Components {
          */
         "header"?: string;
         /**
+          * Wether we should scroll lock the body
+         */
+        "scrollLock": boolean;
+        /**
           * Wether to show the drawer or not
          */
         "show": boolean;
@@ -1812,6 +1816,10 @@ declare namespace LocalJSX {
           * Closed event
          */
         "onClosed"?: (event: PDrawerCustomEvent<null>) => void;
+        /**
+          * Wether we should scroll lock the body
+         */
+        "scrollLock"?: boolean;
         /**
           * Wether to show the drawer or not
          */

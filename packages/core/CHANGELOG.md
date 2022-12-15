@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.308](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.307...v0.1.0-alpha.308) (2022-12-15)
+
+
+### Features
+
+* **Atoms/Input/Toggle:** Add transition ([30bd16b](https://github.com/ionic-team/stencil-component-starter/commit/30bd16b907ec8b39b27ed251990a91c83b49641e))
+
+
+
+
+
 # [0.1.0-alpha.307](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.306...v0.1.0-alpha.307) (2022-12-15)
 
 

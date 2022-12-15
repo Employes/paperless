@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.302](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.301...v0.1.0-alpha.302) (2022-12-15)
+
+
+### Bug Fixes
+
+* **Core/Tailwind:** Add max-w-screen ([1eb9b3d](https://github.com/ionic-team/stencil-component-starter/commit/1eb9b3d55c992fb5a679cb98410ea74905905675))
+
+
+### Features
+
+* **Atoms/Backdrop:** Add max width & height + overflow x hidden ([ca6bf01](https://github.com/ionic-team/stencil-component-starter/commit/ca6bf01619d03c8fa0c0bc16aea762641a5ddc0f))
+
+
+
+
+
 # [0.1.0-alpha.301](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.300...v0.1.0-alpha.301) (2022-12-15)
 
 

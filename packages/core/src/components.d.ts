@@ -141,7 +141,7 @@ export namespace Components {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'>;
+        "disabledDates"?: Array<Date | 'string'> | string;
         /**
           * Max date
          */
@@ -155,13 +155,17 @@ export namespace Components {
          */
         "mode": 'year' | 'month' | 'day';
         /**
+          * Wethter to automatically preselect today
+         */
+        "preselectToday": boolean;
+        /**
           * The current value
          */
         "value"?: Date | 'string';
         /**
           * The variant of the button
          */
-        "variant": 'default' | 'inline';
+        "variant": 'default' | 'embedded';
     }
     interface PCardBody {
         /**
@@ -1777,7 +1781,7 @@ declare namespace LocalJSX {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'>;
+        "disabledDates"?: Array<Date | 'string'> | string;
         /**
           * Max date
          */
@@ -1795,13 +1799,17 @@ declare namespace LocalJSX {
          */
         "onValueChange"?: (event: PCalendarCustomEvent<any>) => void;
         /**
+          * Wethter to automatically preselect today
+         */
+        "preselectToday"?: boolean;
+        /**
           * The current value
          */
         "value"?: Date | 'string';
         /**
           * The variant of the button
          */
-        "variant"?: 'default' | 'inline';
+        "variant"?: 'default' | 'embedded';
     }
     interface PCardBody {
         /**

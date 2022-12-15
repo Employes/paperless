@@ -50,9 +50,14 @@ export class Calendar {
     @Prop() value?: Date | 'string';
 
     /**
+     * Wethter to automatically preselect today
+     */
+    @Prop() preselectToday: boolean = false;
+
+    /**
      * Disabled dates
      */
-    @Prop() disabledDates?: Array<Date | 'string'>;
+    @Prop() disabledDates?: Array<Date | 'string'> | string;
 
     /**
      * Min date
@@ -91,10 +96,6 @@ export class Calendar {
     private _weekDays = Array.from(Array(7).keys());
 
     componentWillLoad() {
-        if (this.value) {
-            this._parseValue(this.value);
-        }
-
         if (this.disabledDates) {
             this._parseDisabledDates(this.disabledDates);
         }
@@ -106,6 +107,8 @@ export class Calendar {
         if (this.maxDate) {
             this._parseMaxDate(this.maxDate);
         }
+
+        this._parseValue(this.value);
 
         if (this._value) {
             this._viewDate = this._value;
@@ -120,11 +123,19 @@ export class Calendar {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
+        if (!value && this.preselectToday) {
+            value = new Date();
+        }
+
         if (typeof value === 'string') {
             value = new Date(value);
         }
 
         if (!isValid(value)) {
+            return;
+        }
+
+        if (this._isDisabledDay(value)) {
             return;
         }
 
@@ -158,7 +169,11 @@ export class Calendar {
     }
 
     @Watch('disabledDates')
-    private _parseDisabledDates(disabledDates: Array<string | Date>) {
+    private _parseDisabledDates(disabledDates: Array<string | Date> | string) {
+        if (typeof disabledDates === 'string') {
+            disabledDates = JSON.parse(disabledDates);
+        }
+
         if (!disabledDates || !Array.isArray(disabledDates)) {
             return;
         }

@@ -11,14 +11,15 @@
 
 ## Properties
 
-| Property        | Attribute  | Description                | Type                         | Default                    |
-| --------------- | ---------- | -------------------------- | ---------------------------- | -------------------------- |
-| `disabledDates` | --         | Disabled dates             | `("string" \| Date)[]`       | `undefined`                |
-| `maxDate`       | `max-date` | Max date                   | `"string" \| Date`           | `addYears(new Date(), 50)` |
-| `minDate`       | `min-date` | Min date                   | `"string" \| Date`           | `new Date(1970, 0, 1)`     |
-| `mode`          | `mode`     | The mode of the datepicker | `"day" \| "month" \| "year"` | `'day'`                    |
-| `value`         | `value`    | The current value          | `"string" \| Date`           | `undefined`                |
-| `variant`       | `variant`  | The variant of the button  | `"default" \| "inline"`      | `'default'`                |
+| Property         | Attribute         | Description                              | Type                             | Default                    |
+| ---------------- | ----------------- | ---------------------------------------- | -------------------------------- | -------------------------- |
+| `disabledDates`  | `disabled-dates`  | Disabled dates                           | `("string" \| Date)[] \| string` | `undefined`                |
+| `maxDate`        | `max-date`        | Max date                                 | `"string" \| Date`               | `addYears(new Date(), 50)` |
+| `minDate`        | `min-date`        | Min date                                 | `"string" \| Date`               | `new Date(1970, 0, 1)`     |
+| `mode`           | `mode`            | The mode of the datepicker               | `"day" \| "month" \| "year"`     | `'day'`                    |
+| `preselectToday` | `preselect-today` | Wethter to automatically preselect today | `boolean`                        | `false`                    |
+| `value`          | `value`           | The current value                        | `"string" \| Date`               | `undefined`                |
+| `variant`        | `variant`         | The variant of the button                | `"default" \| "embedded"`        | `'default'`                |
 
 
 ## Events

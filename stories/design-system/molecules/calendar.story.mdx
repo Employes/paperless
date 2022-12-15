@@ -36,11 +36,27 @@ import Docs from '../../../packages/core/src/components/molecules/calendar/readm
 
 ## Other options
 
-### Prefilled on 2022-12-15
+### Prefilled on 2022-12-01
 
 <Canvas>
     <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
-        <p-calendar value="2022-12-15" />
+        <p-calendar value="2022-12-01" />
+    </div>
+</Canvas>
+
+### Preselect today
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar preselect-today />
+    </div>
+</Canvas>
+
+### Disabled 2022-12-15, 2022-12-20, 2022-12-31
+
+<Canvas>
+    <div class="flex h-92 p-12 justify-center items-center bg-mystic-dark">
+        <p-calendar disabled-dates='["2022-12-15","2022-12-20","2022-12-31"]' />
     </div>
 </Canvas>
 

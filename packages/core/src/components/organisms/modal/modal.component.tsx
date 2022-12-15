@@ -55,6 +55,11 @@ export class Modal {
     @Prop() backdropClickClose = true;
 
     /**
+     * Wether we should scroll lock the body
+     */
+    @Prop() scrollLock: boolean = true;
+
+    /**
      * Close click event
      */
     @Event() closeClicked: EventEmitter<MouseEvent>;
@@ -98,6 +103,7 @@ export class Modal {
                     applyBlur={this.applyBlur}
                     onClicked={(ev) => this._backdropClick(ev.detail)}
                     closing={this._closing}
+                    scrollLock={this.scrollLock}
                 >
                     <p-modal-container size={this.size} closing={this._closing}>
                         {(this.header?.length || this._hasHeaderSlot) && (

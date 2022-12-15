@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.305](https://github.com/employes/paperless/compare/v0.1.0-alpha.304...v0.1.0-alpha.305) (2022-12-15)
+
+
+### Features
+
+* **Molecules/Calendar:** Parse `disabledDates` json & add `preselectToday` property ([3d85dda](https://github.com/employes/paperless/commit/3d85dda3cb0196800ce15f6ae27da01045088d5b))
+
+
+
+
+
 # [0.1.0-alpha.304](https://github.com/employes/paperless/compare/v0.1.0-alpha.303...v0.1.0-alpha.304) (2022-12-15)
 
 

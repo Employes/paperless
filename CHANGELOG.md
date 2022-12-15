@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.301](https://github.com/employes/paperless/compare/v0.1.0-alpha.300...v0.1.0-alpha.301) (2022-12-15)
+
+
+### Features
+
+* **Atoms/Backdrop:** Add scroll-lock & fix sizing ([e1e1d1f](https://github.com/employes/paperless/commit/e1e1d1f3f16c4a8570228833780ffc3045ce2b8a))
+* **Global/Style:** Add `scroll-lock` helper ([47e59cc](https://github.com/employes/paperless/commit/47e59cc818ebc793daabb31f08627bde41ed9d0a))
+* **Organisms/Drawer:** Add scroll-lock property ([596837f](https://github.com/employes/paperless/commit/596837fc2eb7982b875f9d444a49068cd1a27fbe))
+* **Organisms/Modal:** Add scroll-lock property ([efe42d8](https://github.com/employes/paperless/commit/efe42d89d9d6c7165f7dbe32daeb1d74e6294d12))
+
+
+
+
+
 # [0.1.0-alpha.300](https://github.com/employes/paperless/compare/v0.1.0-alpha.299...v0.1.0-alpha.300) (2022-12-13)
 
 

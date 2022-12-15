@@ -27,6 +27,7 @@ import {
     setDate,
     setMonth,
     setYear,
+    startOfDay,
     startOfMonth,
 } from 'date-fns';
 
@@ -67,7 +68,7 @@ export class Calendar {
     /**
      * Max date
      */
-    @Prop() maxDate: Date | 'string' = addYears(new Date(), 50);
+    @Prop() maxDate: Date | 'string' = this._getAutomaticMax();
 
     /**
      * The mode of the datepicker
@@ -139,7 +140,7 @@ export class Calendar {
             return;
         }
 
-        this._value = value;
+        this._setValue(value);
     }
 
     @Watch('minDate')
@@ -332,7 +333,9 @@ export class Calendar {
             <div class="view-year">
                 <div class="header">
                     <div>
-                        <span class="year">-</span>
+                        <span class="year">
+                            {years?.[0].year} - {years?.[years.length - 1].year}
+                        </span>
                     </div>
                 </div>
                 <div class="items">
@@ -396,7 +399,14 @@ export class Calendar {
             return;
         }
 
+        value = startOfDay(value);
+        const shouldEmit = value !== this._value;
+
         this._value = value;
+        if (!shouldEmit) {
+            return;
+        }
+
         this.valueChange.emit(value);
     }
 
@@ -527,5 +537,14 @@ export class Calendar {
         }
 
         return true;
+    }
+
+    private _getAutomaticMax() {
+        const date = addYears(new Date(), 50);
+
+        let year = getYear(date);
+        year = Math.ceil(year / 10) * 10;
+
+        return setYear(date, year);
     }
 }

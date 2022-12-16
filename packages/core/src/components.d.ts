@@ -518,9 +518,9 @@ export namespace Components {
          */
         "show": boolean;
         /**
-          * Wether to show the close on mobile in the header
+          * Wether to show the close button in the header
          */
-        "showMobileClose": boolean;
+        "showClose": boolean;
         /**
           * Wether to show the footer on mobile
          */
@@ -2189,9 +2189,9 @@ declare namespace LocalJSX {
          */
         "show"?: boolean;
         /**
-          * Wether to show the close on mobile in the header
+          * Wether to show the close button in the header
          */
-        "showMobileClose"?: boolean;
+        "showClose"?: boolean;
         /**
           * Wether to show the footer on mobile
          */

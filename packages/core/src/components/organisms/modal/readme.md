@@ -21,7 +21,7 @@
 | `header`             | `header`               | The Header of the modal                               | `string`                       | `undefined` |
 | `scrollLock`         | `scroll-lock`          | Wether we should scroll lock the body                 | `boolean`                      | `true`      |
 | `show`               | `show`                 | Wether to show the modal or not                       | `boolean`                      | `false`     |
-| `showMobileClose`    | `show-mobile-close`    | Wether to show the close on mobile in the header      | `boolean`                      | `true`      |
+| `showClose`          | `show-close`           | Wether to show the close button in the header         | `boolean`                      | `true`      |
 | `showMobileFooter`   | `show-mobile-footer`   | Wether to show the footer on mobile                   | `boolean`                      | `false`     |
 | `size`               | `size`                 | The size of the modal container                       | `"lg" \| "md" \| "sm" \| "xl"` | `'md'`      |
 | `variant`            | `variant`              | The variant of the modal body                         | `"default" \| "table"`         | `'default'` |

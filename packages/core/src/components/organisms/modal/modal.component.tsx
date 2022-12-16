@@ -40,9 +40,9 @@ export class Modal {
     @Prop() applyBlur: boolean = false;
 
     /**
-     * Wether to show the close on mobile in the header
+     * Wether to show the close button in the header
      */
-    @Prop() showMobileClose = true;
+    @Prop() showClose = true;
 
     /**
      * Wether to show the footer on mobile
@@ -108,7 +108,7 @@ export class Modal {
                     <p-modal-container size={this.size} closing={this._closing}>
                         {(this.header?.length || this._hasHeaderSlot) && (
                             <p-modal-header
-                                show-mobile-close={this.showMobileClose}
+                                showClose={this.showClose}
                                 onClose={(ev) => this.close(ev.detail)}
                             >
                                 {this._hasHeaderSlot
@@ -123,11 +123,7 @@ export class Modal {
                             {bodyContent}
                         </p-modal-body>
                         {this._hasFooterSlot && (
-                            <p-modal-footer
-                                hide-on-mobile={this.showMobileFooter}
-                            >
-                                {footerContent}
-                            </p-modal-footer>
+                            <p-modal-footer>{footerContent}</p-modal-footer>
                         )}
                     </p-modal-container>
                 </p-backdrop>

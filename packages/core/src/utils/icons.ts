@@ -27,6 +27,7 @@ import menu from '../assets/icons/menu.svg';
 import minus from '../assets/icons/minus.svg';
 import more from '../assets/icons/more.svg';
 import negative from '../assets/icons/negative.svg';
+import notification from '../assets/icons/notification.svg';
 import pagination from '../assets/icons/pagination.svg';
 import payment from '../assets/icons/payment.svg';
 import pencil from '../assets/icons/pencil.svg';
@@ -80,6 +81,7 @@ export default {
     minus,
     more,
     negative,
+    notification,
     pagination,
     payment,
     pencil,

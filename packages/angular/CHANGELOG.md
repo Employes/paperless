@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.311](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.310...v0.1.0-alpha.311) (2022-12-16)
+
+
+### Features
+
+* **Angular/OverlayRef:** Add `closed$` subject ([1779bc3](https://github.com/Employes/Paperless/commit/1779bc3ffa32c86e7f07ca834249d3e14d1f6675))
+
+
+
+
+
 # [0.1.0-alpha.310](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.309...v0.1.0-alpha.310) (2022-12-16)
 
 **Note:** Version bump only for package @paperless/angular

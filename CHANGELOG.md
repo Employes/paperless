@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.310](https://github.com/employes/paperless/compare/v0.1.0-alpha.309...v0.1.0-alpha.310) (2022-12-16)
+
+
+### Bug Fixes
+
+* **Organisms/Modal:** Fix canClose property ([483ba4e](https://github.com/employes/paperless/commit/483ba4e5c708102918a37e290680c5e70c7bd53d))
+
+
+
+
+
 # [0.1.0-alpha.309](https://github.com/employes/paperless/compare/v0.1.0-alpha.308...v0.1.0-alpha.309) (2022-12-16)
 
 

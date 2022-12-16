@@ -9,7 +9,7 @@ import {
 @Component({
     template: ``,
 })
-export abstract class FormBaseComponent {
+export abstract class BaseFormComponent {
     public markedDirty = false;
 
     scrollToFirstError() {

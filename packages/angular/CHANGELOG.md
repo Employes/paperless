@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.309](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.308...v0.1.0-alpha.309) (2022-12-16)
+
+
+### Bug Fixes
+
+* **Angular:** Rename BaseFormComponent to FormBaseComponent ([80ece89](https://github.com/Employes/Paperless/commit/80ece89b88984f29b8ba3c9b40e3e009bf6e1633))
+* **Angular:** Use correct import ([847b3fa](https://github.com/Employes/Paperless/commit/847b3fa6474154244970aa746637e8b9efbc3769))
+
+
+
+
+
 # [0.1.0-alpha.308](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.307...v0.1.0-alpha.308) (2022-12-15)
 
 **Note:** Version bump only for package @paperless/angular

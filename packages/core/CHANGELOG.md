@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.309](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.308...v0.1.0-alpha.309) (2022-12-16)
+
+
+### Bug Fixes
+
+* **Atoms/Label:** Change gap-1 to gap-2 ([38302af](https://github.com/ionic-team/stencil-component-starter/commit/38302af1daa7fbca9eb3c62f381abf93bafd852b))
+
+
+### Features
+
+* **Atoms/Icon:** Add notification icon ([6ccf4c8](https://github.com/ionic-team/stencil-component-starter/commit/6ccf4c83f6f5dcc9bfc850c2aed422571b161096))
+
+
+
+
+
 # [0.1.0-alpha.308](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.307...v0.1.0-alpha.308) (2022-12-15)
 
 

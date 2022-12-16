@@ -5,7 +5,7 @@ import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
 import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
 import { createFormFilters } from '../utils';
-import { FormBaseComponent } from './form.component';
+import { BaseFormComponent } from './form.component';
 
 export type TableQuickFilter = QuickFilter & {
     value: string;
@@ -26,7 +26,7 @@ export interface TableOptions {
     template: ``,
 })
 export abstract class BaseTableComponent
-    extends FormBaseComponent
+    extends BaseFormComponent
     implements OnInit
 {
     protected quickFilters: any[] = [];

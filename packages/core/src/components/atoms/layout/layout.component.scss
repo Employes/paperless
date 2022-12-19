@@ -93,7 +93,14 @@
             @apply box-border;
             @apply desktop-xs:py-0 desktop-xs:px-18;
             @apply w-full tablet:w-content-desktop-login;
-            @apply pt-14 desktop-xs:pt-content-mobile-y;
+
+            padding: calc(env(safe-area-inset-top) + 3.5rem)
+                env(safe-area-inset-right) env(safe-area-inset-bottom)
+                env(safe-area-inset-left);
+
+            @screen desktop-xs {
+                @apply pt-content-mobile-y;
+            }
         }
     }
 }

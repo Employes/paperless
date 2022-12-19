@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.315](https://github.com/employes/paperless/compare/v0.1.0-alpha.314...v0.1.0-alpha.315) (2022-12-19)
+
+
+### Features
+
+* **Atoms/Layout:** Make sure we consider safe-area on login ([7e0fd0d](https://github.com/employes/paperless/commit/7e0fd0d69b3f441d420c0e566b2a506295a736cb))
+
+
+
+
+
 # [0.1.0-alpha.314](https://github.com/employes/paperless/compare/v0.1.0-alpha.313...v0.1.0-alpha.314) (2022-12-19)
 
 

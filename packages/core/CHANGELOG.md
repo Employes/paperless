@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.316](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.315...v0.1.0-alpha.316) (2022-12-19)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Didn't use correct paddings ([4efe80b](https://github.com/ionic-team/stencil-component-starter/commit/4efe80b9bae0901baea7b1ad752c86f1d1699436))
+
+
+
+
+
 # [0.1.0-alpha.315](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.314...v0.1.0-alpha.315) (2022-12-19)
 
 

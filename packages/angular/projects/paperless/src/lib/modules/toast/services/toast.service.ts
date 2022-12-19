@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 import { ToastData, ToastOptions, ToastVariants } from '../types';
 
 @Injectable({
@@ -34,17 +35,27 @@ export class ToastService {
                 : this.defaultOptions.icon,
         };
 
+        const identifier = uuidv4();
+
         this._toasts.push({
+            identifier,
             header,
             content,
             variant,
             options,
         });
         this.toasts$.next(this._toasts);
+
+        return identifier;
     }
 
-    hide(index: number) {
+    hide(id: string) {
+        const index = this._toasts.findIndex(
+            ({ identifier }) => identifier === id
+        );
         this._toasts.splice(index, 1);
         this.toasts$.next(this._toasts);
+
+        return id;
     }
 }

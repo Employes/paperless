@@ -40,7 +40,7 @@ export class ToastContainer {
         this.el = r.nativeElement;
     }
 
-    dismiss(index: number) {
-        this._toastService.hide(index);
+    dismiss(identifier: string) {
+        this._toastService.hide(identifier);
     }
 }

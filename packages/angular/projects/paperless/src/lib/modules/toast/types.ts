@@ -35,6 +35,7 @@ export interface ToastOptions {
 }
 
 export interface ToastData {
+    identifier: string;
     variant: ToastVariants;
     header: string;
     content: string;

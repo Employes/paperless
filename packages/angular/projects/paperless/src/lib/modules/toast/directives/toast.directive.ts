@@ -9,12 +9,12 @@ import { ToastActionFunction } from '../types';
 })
 export class ToastDirective {
     @Input() delay: number | 'infinite' = 5000;
-    @Input() index: number = 0;
+    @Input() identifier!: string;
     @Input() dismissOnAction: boolean = true;
     @Input() actionFunc?: ToastActionFunction;
     @Input() actionData: any = {};
 
-    @Output() dismiss: EventEmitter<number> = new EventEmitter();
+    @Output() dismiss: EventEmitter<string> = new EventEmitter();
 
     ngOnInit(): void {
         if (this.delay === 'infinite' || this.delay === 0) {
@@ -35,6 +35,6 @@ export class ToastDirective {
     }
 
     doDismiss() {
-        this.dismiss.next(this.index);
+        this.dismiss.next(this.identifier);
     }
 }

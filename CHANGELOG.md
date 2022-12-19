@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.314](https://github.com/employes/paperless/compare/v0.1.0-alpha.313...v0.1.0-alpha.314) (2022-12-19)
+
+
+### Features
+
+* **Angular/Toast:** Implement identifier ([af2e800](https://github.com/employes/paperless/commit/af2e800d789d1b734af2e583472e71fe06581d0f))
+
+
+
+
+
 # [0.1.0-alpha.313](https://github.com/employes/paperless/compare/v0.1.0-alpha.312...v0.1.0-alpha.313) (2022-12-19)
 
 

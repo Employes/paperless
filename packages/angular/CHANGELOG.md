@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.312](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.311...v0.1.0-alpha.312) (2022-12-19)
+
+
+### Features
+
+* **Angular:** Export animations & Add fade animations ([77c8308](https://github.com/Employes/Paperless/commit/77c8308b9bd71eac0185363527e401ec5e03ee35))
+
+
+
+
+
 # [0.1.0-alpha.311](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.310...v0.1.0-alpha.311) (2022-12-16)
 
 

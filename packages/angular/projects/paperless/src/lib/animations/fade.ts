@@ -6,7 +6,7 @@ export const FADE_IN = trigger('pFadeIn', [
             opacity: 0,
         }),
         animate(
-            '1s ease-in',
+            '.2s ease-in',
             style({
                 opacity: 1,
             })
@@ -20,7 +20,7 @@ export const FADE_OUT = trigger('pFadeOut', [
             opacity: 1,
         }),
         animate(
-            '1s ease-out',
+            '.2s ease-out',
             style({
                 opacity: 0,
             })

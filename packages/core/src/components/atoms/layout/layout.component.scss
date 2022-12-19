@@ -94,9 +94,8 @@
             @apply desktop-xs:py-0 desktop-xs:px-18;
             @apply w-full tablet:w-content-desktop-login;
 
-            padding: calc(env(safe-area-inset-top) + 3.5rem)
-                env(safe-area-inset-right) env(safe-area-inset-bottom)
-                env(safe-area-inset-left);
+            @apply px-content-mobile-x py-content-mobile-y;
+            padding-top: calc(env(safe-area-inset-top) + 3.5rem);
 
             @screen desktop-xs {
                 @apply pt-content-mobile-y;

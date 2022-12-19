@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.313](https://github.com/employes/paperless/compare/v0.1.0-alpha.312...v0.1.0-alpha.313) (2022-12-19)
+
+
+### Bug Fixes
+
+* **Angular:** Decrease fade in/out animation duration ([1b9776e](https://github.com/employes/paperless/commit/1b9776e972633594d87a61eec2e5f6ebfcb1db31))
+
+
+
+
+
 # [0.1.0-alpha.312](https://github.com/employes/paperless/compare/v0.1.0-alpha.311...v0.1.0-alpha.312) (2022-12-19)
 
 

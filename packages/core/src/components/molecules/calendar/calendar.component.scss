@@ -1,17 +1,17 @@
 :host {
-    @apply block bg-white p-5;
-    @apply w-[19.75rem];
+    @apply block bg-white p-2;
+    @apply w-[14rem];
 
     .view-day,
     .view-month,
     .view-year {
-        @apply flex flex-col gap-4;
-        @apply w-full h-[17.25rem];
+        @apply flex flex-col gap-2;
+        @apply w-full h-[12rem];
     }
 
     .header {
-        @apply flex justify-between items-center gap-3;
-        @apply text-xl;
+        @apply flex justify-between items-center gap-1;
+        @apply text-base;
         @apply w-full;
 
         span {
@@ -34,7 +34,7 @@
             @apply relative flex justify-center items-center cursor-pointer;
             @apply no-underline;
             @apply text-indigo;
-            @apply w-8 h-8 rounded-round;
+            @apply w-6 h-6 rounded-round;
             transition-duration: 0.2s;
 
             &:hover:not(.disabled) {
@@ -53,19 +53,19 @@
             grid-template-columns: repeat(7, 1fr);
 
             > span {
-                @apply text-storm-medium font-semibold;
-                @apply w-9;
+                @apply text-storm-medium font-semibold text-xs;
+                @apply w-6;
                 @apply self-center justify-self-center text-center;
             }
 
             > time {
                 @apply flex justify-center items-center;
                 @apply cursor-pointer;
-                @apply w-9 h-9 box-border;
+                @apply w-6 h-6 box-border;
                 @apply justify-self-center self-center;
                 @apply rounded-round;
 
-                @apply text-storm;
+                @apply text-storm text-sm;
                 @apply border border-solid border-transparent;
 
                 transition-duration: 0.2s;
@@ -99,6 +99,7 @@
         .items {
             @apply relative grid overflow-y-auto gap-1 w-full;
             @apply h-full items-center;
+            grid-template-columns: repeat(3, 1fr);
 
             > div {
                 @apply cursor-pointer;
@@ -136,9 +137,6 @@
     .view-year {
         .header {
             @apply justify-center;
-        }
-        .items {
-            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

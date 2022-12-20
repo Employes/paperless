@@ -331,6 +331,14 @@ export namespace Components {
     }
     interface PDropdown {
         /**
+          * Wether to apply the full width
+         */
+        "applyFullWidth": boolean;
+        /**
+          * Wether to apply the max width
+         */
+        "applyMaxWidth": boolean;
+        /**
           * Wether to automatically calculate the width of the menu based on the trigger
          */
         "calculateWidth": boolean;
@@ -2066,6 +2074,14 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PDropdown {
+        /**
+          * Wether to apply the full width
+         */
+        "applyFullWidth"?: boolean;
+        /**
+          * Wether to apply the max width
+         */
+        "applyMaxWidth"?: boolean;
         /**
           * Wether to automatically calculate the width of the menu based on the trigger
          */

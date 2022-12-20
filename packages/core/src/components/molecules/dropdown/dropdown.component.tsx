@@ -39,6 +39,16 @@ export class Dropdown {
     @Prop() calculateWidth: boolean = false;
 
     /**
+     * Wether to apply the max width
+     */
+    @Prop() applyMaxWidth: boolean = true;
+
+    /**
+     * Wether to apply the full width
+     */
+    @Prop() applyFullWidth: boolean = true;
+
+    /**
      * Wether to automatically close the dropdown menu after clicking inside
      */
     @Prop() insideClick: boolean = false;
@@ -92,7 +102,8 @@ export class Dropdown {
                 </div>
                 <p-dropdown-menu-container
                     role="popover"
-                    maxWidth={!this.calculateWidth}
+                    maxWidth={!this.calculateWidth && this.applyMaxWidth}
+                    fullWidth={this.applyFullWidth && !this.applyMaxWidth}
                     ref={(el) => this._load(el)}
                     onClick={() => this._containerClickHandler()}
                 >

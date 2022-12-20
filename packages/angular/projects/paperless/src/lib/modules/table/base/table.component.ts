@@ -4,8 +4,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
 import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
+import { BaseFormComponent } from '../../../base/form.component';
 import { createFormFilters } from '../utils';
-import { BaseFormComponent } from './form.component';
 
 export type TableQuickFilter = QuickFilter & {
     value: string;

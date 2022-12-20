@@ -7,7 +7,7 @@ import {
     Host,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import {
     addDays,
@@ -28,7 +28,7 @@ import {
     setMonth,
     setYear,
     startOfDay,
-    startOfMonth
+    startOfMonth,
 } from 'date-fns';
 
 // With this, we shall hack the system in ways no one would ever have thought.
@@ -337,7 +337,7 @@ export class Calendar {
             <div class="view-year">
                 <div class="header">
                     <div>
-                        <span class="year">
+                        <span class="year disabled">
                             {years?.[0].year} - {years?.[years.length - 1].year}
                         </span>
                     </div>

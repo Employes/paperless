@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.320](https://github.com/employes/paperless/compare/v0.1.0-alpha.319...v0.1.0-alpha.320) (2022-12-20)
+
+
+### Bug Fixes
+
+* **Angular:** Move Form base to root base  ([994ee32](https://github.com/employes/paperless/commit/994ee32205f77f1a61d516b6a9aec8de20b4717c))
+* **Molecules/Calendar:** Don't make year clickable in year view ([586494b](https://github.com/employes/paperless/commit/586494bdc2df08cbdd70246d8a4210f0eadc2d79))
+
+
+
+
+
 # [0.1.0-alpha.319](https://github.com/employes/paperless/compare/v0.1.0-alpha.318...v0.1.0-alpha.319) (2022-12-20)
 
 

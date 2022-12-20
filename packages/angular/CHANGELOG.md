@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.320](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.319...v0.1.0-alpha.320) (2022-12-20)
+
+
+### Bug Fixes
+
+* **Angular:** Move Form base to root base  ([994ee32](https://github.com/Employes/Paperless/commit/994ee32205f77f1a61d516b6a9aec8de20b4717c))
+
+
+
+
+
 # [0.1.0-alpha.319](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.318...v0.1.0-alpha.319) (2022-12-20)
 
 **Note:** Version bump only for package @paperless/angular

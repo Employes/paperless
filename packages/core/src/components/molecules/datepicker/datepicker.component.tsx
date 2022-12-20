@@ -16,6 +16,7 @@ import {
     isBefore,
     isSameDay,
     isValid,
+    parse,
     startOfDay,
 } from 'date-fns';
 import { childOf } from '../../../utils';
@@ -111,6 +112,8 @@ export class Datepicker {
     @State() private _minDate: Date;
     @State() private _maxDate: Date;
     @State() private _disabledDates: Date[] = [];
+
+    private _onInputTimeout: NodeJS.Timeout;
 
     private _defaultFormats = {
         year: 'yyyy',
@@ -247,12 +250,13 @@ export class Datepicker {
                             value={this.formattedDate}
                             class="p-input cursor-pointer"
                             onFocus={() => this._onFocus()}
+                            onInput={(ev) => this._onInput(ev)}
                         />
                     </p-input-group>
                     <div slot="items">
                         <p-calendar
                             variant="embedded"
-                            value={this.value}
+                            value={this._value}
                             onValueChange={({ detail }) =>
                                 this._setValue(detail)
                             }
@@ -285,21 +289,39 @@ export class Datepicker {
         this._showDropdown = false;
     }
 
-    private _setValue(value: Date) {
+    private _onInput(ev) {
+        if (this._onInputTimeout) {
+            clearTimeout(this._onInputTimeout);
+            this._onInputTimeout = null;
+        }
+
+        this._onInputTimeout = setTimeout(() => {
+            const value = parse(ev.target.value, this.format, new Date());
+            if (!isValid(value)) {
+                return;
+            }
+
+            this._setValue(value, false);
+        }, 250);
+    }
+
+    private _setValue(value: Date, blur = true) {
         if (this._isDisabledDay(value)) {
             return;
         }
 
         value = startOfDay(value);
-        const shouldEmit = value !== this._value;
+        const isSameValue = isSameDay(value, this._value);
 
-        this._value = value;
-        this._onBlur();
-
-        if (!shouldEmit) {
+        if (isSameValue) {
             return;
         }
 
+        if (blur) {
+            this._onBlur();
+        }
+
+        this._value = value;
         this.valueChange.emit(value);
     }
 

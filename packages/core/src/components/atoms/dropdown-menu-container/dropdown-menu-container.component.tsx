@@ -11,12 +11,17 @@ export class DropdownMenuContainer {
      */
     @Prop() maxWidth: boolean = true;
 
+    /**
+     * Wether the container should all available space
+     */
+    @Prop() fullWidth: boolean = true;
+
     render() {
         return (
             <Host
                 class={`p-dropdown-menu-container ${
                     this.maxWidth && 'max-width'
-                }`}
+                } ${this.fullWidth && 'full-width'}`}
             >
                 <slot />
             </Host>

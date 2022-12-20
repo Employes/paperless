@@ -1,7 +1,11 @@
 p-dropdown-menu-container {
-    @apply w-full;
+    @apply w-auto;
     @apply flex flex-col gap-[1px] p-2 bg-white rounded-xxlarge;
     @apply filter drop-shadow-4 z-10;
+
+    &.full-width {
+        @apply w-full;
+    }
 
     &.max-width {
         @apply max-w-[222px];

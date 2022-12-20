@@ -365,6 +365,10 @@ export namespace Components {
     }
     interface PDropdownMenuContainer {
         /**
+          * Wether the container should all available space
+         */
+        "fullWidth": boolean;
+        /**
           * Wether the container applies it's max width
          */
         "maxWidth": boolean;
@@ -2100,6 +2104,10 @@ declare namespace LocalJSX {
         "strategy"?: PositioningStrategy;
     }
     interface PDropdownMenuContainer {
+        /**
+          * Wether the container should all available space
+         */
+        "fullWidth"?: boolean;
         /**
           * Wether the container applies it's max width
          */

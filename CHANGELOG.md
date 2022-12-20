@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.318](https://github.com/employes/paperless/compare/v0.1.0-alpha.317...v0.1.0-alpha.318) (2022-12-20)
+
+
+### Features
+
+* **Atoms/Dropdown Menu Container:** Add full-width property ([2b49847](https://github.com/employes/paperless/commit/2b4984744027eabf76819ab3027d83aaff726ad7))
+* **Molecules/Datepicker:** Disable dropdown fullWidth & calculateWidth ([387ee3e](https://github.com/employes/paperless/commit/387ee3e770dbfbcf4d6bf073df430397bacedbe6))
+* **Molecules/Dropdown:** Add full-width property ([93b3b97](https://github.com/employes/paperless/commit/93b3b97a4a51dc8d048fa3f7749684e2bed162a1))
+
+
+
+
+
 # [0.1.0-alpha.317](https://github.com/employes/paperless/compare/v0.1.0-alpha.316...v0.1.0-alpha.317) (2022-12-20)
 
 

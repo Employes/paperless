@@ -7,7 +7,7 @@ import {
     Host,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import {
     addDays,
@@ -28,7 +28,7 @@ import {
     setMonth,
     setYear,
     startOfDay,
-    startOfMonth,
+    startOfMonth
 } from 'date-fns';
 
 // With this, we shall hack the system in ways no one would ever have thought.
@@ -137,6 +137,10 @@ export class Calendar {
         }
 
         if (this._isDisabledDay(value)) {
+            return;
+        }
+
+        if (isSameDay(this._value, value)) {
             return;
         }
 
@@ -400,13 +404,13 @@ export class Calendar {
         }
 
         value = startOfDay(value);
-        const shouldEmit = value !== this._value;
+        const isSameValue = isSameDay(value, this._value);
 
-        this._value = value;
-        if (!shouldEmit) {
+        if (isSameValue) {
             return;
         }
 
+        this._value = value;
         this.valueChange.emit(value);
     }
 

@@ -28,6 +28,7 @@
 
 ### Used by
 
+ - [p-datepicker](../datepicker)
  - [p-select](../select)
  - [p-table-header](../table-header)
 
@@ -44,6 +45,7 @@ graph TD;
   p-input-group --> p-icon
   p-input-group --> p-tooltip
   p-helper --> p-tooltip
+  p-datepicker --> p-input-group
   p-select --> p-input-group
   p-table-header --> p-input-group
   style p-input-group fill:#f9f,stroke:#333,stroke-width:4px

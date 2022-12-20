@@ -221,6 +221,64 @@ export namespace Components {
          */
         "variant": 'info' | 'negative' | 'positive' | 'unbiased';
     }
+    interface PDatepicker {
+        /**
+          * Wether the input group is disabled used by the datepicker
+         */
+        "disabled": boolean;
+        /**
+          * Disabled dates
+         */
+        "disabledDates"?: Array<Date | 'string'> | string;
+        /**
+          * The helper of the input group used by the datepicker
+         */
+        "error": string;
+        /**
+          * The display & parse format to use
+         */
+        "format": string;
+        /**
+          * The helper of the input group used by the datepicker
+         */
+        "helper": string;
+        /**
+          * The label of the input group used by the datepicker
+         */
+        "label": string;
+        /**
+          * Max date
+         */
+        "maxDate"?: Date | 'string';
+        /**
+          * Min date
+         */
+        "minDate"?: Date | 'string';
+        /**
+          * The mode of the datepicker
+         */
+        "mode": 'year' | 'month' | 'day';
+        /**
+          * The placeholder of the input
+         */
+        "placeholder": string;
+        /**
+          * The prefix of the input group used by the datepicker
+         */
+        "prefix": string;
+        /**
+          * Wethter to automatically preselect today
+         */
+        "preselectToday": boolean;
+        /**
+          * The size of the input group used by the datepicker
+         */
+        "size": 'small' | 'medium';
+        /**
+          * The current value
+         */
+        "value": any;
+    }
     interface PDivider {
     }
     interface PDrawer {
@@ -1180,6 +1238,10 @@ export interface PCalendarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPCalendarElement;
 }
+export interface PDatepickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPDatepickerElement;
+}
 export interface PDrawerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDrawerElement;
@@ -1302,6 +1364,12 @@ declare global {
     var HTMLPCounterElement: {
         prototype: HTMLPCounterElement;
         new (): HTMLPCounterElement;
+    };
+    interface HTMLPDatepickerElement extends Components.PDatepicker, HTMLStencilElement {
+    }
+    var HTMLPDatepickerElement: {
+        prototype: HTMLPDatepickerElement;
+        new (): HTMLPDatepickerElement;
     };
     interface HTMLPDividerElement extends Components.PDivider, HTMLStencilElement {
     }
@@ -1597,6 +1665,7 @@ declare global {
         "p-card-header": HTMLPCardHeaderElement;
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
+        "p-datepicker": HTMLPDatepickerElement;
         "p-divider": HTMLPDividerElement;
         "p-drawer": HTMLPDrawerElement;
         "p-drawer-body": HTMLPDrawerBodyElement;
@@ -1864,6 +1933,68 @@ declare namespace LocalJSX {
           * The variant of the counter
          */
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+    }
+    interface PDatepicker {
+        /**
+          * Wether the input group is disabled used by the datepicker
+         */
+        "disabled"?: boolean;
+        /**
+          * Disabled dates
+         */
+        "disabledDates"?: Array<Date | 'string'> | string;
+        /**
+          * The helper of the input group used by the datepicker
+         */
+        "error"?: string;
+        /**
+          * The display & parse format to use
+         */
+        "format"?: string;
+        /**
+          * The helper of the input group used by the datepicker
+         */
+        "helper"?: string;
+        /**
+          * The label of the input group used by the datepicker
+         */
+        "label"?: string;
+        /**
+          * Max date
+         */
+        "maxDate"?: Date | 'string';
+        /**
+          * Min date
+         */
+        "minDate"?: Date | 'string';
+        /**
+          * The mode of the datepicker
+         */
+        "mode"?: 'year' | 'month' | 'day';
+        /**
+          * Event when the value changes
+         */
+        "onValueChange"?: (event: PDatepickerCustomEvent<any>) => void;
+        /**
+          * The placeholder of the input
+         */
+        "placeholder"?: string;
+        /**
+          * The prefix of the input group used by the datepicker
+         */
+        "prefix"?: string;
+        /**
+          * Wethter to automatically preselect today
+         */
+        "preselectToday"?: boolean;
+        /**
+          * The size of the input group used by the datepicker
+         */
+        "size"?: 'small' | 'medium';
+        /**
+          * The current value
+         */
+        "value"?: any;
     }
     interface PDivider {
     }
@@ -2958,6 +3089,7 @@ declare namespace LocalJSX {
         "p-card-header": PCardHeader;
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
+        "p-datepicker": PDatepicker;
         "p-divider": PDivider;
         "p-drawer": PDrawer;
         "p-drawer-body": PDrawerBody;
@@ -3022,6 +3154,7 @@ declare module "@stencil/core" {
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
+            "p-datepicker": LocalJSX.PDatepicker & JSXBase.HTMLAttributes<HTMLPDatepickerElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-drawer": LocalJSX.PDrawer & JSXBase.HTMLAttributes<HTMLPDrawerElement>;
             "p-drawer-body": LocalJSX.PDrawerBody & JSXBase.HTMLAttributes<HTMLPDrawerBodyElement>;

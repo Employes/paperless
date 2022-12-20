@@ -31,6 +31,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [p-datepicker](../datepicker)
+
 ### Depends on
 
 - [p-icon](../../atoms/icon)
@@ -39,6 +43,7 @@
 ```mermaid
 graph TD;
   p-calendar --> p-icon
+  p-datepicker --> p-calendar
   style p-calendar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

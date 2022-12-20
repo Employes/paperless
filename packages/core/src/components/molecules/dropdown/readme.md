@@ -41,6 +41,7 @@
 
 ### Used by
 
+ - [p-datepicker](../datepicker)
  - [p-page-size-select](../page-size-select)
  - [p-profile](../profile)
  - [p-select](../select)
@@ -53,6 +54,7 @@
 ```mermaid
 graph TD;
   p-dropdown --> p-dropdown-menu-container
+  p-datepicker --> p-dropdown
   p-page-size-select --> p-dropdown
   p-profile --> p-dropdown
   p-select --> p-dropdown

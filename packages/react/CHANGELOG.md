@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.317](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.316...v0.1.0-alpha.317) (2022-12-20)
+
+
+### Features
+
+* **Molecules:** Add datepicker component ([190bba0](https://github.com/ionic-team/ionic/commit/190bba082bf31ee3ca43ff8cad7b5c6cbec5416b))
+
+
+
+
+
 # [0.1.0-alpha.316](https://github.com/ionic-team/ionic/compare/v0.1.0-alpha.315...v0.1.0-alpha.316) (2022-12-19)
 
 **Note:** Version bump only for package @paperless/react

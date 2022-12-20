@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.317](https://github.com/employes/paperless/compare/v0.1.0-alpha.316...v0.1.0-alpha.317) (2022-12-20)
+
+
+### Features
+
+* **Angular:** Added datepicker directive ([511cb9b](https://github.com/employes/paperless/commit/511cb9bcd813b0923a22831877b85e2e2a369fb9))
+* **Molecules/Calendar:** Scaled everything down a little ([d670ed0](https://github.com/employes/paperless/commit/d670ed00bbad14e1baae503545373c35e3b214b3))
+* **Molecules:** Add datepicker component ([190bba0](https://github.com/employes/paperless/commit/190bba082bf31ee3ca43ff8cad7b5c6cbec5416b))
+
+
+
+
+
 # [0.1.0-alpha.316](https://github.com/employes/paperless/compare/v0.1.0-alpha.315...v0.1.0-alpha.316) (2022-12-19)
 
 

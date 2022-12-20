@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.317](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.316...v0.1.0-alpha.317) (2022-12-20)
+
+
+### Features
+
+* **Angular:** Added datepicker directive ([511cb9b](https://github.com/Employes/Paperless/commit/511cb9bcd813b0923a22831877b85e2e2a369fb9))
+
+
+
+
+
 # [0.1.0-alpha.316](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.315...v0.1.0-alpha.316) (2022-12-19)
 
 **Note:** Version bump only for package @paperless/angular

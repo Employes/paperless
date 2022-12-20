@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.319](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.318...v0.1.0-alpha.319) (2022-12-20)
+
+
+### Bug Fixes
+
+* **Molecules/Calendar:** Only apply changes when value actually changed ([c80a1f8](https://github.com/ionic-team/stencil-component-starter/commit/c80a1f8b31b1e9b49f48381ef19818486a8e1cc3))
+
+
+### Features
+
+* **Molecules/Datepicker:** Add parsing of user input ([b5f89ae](https://github.com/ionic-team/stencil-component-starter/commit/b5f89ae155c944baadf56ed81b3a0f56412de2fa))
+
+
+
+
+
 # [0.1.0-alpha.318](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.317...v0.1.0-alpha.318) (2022-12-20)
 
 

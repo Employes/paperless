@@ -223,7 +223,8 @@ export class Datepicker {
             <Host class="p-datepicker">
                 <p-dropdown
                     disableTriggerClick={true}
-                    calculateWidth={true}
+                    applyMaxWidth={false}
+                    applyFullWidth={false}
                     insideClick={true}
                     show={this._showDropdown}
                 >
@@ -248,7 +249,7 @@ export class Datepicker {
                             onFocus={() => this._onFocus()}
                         />
                     </p-input-group>
-                    <div slot="items" class="flex justify-center py-2">
+                    <div slot="items">
                         <p-calendar
                             variant="embedded"
                             value={this.value}

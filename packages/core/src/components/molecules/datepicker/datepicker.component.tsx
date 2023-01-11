@@ -58,6 +58,11 @@ export class Datepicker {
     @Prop() maxDate?: Date | 'string';
 
     /**
+     * Wether to disable the weekends
+     */
+    @Prop() disableWeekends: boolean = false;
+
+    /**
      * The mode of the datepicker
      */
     @Prop() mode: 'year' | 'month' | 'day' = 'day';
@@ -264,6 +269,7 @@ export class Datepicker {
                             disabledDates={this.disabledDates}
                             minDate={this.minDate}
                             maxDate={this.maxDate}
+                            disableWeekends={this.disableWeekends}
                             mode={this.mode}
                         />
                     </div>

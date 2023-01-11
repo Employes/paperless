@@ -227,6 +227,10 @@ export namespace Components {
     }
     interface PDatepicker {
         /**
+          * Wether to disable the weekends
+         */
+        "disableWeekends": boolean;
+        /**
           * Wether the input group is disabled used by the datepicker
          */
         "disabled": boolean;
@@ -1955,6 +1959,10 @@ declare namespace LocalJSX {
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
     }
     interface PDatepicker {
+        /**
+          * Wether to disable the weekends
+         */
+        "disableWeekends"?: boolean;
         /**
           * Wether the input group is disabled used by the datepicker
          */

@@ -213,11 +213,10 @@ export class Calendar {
     }
 
     /* With this, we shall hack the system in ways no one would ever have thought.
-       col-start-1 col-start-2 col-start-3 col-start-4 col-start-5 col-start-6 col-start-7
+       <div class="col-start-1 col-start-2 col-start-3 col-start-4 col-start-5 col-start-6 col-start-7"></div>
    */
     private _getDayView() {
         const daysInMonth = this._generateDaysInMonth();
-
         return (
             <div class="view-day">
                 <div class="header">

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.322](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.321...v0.1.0-alpha.322) (2023-01-11)
+
+
+### Features
+
+* **Molecules/Calendar:** Add property to disable weekends ([b3d9e64](https://github.com/ionic-team/stencil-component-starter/commit/b3d9e6407629fa960fc10d8f79bd50074af89cac))
+* **Molecules/Datepicker:** Add property to disable weekends ([e211bfe](https://github.com/ionic-team/stencil-component-starter/commit/e211bfe33c3bd03cb1e9830da128635dc429d296))
+
+
+
+
+
 # [0.1.0-alpha.321](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.320...v0.1.0-alpha.321) (2023-01-11)
 
 

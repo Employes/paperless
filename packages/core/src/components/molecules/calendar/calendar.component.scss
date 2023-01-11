@@ -48,6 +48,8 @@
     }
 
     .view-day {
+        @apply h-auto min-h-[12rem];
+
         .dates {
             @apply grid gap-1;
             grid-template-columns: repeat(7, 1fr);

@@ -31,9 +31,6 @@ import {
     startOfMonth,
 } from 'date-fns';
 
-// With this, we shall hack the system in ways no one would ever have thought.
-// class="col-start-1 col-start-2 col-start-3 col-start-4 col-start-5 col-start-6 col-start-7"
-
 @Component({
     tag: 'p-calendar',
     styleUrl: 'calendar.component.scss',
@@ -215,6 +212,9 @@ export class Calendar {
         return this._getDayView();
     }
 
+    /* With this, we shall hack the system in ways no one would ever have thought.
+       col-start-1 col-start-2 col-start-3 col-start-4 col-start-5 col-start-6 col-start-7
+   */
     private _getDayView() {
         const daysInMonth = this._generateDaysInMonth();
 
@@ -421,10 +421,11 @@ export class Calendar {
             day = day + 1;
             const date = setDate(this._viewDate, day);
 
+            const dayOfWeek = getDay(date);
             return {
                 day,
                 date,
-                offset: day === 1 ? getDay(date) : false,
+                offset: day === 1 ? (dayOfWeek === 0 ? 7 : dayOfWeek) : false,
                 current: isSameDay(date, this._today),
                 active: isSameDay(date, this._value),
                 disabled: this._isDisabledDay(date),

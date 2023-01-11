@@ -48,7 +48,7 @@ export class Calendar {
     @Prop() value?: Date | 'string';
 
     /**
-     * Wethter to automatically preselect today
+     * Wether to automatically preselect today
      */
     @Prop() preselectToday: boolean = false;
 
@@ -66,6 +66,11 @@ export class Calendar {
      * Max date
      */
     @Prop() maxDate: Date | 'string' = this._getAutomaticMax();
+
+    /**
+     * Wether to disable the weekends
+     */
+    @Prop() disableWeekends: boolean = false;
 
     /**
      * The mode of the datepicker
@@ -436,6 +441,8 @@ export class Calendar {
         return (
             isBefore(day, this._minDate) ||
             (isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
+            ((getDay(day) === 0 || getDay(day) === 6) &&
+                this.disableWeekends) ||
             this._disabledDates.findIndex((date) => isSameDay(date, day)) >= 0
         );
     }

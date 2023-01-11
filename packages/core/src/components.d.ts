@@ -139,6 +139,10 @@ export namespace Components {
     }
     interface PCalendar {
         /**
+          * Wether to disable the weekends
+         */
+        "disableWeekends": boolean;
+        /**
           * Disabled dates
          */
         "disabledDates"?: Array<Date | 'string'> | string;
@@ -155,7 +159,7 @@ export namespace Components {
          */
         "mode": 'year' | 'month' | 'day';
         /**
-          * Wethter to automatically preselect today
+          * Wether to automatically preselect today
          */
         "preselectToday": boolean;
         /**
@@ -1860,6 +1864,10 @@ declare namespace LocalJSX {
     }
     interface PCalendar {
         /**
+          * Wether to disable the weekends
+         */
+        "disableWeekends"?: boolean;
+        /**
           * Disabled dates
          */
         "disabledDates"?: Array<Date | 'string'> | string;
@@ -1880,7 +1888,7 @@ declare namespace LocalJSX {
          */
         "onValueChange"?: (event: PCalendarCustomEvent<any>) => void;
         /**
-          * Wethter to automatically preselect today
+          * Wether to automatically preselect today
          */
         "preselectToday"?: boolean;
         /**

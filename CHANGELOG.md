@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.324](https://github.com/employes/paperless/compare/v0.1.0-alpha.323...v0.1.0-alpha.324) (2023-01-17)
+
+
+### Bug Fixes
+
+* **Conventions/Prettier:** Actually import prettier plugin ([3a2c15c](https://github.com/employes/paperless/commit/3a2c15c1e9030e00c11b3b511e6d2105d18e34f5))
+
+
+
+
+
 # [0.1.0-alpha.323](https://github.com/employes/paperless/compare/v0.1.0-alpha.322...v0.1.0-alpha.323) (2023-01-17)
 
 

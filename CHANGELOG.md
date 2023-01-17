@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.323](https://github.com/employes/paperless/compare/v0.1.0-alpha.322...v0.1.0-alpha.323) (2023-01-17)
+
+
+### Features
+
+* **conventions:** Add prettier tailwind plugin ([28724a3](https://github.com/employes/paperless/commit/28724a3a58e22189fc04704169cc33c1d524203a))
+
+
+
+
+
 # [0.1.0-alpha.322](https://github.com/employes/paperless/compare/v0.1.0-alpha.321...v0.1.0-alpha.322) (2023-01-11)
 
 

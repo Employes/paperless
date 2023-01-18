@@ -5,7 +5,7 @@ import {
     Host,
     Listen,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -222,7 +222,11 @@ export class InputGroup {
 
     private _setInputClasses() {
         const input = this._el.querySelector(':scope > [slot="input"]');
-
+    
+        if(!input) {
+            return;
+        }
+        
         if (!input.classList.contains('p-input')) {
             input.classList.add('p-input');
         }

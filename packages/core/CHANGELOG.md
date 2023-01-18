@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.328](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.327...v0.1.0-alpha.328) (2023-01-18)
+
+
+### Features
+
+* **Molecules/Datepicker:** Add more debugging ([bfb07cb](https://github.com/ionic-team/stencil-component-starter/commit/bfb07cb7b6e2372ec6544a8b3ddd42449df76594))
+
+
+
+
+
 # [0.1.0-alpha.327](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.326...v0.1.0-alpha.327) (2023-01-18)
 
 

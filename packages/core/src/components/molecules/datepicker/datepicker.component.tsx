@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import {
     format,
@@ -17,7 +17,7 @@ import {
     isSameDay,
     isValid,
     parse,
-    startOfDay,
+    startOfDay
 } from 'date-fns';
 import { childOf } from '../../../utils';
 
@@ -142,6 +142,12 @@ export class Datepicker {
 
         if (typeof value === 'string') {
             value = new Date(value);
+        }
+
+        if(value === null) {
+            this._value = null;
+            this.valueChange.emit(null);
+            return;
         }
 
         if (!isValid(value)) {

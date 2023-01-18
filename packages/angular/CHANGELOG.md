@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.327](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.326...v0.1.0-alpha.327) (2023-01-18)
+
+
+### Features
+
+* **Molecules/Datepicker:** Add debugging ([9661e39](https://github.com/Employes/Paperless/commit/9661e399d911e0de63dc3faaa60c490c5a69b2b2))
+
+
+
+
+
 # [0.1.0-alpha.326](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.325...v0.1.0-alpha.326) (2023-01-18)
 
 **Note:** Version bump only for package @paperless/angular

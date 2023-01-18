@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.326](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.325...v0.1.0-alpha.326) (2023-01-18)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Add a check if input exists ([c2fd2a5](https://github.com/ionic-team/stencil-component-starter/commit/c2fd2a50606124985cd0d092d0d1dab98e44fd1d))
+
+
+### Features
+
+* **Molecules/Datpicker:** Implement auto reset behavior ([d6166cf](https://github.com/ionic-team/stencil-component-starter/commit/d6166cfaff8a0d04d261e48e66ab0f384f66f901))
+
+
+
+
+
 # [0.1.0-alpha.325](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.324...v0.1.0-alpha.325) (2023-01-18)
 
 

@@ -136,26 +136,14 @@ export class Datepicker {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
+        console.log("Watch value", value);
+        
         if (!value && this.preselectToday) {
             value = new Date();
         }
 
         if (typeof value === 'string') {
             value = new Date(value);
-        }
-
-        if(value === null) {
-            this._value = null;
-            this.valueChange.emit(null);
-            return;
-        }
-
-        if (!isValid(value)) {
-            return;
-        }
-
-        if (this._isDisabledDay(value)) {
-            return;
         }
 
         this._setValue(value);
@@ -172,6 +160,10 @@ export class Datepicker {
         }
 
         this._minDate = minDate;
+
+        if(isBefore(this._value, this._minDate)) {
+            this._setValue(null);
+        }
     }
 
     @Watch('maxDate')
@@ -185,6 +177,10 @@ export class Datepicker {
         }
 
         this._maxDate = maxDate;
+
+        if(isAfter(this._value, this._maxDate)) {
+            this._setValue(null);
+        }
     }
 
     @Watch('disabledDates')
@@ -207,6 +203,10 @@ export class Datepicker {
                 return date;
             })
             .filter((date) => isValid(date));
+
+        if(this._isDisabledDay(this._value)) {
+            this._setValue(null);
+        }
     }
 
     componentWillLoad() {
@@ -318,6 +318,18 @@ export class Datepicker {
     }
 
     private _setValue(value: Date, blur = true) {
+        console.log("Pre null");
+        if(value === null) {
+            this._value = null;
+            this.valueChange.emit(null);
+            console.log("Set to null", this._value);
+            return;
+        }
+
+        if (!isValid(value)) {
+            return;
+        }
+
         if (this._isDisabledDay(value)) {
             return;
         }

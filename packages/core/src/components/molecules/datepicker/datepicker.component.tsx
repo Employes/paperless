@@ -136,7 +136,7 @@ export class Datepicker {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
-        console.log("Watch value", value);
+        console.log("Watch value", this.placeholder, value);
         
         if (!value && this.preselectToday) {
             value = new Date();
@@ -318,11 +318,12 @@ export class Datepicker {
     }
 
     private _setValue(value: Date, blur = true) {
-        console.log("Pre null");
+        console.log("_setValue", this.placeholder, value);
+
         if(value === null) {
             this._value = null;
             this.valueChange.emit(null);
-            console.log("Set to null", this._value);
+            console.log("Set to null", this.placeholder, this._value);
             return;
         }
 
@@ -334,6 +335,7 @@ export class Datepicker {
             return;
         }
 
+        console.log("after Checks", this.placeholder, value);
         value = startOfDay(value);
         const isSameValue = isSameDay(value, this._value);
 
@@ -345,6 +347,7 @@ export class Datepicker {
             this._onBlur();
         }
 
+        console.log("setting the _value", this.placeholder, value);
         this._value = value;
         this.valueChange.emit(value);
     }

@@ -235,6 +235,7 @@ export class Datepicker {
     }
 
     render() {
+        console.log("Render", this.placeholder, this.value, this._value);
         return (
             <Host class="p-datepicker">
                 <p-dropdown

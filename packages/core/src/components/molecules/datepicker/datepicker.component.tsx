@@ -210,6 +210,8 @@ export class Datepicker {
     }
 
     componentWillLoad() {
+        console.log("Component will load", this.placeholder);
+        
         if (this.disabledDates) {
             this._parseDisabledDates(this.disabledDates);
         }

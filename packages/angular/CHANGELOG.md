@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.330](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.329...v0.1.0-alpha.330) (2023-01-18)
+
+
+### Bug Fixes
+
+* **Angular/Date picker:** Let's try something I guess ([432d889](https://github.com/Employes/Paperless/commit/432d889cd9e3041bfebf6d7db05ea92f3a026430))
+
+
+
+
+
 # [0.1.0-alpha.329](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.328...v0.1.0-alpha.329) (2023-01-18)
 
 **Note:** Version bump only for package @paperless/angular

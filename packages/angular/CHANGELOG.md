@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.332](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.331...v0.1.0-alpha.332) (2023-01-19)
+
+
+### Features
+
+* **Angular/Datepicker:** Add more debugging ([f7c9afe](https://github.com/Employes/Paperless/commit/f7c9afe33cafbf6c8d88c93e7745d87fa178d68a))
+
+
+
+
+
 # [0.1.0-alpha.331](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.330...v0.1.0-alpha.331) (2023-01-18)
 
 

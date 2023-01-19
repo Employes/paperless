@@ -232,6 +232,14 @@ export class Datepicker {
         this._parseValue(this.value);
     }
 
+    componentShouldUpdate() {
+        console.log("[Stencil] componentShouldUpdate", this.placeholder, this.value, this._value);
+    }
+
+    componentWillUpdate() {
+        console.log("[Stencil] componentWillUpdate", this.placeholder, this.value, this._value);
+    }
+
     render() {
         return (
             <Host class="p-datepicker">

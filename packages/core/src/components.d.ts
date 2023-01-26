@@ -18,6 +18,19 @@ import { templateFunc as templateFunc1 } from "./components/organisms/table/tabl
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
+export { RotateOptions, TextSizeOptions } from "./types/tailwind";
+export { Placement, PositioningStrategy } from "@popperjs/core";
+export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
+export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
+export { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
+export { Observable } from "rxjs";
+export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
+export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
+export { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
+export { TableColumn } from "./components/helpers/table-column/table-column.component";
+export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -413,7 +426,7 @@ export namespace Components {
         /**
           * Wether to flip the icon horizontally or vertically
          */
-        "flip": IconFlipOptions;
+        "flip": IconFlipOptions1;
         /**
           * Wether to rotate the icon x degrees
          */
@@ -425,7 +438,7 @@ export namespace Components {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant;
+        "variant": IconVariant1;
     }
     interface PIllustration {
         /**
@@ -929,11 +942,11 @@ export namespace Components {
           * The template for the edit button text
          */
         "editButtonTemplate": buttonTemplateFunc;
-        "emptyStateAction": templateFunc;
-        "emptyStateContent": templateFunc;
-        "emptyStateFilteredContent": templateFunc;
-        "emptyStateFilteredHeader": templateFunc;
-        "emptyStateHeader": templateFunc;
+        "emptyStateAction": templateFunc1;
+        "emptyStateContent": templateFunc1;
+        "emptyStateFilteredContent": templateFunc1;
+        "emptyStateFilteredHeader": templateFunc1;
+        "emptyStateHeader": templateFunc1;
         /**
           * Wether to show the edit button
          */
@@ -969,7 +982,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc;
+        "filterButtonTemplate": templateFunc1;
         /**
           * Wether the footer should show loading state
          */
@@ -1139,7 +1152,7 @@ export namespace Components {
         /**
           * The template for the edit button text
          */
-        "editButtonTemplate": buttonTemplateFunc;
+        "editButtonTemplate": buttonTemplateFunc1;
         /**
           * Wether to show the edit button
          */
@@ -1155,7 +1168,7 @@ export namespace Components {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate": templateFunc;
+        "filterButtonTemplate": templateFunc2;
         /**
           * The amount of items that are selected
          */
@@ -2177,7 +2190,7 @@ declare namespace LocalJSX {
         /**
           * Wether to flip the icon horizontally or vertically
          */
-        "flip"?: IconFlipOptions;
+        "flip"?: IconFlipOptions1;
         /**
           * Wether to rotate the icon x degrees
          */
@@ -2189,7 +2202,7 @@ declare namespace LocalJSX {
         /**
           * The icon the be displayed
          */
-        "variant": IconVariant;
+        "variant": IconVariant1;
     }
     interface PIllustration {
         /**
@@ -2721,11 +2734,11 @@ declare namespace LocalJSX {
           * The template for the edit button text
          */
         "editButtonTemplate"?: buttonTemplateFunc;
-        "emptyStateAction"?: templateFunc;
-        "emptyStateContent"?: templateFunc;
-        "emptyStateFilteredContent"?: templateFunc;
-        "emptyStateFilteredHeader"?: templateFunc;
-        "emptyStateHeader"?: templateFunc;
+        "emptyStateAction"?: templateFunc1;
+        "emptyStateContent"?: templateFunc1;
+        "emptyStateFilteredContent"?: templateFunc1;
+        "emptyStateFilteredHeader"?: templateFunc1;
+        "emptyStateHeader"?: templateFunc1;
         /**
           * Wether to show the edit button
          */
@@ -2761,7 +2774,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc;
+        "filterButtonTemplate"?: templateFunc1;
         /**
           * Wether the footer should show loading state
          */
@@ -2999,7 +3012,7 @@ declare namespace LocalJSX {
         /**
           * The template for the edit button text
          */
-        "editButtonTemplate"?: buttonTemplateFunc;
+        "editButtonTemplate"?: buttonTemplateFunc1;
         /**
           * Wether to show the edit button
          */
@@ -3015,7 +3028,7 @@ declare namespace LocalJSX {
         /**
           * The template for the filter button text
          */
-        "filterButtonTemplate"?: templateFunc;
+        "filterButtonTemplate"?: templateFunc2;
         /**
           * The amount of items that are selected
          */

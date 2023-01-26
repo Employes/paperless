@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.334](https://github.com/employes/paperless/compare/v0.1.0-alpha.333...v0.1.0-alpha.334) (2023-01-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @stencil/core to v3 ([#103](https://github.com/employes/paperless/issues/103)) ([85ab088](https://github.com/employes/paperless/commit/85ab08863d475d57f8c32493096b61a3c5efd995))
+
+
+### Features
+
+* **Atoms/Stepper Item:** Right side pill option ([c23a7f9](https://github.com/employes/paperless/commit/c23a7f9a00fa87a87b9fecd311a23de6751d4623))
+* **Molecules/Stepper:** Add right aligned option ([22f6e9b](https://github.com/employes/paperless/commit/22f6e9b0ca8c3072a924f9fd9917da2572748313))
+* Stencil v3 ([13b5660](https://github.com/employes/paperless/commit/13b5660b1dd3715309cbb1398690fc53651b068e))
+
+
+
+
+
 # [0.1.0-alpha.333](https://github.com/employes/paperless/compare/v0.1.0-alpha.332...v0.1.0-alpha.333) (2023-01-19)
 
 

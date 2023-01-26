@@ -864,6 +864,10 @@ export namespace Components {
          */
         "activeStep": number;
         /**
+          * The position of the content in case of vertical direction
+         */
+        "contentPosition": 'start' | 'end';
+        /**
           * The direction of the stepper
          */
         "direction": 'horizontal' | 'vertical';
@@ -877,6 +881,10 @@ export namespace Components {
           * The alignment of the step content
          */
         "align": 'start' | 'center' | 'end';
+        /**
+          * The position of the content in case of vertical direction
+         */
+        "contentPosition": 'start' | 'end';
         /**
           * The direction of the stepper step
          */
@@ -2648,6 +2656,10 @@ declare namespace LocalJSX {
          */
         "activeStep"?: number;
         /**
+          * The position of the content in case of vertical direction
+         */
+        "contentPosition"?: 'start' | 'end';
+        /**
           * The direction of the stepper
          */
         "direction"?: 'horizontal' | 'vertical';
@@ -2661,6 +2673,10 @@ declare namespace LocalJSX {
           * The alignment of the step content
          */
         "align"?: 'start' | 'center' | 'end';
+        /**
+          * The position of the content in case of vertical direction
+         */
+        "contentPosition"?: 'start' | 'end';
         /**
           * The direction of the stepper step
          */

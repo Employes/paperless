@@ -10,3 +10,7 @@
     @apply flex-col flex-wrap items-start;
     @apply w-full min-h-full;
 }
+
+:host([direction='vertical'][content-position='start']) {
+    @apply items-end;
+}

@@ -18,6 +18,11 @@ export class Stepper {
         'horizontal';
 
     /**
+     * The position of the content in case of vertical direction
+     */
+    @Prop({ reflect: true }) contentPosition: 'start' | 'end' = 'end';
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -61,6 +66,7 @@ export class Stepper {
                             ? 'end'
                             : 'center'
                     }
+                    contentPosition={this.contentPosition}
                 >
                     {item.innerHTML}
                 </p-stepper-item>

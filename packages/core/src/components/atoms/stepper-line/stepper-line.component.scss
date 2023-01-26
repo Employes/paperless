@@ -12,7 +12,7 @@
 }
 
 :host([direction='vertical']) {
-    @apply w-[2px] ml-[calc(.5rem-1px)];
+    @apply w-[2px] ml-[calc(.5rem-1px)] mr-[calc(.5rem-1px)];
 }
 
 :host([active]) {

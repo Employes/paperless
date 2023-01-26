@@ -2,7 +2,7 @@
     @apply flex items-end justify-center relative;
 
     .content {
-        @apply whitespace-nowrap;
+        @apply whitespace-nowrap min-w-0;
         @apply text-sm font-semibold text-storm-light;
     }
 
@@ -70,5 +70,13 @@
 :host([direction='horizontal'][align='center']) {
     .content {
         @apply left-1/2 text-center transform -translate-x-1/2;
+    }
+}
+
+:host([direction='vertical'][content-position='start']) {
+    @apply flex-row-reverse;
+
+    .content {
+        @apply flex justify-end ml-0 mr-4;
     }
 }

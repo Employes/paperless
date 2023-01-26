@@ -18,6 +18,11 @@ export class StepperItem {
         'horizontal';
 
     /**
+     * The position of the content in case of vertical direction
+     */
+    @Prop({ reflect: true }) contentPosition: 'start' | 'end' = 'end';
+
+    /**
      * Wether the step is finished
      */
     @Prop({ reflect: true }) finished: boolean = false;

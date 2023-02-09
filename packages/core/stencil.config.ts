@@ -6,7 +6,7 @@ import { inlineSvg } from 'stencil-inline-svg';
 import tailwind, {
     setPluginConfigurationDefaults,
     tailwindGlobal,
-    tailwindHMR,
+    tailwindHMR
 } from 'stencil-tailwind-plugin';
 import tailwindConf from './src/tailwind.config';
 
@@ -64,6 +64,9 @@ export const config: Config = {
         {
             type: 'www',
             serviceWorker: null, // disable service workers
+        },
+        {
+            type: 'dist-hydrate-script',
         },
         {
             type: 'www',

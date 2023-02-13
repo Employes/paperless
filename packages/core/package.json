@@ -16,7 +16,8 @@
     },
     "files": [
         "dist/",
-        "loader/"
+        "loader/",
+        "hydrate/"
     ],
     "publishConfig": {
         "registry": "https://registry.npmjs.org"

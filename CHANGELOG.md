@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.336](https://github.com/employes/paperless/compare/v0.1.0-alpha.335...v0.1.0-alpha.336) (2023-02-13)
+
+
+### Features
+
+* **ci:** Add hydrate folder to artifact ([6c51168](https://github.com/employes/paperless/commit/6c511687bcd1b60477de3512f17fb5648559fbf1))
+
+
+
+
+
 # [0.1.0-alpha.335](https://github.com/employes/paperless/compare/v0.1.0-alpha.334...v0.1.0-alpha.335) (2023-02-09)
 
 

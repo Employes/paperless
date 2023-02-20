@@ -1,16 +1,9 @@
-# Input Error
+# p-input-error
 
-## Usage:
 
-```html
-<p-input-error />
-
-<!-- or -->
-
-<p-input-error> Content </p-input-error>
-```
 
 <!-- Auto Generated Below -->
+
 
 ## Properties
 
@@ -19,20 +12,20 @@
 | `error`            | `error`              | The error to show                | `string`  | `undefined` |
 | `forceShowTooltip` | `force-show-tooltip` | Wether to force show the tooltip | `boolean` | `false`     |
 
+
 ## Dependencies
 
 ### Used by
 
--   [p-attachment](../attachment)
--   [p-input-group](../input-group)
+ - [p-attachment](../attachment)
+ - [p-input-group](../input-group)
 
 ### Depends on
 
--   [p-tooltip](../../atoms/tooltip)
--   [p-icon](../../atoms/icon)
+- [p-tooltip](../../atoms/tooltip)
+- [p-icon](../../atoms/icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-input-error --> p-tooltip
@@ -42,6 +35,6 @@ graph TD;
   style p-input-error fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

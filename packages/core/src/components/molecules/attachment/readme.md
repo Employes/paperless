@@ -1,16 +1,9 @@
-# Attachment
+# p-attachment
 
-## Usage:
 
-```html
-<p-attachment />
-
-<!-- or -->
-
-<p-attachment> Content </p-attachment>
-```
 
 <!-- Auto Generated Below -->
+
 
 ## Properties
 
@@ -20,6 +13,7 @@
 | `loading` | `loading` | Wether the attachment is uploading/loading | `boolean`           | `false`     |
 | `mode`    | `mode`    | The variant of the button                  | `"read" \| "write"` | `'read'`    |
 
+
 ## Events
 
 | Event      | Description                    | Type               |
@@ -27,17 +21,17 @@
 | `delete`   | Event when delete is pressed   | `CustomEvent<any>` |
 | `download` | Event when download is pressed | `CustomEvent<any>` |
 
+
 ## Dependencies
 
 ### Depends on
 
--   [p-icon](../../atoms/icon)
--   [p-loader](../../atoms/loader)
--   [p-input-error](../input-error)
--   [p-button](../../atoms/button)
+- [p-icon](../../atoms/icon)
+- [p-loader](../../atoms/loader)
+- [p-input-error](../input-error)
+- [p-button](../../atoms/button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-attachment --> p-icon
@@ -51,6 +45,6 @@ graph TD;
   style p-attachment fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

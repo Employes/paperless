@@ -2,7 +2,7 @@
 
 input[type='checkbox'].p-input {
     @apply appearance-none bg-center bg-no-repeat;
-    @apply w-6 h-6 rounded bg-white;
+    @apply h-6 w-6 rounded bg-white;
     @apply border border-solid border-mystic-dark;
     @apply outline-none #{!important};
 
@@ -28,7 +28,7 @@ input[type='checkbox'].p-input {
     &[checked],
     &:checked,
     &.checked {
-        @apply bg-indigo border-indigo;
+        @apply border-indigo bg-indigo;
     }
 
     &[checked],
@@ -63,24 +63,24 @@ input[type='checkbox'].p-input {
 
 input[type='checkbox'].p-toggle {
     @apply appearance-none;
-    @apply bg-white h-6 w-[2.375rem] p-1;
-    @apply flex justify-start items-center;
+    @apply h-6 w-[2.375rem] bg-white p-1;
+    @apply flex items-center justify-start;
     @apply rounded-xxxlarge;
-    @apply border border-mystic-dark border-solid;
+    @apply border border-solid border-mystic-dark;
 
     &:after {
         content: '';
-        @apply block w-4 h-4 rounded-round;
-        @apply bg-mystic-dark transition-transform duration-100 translate-x-0;
+        @apply block h-4 w-4 rounded-round;
+        @apply translate-x-0 bg-mystic-dark transition-transform duration-100;
     }
 
     &[checked],
     &:checked,
     &.checked {
-        @apply bg-indigo border-indigo;
+        @apply border-indigo bg-indigo;
 
         &:after {
-            @apply bg-white translate-x-3;
+            @apply translate-x-3 bg-white;
         }
     }
 

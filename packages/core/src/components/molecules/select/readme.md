@@ -50,6 +50,7 @@
 
 - [p-dropdown](../dropdown)
 - [p-input-group](../input-group)
+- [p-icon](../../atoms/icon)
 - [p-dropdown-menu-item](../../atoms/dropdown-menu-item)
 - [p-loader](../../atoms/loader)
 
@@ -58,6 +59,7 @@
 graph TD;
   p-select --> p-dropdown
   p-select --> p-input-group
+  p-select --> p-icon
   p-select --> p-dropdown-menu-item
   p-select --> p-loader
   p-dropdown --> p-dropdown-menu-container

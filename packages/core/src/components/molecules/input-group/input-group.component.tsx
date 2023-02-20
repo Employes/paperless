@@ -93,31 +93,14 @@ export class InputGroup {
     }
 
     render() {
-        const hasHelperSlot = !!this._el.querySelector(
-            ':scope > [slot="helper"]'
-        );
-        const hasLabelSlot = !!this._el.querySelector(
-            ':scope > [slot="label"]'
-        );
-        const hasPrefixSlot = !!this._el.querySelector(
-            ':scope > [slot="prefix"]'
-        );
-        const hasSuffixSlot = !!this._el.querySelector(
-            ':scope > [slot="suffix"]'
-        );
-        const hasHeaderSlot = !!this._el.querySelector(
-            ':scope > [slot="header"]'
-        );
-
-        const helper = hasHelperSlot ? <slot name="helper" /> : this.helper;
-        const label = hasLabelSlot ? <slot name="label" /> : this.label;
-        const prefix = hasPrefixSlot ? <slot name="prefix" /> : this.prefix;
-        const suffix = hasSuffixSlot ? <slot name="suffix" /> : this.suffix;
-
-        const errorAndErrorIsNotBoolean =
-            this.error &&
-            typeof this.error === 'string' &&
-            this.error !== 'true';
+        const {
+            hasHeaderSlot,
+            helper,
+            label,
+            prefix,
+            suffix,
+            errorAndErrorIsNotBoolean,
+        } = this._getSlotInfo();
 
         return (
             <Host
@@ -155,7 +138,7 @@ export class InputGroup {
                     {(prefix ||
                         (this.icon && this.iconPosition === 'start')) && (
                         <div class={`prefix size-${this.size}`}>
-                            {this.icon ? (
+                            {this.icon && this.iconPosition === 'start' ? (
                                 <p-icon
                                     class="flex"
                                     variant={this.icon}
@@ -176,7 +159,7 @@ export class InputGroup {
                                     error={this.error}
                                     forceShowTooltip={this._forceShowTooltip}
                                 />
-                            ) : this.icon ? (
+                            ) : this.icon && this.iconPosition === 'end' ? (
                                 <p-icon
                                     class="flex"
                                     variant={this.icon}
@@ -204,7 +187,11 @@ export class InputGroup {
     handleFocusOut() {
         this._forceShowTooltip = false;
     }
-
+    /* 
+     With this, we shall hack the system in ways no one would ever have thought.
+     
+     <div class="pl-0 pr-0 border-l-0 border-r-0 rounded-tl-none rounded-bl-none rounded-tr-none rounded-br-none"></div>
+     */
     private _setInputClasses() {
         const input = this._el.querySelector(':scope > [slot="input"]');
 
@@ -215,5 +202,71 @@ export class InputGroup {
         if (!input.classList.contains('p-input')) {
             input.classList.add('p-input');
         }
+
+        const { prefix, suffix, errorAndErrorIsNotBoolean } =
+            this._getSlotInfo();
+
+        if (
+            suffix ||
+            errorAndErrorIsNotBoolean ||
+            (this.icon && this.iconPosition === 'end')
+        ) {
+            input.classList.add(
+                'border-r-0',
+                'rounded-tr-none',
+                'rounded-br-none',
+                'pr-0'
+            );
+        }
+
+        if (prefix || (this.icon && this.iconPosition === 'start')) {
+            input.classList.add(
+                'border-l-0',
+                'rounded-tl-none',
+                'rounded-bl-none',
+                'pl-0'
+            );
+        }
+    }
+
+    private _getSlotInfo() {
+        const hasHelperSlot = !!this._el.querySelector(
+            ':scope > [slot="helper"]'
+        );
+        const hasLabelSlot = !!this._el.querySelector(
+            ':scope > [slot="label"]'
+        );
+        const hasPrefixSlot = !!this._el.querySelector(
+            ':scope > [slot="prefix"]'
+        );
+        const hasSuffixSlot = !!this._el.querySelector(
+            ':scope > [slot="suffix"]'
+        );
+        const hasHeaderSlot = !!this._el.querySelector(
+            ':scope > [slot="header"]'
+        );
+
+        const helper = hasHelperSlot ? <slot name="helper" /> : this.helper;
+        const label = hasLabelSlot ? <slot name="label" /> : this.label;
+        const prefix = hasPrefixSlot ? <slot name="prefix" /> : this.prefix;
+        const suffix = hasSuffixSlot ? <slot name="suffix" /> : this.suffix;
+
+        const errorAndErrorIsNotBoolean =
+            this.error &&
+            typeof this.error === 'string' &&
+            this.error !== 'true';
+
+        return {
+            hasHelperSlot,
+            hasLabelSlot,
+            hasPrefixSlot,
+            hasSuffixSlot,
+            hasHeaderSlot,
+            helper,
+            label,
+            prefix,
+            suffix,
+            errorAndErrorIsNotBoolean,
+        };
     }
 }

@@ -33,6 +33,7 @@
  - [p-pagination](../../molecules/pagination)
  - [p-profile](../../molecules/profile)
  - [p-segment-item](../segment-item)
+ - [p-select](../../molecules/select)
  - [p-status](../status)
  - [p-stepper-item](../stepper-item)
 
@@ -53,6 +54,7 @@ graph TD;
   p-pagination --> p-icon
   p-profile --> p-icon
   p-segment-item --> p-icon
+  p-select --> p-icon
   p-status --> p-icon
   p-stepper-item --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px

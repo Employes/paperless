@@ -207,8 +207,7 @@ export class Select {
                 >
                     <p-input-group
                         slot="trigger"
-                        icon="chevron"
-                        iconPosition="end"
+                        icon="bread"
                         size={this.size}
                         prefix={this.prefix}
                         label={this.label}
@@ -231,6 +230,7 @@ export class Select {
                             onInput={(ev) => this._onChange(ev)}
                             ref={(ref) => (this._inputRef = ref)}
                         />
+                        <p-icon variant="chevron" slot="suffix" />
                     </p-input-group>
                     <div slot="items">
                         {this.loading
@@ -364,7 +364,7 @@ export class Select {
     private _getLoadingItems() {
         return [0, 0, 0].map(() => (
             <p-dropdown-menu-item enableHover={false}>
-                <p-loader variant="ghost" class="w-full h-6 rounded" />
+                <p-loader variant="ghost" class="h-6 w-full rounded" />
             </p-dropdown-menu-item>
         ));
     }

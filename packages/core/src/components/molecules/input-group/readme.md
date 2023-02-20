@@ -1,6 +1,9 @@
-# Input Group
+# p-input-group
+
+
 
 <!-- Auto Generated Below -->
+
 
 ## Properties
 
@@ -20,22 +23,22 @@
 | `size`         | `size`          | The size of the input group        | `"medium" \| "small"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `'medium'`  |
 | `suffix`       | `suffix`        | The suffix of the input group      | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `undefined` |
 
+
 ## Dependencies
 
 ### Used by
 
--   [p-datepicker](../datepicker)
--   [p-select](../select)
--   [p-table-header](../table-header)
+ - [p-datepicker](../datepicker)
+ - [p-select](../select)
+ - [p-table-header](../table-header)
 
 ### Depends on
 
--   [p-helper](../../atoms/helper)
--   [p-icon](../../atoms/icon)
--   [p-input-error](../input-error)
+- [p-helper](../../atoms/helper)
+- [p-icon](../../atoms/icon)
+- [p-input-error](../input-error)
 
 ### Graph
-
 ```mermaid
 graph TD;
   p-input-group --> p-helper
@@ -50,6 +53,6 @@ graph TD;
   style p-input-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

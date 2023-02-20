@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.340](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.339...v0.1.0-alpha.340) (2023-02-20)
+
+
+### Features
+
+* **Molecules/Input Group:** Add icon prop & showChevron prop ([107f8b0](https://github.com/ionic-team/stencil-component-starter/commit/107f8b0733aa3f9cfdf61dbc72f480d34485be52))
+* **Molecules/Input Group:** Fix borders & stuff ([b8f49c7](https://github.com/ionic-team/stencil-component-starter/commit/b8f49c7221eaa5e247a197377666121d879c823f))
+
+
+
+
+
 # [0.1.0-alpha.339](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.338...v0.1.0-alpha.339) (2023-02-20)
 
 

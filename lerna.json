@@ -1,14 +1,14 @@
 {
-    "packages": [
-        "packages/*"
-    ],
-    "version": "0.1.0-alpha.337",
-    "npmClient": "yarn",
-    "useWorkspaces": true,
-    "command": {
-        "publish": {
-            "conventionalCommits": true,
-            "message": "chore(release): Lerna publish"
-        }
+  "packages": [
+    "packages/*"
+  ],
+  "version": "0.1.0-alpha.338",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): Lerna publish"
     }
+  }
 }

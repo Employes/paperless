@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.338](https://github.com/employes/paperless/compare/v0.1.0-alpha.337...v0.1.0-alpha.338) (2023-02-20)
+
+
+### Bug Fixes
+
+* **Atoms/Tooltip:** Fix max width problems ([eb4afa2](https://github.com/employes/paperless/commit/eb4afa24b93d053529f12272934349e0f8c31809))
+
+
+### Features
+
+* **Molecules/Input Group:** Implement Input Error  ([6afbc2f](https://github.com/employes/paperless/commit/6afbc2f39a1a3ea6d12ea37cf3e22d9068e882f1))
+* **Molecules:** Add Attachment component ([42b2315](https://github.com/employes/paperless/commit/42b231508be769d8cf7a8c2742cc28410d2e09f9))
+* **Molecules:** Add Input Error Component ([11c3916](https://github.com/employes/paperless/commit/11c391649f7754b12c52dd4e0fe989789501f2e8))
+
+
+
+
+
 # [0.1.0-alpha.337](https://github.com/employes/paperless/compare/v0.1.0-alpha.336...v0.1.0-alpha.337) (2023-02-13)
 
 

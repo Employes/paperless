@@ -1,6 +1,7 @@
 dist/
 www/
 loader/
+hydrate/
 !src/components/atoms/loader
 public/
 

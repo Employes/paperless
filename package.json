@@ -96,6 +96,7 @@
         "jest-cli": "29.4.3",
         "lerna": "6.5.1",
         "postcss": "8.4.21",
+		"prettier-plugin-tailwindcss": "^0.2.1",
         "serverless": "3.27.0",
         "serverless-cloudflare-dns": "0.4.9",
         "serverless-cloudfront-invalidate": "1.12.2",

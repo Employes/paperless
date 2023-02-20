@@ -9,6 +9,7 @@ import { defineCustomElements } from '@paperless/core/loader';
 
 defineCustomElements();
 export const PAccordion = /*@__PURE__*/createReactComponent<JSX.PAccordion, HTMLPAccordionElement>('p-accordion');
+export const PAttachment = /*@__PURE__*/createReactComponent<JSX.PAttachment, HTMLPAttachmentElement>('p-attachment');
 export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvatarElement>('p-avatar');
 export const PAvatarGroup = /*@__PURE__*/createReactComponent<JSX.PAvatarGroup, HTMLPAvatarGroupElement>('p-avatar-group');
 export const PBackdrop = /*@__PURE__*/createReactComponent<JSX.PBackdrop, HTMLPBackdropElement>('p-backdrop');

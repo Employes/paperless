@@ -50,6 +50,20 @@ export namespace Components {
          */
         "openable": boolean;
     }
+    interface PAttachment {
+        /**
+          * The error to show
+         */
+        "error": string;
+        /**
+          * Wether the attachment is uploading/loading
+         */
+        "loading": boolean;
+        /**
+          * The variant of the button
+         */
+        "mode": 'read' | 'write';
+    }
     interface PAvatar {
         /**
           * The default image to show on errors
@@ -1277,6 +1291,10 @@ export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPAccordionElement;
 }
+export interface PAttachmentCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPAttachmentElement;
+}
 export interface PBackdropCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPBackdropElement;
@@ -1355,6 +1373,12 @@ declare global {
     var HTMLPAccordionElement: {
         prototype: HTMLPAccordionElement;
         new (): HTMLPAccordionElement;
+    };
+    interface HTMLPAttachmentElement extends Components.PAttachment, HTMLStencilElement {
+    }
+    var HTMLPAttachmentElement: {
+        prototype: HTMLPAttachmentElement;
+        new (): HTMLPAttachmentElement;
     };
     interface HTMLPAvatarElement extends Components.PAvatar, HTMLStencilElement {
     }
@@ -1712,6 +1736,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "p-accordion": HTMLPAccordionElement;
+        "p-attachment": HTMLPAttachmentElement;
         "p-avatar": HTMLPAvatarElement;
         "p-avatar-group": HTMLPAvatarGroupElement;
         "p-backdrop": HTMLPBackdropElement;
@@ -1795,6 +1820,28 @@ declare namespace LocalJSX {
           * Wether the accordion can be opened
          */
         "openable"?: boolean;
+    }
+    interface PAttachment {
+        /**
+          * The error to show
+         */
+        "error"?: string;
+        /**
+          * Wether the attachment is uploading/loading
+         */
+        "loading"?: boolean;
+        /**
+          * The variant of the button
+         */
+        "mode"?: 'read' | 'write';
+        /**
+          * Event when delete is pressed
+         */
+        "onDelete"?: (event: PAttachmentCustomEvent<any>) => void;
+        /**
+          * Event when download is pressed
+         */
+        "onDownload"?: (event: PAttachmentCustomEvent<any>) => void;
     }
     interface PAvatar {
         /**
@@ -3175,6 +3222,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "p-accordion": PAccordion;
+        "p-attachment": PAttachment;
         "p-avatar": PAvatar;
         "p-avatar-group": PAvatarGroup;
         "p-backdrop": PBackdrop;
@@ -3241,6 +3289,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "p-accordion": LocalJSX.PAccordion & JSXBase.HTMLAttributes<HTMLPAccordionElement>;
+            "p-attachment": LocalJSX.PAttachment & JSXBase.HTMLAttributes<HTMLPAttachmentElement>;
             "p-avatar": LocalJSX.PAvatar & JSXBase.HTMLAttributes<HTMLPAvatarElement>;
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-backdrop": LocalJSX.PBackdrop & JSXBase.HTMLAttributes<HTMLPBackdropElement>;

@@ -2,18 +2,18 @@
     @apply flex cursor-pointer;
 
     .popover-container {
-        @apply w-0 h-0 relative;
+        @apply relative h-0 w-0;
         .popover {
-            @apply bg-white hidden text-xs font-medium py-2 px-3 rounded drop-shadow-4 z-tooltip;
+            @apply z-tooltip hidden rounded bg-white py-2 px-3 text-xs font-medium drop-shadow-4;
             max-width: 14.5rem;
 
             &.variant-hover,
             &.variant-error {
-                @apply bg-storm text-white py-1;
+                @apply bg-storm py-1 text-white;
             }
 
             &.variant-error {
-                @apply bg-negative uppercase tracking-wider;
+                @apply whitespace-nowrap bg-negative uppercase tracking-wider;
             }
 
             &[data-show] {
@@ -23,14 +23,14 @@
             .arrow,
             .arrow::before {
                 background: inherit;
-                @apply absolute w-2 h-2;
+                @apply absolute h-2 w-2;
             }
 
             .arrow {
                 visibility: hidden;
 
                 &::before {
-                    @apply visible transform rotate-45;
+                    @apply visible rotate-45 transform;
                     content: '';
                 }
             }

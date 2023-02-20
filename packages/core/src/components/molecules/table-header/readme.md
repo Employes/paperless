@@ -66,8 +66,10 @@ graph TD;
   p-segment-item --> p-icon
   p-input-group --> p-helper
   p-input-group --> p-icon
-  p-input-group --> p-tooltip
+  p-input-group --> p-input-error
   p-helper --> p-tooltip
+  p-input-error --> p-tooltip
+  p-input-error --> p-icon
   p-button --> p-icon
   p-button --> p-loader
   p-label --> p-icon

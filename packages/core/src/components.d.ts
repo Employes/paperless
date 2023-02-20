@@ -464,6 +464,16 @@ export namespace Components {
          */
         "variant": 'info' | 'negative' | 'positive' | 'unbiased';
     }
+    interface PInputError {
+        /**
+          * The error to show
+         */
+        "error": string;
+        /**
+          * Wether to force show the tooltip
+         */
+        "forceShowTooltip": boolean;
+    }
     interface PInputGroup {
         /**
           * Wether the input group is disabled
@@ -1484,6 +1494,12 @@ declare global {
         prototype: HTMLPInfoPanelElement;
         new (): HTMLPInfoPanelElement;
     };
+    interface HTMLPInputErrorElement extends Components.PInputError, HTMLStencilElement {
+    }
+    var HTMLPInputErrorElement: {
+        prototype: HTMLPInputErrorElement;
+        new (): HTMLPInputErrorElement;
+    };
     interface HTMLPInputGroupElement extends Components.PInputGroup, HTMLStencilElement {
     }
     var HTMLPInputGroupElement: {
@@ -1719,6 +1735,7 @@ declare global {
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
+        "p-input-error": HTMLPInputErrorElement;
         "p-input-group": HTMLPInputGroupElement;
         "p-label": HTMLPLabelElement;
         "p-layout": HTMLPLayoutElement;
@@ -2227,6 +2244,16 @@ declare namespace LocalJSX {
           * The variant of the info panel
          */
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+    }
+    interface PInputError {
+        /**
+          * The error to show
+         */
+        "error"?: string;
+        /**
+          * Wether to force show the tooltip
+         */
+        "forceShowTooltip"?: boolean;
     }
     interface PInputGroup {
         /**
@@ -3171,6 +3198,7 @@ declare namespace LocalJSX {
         "p-icon": PIcon;
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
+        "p-input-error": PInputError;
         "p-input-group": PInputGroup;
         "p-label": PLabel;
         "p-layout": PLayout;
@@ -3236,6 +3264,7 @@ declare module "@stencil/core" {
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;
+            "p-input-error": LocalJSX.PInputError & JSXBase.HTMLAttributes<HTMLPInputErrorElement>;
             "p-input-group": LocalJSX.PInputGroup & JSXBase.HTMLAttributes<HTMLPInputGroupElement>;
             "p-label": LocalJSX.PLabel & JSXBase.HTMLAttributes<HTMLPLabelElement>;
             "p-layout": LocalJSX.PLayout & JSXBase.HTMLAttributes<HTMLPLayoutElement>;

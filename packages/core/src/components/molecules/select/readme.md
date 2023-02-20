@@ -63,8 +63,10 @@ graph TD;
   p-dropdown --> p-dropdown-menu-container
   p-input-group --> p-helper
   p-input-group --> p-icon
-  p-input-group --> p-tooltip
+  p-input-group --> p-input-error
   p-helper --> p-tooltip
+  p-input-error --> p-tooltip
+  p-input-error --> p-icon
   p-dropdown-menu-item --> p-icon
   style p-select fill:#f9f,stroke:#333,stroke-width:4px
 ```

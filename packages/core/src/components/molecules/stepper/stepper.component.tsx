@@ -54,6 +54,7 @@ export class Stepper {
                 );
             }
 
+            const child = item.querySelector('[slot="content"]');
             const newItem = (
                 <p-stepper-item
                     active={i === activeStep}
@@ -68,7 +69,7 @@ export class Stepper {
                     }
                     contentPosition={this.contentPosition}
                 >
-                    {item.innerHTML}
+                    <div slot="content" innerHTML={child.outerHTML} />
                 </p-stepper-item>
             );
 

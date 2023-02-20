@@ -1,17 +1,17 @@
 :host {
-    @apply h-8 flex items-center px-2 rounded w-full gap-2;
-    @apply text-sm text-storm font-semibold;
+    @apply flex h-8 w-full items-center gap-2 rounded px-2;
+    @apply text-sm font-semibold text-storm;
     @apply cursor-pointer;
 
     .text-container {
-        @apply block overflow-hidden text-ellipsis whitespace-nowrap;
+        @apply block w-full overflow-hidden text-ellipsis whitespace-nowrap;
     }
 }
 
 :host(.hover:hover) {
-    @apply text-storm bg-indigo-light;
+    @apply bg-indigo-light text-storm;
 }
 
 :host(.active) {
-    @apply text-indigo bg-indigo-light;
+    @apply bg-indigo-light text-indigo;
 }

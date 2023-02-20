@@ -72,13 +72,13 @@
 ### Used by
 
  - [p-helper](../helper)
- - [p-input-group](../../molecules/input-group)
+ - [p-input-error](../../molecules/input-error)
 
 ### Graph
 ```mermaid
 graph TD;
   p-helper --> p-tooltip
-  p-input-group --> p-tooltip
+  p-input-error --> p-tooltip
   style p-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

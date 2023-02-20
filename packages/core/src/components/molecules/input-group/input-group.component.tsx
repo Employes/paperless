@@ -5,7 +5,7 @@ import {
     Host,
     Listen,
     Prop,
-    State
+    State,
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -86,7 +86,6 @@ export class InputGroup {
      */
     @Element() private _el: HTMLElement;
 
-    @State() private _showTooltip = false;
     @State() private _forceShowTooltip = false;
 
     componentWillRender() {
@@ -126,7 +125,7 @@ export class InputGroup {
                     this.disabled && 'disabled'
                 } ${this.focused && 'focused'} size-${this.size}`}
             >
-                <div class="flex justify-between items-end">
+                <div class="flex items-end justify-between">
                     {label && (
                         <div class="input-label">
                             {label}
@@ -173,24 +172,10 @@ export class InputGroup {
                         (this.icon && this.iconPosition === 'end')) && (
                         <div class={`suffix size-${this.size}`}>
                             {errorAndErrorIsNotBoolean ? (
-                                <p-tooltip
-                                    variant="error"
-                                    popover={this.error}
-                                    show={this._forceShowTooltip}
-                                    onIsOpen={(ev) =>
-                                        (this._showTooltip = ev.detail)
-                                    }
-                                >
-                                    <p-icon
-                                        class={`${
-                                            this._showTooltip
-                                                ? 'text-negative'
-                                                : 'text-negative-light'
-                                        } hover:text-negative`}
-                                        slot="content"
-                                        variant="explanation"
-                                    />
-                                </p-tooltip>
+                                <p-input-error
+                                    error={this.error}
+                                    forceShowTooltip={this._forceShowTooltip}
+                                />
                             ) : this.icon ? (
                                 <p-icon
                                     class="flex"
@@ -222,11 +207,11 @@ export class InputGroup {
 
     private _setInputClasses() {
         const input = this._el.querySelector(':scope > [slot="input"]');
-    
-        if(!input) {
+
+        if (!input) {
             return;
         }
-        
+
         if (!input.classList.contains('p-input')) {
             input.classList.add('p-input');
         }

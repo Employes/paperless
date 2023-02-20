@@ -24,6 +24,7 @@
 
 ### Used by
 
+ - [p-attachment](../../molecules/attachment)
  - [p-button](../button)
  - [p-select](../../molecules/select)
  - [p-table](../../organisms/table)
@@ -34,6 +35,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  p-attachment --> p-loader
   p-button --> p-loader
   p-select --> p-loader
   p-table --> p-loader

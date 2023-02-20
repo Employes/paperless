@@ -20,11 +20,13 @@
 ### Used by
 
  - [p-accordion](../../molecules/accordion)
+ - [p-attachment](../../molecules/attachment)
  - [p-button](../button)
  - [p-calendar](../../molecules/calendar)
  - [p-card-header](../card-header)
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-info-panel](../info-panel)
+ - [p-input-error](../../molecules/input-error)
  - [p-input-group](../../molecules/input-group)
  - [p-label](../label)
  - [p-navigation-item](../../molecules/navigation-item)
@@ -38,11 +40,13 @@
 ```mermaid
 graph TD;
   p-accordion --> p-icon
+  p-attachment --> p-icon
   p-button --> p-icon
   p-calendar --> p-icon
   p-card-header --> p-icon
   p-dropdown-menu-item --> p-icon
   p-info-panel --> p-icon
+  p-input-error --> p-icon
   p-input-group --> p-icon
   p-label --> p-icon
   p-navigation-item --> p-icon

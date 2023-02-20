@@ -32,7 +32,7 @@ export class InputGroup {
     @Prop() suffix: string;
 
     /**
-     * Icon of the navigation item
+     * Icon of the input group
      */
     @Prop() icon: IconVariant;
 

@@ -11,6 +11,7 @@ import {
     Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils';
+import { IconVariant } from '../../atoms/icon/icon.component';
 
 @Component({
     tag: 'p-select',
@@ -22,6 +23,11 @@ export class Select {
      * The items to show in the dropdown
      */
     @Prop() items: string | any[];
+
+    /**
+     * Icon of the select box
+     */
+    @Prop() icon: IconVariant;
 
     /**
      * The current query
@@ -62,6 +68,11 @@ export class Select {
      * Wether to automatically select the first item
      */
     @Prop() autoSelectFirst: boolean = true;
+
+    /**
+     * Wether to show the chevron or not
+     */
+    @Prop() showChevron: boolean = true;
 
     /**
      * The maximum amount of items to display
@@ -207,7 +218,7 @@ export class Select {
                 >
                     <p-input-group
                         slot="trigger"
-                        icon="bread"
+                        icon={this.icon}
                         size={this.size}
                         prefix={this.prefix}
                         label={this.label}
@@ -230,7 +241,10 @@ export class Select {
                             onInput={(ev) => this._onChange(ev)}
                             ref={(ref) => (this._inputRef = ref)}
                         />
-                        <p-icon variant="chevron" slot="suffix" />
+
+                        {this.showChevron && (
+                            <p-icon variant="chevron" slot="suffix" />
+                        )}
                     </p-input-group>
                     <div slot="items">
                         {this.loading

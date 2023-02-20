@@ -506,7 +506,7 @@ export namespace Components {
          */
         "helper": string;
         /**
-          * Icon of the navigation item
+          * Icon of the input group
          */
         "icon": IconVariant;
         /**
@@ -827,6 +827,10 @@ export namespace Components {
          */
         "helper": string;
         /**
+          * Icon of the select box
+         */
+        "icon": IconVariant;
+        /**
           * The items to show in the dropdown
          */
         "items": string | any[];
@@ -858,6 +862,10 @@ export namespace Components {
           * The key of the object to display
          */
         "queryKey"?: string;
+        /**
+          * Wether to show the chevron or not
+         */
+        "showChevron": boolean;
         /**
           * The size of the input group used by the select
          */
@@ -2320,7 +2328,7 @@ declare namespace LocalJSX {
          */
         "helper"?: string;
         /**
-          * Icon of the navigation item
+          * Icon of the input group
          */
         "icon"?: IconVariant;
         /**
@@ -2661,6 +2669,10 @@ declare namespace LocalJSX {
          */
         "helper"?: string;
         /**
+          * Icon of the select box
+         */
+        "icon"?: IconVariant;
+        /**
           * The items to show in the dropdown
          */
         "items"?: string | any[];
@@ -2700,6 +2712,10 @@ declare namespace LocalJSX {
           * The key of the object to display
          */
         "queryKey"?: string;
+        /**
+          * Wether to show the chevron or not
+         */
+        "showChevron"?: boolean;
         /**
           * The size of the input group used by the select
          */

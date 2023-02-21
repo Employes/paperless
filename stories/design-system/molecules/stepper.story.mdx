@@ -93,14 +93,14 @@ import StepperDocs from '../../../packages/core/src/components/molecules/stepper
 <Canvas>
     <div class="h-48">
         <p-stepper
-            active-step={2}
+            active-step={0}
             direction="vertical"
             content-position="start"
         >
-            <p-stepper-item>
+            <p-stepper-item finished={true}>
                 <input class="p-input" type="text" slot="content" />
             </p-stepper-item>
-            <p-stepper-item>
+            <p-stepper-item active={true}>
                 <input class="p-input" type="text" slot="content" />
             </p-stepper-item>
             <p-stepper-item>

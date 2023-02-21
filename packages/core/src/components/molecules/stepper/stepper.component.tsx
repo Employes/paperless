@@ -42,15 +42,36 @@ export class Stepper {
     }
 
     private _generateSteps() {
-        const activeStep = this.activeStep - 1;
+        let activeStep = this.activeStep - 1;
         const items = this._el.querySelectorAll(
             'p-stepper-item, p-stepper-line'
         );
 
+        if (!!this.activeStep || activeStep <= 0) {
+            const arrayItems = Array.from(items);
+            const activeItemIndex = arrayItems.findIndex(
+                (i: any) =>
+                    i.tagName.toLowerCase() === 'p-stepper-item' &&
+                    i.active &&
+                    !i.finished
+            );
+
+            if (activeItemIndex >= 0) {
+                activeStep = activeItemIndex;
+            }
+
+            const finishedItemIndex = arrayItems.findIndex(
+                (i: any) =>
+                    i.tagName.toLowerCase() === 'p-stepper-item' && i.finished
+            );
+            if (activeStep <= 0 && finishedItemIndex >= 0) {
+                activeStep = finishedItemIndex + 1;
+            }
+        }
+
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
 
-            console.log(item.tagName, item);
             if (item.tagName.toLowerCase() === 'p-stepper-item') {
                 item.active = i === activeStep;
                 item.finished = i < activeStep;

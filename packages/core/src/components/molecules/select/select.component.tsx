@@ -314,7 +314,7 @@ export class Select {
 
     private _selectValue(item) {
         this._selectedItem = item;
-        const value = this.valueKey ? item[this.valueKey] : item;
+        const value = item[this.valueKey];
 
         this.value = value;
         this.valueChange.emit(this.value);

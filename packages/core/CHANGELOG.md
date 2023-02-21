@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.349](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.348...v0.1.0-alpha.349) (2023-02-21)
+
+
+### Bug Fixes
+
+* **Molecules/Stepper:** Start inserting lines from the first ([1af101d](https://github.com/ionic-team/stencil-component-starter/commit/1af101de224d9082ec2be01c5fe1a3e7ac524eb3))
+
+
+
+
+
 # [0.1.0-alpha.348](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.347...v0.1.0-alpha.348) (2023-02-21)
 
 

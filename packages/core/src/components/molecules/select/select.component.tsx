@@ -320,20 +320,19 @@ export class Select {
     }
 
     private _onFocus() {
-        if (!this.items.length && !this.loading) {
-            return;
-        }
-
         if (!this.enableAutocomplete) {
             this._inputRef.blur();
-            if (!this._showDropdown) {
+            if (!this._showDropdown && this.items.length) {
                 this._showDropdown = true;
             }
             return;
         }
 
         this._isAutoCompleting = true;
-        this._showDropdown = true;
+
+        if (this.items.length || this.loading) {
+            this._showDropdown = true;
+        }
     }
 
     private _onMouseDown(ev) {

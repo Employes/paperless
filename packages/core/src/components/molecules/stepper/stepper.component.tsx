@@ -69,7 +69,6 @@ export class Stepper {
             }
         }
 
-        console.log(items);
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
 
@@ -88,10 +87,12 @@ export class Stepper {
                 if (i > 0) {
                     const nextItem = items.item(i + 1) as any;
 
+                    console.log(i, item, i + 1, nextItem, nextItem.tagName);
                     if (
                         !nextItem ||
                         nextItem.tagName.toLowerCase() === 'p-stepper-item'
                     ) {
+                        console.log('Adding line');
                         const heightDiff = (item.clientHeight - 16) / 2;
 
                         const stepperLine =
@@ -117,6 +118,7 @@ export class Stepper {
                     }
 
                     if (nextItem.tagName.toLowerCase() === 'p-stepper-line') {
+                        console.log('Updating line');
                         nextItem.direction = this.direction;
                         nextItem.active = i <= activeStep;
                     }

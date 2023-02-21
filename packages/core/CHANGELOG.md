@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.355](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.354...v0.1.0-alpha.355) (2023-02-21)
+
+
+### Reverts
+
+* Revert "feat(Molecules/Select): Allow for return of whole item" ([0a76358](https://github.com/ionic-team/stencil-component-starter/commit/0a76358a222d291b9d03c3840e33db445e439ad2))
+
+
+
+
+
 # [0.1.0-alpha.354](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.353...v0.1.0-alpha.354) (2023-02-21)
 
 

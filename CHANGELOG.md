@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.353](https://github.com/employes/paperless/compare/v0.1.0-alpha.352...v0.1.0-alpha.353) (2023-02-21)
+
+
+### Bug Fixes
+
+* **Molecules/Stepper:** I am pretty stupid ([3e5fca5](https://github.com/employes/paperless/commit/3e5fca5f741227b95a215c92388e663ab756a7cd))
+
+
+
+
+
 # [0.1.0-alpha.352](https://github.com/employes/paperless/compare/v0.1.0-alpha.351...v0.1.0-alpha.352) (2023-02-21)
 
 

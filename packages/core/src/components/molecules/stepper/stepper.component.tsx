@@ -42,10 +42,10 @@ export class Stepper {
     }
 
     private _generateSteps() {
-        let activeStep = this.activeStep - 1;
+        let activeStep = this.activeStep - 1 || 0;
         const items = this._el.querySelectorAll('p-stepper-item');
 
-        if (!!this.activeStep || activeStep <= 0) {
+        if (!!this.activeStep || activeStep < 0) {
             const arrayItems = Array.from(items);
             const activeItemIndex = arrayItems.findIndex(
                 (i: any) =>
@@ -62,15 +62,15 @@ export class Stepper {
                 (i: any) =>
                     i.tagName.toLowerCase() === 'p-stepper-item' && i.finished
             );
-            if (activeStep <= 0 && finishedItemIndex >= 0) {
+            if (activeStep < 0 && finishedItemIndex >= 0) {
                 activeStep = finishedItemIndex + 1;
             }
         }
 
-        console.log(items);
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
-            console.log(item);
+
+            console.log(i, activeStep);
 
             item.active = i === activeStep;
             item.finished = i < activeStep;
@@ -86,11 +86,11 @@ export class Stepper {
                     nextItem &&
                     nextItem.tagName.toLowerCase() === 'p-stepper-item'
                 ) {
-                    console.log('Adding line');
                     const heightDiff = (item.clientHeight - 16) / 2;
 
                     const stepperLine =
                         document.createElement('p-stepper-line');
+
                     stepperLine.direction = this.direction;
                     stepperLine.active = i <= activeStep;
 

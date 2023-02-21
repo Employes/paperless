@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.343](https://github.com/employes/paperless/compare/v0.1.0-alpha.342...v0.1.0-alpha.343) (2023-02-21)
+
+
+### Bug Fixes
+
+* **Atoms/Stepper Item:** Fix semibold font ([47e0c4f](https://github.com/employes/paperless/commit/47e0c4f7a7cf1a3a3a066bae39f9da6426c23126))
+
+
+### Features
+
+* **Molecules/Select:** Don't show dropdown when no items & Add dropdown shown event ([bfa8857](https://github.com/employes/paperless/commit/bfa8857a521d20d1193ea479b79e5058fdb76ffb))
+* **Molecules/Stepper:** Automatically set activeIndex based on items ([4f5dac6](https://github.com/employes/paperless/commit/4f5dac6b652dc8ffc6c634f354bcaeb0004eb083))
+
+
+
+
+
 # [0.1.0-alpha.342](https://github.com/employes/paperless/compare/v0.1.0-alpha.341...v0.1.0-alpha.342) (2023-02-21)
 
 

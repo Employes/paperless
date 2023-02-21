@@ -72,56 +72,50 @@ export class Stepper {
             const item = items.item(i) as any;
             console.log(item);
 
-            if (item.tagName.toLowerCase() === 'p-stepper-item') {
-                item.active = i === activeStep;
-                item.finished = i < activeStep;
-                item.direction = this.direction;
-                item.align =
-                    i === 0
-                        ? 'start'
-                        : i === items?.length - 1
-                        ? 'end'
-                        : 'center';
-                item.contentPosition = this.contentPosition;
+            item.active = i === activeStep;
+            item.finished = i < activeStep;
+            item.direction = this.direction;
+            item.align =
+                i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
+            item.contentPosition = this.contentPosition;
 
-                if (i < items.length - 1) {
-                    const nextItem = item.nextElementSibling;
+            if (i < items.length - 1) {
+                const nextItem = item.nextElementSibling;
+                console.log(i, item, i + 1, nextItem, nextItem?.tagName);
+                if (
+                    nextItem &&
+                    nextItem.tagName.toLowerCase() === 'p-stepper-item'
+                ) {
+                    console.log('Adding line');
+                    const heightDiff = (item.clientHeight - 16) / 2;
 
-                    console.log(i, item, i + 1, nextItem, nextItem?.tagName);
-                    if (
-                        nextItem &&
-                        nextItem.tagName.toLowerCase() === 'p-stepper-item'
-                    ) {
-                        console.log('Adding line');
-                        const heightDiff = (item.clientHeight - 16) / 2;
+                    const stepperLine =
+                        document.createElement('p-stepper-line');
+                    stepperLine.direction = this.direction;
+                    stepperLine.active = i <= activeStep;
 
-                        const stepperLine =
-                            document.createElement('p-stepper-line');
-                        stepperLine.direction = this.direction;
-                        stepperLine.active = i <= activeStep;
-
-                        if (heightDiff > 0 && this.direction === 'vertical') {
-                            stepperLine.style.marginTop = `-${
-                                heightDiff / 16
-                            }rem`;
-                            stepperLine.style.marginBottom = `-${
-                                heightDiff / 16
-                            }rem`;
-                            stepperLine.style.minHeight = `calc(1rem + ${
-                                (heightDiff * 2) / 16
-                            }rem)`;
-                        }
-
-                        this._el.insertBefore(stepperLine, nextItem);
-
-                        continue;
+                    if (heightDiff > 0 && this.direction === 'vertical') {
+                        stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
+                        stepperLine.style.marginBottom = `-${
+                            heightDiff / 16
+                        }rem`;
+                        stepperLine.style.minHeight = `calc(1rem + ${
+                            (heightDiff * 2) / 16
+                        }rem)`;
                     }
 
-                    if (nextItem.tagName.toLowerCase() === 'p-stepper-line') {
-                        console.log('Updating line');
-                        nextItem.direction = this.direction;
-                        nextItem.active = i <= activeStep;
-                    }
+                    this._el.insertBefore(stepperLine, nextItem);
+
+                    continue;
+                }
+            }
+
+            if (i > 0) {
+                const previousItem = item.previousElementSibling;
+                if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
+                    console.log('Updating line');
+                    previousItem.direction = this.direction;
+                    previousItem.active = item.active || item.finished;
                 }
             }
         }

@@ -43,9 +43,7 @@ export class Stepper {
 
     private _generateSteps() {
         let activeStep = this.activeStep - 1;
-        const items = this._el.querySelectorAll(
-            'p-stepper-item, p-stepper-line'
-        );
+        const items = this._el.querySelectorAll('p-stepper-item');
 
         if (!!this.activeStep || activeStep <= 0) {
             const arrayItems = Array.from(items);
@@ -69,8 +67,10 @@ export class Stepper {
             }
         }
 
+        console.log(items);
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
+            console.log(item);
 
             if (item.tagName.toLowerCase() === 'p-stepper-item') {
                 item.active = i === activeStep;
@@ -85,9 +85,9 @@ export class Stepper {
                 item.contentPosition = this.contentPosition;
 
                 if (i > 0) {
-                    const nextItem = items.item(i + 1) as any;
+                    const nextItem = item.nextElementSibling;
 
-                    console.log(i, item, i + 1, nextItem, nextItem.tagName);
+                    console.log(i, item, i + 1, nextItem, nextItem?.tagName);
                     if (
                         !nextItem ||
                         nextItem.tagName.toLowerCase() === 'p-stepper-item'

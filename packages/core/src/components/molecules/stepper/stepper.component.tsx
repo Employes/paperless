@@ -84,12 +84,12 @@ export class Stepper {
                         : 'center';
                 item.contentPosition = this.contentPosition;
 
-                if (i > 0) {
+                if (i < items.length - 1) {
                     const nextItem = item.nextElementSibling;
 
                     console.log(i, item, i + 1, nextItem, nextItem?.tagName);
                     if (
-                        !nextItem ||
+                        nextItem &&
                         nextItem.tagName.toLowerCase() === 'p-stepper-item'
                     ) {
                         console.log('Adding line');
@@ -112,7 +112,7 @@ export class Stepper {
                             }rem)`;
                         }
 
-                        this._el.insertBefore(stepperLine, item);
+                        this._el.insertBefore(stepperLine, nextItem);
 
                         continue;
                     }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.342](https://github.com/employes/paperless/compare/v0.1.0-alpha.341...v0.1.0-alpha.342) (2023-02-21)
+
+
+### Bug Fixes
+
+* **Molecules/Stepper:** Update properties on re-render/changes ([0339656](https://github.com/employes/paperless/commit/033965609199a5dc5f992b24130f2b687c9ea4af))
+
+
+
+
+
 # [0.1.0-alpha.341](https://github.com/employes/paperless/compare/v0.1.0-alpha.340...v0.1.0-alpha.341) (2023-02-21)
 
 

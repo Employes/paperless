@@ -29,9 +29,8 @@ export class Stepper {
 
     // private _steps: Array<HTMLPStepperItemElement>;
 
-    componentDidLoad() {
-        const activeStep = this.activeStep - 1;
-        this._generateSteps(activeStep);
+    componentDidRender() {
+        this._generateSteps();
     }
 
     render() {
@@ -42,49 +41,65 @@ export class Stepper {
         );
     }
 
-    private _generateSteps(activeStep: number) {
-        const items = this._el.querySelectorAll('p-stepper-item');
+    private _generateSteps() {
+        const activeStep = this.activeStep - 1;
+        const items = this._el.querySelectorAll(
+            'p-stepper-item, p-stepper-line'
+        );
 
         for (let i = 0; i < items?.length; i++) {
-            const item = items.item(i);
+            const item = items.item(i) as any;
 
-            item.active = i === activeStep;
-            item.finished = i < activeStep;
-            item.direction = this.direction;
-            item.align =
-                i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
-            item.contentPosition = this.contentPosition;
+            console.log(item.tagName, item);
+            if (item.tagName.toLowerCase() === 'p-stepper-item') {
+                item.active = i === activeStep;
+                item.finished = i < activeStep;
+                item.direction = this.direction;
+                item.align =
+                    i === 0
+                        ? 'start'
+                        : i === items?.length - 1
+                        ? 'end'
+                        : 'center';
+                item.contentPosition = this.contentPosition;
 
-            const heightDiff = (item.clientHeight - 16) / 2;
+                if (i > 0) {
+                    const nextItem = items.item(i + 1) as any;
 
-            if (i > 0) {
-                const stepperLine = document.createElement('p-stepper-line');
-                stepperLine.direction = this.direction;
-                stepperLine.active = i <= activeStep;
+                    if (
+                        !nextItem ||
+                        nextItem.tagName.toLowerCase() === 'p-stepper-item'
+                    ) {
+                        const heightDiff = (item.clientHeight - 16) / 2;
 
-                if (heightDiff > 0 && this.direction === 'vertical') {
-                    stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
-                    stepperLine.style.marginBottom = `-${heightDiff / 16}rem`;
-                    stepperLine.style.minHeight = `calc(1rem + ${
-                        (heightDiff * 2) / 16
-                    }rem)`;
+                        const stepperLine =
+                            document.createElement('p-stepper-line');
+                        stepperLine.direction = this.direction;
+                        stepperLine.active = i <= activeStep;
+
+                        if (heightDiff > 0 && this.direction === 'vertical') {
+                            stepperLine.style.marginTop = `-${
+                                heightDiff / 16
+                            }rem`;
+                            stepperLine.style.marginBottom = `-${
+                                heightDiff / 16
+                            }rem`;
+                            stepperLine.style.minHeight = `calc(1rem + ${
+                                (heightDiff * 2) / 16
+                            }rem)`;
+                        }
+
+                        this._el.insertBefore(stepperLine, item);
+
+                        continue;
+                    }
+
+                    if (nextItem.tagName.toLowerCase() === 'p-stepper-line') {
+                        nextItem.direction = this.direction;
+                        nextItem.active = i <= activeStep;
+                    }
                 }
-
-                this._el.insertBefore(stepperLine, item);
             }
-
-            // const child = item.querySelector('[slot="content"]');
-            // const newItem = (
-            //     <p-stepper-item
-
-            //     >
-            //         <div slot="content" innerHTML={child.outerHTML} />
-            //     </p-stepper-item>
-            // );
-
-            // elements.push(newItem);
         }
-
-        // return elements;
     }
 }

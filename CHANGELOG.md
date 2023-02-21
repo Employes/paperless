@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.354](https://github.com/employes/paperless/compare/v0.1.0-alpha.353...v0.1.0-alpha.354) (2023-02-21)
+
+
+### Features
+
+* **Molecules/Select:** Allow for return of whole item ([bb19b6e](https://github.com/employes/paperless/commit/bb19b6e449f4312b028e0f6a1379376cded2ff20))
+
+
+
+
+
 # [0.1.0-alpha.353](https://github.com/employes/paperless/compare/v0.1.0-alpha.352...v0.1.0-alpha.353) (2023-02-21)
 
 

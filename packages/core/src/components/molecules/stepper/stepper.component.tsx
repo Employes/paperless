@@ -45,6 +45,7 @@ export class Stepper {
         let activeStep = this.activeStep - 1 || 0;
         const items = this._el.querySelectorAll('p-stepper-item');
 
+        console.log('active step', activeStep, this.activeStep);
         if (!!this.activeStep || activeStep < 0) {
             const arrayItems = Array.from(items);
             const activeItemIndex = arrayItems.findIndex(
@@ -55,6 +56,7 @@ export class Stepper {
             );
 
             if (activeItemIndex >= 0) {
+                console.log('Edit activeStep active');
                 activeStep = activeItemIndex;
             }
 
@@ -63,6 +65,7 @@ export class Stepper {
                     i.tagName.toLowerCase() === 'p-stepper-item' && i.finished
             );
             if (activeStep < 0 && finishedItemIndex >= 0) {
+                console.log('Edit activeStep finished');
                 activeStep = finishedItemIndex + 1;
             }
         }
@@ -70,7 +73,11 @@ export class Stepper {
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
 
-            console.log(i, activeStep);
+            console.log({
+                i,
+                activeStep,
+                thisActiveStep: this.activeStep,
+            });
 
             item.active = i === activeStep;
             item.finished = i < activeStep;
@@ -81,7 +88,6 @@ export class Stepper {
 
             if (i < items.length - 1) {
                 const nextItem = item.nextElementSibling;
-                console.log(i, item, i + 1, nextItem, nextItem?.tagName);
                 if (
                     nextItem &&
                     nextItem.tagName.toLowerCase() === 'p-stepper-item'
@@ -113,7 +119,6 @@ export class Stepper {
             if (i > 0) {
                 const previousItem = item.previousElementSibling;
                 if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
-                    console.log('Updating line');
                     previousItem.direction = this.direction;
                     previousItem.active = item.active || item.finished;
                 }

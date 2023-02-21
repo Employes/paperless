@@ -8,11 +8,11 @@
 }
 
 :host([direction='horizontal']) {
-    @apply h-[2px] mb-[calc(.5rem-1px)];
+    @apply mb-[calc(.5rem-1px)] h-[2px];
 }
 
 :host([direction='vertical']) {
-    @apply w-[2px] ml-[calc(.5rem-1px)] mr-[calc(.5rem-1px)];
+    @apply ml-[calc(.5rem-1px)] mr-[calc(.5rem-1px)] min-h-[1rem] w-[2px];
 }
 
 :host([active]) {

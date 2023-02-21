@@ -24,10 +24,6 @@
 
 ## Dependencies
 
-### Used by
-
- - [p-stepper](../../molecules/stepper)
-
 ### Depends on
 
 - [p-icon](../icon)
@@ -36,7 +32,6 @@
 ```mermaid
 graph TD;
   p-stepper-item --> p-icon
-  p-stepper --> p-stepper-item
   style p-stepper-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

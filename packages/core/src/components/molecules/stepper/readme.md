@@ -27,14 +27,11 @@
 ### Depends on
 
 - [p-stepper-line](../../atoms/stepper-line)
-- [p-stepper-item](../../atoms/stepper-item)
 
 ### Graph
 ```mermaid
 graph TD;
   p-stepper --> p-stepper-line
-  p-stepper --> p-stepper-item
-  p-stepper-item --> p-icon
   style p-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -27,55 +27,64 @@ export class Stepper {
      */
     @Element() private _el: HTMLElement;
 
-    private _steps: Array<HTMLPStepperItemElement>;
+    // private _steps: Array<HTMLPStepperItemElement>;
 
-    componentWillRender() {
+    componentDidLoad() {
         const activeStep = this.activeStep - 1;
-        this._steps = this._generateSteps(activeStep);
+        this._generateSteps(activeStep);
     }
 
     render() {
-        return <Host class="p-stepper">{this._steps}</Host>;
+        return (
+            <Host class="p-stepper">
+                <slot />
+            </Host>
+        );
     }
 
     private _generateSteps(activeStep: number) {
-        const elements = [];
         const items = this._el.querySelectorAll('p-stepper-item');
 
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i);
 
+            item.active = i === activeStep;
+            item.finished = i < activeStep;
+            item.direction = this.direction;
+            item.align =
+                i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
+            item.contentPosition = this.contentPosition;
+
+            const heightDiff = (item.clientHeight - 16) / 2;
+
             if (i > 0) {
-                elements.push(
-                    <p-stepper-line
-                        direction={this.direction}
-                        active={i <= activeStep}
-                    />
-                );
+                const stepperLine = document.createElement('p-stepper-line');
+                stepperLine.direction = this.direction;
+                stepperLine.active = i <= activeStep;
+
+                if (heightDiff > 0 && this.direction === 'vertical') {
+                    stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
+                    stepperLine.style.marginBottom = `-${heightDiff / 16}rem`;
+                    stepperLine.style.minHeight = `calc(1rem + ${
+                        (heightDiff * 2) / 16
+                    }rem)`;
+                }
+
+                this._el.insertBefore(stepperLine, item);
             }
 
-            const child = item.querySelector('[slot="content"]');
-            const newItem = (
-                <p-stepper-item
-                    active={i === activeStep}
-                    finished={i < activeStep}
-                    direction={this.direction}
-                    align={
-                        i === 0
-                            ? 'start'
-                            : i === items?.length - 1
-                            ? 'end'
-                            : 'center'
-                    }
-                    contentPosition={this.contentPosition}
-                >
-                    <div slot="content" innerHTML={child.outerHTML} />
-                </p-stepper-item>
-            );
+            // const child = item.querySelector('[slot="content"]');
+            // const newItem = (
+            //     <p-stepper-item
 
-            elements.push(newItem);
+            //     >
+            //         <div slot="content" innerHTML={child.outerHTML} />
+            //     </p-stepper-item>
+            // );
+
+            // elements.push(newItem);
         }
 
-        return elements;
+        // return elements;
     }
 }

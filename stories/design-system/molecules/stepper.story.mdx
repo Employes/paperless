@@ -85,3 +85,27 @@ import StepperDocs from '../../../packages/core/src/components/molecules/stepper
         </p-stepper>
     </div>
 </Canvas>
+
+## Other content
+
+## Inputs vertical
+
+<Canvas>
+    <div class="h-48">
+        <p-stepper
+            active-step={2}
+            direction="vertical"
+            content-position="start"
+        >
+            <p-stepper-item>
+                <input class="p-input" type="text" slot="content" />
+            </p-stepper-item>
+            <p-stepper-item>
+                <input class="p-input" type="text" slot="content" />
+            </p-stepper-item>
+            <p-stepper-item>
+                <input class="p-input" type="text" slot="content" />
+            </p-stepper-item>
+        </p-stepper>
+    </div>
+</Canvas>

@@ -45,7 +45,6 @@ export class Stepper {
         let activeStep = this.activeStep - 1 || 0;
         const items = this._el.querySelectorAll('p-stepper-item');
 
-        console.log('active step', activeStep, this.activeStep);
         if (!this.activeStep || activeStep < 0) {
             const arrayItems = Array.from(items);
             const activeItemIndex = arrayItems.findIndex(
@@ -56,7 +55,6 @@ export class Stepper {
             );
 
             if (activeItemIndex >= 0) {
-                console.log('Edit activeStep active');
                 activeStep = activeItemIndex;
             }
 
@@ -65,19 +63,12 @@ export class Stepper {
                     i.tagName.toLowerCase() === 'p-stepper-item' && i.finished
             );
             if (activeStep < 0 && finishedItemIndex >= 0) {
-                console.log('Edit activeStep finished');
                 activeStep = finishedItemIndex + 1;
             }
         }
 
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
-
-            console.log({
-                i,
-                activeStep,
-                thisActiveStep: this.activeStep,
-            });
 
             item.active = i === activeStep;
             item.finished = i < activeStep;

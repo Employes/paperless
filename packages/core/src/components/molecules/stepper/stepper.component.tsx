@@ -69,6 +69,7 @@ export class Stepper {
             }
         }
 
+        console.log(items);
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
 

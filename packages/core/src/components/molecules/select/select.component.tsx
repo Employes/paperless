@@ -221,7 +221,7 @@ export class Select {
                     insideClick={true}
                     show={
                         this._showDropdown &&
-                        (!!this.items.length || this.loading)
+                        (!!this._items.length || this.loading)
                     }
                 >
                     <p-input-group

@@ -40,10 +40,11 @@
 
 ## Events
 
-| Event         | Description                                      | Type                  |
-| ------------- | ------------------------------------------------ | --------------------- |
-| `queryChange` | Event when the query of the autocomplete changes | `CustomEvent<string>` |
-| `valueChange` | Event when the value changes                     | `CustomEvent<any>`    |
+| Event           | Description                                      | Type                  |
+| --------------- | ------------------------------------------------ | --------------------- |
+| `dropdownShown` | Event when the dropdown shows                    | `CustomEvent<any>`    |
+| `queryChange`   | Event when the query of the autocomplete changes | `CustomEvent<string>` |
+| `valueChange`   | Event when the value changes                     | `CustomEvent<any>`    |
 
 
 ## Dependencies

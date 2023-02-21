@@ -105,6 +105,11 @@ export class Select {
     @Event() valueChange: EventEmitter<any>;
 
     /**
+     * Event when the dropdown shows
+     */
+    @Event() dropdownShown: EventEmitter<any>;
+
+    /**
      * The size of the input group used by the select
      */
     @Prop() size: 'small' | 'medium' = 'medium';
@@ -276,6 +281,14 @@ export class Select {
         this._preselectItem();
     }
 
+    @Watch('_showDropdown')
+    public _showDropdownChanges() {
+        this.dropdownShown.emit({
+            value: this._showDropdown,
+            query: this.query,
+        });
+    }
+
     private _preselectItem(value?: any) {
         value = value === undefined ? null : value;
         const parsedValue = !!this.value
@@ -307,6 +320,10 @@ export class Select {
     }
 
     private _onFocus() {
+        if (!this.items.length && !this.loading) {
+            return;
+        }
+
         if (!this.enableAutocomplete) {
             this._inputRef.blur();
             if (!this._showDropdown) {

@@ -2689,6 +2689,10 @@ declare namespace LocalJSX {
          */
         "maxDisplayedItems"?: number;
         /**
+          * Event when the dropdown shows
+         */
+        "onDropdownShown"?: (event: PSelectCustomEvent<any>) => void;
+        /**
           * Event when the query of the autocomplete changes
          */
         "onQueryChange"?: (event: PSelectCustomEvent<string>) => void;

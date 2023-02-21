@@ -219,7 +219,10 @@ export class Select {
                     disableTriggerClick={true}
                     calculateWidth={true}
                     insideClick={true}
-                    show={this._showDropdown}
+                    show={
+                        this._showDropdown &&
+                        (!!this.items.length || this.loading)
+                    }
                 >
                     <p-input-group
                         slot="trigger"
@@ -322,7 +325,7 @@ export class Select {
     private _onFocus() {
         if (!this.enableAutocomplete) {
             this._inputRef.blur();
-            if (!this._showDropdown && this.items.length) {
+            if (!this._showDropdown) {
                 this._showDropdown = true;
             }
             return;
@@ -330,9 +333,7 @@ export class Select {
 
         this._isAutoCompleting = true;
 
-        if (this.items.length || this.loading) {
-            this._showDropdown = true;
-        }
+        this._showDropdown = true;
     }
 
     private _onMouseDown(ev) {

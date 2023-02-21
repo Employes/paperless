@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.346](https://github.com/employes/paperless/compare/v0.1.0-alpha.345...v0.1.0-alpha.346) (2023-02-21)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** use _items instead of items ([537ffef](https://github.com/employes/paperless/commit/537ffefcf0e76144b953a569ee8b8e586b4d01bd))
+
+
+
+
+
 # [0.1.0-alpha.345](https://github.com/employes/paperless/compare/v0.1.0-alpha.344...v0.1.0-alpha.345) (2023-02-21)
 
 

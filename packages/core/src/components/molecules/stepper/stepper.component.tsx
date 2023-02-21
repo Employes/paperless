@@ -46,7 +46,7 @@ export class Stepper {
         const items = this._el.querySelectorAll('p-stepper-item');
 
         console.log('active step', activeStep, this.activeStep);
-        if (!!this.activeStep || activeStep < 0) {
+        if (!this.activeStep || activeStep < 0) {
             const arrayItems = Array.from(items);
             const activeItemIndex = arrayItems.findIndex(
                 (i: any) =>

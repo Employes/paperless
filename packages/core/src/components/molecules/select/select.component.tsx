@@ -304,6 +304,17 @@ export class Select {
     private _preselectItem(value?: any) {
         value = value === undefined ? null : value;
         value = !value ? this.value : value;
+
+        if (
+            !!value &&
+            (this.valueKey === 'false' ||
+                !this.valueKey ||
+                !this.valueKey?.length)
+        ) {
+            this._selectedItem = null;
+            return;
+        }
+
         value =
             this.valueKey === 'false' ||
             !this.valueKey ||

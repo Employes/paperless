@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.359](https://github.com/employes/paperless/compare/v0.1.0-alpha.358...v0.1.0-alpha.359) (2023-02-22)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Make sure we check if value is not `null` ([cff7fa7](https://github.com/employes/paperless/commit/cff7fa7ae0f27290b45bc1981b4ec1cdd72b46bb))
+
+
+
+
+
 # [0.1.0-alpha.358](https://github.com/employes/paperless/compare/v0.1.0-alpha.357...v0.1.0-alpha.358) (2023-02-22)
 
 

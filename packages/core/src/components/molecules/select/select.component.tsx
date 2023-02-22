@@ -60,6 +60,11 @@ export class Select {
     @Prop() valueKey: string = 'value';
 
     /**
+     * The key to identify an object
+     */
+    @Prop() identifierKey: string;
+
+    /**
      * The key of the object to display
      */
     @Prop() queryKey?: string;
@@ -178,7 +183,7 @@ export class Select {
                 }
 
                 return (
-                    this._checkvalue(this.valueKey, item) ||
+                    this._checkvalue(this._identifierKey, item) ||
                     this._checkvalue(this.displayKey, item)
                 );
             });
@@ -199,6 +204,10 @@ export class Select {
         return this._isAutoCompleting && this.autocompletePlaceholder?.length
             ? this.autocompletePlaceholder
             : this.placeholder;
+    }
+
+    get _identifierKey() {
+        return this.identifierKey ?? this.valueKey;
     }
 
     componentDidLoad() {
@@ -294,19 +303,23 @@ export class Select {
 
     private _preselectItem(value?: any) {
         value = value === undefined ? null : value;
-        const parsedValue = !!this.value
-            ? JSON.stringify(this.value)
-            : JSON.stringify(value);
+        value = !!this.value ? this.value : value;
+        value =
+            !!this.valueKey?.length && this.valueKey !== 'false'
+                ? value
+                : value[this._identifierKey];
+        const parsedValue = JSON.stringify(value);
 
         if (
             this._selectedItem &&
-            JSON.stringify(this._selectedItem[this.valueKey]) === parsedValue
+            JSON.stringify(this._selectedItem[this._identifierKey]) ===
+                parsedValue
         ) {
             return;
         }
 
         const item = this._items.find(
-            (i) => JSON.stringify(i?.[this.valueKey]) === parsedValue
+            (i) => JSON.stringify(i?.[this._identifierKey]) === parsedValue
         );
 
         this._selectedItem = item;
@@ -314,11 +327,15 @@ export class Select {
 
     private _selectValue(item) {
         this._selectedItem = item;
-        const value = item[this.valueKey];
+        const value =
+            !!this.valueKey?.length && this.valueKey !== 'false'
+                ? item[this.valueKey]
+                : item;
 
         this.value = value;
         this.valueChange.emit(this.value);
 
+        console.log(this.value);
         this._onBlur(true);
     }
 
@@ -384,7 +401,8 @@ export class Select {
             <p-dropdown-menu-item
                 onClick={() => this._selectValue(item)}
                 active={
-                    item[this.valueKey] === this._selectedItem?.[this.valueKey]
+                    item[this._identifierKey] ===
+                    this._selectedItem?.[this._identifierKey]
                 }
             >
                 {item[this.displayKey]}

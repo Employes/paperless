@@ -99,3 +99,16 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
         />
     </div>
 </Canvas>
+
+## Using identifier key to return object
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            auto-select-first={true}
+            value-key={false}
+            identifier-key="value"
+            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+        />
+    </div>
+</Canvas>

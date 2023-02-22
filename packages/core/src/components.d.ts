@@ -831,6 +831,10 @@ export namespace Components {
          */
         "icon": IconVariant;
         /**
+          * The key to identify an object
+         */
+        "identifierKey": string;
+        /**
           * The items to show in the dropdown
          */
         "items": string | any[];
@@ -2672,6 +2676,10 @@ declare namespace LocalJSX {
           * Icon of the select box
          */
         "icon"?: IconVariant;
+        /**
+          * The key to identify an object
+         */
+        "identifierKey"?: string;
         /**
           * The items to show in the dropdown
          */

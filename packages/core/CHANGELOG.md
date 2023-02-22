@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.356](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.355...v0.1.0-alpha.356) (2023-02-22)
+
+
+### Features
+
+* **Molecules/Select:** Add ability to return whole object ([b8f4af9](https://github.com/ionic-team/stencil-component-starter/commit/b8f4af9622e8b7435144d28a651fc839d9f71f4e))
+
+
+
+
+
 # [0.1.0-alpha.355](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.354...v0.1.0-alpha.355) (2023-02-21)
 
 

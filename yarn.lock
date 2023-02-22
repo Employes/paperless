@@ -172,10 +172,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/cdk@15.1.5":
-  version "15.1.5"
-  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.1.5.tgz#da9b930c4a3430eb3537f4d24fbc0dfea761ea2d"
-  integrity sha512-hybUkjvLJcr+WKMMN4uo8aa+kwg4ExTrSBDgUUqsCD0zvcpNwWPRgHeXTNawAZVWV6iBOaHgX6O3XZmsWcs5Rg==
+"@angular/cdk@15.1.6":
+  version "15.1.6"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.1.6.tgz#85a1af872cf453b2ac6382a5c69df60a90b8d791"
+  integrity sha512-uaNTNNdy+zhobJ0FQmWg9Wa9paj0wny7X+RJB/cB+wP8Vk6thgXH3IlK2KNA2FY/O6QVU/Fjixt+OSSfaVBHtw==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:

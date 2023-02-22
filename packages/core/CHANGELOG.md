@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.357](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.356...v0.1.0-alpha.357) (2023-02-22)
+
+
+### Features
+
+* **Atoms/Helper:** Update visual ([57f0564](https://github.com/ionic-team/stencil-component-starter/commit/57f056472d66f9a51e6a9371635d8e3a97b91d07))
+
+
+
+
+
 # [0.1.0-alpha.356](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.355...v0.1.0-alpha.356) (2023-02-22)
 
 

@@ -303,11 +303,13 @@ export class Select {
 
     private _preselectItem(value?: any) {
         value = value === undefined ? null : value;
-        value = !!this.value ? this.value : value;
+        value = !value ? this.value : value;
         value =
-            !!this.valueKey?.length && this.valueKey !== 'false'
-                ? value
-                : value[this._identifierKey];
+            this.valueKey === 'false' ||
+            !this.valueKey ||
+            !this.valueKey?.length
+                ? value[this._identifierKey]
+                : value;
         const parsedValue = JSON.stringify(value);
 
         if (
@@ -335,7 +337,6 @@ export class Select {
         this.value = value;
         this.valueChange.emit(this.value);
 
-        console.log(this.value);
         this._onBlur(true);
     }
 

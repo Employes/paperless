@@ -305,21 +305,11 @@ export class Select {
         value = value === undefined ? null : value;
         value = !value ? this.value : value;
 
-        if (
-            !!value &&
-            (this.valueKey === 'false' ||
-                !this.valueKey ||
-                !this.valueKey?.length)
-        ) {
-            this._selectedItem = null;
-            return;
-        }
-
         value =
             this.valueKey === 'false' ||
             !this.valueKey ||
             !this.valueKey?.length
-                ? value[this._identifierKey]
+                ? value?.[this._identifierKey]
                 : value;
         const parsedValue = JSON.stringify(value);
 

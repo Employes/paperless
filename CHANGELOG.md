@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.358](https://github.com/employes/paperless/compare/v0.1.0-alpha.357...v0.1.0-alpha.358) (2023-02-22)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Try to fix preselect ([cf3e66a](https://github.com/employes/paperless/commit/cf3e66a1a131f47c017883e97553fb993f762166))
+
+
+
+
+
 # [0.1.0-alpha.357](https://github.com/employes/paperless/compare/v0.1.0-alpha.356...v0.1.0-alpha.357) (2023-02-22)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.362](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.361...v0.1.0-alpha.362) (2023-02-24)
+
+
+### Features
+
+* **Molecules/Select:** Allow for selection when no items are provided ([c5f7e51](https://github.com/ionic-team/stencil-component-starter/commit/c5f7e51ea0996a20ccdc95a71614b879635086a4))
+
+
+
+
+
 # [0.1.0-alpha.361](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.360...v0.1.0-alpha.361) (2023-02-22)
 
 **Note:** Version bump only for package @paperless/core

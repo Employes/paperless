@@ -326,6 +326,7 @@ export class Select {
 
         console.log('Check items & value', value, this._items);
         if (!this._items?.length && value) {
+            console.log('Selecting value because items is empty');
             this._selectedItem = value;
             return;
         }
@@ -334,7 +335,8 @@ export class Select {
             (i) => JSON.stringify(i?.[this._identifierKey]) === parsedValue
         );
 
-        this._selectedItem = item;
+        console.log('Selecting item or value', !!item ? item : value);
+        this._selectedItem = !!item ? item : value;
     }
 
     private _selectValue(item) {

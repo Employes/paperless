@@ -311,13 +311,19 @@ export class Select {
             !this.valueKey?.length
                 ? value?.[this._identifierKey]
                 : value;
-        const parsedValue = JSON.stringify(value);
+        const parsedValue =
+            typeof value === 'string' ? value : JSON.stringify(value);
 
         if (
             this._selectedItem &&
             JSON.stringify(this._selectedItem[this._identifierKey]) ===
                 parsedValue
         ) {
+            return;
+        }
+
+        if (!this._items?.length && value) {
+            this._selectedItem = value;
             return;
         }
 

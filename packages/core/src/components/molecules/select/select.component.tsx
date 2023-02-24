@@ -322,6 +322,7 @@ export class Select {
             return;
         }
 
+        console.log(this._items, value);
         if (!this._items?.length && value) {
             this._selectedItem = value;
             return;

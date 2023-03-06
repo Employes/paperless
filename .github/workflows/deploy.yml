@@ -160,15 +160,12 @@ jobs:
                   node-version: 18
                   registry-url: 'https://registry.npmjs.org'
 
-            - name: 'Set openssl legacy provider'
-              run: node --version
-              env:
-                  NODE_OPTIONS: '--openssl-legacy-provider'
-
             - name: Install dependencies
               run: yarn
 
             - name: Build storybook
+              env:
+                  NODE_OPTIONS: '--openssl-legacy-provider'
               run: yarn storybook:build
 
             - name: Deploy storybook

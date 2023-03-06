@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.368](https://github.com/employes/paperless/compare/v0.1.0-alpha.367...v0.1.0-alpha.368) (2023-03-06)
+
+
+### Features
+
+* **Angular/Table:** Add new inputs ([ca1684f](https://github.com/employes/paperless/commit/ca1684f5015ba5940551cc610d13971b2c762b55))
+
+
+
+
+
 # [0.1.0-alpha.367](https://github.com/employes/paperless/compare/v0.1.0-alpha.366...v0.1.0-alpha.367) (2023-03-06)
 
 

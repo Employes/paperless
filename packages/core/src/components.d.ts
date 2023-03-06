@@ -977,9 +977,17 @@ export namespace Components {
          */
         "canSelectKey": string;
         /**
+          * The edit button icon
+         */
+        "editButtonIcon": IconVariant2;
+        /**
           * The template for the edit button text
          */
         "editButtonTemplate": buttonTemplateFunc;
+        /**
+          * The edit button text if changed
+         */
+        "editButtonText": string;
         "emptyStateAction": templateFunc1;
         "emptyStateContent": templateFunc1;
         "emptyStateFilteredContent": templateFunc1;
@@ -989,6 +997,10 @@ export namespace Components {
           * Wether to show the edit button
          */
         "enableEdit": boolean;
+        /**
+          * Wether to enable empty state action
+         */
+        "enableEmptyStateAction": boolean;
         /**
           * Wether to enable export
          */
@@ -2843,9 +2855,17 @@ declare namespace LocalJSX {
          */
         "canSelectKey"?: string;
         /**
+          * The edit button icon
+         */
+        "editButtonIcon"?: IconVariant2;
+        /**
           * The template for the edit button text
          */
         "editButtonTemplate"?: buttonTemplateFunc;
+        /**
+          * The edit button text if changed
+         */
+        "editButtonText"?: string;
         "emptyStateAction"?: templateFunc1;
         "emptyStateContent"?: templateFunc1;
         "emptyStateFilteredContent"?: templateFunc1;
@@ -2855,6 +2875,10 @@ declare namespace LocalJSX {
           * Wether to show the edit button
          */
         "enableEdit"?: boolean;
+        /**
+          * Wether to enable empty state action
+         */
+        "enableEmptyStateAction"?: boolean;
         /**
           * Wether to enable export
          */

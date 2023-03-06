@@ -10,6 +10,7 @@ import {
     State,
     Watch,
 } from '@stencil/core';
+import { IconVariant } from '../../../components';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
 import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
@@ -143,6 +144,16 @@ export class Table {
     @Prop() enableEdit: boolean = true;
 
     /**
+     * The edit button icon
+     */
+    @Prop() editButtonIcon: IconVariant = 'pencil';
+
+    /**
+     * The edit button text if changed
+     */
+    @Prop() editButtonText: string;
+
+    /**
      * The template for the edit button text
      */
     @Prop() editButtonTemplate: buttonTemplateFunc;
@@ -225,13 +236,16 @@ export class Table {
     @Prop() hideOnSinglePage: boolean = true;
 
     /* Empty state start */
-
     @Prop() emptyStateHeader: templateFunc = () =>
         formatTranslation(this._locales.empty_state?.no_filter.header);
     @Prop() emptyStateContent: templateFunc = () =>
         formatTranslation(this._locales.empty_state?.no_filter.content);
     @Prop() emptyStateAction: templateFunc = () =>
         formatTranslation(this._locales.empty_state?.no_filter.action);
+    /**
+     * Wether to enable empty state action
+     */
+    @Prop() enableEmptyStateAction: boolean = true;
 
     @Prop() emptyStateFilteredHeader: templateFunc = () =>
         formatTranslation(this._locales.empty_state.filtered.header);
@@ -296,6 +310,8 @@ export class Table {
                         onFilter={() => this.filter.emit()}
                         // edit button
                         enableEdit={this.enableEdit}
+                        editIcon={this.editButtonIcon}
+                        editText={this.editButtonText}
                         canEdit={!!this.selectedRows?.length}
                         editButtonTemplate={this.editButtonTemplate}
                         onEdit={() => this.edit.emit()}
@@ -478,7 +494,7 @@ export class Table {
         }
 
         if (variant === 'loading') {
-            return <p-loader variant="ghost" class="rounded w-6 h-6" />;
+            return <p-loader variant="ghost" class="h-6 w-6 rounded" />;
         }
 
         if (variant === 'header') {
@@ -509,12 +525,12 @@ export class Table {
     private _getEmptyState() {
         if (this.query?.length || this.selectedFiltersAmount) {
             return (
-                <div class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+                <div class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center">
                     <p-illustration variant="empty-state-search" class="mb-6" />
-                    <p class="font-semibold text-storm-default">
+                    <p class="text-storm-default font-semibold">
                         {this.emptyStateFilteredHeader()}
                     </p>
-                    <p class="text-sm text-storm-medium mb-14">
+                    <p class="mb-14 text-sm text-storm-medium">
                         {this.emptyStateFilteredContent()}
                     </p>
                 </div>
@@ -522,26 +538,28 @@ export class Table {
         }
 
         return (
-            <div class="flex flex-col items-center text-center py-24 max-w-[20rem] self-center">
+            <div class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center">
                 <p-illustration
                     variant="empty-state-overview"
-                    class="cursor-pointer mb-6"
+                    class="mb-6 cursor-pointer"
                     onClick={() => this.emptyStateActionClick.emit(null)}
                 />
-                <p class="font-semibold text-storm-default">
+                <p class="text-storm-default font-semibold">
                     {this.emptyStateHeader()}
                 </p>
-                <p class="text-sm text-storm-medium mb-6">
+                <p class="mb-6 text-sm text-storm-medium">
                     {this.emptyStateContent()}
                 </p>
-                <p-button
-                    variant="secondary"
-                    icon="plus"
-                    size="small"
-                    onClick={() => this.emptyStateActionClick.emit(null)}
-                >
-                    {this.emptyStateAction()}
-                </p-button>
+                {this.enableEmptyStateAction && (
+                    <p-button
+                        variant="secondary"
+                        icon="plus"
+                        size="small"
+                        onClick={() => this.emptyStateActionClick.emit(null)}
+                    >
+                        {this.emptyStateAction()}
+                    </p-button>
+                )}
             </div>
         );
     }

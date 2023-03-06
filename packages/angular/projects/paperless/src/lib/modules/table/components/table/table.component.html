@@ -6,13 +6,15 @@
         [enableSearch]="enableSearch"
         [query]="query"
         (queryChange)="(onQueryChange)"
-        [enableFilter]="filterModalTemplate"
+        [enableFilter]="enableFilter"
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
         (filter)="filterModalShow$.next(true)"
         [enableEdit]="enableEdit"
         [canEdit]="!!selectedRows.length"
         [editButtonTemplate]="editButtonTemplate"
+        [editText]="editButtonText"
+        [editIcon]="editButtonIcon"
         (edit)="edit.emit()"
         [itemsSelectedAmount]="selectedRows.length"
         [loading]="headerLoading"
@@ -64,7 +66,7 @@
                     <ng-template #checkboxTemplate>
                         <p-loader
                             variant="ghost"
-                            class="rounded w-6 h-6"
+                            class="h-6 w-6 rounded"
                         ></p-loader>
                     </ng-template>
                 </ng-container>
@@ -138,10 +140,10 @@
                 *ngTemplateOutlet="filterModalTemplate"
             ></ng-container>
         </div>
-        <div slot="footer" class="flex justify-between gap-4 w-full">
+        <div slot="footer" class="flex w-full justify-between gap-4">
             <p-button
                 *ngIf="filterModalShowResetMobile"
-                class="flex desktop-xs:hidden w-full tablet:w-auto"
+                class="flex w-full tablet:w-auto desktop-xs:hidden"
                 variant="secondary"
                 (onClick)="onFilterModalReset(true)"
             >
@@ -149,7 +151,7 @@
             </p-button>
             <p-button
                 *ngIf="filterModalShowReset"
-                class="hidden desktop-xs:flex w-full tablet:w-auto"
+                class="hidden w-full tablet:w-auto desktop-xs:flex"
                 variant="secondary"
                 (onClick)="onFilterModalReset()"
             >
@@ -170,22 +172,23 @@
     <div
         *ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
         class="
-            flex flex-col
-            items-center
-            text-center
-            py-24
+            flex
             max-w-[20rem]
+            flex-col
+            items-center
             self-center
+            py-24
+            text-center
         "
     >
         <p-illustration
             variant="empty-state-search"
             class="mb-6"
         ></p-illustration>
-        <p class="font-semibold text-storm-default">
+        <p class="text-storm-default font-semibold">
             {{ emptyStateFilteredHeader }}
         </p>
-        <p class="text-sm text-storm-medium mb-14">
+        <p class="mb-14 text-sm text-storm-medium">
             {{ emptyStateFilteredContent }}
         </p>
     </div>
@@ -194,23 +197,24 @@
 <ng-template #emptyStateNonFilterTemplate>
     <div
         class="
-            flex flex-col
-            items-center
-            text-center
-            py-24
+            flex
             max-w-[20rem]
+            flex-col
+            items-center
             self-center
+            py-24
+            text-center
         "
     >
         <p-illustration
             variant="empty-state-overview"
-            class="cursor-pointer mb-6"
+            class="mb-6 cursor-pointer"
             (onClick)="emptyStateActionClick.emit()"
         ></p-illustration>
-        <p class="font-semibold text-storm-default">
+        <p class="text-storm-default font-semibold">
             {{ emptyStateHeader }}
         </p>
-        <p class="text-sm text-storm-medium mb-6">
+        <p class="mb-6 text-sm text-storm-medium">
             {{ emptyStateContent }}
         </p>
         <p-button

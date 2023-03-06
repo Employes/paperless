@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.366](https://github.com/employes/paperless/compare/v0.1.0-alpha.365...v0.1.0-alpha.366) (2023-03-06)
+
+
+### Bug Fixes
+
+* **CI:** Allow for  ([ab58ce1](https://github.com/employes/paperless/commit/ab58ce103539d5ecf66afa1a0830a7092304806e))
+
+
+### Features
+
+* **Molecules/Table Header:** Allow for custom edit button text & icon ([cdc158c](https://github.com/employes/paperless/commit/cdc158ceedd68e2a742612a5a296d0939913ae9d))
+* **Organisms/Table:** Add custom edit button text/icon support + disable empty state action ([3ffb119](https://github.com/employes/paperless/commit/3ffb119d818ee36b6bf7832a01710d9fed470146))
+
+
+
+
+
 # [0.1.0-alpha.365](https://github.com/employes/paperless/compare/v0.1.0-alpha.364...v0.1.0-alpha.365) (2023-02-24)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.367](https://github.com/employes/paperless/compare/v0.1.0-alpha.366...v0.1.0-alpha.367) (2023-03-06)
+
+
+### Bug Fixes
+
+* **CI:** Move node_options to build stage ([b97b4ea](https://github.com/employes/paperless/commit/b97b4eaa37734e9ac07bf89ceefe4a2be732eb8e))
+
+
+
+
+
 # [0.1.0-alpha.366](https://github.com/employes/paperless/compare/v0.1.0-alpha.365...v0.1.0-alpha.366) (2023-03-06)
 
 

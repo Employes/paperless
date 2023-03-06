@@ -10,6 +10,7 @@ import {
     State,
 } from '@stencil/core';
 import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
+import { IconVariant } from '../../../components';
 import { QuickFilter } from '../../../types/table';
 import {
     formatTranslation,
@@ -28,14 +29,16 @@ export class TableHeader {
     private _defaultFilterButtonTemplate: templateFunc = () =>
         formatTranslation(this._locales.filter);
     private _defaultEditButtonTemplate: buttonTemplateFunc = (amount: number) =>
-        formatTranslation(
-            amount === 0
-                ? this._locales.edit
-                : amount === 1
-                ? this._locales.edit_single
-                : this._locales.edit_plural,
-            { amount }
-        );
+        this.editText
+            ? this.editText
+            : formatTranslation(
+                  amount === 0
+                      ? this._locales.edit
+                      : amount === 1
+                      ? this._locales.edit_single
+                      : this._locales.edit_plural,
+                  { amount }
+              );
 
     /**
      * Quick filters to show
@@ -87,6 +90,16 @@ export class TableHeader {
      * Wether to show the edit button
      */
     @Prop() enableEdit: boolean = true;
+
+    /**
+     * The edit button icon
+     */
+    @Prop() editIcon: IconVariant = 'pencil';
+
+    /**
+     * The edit button text if changed
+     */
+    @Prop() editText: string;
 
     /**
      * Wether to enable the edit button
@@ -154,7 +167,7 @@ export class TableHeader {
                 {this.loading && (
                     <p-loader
                         variant="ghost"
-                        class="hidden desktop-xs:flex rounded w-3/4 h-8"
+                        class="hidden h-8 w-3/4 rounded desktop-xs:flex"
                     ></p-loader>
                 )}
 
@@ -177,7 +190,7 @@ export class TableHeader {
                     </p-segment-container>
                 )}
 
-                <div class="flex flex-col desktop-xs:flex-row gap-4 justify-end justify-self-end">
+                <div class="flex flex-col justify-end gap-4 justify-self-end desktop-xs:flex-row">
                     {this.enableSearch && (
                         <p-input-group icon="search" size="small">
                             <input
@@ -216,7 +229,7 @@ export class TableHeader {
                 </div>
 
                 {this.enableEdit && this.canEdit && (
-                    <div class="fixed bottom-0 left-0 w-full p-4 bg-white border border-solid border-transparent border-t-mystic-dark block desktop-xs:hidden">
+                    <div class="fixed bottom-0 left-0 block w-full border border-solid border-transparent border-t-mystic-dark bg-white p-4 desktop-xs:hidden">
                         {this._buttonTemplate(true)}
                     </div>
                 )}
@@ -233,7 +246,7 @@ export class TableHeader {
         return (
             <p-button
                 class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
-                icon="pencil"
+                icon={this.editIcon}
                 size="small"
                 disabled={!this.canEdit}
                 onClick={() => this.edit.emit()}

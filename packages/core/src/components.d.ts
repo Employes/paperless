@@ -15,6 +15,7 @@ import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 import { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+import { IconVariant as IconVariant2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
@@ -28,6 +29,7 @@ export { Observable } from "rxjs";
 export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
 export { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
+export { IconVariant as IconVariant2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 export { TableColumn } from "./components/helpers/table-column/table-column.component";
 export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
@@ -1189,6 +1191,14 @@ export namespace Components {
           * The template for the edit button text
          */
         "editButtonTemplate": buttonTemplateFunc1;
+        /**
+          * The edit button icon
+         */
+        "editIcon": IconVariant2;
+        /**
+          * The edit button text if changed
+         */
+        "editText": string;
         /**
           * Wether to show the edit button
          */
@@ -3115,6 +3125,14 @@ declare namespace LocalJSX {
           * The template for the edit button text
          */
         "editButtonTemplate"?: buttonTemplateFunc1;
+        /**
+          * The edit button icon
+         */
+        "editIcon"?: IconVariant2;
+        /**
+          * The edit button text if changed
+         */
+        "editText"?: string;
         /**
           * Wether to show the edit button
          */

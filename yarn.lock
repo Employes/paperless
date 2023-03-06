@@ -2171,19 +2171,10 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@geometricpanda/storybook-addon-badges@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@geometricpanda/storybook-addon-badges/-/storybook-addon-badges-0.2.2.tgz#b1d41b08fc30e986cdad0a9edc6c0cef10913ac7"
-  integrity sha512-jnlPw4VKUYc0nDxS3/lPYPxD9y8vpim80Buh8HqvjabMRM7dHKs6frGJbd/0uQIHKevLhFDYdYqAmHblqH4nwA==
-  dependencies:
-    "@storybook/addons" "^6.2.9"
-    "@storybook/api" "^6.2.9"
-    "@storybook/components" "^6.2.9"
-    "@storybook/theming" "^6.2.9"
-    react "^17.0.2"
-    react-dom "^17.0.2"
-    react-is "^17.0.2"
-    styled-components "^5.2.1"
+"@geometricpanda/storybook-addon-badges@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@geometricpanda/storybook-addon-badges/-/storybook-addon-badges-1.1.1.tgz#1ce4ef5b39fcc7bc2ce46771d6845b7fd7081945"
+  integrity sha512-oruMaqUTq8kceJCQhoCHg4SJcCx/34j9t0g9P0krLH7cTgZQJVtmFyvtO9tMtOIU+FQUvizL+cDUt54TU5pIyQ==
 
 "@geometricpanda/storybook-addon-iframe@0.2.2":
   version "0.2.2"
@@ -19274,7 +19265,7 @@ styled-components@5.2.1:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
-styled-components@5.3.6, styled-components@^5.2.1:
+styled-components@5.3.6:
   version "5.3.6"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.6.tgz#27753c8c27c650bee9358e343fc927966bfd00d1"
   integrity sha512-hGTZquGAaTqhGWldX7hhfzjnIYBZ0IXQXkCYdvF1Sq3DsUaLx6+NTHC5Jj1ooM2F68sBiVz3lvhfwQs/S3l6qg==

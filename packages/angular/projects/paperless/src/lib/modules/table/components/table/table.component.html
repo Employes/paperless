@@ -1,5 +1,6 @@
 <p-table-container>
     <p-table-header
+        *ngIf="enableHeader"
         [quickFilters]="quickFilters"
         [activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
         (quickFilter)="(onQuickFilter)"
@@ -18,7 +19,13 @@
         (edit)="edit.emit()"
         [itemsSelectedAmount]="selectedRows.length"
         [loading]="headerLoading"
-    ></p-table-header>
+    >
+        <div *ngIf="headerCustomFilterTemplate" slot="custom-filter">
+            <ng-container
+                *ngTemplateOutlet="headerCustomFilterTemplate"
+            ></ng-container>
+        </div>
+    </p-table-header>
 
     <p-table-row variant="header">
         <ng-container *ngFor="let col of columns; let index = index">
@@ -114,6 +121,7 @@
     </div>
 
     <p-table-footer
+        *ngIf="enableFooter"
         [hideOnSinglePage]="hideOnSinglePage"
         [enablePageSize]="enablePageSize"
         [pageSize]="pageSize"

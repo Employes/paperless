@@ -17,7 +17,10 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
 import { IconVariant } from '@paperless/core/dist/types/components';
 import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
-import { TableFilterModalDirective } from '../../directives/p-table-filter-modal.directive';
+import {
+    TableCustomFilterDirective,
+    TableFilterModalDirective,
+} from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 
@@ -100,6 +103,12 @@ export class Table implements OnInit, OnChanges {
     @Output() rowDeselected: EventEmitter<any> = new EventEmitter();
 
     /** START HEADER */
+
+    /**
+     * Wether to show the header
+     */
+    @Input() enableHeader: boolean = true;
+
     /**
      * Quick filters to show
      */
@@ -176,6 +185,11 @@ export class Table implements OnInit, OnChanges {
     @Output() edit: EventEmitter<null> = new EventEmitter();
 
     /** START FOOTER */
+
+    /**
+     * Wether to show the footer
+     */
+    @Input() enableFooter: boolean = true;
 
     /**
      * Wether to enable page size select
@@ -257,6 +271,13 @@ export class Table implements OnInit, OnChanges {
     private _ctrlDown = false;
 
     // Angular stuff
+    // custom filter template
+    @ContentChild(TableCustomFilterDirective, {
+        read: TemplateRef,
+        static: true,
+    })
+    public headerCustomFilterTemplate: TemplateRef<any> | undefined;
+
     // column templates
     private _columnDefinitions!: QueryList<TableColumn>;
 

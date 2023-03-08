@@ -150,6 +150,11 @@ export class Table implements OnInit, OnChanges {
     @Input() enableEdit: boolean = true;
 
     /**
+     * Wether the edit button is loading
+     */
+    @Input() editButtonLoading: boolean = false;
+
+    /**
      * The edit button icon
      */
     @Input() editButtonIcon: IconVariant = 'pencil';

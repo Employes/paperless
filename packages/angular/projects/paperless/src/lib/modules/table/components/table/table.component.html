@@ -14,6 +14,7 @@
         [enableEdit]="enableEdit"
         [canEdit]="!!selectedRows.length"
         [editButtonTemplate]="editButtonTemplate"
+        [editLoading]="editButtonLoading"
         [editText]="editButtonText"
         [editIcon]="editButtonIcon"
         (edit)="edit.emit()"

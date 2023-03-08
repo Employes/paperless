@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.369](https://github.com/employes/paperless/compare/v0.1.0-alpha.368...v0.1.0-alpha.369) (2023-03-08)
+
+
+### Features
+
+* **Angular/Table:** Disable header/footer option & custom filter slot ([70c450b](https://github.com/employes/paperless/commit/70c450bf5af63dfb7525ae02d2bee102e766347e))
+* **Molecules/Table Header:** Add custom filter slot ([d635895](https://github.com/employes/paperless/commit/d6358958ff620094d624164d0d9a0e0eb2da6f4a))
+* **Organisms/Table:** Allow disabling header & footer + custom filter slot ([6744f4c](https://github.com/employes/paperless/commit/6744f4cf1618e5d9d8f686c51f0a00ed6caaa0a4))
+
+
+
+
+
 # [0.1.0-alpha.368](https://github.com/employes/paperless/compare/v0.1.0-alpha.367...v0.1.0-alpha.368) (2023-03-06)
 
 

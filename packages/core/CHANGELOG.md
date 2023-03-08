@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.369](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.368...v0.1.0-alpha.369) (2023-03-08)
+
+
+### Features
+
+* **Molecules/Table Header:** Add custom filter slot ([d635895](https://github.com/ionic-team/stencil-component-starter/commit/d6358958ff620094d624164d0d9a0e0eb2da6f4a))
+* **Organisms/Table:** Allow disabling header & footer + custom filter slot ([6744f4c](https://github.com/ionic-team/stencil-component-starter/commit/6744f4cf1618e5d9d8f686c51f0a00ed6caaa0a4))
+
+
+
+
+
 # [0.1.0-alpha.368](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.367...v0.1.0-alpha.368) (2023-03-06)
 
 **Note:** Version bump only for package @paperless/core

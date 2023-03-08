@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.369](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.368...v0.1.0-alpha.369) (2023-03-08)
+
+
+### Features
+
+* **Angular/Table:** Disable header/footer option & custom filter slot ([70c450b](https://github.com/Employes/Paperless/commit/70c450bf5af63dfb7525ae02d2bee102e766347e))
+
+
+
+
+
 # [0.1.0-alpha.368](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.367...v0.1.0-alpha.368) (2023-03-06)
 
 

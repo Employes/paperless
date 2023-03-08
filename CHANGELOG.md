@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.372](https://github.com/employes/paperless/compare/v0.1.0-alpha.371...v0.1.0-alpha.372) (2023-03-08)
+
+
+### Reverts
+
+* Revert "fix(Angular/Table): fix directive selector for custom-filter" ([332816f](https://github.com/employes/paperless/commit/332816f626e9abb8ca171faedfaa8c783b7d998d))
+
+
+
+
+
 # [0.1.0-alpha.371](https://github.com/employes/paperless/compare/v0.1.0-alpha.370...v0.1.0-alpha.371) (2023-03-08)
 
 

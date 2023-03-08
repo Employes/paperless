@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.371](https://github.com/employes/paperless/compare/v0.1.0-alpha.370...v0.1.0-alpha.371) (2023-03-08)
+
+
+### Features
+
+* **Molecules/Table Header:** Set fixed search box size ([bf0b40c](https://github.com/employes/paperless/commit/bf0b40cd69f7d2514016fb4eb745b180f090483d))
+
+
+
+
+
 # [0.1.0-alpha.370](https://github.com/employes/paperless/compare/v0.1.0-alpha.369...v0.1.0-alpha.370) (2023-03-08)
 
 

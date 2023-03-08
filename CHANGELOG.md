@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.370](https://github.com/employes/paperless/compare/v0.1.0-alpha.369...v0.1.0-alpha.370) (2023-03-08)
+
+
+### Bug Fixes
+
+* **Angular/Table:** fix directive selector for custom-filter ([a19358a](https://github.com/employes/paperless/commit/a19358adbfdce374c24f7e68d6a4336f662ed4ee))
+
+
+
+
+
 # [0.1.0-alpha.369](https://github.com/employes/paperless/compare/v0.1.0-alpha.368...v0.1.0-alpha.369) (2023-03-08)
 
 

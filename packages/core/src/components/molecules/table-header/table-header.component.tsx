@@ -143,8 +143,13 @@ export class TableHeader {
     @State() private _locales: any = {};
 
     private _queryObserver = new Subject<string>();
+    private _hasCustomFilterSlot = false;
 
     componentWillLoad() {
+        this._hasCustomFilterSlot = !!this._el.querySelector(
+            ':scope > [slot="custom-filter"]'
+        );
+
         this._setLocales();
     }
 
@@ -171,26 +176,40 @@ export class TableHeader {
                     ></p-loader>
                 )}
 
-                {!this.loading && this.quickFilters.length > 0 && (
-                    <p-segment-container class="hidden desktop-xs:flex">
-                        {this.quickFilters.map((item) => (
-                            <p-segment-item
-                                active={
-                                    item.identifier ===
-                                    this.activeQuickFilterIdentifier
-                                }
-                                onClick={() => this.quickFilter.emit(item)}
-                            >
-                                {typeof item.text === 'string'
-                                    ? item.text
-                                    : item.text()}{' '}
-                                {item?.count >= 0 ? `(${item.count})` : ''}
-                            </p-segment-item>
-                        ))}
-                    </p-segment-container>
-                )}
+                {!this.loading &&
+                    (this._hasCustomFilterSlot ||
+                        this.quickFilters.length > 0) && (
+                        <div class="left-side flex flex-col gap-4 desktop-xs:flex-row">
+                            {this._hasCustomFilterSlot && (
+                                <slot name="custom-filter" />
+                            )}
 
-                <div class="flex flex-col justify-end gap-4 justify-self-end desktop-xs:flex-row">
+                            {this.quickFilters.length > 0 && (
+                                <p-segment-container class="hidden desktop-xs:flex">
+                                    {this.quickFilters.map((item) => (
+                                        <p-segment-item
+                                            active={
+                                                item.identifier ===
+                                                this.activeQuickFilterIdentifier
+                                            }
+                                            onClick={() =>
+                                                this.quickFilter.emit(item)
+                                            }
+                                        >
+                                            {typeof item.text === 'string'
+                                                ? item.text
+                                                : item.text()}{' '}
+                                            {item?.count >= 0
+                                                ? `(${item.count})`
+                                                : ''}
+                                        </p-segment-item>
+                                    ))}
+                                </p-segment-container>
+                            )}
+                        </div>
+                    )}
+
+                <div class="right-side flex flex-col justify-end gap-4 desktop-xs:flex-row">
                     {this.enableSearch && (
                         <p-input-group icon="search" size="small">
                             <input

@@ -7,11 +7,11 @@
         @apply grid grid-cols-2;
     }
 
-    p-segment-container {
-        @apply justify-self-start col-start-1;
+    > div.left-side {
+        @apply col-start-1 justify-self-start;
     }
 
-    > div {
+    > div.right-side {
         @apply col-start-2;
     }
 }

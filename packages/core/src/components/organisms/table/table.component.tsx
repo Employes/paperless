@@ -103,6 +103,12 @@ export class Table {
     @Event() hasRendered: EventEmitter<number>;
 
     /** START HEADER */
+
+    /**
+     * Wether to show the header
+     */
+    @Prop() enableHeader: boolean = true;
+
     /**
      * Quick filters to show
      */
@@ -179,6 +185,11 @@ export class Table {
     @Event() edit: EventEmitter<null>;
 
     /** START FOOTER */
+
+    /**
+     * Wether to show the header
+     */
+    @Prop() enableFooter: boolean = true;
 
     /**
      * Wether to enable page size select
@@ -273,8 +284,13 @@ export class Table {
     @State() private _items: any[] = [];
 
     private _ctrlDown = false;
+    private _hasCustomFilterSlot = false;
 
     componentWillLoad() {
+        this._hasCustomFilterSlot = !!this._el.querySelector(
+            ':scope > [slot="custom-filter"]'
+        );
+
         this._setLocales();
         this._parseItems(this.items);
         this._generateColumns();
@@ -288,64 +304,75 @@ export class Table {
         return (
             <Host class="p-table">
                 <p-table-container>
-                    <p-table-header
-                        // quick filters
-                        quickFilters={this.quickFilters}
-                        activeQuickFilterIdentifier={
-                            this.activeQuickFilterIdentifier
-                        }
-                        onQuickFilter={({ detail }) =>
-                            this.quickFilter.emit(detail)
-                        }
-                        // search
-                        enableSearch={this.enableSearch}
-                        query={this.query}
-                        onQueryChange={({ detail }) =>
-                            this.queryChange.emit(detail)
-                        }
-                        // filter button
-                        enableFilter={this.enableFilter}
-                        selectedFiltersAmount={this.selectedFiltersAmount}
-                        filterButtonTemplate={this.filterButtonTemplate}
-                        onFilter={() => this.filter.emit()}
-                        // edit button
-                        enableEdit={this.enableEdit}
-                        editIcon={this.editButtonIcon}
-                        editText={this.editButtonText}
-                        canEdit={!!this.selectedRows?.length}
-                        editButtonTemplate={this.editButtonTemplate}
-                        onEdit={() => this.edit.emit()}
-                        itemsSelectedAmount={this.selectedRows?.length}
-                        //loading
-                        loading={this.headerLoading}
-                    ></p-table-header>
+                    {this.enableHeader && (
+                        <p-table-header
+                            // quick filters
+                            quickFilters={this.quickFilters}
+                            activeQuickFilterIdentifier={
+                                this.activeQuickFilterIdentifier
+                            }
+                            onQuickFilter={({ detail }) =>
+                                this.quickFilter.emit(detail)
+                            }
+                            // search
+                            enableSearch={this.enableSearch}
+                            query={this.query}
+                            onQueryChange={({ detail }) =>
+                                this.queryChange.emit(detail)
+                            }
+                            // filter button
+                            enableFilter={this.enableFilter}
+                            selectedFiltersAmount={this.selectedFiltersAmount}
+                            filterButtonTemplate={this.filterButtonTemplate}
+                            onFilter={() => this.filter.emit()}
+                            // edit button
+                            enableEdit={this.enableEdit}
+                            editIcon={this.editButtonIcon}
+                            editText={this.editButtonText}
+                            canEdit={!!this.selectedRows?.length}
+                            editButtonTemplate={this.editButtonTemplate}
+                            onEdit={() => this.edit.emit()}
+                            itemsSelectedAmount={this.selectedRows?.length}
+                            //loading
+                            loading={this.headerLoading}
+                        >
+                            {this._hasCustomFilterSlot && (
+                                <slot
+                                    name="custom-filter"
+                                    slot="custom-filter"
+                                />
+                            )}
+                        </p-table-header>
+                    )}
 
                     {this._getHeader()}
                     <div class="flex flex-col">{this._getRows()}</div>
 
-                    <p-table-footer
-                        // overall
-                        hideOnSinglePage={this.hideOnSinglePage}
-                        // page size select
-                        enablePageSize={this.enablePageSize}
-                        pageSize={this.pageSize}
-                        pageSizeOptions={this.pageSizeOptions}
-                        onPageSizeChange={({ detail }) =>
-                            this.pageSizeChange.emit(detail)
-                        }
-                        // pagination
-                        enablePagination={this.enablePagination}
-                        page={this.page}
-                        total={this.total}
-                        onPageChange={({ detail }) =>
-                            this.pageChange.emit(detail)
-                        }
-                        // export
-                        enableExport={this.enableExport}
-                        onExport={() => this.export.emit()}
-                        //loading
-                        loading={this.footerLoading}
-                    ></p-table-footer>
+                    {this.enableFooter && (
+                        <p-table-footer
+                            // overall
+                            hideOnSinglePage={this.hideOnSinglePage}
+                            // page size select
+                            enablePageSize={this.enablePageSize}
+                            pageSize={this.pageSize}
+                            pageSizeOptions={this.pageSizeOptions}
+                            onPageSizeChange={({ detail }) =>
+                                this.pageSizeChange.emit(detail)
+                            }
+                            // pagination
+                            enablePagination={this.enablePagination}
+                            page={this.page}
+                            total={this.total}
+                            onPageChange={({ detail }) =>
+                                this.pageChange.emit(detail)
+                            }
+                            // export
+                            enableExport={this.enableExport}
+                            onExport={() => this.export.emit()}
+                            //loading
+                            loading={this.footerLoading}
+                        ></p-table-footer>
+                    )}
                 </p-table-container>
             </Host>
         );

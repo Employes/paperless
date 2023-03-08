@@ -1010,6 +1010,14 @@ export namespace Components {
          */
         "enableFilter": boolean;
         /**
+          * Wether to show the header
+         */
+        "enableFooter": boolean;
+        /**
+          * Wether to show the header
+         */
+        "enableHeader": boolean;
+        /**
           * Wether to enable page size select
          */
         "enablePageSize": boolean;
@@ -2887,6 +2895,14 @@ declare namespace LocalJSX {
           * Wether to show the filter button
          */
         "enableFilter"?: boolean;
+        /**
+          * Wether to show the header
+         */
+        "enableFooter"?: boolean;
+        /**
+          * Wether to show the header
+         */
+        "enableHeader"?: boolean;
         /**
           * Wether to enable page size select
          */

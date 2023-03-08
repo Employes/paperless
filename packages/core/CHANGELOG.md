@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.373](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.372...v0.1.0-alpha.373) (2023-03-08)
+
+
+### Features
+
+* **Molecules/Table Header:** Add loading prop for edit button ([1a11d9a](https://github.com/ionic-team/stencil-component-starter/commit/1a11d9a3ea6bba2aac2cd06b8e0694b5ec9ef4ff))
+* **Organisms/Table:** Add loading prop for edit button ([f6e257d](https://github.com/ionic-team/stencil-component-starter/commit/f6e257dcf25ac72bac43538526f60b4d252efd44))
+
+
+
+
+
 # [0.1.0-alpha.372](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.371...v0.1.0-alpha.372) (2023-03-08)
 
 **Note:** Version bump only for package @paperless/core

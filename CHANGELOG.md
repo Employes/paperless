@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.373](https://github.com/employes/paperless/compare/v0.1.0-alpha.372...v0.1.0-alpha.373) (2023-03-08)
+
+
+### Features
+
+* **Angular/Table:** Add loading prop for edit button ([63b7c5c](https://github.com/employes/paperless/commit/63b7c5c05b3e11e223de5ac24a11167384a9a53f))
+* **Molecules/Table Header:** Add loading prop for edit button ([1a11d9a](https://github.com/employes/paperless/commit/1a11d9a3ea6bba2aac2cd06b8e0694b5ec9ef4ff))
+* **Organisms/Table:** Add loading prop for edit button ([f6e257d](https://github.com/employes/paperless/commit/f6e257dcf25ac72bac43538526f60b4d252efd44))
+
+
+
+
+
 # [0.1.0-alpha.372](https://github.com/employes/paperless/compare/v0.1.0-alpha.371...v0.1.0-alpha.372) (2023-03-08)
 
 

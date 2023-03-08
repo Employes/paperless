@@ -92,6 +92,11 @@ export class TableHeader {
     @Prop() enableEdit: boolean = true;
 
     /**
+     * Wether the edit button is loading
+     */
+    @Prop() editLoading: boolean = false;
+
+    /**
      * The edit button icon
      */
     @Prop() editIcon: IconVariant = 'pencil';
@@ -273,6 +278,7 @@ export class TableHeader {
                 size="small"
                 disabled={!this.canEdit}
                 onClick={() => this.edit.emit()}
+                loading={this.editLoading}
             >
                 {this.editButtonTemplate
                     ? this.editButtonTemplate(

@@ -1216,6 +1216,10 @@ export namespace Components {
          */
         "editIcon": IconVariant2;
         /**
+          * Wether the edit button is loading
+         */
+        "editLoading": boolean;
+        /**
           * The edit button text if changed
          */
         "editText": string;
@@ -3169,6 +3173,10 @@ declare namespace LocalJSX {
           * The edit button icon
          */
         "editIcon"?: IconVariant2;
+        /**
+          * Wether the edit button is loading
+         */
+        "editLoading"?: boolean;
         /**
           * The edit button text if changed
          */

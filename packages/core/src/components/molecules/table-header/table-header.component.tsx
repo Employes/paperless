@@ -211,7 +211,11 @@ export class TableHeader {
 
                 <div class="right-side flex flex-col justify-end gap-4 desktop-xs:flex-row">
                     {this.enableSearch && (
-                        <p-input-group icon="search" size="small">
+                        <p-input-group
+                            icon="search"
+                            size="small"
+                            class="desktop-xs:w-48"
+                        >
                             <input
                                 type="text"
                                 slot="input"

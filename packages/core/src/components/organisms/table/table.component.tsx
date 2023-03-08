@@ -150,6 +150,11 @@ export class Table {
     @Prop() enableEdit: boolean = true;
 
     /**
+     * Wether the edit button is loading
+     */
+    @Prop() editButtonLoading: boolean = false;
+
+    /**
      * The edit button icon
      */
     @Prop() editButtonIcon: IconVariant = 'pencil';
@@ -329,6 +334,7 @@ export class Table {
                             enableEdit={this.enableEdit}
                             editIcon={this.editButtonIcon}
                             editText={this.editButtonText}
+                            editLoading={this.editButtonLoading}
                             canEdit={!!this.selectedRows?.length}
                             editButtonTemplate={this.editButtonTemplate}
                             onEdit={() => this.edit.emit()}

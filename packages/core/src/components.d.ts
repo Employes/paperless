@@ -981,6 +981,10 @@ export namespace Components {
          */
         "editButtonIcon": IconVariant2;
         /**
+          * Wether the edit button is loading
+         */
+        "editButtonLoading": boolean;
+        /**
           * The template for the edit button text
          */
         "editButtonTemplate": buttonTemplateFunc;
@@ -2870,6 +2874,10 @@ declare namespace LocalJSX {
           * The edit button icon
          */
         "editButtonIcon"?: IconVariant2;
+        /**
+          * Wether the edit button is loading
+         */
+        "editButtonLoading"?: boolean;
         /**
           * The template for the edit button text
          */

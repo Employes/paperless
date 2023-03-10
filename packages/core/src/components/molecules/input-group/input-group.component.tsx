@@ -227,6 +227,10 @@ export class InputGroup {
                 'pl-0'
             );
         }
+
+        if (this.size === 'small' && !input.classList.contains('size-small')) {
+            input.classList.add('size-small');
+        }
     }
 
     private _getSlotInfo() {

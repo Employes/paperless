@@ -33,7 +33,17 @@ import Docs from '../../../packages/core/src/components/molecules/attachment/rea
 ## Write
 
 <Canvas>
-    <p-attachment  loading={true} mode="write">Loading..</p-attachment>
+    <p-attachment loading={true} mode="write">
+        Loading..
+    </p-attachment>
+</Canvas>
+
+## Downloading
+
+## Read
+
+<Canvas>
+    <p-attachment downloading={true}>Invoice-2023-01-01.pdf</p-attachment>
 </Canvas>
 
 # Error
@@ -43,11 +53,17 @@ import Docs from '../../../packages/core/src/components/molecules/attachment/rea
 ## Read
 
 <Canvas>
-    <p-attachment error="I have an error!">Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf</p-attachment>
+    <p-attachment error="I have an error!">
+        Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf
+        Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf
+        Invoice-2023-01-01.pdf Invoice-2023-01-01.pdf
+    </p-attachment>
 </Canvas>
 
 ## Write
 
 <Canvas>
-    <p-attachment  error="I have an error!" mode="write">Invoice-2023-01-01.pdf</p-attachment>
+    <p-attachment error="I have an error!" mode="write">
+        Invoice-2023-01-01.pdf
+    </p-attachment>
 </Canvas>

@@ -27,6 +27,11 @@ export class Attachment {
     @Event() download: EventEmitter<any>;
 
     /**
+     * Wether the attachment is downloading
+     */
+    @Prop() downloading = false;
+
+    /**
      * Event when delete is pressed
      */
     @Event() delete: EventEmitter<any>;
@@ -65,6 +70,7 @@ export class Attachment {
                     iconOnly={true}
                     icon={this.mode === 'read' ? 'download' : 'trash'}
                     disabled={this.loading}
+                    loading={this.mode === 'read' && this.downloading}
                     size="small"
                     onOnClick={() =>
                         (this.mode === 'read'

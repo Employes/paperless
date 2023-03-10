@@ -54,6 +54,10 @@ export namespace Components {
     }
     interface PAttachment {
         /**
+          * Wether the attachment is downloading
+         */
+        "downloading": boolean;
+        /**
           * The error to show
          */
         "error": string;
@@ -1872,6 +1876,10 @@ declare namespace LocalJSX {
         "openable"?: boolean;
     }
     interface PAttachment {
+        /**
+          * Wether the attachment is downloading
+         */
+        "downloading"?: boolean;
         /**
           * The error to show
          */

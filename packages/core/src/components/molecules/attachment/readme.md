@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property  | Attribute | Description                                | Type                | Default     |
-| --------- | --------- | ------------------------------------------ | ------------------- | ----------- |
-| `error`   | `error`   | The error to show                          | `string`            | `undefined` |
-| `loading` | `loading` | Wether the attachment is uploading/loading | `boolean`           | `false`     |
-| `mode`    | `mode`    | The variant of the button                  | `"read" \| "write"` | `'read'`    |
+| Property      | Attribute     | Description                                | Type                | Default     |
+| ------------- | ------------- | ------------------------------------------ | ------------------- | ----------- |
+| `downloading` | `downloading` | Wether the attachment is downloading       | `boolean`           | `false`     |
+| `error`       | `error`       | The error to show                          | `string`            | `undefined` |
+| `loading`     | `loading`     | Wether the attachment is uploading/loading | `boolean`           | `false`     |
+| `mode`        | `mode`        | The variant of the button                  | `"read" \| "write"` | `'read'`    |
 
 
 ## Events

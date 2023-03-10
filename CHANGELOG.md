@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.374](https://github.com/employes/paperless/compare/v0.1.0-alpha.373...v0.1.0-alpha.374) (2023-03-10)
+
+
+### Features
+
+* **Atoms/Button:** Icon-only loading only loader ([aa54029](https://github.com/employes/paperless/commit/aa54029ecc9ff3fff1a33d0dff14af10ee1fdeb4))
+* **Molecules/Attachment:** Add downloading prop for button loader ([7d57392](https://github.com/employes/paperless/commit/7d57392493726eff7a3396c7f2b074ddd3e6318f))
+
+
+
+
+
 # [0.1.0-alpha.373](https://github.com/employes/paperless/compare/v0.1.0-alpha.372...v0.1.0-alpha.373) (2023-03-08)
 
 

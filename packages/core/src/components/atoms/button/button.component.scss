@@ -130,6 +130,10 @@ p-button {
             > p-icon:first-child {
                 @apply mx-0;
             }
+
+            > p-loader {
+                @apply ml-0;
+            }
         }
     }
 

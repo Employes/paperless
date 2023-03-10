@@ -130,12 +130,14 @@ export class Button {
 
                     {this.icon &&
                         this.iconPosition === 'start' &&
+                        !(this.iconOnly && this.loading) &&
                         this._getIcon()}
 
                     <slot />
 
                     {this.icon &&
                         this.iconPosition === 'end' &&
+                        !(this.iconOnly && this.loading) &&
                         this._getIcon()}
 
                     {this.loading && <p-loader color={loaderColor} />}

@@ -68,7 +68,7 @@ import ButtonDocs from '../../../packages/core/src/components/atoms/button/readm
 ### With chevron
 
 <Canvas>
-    <div class="flex flex-col w-full">
+    <div class="flex w-full flex-col">
         <div class="flex w-full place-content-evenly">
             <p-button variant="primary" chevron>
                 Label
@@ -80,7 +80,7 @@ import ButtonDocs from '../../../packages/core/src/components/atoms/button/readm
                 Label
             </p-button>
         </div>
-        <div class="flex w-full place-content-evenly mt-4">
+        <div class="mt-4 flex w-full place-content-evenly">
             <p-button variant="primary" chevron="up">
                 Label
             </p-button>
@@ -113,4 +113,11 @@ import ButtonDocs from '../../../packages/core/src/components/atoms/button/readm
 <Canvas>
     <p-button icon="checkmark" icon-only></p-button>
     <p-button icon="checkmark" size="small" icon-only></p-button>
+</Canvas>
+
+### Icon Only loading
+
+<Canvas>
+    <p-button icon="checkmark" loading={true} icon-only></p-button>
+    <p-button icon="checkmark" loading={true} size="small" icon-only></p-button>
 </Canvas>

@@ -53,6 +53,13 @@
             <rect id="overlay-right" fill="url(#linearGradient-3)" mask="url(#mask-2)" x="128" y="0" width="24" height="152"></rect>
             <rect id="overlay-bottom" fill="url(#linearGradient-3)" mask="url(#mask-2)" transform="translate(76.000000, 140.000000) rotate(90.000000) translate(-76.000000, -140.000000) " x="64" y="64" width="24" height="152"></rect>
             <rect id="overlay-top" fill="url(#linearGradient-3)" mask="url(#mask-2)" transform="translate(76.000000, 12.000000) scale(1, -1) rotate(90.000000) translate(-76.000000, -12.000000) " x="64" y="-64" width="24" height="152"></rect>
+            <g id="Group" mask="url(#mask-2)">
+                <g transform="translate(52.000000, 52.000000)">
+                    <rect id="bg" fill="#528AFA" fill-rule="evenodd" x="0" y="0" width="48" height="48" rx="24"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" transform="translate(24.000000, 24.000000) rotate(90.000000) translate(-24.000000, -24.000000) " x="23" y="14" width="2" height="20" rx="1"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="23" y="14" width="2" height="20" rx="1"></rect>
+                </g>
+            </g>
         </g>
     </g>
 </svg>

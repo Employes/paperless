@@ -257,8 +257,7 @@ export class Table implements OnInit, OnChanges {
     /* Empty state start */
     @Input() emptyStateType: 'no_filter' | 'filtered' = 'no_filter';
 
-    @Input() emptyStateIllustration: IllustrationVariant =
-        'empty-state-overview';
+    @Input() emptyStateIllustration: IllustrationVariant = 'empty-state-add';
     @Input() emptyStateHeader!: string;
     @Input() emptyStateContent!: string;
     @Input() emptyStateAction!: string;

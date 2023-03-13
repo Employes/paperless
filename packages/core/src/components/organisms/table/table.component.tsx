@@ -573,7 +573,7 @@ export class Table {
         return (
             <div class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center">
                 <p-illustration
-                    variant="empty-state-overview"
+                    variant="empty-state-add"
                     class="mb-6 cursor-pointer"
                     onClick={() => this.emptyStateActionClick.emit(null)}
                 />

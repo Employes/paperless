@@ -5,9 +5,9 @@
 
 ## Properties
 
-| Property               | Attribute | Description               | Type                                                                                                                                                                                        | Default     |
-| ---------------------- | --------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `variant` _(required)_ | `variant` | The icon the be displayed | `"departments" \| "e-mail" \| "empty-state" \| "empty-state-overview" \| "empty-state-search" \| "expenses" \| "functions" \| "questions" \| "sick-leave" \| "time-off" \| "upgrade-to-hr"` | `undefined` |
+| Property               | Attribute | Description               | Type                                                                                                                                                                                                             | Default     |
+| ---------------------- | --------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `variant` _(required)_ | `variant` | The icon the be displayed | `"departments" \| "e-mail" \| "empty-state" \| "empty-state-add" \| "empty-state-overview" \| "empty-state-search" \| "expenses" \| "functions" \| "questions" \| "sick-leave" \| "time-off" \| "upgrade-to-hr"` | `undefined` |
 
 
 ## Dependencies

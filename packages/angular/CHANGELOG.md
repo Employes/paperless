@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.378](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.377...v0.1.0-alpha.378) (2023-03-13)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Fix if statement for `emptyStateType` ([a7bc461](https://github.com/Employes/Paperless/commit/a7bc46143db23be609efa5967f021407715ae616))
+
+
+
+
+
 # [0.1.0-alpha.377](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.376...v0.1.0-alpha.377) (2023-03-13)
 
 

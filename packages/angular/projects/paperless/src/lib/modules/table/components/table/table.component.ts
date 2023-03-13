@@ -11,7 +11,7 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef,
+    TemplateRef
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
@@ -19,7 +19,7 @@ import { IconVariant } from '@paperless/core/dist/types/components';
 import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import {
     TableCustomFilterDirective,
-    TableFilterModalDirective,
+    TableFilterModalDirective
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -257,6 +257,8 @@ export class Table implements OnInit, OnChanges {
     @Input() emptyStateHeader!: string;
     @Input() emptyStateContent!: string;
     @Input() emptyStateAction!: string;
+    
+    @Input() enableEmptyStateAction: boolean = true;
 
     @Input() emptyStateFilteredHeader!: string;
     @Input() emptyStateFilteredContent!: string;

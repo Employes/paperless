@@ -227,6 +227,7 @@
             {{ emptyStateContent }}
         </p>
         <p-button
+            *ngIf="enableEmptyStateAction"
             variant="secondary"
             icon="plus"
             size="small"

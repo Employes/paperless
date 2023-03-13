@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.380](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.379...v0.1.0-alpha.380) (2023-03-13)
+
+
+### Features
+
+* **Atoms/Illustration:** Add `empty-state-overview` & rename old one to `empty-state-add` ([ba35de1](https://github.com/ionic-team/stencil-component-starter/commit/ba35de16e747eaa3732f13edafb2fcc5a152abc8))
+
+
+
+
+
 # [0.1.0-alpha.379](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.378...v0.1.0-alpha.379) (2023-03-13)
 
 **Note:** Version bump only for package @paperless/core

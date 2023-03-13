@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.376](https://github.com/employes/paperless/compare/v0.1.0-alpha.375...v0.1.0-alpha.376) (2023-03-13)
+
+
+### Features
+
+* **Angular/Table:** Add property to disable empty-state action ([17e0897](https://github.com/employes/paperless/commit/17e089744ddc65fdf1bac5bea04793cee5de84f3))
+
+
+
+
+
 # [0.1.0-alpha.375](https://github.com/employes/paperless/compare/v0.1.0-alpha.374...v0.1.0-alpha.375) (2023-03-10)
 
 

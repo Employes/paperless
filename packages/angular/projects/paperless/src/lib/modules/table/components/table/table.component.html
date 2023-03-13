@@ -191,7 +191,7 @@
         "
     >
         <p-illustration
-            variant="empty-state-search"
+            [variant]="emptyStateFilteredIllustration"
             class="mb-6"
         ></p-illustration>
         <p class="text-storm-default font-semibold">
@@ -216,7 +216,7 @@
         "
     >
         <p-illustration
-            variant="empty-state-overview"
+            [variant]="emptyStateIllustration"
             class="mb-6 cursor-pointer"
             (onClick)="emptyStateActionClick.emit()"
         ></p-illustration>

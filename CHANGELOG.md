@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.379](https://github.com/employes/paperless/compare/v0.1.0-alpha.378...v0.1.0-alpha.379) (2023-03-13)
+
+
+### Features
+
+* **Angular/Table:** Add `emptyStateFilteredIllustration` & `emptyStateIllustration` properties ([bfaa92d](https://github.com/employes/paperless/commit/bfaa92d93ff0ae897486a6ccfac784791bf6d8b5))
+
+
+
+
+
 # [0.1.0-alpha.378](https://github.com/employes/paperless/compare/v0.1.0-alpha.377...v0.1.0-alpha.378) (2023-03-13)
 
 

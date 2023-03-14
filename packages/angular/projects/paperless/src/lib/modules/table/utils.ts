@@ -10,7 +10,11 @@ export const createFormFilters = (
 
     for (const key of Object.keys(values)) {
         const value = values[key];
-        if (key !== quickFilterKey && !value?.length) {
+        if (
+            key !== quickFilterKey &&
+            !(value instanceof Date) &&
+            !value?.length
+        ) {
             continue;
         }
 

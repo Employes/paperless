@@ -61,7 +61,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		// this.el.nativeElement.pageSize = this.lastValue.pageSize =
 		// 	value?.pageSize == null ? 12 : value?.pageSize;
 
-		this.lastValue.selectedRows =
+		this._base.selectedRows = this.lastValue.selectedRows =
 			value?.selectedRows == null ? [] : value?.selectedRows;
 
 		if (value?.quickFilter) {

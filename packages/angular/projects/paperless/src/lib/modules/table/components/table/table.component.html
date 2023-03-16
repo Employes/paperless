@@ -114,6 +114,7 @@
                                 [disabled]="_checkboxDisabled(item)"
                                 [checked]="_selectionContains(item, rowIndex)"
                             />
+                            <pre>{{_selectionContains(item, rowIndex) | json: 2}}</pre>
                         </ng-template>
                     </ng-container>
                 </p-table-row>

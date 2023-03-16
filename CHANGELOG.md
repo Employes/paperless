@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.383](https://github.com/employes/paperless/compare/v0.1.0-alpha.382...v0.1.0-alpha.383) (2023-03-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove debugging ([129f318](https://github.com/employes/paperless/commit/129f318f76d8e2181a84383e67d66be7b6241a4e))
+
+
+
+
+
 # [0.1.0-alpha.382](https://github.com/employes/paperless/compare/v0.1.0-alpha.381...v0.1.0-alpha.382) (2023-03-16)
 
 

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.382](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.381...v0.1.0-alpha.382) (2023-03-16)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Add small debugging thing ([f7ed11c](https://github.com/Employes/Paperless/commit/f7ed11c39bbb0fa929ae1b42f01b8a7dd6b863aa))
+* **Angular/Table:** Also set `_base` for `selectedRows` ([ec6a2af](https://github.com/Employes/Paperless/commit/ec6a2af574a16e5c297f3eb4029b53c9dc86a991))
+* **Angular/Table:** fix expected argument error ([4ea9221](https://github.com/Employes/Paperless/commit/4ea9221e992a7c01ce1a95eca0c5f7a0d69ed65f))
+
+
+
+
+
 # [0.1.0-alpha.381](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.380...v0.1.0-alpha.381) (2023-03-14)
 
 

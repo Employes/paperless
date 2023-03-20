@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import {
     format,
@@ -17,7 +17,7 @@ import {
     isSameDay,
     isValid,
     parse,
-    startOfDay
+    startOfDay,
 } from 'date-fns';
 import { childOf } from '../../../utils';
 
@@ -136,8 +136,6 @@ export class Datepicker {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
-        console.log("[Stencil] @Watch('value')", this.placeholder, value);
-        
         if (!value && this.preselectToday) {
             value = new Date();
         }
@@ -161,7 +159,7 @@ export class Datepicker {
 
         this._minDate = minDate;
 
-        if(isBefore(this._value, this._minDate)) {
+        if (isBefore(this._value, this._minDate)) {
             this._setValue(null);
         }
     }
@@ -178,7 +176,7 @@ export class Datepicker {
 
         this._maxDate = maxDate;
 
-        if(isAfter(this._value, this._maxDate)) {
+        if (isAfter(this._value, this._maxDate)) {
             this._setValue(null);
         }
     }
@@ -204,7 +202,7 @@ export class Datepicker {
             })
             .filter((date) => isValid(date));
 
-        if(this._isDisabledDay(this._value)) {
+        if (this._isDisabledDay(this._value)) {
             this._setValue(null);
         }
     }
@@ -230,14 +228,6 @@ export class Datepicker {
         }
 
         this._parseValue(this.value);
-    }
-
-    componentShouldUpdate() {
-        console.log("[Stencil] componentShouldUpdate", this.placeholder, this.value, this._value);
-    }
-
-    componentWillUpdate() {
-        console.log("[Stencil] componentWillUpdate", this.placeholder, this.value, this._value);
     }
 
     render() {
@@ -326,7 +316,7 @@ export class Datepicker {
     }
 
     private _setValue(value: Date, blur = true) {
-        if(value === null) {
+        if (value === null) {
             this._value = null;
             this.valueChange.emit(null);
             return;

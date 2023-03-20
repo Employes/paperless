@@ -285,7 +285,6 @@ export class Select {
 
     @Watch('value')
     private _valueChange(value: any) {
-        console.log('Select: Watch value', value);
         this._preselectItem(value);
     }
 
@@ -315,7 +314,6 @@ export class Select {
         const parsedValue =
             typeof value === 'string' ? value : JSON.stringify(value);
 
-        console.log('Value', value, this._selectedItem);
         if (
             this._selectedItem &&
             JSON.stringify(this._selectedItem[this._identifierKey]) ===
@@ -324,9 +322,7 @@ export class Select {
             return;
         }
 
-        console.log('Check items & value', value, this._items);
         if (!this._items?.length && value) {
-            console.log('Selecting value because items is empty');
             this._selectedItem = value;
             return;
         }
@@ -335,7 +331,6 @@ export class Select {
             (i) => JSON.stringify(i?.[this._identifierKey]) === parsedValue
         );
 
-        console.log('Selecting item or value', !!item ? item : value);
         this._selectedItem = !!item ? item : value;
     }
 

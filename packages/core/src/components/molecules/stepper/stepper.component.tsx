@@ -47,29 +47,26 @@ export class Stepper {
         const items = this._el.querySelectorAll('p-stepper-item');
 
         if (!this.activeStep || activeStep < 0) {
-            const arrayItems = Array.from(items);
-            const activeItemIndex = arrayItems.findIndex(
-                (i: any) =>
-                    i.tagName.toLowerCase() === 'p-stepper-item' &&
-                    i.active &&
-                    !i.finished
-            );
+            console.log('No activeStep');
+            for (let i = 0; i < items?.length; i++) {
+                const item = items.item(i) as any;
 
-            if (activeItemIndex >= 0) {
-                activeStep = activeItemIndex;
+                if (item.active) {
+                    activeStep = i;
+                }
+
+                if (activeStep < 0 && item.finished) {
+                    activeStep = i + 1;
+                }
             }
 
-            const finishedItemIndex = arrayItems.findIndex(
-                (i: any) =>
-                    i.tagName.toLowerCase() === 'p-stepper-item' && i.finished
-            );
-            if (activeStep < 0 && finishedItemIndex >= 0) {
-                activeStep = finishedItemIndex + 1;
-            }
+            console.log('active step is now', activeStep);
         }
 
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
+
+            console.log(i, activeStep, item);
 
             item.active = i === activeStep;
             item.finished = i < activeStep;
@@ -77,6 +74,8 @@ export class Stepper {
             item.align =
                 i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
             item.contentPosition = this.contentPosition;
+
+            console.log(i, item.active, item.finished);
 
             if (i < items.length - 1) {
                 const nextItem = item.nextElementSibling;

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.384](https://github.com/employes/paperless/compare/v0.1.0-alpha.383...v0.1.0-alpha.384) (2023-03-20)
+
+
+### Features
+
+* **Molecules/Stepper:** Add `activeStep` watcher ([b3ba5ca](https://github.com/employes/paperless/commit/b3ba5ca2f2b635e05b71ed778c69489ad6ee92a5))
+
+
+
+
+
 # [0.1.0-alpha.383](https://github.com/employes/paperless/compare/v0.1.0-alpha.382...v0.1.0-alpha.383) (2023-03-16)
 
 

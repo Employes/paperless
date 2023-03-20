@@ -43,12 +43,10 @@ export class Stepper {
 
     @Watch('activeStep')
     private _generateSteps() {
-        console.log('this.activeStep', this.activeStep);
         let activeStep = this.activeStep - 1 || 0;
         const items = this._el.querySelectorAll('p-stepper-item');
 
         if (!this.activeStep || activeStep < 0) {
-            console.log('No activeStep');
             for (let i = 0; i < items?.length; i++) {
                 const item = items.item(i) as any;
 
@@ -60,19 +58,10 @@ export class Stepper {
                     activeStep = i + 1;
                 }
             }
-
-            console.log('active step is now', activeStep);
         }
 
         for (let i = 0; i < items?.length; i++) {
             const item = items.item(i) as any;
-
-            console.log(
-                'running through items',
-                i,
-                activeStep,
-                this.activeStep
-            );
 
             item.active = i === activeStep;
             item.finished = i < activeStep;
@@ -80,8 +69,6 @@ export class Stepper {
             item.align =
                 i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
             item.contentPosition = this.contentPosition;
-
-            console.log('Passed item', i, item.active, item.finished);
 
             if (i < items.length - 1) {
                 const nextItem = item.nextElementSibling;

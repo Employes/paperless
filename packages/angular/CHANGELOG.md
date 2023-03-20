@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.388](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.387...v0.1.0-alpha.388) (2023-03-20)
+
+
+### Bug Fixes
+
+* **Core:** Clean up unnecessary console.logs ([c109328](https://github.com/Employes/Paperless/commit/c1093288a9eeedf2fbbf69f7c99790cbd3dc9cd0))
+
+
+
+
+
 # [0.1.0-alpha.387](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.386...v0.1.0-alpha.387) (2023-03-20)
 
 **Note:** Version bump only for package @paperless/angular

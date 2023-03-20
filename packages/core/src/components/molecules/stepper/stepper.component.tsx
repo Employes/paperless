@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 
 @Component({
     tag: 'p-stepper',
@@ -41,6 +41,7 @@ export class Stepper {
         );
     }
 
+    @Watch('activeStep')
     private _generateSteps() {
         let activeStep = this.activeStep - 1 || 0;
         const items = this._el.querySelectorAll('p-stepper-item');

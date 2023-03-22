@@ -37,6 +37,6 @@ module.exports = {
     plugins: [
         require('@tailwindcss/aspect-ratio'),
         require('tailwind-scrollbar-hide'),
-        reqiore('./tailwind/plugins/safe-area'),
+        require('./tailwind/plugins/safe-area'),
     ],
 };

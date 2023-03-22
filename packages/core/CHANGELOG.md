@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.390](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.389...v0.1.0-alpha.390) (2023-03-22)
+
+
+### Bug Fixes
+
+* **Atoms/Backdrop:** Max size include safe-area ([0a88aac](https://github.com/ionic-team/stencil-component-starter/commit/0a88aacb1c054c906c4351aa13409a43a5ad7e18))
+
+
+
+
+
 # [0.1.0-alpha.389](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.388...v0.1.0-alpha.389) (2023-03-22)
 
 

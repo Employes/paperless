@@ -2,17 +2,16 @@ import { Component, h, Host } from '@stencil/core';
 
 @Component({
     tag: 'p-tab-group',
-    styleUrl: 'tab-group.component.scss',
     shadow: true,
 })
 export class TabGroup {
     render() {
         return (
-            <Host class="p-tab-group">
-                <div class="content">
+            <Host class="p-tab-group relative flex w-full flex-col">
+                <div class="scrollbar-hide z-10 flex w-full gap-5 overflow-x-auto">
                     <slot />
                 </div>
-                <p-divider />
+                <p-divider class="absolute bottom-0 left-0 m-0 w-full" />
             </Host>
         );
     }

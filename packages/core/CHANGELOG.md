@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.392](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.391...v0.1.0-alpha.392) (2023-03-22)
+
+
+### Bug Fixes
+
+* **Organisms/Navbar:** Fix navbar height ([6d8c5e9](https://github.com/ionic-team/stencil-component-starter/commit/6d8c5e96a16d69a0b59a64aba5f6ed432c247a26))
+
+
+### Features
+
+* **Atoms/Drawer/Container:** Fix min-height instead of height ([d0a4e93](https://github.com/ionic-team/stencil-component-starter/commit/d0a4e93c48238be373e87526a4bc17b3da286b03))
+
+
+
+
+
 # [0.1.0-alpha.391](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.390...v0.1.0-alpha.391) (2023-03-22)
 
 

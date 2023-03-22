@@ -4,7 +4,7 @@ p-drawer-container {
     @apply w-full tablet:w-[22.5rem];
     @apply bg-white;
     @apply animate-slide-in-right;
-    @apply h-screen-safe;
+    @apply min-h-screen-safe;
 
     @apply shadow-4 #{!important};
 

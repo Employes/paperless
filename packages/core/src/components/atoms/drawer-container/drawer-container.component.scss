@@ -1,9 +1,13 @@
 p-drawer-container {
-    @apply flex flex-col z-drawer;
+    @apply z-drawer flex flex-col;
     // tablet:w-[22.5rem]
-    @apply w-full tablet:w-[22.5rem] min-h-[100vh];
+    @apply w-full tablet:w-[22.5rem];
     @apply bg-white;
     @apply animate-slide-in-right;
+
+    min-height: calc(
+        100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
+    );
 
     @apply shadow-4 #{!important};
 

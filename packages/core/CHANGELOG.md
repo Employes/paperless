@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.389](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.388...v0.1.0-alpha.389) (2023-03-22)
+
+
+### Features
+
+* **Atoms/Drawer/Container:** Make sure we also check safe-area for height ([fb376fd](https://github.com/ionic-team/stencil-component-starter/commit/fb376fd26174d3f801a028cf821258b7996a2b79))
+* **Atoms/Tab/Group:** Scrollable group on mobile ([c2cfa92](https://github.com/ionic-team/stencil-component-starter/commit/c2cfa922c34dc4ebb5f5711fe40f82f14cdebe48))
+* **Atoms/Tab/Item:** Add whitespace-nowrap ([b374a3f](https://github.com/ionic-team/stencil-component-starter/commit/b374a3f66bd6471df7e338be8fb41f3b348fc8e1))
+
+
+
+
+
 # [0.1.0-alpha.388](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.387...v0.1.0-alpha.388) (2023-03-20)
 
 

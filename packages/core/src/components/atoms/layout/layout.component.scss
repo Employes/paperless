@@ -1,5 +1,5 @@
 :host {
-    @apply grid h-screen w-screen content-start overflow-hidden;
+    @apply h-screen-safe w-screen-safe grid content-start overflow-hidden;
 
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, 3);
@@ -33,7 +33,7 @@
     .sidebar {
         grid-area: sidebar;
 
-        @apply flex h-full box-border;
+        @apply box-border flex h-full;
         @apply w-sidebar-mobile desktop-sm:w-sidebar-desktop;
         @apply order-1 desktop-sm:order-2;
     }
@@ -41,7 +41,7 @@
     .content {
         grid-area: content;
 
-        @apply relative flex flex-col h-full overflow-y-auto overflow-x-hidden;
+        @apply relative flex h-full flex-col overflow-y-auto overflow-x-hidden;
         @apply order-3;
 
         padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom)
@@ -76,7 +76,7 @@
     }
 
     .sidebar {
-        @apply hidden desktop-xs:flex w-unset;
+        @apply hidden w-unset desktop-xs:flex;
         @apply order-3 p-2;
         @apply flex-1 overflow-hidden;
 

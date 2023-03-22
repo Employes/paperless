@@ -7,7 +7,7 @@
     .sidebar .content,
     .sidebar .user,
     .userbar {
-        @apply flex flex-col w-full;
+        @apply flex w-full flex-col;
     }
 
     .sidebar,
@@ -17,11 +17,11 @@
     }
 
     .sidebar {
-        @apply bg-white fixed top-0 left-0 h-screen w-60 z-navbar;
+        @apply h-screen-safe fixed top-0 left-0 z-navbar w-60 bg-white;
         @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
 
         @apply will-change-transform;
-        @apply transform-gpu -translate-x-full desktop-xs:translate-x-0;
+        @apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
 
         @apply p-4;
 
@@ -32,7 +32,7 @@
         @apply transition-all;
 
         .header {
-            @apply flex justify-between w-full items-center mb-6;
+            @apply mb-6 flex w-full items-center justify-between;
             @apply desktop-xs:hidden;
         }
 
@@ -41,7 +41,7 @@
         }
 
         .user {
-            @apply hidden mt-auto;
+            @apply mt-auto hidden;
             @apply desktop-xs:flex;
         }
 
@@ -51,7 +51,7 @@
     }
 
     .top-bar {
-        @apply flex justify-between px-4 py-2 w-full;
+        @apply flex w-full justify-between px-4 py-2;
 
         padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
         height: calc(env(safe-area-inset-top, 0) + 3rem);

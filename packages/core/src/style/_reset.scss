@@ -5,8 +5,7 @@
 
         @apply w-full;
         @apply bg-mystic;
-
-        max-width: 100vw;
+        @apply max-w-screen-safe;
 
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;

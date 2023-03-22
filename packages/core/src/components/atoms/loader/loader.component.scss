@@ -1,6 +1,6 @@
 :host {
     .loader {
-        @apply w-[1em] h-[1em] inline-block rounded-round;
+        @apply inline-block h-[1em] w-[1em] rounded-round;
         @apply border-2 border-solid border-indigo-light border-t-indigo;
         animation: 500ms spin linear infinite;
 
@@ -16,7 +16,7 @@
     }
 
     .loading-screen {
-        @apply fixed top-0 left-0 w-screen h-screen;
+        @apply w-screen-safe h-screen-safe fixed top-0 left-0;
         @apply flex items-center justify-center;
         @apply bg-mystic;
 
@@ -26,7 +26,7 @@
             @apply max-w-xs;
 
             .loader-wrapper {
-                @apply w-full flex justify-center;
+                @apply flex w-full justify-center;
 
                 .loader {
                     @apply text-4xl;
@@ -37,7 +37,7 @@
 }
 
 :host(.variant-ghost) {
-    @apply block box-border;
+    @apply box-border block;
 
     will-change: background, background-position-x, background-color;
 

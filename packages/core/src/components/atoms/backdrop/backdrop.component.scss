@@ -4,25 +4,13 @@
     @apply h-full w-full;
     @apply overflow-hidden;
     @apply animate-fade-in bg-storm-dark/50;
-
-    max-height: calc(
-        100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
-    );
-    max-width: calc(
-        100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)
-    );
+    @apply max-h-screen-safe max-w-screen-safe;
 
     .content-container {
         @apply h-full w-full overflow-y-auto overflow-x-hidden;
         @apply tablet:px-16 desktop-xs:p-16;
         @apply flex items-end justify-center desktop-xs:items-center;
-
-        max-height: calc(
-            100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
-        );
-        max-width: calc(
-            100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)
-        );
+        @apply max-h-screen-safe max-w-screen-safe;
     }
 }
 

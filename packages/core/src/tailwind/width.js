@@ -17,7 +17,4 @@ module.exports = {
         'sidebar-desktop-login': '100%',
         'content-desktop-login': '30rem',
     },
-    maxWidth: {
-        screen: '100vw',
-    },
 };

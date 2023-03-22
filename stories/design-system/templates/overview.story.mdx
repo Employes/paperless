@@ -6,7 +6,7 @@ import { StoryCategories } from '../../categories';
 # Overview page
 
 <Canvas>
-    <div class="min-h-screen">
+    <div class="min-h-screen-safe">
         <p-layout class="bg-mystic">
             <p-navbar slot="sidebar">
                 <p-profile variant="company" slot="company">
@@ -31,7 +31,7 @@ import { StoryCategories } from '../../categories';
                     </div>
                 </p-profile>
                 <div class="flex flex-col" slot="content">
-                    <p class="text-storm-vague text-xs font-semibold uppercase mb-2">
+                    <p class="mb-2 text-xs font-semibold uppercase text-storm-vague">
                         Overzicht
                     </p>
                     <p-navigation-item icon="person">
@@ -57,8 +57,8 @@ import { StoryCategories } from '../../categories';
                 </p-dropdown>
             </p-navbar>
             <slot slot="content">
-                <div class="flex flex-col gap-6 desktop-xs:gap-8 w-full h-full">
-                    <div class="flex w-full justify-between items-center">
+                <div class="flex h-full w-full flex-col gap-6 desktop-xs:gap-8">
+                    <div class="flex w-full items-center justify-between">
                         <h1 class="text-storm-dark ">Page Title</h1>
                         {/* <h3 class="text-storm-dark ">Page Title</h3> */}
                         <p-button icon="plus">New</p-button>

@@ -4,10 +4,7 @@ p-drawer-container {
     @apply w-full tablet:w-[22.5rem];
     @apply bg-white;
     @apply animate-slide-in-right;
-
-    min-height: calc(
-        100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
-    );
+    @apply h-screen-safe;
 
     @apply shadow-4 #{!important};
 

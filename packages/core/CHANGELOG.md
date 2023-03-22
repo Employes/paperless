@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.391](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.390...v0.1.0-alpha.391) (2023-03-22)
+
+
+### Bug Fixes
+
+* **Core/Tailwind:** Let's just say I am a total idiot. ([5d6cfe6](https://github.com/ionic-team/stencil-component-starter/commit/5d6cfe6d05d415ae55e3523ce603f9073912fa8c))
+
+
+### Features
+
+* **Core/Tailwind:** Introduce custom safe-area plugin ([9ea3eae](https://github.com/ionic-team/stencil-component-starter/commit/9ea3eaec7aeeaea451b54f0182448d6c02e57eaa))
+
+
+
+
+
 # [0.1.0-alpha.390](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.389...v0.1.0-alpha.390) (2023-03-22)
 
 

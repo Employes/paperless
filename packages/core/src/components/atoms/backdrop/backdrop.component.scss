@@ -1,14 +1,28 @@
 :host {
     @apply flex;
     @apply fixed top-0 left-0 z-backdrop;
-    @apply h-full w-full max-h-screen max-w-screen;
+    @apply h-full w-full;
     @apply overflow-hidden;
-    @apply bg-storm-dark/50 animate-fade-in;
+    @apply animate-fade-in bg-storm-dark/50;
+
+    max-height: calc(
+        100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
+    );
+    max-width: calc(
+        100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)
+    );
 
     .content-container {
-        @apply overflow-y-auto overflow-x-hidden w-full h-full max-h-screen max-w-screen;
+        @apply h-full w-full overflow-y-auto overflow-x-hidden;
         @apply tablet:px-16 desktop-xs:p-16;
-        @apply flex justify-center items-end desktop-xs:items-center;
+        @apply flex items-end justify-center desktop-xs:items-center;
+
+        max-height: calc(
+            100vh - env(safe-area-inset-top, 0) - env(safe-area-inset-bottom, 0)
+        );
+        max-width: calc(
+            100vw - env(safe-area-inset-left, 0) - env(safe-area-inset-right, 0)
+        );
     }
 }
 
@@ -26,7 +40,7 @@
 
 :host(.variant-drawer) {
     .content-container {
-        @apply justify-end items-start;
+        @apply items-start justify-end;
         @apply p-0 tablet:p-0 desktop-xs:p-0;
     }
 }

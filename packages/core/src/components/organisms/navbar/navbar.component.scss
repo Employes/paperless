@@ -17,7 +17,7 @@
     }
 
     .sidebar {
-        @apply h-screen-safe fixed top-0 left-0 z-navbar w-60 bg-white;
+        @apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
         @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
 
         @apply will-change-transform;

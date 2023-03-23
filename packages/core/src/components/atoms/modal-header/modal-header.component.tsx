@@ -28,7 +28,7 @@ export class ModalHeader {
                         variant="secondary"
                         icon="negative"
                         iconOnly={true}
-                        onClick={() => this.close.emit()}
+                        onClick={(ev) => this.close.emit(ev)}
                         size="small"
                     ></p-button>
                 )}

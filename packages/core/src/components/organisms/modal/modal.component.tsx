@@ -6,7 +6,7 @@ import {
     h,
     Host,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 
 @Component({

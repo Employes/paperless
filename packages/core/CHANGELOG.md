@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.393](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.392...v0.1.0-alpha.393) (2023-03-23)
+
+
+### Features
+
+* **Core:** Better reset of css ([e6b84c6](https://github.com/ionic-team/stencil-component-starter/commit/e6b84c66e5e9a1150148e2e053509d9e80a3875e))
+
+
+
+
+
 # [0.1.0-alpha.392](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.391...v0.1.0-alpha.392) (2023-03-22)
 
 

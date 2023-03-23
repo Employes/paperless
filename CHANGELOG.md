@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.394](https://github.com/employes/paperless/compare/v0.1.0-alpha.393...v0.1.0-alpha.394) (2023-03-23)
+
+
+### Bug Fixes
+
+* **Atoms/Modal/Header:** Supply with event for close ([d1e8c27](https://github.com/employes/paperless/commit/d1e8c270bc812613586d737ce9b1e7260fe52d92))
+
+
+
+
+
 # [0.1.0-alpha.393](https://github.com/employes/paperless/compare/v0.1.0-alpha.392...v0.1.0-alpha.393) (2023-03-23)
 
 

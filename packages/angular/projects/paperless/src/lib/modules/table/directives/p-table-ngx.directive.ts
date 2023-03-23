@@ -106,7 +106,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 	}
 
 	private _checkEmptyStateType() {
-		if(this.lastValue.query?.length || (this.lastValue.quickFilter && this.lastValue.quickFilter?.default) || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0) || this.lastValue.filters?.length) {
+		if(this.lastValue.query?.length || (this.lastValue.quickFilter && !this.lastValue.quickFilter?.default) || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0) || this.lastValue.filters?.length) {
 			this._base.emptyStateType = 'filtered';
 			return;
 		}

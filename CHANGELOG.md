@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.398](https://github.com/employes/paperless/compare/v0.1.0-alpha.397...v0.1.0-alpha.398) (2023-03-23)
+
+
+### Bug Fixes
+
+* **Molecules/Modal:** Remove console.logs ([31ae38f](https://github.com/employes/paperless/commit/31ae38f08c8a6cd997c1eea3b1e6f058a0fa1786))
+
+
+
+
+
 # [0.1.0-alpha.397](https://github.com/employes/paperless/compare/v0.1.0-alpha.396...v0.1.0-alpha.397) (2023-03-23)
 
 

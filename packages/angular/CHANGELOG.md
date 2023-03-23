@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.397](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.396...v0.1.0-alpha.397) (2023-03-23)
+
+
+### Bug Fixes
+
+* **Organisms/Modal:** Add more logging & check if input name changed ([0da2005](https://github.com/Employes/Paperless/commit/0da2005290f46a5051739b3e4271fdcde22d82a3))
+
+
+
+
+
 # [0.1.0-alpha.396](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.395...v0.1.0-alpha.396) (2023-03-23)
 
 **Note:** Version bump only for package @paperless/angular

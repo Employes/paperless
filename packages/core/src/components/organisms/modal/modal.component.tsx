@@ -136,18 +136,25 @@ export class Modal {
             return;
         }
 
+        console.log("[MODAL] backdrop click");
         this.close(ev);
     }
 
     public close(ev: MouseEvent) {
+        console.log("[MODAL] close function");
         this.closeClicked.emit(ev);
 
+        console.log("[MODAL] close  clicked emitted");
         this._closing = true;
 
+        console.log("[MODAL] closing");
         setTimeout(() => {
+            console.log("[MODAL] set timeout start");
             this.show = false;
             this._closing = false;
+            console.log("[MODAL] closing & show false");
             this.closed.emit();
+            console.log("[MODAL] closed emit");
         }, 550);
     }
 }

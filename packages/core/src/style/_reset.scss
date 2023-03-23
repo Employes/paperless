@@ -18,10 +18,10 @@
     }
 
     body {
-        @apply min-h-screen;
-        min-height: -moz-stretch;
-        min-height: -webkit-stretch;
-        min-height: stretch;
+        @apply h-screen-safe;
+        height: -moz-stretch;
+        height: -webkit-stretch;
+        height: stretch;
     }
 
     body * {

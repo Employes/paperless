@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.396](https://github.com/employes/paperless/compare/v0.1.0-alpha.395...v0.1.0-alpha.396) (2023-03-23)
+
+
+### Bug Fixes
+
+* **Organisms/Modal:** Add debugging ([0c04fe5](https://github.com/employes/paperless/commit/0c04fe519843e2e89f5138a93aa8f943835b0724))
+
+
+
+
+
 # [0.1.0-alpha.395](https://github.com/employes/paperless/compare/v0.1.0-alpha.394...v0.1.0-alpha.395) (2023-03-23)
 
 

@@ -142,7 +142,7 @@
     <p-modal
         [header]="filterModalHeaderText"
         [show]="filterModalShow$ | async"
-        (close)="filterModalShow$.next(false)"
+        (closed)="filterModalShow$.next(false)"
     >
         <div slot="content" class="flex flex-col gap-6">
             <ng-container

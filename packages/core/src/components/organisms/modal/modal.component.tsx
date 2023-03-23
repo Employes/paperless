@@ -141,20 +141,38 @@ export class Modal {
     }
 
     public close(ev: MouseEvent) {
-        console.log("[MODAL] close function");
+        console.log("[MODAL] close function", {
+            show: this.show,
+            closing: this._closing
+        });
         this.closeClicked.emit(ev);
 
-        console.log("[MODAL] close  clicked emitted");
+        console.log("[MODAL] close  clicked emitted", {
+            show: this.show,
+            closing: this._closing
+        });
         this._closing = true;
 
-        console.log("[MODAL] closing");
+        console.log("[MODAL] closing", {
+            show: this.show,
+            closing: this._closing
+        });
         setTimeout(() => {
-            console.log("[MODAL] set timeout start");
+            console.log("[MODAL] set timeout start", {
+                show: this.show,
+                closing: this._closing
+            });
             this.show = false;
             this._closing = false;
-            console.log("[MODAL] closing & show false");
+            console.log("[MODAL] closing & show false", {
+                show: this.show,
+                closing: this._closing
+            });
             this.closed.emit();
-            console.log("[MODAL] closed emit");
+            console.log("[MODAL] closed emit", {
+                show: this.show,
+                closing: this._closing
+            });
         }, 550);
     }
 }

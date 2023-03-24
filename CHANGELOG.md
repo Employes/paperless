@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.400](https://github.com/employes/paperless/compare/v0.1.0-alpha.399...v0.1.0-alpha.400) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Small test with ng-container in slot ([2995647](https://github.com/employes/paperless/commit/2995647a0a5fbf84ac3ee96a4c8ae6a129ae44e2))
+
+
+
+
+
 # [0.1.0-alpha.399](https://github.com/employes/paperless/compare/v0.1.0-alpha.398...v0.1.0-alpha.399) (2023-03-24)
 
 

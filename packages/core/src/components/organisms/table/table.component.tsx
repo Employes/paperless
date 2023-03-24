@@ -571,12 +571,16 @@ export class Table {
         }
 
         return (
-            <div class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center">
-                <p-illustration
-                    variant="empty-state-add"
-                    class="mb-6 cursor-pointer"
-                    onClick={() => this.emptyStateActionClick.emit(null)}
-                />
+            <div
+                class={`flex max-w-[20rem] flex-col items-center self-center py-24 text-center ${
+                    this.enableEmptyStateAction && 'cursor-pointer'
+                }`}
+                onClick={() =>
+                    this.enableEmptyStateAction &&
+                    this.emptyStateActionClick.emit(null)
+                }
+            >
+                <p-illustration variant="empty-state-add" class="mb-6" />
                 <p class="text-storm-default font-semibold">
                     {this.emptyStateHeader()}
                 </p>
@@ -584,12 +588,7 @@ export class Table {
                     {this.emptyStateContent()}
                 </p>
                 {this.enableEmptyStateAction && (
-                    <p-button
-                        variant="secondary"
-                        icon="plus"
-                        size="small"
-                        onClick={() => this.emptyStateActionClick.emit(null)}
-                    >
+                    <p-button variant="secondary" icon="plus" size="small">
                         {this.emptyStateAction()}
                     </p-button>
                 )}

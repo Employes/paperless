@@ -409,6 +409,14 @@ export class Table implements OnInit, OnChanges {
         this.filterModalShow$.next(false);
     }
 
+    emptyStateClicked() {
+        if (!this.enableEmptyStateAction) {
+            return;
+        }
+
+        this.emptyStateActionClick.emit();
+    }
+
     private _parseItems(items: string) {
         if (!items) {
             this.parsedItems = [];

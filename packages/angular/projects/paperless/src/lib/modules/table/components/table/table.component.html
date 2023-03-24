@@ -214,11 +214,12 @@
             py-24
             text-center
         "
+        [class.cursor-pointer]="enableEmptyStateAction"
+        (click)="emptyStateClicked()"
     >
         <p-illustration
             [variant]="emptyStateIllustration"
             class="mb-6 cursor-pointer"
-            (onClick)="emptyStateActionClick.emit()"
         ></p-illustration>
         <p class="text-storm-default font-semibold">
             {{ emptyStateHeader }}
@@ -231,7 +232,6 @@
             variant="secondary"
             icon="plus"
             size="small"
-            (onClick)="emptyStateActionClick.emit()"
         >
             {{ emptyStateAction }}
         </p-button>

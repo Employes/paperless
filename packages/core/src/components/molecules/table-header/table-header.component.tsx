@@ -184,7 +184,7 @@ export class TableHeader {
                 {!this.loading &&
                     (this._hasCustomFilterSlot ||
                         this.quickFilters.length > 0) && (
-                        <div class="left-side flex flex-col gap-4 desktop-xs:flex-row">
+                        <div class="left-side flex flex-col justify-start gap-4 desktop-xs:flex-row">
                             {this._hasCustomFilterSlot && (
                                 <slot name="custom-filter" />
                             )}

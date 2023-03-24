@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.399](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.398...v0.1.0-alpha.399) (2023-03-24)
+
+
+### Features
+
+* **Organisms/Table:** Add on click for empty state ([d0aac77](https://github.com/Employes/Paperless/commit/d0aac770cd393b6af7888dfe2383fd71a1901419))
+
+
+
+
+
 # [0.1.0-alpha.398](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.397...v0.1.0-alpha.398) (2023-03-23)
 
 **Note:** Version bump only for package @paperless/angular

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.403](https://github.com/employes/paperless/compare/v0.1.0-alpha.402...v0.1.0-alpha.403) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove `cursor-pointer` from empty-state illustration ([11e3623](https://github.com/employes/paperless/commit/11e36237d6ec4a44ad846c203669b2013642191d))
+
+
+
+
+
 # [0.1.0-alpha.402](https://github.com/employes/paperless/compare/v0.1.0-alpha.401...v0.1.0-alpha.402) (2023-03-24)
 
 

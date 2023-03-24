@@ -21,7 +21,7 @@
         [itemsSelectedAmount]="selectedRows.length"
         [loading]="headerLoading"
     >
-        <ng-container *ngIf="headerCustomFilterTemplate" slot="custom-filter">
+        <ng-container *ngIf="headerCustomFilterTemplate">
             <ng-container
                 *ngTemplateOutlet="headerCustomFilterTemplate"
             ></ng-container>

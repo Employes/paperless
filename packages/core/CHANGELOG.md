@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.402](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.401...v0.1.0-alpha.402) (2023-03-24)
+
+
+### Features
+
+* **Molecules/Table/Header:** Apply items to flex start ([227e122](https://github.com/ionic-team/stencil-component-starter/commit/227e122725b04a5d0a84862f35e820fb98f38d78))
+
+
+
+
+
 # [0.1.0-alpha.401](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.400...v0.1.0-alpha.401) (2023-03-24)
 
 

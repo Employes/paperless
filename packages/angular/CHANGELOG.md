@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.402](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.401...v0.1.0-alpha.402) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove `slot="custom-filter"` ([c2725bf](https://github.com/Employes/Paperless/commit/c2725bfaac4791e9318cdbac17be09741b3fe411))
+
+
+
+
+
 # [0.1.0-alpha.401](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.400...v0.1.0-alpha.401) (2023-03-24)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.402](https://github.com/employes/paperless/compare/v0.1.0-alpha.401...v0.1.0-alpha.402) (2023-03-24)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Remove `slot="custom-filter"` ([c2725bf](https://github.com/employes/paperless/commit/c2725bfaac4791e9318cdbac17be09741b3fe411))
+
+
+### Features
+
+* **Molecules/Table/Header:** Apply items to flex start ([227e122](https://github.com/employes/paperless/commit/227e122725b04a5d0a84862f35e820fb98f38d78))
+
+
+
+
+
 # [0.1.0-alpha.401](https://github.com/employes/paperless/compare/v0.1.0-alpha.400...v0.1.0-alpha.401) (2023-03-24)
 
 

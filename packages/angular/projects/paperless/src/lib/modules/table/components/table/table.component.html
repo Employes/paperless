@@ -21,11 +21,11 @@
         [itemsSelectedAmount]="selectedRows.length"
         [loading]="headerLoading"
     >
-        <div *ngIf="headerCustomFilterTemplate" slot="custom-filter">
+        <ng-container *ngIf="headerCustomFilterTemplate" slot="custom-filter">
             <ng-container
                 *ngTemplateOutlet="headerCustomFilterTemplate"
             ></ng-container>
-        </div>
+        </ng-container>
     </p-table-header>
 
     <p-table-row variant="header">

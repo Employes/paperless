@@ -136,7 +136,7 @@ export class Datepicker {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
-        console.log('[Datepicker] parse value', value);
+        console.log('[Datepicker] parse value', value, this._el);
         if (!value && this.preselectToday) {
             value = new Date();
         }
@@ -317,7 +317,7 @@ export class Datepicker {
     }
 
     private _setValue(value: Date, blur = true) {
-        console.log('[Datepicker] set value', value);
+        console.log('[Datepicker] set value', value, this._el);
 
         if (value === null) {
             this._value = null;
@@ -325,17 +325,17 @@ export class Datepicker {
             return;
         }
 
-        console.log('[Datepicker] value is not null', value);
+        console.log('[Datepicker] value is not null', value, this._el);
         if (!isValid(value)) {
             return;
         }
 
-        console.log('[Datepicker] value is valid', value);
+        console.log('[Datepicker] value is valid', value, this._el);
         if (this._isDisabledDay(value)) {
             return;
         }
 
-        console.log('[Datepicker] value is not disabled', value);
+        console.log('[Datepicker] value is not disabled', value, this._el);
         value = startOfDay(value);
         const isSameValue = isSameDay(value, this._value);
 
@@ -345,7 +345,8 @@ export class Datepicker {
 
         console.log(
             '[Datepicker] value is not the same as previous value',
-            value
+            value,
+            this._el
         );
         if (blur) {
             this._onBlur();
@@ -353,7 +354,7 @@ export class Datepicker {
 
         this._value = value;
         this.valueChange.emit(value);
-        console.log('[Datepicker] value is set', value);
+        console.log('[Datepicker] value is set', value, this._el);
     }
 
     private _isDisabledDay(day: Date) {

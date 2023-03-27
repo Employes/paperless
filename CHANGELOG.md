@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.408](https://github.com/employes/paperless/compare/v0.1.0-alpha.407...v0.1.0-alpha.408) (2023-03-27)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#126](https://github.com/employes/paperless/issues/126)) ([82fc61f](https://github.com/employes/paperless/commit/82fc61f37a6eaf641e41fd8686c08d59b512ad8d))
+
+
+
+
+
 # [0.1.0-alpha.407](https://github.com/employes/paperless/compare/v0.1.0-alpha.406...v0.1.0-alpha.407) (2023-03-27)
 
 

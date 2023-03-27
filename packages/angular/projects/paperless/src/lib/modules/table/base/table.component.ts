@@ -184,7 +184,7 @@ export abstract class BaseTableComponent
         this._refresh();
     }
 
-    resetTable(emitEvent = true, forceRefresh = null) {
+    resetTable(emitEvent = true, forceRefresh = false) {
         this._setTableValues(this.parsedDefaultTableValues, emitEvent);
 
         if (forceRefresh) {

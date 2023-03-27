@@ -136,6 +136,7 @@ export class Datepicker {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
+        console.log('[Datepicker] parse value', value);
         if (!value && this.preselectToday) {
             value = new Date();
         }
@@ -316,20 +317,25 @@ export class Datepicker {
     }
 
     private _setValue(value: Date, blur = true) {
+        console.log('[Datepicker] set value', value);
+
         if (value === null) {
             this._value = null;
             this.valueChange.emit(null);
             return;
         }
 
+        console.log('[Datepicker] value is not null', value);
         if (!isValid(value)) {
             return;
         }
 
+        console.log('[Datepicker] value is valid', value);
         if (this._isDisabledDay(value)) {
             return;
         }
 
+        console.log('[Datepicker] value is not disabled', value);
         value = startOfDay(value);
         const isSameValue = isSameDay(value, this._value);
 
@@ -337,12 +343,17 @@ export class Datepicker {
             return;
         }
 
+        console.log(
+            '[Datepicker] value is not the same as previous value',
+            value
+        );
         if (blur) {
             this._onBlur();
         }
 
         this._value = value;
         this.valueChange.emit(value);
+        console.log('[Datepicker] value is set', value);
     }
 
     private _isDisabledDay(day: Date) {

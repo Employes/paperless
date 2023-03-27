@@ -126,24 +126,13 @@ export class Calendar {
 
     @Watch('value')
     private _parseValue(value: string | Date) {
+        console.log('[Calendar] parse value', value);
         if (!value && this.preselectToday) {
             value = new Date();
         }
 
         if (typeof value === 'string') {
             value = new Date(value);
-        }
-
-        if (!isValid(value)) {
-            return;
-        }
-
-        if (this._isDisabledDay(value)) {
-            return;
-        }
-
-        if (isSameDay(this._value, value)) {
-            return;
         }
 
         this._setValue(value);
@@ -403,10 +392,25 @@ export class Calendar {
     }
 
     private _setValue(value: Date) {
+        console.log('[Calendar] set value', value);
+
+        if (value === null) {
+            this._value = null;
+            this.valueChange.emit(null);
+            return;
+        }
+
+        console.log('[Calendar] value is not null', value);
+        if (!isValid(value)) {
+            return;
+        }
+
+        console.log('[Calendar] value is valid', value);
         if (this._isDisabledDay(value)) {
             return;
         }
 
+        console.log('[Calendar] value is not disabled', value);
         value = startOfDay(value);
         const isSameValue = isSameDay(value, this._value);
 
@@ -414,8 +418,14 @@ export class Calendar {
             return;
         }
 
+        console.log(
+            '[Calendar] value is not the same as previous value',
+            value
+        );
+
         this._value = value;
         this.valueChange.emit(value);
+        console.log('[Calendar] value is set', value);
     }
 
     private _generateDaysInMonth() {

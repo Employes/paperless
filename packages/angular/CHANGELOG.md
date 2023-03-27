@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.407](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.406...v0.1.0-alpha.407) (2023-03-27)
+
+
+### Bug Fixes
+
+* **Angular/Table/Base:** Set `forceRefresh` to a boolean ([6e46bd5](https://github.com/Employes/Paperless/commit/6e46bd541a137eea14d97ff281fb10c9fd3609a6))
+
+
+
+
+
 # [0.1.0-alpha.406](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.405...v0.1.0-alpha.406) (2023-03-27)
 
 

@@ -22,6 +22,7 @@ export class DatepickerDirective extends BaseValueAccessor {
 	}
 
 	override writeValue(value: any) {
+		console.log('[Angular] Write value', value, this.el.nativeElement)
 		this.el.nativeElement.value = this.lastValue = value;
 	}
 }

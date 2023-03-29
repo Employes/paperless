@@ -36,7 +36,7 @@ export class BaseValueAccessor implements ControlValueAccessor {
     }
 
     @HostListener('focusout')
-    private _handleBlurEvent() {
+    protected _handleBlurEvent() {
         this.onTouched();
     }
 }

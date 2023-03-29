@@ -57,7 +57,7 @@ export class Select {
     /**
      * The key of the object to return
      */
-    @Prop() valueKey: string = 'value';
+    @Prop() valueKey: string;
 
     /**
      * The key to identify an object
@@ -211,14 +211,16 @@ export class Select {
     }
 
     componentDidLoad() {
+        if (!this.valueKey && !this.identifierKey) {
+            throw new Error('You must provide a valueKey or identifierKey');
+        }
+
         if (this.value) {
-            this._valueChange(this.value);
+            this._valueChange();
             return;
         }
 
-        if (this.autoSelectFirst) {
-            this._selectedItem = this._items?.[0];
-        }
+        this.itemChanges();
     }
 
     render() {
@@ -284,8 +286,8 @@ export class Select {
     }
 
     @Watch('value')
-    private _valueChange(value: any) {
-        this._preselectItem(value);
+    private _valueChange() {
+        this._preselectItem();
     }
 
     @Watch('items')
@@ -301,48 +303,65 @@ export class Select {
         });
     }
 
-    private _preselectItem(value?: any) {
-        value = value === undefined ? null : value;
-        value = !value ? this.value : value;
+    private _preselectItem() {
+        let value = this.value;
 
-        value =
-            this.valueKey === 'false' ||
-            !this.valueKey ||
-            !this.valueKey?.length
-                ? value?.[this._identifierKey]
-                : value;
+        if (!this._selectedItem && !value && this.autoSelectFirst) {
+            value = this._items[0];
+        }
+
+        if (!value) {
+            this._selectValue(null);
+            return;
+        }
+
+        const identifier =
+            typeof value === 'object' ? value[this._identifierKey] : value;
         const parsedValue =
-            typeof value === 'string' ? value : JSON.stringify(value);
+            typeof identifier === 'string' || typeof identifier === 'number'
+                ? identifier
+                : JSON.stringify(identifier);
 
-        if (
-            this._selectedItem &&
-            JSON.stringify(this._selectedItem[this._identifierKey]) ===
-                parsedValue
-        ) {
+        const currentValue = this._selectedItem
+            ? this._selectedItem?.[this._identifierKey]
+            : null;
+        const currentParsedValue =
+            typeof currentValue === 'string' || typeof currentValue === 'number'
+                ? currentValue
+                : JSON.stringify(currentValue);
+
+        if (this._selectedItem && currentParsedValue === parsedValue) {
             return;
         }
 
         if (!this._items?.length && value) {
-            this._selectedItem = value;
+            this._selectValue(value);
             return;
         }
 
-        const item = this._items.find(
-            (i) => JSON.stringify(i?.[this._identifierKey]) === parsedValue
-        );
+        const item = this._items.find((i) => {
+            const itemIdentifier = i?.[this._identifierKey];
+            const parsedItemIdentifier =
+                typeof itemIdentifier === 'string' ||
+                typeof itemIdentifier === 'number'
+                    ? itemIdentifier
+                    : JSON.stringify(itemIdentifier);
 
-        this._selectedItem = !!item ? item : value;
+            return parsedItemIdentifier === parsedValue;
+        });
+
+        this._selectValue(!!item ? item : value);
     }
 
     private _selectValue(item) {
         this._selectedItem = item;
         const value =
-            !!this.valueKey?.length && this.valueKey !== 'false'
-                ? item[this.valueKey]
+            !!this.valueKey && this.valueKey !== 'false' && item !== null
+                ? item?.[this.valueKey]
                 : item;
 
         this.value = value;
-        this.valueChange.emit(this.value);
+        this.valueChange.emit(value);
 
         this._onBlur(true);
     }

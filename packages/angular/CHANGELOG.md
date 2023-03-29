@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.410](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.409...v0.1.0-alpha.410) (2023-03-29)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** We made it boyss ([7c1ca3b](https://github.com/Employes/Paperless/commit/7c1ca3ba5ef7df2928978c00cddf37e96731c522))
+
+
+
+
+
 # [0.1.0-alpha.409](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.408...v0.1.0-alpha.409) (2023-03-29)
 
 

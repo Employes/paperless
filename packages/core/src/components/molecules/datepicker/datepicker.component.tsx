@@ -135,8 +135,7 @@ export class Datepicker {
     }
 
     @Watch('value')
-    private _parseValue(value: string | Date) {
-        console.log('[Datepicker] parse value', value, this._el);
+    protected parseValue(value: string | Date) {
         if (!value && this.preselectToday) {
             value = new Date();
         }

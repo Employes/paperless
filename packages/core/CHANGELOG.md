@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.411](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.410...v0.1.0-alpha.411) (2023-03-29)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Don't preselect when auto completing ([8461762](https://github.com/ionic-team/stencil-component-starter/commit/8461762e90cb90b30a9c906dfd1772df702756c9))
+
+
+
+
+
 # [0.1.0-alpha.410](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.409...v0.1.0-alpha.410) (2023-03-29)
 
 

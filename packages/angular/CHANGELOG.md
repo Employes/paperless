@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.409](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.408...v0.1.0-alpha.409) (2023-03-29)
+
+
+### Bug Fixes
+
+* **Molecules/Datepicker:** We got a fix baby ([2db28c1](https://github.com/Employes/Paperless/commit/2db28c14435c0dfbc09bdceca70cc2381ed441b9))
+
+
+
+
+
 # [0.1.0-alpha.408](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.407...v0.1.0-alpha.408) (2023-03-27)
 
 

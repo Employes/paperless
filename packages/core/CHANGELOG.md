@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.409](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.408...v0.1.0-alpha.409) (2023-03-29)
+
+
+### Bug Fixes
+
+* **Molecules/Datepicker:** Fix unused function ([e8fd966](https://github.com/ionic-team/stencil-component-starter/commit/e8fd9661ad2fd4708dcd60cc94cff9901ca10d23))
+* **Molecules/Datepicker:** We got a fix baby ([2db28c1](https://github.com/ionic-team/stencil-component-starter/commit/2db28c14435c0dfbc09bdceca70cc2381ed441b9))
+
+
+
+
+
 # [0.1.0-alpha.408](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.407...v0.1.0-alpha.408) (2023-03-27)
 
 **Note:** Version bump only for package @paperless/core

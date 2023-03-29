@@ -304,6 +304,10 @@ export class Select {
     }
 
     private _preselectItem() {
+        if (this._isAutoCompleting && this.query?.length) {
+            return;
+        }
+
         let value = this.value;
 
         if (!this._selectedItem && !value && this.autoSelectFirst) {

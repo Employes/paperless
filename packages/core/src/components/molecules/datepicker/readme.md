@@ -29,7 +29,7 @@
 | `prefix`          | `prefix`           | The prefix of the input group used by the datepicker      | `string`                         | `undefined`    |
 | `preselectToday`  | `preselect-today`  | Wethter to automatically preselect today                  | `boolean`                        | `false`        |
 | `size`            | `size`             | The size of the input group used by the datepicker        | `"medium" \| "small"`            | `'medium'`     |
-| `value`           | `value`            | The current value                                         | `any`                            | `undefined`    |
+| `value`           | --                 | The current value                                         | `Date`                           | `undefined`    |
 
 
 ## Events

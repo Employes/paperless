@@ -318,7 +318,7 @@ export namespace Components {
         /**
           * The current value
          */
-        "value": any;
+        "value": Date | null | undefined;
     }
     interface PDivider {
     }
@@ -2165,7 +2165,7 @@ declare namespace LocalJSX {
         /**
           * The current value
          */
-        "value"?: any;
+        "value"?: Date | null | undefined;
     }
     interface PDivider {
     }

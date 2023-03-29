@@ -35,7 +35,7 @@ export class Datepicker {
     /**
      * The current value
      */
-    @Prop() value: any;
+    @Prop() value: Date | null | undefined;
 
     /**
      * Wethter to automatically preselect today
@@ -149,7 +149,7 @@ export class Datepicker {
     }
 
     @Watch('minDate')
-    private _parseMinDate(minDate: string | Date) {
+    protected parseMinDate(minDate: string | Date) {
         if (typeof minDate === 'string') {
             minDate = new Date(minDate);
         }
@@ -166,7 +166,7 @@ export class Datepicker {
     }
 
     @Watch('maxDate')
-    private _parseMaxDate(maxDate: string | Date) {
+    protected parseMaxDate(maxDate: string | Date) {
         if (typeof maxDate === 'string') {
             maxDate = new Date(maxDate);
         }
@@ -183,7 +183,7 @@ export class Datepicker {
     }
 
     @Watch('disabledDates')
-    private _parseDisabledDates(disabledDates: Array<string | Date> | string) {
+    protected parseDisabledDates(disabledDates: Array<string | Date> | string) {
         if (typeof disabledDates === 'string') {
             disabledDates = JSON.parse(disabledDates);
         }
@@ -210,15 +210,15 @@ export class Datepicker {
 
     componentWillLoad() {
         if (this.disabledDates) {
-            this._parseDisabledDates(this.disabledDates);
+            this.parseDisabledDates(this.disabledDates);
         }
 
         if (this.minDate) {
-            this._parseMinDate(this.minDate);
+            this.parseMinDate(this.minDate);
         }
 
         if (this.maxDate) {
-            this._parseMaxDate(this.maxDate);
+            this.parseMaxDate(this.maxDate);
         }
 
         if (
@@ -228,7 +228,7 @@ export class Datepicker {
             this.format = this._defaultFormats[this.mode];
         }
 
-        this._parseValue(this.value);
+        this.parseValue(this.value);
     }
 
     render() {
@@ -268,7 +268,7 @@ export class Datepicker {
                             variant="embedded"
                             value={this._value}
                             onValueChange={({ detail }) =>
-                                this._setValue(detail)
+                                (this.value = detail)
                             }
                             preselectToday={this.preselectToday}
                             disabledDates={this.disabledDates}
@@ -316,26 +316,21 @@ export class Datepicker {
         }, 250);
     }
 
-    private _setValue(value: Date, blur = true) {
-        console.log('[Datepicker] set value', value, this._el);
-
+    private _setValue(value: Date | null, blur = true) {
         if (value === null) {
             this._value = null;
             this.valueChange.emit(null);
             return;
         }
 
-        console.log('[Datepicker] value is not null', value, this._el);
         if (!isValid(value)) {
             return;
         }
 
-        console.log('[Datepicker] value is valid', value, this._el);
         if (this._isDisabledDay(value)) {
             return;
         }
 
-        console.log('[Datepicker] value is not disabled', value, this._el);
         value = startOfDay(value);
         const isSameValue = isSameDay(value, this._value);
 
@@ -343,18 +338,12 @@ export class Datepicker {
             return;
         }
 
-        console.log(
-            '[Datepicker] value is not the same as previous value',
-            value,
-            this._el
-        );
         if (blur) {
             this._onBlur();
         }
 
         this._value = value;
         this.valueChange.emit(value);
-        console.log('[Datepicker] value is set', value, this._el);
     }
 
     private _isDisabledDay(day: Date) {

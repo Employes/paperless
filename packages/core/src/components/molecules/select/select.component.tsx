@@ -152,7 +152,7 @@ export class Select {
     @State() private _showDropdown: any = false;
     @State() private _selectedItem: any = null;
 
-    private _isAutoCompleting: boolean = false;
+    @State() private _isAutoCompleting: boolean = false;
 
     private _inputRef: HTMLInputElement;
 
@@ -226,6 +226,8 @@ export class Select {
     render() {
         return (
             <Host class="p-select">
+                {this._showDropdown && (!!this._items.length || this.loading)}
+                {this._isAutoCompleting}
                 <p-dropdown
                     disableTriggerClick={true}
                     calculateWidth={true}
@@ -314,13 +316,15 @@ export class Select {
             value = this._items[0];
         }
 
-        if (!value) {
-            this._selectValue(null);
-            return;
-        }
+        // if (!value) {
+        //     this._selectValue(null);
+        //     return;
+        // }
 
         const identifier =
-            typeof value === 'object' ? value[this._identifierKey] : value;
+            typeof value === 'object' && value !== null
+                ? value[this._identifierKey]
+                : value;
         const parsedValue =
             typeof identifier === 'string' || typeof identifier === 'number'
                 ? identifier
@@ -379,9 +383,8 @@ export class Select {
             return;
         }
 
-        this._isAutoCompleting = true;
-
         this._showDropdown = true;
+        this._isAutoCompleting = true;
     }
 
     private _onMouseDown(ev) {
@@ -410,12 +413,18 @@ export class Select {
     }
 
     private _onChange(ev) {
-        if (!this._isAutoCompleting) {
+        if (!this.enableAutocomplete) {
             return;
         }
 
+        if (!this._isAutoCompleting) {
+            this._isAutoCompleting = true;
+            this._showDropdown = true;
+        }
+
+        console.log('Query change', ev.target.value);
         this.query = ev.target.value;
-        this.queryChange.emit(this.query);
+        this.queryChange.emit(ev.target.value);
     }
 
     private _checkvalue(key, item) {

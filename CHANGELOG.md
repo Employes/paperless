@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.412](https://github.com/employes/paperless/compare/v0.1.0-alpha.411...v0.1.0-alpha.412) (2023-03-30)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Fix auto complete & auto select for null ([66b447d](https://github.com/employes/paperless/commit/66b447d62e4cc5607c711539a346fa5eb5eab987))
+
+
+
+
+
 # [0.1.0-alpha.411](https://github.com/employes/paperless/compare/v0.1.0-alpha.410...v0.1.0-alpha.411) (2023-03-29)
 
 

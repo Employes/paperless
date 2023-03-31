@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.414](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.413...v0.1.0-alpha.414) (2023-03-31)
+
+
+### Features
+
+* **Molecules/Select:** Add property to keep query ([3d876f7](https://github.com/ionic-team/stencil-component-starter/commit/3d876f7035742de2f0fa9d744af440062e8e66e5))
+
+
+
+
+
 # [0.1.0-alpha.413](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.412...v0.1.0-alpha.413) (2023-03-31)
 
 

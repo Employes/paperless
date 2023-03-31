@@ -90,6 +90,11 @@ export class Select {
     @Prop() enableAutocomplete: boolean = true;
 
     /**
+     * Wether to keep the query or not
+     */
+    @Prop() keepQuery: boolean = true;
+
+    /**
      * Wether the input uses async filtering
      */
     @Prop() asyncFilter: boolean = false;
@@ -368,7 +373,7 @@ export class Select {
                 ? item?.[this.valueKey]
                 : item;
 
-        this.query = item?.[this.displayKey];
+        this.query = this.keepQuery ? item?.[this.displayKey] : null;
         this.value = value;
         this.valueChange.emit(value);
 

@@ -35,11 +35,11 @@ export class StepperItem {
     render() {
         return (
             <Host class="p-stepper-item">
-                <div class="content">
-                    <slot name="content" />
-                </div>
                 <div class="circle">
                     {this.finished && <p-icon variant="checkmark" />}
+                </div>
+                <div class="content">
+                    <slot name="content" />
                 </div>
             </Host>
         );

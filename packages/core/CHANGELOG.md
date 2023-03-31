@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.413](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.412...v0.1.0-alpha.413) (2023-03-31)
+
+
+### Bug Fixes
+
+* **Atoms/Stepper/Item:** Fix sizing of content ([455e038](https://github.com/ionic-team/stencil-component-starter/commit/455e03895213cc8491b8524e89d43af91fa01b0b))
+* **Molecules/Select:** Fix query prefill ([fd6b769](https://github.com/ionic-team/stencil-component-starter/commit/fd6b769186e53e14ad3a66d31852f020f987f704))
+
+
+
+
+
 # [0.1.0-alpha.412](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.411...v0.1.0-alpha.412) (2023-03-30)
 
 

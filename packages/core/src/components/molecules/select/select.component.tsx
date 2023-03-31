@@ -368,6 +368,7 @@ export class Select {
                 ? item?.[this.valueKey]
                 : item;
 
+        this.query = item?.[this.displayKey];
         this.value = value;
         this.valueChange.emit(value);
 
@@ -422,7 +423,6 @@ export class Select {
             this._showDropdown = true;
         }
 
-        console.log('Query change', ev.target.value);
         this.query = ev.target.value;
         this.queryChange.emit(ev.target.value);
     }

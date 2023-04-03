@@ -5,7 +5,7 @@ import {
     Host,
     Listen,
     Prop,
-    State
+    State,
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -110,10 +110,13 @@ export class InputGroup {
             >
                 <div class="flex items-end justify-between">
                     {label && (
-                        <div class="input-label"  onClick={() => this._focusInput()}>
+                        <div
+                            class="input-label"
+                            onClick={() => this._focusInput()}
+                        >
                             {label}
                             {this.required && (
-                                <span class="text-negative">*</span>
+                                <span class="ml-1 text-negative">*</span>
                             )}
                         </div>
                     )}
@@ -137,7 +140,10 @@ export class InputGroup {
                 <div class="content">
                     {(prefix ||
                         (this.icon && this.iconPosition === 'start')) && (
-                        <div class={`prefix size-${this.size}`}  onClick={() => this._focusInput()}>
+                        <div
+                            class={`prefix size-${this.size}`}
+                            onClick={() => this._focusInput()}
+                        >
                             {this.icon && this.iconPosition === 'start' ? (
                                 <p-icon
                                     class="flex"
@@ -153,7 +159,10 @@ export class InputGroup {
                     {(suffix ||
                         errorAndErrorIsNotBoolean ||
                         (this.icon && this.iconPosition === 'end')) && (
-                        <div class={`suffix size-${this.size}`} onClick={() => this._focusInput()}>
+                        <div
+                            class={`suffix size-${this.size}`}
+                            onClick={() => this._focusInput()}
+                        >
                             {errorAndErrorIsNotBoolean ? (
                                 <p-input-error
                                     error={this.error}

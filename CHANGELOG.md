@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.415](https://github.com/employes/paperless/compare/v0.1.0-alpha.414...v0.1.0-alpha.415) (2023-04-03)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Add distance to asterix ([7081363](https://github.com/employes/paperless/commit/708136388a484733d7af3ed2efa465093d94aa07))
+
+
+
+
+
 # [0.1.0-alpha.414](https://github.com/employes/paperless/compare/v0.1.0-alpha.413...v0.1.0-alpha.414) (2023-03-31)
 
 

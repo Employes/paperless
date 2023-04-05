@@ -56,40 +56,22 @@ const safeArea = plugin(({ addUtilities }) => {
             paddingLeft: 'env(safe-area-inset-left)',
         },
         '.min-h-screen-safe': {
-            minHeight: [
-                'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-                '-webkit-fill-available',
-            ],
+            minHeight: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
         },
         '.max-h-screen-safe': {
-            maxHeight: [
-                'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-                '-webkit-fill-available',
-            ],
+            maxHeight: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
         },
         '.h-screen-safe': {
-            height: [
-                'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
-                '-webkit-fill-available',
-            ],
+            height: 'calc(100vh - (env(safe-area-inset-top) + env(safe-area-inset-bottom)))',
         },
         '.min-w-screen-safe': {
-            minWidth: [
-                'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
-                '-webkit-fill-available',
-            ],
+            minWidth: 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
         },
         '.max-w-screen-safe': {
-            maxWidth: [
-                'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
-                '-webkit-fill-available',
-            ],
+            maxWidth: 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
         },
         '.w-screen-safe': {
-            width: [
-                'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
-                '-webkit-fill-available',
-            ],
+            width: 'calc(100vw - (env(safe-area-inset-left) + env(safe-area-inset-right)))',
         },
     };
 

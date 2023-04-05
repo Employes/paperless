@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.416](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.415...v0.1.0-alpha.416) (2023-04-05)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#128](https://github.com/ionic-team/stencil-component-starter/issues/128)) ([153571b](https://github.com/ionic-team/stencil-component-starter/commit/153571b3f876a95b851a542e91683d764d175009))
+* **Tailwind:** Remove `--webkit-fil-available` as it messes with safari ([281dc2e](https://github.com/ionic-team/stencil-component-starter/commit/281dc2edac4e2811c836b868a2359cfaad5822d7))
+
+
+
+
+
 # [0.1.0-alpha.415](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.414...v0.1.0-alpha.415) (2023-04-03)
 
 

@@ -24,13 +24,19 @@
         @apply will-change-transform;
         @apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
 
-        @apply p-4;
+        @apply py-4;
 
         padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
 
         @apply border-r #{!important};
 
         @apply transition-all;
+
+        .company,
+        .content,
+        .user {
+            @apply px-4;
+        }
 
         .header {
             @apply flex w-full items-center justify-between;

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.417](https://github.com/employes/paperless/compare/v0.1.0-alpha.416...v0.1.0-alpha.417) (2023-04-11)
+
+
+### Bug Fixes
+
+* **Atoms/Button:** Make rounding important to not conflict with BS ([2e9f100](https://github.com/employes/paperless/commit/2e9f1003c5115df13f030987d039d2e51baeaa47))
+
+
+### Features
+
+* **Organisms/Navbar:** Fix scrollable content and height issue ([eb37973](https://github.com/employes/paperless/commit/eb379738fbdf4b9dcafbd766808323e4ea312b7f))
+
+
+
+
+
 # [0.1.0-alpha.416](https://github.com/employes/paperless/compare/v0.1.0-alpha.415...v0.1.0-alpha.416) (2023-04-05)
 
 

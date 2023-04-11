@@ -1,3 +1,5 @@
+@import '../../../style/mixins';
+
 :host {
     @apply w-full max-h-screen-safe;
     @apply desktop-xs:w-60;
@@ -46,6 +48,8 @@
 
         .content {
             @apply overflow-y-auto;
+
+            @include scrollbarY();
         }
 
         .user {

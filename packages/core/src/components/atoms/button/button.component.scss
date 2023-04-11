@@ -5,7 +5,8 @@ p-button {
     a {
         outline: 0;
         border: 0;
-        @apply h-full w-full rounded-large;
+        @apply h-full w-full;
+        @apply rounded-large #{!important};
         @apply font-semibold leading-4;
         @apply flex items-center justify-center;
         @apply cursor-pointer text-base;

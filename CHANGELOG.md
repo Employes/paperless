@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.419](https://github.com/employes/paperless/compare/v0.1.0-alpha.418...v0.1.0-alpha.419) (2023-04-11)
+
+
+### Features
+
+* **Organisms/Navbar:** Add custom scrollbar to content ([5aa11f8](https://github.com/employes/paperless/commit/5aa11f8d17a80b806125bd7d7478e54a11d04b90))
+
+
+
+
+
 # [0.1.0-alpha.418](https://github.com/employes/paperless/compare/v0.1.0-alpha.417...v0.1.0-alpha.418) (2023-04-11)
 
 

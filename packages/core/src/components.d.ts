@@ -845,6 +845,10 @@ export namespace Components {
          */
         "items": string | any[];
         /**
+          * Wether to keep the query or not
+         */
+        "keepQuery": boolean;
+        /**
           * The label of the input group used by the select
          */
         "label": string;
@@ -2730,6 +2734,10 @@ declare namespace LocalJSX {
           * The items to show in the dropdown
          */
         "items"?: string | any[];
+        /**
+          * Wether to keep the query or not
+         */
+        "keepQuery"?: boolean;
         /**
           * The label of the input group used by the select
          */

@@ -1,12 +1,6 @@
-# Select
+# p-select
 
-## Usage:
 
-```html
-<p-select>
-    <!-- content -->
-</p-select>
-```
 
 <!-- Auto Generated Below -->
 
@@ -26,6 +20,7 @@
 | `icon`                    | `icon`                     | Icon of the select box                                | `"arrow" \| "attachment" \| "bread" \| "calendar" \| "camera" \| "car" \| "checklist" \| "checkmark" \| "chevron" \| "clock" \| "cogs" \| "comment" \| "document" \| "download" \| "envelope" \| "explanation" \| "eye" \| "filter" \| "folder" \| "grid" \| "headset" \| "integration" \| "list" \| "location" \| "megaphone" \| "menu" \| "minus" \| "more" \| "negative" \| "notification" \| "pagination" \| "payment" \| "pencil" \| "person" \| "plus" \| "question" \| "reload" \| "receipt" \| "report" \| "search" \| "settings" \| "sick" \| "signout" \| "switch" \| "tachometer" \| "task" \| "template" \| "tool" \| "trash" \| "turn" \| "upload" \| "warning"` | `undefined` |
 | `identifierKey`           | `identifier-key`           | The key to identify an object                         | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `undefined` |
 | `items`                   | `items`                    | The items to show in the dropdown                     | `any[] \| string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `undefined` |
+| `keepQuery`               | `keep-query`               | Wether to keep the query or not                       | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `true`      |
 | `label`                   | `label`                    | The label of the input group used by the select       | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `undefined` |
 | `loading`                 | `loading`                  | Wether to show loading items                          | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `false`     |
 | `maxDisplayedItems`       | `max-displayed-items`      | The maximum amount of items to display                | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `10`        |
@@ -78,5 +73,8 @@ graph TD;
 ```
 
 ----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
+-------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

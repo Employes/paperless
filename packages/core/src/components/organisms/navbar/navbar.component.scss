@@ -1,5 +1,5 @@
 :host {
-    @apply w-full;
+    @apply w-full max-h-screen-safe;
     @apply desktop-xs:w-60;
 
     .sidebar,
@@ -19,6 +19,7 @@
     .sidebar {
         @apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
         @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
+        @apply gap-6;
 
         @apply will-change-transform;
         @apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
@@ -32,12 +33,12 @@
         @apply transition-all;
 
         .header {
-            @apply mb-6 flex w-full items-center justify-between;
+            @apply flex w-full items-center justify-between;
             @apply desktop-xs:hidden;
         }
 
         .content {
-            @apply mt-6;
+            @apply overflow-y-auto;
         }
 
         .user {

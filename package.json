@@ -68,7 +68,7 @@
     "devDependencies": {
         "@babel/core": "7.21.4",
         "@babel/preset-react": "7.18.6",
-        "@geometricpanda/storybook-addon-badges": "1.1.1",
+        "@geometricpanda/storybook-addon-badges": "2.0.0",
         "@geometricpanda/storybook-addon-iframe": "0.2.2",
         "@storybook/addon-actions": "7.0.2",
         "@storybook/addon-controls": "7.0.2",

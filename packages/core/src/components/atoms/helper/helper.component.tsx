@@ -1,4 +1,4 @@
-import { Placement } from '@popperjs/core';
+import { Placement } from '@floating-ui/dom';
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({

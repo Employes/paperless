@@ -1,4 +1,13 @@
-import { createPopper, Placement, PositioningStrategy } from '@popperjs/core';
+import {
+    arrow,
+    autoUpdate,
+    computePosition,
+    flip,
+    offset,
+    Placement,
+    shift,
+    Strategy,
+} from '@floating-ui/dom';
 import {
     Component,
     Element,
@@ -34,7 +43,7 @@ export class Tooltip {
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: PositioningStrategy = 'absolute';
+    @Prop() strategy: Strategy = 'absolute';
 
     /**
      * Wether to show the popover
@@ -57,11 +66,18 @@ export class Tooltip {
     @Element() private _el: HTMLElement;
 
     private _loaded = false;
-    private _popper: any;
     private _popover: HTMLElement;
+    private _cleanup: () => void;
 
     componentShouldUpdate() {
-        this._setOptions();
+        this._update();
+    }
+
+    disconnectedCallback() {
+        if (this._cleanup) {
+            this._cleanup();
+            this._cleanup = null;
+        }
     }
 
     render() {
@@ -72,10 +88,11 @@ export class Tooltip {
                     <div
                         class={`popover variant-${this.variant}`}
                         role="popover"
+                        data-placement={this.placement}
                         ref={(el) => this._load(el)}
                     >
                         {this.popover ? this.popover : <slot name="popover" />}
-                        <div class="arrow" data-popper-arrow></div>
+                        <div class="arrow"></div>
                     </div>
                 </div>
             </Host>
@@ -133,20 +150,13 @@ export class Tooltip {
             return;
         }
 
+        this._cleanup = autoUpdate(this._el, this._popover, () =>
+            this._update()
+        );
         // Make the popover visible
         this._popover.setAttribute('data-show', '');
 
-        // Enable the event listeners
-        this._popper.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: true },
-            ],
-        }));
-
         // Update its position
-        this._popper.update();
         this.isOpen.emit(true);
     }
 
@@ -155,28 +165,20 @@ export class Tooltip {
             return;
         }
 
+        if (this._cleanup) {
+            this._cleanup();
+            this._cleanup = null;
+        }
+
         // Hide the popover
         this._popover.removeAttribute('data-show');
-
-        // Disable the event listeners
-        this._popper.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: false },
-            ],
-        }));
         this.isOpen.emit(false);
     }
 
     private _load(popover: HTMLElement) {
         this._popover = popover;
         if (popover) {
-            this._popper = createPopper(this._el, popover, {
-                strategy: this.strategy,
-            });
-
-            this._setOptions();
+            this._update();
             this._loaded = true;
 
             if (this.show) {
@@ -185,27 +187,42 @@ export class Tooltip {
         }
     }
 
-    private _setOptions() {
-        if (!this._popper) {
+    private _update() {
+        if (!this._popover) {
             return;
         }
 
-        this._popper.setOptions({
+        const arrowEl = this._popover.querySelector('.arrow') as HTMLElement;
+        if (!arrowEl) {
+            return;
+        }
+
+        computePosition(this._el, this._popover, {
             placement: this.variant === 'error' ? 'top-end' : this.placement,
-            modifiers: [
-                {
-                    name: 'offset',
-                    options: {
-                        offset: this.variant === 'error' ? [8, 14] : [0, 8],
-                    },
-                },
-                {
-                    name: 'arrow',
-                    options: {
-                        padding: 4,
-                    },
-                },
+            strategy: this.strategy,
+            // Try removing the arrow middleware. The arrow will no
+            // longer be centered to the reference element.
+            middleware: [
+                offset(8),
+                flip(),
+                shift(),
+                arrow({ element: arrowEl, padding: 8 }),
             ],
+        }).then(({ x, y, placement, middlewareData }) => {
+            this._popover.dataset.placement = placement;
+            Object.assign(this._popover.style, {
+                top: `${y}px`,
+                left: `${x}px`,
+            });
+
+            if (middlewareData.arrow) {
+                const { x, y } = middlewareData.arrow;
+
+                Object.assign(arrowEl.style, {
+                    left: x != null ? `${x}px` : '',
+                    top: y != null ? `${y}px` : '',
+                });
+            }
         });
     }
 }

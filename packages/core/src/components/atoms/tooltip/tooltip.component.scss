@@ -4,7 +4,8 @@
     .popover-container {
         @apply relative h-0 w-0;
         .popover {
-            @apply z-tooltip hidden rounded bg-white py-2 px-3 text-xs font-medium drop-shadow-4;
+            @apply absolute z-tooltip inline-block rounded bg-white px-3 py-2 text-xs font-medium opacity-0 drop-shadow-4 transition-opacity;
+            width: max-content;
             max-width: 14.5rem;
 
             &.variant-hover,
@@ -13,11 +14,11 @@
             }
 
             &.variant-error {
-                @apply whitespace-nowrap bg-negative uppercase tracking-wider;
+                @apply bg-negative uppercase tracking-wider;
             }
 
             &[data-show] {
-                @apply inline-block;
+                @apply opacity-100;
             }
 
             .arrow,
@@ -35,19 +36,19 @@
                 }
             }
 
-            &[data-popper-placement^='top'] > .arrow {
+            &[data-placement^='top'] > .arrow {
                 @apply -bottom-1;
             }
 
-            &[data-popper-placement^='bottom'] > .arrow {
+            &[data-placement^='bottom'] > .arrow {
                 @apply -top-1;
             }
 
-            &[data-popper-placement^='left'] > .arrow {
+            &[data-placement^='left'] > .arrow {
                 @apply -right-1;
             }
 
-            &[data-popper-placement^='right'] > .arrow {
+            &[data-placement^='right'] > .arrow {
                 @apply -left-1;
             }
         }

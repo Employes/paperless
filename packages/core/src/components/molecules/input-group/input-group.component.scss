@@ -7,15 +7,15 @@
 }
 
 :host {
-    @apply flex flex-col w-full;
+    @apply flex w-full flex-col;
     @apply outline-none #{!important};
 
     .input-label {
-        @apply text-xs text-storm-vague font-semibold uppercase tracking-wider mb-[2px];
+        @apply mb-[2px] text-xs font-semibold uppercase tracking-wider text-storm-vague;
     }
 
     .input-header {
-        @apply flex gap-2 items-end mb-[2px];
+        @apply mb-[2px] flex items-end gap-2;
     }
 
     .content {
@@ -24,18 +24,18 @@
         .prefix,
         .suffix {
             @include inputDefaultState();
-            @apply flex-1 text-storm box-border;
+            @apply box-border flex-1 text-storm;
         }
 
         .prefix {
-            @apply rounded-tr-none rounded-br-none;
+            @apply rounded-br-none rounded-tr-none;
             @apply border-r-0 #{!important};
             @apply order-1;
             @apply pr-2;
         }
 
         .suffix {
-            @apply rounded-tl-none rounded-bl-none;
+            @apply rounded-bl-none rounded-tl-none;
             @apply border-l-0 #{!important};
             @apply order-3;
             @apply pl-2;
@@ -47,13 +47,13 @@
         }
 
         @include slottedItems('.prefix') {
-            @apply rounded-tl-none rounded-bl-none #{!important};
+            @apply rounded-bl-none rounded-tl-none #{!important};
             @apply flex-auto;
             @apply border-l-0 pl-0 #{!important};
         }
 
         @include slottedItems('.suffix') {
-            @apply rounded-tr-none rounded-br-none #{!important};
+            @apply rounded-br-none rounded-tr-none #{!important};
             @apply flex-auto;
             @apply border-r-0 pr-0 #{!important};
         }
@@ -87,6 +87,15 @@
 
     @include slottedItems() {
         @include inputErrorState();
+
+        &:focus,
+        &:focus-within,
+        &:focus-visible,
+        &.focus,
+        &[active],
+        &.active {
+            @include inputErrorState();
+        }
     }
 }
 

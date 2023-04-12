@@ -255,8 +255,6 @@ export class Dropdown {
                 top: `${y}px`,
                 left: `${x}px`,
             });
-
-            console.log('??', x, y);
         });
     }
 }

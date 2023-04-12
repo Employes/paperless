@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.423](https://github.com/employes/paperless/compare/v0.1.0-alpha.422...v0.1.0-alpha.423) (2023-04-12)
+
+
+### Bug Fixes
+
+* **Atoms/Input:** Fix focused error inputs ([bc68b33](https://github.com/employes/paperless/commit/bc68b336d576e1271585cadd750ade0db84f9564))
+* **Atoms/Tooltip:** Fix offset for error tooltip ([fd8c1c9](https://github.com/employes/paperless/commit/fd8c1c95c7aba86d71807c0e833717544354de07))
+* **deps:** update all non-major dependencies ([#134](https://github.com/employes/paperless/issues/134)) ([7094066](https://github.com/employes/paperless/commit/70940669cfc6374879ca6eaab8f1fa333f837c6a))
+* **Molecules/Input Group:** Fix focused error inputs ([3f88584](https://github.com/employes/paperless/commit/3f88584169a09efb2fcdcf57dd8d733a92377f33))
+* Run CI correctly ([9842309](https://github.com/employes/paperless/commit/9842309b6bfa6fcad74789360a86f95087417c9d))
+
+
+
+
+
 # [0.1.0-alpha.422](https://github.com/employes/paperless/compare/v0.1.0-alpha.421...v0.1.0-alpha.422) (2023-04-12)
 
 

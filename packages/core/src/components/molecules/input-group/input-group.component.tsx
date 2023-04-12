@@ -226,6 +226,13 @@ export class InputGroup {
                 'rounded-br-none',
                 'pr-0'
             );
+        } else {
+            input.classList.remove(
+                'border-r-0',
+                'rounded-tr-none',
+                'rounded-br-none',
+                'pr-0'
+            );
         }
 
         if (prefix || (this.icon && this.iconPosition === 'start')) {
@@ -235,10 +242,21 @@ export class InputGroup {
                 'rounded-bl-none',
                 'pl-0'
             );
+        } else {
+            input.classList.remove(
+                'border-l-0',
+                'rounded-tl-none',
+                'rounded-bl-none',
+                'pl-0'
+            );
         }
 
         if (this.size === 'small' && !input.classList.contains('size-small')) {
             input.classList.add('size-small');
+        }
+
+        if (this.size !== 'small' && input.classList.contains('size-small')) {
+            input.classList.remove('size-small');
         }
     }
 

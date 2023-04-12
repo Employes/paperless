@@ -41,7 +41,6 @@
     },
     "dependencies": {
         "@floating-ui/dom": "^1.2.6",
-        "@popperjs/core": "^2.11.6",
         "@stencil/core": "^3.0.0",
         "date-fns": "2.29.3",
         "rxjs": "^7.5.5"

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.421](https://github.com/employes/paperless/compare/v0.1.0-alpha.420...v0.1.0-alpha.421) (2023-04-12)
+
+
+### Bug Fixes
+
+* **Atoms/Tooltip:** Default strategy to fixed & fix error variant arrow ([4461655](https://github.com/employes/paperless/commit/4461655ac3165afa770ade596fe98db62c9f4e90))
+* **Molecules/Dropdown:** Default strategy to fixed ([9a86661](https://github.com/employes/paperless/commit/9a86661e1c15de246913fffdddd83376294328e9))
+* **Molecules/Select:** Check if query changed since last time before filter ([470673f](https://github.com/employes/paperless/commit/470673fba33f2d2c48ccd353e799b62b9cc588be))
+
+
+### Features
+
+* **Atoms/Toolip:** Migrate to [@floating-ui](https://github.com/floating-ui) ([df3b542](https://github.com/employes/paperless/commit/df3b542755b27017f598d8ca7d87bd0ca5dbef62))
+* **Molecules/Dropdown:** Migrate to [@floating-ui](https://github.com/floating-ui) ([dade2e0](https://github.com/employes/paperless/commit/dade2e0af13be976c082e3840cf6543fe56b599b))
+
+
+
+
+
 # [0.1.0-alpha.420](https://github.com/employes/paperless/compare/v0.1.0-alpha.419...v0.1.0-alpha.420) (2023-04-12)
 
 

@@ -1,6 +1,6 @@
 {
     "name": "@paperless/core",
-    "version": "0.1.0-alpha.420",
+    "version": "0.1.0-alpha.421",
     "description": "Stencil Component Starter",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",
@@ -40,8 +40,8 @@
         "yarn:publish": "yarn publish"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.6",
         "@floating-ui/dom": "^1.2.6",
+        "@popperjs/core": "^2.11.6",
         "@stencil/core": "^3.0.0",
         "date-fns": "2.29.3",
         "rxjs": "^7.5.5"

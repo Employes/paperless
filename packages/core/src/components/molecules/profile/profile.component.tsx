@@ -45,6 +45,8 @@ export class Profile {
                         placement={
                             this.variant === 'user' ? 'top-end' : 'bottom-end'
                         }
+                        applyFullWidth={true}
+                        applyMaxWidth={false}
                         onIsOpen={(ev) => (this._dropdownOpen = ev.detail)}
                     >
                         {content}

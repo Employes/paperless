@@ -29,12 +29,12 @@ export class Dropdown {
     /**
      * The content of the dropdown menu
      */
-    @Prop({ reflect: true }) placement: Placement = 'bottom';
+    @Prop({ reflect: true }) placement: Placement = 'bottom-start';
 
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: Strategy = 'absolute';
+    @Prop() strategy: Strategy = 'fixed';
 
     /**
      * Wether to show the dropdown menu
@@ -120,7 +120,8 @@ export class Dropdown {
                     maxWidth={!this.calculateWidth && this.applyMaxWidth}
                     fullWidth={this.applyFullWidth && !this.applyMaxWidth}
                     ref={(el) => this._load(el)}
-                    date-placement={this.placement}
+                    data-placement={this.placement}
+                    data-strategy={this.strategy}
                     onClick={() => this._containerClickHandler()}
                 >
                     <slot name="items" />

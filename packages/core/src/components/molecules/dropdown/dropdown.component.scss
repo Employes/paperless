@@ -6,10 +6,18 @@
     }
 
     p-dropdown-menu-container {
-        @apply absolute left-0 top-0 z-dropdown hidden;
+        @apply left-0 top-0 z-dropdown hidden;
 
         &[data-show] {
             @apply flex;
+        }
+
+        &[data-strategy='absolute'] {
+            @apply absolute;
+        }
+
+        &[data-strategy='fixed'] {
+            @apply fixed;
         }
     }
 }

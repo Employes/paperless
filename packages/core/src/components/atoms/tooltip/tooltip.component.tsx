@@ -204,7 +204,7 @@ export class Tooltip {
             // Try removing the arrow middleware. The arrow will no
             // longer be centered to the reference element.
             middleware: [
-                offset(8),
+                offset(this.variant === 'error' ? 14 : 8),
                 flip(),
                 shift(),
                 arrow({ element: arrowEl, padding: 8 }),

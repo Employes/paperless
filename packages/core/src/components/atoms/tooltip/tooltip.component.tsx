@@ -201,8 +201,7 @@ export class Tooltip {
         computePosition(this._el, this._popover, {
             placement: this.variant === 'error' ? 'top-end' : this.placement,
             strategy: this.strategy,
-            // Try removing the arrow middleware. The arrow will no
-            // longer be centered to the reference element.
+
             middleware: [
                 offset(this.variant === 'error' ? 14 : 8),
                 flip(),

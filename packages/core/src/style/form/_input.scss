@@ -6,6 +6,15 @@
     &[error],
     &.error {
         @include inputErrorState();
+
+        &:focus,
+        &:focus-within,
+        &:focus-visible,
+        &.focus,
+        &[active],
+        &.active {
+            @include inputErrorState();
+        }
     }
 
     &[disabled],

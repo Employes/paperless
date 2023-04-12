@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.424](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.423...v0.1.0-alpha.424) (2023-04-12)
+
+
+### Bug Fixes
+
+* **Molecules/Input Group:** Fix border issues when error is resolved ([9ed4224](https://github.com/ionic-team/stencil-component-starter/commit/9ed42240fa9c7caecb7fd2739ad258ee44feb847))
+
+
+
+
+
 # [0.1.0-alpha.423](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.422...v0.1.0-alpha.423) (2023-04-12)
 
 

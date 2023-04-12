@@ -43,7 +43,7 @@ export class Tooltip {
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: Strategy = 'absolute';
+    @Prop() strategy: Strategy = 'fixed';
 
     /**
      * Wether to show the popover
@@ -89,6 +89,7 @@ export class Tooltip {
                         class={`popover variant-${this.variant}`}
                         role="popover"
                         data-placement={this.placement}
+                        data-strategy={this.strategy}
                         ref={(el) => this._load(el)}
                     >
                         {this.popover ? this.popover : <slot name="popover" />}
@@ -219,7 +220,12 @@ export class Tooltip {
                 const { x, y } = middlewareData.arrow;
 
                 Object.assign(arrowEl.style, {
-                    left: x != null ? `${x}px` : '',
+                    left:
+                        this.variant === 'error'
+                            ? 'calc(100% - 1rem)'
+                            : x != null
+                            ? `${x}px`
+                            : '',
                     top: y != null ? `${y}px` : '',
                 });
             }

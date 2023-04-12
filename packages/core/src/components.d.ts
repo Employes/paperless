@@ -7,8 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
-import { Placement, PositioningStrategy } from "@popperjs/core";
-import { Placement as Placement1, Strategy } from "@floating-ui/dom";
+import { Placement, Strategy } from "@floating-ui/dom";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
@@ -22,8 +21,7 @@ import { TableColumn } from "./components/helpers/table-column/table-column.comp
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
-export { Placement, PositioningStrategy } from "@popperjs/core";
-export { Placement as Placement1, Strategy } from "@floating-ui/dom";
+export { Placement, Strategy } from "@floating-ui/dom";
 export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
 export { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
@@ -412,7 +410,7 @@ export namespace Components {
         /**
           * The strategy of the popover placement
          */
-        "strategy": PositioningStrategy;
+        "strategy": Strategy;
     }
     interface PDropdownMenuContainer {
         /**
@@ -442,7 +440,7 @@ export namespace Components {
         /**
           * The placement of the helper popover
          */
-        "placement": Placement1;
+        "placement": Placement;
     }
     interface PIcon {
         /**
@@ -1328,7 +1326,7 @@ export namespace Components {
         /**
           * The placement of the popover
          */
-        "placement": Placement1;
+        "placement": Placement;
         /**
           * The content of the popover
          */
@@ -2282,7 +2280,7 @@ declare namespace LocalJSX {
         /**
           * The strategy of the popover placement
          */
-        "strategy"?: PositioningStrategy;
+        "strategy"?: Strategy;
     }
     interface PDropdownMenuContainer {
         /**
@@ -2312,7 +2310,7 @@ declare namespace LocalJSX {
         /**
           * The placement of the helper popover
          */
-        "placement"?: Placement1;
+        "placement"?: Placement;
     }
     interface PIcon {
         /**
@@ -3322,7 +3320,7 @@ declare namespace LocalJSX {
         /**
           * The placement of the popover
          */
-        "placement"?: Placement1;
+        "placement"?: Placement;
         /**
           * The content of the popover
          */

@@ -1,4 +1,12 @@
-import { createPopper, Placement, PositioningStrategy } from '@popperjs/core';
+import {
+    autoUpdate,
+    computePosition,
+    flip,
+    offset,
+    Placement,
+    shift,
+    Strategy,
+} from '@floating-ui/dom';
 import {
     Component,
     Element,
@@ -21,12 +29,12 @@ export class Dropdown {
     /**
      * The content of the dropdown menu
      */
-    @Prop({ reflect: true }) placement: Placement = 'bottom-start';
+    @Prop({ reflect: true }) placement: Placement = 'bottom';
 
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: PositioningStrategy = 'absolute';
+    @Prop() strategy: Strategy = 'absolute';
 
     /**
      * Wether to show the dropdown menu
@@ -79,12 +87,19 @@ export class Dropdown {
     @Event() isOpen: EventEmitter<boolean>;
 
     private _loaded = false;
-    private _popper: any;
     private _trigger: HTMLElement;
     private _menu: HTMLElement;
+    private _cleanup: () => void;
 
     componentShouldUpdate() {
-        this._setOptions();
+        this._update();
+    }
+
+    disconnectedCallback() {
+        if (this._cleanup) {
+            this._cleanup();
+            this._cleanup = null;
+        }
     }
 
     render() {
@@ -105,6 +120,7 @@ export class Dropdown {
                     maxWidth={!this.calculateWidth && this.applyMaxWidth}
                     fullWidth={this.applyFullWidth && !this.applyMaxWidth}
                     ref={(el) => this._load(el)}
+                    date-placement={this.placement}
                     onClick={() => this._containerClickHandler()}
                 >
                     <slot name="items" />
@@ -181,35 +197,13 @@ export class Dropdown {
     private _load(popover: HTMLElement) {
         this._menu = popover;
         if (popover) {
-            this._popper = createPopper(this._el, popover, {
-                strategy: this.strategy,
-            });
-
-            this._setOptions();
+            this._update();
             this._loaded = true;
 
             if (this.show) {
                 setTimeout(() => this._show(), 100);
             }
         }
-    }
-
-    private _setOptions() {
-        if (!this._popper) {
-            return;
-        }
-
-        this._popper.setOptions({
-            placement: this.placement,
-            modifiers: [
-                {
-                    name: 'offset',
-                    options: {
-                        offset: [0, 8],
-                    },
-                },
-            ],
-        });
     }
 
     private _show() {
@@ -222,20 +216,10 @@ export class Dropdown {
             this._menu.style.width = `${this._trigger.clientWidth}px`;
         }
 
+        this._cleanup = autoUpdate(this._el, this._menu, () => this._update());
+
         this._menu.setAttribute('data-show', '');
         this.isOpen.emit(true);
-
-        // Enable the event listeners
-        this._popper.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: true },
-            ],
-        }));
-
-        // Update its position
-        this._popper.update();
     }
 
     private _hide() {
@@ -243,17 +227,35 @@ export class Dropdown {
             return;
         }
 
+        if (this._cleanup) {
+            this._cleanup();
+            this._cleanup = null;
+        }
+
         // Hide the popover
         this._menu.removeAttribute('data-show');
         this.isOpen.emit(false);
+    }
 
-        // Disable the event listeners
-        this._popper.setOptions((options) => ({
-            ...options,
-            modifiers: [
-                ...options.modifiers,
-                { name: 'eventListeners', enabled: false },
-            ],
-        }));
+    private _update() {
+        if (!this._menu) {
+            return;
+        }
+
+        computePosition(this._el, this._menu, {
+            placement: this.placement,
+            strategy: this.strategy,
+            // Try removing the arrow middleware. The arrow will no
+            // longer be centered to the reference element.
+            middleware: [offset(8), flip(), shift()],
+        }).then(({ x, y, placement }) => {
+            this._menu.dataset.placement = placement;
+            Object.assign(this._menu.style, {
+                top: `${y}px`,
+                left: `${x}px`,
+            });
+
+            console.log('??', x, y);
+        });
     }
 }

@@ -9,26 +9,32 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"importHelpers": true,
-		"target": "es2015",
-		"module": "esnext",
 		"allowJs": false,
 		"typeRoots": ["node_modules/@types"],
-		"lib": ["es2019", "dom"],
 		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
-		"baseUrl": ".",
 		"resolveJsonModule": true,
 		"noImplicitReturns": false,
 		"noImplicitThis": false,
 		"noImplicitAny": false,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": false,
+		"noPropertyAccessFromIndexSignature": false,
 		"strictNullChecks": false,
 		"suppressImplicitAnyIndexErrors": true,
 		"noUnusedLocals": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"useDefineForClassFields": false,
+		"target": "ES2022",
+		"module": "es2020",
+		"lib": ["es2020", "dom", "ES2021.String"]
 	},
-	"exclude": ["node_modules", "tmp", "dist"],
 	"angularCompilerOptions": {
-		"enableIvy": true
+		"enableIvy": true,
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": false
 	}
 }

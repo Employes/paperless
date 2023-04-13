@@ -1,5 +1,5 @@
 :host {
-    @apply h-screen-safe w-screen-safe grid content-start overflow-hidden;
+    @apply grid h-screen w-screen content-start overflow-hidden;
 
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr, 3);
@@ -91,7 +91,7 @@
 
         .inner-content {
             @apply box-border;
-            @apply desktop-xs:py-0 desktop-xs:px-18;
+            @apply desktop-xs:px-18 desktop-xs:py-0;
             @apply w-full tablet:w-content-desktop-login;
 
             @apply px-content-mobile-x py-content-mobile-y;

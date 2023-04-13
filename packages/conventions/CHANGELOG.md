@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.426](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.425...v0.1.0-alpha.426) (2023-04-13)
+
+
+### Features
+
+* **Conventions:** Update tsconfig ([5d6cc42](https://github.com/Employes/Paperless/commit/5d6cc420483f8710aa8a5d9e6f6ba5e6d1d95ac8))
+
+
+
+
+
 # [0.1.0-alpha.425](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.424...v0.1.0-alpha.425) (2023-04-13)
 
 **Note:** Version bump only for package @paperless/conventions

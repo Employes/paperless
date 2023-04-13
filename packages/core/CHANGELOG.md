@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.426](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.425...v0.1.0-alpha.426) (2023-04-13)
+
+**Note:** Version bump only for package @paperless/core
+
+
+
+
+
 # [0.1.0-alpha.425](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.424...v0.1.0-alpha.425) (2023-04-13)
 
 

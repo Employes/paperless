@@ -4,13 +4,13 @@
     @apply h-full w-full;
     @apply overflow-hidden;
     @apply animate-fade-in bg-storm-dark/50;
-    @apply max-w-screen max-h-screen;
+    @apply max-h-screen max-w-screen;
 
     .content-container {
         @apply h-full w-full overflow-y-auto overflow-x-hidden;
         @apply tablet:px-16 desktop-xs:p-16;
         @apply flex items-end justify-center desktop-xs:items-center;
-        @apply max-w-screen max-h-screen;
+        @apply max-h-screen max-w-screen;
     }
 }
 

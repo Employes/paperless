@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.430](https://github.com/employes/paperless/compare/v0.1.0-alpha.429...v0.1.0-alpha.430) (2023-04-14)
+
+
+### Bug Fixes
+
+* **Atoms/Drawer/Body:** Move padding to body instead of container ([cbb974b](https://github.com/employes/paperless/commit/cbb974b35d972833de40e292b6cb3b7e40c276cb))
+
+
+
+
+
 # [0.1.0-alpha.429](https://github.com/employes/paperless/compare/v0.1.0-alpha.428...v0.1.0-alpha.429) (2023-04-14)
 
 

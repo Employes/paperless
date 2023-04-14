@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.427](https://github.com/employes/paperless/compare/v0.1.0-alpha.426...v0.1.0-alpha.427) (2023-04-14)
+
+
+### Features
+
+* **Conventions/Ts Config:** Use 2020 target and 2018 lib ([747ca14](https://github.com/employes/paperless/commit/747ca14482f0025d6888f68151c246b7744dde35))
+
+
+
+
+
 # [0.1.0-alpha.426](https://github.com/employes/paperless/compare/v0.1.0-alpha.425...v0.1.0-alpha.426) (2023-04-13)
 
 

@@ -1,16 +1,16 @@
 :host {
     @apply flex;
-    @apply fixed top-0 left-0 z-backdrop;
+    @apply fixed left-0 top-0 z-backdrop;
     @apply h-full w-full;
     @apply overflow-hidden;
     @apply animate-fade-in bg-storm-dark/50;
-    @apply max-h-screen-safe max-w-screen-safe;
+    @apply max-w-screen max-h-screen;
 
     .content-container {
         @apply h-full w-full overflow-y-auto overflow-x-hidden;
         @apply tablet:px-16 desktop-xs:p-16;
         @apply flex items-end justify-center desktop-xs:items-center;
-        @apply max-h-screen-safe max-w-screen-safe;
+        @apply max-w-screen max-h-screen;
     }
 }
 

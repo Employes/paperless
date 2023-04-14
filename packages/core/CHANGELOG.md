@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.428](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.427...v0.1.0-alpha.428) (2023-04-14)
+
+
+### Bug Fixes
+
+* **Atoms/Backdrop:** Sizing ([a5fb662](https://github.com/ionic-team/stencil-component-starter/commit/a5fb6620bdf7fe386e62e4ff40cad380fcd843bc))
+
+
+### Features
+
+* **Tailwind:** Add max-h-screen & max-w-screen ([cb8bc06](https://github.com/ionic-team/stencil-component-starter/commit/cb8bc06927b8c2a18cda7225f39342be8051886d))
+
+
+
+
+
 # [0.1.0-alpha.427](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.426...v0.1.0-alpha.427) (2023-04-14)
 
 **Note:** Version bump only for package @paperless/core

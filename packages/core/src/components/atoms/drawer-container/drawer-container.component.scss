@@ -6,8 +6,6 @@ p-drawer-container {
     @apply animate-slide-in-right;
     @apply min-h-screen;
 
-    padding-bottom: env(safe-area-inset-bottom, 0);
-
     @apply shadow-4 #{!important};
 
     &.closing {

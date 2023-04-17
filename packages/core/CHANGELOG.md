@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.434](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.433...v0.1.0-alpha.434) (2023-04-17)
+
+
+### Features
+
+* **Molecules/Input Group:** Add focus method prop ([85f8ccd](https://github.com/ionic-team/stencil-component-starter/commit/85f8ccd80ece3362e9af4662f26a91672f371f18))
+* **Molecules/Select:** Use click event for focusing when autocomplete disabled ([d3e6d44](https://github.com/ionic-team/stencil-component-starter/commit/d3e6d444d65a9682b0620f9e1911b4786c6e7525))
+
+
+
+
+
 # [0.1.0-alpha.433](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.432...v0.1.0-alpha.433) (2023-04-17)
 
 

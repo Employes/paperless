@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.433](https://github.com/employes/paperless/compare/v0.1.0-alpha.432...v0.1.0-alpha.433) (2023-04-17)
+
+
+### Features
+
+* **Molecules/Select:** Use `ev.preventDefault()` instead of manual blur ([6beac67](https://github.com/employes/paperless/commit/6beac675df0d7488fb30ccc6199cc278a15c5611))
+
+
+
+
+
 # [0.1.0-alpha.432](https://github.com/employes/paperless/compare/v0.1.0-alpha.431...v0.1.0-alpha.432) (2023-04-17)
 
 

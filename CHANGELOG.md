@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.432](https://github.com/employes/paperless/compare/v0.1.0-alpha.431...v0.1.0-alpha.432) (2023-04-17)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Add a timeout to the blur for ios... ([d778985](https://github.com/employes/paperless/commit/d778985786ec53da75b14ad0c21c19aabae27b78))
+
+
+
+
+
 # [0.1.0-alpha.431](https://github.com/employes/paperless/compare/v0.1.0-alpha.430...v0.1.0-alpha.431) (2023-04-17)
 
 

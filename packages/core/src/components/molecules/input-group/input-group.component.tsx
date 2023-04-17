@@ -82,6 +82,11 @@ export class InputGroup {
     @Prop({ reflect: true }) focused: boolean = false;
 
     /**
+     * The method to use when focusing the input
+     */
+    @Prop() focusMethod: 'focus' | 'click' = 'focus';
+
+    /**
      * The host element
      */
     @Element() private _el: HTMLElement;
@@ -303,6 +308,6 @@ export class InputGroup {
 
     private _focusInput() {
         const input = this._el.querySelector(':scope > [slot="input"]');
-        (input as HTMLElement).focus();
+        (input as HTMLElement)[this.focusMethod]();
     }
 }

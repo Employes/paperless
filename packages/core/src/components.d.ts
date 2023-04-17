@@ -504,6 +504,10 @@ export namespace Components {
          */
         "error": string;
         /**
+          * The method to use when focusing the input
+         */
+        "focusMethod": 'focus' | 'click';
+        /**
           * Wether the input group is focused
          */
         "focused": boolean;
@@ -2373,6 +2377,10 @@ declare namespace LocalJSX {
           * The helper of the input group
          */
         "error"?: string;
+        /**
+          * The method to use when focusing the input
+         */
+        "focusMethod"?: 'focus' | 'click';
         /**
           * Wether the input group is focused
          */

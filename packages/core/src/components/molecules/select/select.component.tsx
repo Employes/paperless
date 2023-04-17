@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
@@ -159,8 +159,6 @@ export class Select {
 
     @State() private _isAutoCompleting: boolean = false;
 
-    private _inputRef: HTMLInputElement;
-
     get _items() {
         if (!this.items || this.loading) {
             return [];
@@ -266,11 +264,10 @@ export class Select {
                             class={`p-input cursor-pointer ${
                                 !this._isAutoCompleting && 'read-only'
                             }`}
-                            onFocus={() => this._onFocus()}
+                            onFocus={(ev) => this._onFocus(ev)}
                             onMouseDown={(ev) => this._onMouseDown(ev)}
                             onClick={() => this._onClick()}
                             onInput={(ev) => this._onChange(ev)}
-                            ref={(ref) => (this._inputRef = ref)}
                         />
 
                         {this.showChevron && (
@@ -385,9 +382,10 @@ export class Select {
         this._onBlur(true);
     }
 
-    private _onFocus() {
+    private _onFocus(ev) {
         if (!this.enableAutocomplete) {
-            setTimeout(() => this._inputRef.blur(), 50);
+            ev.preventDefault();
+
             if (!this._showDropdown) {
                 this._showDropdown = true;
             }

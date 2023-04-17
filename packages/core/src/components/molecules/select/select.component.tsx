@@ -158,7 +158,6 @@ export class Select {
     @State() private _selectedItem: any = null;
 
     @State() private _isAutoCompleting: boolean = false;
-    @State() private _queryChanged: boolean = false;
 
     private _inputRef: HTMLInputElement;
 
@@ -185,7 +184,7 @@ export class Select {
         if (
             this._isAutoCompleting &&
             this.query?.length &&
-            this._queryChanged &&
+            this.query !== this._selectedItem?.[this.displayKey] &&
             !this.asyncFilter
         ) {
             items = items.filter((item) => {
@@ -380,7 +379,6 @@ export class Select {
                 : item;
 
         this.query = this.keepQuery ? item?.[this.displayKey] : null;
-        this._queryChanged = false;
         this.value = value;
         this.valueChange.emit(value);
 
@@ -435,7 +433,6 @@ export class Select {
             this._showDropdown = true;
         }
 
-        this._queryChanged = true;
         this.query = ev.target.value;
         this.queryChange.emit(ev.target.value);
     }

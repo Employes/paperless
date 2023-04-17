@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
@@ -387,7 +387,7 @@ export class Select {
 
     private _onFocus() {
         if (!this.enableAutocomplete) {
-            this._inputRef.blur();
+            setTimeout(() => this._inputRef.blur(), 50);
             if (!this._showDropdown) {
                 this._showDropdown = true;
             }

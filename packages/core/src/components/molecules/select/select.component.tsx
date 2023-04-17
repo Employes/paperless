@@ -255,6 +255,9 @@ export class Select {
                         error={this.error}
                         disabled={this.disabled}
                         focused={this._showDropdown}
+                        focusMethod={
+                            this.enableAutocomplete ? 'focus' : 'click'
+                        }
                     >
                         <input
                             slot="input"
@@ -385,6 +388,7 @@ export class Select {
     private _onFocus(ev) {
         if (!this.enableAutocomplete) {
             ev.preventDefault();
+            ev.stopPropogation();
 
             if (!this._showDropdown) {
                 this._showDropdown = true;

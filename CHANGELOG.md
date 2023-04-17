@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.431](https://github.com/employes/paperless/compare/v0.1.0-alpha.430...v0.1.0-alpha.431) (2023-04-17)
+
+
+### Features
+
+* **Molecules/Select:** Change autocomplete filter ([6b4af06](https://github.com/employes/paperless/commit/6b4af0687ac00c8088ad54ba869b2702bbd0945c))
+
+
+
+
+
 # [0.1.0-alpha.430](https://github.com/employes/paperless/compare/v0.1.0-alpha.429...v0.1.0-alpha.430) (2023-04-14)
 
 

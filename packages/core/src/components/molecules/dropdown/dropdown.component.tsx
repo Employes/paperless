@@ -34,7 +34,7 @@ export class Dropdown {
     /**
      * The strategy of the popover placement
      */
-    @Prop() strategy: Strategy = 'fixed';
+    @Prop() strategy: Strategy = 'absolute';
 
     /**
      * Wether to show the dropdown menu
@@ -246,8 +246,6 @@ export class Dropdown {
         computePosition(this._el, this._menu, {
             placement: this.placement,
             strategy: this.strategy,
-            // Try removing the arrow middleware. The arrow will no
-            // longer be centered to the reference element.
             middleware: [offset(8), flip(), shift()],
         }).then(({ x, y, placement }) => {
             this._menu.dataset.placement = placement;

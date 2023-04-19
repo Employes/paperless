@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.436](https://github.com/employes/paperless/compare/v0.1.0-alpha.435...v0.1.0-alpha.436) (2023-04-19)
+
+
+### Bug Fixes
+
+* **Style/Inputs:** Make input height important ([b652a6d](https://github.com/employes/paperless/commit/b652a6dd223e62791605b5d973eed1d98331a28b))
+
+
+
+
+
 # [0.1.0-alpha.435](https://github.com/employes/paperless/compare/v0.1.0-alpha.434...v0.1.0-alpha.435) (2023-04-18)
 
 **Note:** Version bump only for package paperless

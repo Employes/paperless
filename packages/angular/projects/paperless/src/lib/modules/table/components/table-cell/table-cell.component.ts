@@ -181,19 +181,21 @@ export class TableCell {
             let previousSize = null;
 
             for (const size of Object.keys(sizes)) {
-                previousSize = size;
                 if (size === 'default') {
                     if (sizes.default === 'hidden') {
                         classes['hidden'] = true;
-                        return;
+                        previousSize = size;
+                        continue;
                     }
 
                     classes[`w-${sizes.default}/12`] = true;
+                    previousSize = size;
                     continue;
                 }
 
                 if (
                     sizes[size] !== 'hidden' &&
+                    previousSize &&
                     sizes[previousSize] === 'hidden'
                 ) {
                     classes[`${size}:flex`] = true;
@@ -201,10 +203,12 @@ export class TableCell {
 
                 if (sizes[size] === 'hidden') {
                     classes[`${size}:hidden`] = true;
+                    previousSize = size;
                     continue;
                 }
 
                 classes[`${size}:w-${sizes[`${size}`]}/12`] = true;
+                previousSize = size;
             }
 
             return classes;

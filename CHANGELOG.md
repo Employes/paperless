@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.437](https://github.com/employes/paperless/compare/v0.1.0-alpha.436...v0.1.0-alpha.437) (2023-04-26)
+
+
+### Bug Fixes
+
+* **Angular/Table/Cell:** Only set previous size when done with current size ([0c258c9](https://github.com/employes/paperless/commit/0c258c92cd516c586912cf607c350ae8d62c7ed1))
+
+
+### Features
+
+* **Angular/Table/Cell:** Allow for hiding/showing table columns ([9a0b1fc](https://github.com/employes/paperless/commit/9a0b1fcf92f14cbeef8a943e6a79e8b7be80fbc5))
+* **Helpers/Table/Column:** Add hidden size option ([4331abe](https://github.com/employes/paperless/commit/4331abec39cd0d433ef4b4f9fcaad294cc48d1d5))
+
+
+
+
+
 # [0.1.0-alpha.436](https://github.com/employes/paperless/compare/v0.1.0-alpha.435...v0.1.0-alpha.436) (2023-04-19)
 
 

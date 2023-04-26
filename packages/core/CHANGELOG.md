@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.437](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.436...v0.1.0-alpha.437) (2023-04-26)
+
+
+### Features
+
+* **Helpers/Table/Column:** Add hidden size option ([4331abe](https://github.com/ionic-team/stencil-component-starter/commit/4331abec39cd0d433ef4b4f9fcaad294cc48d1d5))
+
+
+
+
+
 # [0.1.0-alpha.436](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.435...v0.1.0-alpha.436) (2023-04-19)
 
 

@@ -34,7 +34,11 @@ export class TableColumn {
     /**
      * The sizes of the column
      */
-    @Prop({ mutable: true }) sizes: 'auto' | number | TableColumnSizes = 'auto';
+    @Prop({ mutable: true }) sizes:
+        | 'auto'
+        | 'hidden'
+        | number
+        | TableColumnSizes = 'auto';
 
     /**
      * Event to let the table know it has to re render

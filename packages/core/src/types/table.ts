@@ -22,11 +22,11 @@ export interface TableDefinitionData {
 export type TableDefinitionTemplateFunc = (data: TableDefinitionData) => any;
 
 export interface TableColumnSizes {
-    default: number;
-    tablet?: number;
-    'desktop-xs'?: number;
-    'desktop-sm'?: number;
-    desktop?: number;
-    'desktop-lg'?: number;
-    'desktop-xl'?: number;
+    default: number | 'hidden';
+    tablet?: number | 'hidden';
+    'desktop-xs'?: number | 'hidden';
+    'desktop-sm'?: number | 'hidden';
+    desktop?: number | 'hidden';
+    'desktop-lg'?: number | 'hidden';
+    'desktop-xl'?: number | 'hidden';
 }

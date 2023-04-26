@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
-import { objectGetByPath, TableDefinitionData } from '@paperless/core';
+import { TableDefinitionData, objectGetByPath } from '@paperless/core';
 
 @Component({
     selector: 'p-table-cell-ngx',
@@ -126,6 +126,13 @@ export class TableCell {
      desktop:w-1/12 desktop:w-2/12 desktop:w-3/12 desktop:w-4/12 desktop:w-5/12 desktop:w-6/12 desktop:w-7/12 desktop:w-8/12 desktop:w-9/12 desktop:w-10/12 desktop:w-11/12 desktop:w-12/12
      desktop-lg:w-1/12 desktop-lg:w-2/12 desktop-lg:w-3/12 desktop-lg:w-4/12 desktop-lg:w-5/12 desktop-lg:w-6/12 desktop-lg:w-7/12 desktop-lg:w-8/12 desktop-lg:w-9/12 desktop-lg:w-10/12 desktop-lg:w-11/12 desktop-lg:w-12/12
      desktop-xl:w-1/12 desktop-xl:w-2/12 desktop-xl:w-3/12 desktop-xl:w-4/12 desktop-xl:w-5/12 desktop-xl:w-6/12 desktop-xl:w-7/12 desktop-xl:w-8/12 desktop-xl:w-9/12 desktop-xl:w-10/12 desktop-xl:w-11/12 desktop-xl:w-12/12
+     hidden flex
+     tablet:hidden tablet:flex
+     desktop-xs:hidden desktop-xs:flex
+     desktop-sm:hidden desktop-sm:flex
+     desktop:hidden desktop:flex
+     desktop-lg:hidden desktop-lg:flex
+     desktop-xl:hidden desktop-xl:flex
 
 
         ⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⠿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣷⠿⣿⣿⣶⣦⣀⠀⠀⠀⠀⠀
@@ -163,11 +170,37 @@ export class TableCell {
             };
         }
 
+        if (sizes === 'hidden') {
+            return {
+                hidden: true,
+            };
+        }
+
         if (typeof sizes === 'object') {
             const classes: any = {};
+            let previousSize = null;
+
             for (const size of Object.keys(sizes)) {
+                previousSize = size;
                 if (size === 'default') {
+                    if (sizes.default === 'hidden') {
+                        classes['hidden'] = true;
+                        return;
+                    }
+
                     classes[`w-${sizes.default}/12`] = true;
+                    continue;
+                }
+
+                if (
+                    sizes[size] !== 'hidden' &&
+                    sizes[previousSize] === 'hidden'
+                ) {
+                    classes[`${size}:flex`] = true;
+                }
+
+                if (sizes[size] === 'hidden') {
+                    classes[`${size}:hidden`] = true;
                     continue;
                 }
 

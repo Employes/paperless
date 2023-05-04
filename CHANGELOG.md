@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.439](https://github.com/employes/paperless/compare/v0.1.0-alpha.438...v0.1.0-alpha.439) (2023-05-04)
+
+
+### Bug Fixes
+
+* Dont upgrade to angular 16 yet ([e92df07](https://github.com/employes/paperless/commit/e92df07d5e7e9150eef5620703c2a275db579292))
+
+
+### Reverts
+
+* Revert "chore(deps): update dependency ng-packagr to v16 (#141)" ([4bb110f](https://github.com/employes/paperless/commit/4bb110fb38f820d192c0c215c6af5fac8622e8ae)), closes [#141](https://github.com/employes/paperless/issues/141)
+
+
+
+
+
 # [0.1.0-alpha.438](https://github.com/employes/paperless/compare/v0.1.0-alpha.437...v0.1.0-alpha.438) (2023-05-04)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.438](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.437...v0.1.0-alpha.438) (2023-05-04)
+
+
+### Features
+
+* **Atoms/Tooltip:** Make sure the arrow also moves ([f41c625](https://github.com/ionic-team/stencil-component-starter/commit/f41c62598003d38372d922c78df12224e166d478))
+
+
+
+
+
 # [0.1.0-alpha.437](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.436...v0.1.0-alpha.437) (2023-04-26)
 
 

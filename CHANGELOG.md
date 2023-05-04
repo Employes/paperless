@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.438](https://github.com/employes/paperless/compare/v0.1.0-alpha.437...v0.1.0-alpha.438) (2023-05-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency rxjs to v7.8.1 ([#146](https://github.com/employes/paperless/issues/146)) ([2344847](https://github.com/employes/paperless/commit/2344847a2cb8dab1254330606f5cbf79a22bb669))
+
+
+### Features
+
+* **Atoms/Tooltip:** Make sure the arrow also moves ([f41c625](https://github.com/employes/paperless/commit/f41c62598003d38372d922c78df12224e166d478))
+
+
+
+
+
 # [0.1.0-alpha.437](https://github.com/employes/paperless/compare/v0.1.0-alpha.436...v0.1.0-alpha.437) (2023-04-26)
 
 

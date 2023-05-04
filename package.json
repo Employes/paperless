@@ -9,7 +9,7 @@
         "packages/*"
     ],
     "resolutions": {
-        "@types/react": "18.2.4",
+        "@types/react": "18.2.5",
         "@types/react-dom": "18.2.3"
     },
     "publishConfig": {
@@ -82,7 +82,7 @@
         "@storybook/manager-webpack4": "6.5.16",
         "@storybook/testing-library": "0.1.0",
         "@types/jest": "29.5.1",
-        "@types/react": "18.2.4",
+        "@types/react": "18.2.5",
         "@types/react-dom": "18.2.3",
         "@types/uuid": "^9.0.0",
         "autoprefixer": "10.4.14",

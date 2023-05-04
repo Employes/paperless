@@ -11457,7 +11457,7 @@ glob@8.1.0:
     minimatch "^5.0.1"
     once "^1.3.0"
 
-glob@^8.0.1, glob@^8.0.3:
+glob@^8.0.1:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
   integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
@@ -15606,10 +15606,10 @@ next-tick@1, next-tick@^1.0.0, next-tick@^1.1.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
-ng-packagr@15.2.2:
-  version "15.2.2"
-  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-15.2.2.tgz#2ae63e8e63a7b0fd9202c1bf77f144bf86a06b29"
-  integrity sha512-+042GBD35ztxbHywGJloAiDM/s3Ja3TZtQh361TWqd/xza3K5DMUu6VRGLTgMwG7CW1YsqYHWgMZslP1c+ng7A==
+ng-packagr@16.0.0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-16.0.0.tgz#fd8bbe36b3b60783a365f37705c5770f358f113f"
+  integrity sha512-PSgzS9WMypXyZbI5G54mNiarT54a3j5vf5pj84BOWJaSh6MbX3q49fR1ql41A+qtkPkG+e7xQ3IhMOnOMilobg==
   dependencies:
     "@rollup/plugin-json" "^6.0.0"
     "@rollup/plugin-node-resolve" "^15.0.0"
@@ -15623,8 +15623,8 @@ ng-packagr@15.2.2:
     convert-source-map "^2.0.0"
     dependency-graph "^0.11.0"
     esbuild-wasm "^0.17.0"
+    fast-glob "^3.2.12"
     find-cache-dir "^3.3.2"
-    glob "^8.0.3"
     injection-js "^2.4.0"
     jsonc-parser "^3.2.0"
     less "^4.1.3"

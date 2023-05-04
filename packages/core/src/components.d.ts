@@ -1164,7 +1164,10 @@ export namespace Components {
         /**
           * The sizes of the column
          */
-        "sizes": 'auto' | number | TableColumnSizes;
+        "sizes": | 'auto'
+        | 'hidden'
+        | number
+        | TableColumnSizes;
         /**
           * The type of the column
          */
@@ -3126,7 +3129,10 @@ declare namespace LocalJSX {
         /**
           * The sizes of the column
          */
-        "sizes"?: 'auto' | number | TableColumnSizes;
+        "sizes"?: | 'auto'
+        | 'hidden'
+        | number
+        | TableColumnSizes;
         /**
           * The type of the column
          */

@@ -221,7 +221,9 @@ export class Tooltip {
                 Object.assign(arrowEl.style, {
                     left:
                         this.variant === 'error'
-                            ? 'calc(100% - 1rem)'
+                            ? placement.indexOf('start') >= 0
+                                ? '1rem'
+                                : 'calc(100% - 1rem)'
                             : x != null
                             ? `${x}px`
                             : '',

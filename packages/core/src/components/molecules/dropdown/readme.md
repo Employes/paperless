@@ -1,17 +1,6 @@
-# Dropdown
+# p-dropdown
 
-## Usage:
 
-```html
-<p-dropdown>
-    <p-button variant="secondary" slot="trigger">Click me</p-button>
-    <div slot="items">
-        <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
-        <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
-        <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
-    </div>
-</p-dropdown>
-```
 
 <!-- Auto Generated Below -->
 
@@ -29,7 +18,7 @@
 | `insideClick`         | `inside-click`          | Wether to automatically close the dropdown menu after clicking inside        | `boolean`                                                                                                                                                            | `false`          |
 | `placement`           | `placement`             | The content of the dropdown menu                                             | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom-start'` |
 | `show`                | `show`                  | Wether to show the dropdown menu                                             | `boolean`                                                                                                                                                            | `false`          |
-| `strategy`            | `strategy`              | The strategy of the popover placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'fixed'`        |
+| `strategy`            | `strategy`              | The strategy of the popover placement                                        | `"absolute" \| "fixed"`                                                                                                                                              | `'absolute'`     |
 
 
 ## Events
@@ -55,6 +44,18 @@
 ### Graph
 ```mermaid
 graph TD;
+  p-dropdown --> p-dropdown-menu-container
+  p-datepicker --> p-dropdown
+  p-page-size-select --> p-dropdown
+  p-profile --> p-dropdown
+  p-select --> p-dropdown
+  style p-dropdown fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
+aph TD;
   p-dropdown --> p-dropdown-menu-container
   p-datepicker --> p-dropdown
   p-page-size-select --> p-dropdown

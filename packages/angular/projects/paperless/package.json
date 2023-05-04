@@ -2,7 +2,7 @@
     "name": "@paperless/angular",
     "version": "0.1.0-alpha.281",
     "peerDependencies": {
-        "@angular/cdk": "^13.3.0 || ^14.0.0 || ^15.0.0 || ^16.0.0",
+        "@angular/cdk": "^13.3.0 || ^14.0.0 || ^15.0.0",
         "@angular/common": "^13.3.0 || ^14.0.0 || ^15.0.0",
         "@angular/core": "^13.3.0 || ^14.0.0 || ^15.0.0"
     },

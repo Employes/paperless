@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.444](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.443...v0.1.0-alpha.444) (2023-05-10)
+
+
+### Features
+
+* **Organisms/Table:** Fix full size columns ([924d902](https://github.com/ionic-team/stencil-component-starter/commit/924d9029ac6e18325e0c321091e2c9579abcd30b))
+
+
+
+
+
 # [0.1.0-alpha.443](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.442...v0.1.0-alpha.443) (2023-05-10)
 
 

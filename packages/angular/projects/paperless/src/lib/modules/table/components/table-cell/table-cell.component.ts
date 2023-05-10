@@ -1,7 +1,12 @@
 /* eslint-disable max-len */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
-import { TableDefinitionData, objectGetByPath } from '@paperless/core';
-
+import {
+    TableColumnSizes,
+    TableColumnSizesKey,
+    TableDefinitionData,
+    isTableColumnSizesKey,
+    objectGetByPath,
+} from '@paperless/core';
 @Component({
     selector: 'p-table-cell-ngx',
     styleUrls: ['table-cell.component.scss'],
@@ -163,7 +168,13 @@ export class TableCell {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
-    private _getSizes({ sizes }: any /* Table Definition */) {
+    private _getSizes(
+        {
+            sizes,
+        }: {
+            sizes: 'auto' | 'hidden' | 'full' | number | TableColumnSizes;
+        } /* Table Definition */
+    ) {
         if (sizes === 'auto' || !sizes) {
             return {
                 'w-auto': true,
@@ -177,10 +188,15 @@ export class TableCell {
         }
 
         if (typeof sizes === 'object') {
+            sizes = sizes as TableColumnSizes;
             const classes: any = {};
-            let previousSize = null;
+            let previousSize: TableColumnSizesKey | undefined;
 
-            for (const size of Object.keys(sizes)) {
+            for (let size in sizes) {
+                if (!isTableColumnSizesKey(sizes, size)) {
+                    continue;
+                }
+
                 if (size === 'default') {
                     if (sizes.default === 'hidden') {
                         classes['hidden'] = true;
@@ -193,25 +209,37 @@ export class TableCell {
                     continue;
                 }
 
+                const currentValue = sizes[size];
+                const previousValue = previousSize ? sizes[previousSize] : null;
                 if (
-                    sizes[size] !== 'hidden' &&
-                    previousSize &&
-                    sizes[previousSize] === 'hidden'
+                    currentValue !== 'hidden' &&
+                    previousValue &&
+                    previousValue === 'hidden'
                 ) {
                     classes[`${size}:flex`] = true;
                 }
 
-                if (sizes[size] === 'hidden') {
+                if (currentValue === 'hidden') {
                     classes[`${size}:hidden`] = true;
                     previousSize = size;
                     continue;
                 }
 
-                classes[`${size}:w-${sizes[`${size}`]}/12`] = true;
+                if (currentValue === 12 || currentValue === 'full') {
+                    classes[`${size}:w-full`] = true;
+                }
+
+                classes[`${size}:w-${currentValue}/12`] = true;
                 previousSize = size;
             }
 
             return classes;
+        }
+
+        if (sizes === 12 || sizes === 'full') {
+            return {
+                'w-full': true,
+            };
         }
 
         // is a number.

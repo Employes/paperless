@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.441](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.440...v0.1.0-alpha.441) (2023-05-10)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Correctly map `hasCheckbox` ([15392ab](https://github.com/Employes/Paperless/commit/15392abc1478d90329f99c94d00054f90141ee10))
+
+
+
+
+
 # [0.1.0-alpha.440](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.439...v0.1.0-alpha.440) (2023-05-10)
 
 

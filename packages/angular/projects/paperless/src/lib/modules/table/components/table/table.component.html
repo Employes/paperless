@@ -64,7 +64,8 @@
                         [definition]="col"
                         variant="loading"
                         [checkbox]="
-                            (index === 0 || col.hasCheckbox) & enableRowSelection
+                            (index === 0 || col.hasCheckbox) &&
+                            enableRowSelection
                                 ? checkboxTemplate
                                 : undefined
                         "

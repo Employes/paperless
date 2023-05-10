@@ -26,6 +26,11 @@ export class TableColumn {
     @Prop({ reflect: true, mutable: true }) useSlot: boolean = false;
 
     /**
+     * Wether the column should have a checkbox
+     */
+    @Prop({ reflect: true, mutable: true }) hasCheckbox: boolean = false;
+
+    /**
      * The alignment of the column
      */
     @Prop({ reflect: true, mutable: true }) align: 'start' | 'center' | 'end' =

@@ -36,7 +36,7 @@
                 variant="header"
                 [index]="index"
                 [checkbox]="
-                    index === 0 && enableRowSelection
+                    (index === 0 || col.hasCheckbox) && enableRowSelection
                         ? checkboxTemplate
                         : undefined
                 "

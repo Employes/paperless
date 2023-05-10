@@ -1,5 +1,8 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 import {
+    isTableColumnSizesKey,
+    TableColumnSizes,
+    TableColumnSizesKey,
     TableDefinitionData,
     TableDefinitionTemplateFunc,
 } from '../../../types';
@@ -172,18 +175,65 @@ export class TableCell {
             };
         }
 
+        if (sizes === 'hidden') {
+            return {
+                hidden: true,
+            };
+        }
+
         if (typeof sizes === 'object') {
-            const classes = {};
-            for (const size of Object.keys(sizes)) {
-                if (size === 'default') {
-                    classes[`w-${sizes.default}/12`] = true;
+            sizes = sizes as TableColumnSizes;
+            const classes: any = {};
+            let previousSize: TableColumnSizesKey | undefined;
+
+            for (let size in sizes) {
+                if (!isTableColumnSizesKey(sizes, size)) {
                     continue;
                 }
 
-                classes[`${size}:w-${sizes[`${size}`]}/12`] = true;
+                if (size === 'default') {
+                    if (sizes.default === 'hidden') {
+                        classes['hidden'] = true;
+                        previousSize = size;
+                        continue;
+                    }
+
+                    classes[`w-${sizes.default}/12`] = true;
+                    previousSize = size;
+                    continue;
+                }
+
+                const currentValue = sizes[size];
+                const previousValue = previousSize ? sizes[previousSize] : null;
+                if (
+                    currentValue !== 'hidden' &&
+                    previousValue &&
+                    previousValue === 'hidden'
+                ) {
+                    classes[`${size}:flex`] = true;
+                }
+
+                if (currentValue === 'hidden') {
+                    classes[`${size}:hidden`] = true;
+                    previousSize = size;
+                    continue;
+                }
+
+                if (currentValue === 12 || currentValue === 'full') {
+                    classes[`${size}:w-full`] = true;
+                }
+
+                classes[`${size}:w-${currentValue}/12`] = true;
+                previousSize = size;
             }
 
             return classes;
+        }
+
+        if (sizes === 12 || sizes === 'full') {
+            return {
+                'w-full': true,
+            };
         }
 
         // is a number.

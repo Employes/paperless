@@ -22,11 +22,27 @@ export interface TableDefinitionData {
 export type TableDefinitionTemplateFunc = (data: TableDefinitionData) => any;
 
 export interface TableColumnSizes {
-    default: number | 'hidden';
-    tablet?: number | 'hidden';
-    'desktop-xs'?: number | 'hidden';
-    'desktop-sm'?: number | 'hidden';
-    desktop?: number | 'hidden';
-    'desktop-lg'?: number | 'hidden';
-    'desktop-xl'?: number | 'hidden';
+    default: number | 'hidden' | 'full';
+    tablet?: number | 'hidden' | 'full';
+    'desktop-xs'?: number | 'hidden' | 'full';
+    'desktop-sm'?: number | 'hidden' | 'full';
+    desktop?: number | 'hidden' | 'full';
+    'desktop-lg'?: number | 'hidden' | 'full';
+    'desktop-xl'?: number | 'hidden' | 'full';
+}
+
+export type TableColumnSizesKey =
+    | 'default'
+    | 'tablet'
+    | 'desktop-xs'
+    | 'desktop-sm'
+    | 'desktop'
+    | 'desktop-lg'
+    | 'desktop-xl';
+
+export function isTableColumnSizesKey(
+    x: TableColumnSizes,
+    k: PropertyKey
+): k is keyof TableColumnSizes {
+    return k in x;
 }

@@ -42,6 +42,7 @@ export class TableColumn {
     @Prop({ mutable: true }) sizes:
         | 'auto'
         | 'hidden'
+        | 'full'
         | number
         | TableColumnSizes = 'auto';
 

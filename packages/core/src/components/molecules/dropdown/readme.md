@@ -55,15 +55,3 @@ graph TD;
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
-aph TD;
-  p-dropdown --> p-dropdown-menu-container
-  p-datepicker --> p-dropdown
-  p-page-size-select --> p-dropdown
-  p-profile --> p-dropdown
-  p-select --> p-dropdown
-  style p-dropdown fill:#f9f,stroke:#333,stroke-width:4px
-```
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*

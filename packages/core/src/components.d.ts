@@ -1154,6 +1154,10 @@ export namespace Components {
          */
         "align": 'start' | 'center' | 'end';
         /**
+          * Wether the column should have a checkbox
+         */
+        "hasCheckbox": boolean;
+        /**
           * The name of the column
          */
         "name": string;
@@ -3114,6 +3118,10 @@ declare namespace LocalJSX {
           * The alignment of the column
          */
         "align"?: 'start' | 'center' | 'end';
+        /**
+          * Wether the column should have a checkbox
+         */
+        "hasCheckbox"?: boolean;
         /**
           * The name of the column
          */

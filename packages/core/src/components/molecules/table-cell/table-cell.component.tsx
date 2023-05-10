@@ -86,7 +86,16 @@ export class TableCell {
                         class="h-6 w-full flex-1 rounded"
                     />
                 ) : (
-                    <div class="flex w-full overflow-hidden">
+                    <div
+                        class={{
+                            flex: true,
+                            'overflow-hidden': true,
+                            'justify-start': this.definition.align === 'start',
+                            'justify-center':
+                                this.definition.align === 'center',
+                            'justify-end': this.definition.align === 'end',
+                        }}
+                    >
                         {this.variant === 'header' ? (
                             this.data.value
                         ) : this.definition.useSlot ? (

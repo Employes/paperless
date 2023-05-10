@@ -83,10 +83,10 @@ export class TableCell {
                 {this.variant === 'loading' ? (
                     <p-loader
                         variant="ghost"
-                        class="rounded flex-1 w-full h-6"
+                        class="h-6 w-full flex-1 rounded"
                     />
                 ) : (
-                    <div class="flex">
+                    <div class="flex w-full overflow-hidden">
                         {this.variant === 'header' ? (
                             this.data.value
                         ) : this.definition.useSlot ? (

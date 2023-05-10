@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.443](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.442...v0.1.0-alpha.443) (2023-05-10)
+
+
+### Bug Fixes
+
+* **Angular/Table/Cell:** Justify in the correct way ([81fbb0e](https://github.com/Employes/Paperless/commit/81fbb0e39ecfa12012af07a1adcacb6bc5c4a87f))
+
+
+
+
+
 # [0.1.0-alpha.442](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.441...v0.1.0-alpha.442) (2023-05-10)
 
 

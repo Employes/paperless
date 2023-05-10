@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.443](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.442...v0.1.0-alpha.443) (2023-05-10)
+
+
+### Bug Fixes
+
+* **Molecules/Table/Cell:** Justify in the correct way ([9182748](https://github.com/ionic-team/stencil-component-starter/commit/9182748cbba7a19462c02a1e418ce48244775f4e))
+
+
+### Features
+
+* **Molecules/Table/Row:** `py-2` on mobile ([9c069f2](https://github.com/ionic-team/stencil-component-starter/commit/9c069f2cc36c084f3e7515c33d35ebe92fee0112))
+
+
+
+
+
 # [0.1.0-alpha.442](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.441...v0.1.0-alpha.442) (2023-05-10)
 
 

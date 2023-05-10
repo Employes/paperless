@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.442](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.441...v0.1.0-alpha.442) (2023-05-10)
+
+
+### Features
+
+* **Angular/Table/Cell:** Add overflow protection ([418b965](https://github.com/Employes/Paperless/commit/418b9659dc6840f186f526188c6f44e2588b157b))
+
+
+
+
+
 # [0.1.0-alpha.441](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.440...v0.1.0-alpha.441) (2023-05-10)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.440](https://github.com/employes/paperless/compare/v0.1.0-alpha.439...v0.1.0-alpha.440) (2023-05-10)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Missing `&` ([5151611](https://github.com/employes/paperless/commit/515161141fa622d7dc33d09110fd6589ae7e05cb))
+
+
+### Features
+
+* **Angular/Table:** Use `hasCheckBox` property on table column ([591e34f](https://github.com/employes/paperless/commit/591e34fa79a9ee4c15d1d311424a10a7117fb33e))
+* **Helpers/Table/Column:** Add `hasCheckBox` property ([5da2f52](https://github.com/employes/paperless/commit/5da2f5290009a04d457f6461730d0e9e26511aae))
+* **Organisms/Table:** Use `hasCheckBox` property on table column ([fd2eda3](https://github.com/employes/paperless/commit/fd2eda378138fe4a2e410883e42d0e7e5f9581b2))
+
+
+
+
+
 # [0.1.0-alpha.439](https://github.com/employes/paperless/compare/v0.1.0-alpha.438...v0.1.0-alpha.439) (2023-05-04)
 
 

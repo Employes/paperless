@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.440](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.439...v0.1.0-alpha.440) (2023-05-10)
+
+
+### Features
+
+* **Helpers/Table/Column:** Add `hasCheckBox` property ([5da2f52](https://github.com/ionic-team/stencil-component-starter/commit/5da2f5290009a04d457f6461730d0e9e26511aae))
+* **Organisms/Table:** Use `hasCheckBox` property on table column ([fd2eda3](https://github.com/ionic-team/stencil-component-starter/commit/fd2eda378138fe4a2e410883e42d0e7e5f9581b2))
+
+
+
+
+
 # [0.1.0-alpha.439](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.438...v0.1.0-alpha.439) (2023-05-04)
 
 **Note:** Version bump only for package @paperless/core

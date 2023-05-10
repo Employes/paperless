@@ -64,7 +64,7 @@
                         [definition]="col"
                         variant="loading"
                         [checkbox]="
-                            index === 0 && enableRowSelection
+                            (index === 0 || col.hasCheckbox) & enableRowSelection
                                 ? checkboxTemplate
                                 : undefined
                         "
@@ -95,7 +95,8 @@
                             [definition]="col"
                             [item]="item"
                             [checkbox]="
-                                index === 0 && enableRowSelection
+                                (index === 0 || col.hasCheckbox) &&
+                                enableRowSelection
                                     ? checkboxTemplate
                                     : undefined
                             "

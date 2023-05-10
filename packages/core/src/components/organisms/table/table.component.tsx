@@ -449,7 +449,11 @@ export class Table {
                         definition={col}
                         value={col.name}
                         variant="header"
-                        checkbox={this._getCheckbox(index, null, 'header')}
+                        checkbox={
+                            index === 0 || col.hasCheckbox
+                                ? this._getCheckbox(null, 'loading')
+                                : null
+                        }
                         index={index}
                     ></p-table-cell>
                 ))}
@@ -495,7 +499,11 @@ export class Table {
                 <p-table-cell
                     definition={col}
                     item={item}
-                    checkbox={this._getCheckbox(colIndex, index)}
+                    checkbox={
+                        colIndex === 0 || col.hasCheckbox
+                            ? this._getCheckbox(index)
+                            : null
+                    }
                     index={colIndex}
                     rowIndex={index}
                 ></p-table-cell>
@@ -509,7 +517,11 @@ export class Table {
                 <p-table-cell
                     definition={col}
                     variant="loading"
-                    checkbox={this._getCheckbox(colIndex, index, 'loading')}
+                    checkbox={
+                        colIndex === 0 || col.hasCheckbox
+                            ? this._getCheckbox(index, 'loading')
+                            : null
+                    }
                     index={colIndex}
                     rowIndex={index}
                 ></p-table-cell>
@@ -518,11 +530,10 @@ export class Table {
     }
 
     private _getCheckbox(
-        index,
         rowIndex,
         variant: 'header' | 'default' | 'loading' = 'default'
     ) {
-        if (!this.enableRowSelection || !this.selectionKey || index !== 0) {
+        if (!this.enableRowSelection || !this.selectionKey) {
             return;
         }
 

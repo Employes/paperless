@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.446](https://github.com/employes/paperless/compare/v0.1.0-alpha.445...v0.1.0-alpha.446) (2023-05-11)
+
+
+### Bug Fixes
+
+* **Molecules/Table/Row:** Fix table header variant height ([d3f650a](https://github.com/employes/paperless/commit/d3f650a2543d3322e92d876966eb1eee19d17488))
+
+
+
+
+
 # [0.1.0-alpha.445](https://github.com/employes/paperless/compare/v0.1.0-alpha.444...v0.1.0-alpha.445) (2023-05-11)
 
 

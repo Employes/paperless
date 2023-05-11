@@ -14,7 +14,7 @@
     @apply border-x-0 border-y border-solid border-y-mystic-dark #{!important};
 
     .content {
-        @apply py-2;
+        @apply min-h-0 py-2 tablet:h-auto;
     }
 }
 

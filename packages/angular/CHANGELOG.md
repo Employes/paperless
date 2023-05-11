@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.447](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.446...v0.1.0-alpha.447) (2023-05-11)
+
+
+### Bug Fixes
+
+* **Angular/Table:** remove console issues ([2c06011](https://github.com/Employes/Paperless/commit/2c06011f426613d46f6cfe23097cfb086c7477a3))
+
+
+### Features
+
+* **Organisms/Table:** Correct sizing without gap ([6e5f556](https://github.com/Employes/Paperless/commit/6e5f5566c4b4e2efb0a3e27223cd69faa506c249))
+
+
+
+
+
 # [0.1.0-alpha.446](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.445...v0.1.0-alpha.446) (2023-05-11)
 
 **Note:** Version bump only for package @paperless/angular

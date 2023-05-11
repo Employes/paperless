@@ -439,7 +439,6 @@ export class Table implements OnInit, OnChanges {
         ) as TableColumn[];
         definitionsArray[definitionsArray.length - 1].isLast = true;
 
-        console.log(definitionsArray);
         this.columns = definitionsArray;
     }
 

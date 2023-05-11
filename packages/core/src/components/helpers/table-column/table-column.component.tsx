@@ -37,6 +37,11 @@ export class TableColumn {
         'start';
 
     /**
+     * Wether the column is the last in the row
+     */
+    @Prop({ reflect: true, mutable: true }) isLast: boolean = false;
+
+    /**
      * The sizes of the column
      */
     @Prop({ mutable: true }) sizes:

@@ -1158,6 +1158,10 @@ export namespace Components {
          */
         "hasCheckbox": boolean;
         /**
+          * Wether the column is the last in the row
+         */
+        "isLast": boolean;
+        /**
           * The name of the column
          */
         "name": string;
@@ -1169,7 +1173,8 @@ export namespace Components {
           * The sizes of the column
          */
         "sizes": | 'auto'
-        | 'hidden' | 'full'
+        | 'hidden'
+        | 'full'
         | number
         | TableColumnSizes;
         /**
@@ -3123,6 +3128,10 @@ declare namespace LocalJSX {
          */
         "hasCheckbox"?: boolean;
         /**
+          * Wether the column is the last in the row
+         */
+        "isLast"?: boolean;
+        /**
           * The name of the column
          */
         "name"?: string;
@@ -3138,7 +3147,8 @@ declare namespace LocalJSX {
           * The sizes of the column
          */
         "sizes"?: | 'auto'
-        | 'hidden' | 'full'
+        | 'hidden'
+        | 'full'
         | number
         | TableColumnSizes;
         /**

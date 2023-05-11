@@ -434,7 +434,13 @@ export class Table implements OnInit, OnChanges {
     private _generateColumns() {
         // const definitions =
         // 	this._el.nativeElement.querySelectorAll('p-table-definition');
-        this.columns = Array.from(this._columnDefinitions);
+        const definitionsArray = Array.from(
+            this._columnDefinitions
+        ) as TableColumn[];
+        definitionsArray[definitionsArray.length - 1].isLast = true;
+
+        console.log(definitionsArray);
+        this.columns = definitionsArray;
     }
 
     //  private _getHeader() {

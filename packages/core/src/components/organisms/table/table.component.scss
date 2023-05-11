@@ -1,3 +1,7 @@
 p-table {
     @apply flex flex-col;
+
+    .p-input[type='checkbox'] {
+        flex-shrink: 0;
+    }
 }

@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 import {
+    isTableColumnSizesKey,
+    objectGetByPath,
     TableColumnSizes,
     TableColumnSizesKey,
     TableDefinitionData,
-    isTableColumnSizesKey,
-    objectGetByPath,
 } from '@paperless/core';
 @Component({
     selector: 'p-table-cell-ngx',
@@ -116,6 +116,7 @@ export class TableCell {
                 this.variant !== 'header' && this.definition?.type === 'th',
             'text-storm-dark':
                 this.variant !== 'header' && this.definition?.type === 'th',
+            'pr-4': this.definition?.isLast === false,
             ...sizes,
         };
     }

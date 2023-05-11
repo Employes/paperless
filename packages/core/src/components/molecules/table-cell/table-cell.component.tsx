@@ -123,6 +123,7 @@ export class TableCell {
                 this.variant !== 'header' && this.definition?.type === 'th',
             'text-storm-dark':
                 this.variant !== 'header' && this.definition?.type === 'th',
+            'pr-4': this.definition.isLast === false,
             ...sizes,
         };
     }

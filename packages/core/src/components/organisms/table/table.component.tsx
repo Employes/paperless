@@ -438,7 +438,11 @@ export class Table {
 
     private _generateColumns() {
         const definitions = this._el.querySelectorAll('p-table-column');
-        this._columns = Array.from(definitions);
+        const definitionsArray = Array.from(definitions);
+
+        definitionsArray[definitionsArray.length - 1]['isLast'] = true;
+
+        this._columns = definitionsArray;
     }
 
     private _getHeader() {

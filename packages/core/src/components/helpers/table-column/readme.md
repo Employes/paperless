@@ -11,6 +11,7 @@
 | ------------- | -------------- | ----------------------------------------------------- | ------------------------------------------------------------ | ----------- |
 | `align`       | `align`        | The alignment of the column                           | `"center" \| "end" \| "start"`                               | `'start'`   |
 | `hasCheckbox` | `has-checkbox` | Wether the column should have a checkbox              | `boolean`                                                    | `false`     |
+| `isLast`      | `is-last`      | Wether the column is the last in the row              | `boolean`                                                    | `false`     |
 | `name`        | `name`         | The name of the column                                | `string`                                                     | `undefined` |
 | `path`        | `path`         | The path of the value of the item you want to display | `string`                                                     | `undefined` |
 | `sizes`       | `sizes`        | The sizes of the column                               | `"auto" \| "full" \| "hidden" \| TableColumnSizes \| number` | `'auto'`    |

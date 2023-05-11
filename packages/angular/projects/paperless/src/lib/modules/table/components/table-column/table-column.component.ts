@@ -5,6 +5,7 @@ import {
     ContentChild,
     ElementRef,
     EventEmitter,
+    Input,
     NgZone,
     TemplateRef,
 } from '@angular/core';
@@ -49,6 +50,8 @@ export declare interface PTableColumn extends Components.PTableColumn {
 })
 export class TableColumn {
     protected el: HTMLElement;
+
+    @Input() isLast = false;
 
     @ContentChild(TemplateRef, {
         read: TemplateRef,

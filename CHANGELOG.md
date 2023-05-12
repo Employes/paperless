@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.450](https://github.com/employes/paperless/compare/v0.1.0-alpha.449...v0.1.0-alpha.450) (2023-05-12)
+
+
+### Features
+
+* **Atoms/Tooltip:** Add `error-element` varaiant ([e55deb9](https://github.com/employes/paperless/commit/e55deb97871c0b80f1fca3d311bccb4f0d7c50b5))
+* **Molecules/Input Group:** Add element error when smaller than 72px ([3b32f6a](https://github.com/employes/paperless/commit/3b32f6aed57dff172b3c3813510b700a07b8f6b7))
+
+
+
+
+
 # [0.1.0-alpha.449](https://github.com/employes/paperless/compare/v0.1.0-alpha.448...v0.1.0-alpha.449) (2023-05-12)
 
 **Note:** Version bump only for package paperless

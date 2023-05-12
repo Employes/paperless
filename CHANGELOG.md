@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.451](https://github.com/employes/paperless/compare/v0.1.0-alpha.450...v0.1.0-alpha.451) (2023-05-12)
+
+
+### Features
+
+* **Atoms/Icon:** Update bread, car & search svg ([78ae7d4](https://github.com/employes/paperless/commit/78ae7d4bb74eb89f10be5a50d268adcdf84308e2))
+
+
+
+
+
 # [0.1.0-alpha.450](https://github.com/employes/paperless/compare/v0.1.0-alpha.449...v0.1.0-alpha.450) (2023-05-12)
 
 

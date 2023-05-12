@@ -98,6 +98,11 @@ export class Datepicker {
     @Prop() helper: string;
 
     /**
+     * Wether the field is required
+     */
+    @Prop({ reflect: true }) required: boolean;
+
+    /**
      * The helper of the input group used by the datepicker
      */
     @Prop({ reflect: true }) error: string;
@@ -248,6 +253,7 @@ export class Datepicker {
                         prefix={this.prefix}
                         label={this.label}
                         helper={this.helper}
+                        required={this.required}
                         error={this.error}
                         disabled={this.disabled}
                         focused={this._showDropdown}

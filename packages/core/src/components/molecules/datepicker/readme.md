@@ -28,6 +28,7 @@
 | `placeholder`     | `placeholder`      | The placeholder of the input                              | `string`                         | `undefined`    |
 | `prefix`          | `prefix`           | The prefix of the input group used by the datepicker      | `string`                         | `undefined`    |
 | `preselectToday`  | `preselect-today`  | Wethter to automatically preselect today                  | `boolean`                        | `false`        |
+| `required`        | `required`         | Wether the field is required                              | `boolean`                        | `undefined`    |
 | `size`            | `size`             | The size of the input group used by the datepicker        | `"medium" \| "small"`            | `'medium'`     |
 | `value`           | --                 | The current value                                         | `Date`                           | `undefined`    |
 
@@ -55,6 +56,7 @@ graph TD;
   p-datepicker --> p-calendar
   p-dropdown --> p-dropdown-menu-container
   p-input-group --> p-helper
+  p-input-group --> p-tooltip
   p-input-group --> p-icon
   p-input-group --> p-input-error
   p-helper --> p-tooltip

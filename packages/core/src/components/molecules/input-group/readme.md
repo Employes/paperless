@@ -36,6 +36,7 @@
 ### Depends on
 
 - [p-helper](../../atoms/helper)
+- [p-tooltip](../../atoms/tooltip)
 - [p-icon](../../atoms/icon)
 - [p-input-error](../input-error)
 
@@ -43,6 +44,7 @@
 ```mermaid
 graph TD;
   p-input-group --> p-helper
+  p-input-group --> p-tooltip
   p-input-group --> p-icon
   p-input-group --> p-input-error
   p-helper --> p-tooltip

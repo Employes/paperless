@@ -13,7 +13,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Disabled
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group disabled>
             <span slot="label">Name</span>
             <input
@@ -29,7 +29,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Default
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group>
             <span slot="label">Name</span>
             <input
@@ -45,7 +45,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Focus
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group focused>
             <span slot="label">Name</span>
             <input
@@ -61,7 +61,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Error
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group error="Invalid">
             <span slot="label">Name</span>
             <input
@@ -74,6 +74,16 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
     </div>
 </Canvas>
 
+### Error small
+
+<Canvas>
+    <div class="flex h-32 items-center px-10">
+        <p-input-group class="w-16" error="Invalid">
+            <input class="p-input" slot="input" type="text" placeholder="0.0" />
+        </p-input-group>
+    </div>
+</Canvas>
+
 ## Prefix & Suffix
 
 ### Prefix
@@ -81,7 +91,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 #### Icon
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Name" icon="person">
             <input
                 class="p-input"
@@ -96,7 +106,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 #### Text
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Name" prefix="#">
             <input
                 class="p-input"
@@ -113,7 +123,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 #### Text
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Name" suffix="#">
             <input
                 class="p-input"
@@ -128,7 +138,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 #### Text with error
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Name" suffix="#" error="Not a number">
             <input
                 class="p-input"
@@ -145,7 +155,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Default
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group helper="The on your birth certificate." label="Name">
             <textarea
                 class="p-input"
@@ -159,7 +169,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Slotted
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Name">
             <textarea
                 class="p-input"
@@ -178,7 +188,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### Custom header item
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Password">
             <input
                 class="p-input"
@@ -190,7 +200,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
                 slot="header"
                 variant="text"
                 size="small"
-                class="-mt-2 -mb-2"
+                class="-mb-2 -mt-2"
             >
                 Password forgotten?
             </p-button>
@@ -201,7 +211,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
 ### With helper
 
 <Canvas>
-    <div class="flex items-center h-32 px-10">
+    <div class="flex h-32 items-center px-10">
         <p-input-group label="Password" helper="I am helping!">
             <input
                 class="p-input"
@@ -213,7 +223,7 @@ import InputGroupDocs from '../../../packages/core/src/components/molecules/inpu
                 slot="header"
                 variant="text"
                 size="small"
-                class="-mt-2 -mb-2"
+                class="-mb-2 -mt-2"
             >
                 Password forgotten?
             </p-button>

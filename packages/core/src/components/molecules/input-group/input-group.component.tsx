@@ -105,6 +105,7 @@ export class InputGroup {
             prefix,
             suffix,
             errorAndErrorIsNotBoolean,
+            errorVariant,
         } = this._getSlotInfo();
 
         return (
@@ -142,52 +143,68 @@ export class InputGroup {
                         </div>
                     )}
                 </div>
-                <div class="content">
-                    {(prefix ||
-                        (this.icon && this.iconPosition === 'start')) && (
-                        <div
-                            class={`prefix size-${this.size}`}
-                            onClick={() => this._focusInput()}
-                        >
-                            {this.icon && this.iconPosition === 'start' ? (
-                                <p-icon
-                                    class="flex"
-                                    variant={this.icon}
-                                    rotate={this.iconRotate}
-                                    flip={this.iconFlip}
-                                />
-                            ) : (
-                                prefix
-                            )}
-                        </div>
-                    )}
-                    {(suffix ||
-                        errorAndErrorIsNotBoolean ||
-                        (this.icon && this.iconPosition === 'end')) && (
-                        <div
-                            class={`suffix size-${this.size}`}
-                            onClick={() => this._focusInput()}
-                        >
-                            {errorAndErrorIsNotBoolean ? (
-                                <p-input-error
-                                    error={this.error}
-                                    forceShowTooltip={this._forceShowTooltip}
-                                />
-                            ) : this.icon && this.iconPosition === 'end' ? (
-                                <p-icon
-                                    class="flex"
-                                    variant={this.icon}
-                                    rotate={this.iconRotate}
-                                    flip={this.iconFlip}
-                                />
-                            ) : (
-                                suffix
-                            )}
-                        </div>
-                    )}
+                <p-tooltip
+                    class="w-full"
+                    variant="error-element"
+                    popover={this.error}
+                    show={
+                        errorAndErrorIsNotBoolean &&
+                        errorVariant === 'element' &&
+                        this._forceShowTooltip
+                    }
+                    enableUserInput={false}
+                >
+                    <div class="content" slot="content">
+                        {(prefix ||
+                            (this.icon && this.iconPosition === 'start')) && (
+                            <div
+                                class={`prefix size-${this.size}`}
+                                onClick={() => this._focusInput()}
+                            >
+                                {this.icon && this.iconPosition === 'start' ? (
+                                    <p-icon
+                                        class="flex"
+                                        variant={this.icon}
+                                        rotate={this.iconRotate}
+                                        flip={this.iconFlip}
+                                    />
+                                ) : (
+                                    prefix
+                                )}
+                            </div>
+                        )}
+                        {(suffix ||
+                            (errorAndErrorIsNotBoolean &&
+                                errorVariant === 'icon') ||
+                            (this.icon && this.iconPosition === 'end')) && (
+                            <div
+                                class={`suffix size-${this.size}`}
+                                onClick={() => this._focusInput()}
+                            >
+                                {errorAndErrorIsNotBoolean &&
+                                errorVariant === 'icon' ? (
+                                    <p-input-error
+                                        error={this.error}
+                                        forceShowTooltip={
+                                            this._forceShowTooltip
+                                        }
+                                    />
+                                ) : this.icon && this.iconPosition === 'end' ? (
+                                    <p-icon
+                                        class="flex"
+                                        variant={this.icon}
+                                        rotate={this.iconRotate}
+                                        flip={this.iconFlip}
+                                    />
+                                ) : (
+                                    suffix
+                                )}
+                            </div>
+                        )}
 
-                    <slot name="input" />
-                </div>
+                        <slot name="input" />
+                    </div>
+                </p-tooltip>
             </Host>
         );
     }
@@ -217,12 +234,12 @@ export class InputGroup {
             input.classList.add('p-input');
         }
 
-        const { prefix, suffix, errorAndErrorIsNotBoolean } =
+        const { prefix, suffix, errorAndErrorIsNotBoolean, errorVariant } =
             this._getSlotInfo();
 
         if (
             suffix ||
-            errorAndErrorIsNotBoolean ||
+            (errorAndErrorIsNotBoolean && errorVariant === 'icon') ||
             (this.icon && this.iconPosition === 'end')
         ) {
             input.classList.add(
@@ -303,6 +320,7 @@ export class InputGroup {
             prefix,
             suffix,
             errorAndErrorIsNotBoolean,
+            errorVariant: this._el.offsetWidth <= 72 ? 'element' : 'icon',
         };
     }
 

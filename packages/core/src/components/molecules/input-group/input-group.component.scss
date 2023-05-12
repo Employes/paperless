@@ -19,7 +19,7 @@
     }
 
     .content {
-        @apply flex;
+        @apply flex w-full;
 
         .prefix,
         .suffix {

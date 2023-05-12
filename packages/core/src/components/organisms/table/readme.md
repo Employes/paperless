@@ -106,6 +106,7 @@ graph TD;
   p-table-header --> p-label
   p-segment-item --> p-icon
   p-input-group --> p-helper
+  p-input-group --> p-tooltip
   p-input-group --> p-icon
   p-input-group --> p-input-error
   p-helper --> p-tooltip

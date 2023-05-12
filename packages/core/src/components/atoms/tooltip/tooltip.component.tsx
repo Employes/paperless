@@ -115,7 +115,7 @@ export class Tooltip {
 
     @Listen('click', { target: 'document', capture: true })
     protected documentClickHandler() {
-        if (this.variant === 'hover' || !this.canManuallyClose) {
+        if (this.variant === 'hover' || !this.canManuallyClose || this.show) {
             return;
         }
 

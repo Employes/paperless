@@ -34,7 +34,12 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip variant="error" show={true} popover="I am not dismissable">
+        <p-tooltip
+            variant="error"
+            show={true}
+            can-manually-close={false}
+            popover="I am not dismissable"
+        >
             <span slot="content">
                 I have an error I have an error I have an error I have an error
                 I have an error I have an error I have an error

@@ -312,6 +312,10 @@ export namespace Components {
          */
         "preselectToday": boolean;
         /**
+          * Wether the field is required
+         */
+        "required": boolean;
+        /**
           * The size of the input group used by the datepicker
          */
         "size": 'small' | 'medium';
@@ -881,6 +885,10 @@ export namespace Components {
          */
         "queryKey"?: string;
         /**
+          * Wether the field is required
+         */
+        "required": boolean;
+        /**
           * Wether to show the chevron or not
          */
         "showChevron": boolean;
@@ -1340,6 +1348,10 @@ export namespace Components {
          */
         "canManuallyClose": boolean;
         /**
+          * Wether the tooltip can be shown by user input
+         */
+        "enableUserInput": boolean;
+        /**
           * The placement of the popover
          */
         "placement": Placement;
@@ -1358,7 +1370,7 @@ export namespace Components {
         /**
           * The variant of the popover
          */
-        "variant": 'hover' | 'click' | 'error';
+        "variant": 'hover' | 'click' | 'error' | 'error-element';
     }
 }
 export interface PAccordionCustomEvent<T> extends CustomEvent<T> {
@@ -2179,6 +2191,10 @@ declare namespace LocalJSX {
          */
         "preselectToday"?: boolean;
         /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
+        /**
           * The size of the input group used by the datepicker
          */
         "size"?: 'small' | 'medium';
@@ -2799,6 +2815,10 @@ declare namespace LocalJSX {
          */
         "queryKey"?: string;
         /**
+          * Wether the field is required
+         */
+        "required"?: boolean;
+        /**
           * Wether to show the chevron or not
          */
         "showChevron"?: boolean;
@@ -3346,6 +3366,10 @@ declare namespace LocalJSX {
          */
         "canManuallyClose"?: boolean;
         /**
+          * Wether the tooltip can be shown by user input
+         */
+        "enableUserInput"?: boolean;
+        /**
           * Open change event
          */
         "onIsOpen"?: (event: PTooltipCustomEvent<boolean>) => void;
@@ -3368,7 +3392,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the popover
          */
-        "variant"?: 'hover' | 'click' | 'error';
+        "variant"?: 'hover' | 'click' | 'error' | 'error-element';
     }
     interface IntrinsicElements {
         "p-accordion": PAccordion;

@@ -28,7 +28,7 @@ export class Tooltip {
     /**
      * The variant of the popover
      */
-    @Prop() variant: 'hover' | 'click' | 'error' = 'hover';
+    @Prop() variant: 'hover' | 'click' | 'error' | 'error-element' = 'hover';
 
     /**
      * The content of the popover
@@ -44,6 +44,11 @@ export class Tooltip {
      * The strategy of the popover placement
      */
     @Prop() strategy: Strategy = 'absolute';
+
+    /**
+     * Wether the tooltip can be shown by user input
+     */
+    @Prop() enableUserInput: boolean = true;
 
     /**
      * Wether to show the popover
@@ -102,7 +107,7 @@ export class Tooltip {
 
     @Listen('click', { capture: true })
     protected clickHandler() {
-        if (this.variant === 'hover') {
+        if (this.variant === 'hover' || !this.enableUserInput) {
             return;
         }
 
@@ -129,7 +134,7 @@ export class Tooltip {
     @Listen('mouseenter')
     @Listen('focus')
     protected mouseEnterHandler() {
-        if (this.variant !== 'hover') {
+        if (this.variant !== 'hover' || !this.enableUserInput) {
             return;
         }
 
@@ -139,7 +144,7 @@ export class Tooltip {
     @Listen('mouseleave')
     @Listen('blur')
     protected mouseLeaveHandler() {
-        if (this.show || this.variant !== 'hover') {
+        if (this.show || this.variant !== 'hover' || !this.enableUserInput) {
             return;
         }
 
@@ -199,7 +204,7 @@ export class Tooltip {
         }
 
         computePosition(this._el, this._popover, {
-            placement: this.variant === 'error' ? 'top-end' : this.placement,
+            placement: this.variant === 'error' || this.variant === 'error-element' ? 'top-end' : this.placement,
             strategy: this.strategy,
 
             middleware: [
@@ -220,7 +225,7 @@ export class Tooltip {
 
                 Object.assign(arrowEl.style, {
                     left:
-                        this.variant === 'error'
+                        this.variant === 'error' || this.variant === 'error-element'
                             ? placement.indexOf('start') >= 0
                                 ? '1rem'
                                 : 'calc(100% - 1rem)'

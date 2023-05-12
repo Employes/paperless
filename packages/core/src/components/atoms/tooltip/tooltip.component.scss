@@ -9,11 +9,12 @@
             max-width: 14.5rem;
 
             &.variant-hover,
-            &.variant-error {
+            &.variant-error,
+            &.variant-error-element {
                 @apply bg-storm py-1 text-white;
             }
 
-            &.variant-error {
+            &.variant-error, &.variant-error-element {
                 @apply bg-negative uppercase tracking-wider;
             }
 

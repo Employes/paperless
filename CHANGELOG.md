@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.448](https://github.com/employes/paperless/compare/v0.1.0-alpha.447...v0.1.0-alpha.448) (2023-05-12)
+
+
+### Bug Fixes
+
+* **Molecules/Datepicker:** Add required property to pass to input group ([061f42a](https://github.com/employes/paperless/commit/061f42acda006195fc1f4f04f4efb85d328697dd))
+* **Molecules/Select:** Add required property to pass to input group ([6b0427d](https://github.com/employes/paperless/commit/6b0427d99d70c3eac400b44cbf5b6649a7f72192))
+
+
+
+
+
 # [0.1.0-alpha.447](https://github.com/employes/paperless/compare/v0.1.0-alpha.446...v0.1.0-alpha.447) (2023-05-11)
 
 

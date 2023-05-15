@@ -383,19 +383,21 @@ export class Table implements OnInit, OnChanges {
         this._ctrlDown = false;
     }
 
-    onQueryChange({ detail }: CustomEvent<string>) {
+    onQueryChange({ detail }: any) {
         this.queryChange.emit(detail);
     }
 
-    onQuickFilter({ detail }: CustomEvent<any>) {
+    onQuickFilter({ detail }: any) {
         this.quickFilter.emit(detail);
     }
 
-    onPageSizeChange({ detail }: CustomEvent<number>) {
+    onPageSizeChange({ detail }: any) {
+        this.pageSize = detail;
         this.pageSizeChange.emit(detail);
     }
 
-    onPageChange({ detail }: CustomEvent<number>) {
+    onPageChange({ detail }: any) {
+        this.page = detail;
         this.pageChange.emit(detail);
     }
 

@@ -56,12 +56,24 @@ export abstract class BaseTableComponent
         return this.tableOptions.value.pageSize;
     }
 
+    set pageSize(pageSize: number) {
+        this.tableValues = {
+            pageSize,
+        };
+    }
+
     get page() {
         if (!this.tableOptions) {
             return this._defaultTableValues.page;
         }
 
         return this.tableOptions.value.page;
+    }
+
+    set page(page: number) {
+        this.tableValues = {
+            page,
+        };
     }
 
     get quickFilter() {
@@ -163,14 +175,7 @@ export abstract class BaseTableComponent
                     }
 
                     return timer(0);
-                }),
-                filter(
-                    (changes: any) =>
-                        !(
-                            changes?.selected &&
-                            Object.keys(changes)?.length === 1
-                        )
-                )
+                })
             )
             .subscribe((changes: TableOptions) => {
                 if (changes?.page) {
@@ -237,8 +242,7 @@ export abstract class BaseTableComponent
         }
 
         if (this.page !== 1) {
-            this.tableOptions.get('page')?.setValue(1);
-            return;
+            this.page = 1;
         }
 
         this._refresh();

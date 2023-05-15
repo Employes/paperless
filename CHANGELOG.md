@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.453](https://github.com/employes/paperless/compare/v0.1.0-alpha.452...v0.1.0-alpha.453) (2023-05-15)
+
+
+### Features
+
+* **Angular/Table:** Correctly set page on changes ([5a757e8](https://github.com/employes/paperless/commit/5a757e89cd160d598f61385032f59631f76207eb))
+
+
+
+
+
 # [0.1.0-alpha.452](https://github.com/employes/paperless/compare/v0.1.0-alpha.451...v0.1.0-alpha.452) (2023-05-15)
 
 

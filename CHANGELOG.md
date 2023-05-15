@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.452](https://github.com/employes/paperless/compare/v0.1.0-alpha.451...v0.1.0-alpha.452) (2023-05-15)
+
+
+### Bug Fixes
+
+* **Atoms/Input:** Fix placeholder text size for small variant ([aae512a](https://github.com/employes/paperless/commit/aae512a7f4b91211e6b851a306c62834d010f749))
+
+
+
+
+
 # [0.1.0-alpha.451](https://github.com/employes/paperless/compare/v0.1.0-alpha.450...v0.1.0-alpha.451) (2023-05-12)
 
 

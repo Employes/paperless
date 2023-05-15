@@ -107,4 +107,8 @@
 @mixin inputSizeSmall {
     @apply text-sm;
     @apply h-8  #{!important};
+
+    &::placeholder {
+        @apply text-sm;
+    }
 }

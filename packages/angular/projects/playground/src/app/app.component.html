@@ -9,7 +9,7 @@
         </p-profile>
 
         <div class="flex flex-col" slot="content">
-            <p class="text-storm-vague text-xs font-semibold uppercase mb-2">
+            <p class="mb-2 text-xs font-semibold uppercase text-storm-vague">
                 Overview
             </p>
             <p-navigation-item
@@ -23,11 +23,12 @@
 
             <p
                 class="
-                    text-storm-vague text-xs
-                    font-semibold
-                    uppercase
                     mb-2
                     mt-4
+                    text-xs
+                    font-semibold
+                    uppercase
+                    text-storm-vague
                 "
             >
                 Overlays
@@ -59,11 +60,12 @@
 
             <p
                 class="
-                    text-storm-vague text-xs
-                    font-semibold
-                    uppercase
                     mb-2
                     mt-4
+                    text-xs
+                    font-semibold
+                    uppercase
+                    text-storm-vague
                 "
             >
                 Components
@@ -75,6 +77,14 @@
                 [routerLinkActiveOptions]="{ exact: true }"
             >
                 Table
+            </p-navigation-item>
+            <p-navigation-item
+                icon="calendar"
+                routerLink="./datepicker"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                Datepicker
             </p-navigation-item>
         </div>
     </p-navbar>

@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaperlessModule } from 'projects/paperless/src/public-api';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DatepickerComponent } from './features/datepicker/datepicker.component';
 import { DrawerComponent } from './features/drawer/drawer.component';
 import { TestDrawerComponent } from './features/drawer/test-drawer.component';
 import { HomeComponent } from './features/home/home.component';
@@ -24,10 +26,13 @@ import { ToastComponent } from './features/toast/toast.component';
         DrawerComponent,
         ToastComponent,
         TableComponent,
+        DatepickerComponent,
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         PaperlessModule.forRoot(),
     ],

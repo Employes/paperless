@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DatepickerComponent } from './features/datepicker/datepicker.component';
 import { DrawerComponent } from './features/drawer/drawer.component';
 import { HomeComponent } from './features/home/home.component';
 import { ModalComponent } from './features/modal/modal.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'table',
         component: TableComponent,
+    },
+    {
+        path: 'datepicker',
+        component: DatepickerComponent,
     },
 ];
 

@@ -92,7 +92,6 @@ export class TableCell {
                     <div
                         class={{
                             flex: true,
-                            'overflow-hidden': true,
                             'justify-start': this.definition.align === 'start',
                             'justify-center':
                                 this.definition.align === 'center',

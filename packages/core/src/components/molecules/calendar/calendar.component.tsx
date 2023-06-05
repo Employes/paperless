@@ -116,6 +116,14 @@ export class Calendar {
         if (this._value) {
             this._viewDate = this._value;
         }
+
+        if (isBefore(this._viewDate, this._minDate)) {
+            this._viewDate = this._minDate;
+        }
+
+        if (isAfter(this._viewDate, this._maxDate)) {
+            this._viewDate = this._maxDate;
+        }
     }
 
     componentDidRender() {
@@ -148,6 +156,10 @@ export class Calendar {
         }
 
         this._minDate = minDate;
+
+        if (isBefore(this._viewDate, this._minDate)) {
+            this._viewDate = this._minDate;
+        }
     }
 
     @Watch('maxDate')
@@ -161,6 +173,10 @@ export class Calendar {
         }
 
         this._maxDate = maxDate;
+
+        if (isAfter(this._viewDate, this._maxDate)) {
+            this._viewDate = this._maxDate;
+        }
     }
 
     @Watch('disabledDates')
@@ -526,7 +542,7 @@ export class Calendar {
             const newDate = addMonths(this._viewDate, amount);
             const startNewDate = startOfMonth(newDate);
             if (
-                (isBefore(startNewDate, this._minDate) &&
+                (isBefore(startNewDate, startOfMonth(this._minDate)) &&
                     !isSameDay(startNewDate, this._minDate)) ||
                 isAfter(startNewDate, endOfMonth(this._maxDate))
             ) {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.455](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.454...v0.1.0-alpha.455) (2023-06-05)
+
+
+### Bug Fixes
+
+* **Angular/Table/Cell:** Remove `overflow-hidden` ([fb11bc5](https://github.com/Employes/Paperless/commit/fb11bc581e17cd1df5cc34a260905ec4d70955e7))
+
+
+
+
+
 # [0.1.0-alpha.454](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.453...v0.1.0-alpha.454) (2023-06-05)
 
 **Note:** Version bump only for package @paperless/angular

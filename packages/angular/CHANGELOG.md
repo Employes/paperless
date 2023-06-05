@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.456](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.455...v0.1.0-alpha.456) (2023-06-05)
+
+
+### Features
+
+* **Angular/Playground:** Add datepicker to playground ([64c5f61](https://github.com/Employes/Paperless/commit/64c5f61fee7dca88e3a735bd1721dc183c064d66))
+
+
+
+
+
 # [0.1.0-alpha.455](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.454...v0.1.0-alpha.455) (2023-06-05)
 
 

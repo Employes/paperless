@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.456](https://github.com/employes/paperless/compare/v0.1.0-alpha.455...v0.1.0-alpha.456) (2023-06-05)
+
+
+### Bug Fixes
+
+* **Molecules/Calendar:** Make sure view is updated when min/max date changes ([1ba5770](https://github.com/employes/paperless/commit/1ba5770bc596a2c59caa594d522422e29d17a8c6))
+
+
+### Features
+
+* **Angular/Playground:** Add datepicker to playground ([64c5f61](https://github.com/employes/paperless/commit/64c5f61fee7dca88e3a735bd1721dc183c064d66))
+
+
+
+
+
 # [0.1.0-alpha.455](https://github.com/employes/paperless/compare/v0.1.0-alpha.454...v0.1.0-alpha.455) (2023-06-05)
 
 

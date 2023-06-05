@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.454](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.453...v0.1.0-alpha.454) (2023-06-05)
+
+**Note:** Version bump only for package @paperless/conventions
+
+
+
+
+
 # [0.1.0-alpha.453](https://github.com/Employes/Paperless/compare/v0.1.0-alpha.452...v0.1.0-alpha.453) (2023-05-15)
 
 **Note:** Version bump only for package @paperless/conventions

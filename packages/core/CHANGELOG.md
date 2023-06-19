@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.456...v1.0.1) (2023-06-19)
+
+
+### Bug Fixes
+
+* **Molecules/Page size select:** Use option in the template ([c9676ec](https://github.com/ionic-team/stencil-component-starter/commit/c9676ec0ec00c393fc6e86861e0d82148c0175b4))
+
+
+
+
+
 # [0.1.0-alpha.456](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.455...v0.1.0-alpha.456) (2023-06-05)
 
 

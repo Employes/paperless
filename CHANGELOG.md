@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/employes/paperless/compare/v0.1.0-alpha.456...v1.0.1) (2023-06-19)
+
+
+### Bug Fixes
+
+* **Molecules/Page size select:** Use option in the template ([c9676ec](https://github.com/employes/paperless/commit/c9676ec0ec00c393fc6e86861e0d82148c0175b4))
+
+
+### Features
+
+* 1.0.0 release! ([318643a](https://github.com/employes/paperless/commit/318643a4059b64ec941b6b5a6e65c572a681a276))
+
+
+
+
+
 # [0.1.0-alpha.456](https://github.com/employes/paperless/compare/v0.1.0-alpha.455...v0.1.0-alpha.456) (2023-06-05)
 
 

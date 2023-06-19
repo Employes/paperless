@@ -104,7 +104,7 @@ export class PageSizeSelect {
                                 onClick={() => this._changeSize(option)}
                             >
                                 {this.itemTemplate
-                                    ? this.itemTemplate(this.size)
+                                    ? this.itemTemplate(option)
                                     : this._defaultItemTemplate(option)}
                             </p-dropdown-menu-item>
                         ))}

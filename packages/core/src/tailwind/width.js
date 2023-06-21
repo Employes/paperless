@@ -16,5 +16,9 @@ module.exports = {
         // login variant
         'sidebar-desktop-login': '100%',
         'content-desktop-login': '30rem',
+
+        // office variant
+        'sidebar-office-desktop': '19.5rem',
+        'sidebar-office-desktop-minimal': '4.5rem'
     },
 };

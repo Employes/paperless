@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.0.1...v1.1.0) (2023-06-21)
+
+
+### Features
+
+* **Atoms/Icons:** Add 2 font awesome buildings temporarily ([a6bc734](https://github.com/ionic-team/stencil-component-starter/commit/a6bc73479d31fa469444cdab7eded7d1040454cc))
+
+
+
+
+
 ## [1.0.1](https://github.com/ionic-team/stencil-component-starter/compare/v0.1.0-alpha.456...v1.0.1) (2023-06-19)
 
 

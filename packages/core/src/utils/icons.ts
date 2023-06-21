@@ -17,6 +17,7 @@ import explanation from '../assets/icons/explanation.svg';
 import eye from '../assets/icons/eye.svg';
 import faBuilding from '../assets/icons/fa/building.svg';
 import faBuildings from '../assets/icons/fa/buildings.svg';
+import faPiggy from '../assets/icons/fa/piggy.svg';
 import filter from '../assets/icons/filter.svg';
 import folder from '../assets/icons/folder.svg';
 import grid from '../assets/icons/grid.svg';
@@ -73,6 +74,7 @@ export default {
     eye,
     faBuilding,
     faBuildings,
+    faPiggy,
     filter,
     folder,
     grid,

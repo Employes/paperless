@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/employes/paperless/compare/v1.1.0...v1.2.0) (2023-06-21)
+
+
+### Features
+
+* **Atoms/Icons:** Add font awesome piggy temporarily ([9f5620f](https://github.com/employes/paperless/commit/9f5620f74c352295ba0c1f652ca9334f76749054))
+
+
+
+
+
 # [1.1.0](https://github.com/employes/paperless/compare/v1.0.1...v1.1.0) (2023-06-21)
 
 

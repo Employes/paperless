@@ -15,6 +15,8 @@ import download from '../assets/icons/download.svg';
 import envelope from '../assets/icons/envelope.svg';
 import explanation from '../assets/icons/explanation.svg';
 import eye from '../assets/icons/eye.svg';
+import faBuilding from '../assets/icons/fa/building.svg';
+import faBuildings from '../assets/icons/fa/buildings.svg';
 import filter from '../assets/icons/filter.svg';
 import folder from '../assets/icons/folder.svg';
 import grid from '../assets/icons/grid.svg';
@@ -69,6 +71,8 @@ export default {
     envelope,
     explanation,
     eye,
+    faBuilding,
+    faBuildings,
     filter,
     folder,
     grid,

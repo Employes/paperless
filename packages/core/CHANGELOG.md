@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.2.0...v1.3.0) (2023-06-21)
+
+
+### Features
+
+* **Atoms/Layout:** Add sidebar width for office ([833a54c](https://github.com/ionic-team/stencil-component-starter/commit/833a54c656298da24a28b1fbd2742db21de9d302))
+
+
+
+
+
 # [1.2.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.1.0...v1.2.0) (2023-06-21)
 
 

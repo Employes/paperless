@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/Employes/Paperless/compare/v1.3.1...v1.3.2) (2023-06-22)
+
+
+### Bug Fixes
+
+* **Angular/Table/Utils:** Don't skip numbers because it fails the .length check ([f92fd28](https://github.com/Employes/Paperless/commit/f92fd28016c4c0068b22f690698da75ace2245c5))
+
+
+
+
+
 ## [1.3.1](https://github.com/Employes/Paperless/compare/v1.3.0...v1.3.1) (2023-06-22)
 
 

@@ -13,6 +13,7 @@ export const createFormFilters = (
         if (
             key !== quickFilterKey &&
             !(value instanceof Date) &&
+            isNaN(value) &&
             !value?.length
         ) {
             continue;

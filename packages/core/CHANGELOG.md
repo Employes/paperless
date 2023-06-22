@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.3.0...v1.3.1) (2023-06-22)
+
+
+### Bug Fixes
+
+* Remove event bubbling ([2b71774](https://github.com/ionic-team/stencil-component-starter/commit/2b7177489ac9fa21f95a3fc8170474f6366f2cce))
+
+
+
+
+
 # [1.3.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.2.0...v1.3.0) (2023-06-21)
 
 

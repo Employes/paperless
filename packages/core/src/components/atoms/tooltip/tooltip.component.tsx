@@ -6,7 +6,7 @@ import {
     offset,
     Placement,
     shift,
-    Strategy,
+    Strategy
 } from '@floating-ui/dom';
 import {
     Component,
@@ -16,7 +16,7 @@ import {
     h,
     Host,
     Listen,
-    Prop,
+    Prop
 } from '@stencil/core';
 
 @Component({
@@ -63,7 +63,9 @@ export class Tooltip {
     /**
      * Open change event
      */
-    @Event() isOpen: EventEmitter<boolean>;
+    @Event({
+        bubbles: false
+    }) isOpen: EventEmitter<boolean>;
 
     /**
      * The host element

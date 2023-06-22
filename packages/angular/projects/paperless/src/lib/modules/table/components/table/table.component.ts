@@ -11,18 +11,18 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef,
+    TemplateRef
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
 import {
     IconVariant,
-    IllustrationVariant,
+    IllustrationVariant
 } from '@paperless/core/dist/types/components';
 import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import {
     TableCustomFilterDirective,
-    TableFilterModalDirective,
+    TableFilterModalDirective
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';

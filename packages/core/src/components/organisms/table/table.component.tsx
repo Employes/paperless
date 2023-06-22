@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import { IconVariant } from '../../../components';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
@@ -16,7 +16,7 @@ import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
 import {
     defaultSize,
-    defaultSizeOptions,
+    defaultSizeOptions
 } from '../../molecules/page-size-select/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
 
@@ -70,7 +70,9 @@ export class Table {
     /**
      * Event whenever the current selection changes
      */
-    @Event() selectedRowsChange: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) selectedRowsChange: EventEmitter<any>;
 
     /**
      * The key to determine if a row is selected
@@ -85,22 +87,30 @@ export class Table {
     /**
      * Event whenever a row is clicked
      */
-    @Event() rowClick: EventEmitter<RowClickEvent>;
+    @Event({
+        bubbles: false
+    }) rowClick: EventEmitter<RowClickEvent>;
 
     /**
      * Event whenever a row is selected
      */
-    @Event() rowSelected: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) rowSelected: EventEmitter<any>;
 
     /**
      * Event whenever a row is deselected
      */
-    @Event() rowDeselected: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) rowDeselected: EventEmitter<any>;
 
     /**
      * Event when the table has rendered
      */
-    @Event() hasRendered: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) hasRendered: EventEmitter<number>;
 
     /** START HEADER */
 
@@ -172,22 +182,30 @@ export class Table {
     /**
      * Event when one of the quick filters is clicked
      */
-    @Event() quickFilter: EventEmitter<QuickFilter>;
+    @Event({
+        bubbles: false
+    }) quickFilter: EventEmitter<QuickFilter>;
 
     /**
      * Event when the query changes
      */
-    @Event() queryChange: EventEmitter<string>;
+    @Event({
+        bubbles: false
+    }) queryChange: EventEmitter<string>;
 
     /**
      * Event when the filter button is clicked
      */
-    @Event() filter: EventEmitter<null>;
+    @Event({
+        bubbles: false
+    }) filter: EventEmitter<null>;
 
     /**
      * Event when the edit button is clicked
      */
-    @Event() edit: EventEmitter<null>;
+    @Event({
+        bubbles: false
+    }) edit: EventEmitter<null>;
 
     /** START FOOTER */
 
@@ -224,7 +242,9 @@ export class Table {
     /**
      * Event whenever the page changes
      */
-    @Event() pageChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) pageChange: EventEmitter<number>;
 
     /**
      * The amount of items per page
@@ -239,12 +259,16 @@ export class Table {
     /**
      * Event whenever the page changes
      */
-    @Event() pageSizeChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) pageSizeChange: EventEmitter<number>;
 
     /**
      * Event whenever the page changes
      */
-    @Event() export: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) export: EventEmitter<number>;
 
     /**
      * Wether to hide when there is only 1 page available
@@ -271,7 +295,9 @@ export class Table {
     /**
      * Event whenever the empty state is clicked
      */
-    @Event() emptyStateActionClick: EventEmitter<null>;
+    @Event({
+        bubbles: false
+    }) emptyStateActionClick: EventEmitter<null>;
 
     /* Empty state end */
 

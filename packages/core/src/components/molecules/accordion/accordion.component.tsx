@@ -29,7 +29,9 @@ export class Accordion {
     /**
      * Open change event
      */
-    @Event() isOpen: EventEmitter<boolean>;
+    @Event({
+        bubbles: false
+    }) isOpen: EventEmitter<boolean>;
 
     render() {
         return (

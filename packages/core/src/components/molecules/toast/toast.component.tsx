@@ -46,7 +46,9 @@ export class Toast {
     /**
      * Button click event
      */
-    @Event() action: EventEmitter<MouseEvent>;
+    @Event({
+        bubbles: false
+    }) action: EventEmitter<MouseEvent>;
 
     render() {
         return (

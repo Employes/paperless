@@ -109,9 +109,3 @@
         @apply desktop-sm:w-sidebar-office-desktop;
     }
 }
-
-:host(.variant-office-minimal) {
-    .sidebar {
-        @apply desktop-sm:w-sidebar-office-desktop-minimal;
-    }
-}

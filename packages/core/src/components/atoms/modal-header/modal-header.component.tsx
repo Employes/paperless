@@ -14,7 +14,9 @@ export class ModalHeader {
     /**
      * Close click event
      */
-    @Event() close: EventEmitter<MouseEvent>;
+    @Event({
+        bubbles: false
+    }) close: EventEmitter<MouseEvent>;
 
     render() {
         return (

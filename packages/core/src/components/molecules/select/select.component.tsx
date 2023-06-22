@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
@@ -107,17 +107,23 @@ export class Select {
     /**
      * Event when the query of the autocomplete changes
      */
-    @Event() queryChange: EventEmitter<string>;
+    @Event({
+        bubbles: false
+    }) queryChange: EventEmitter<string>;
 
     /**
      * Event when the value changes
      */
-    @Event() valueChange: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) valueChange: EventEmitter<any>;
 
     /**
      * Event when the dropdown shows
      */
-    @Event() dropdownShown: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) dropdownShown: EventEmitter<any>;
 
     /**
      * The size of the input group used by the select

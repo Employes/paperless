@@ -6,7 +6,7 @@ import {
     h,
     Host,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 
 @Component({
@@ -53,7 +53,9 @@ export class Drawer {
     /**
      * Close click event
      */
-    @Event() closeClicked: EventEmitter<{
+    @Event({
+        bubbles: false
+    }) closeClicked: EventEmitter<{
         event: MouseEvent;
         canClose: boolean;
     }>;
@@ -61,7 +63,9 @@ export class Drawer {
     /**
      * Closed event
      */
-    @Event() closed: EventEmitter<null>;
+    @Event({
+        bubbles: false
+    }) closed: EventEmitter<null>;
 
     /**
      * The host element

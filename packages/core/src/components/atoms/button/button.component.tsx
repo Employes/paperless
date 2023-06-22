@@ -5,7 +5,7 @@ import {
     h,
     Host,
     Listen,
-    Prop,
+    Prop
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
@@ -89,7 +89,9 @@ export class Button {
     /**
      * Button click event
      */
-    @Event() onClick: EventEmitter<MouseEvent>;
+    @Event({
+        bubbles: false
+    }) onClick: EventEmitter<MouseEvent>;
 
     render() {
         let loaderColor: 'white' | 'storm' | 'indigo' = 'white';

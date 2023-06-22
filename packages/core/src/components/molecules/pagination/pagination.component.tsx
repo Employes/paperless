@@ -5,7 +5,7 @@ import {
     h,
     Host,
     Prop,
-    Watch,
+    Watch
 } from '@stencil/core';
 
 type PaginationSetItem = {
@@ -26,7 +26,9 @@ export class Pagination {
     /**
      * Event whenever the page changes
      */
-    @Event() pageChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) pageChange: EventEmitter<number>;
 
     /**
      * The amount of items per page

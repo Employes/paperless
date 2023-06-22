@@ -7,11 +7,11 @@ import {
     Host,
     Listen,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 import {
     formatTranslation,
-    getLocaleComponentStrings,
+    getLocaleComponentStrings
 } from '../../../utils/localization';
 import { defaultSize, defaultSizeOptions } from '../page-size-select/constants';
 
@@ -54,7 +54,9 @@ export class TableFooter {
     /**
      * Event whenever the page changes
      */
-    @Event() pageChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) pageChange: EventEmitter<number>;
 
     /**
      * The amount of items per page
@@ -69,12 +71,16 @@ export class TableFooter {
     /**
      * Event whenever the page changes
      */
-    @Event() pageSizeChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) pageSizeChange: EventEmitter<number>;
 
     /**
      * Event whenever the page changes
      */
-    @Event() export: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) export: EventEmitter<number>;
 
     /**
      * Wether to hide when there is only 1 page available

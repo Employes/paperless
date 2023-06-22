@@ -7,11 +7,11 @@ import {
     Host,
     Listen,
     Prop,
-    State,
+    State
 } from '@stencil/core';
 import {
     formatTranslation,
-    getLocaleComponentStrings,
+    getLocaleComponentStrings
 } from '../../../utils/localization';
 import { defaultSize, defaultSizeOptions } from './constants';
 
@@ -39,7 +39,9 @@ export class PageSizeSelect {
     /**
      * Event whenever the size changes
      */
-    @Event() sizeChange: EventEmitter<number>;
+    @Event({
+        bubbles: false
+    }) sizeChange: EventEmitter<number>;
 
     /**
      * Chevron position

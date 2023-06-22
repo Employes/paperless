@@ -9,7 +9,7 @@ export class Layout {
     /**
      * Variant of the layout
      */
-    @Prop() variant: 'default' | 'login' | 'office' | 'office-minimal' = 'default';
+    @Prop() variant: 'default' | 'login' | 'office' = 'default';
 
     render() {
         return (

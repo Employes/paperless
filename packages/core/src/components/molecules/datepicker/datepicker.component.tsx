@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import {
     format,
@@ -17,7 +17,7 @@ import {
     isSameDay,
     isValid,
     parse,
-    startOfDay,
+    startOfDay
 } from 'date-fns';
 import { childOf } from '../../../utils';
 
@@ -70,7 +70,9 @@ export class Datepicker {
     /**
      * Event when the value changes
      */
-    @Event() valueChange: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) valueChange: EventEmitter<any>;
 
     /**
      * The display & parse format to use

@@ -24,7 +24,9 @@ export class Attachment {
     /**
      * Event when download is pressed
      */
-    @Event() download: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) download: EventEmitter<any>;
 
     /**
      * Wether the attachment is downloading
@@ -34,7 +36,9 @@ export class Attachment {
     /**
      * Event when delete is pressed
      */
-    @Event() delete: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) delete: EventEmitter<any>;
 
     render() {
         let prefix = <p-icon variant="attachment" />;

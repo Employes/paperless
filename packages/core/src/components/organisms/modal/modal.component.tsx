@@ -62,12 +62,16 @@ export class Modal {
     /**
      * Close click event
      */
-    @Event() closeClicked: EventEmitter<MouseEvent>;
+    @Event({
+        bubbles: false
+    }) closeClicked: EventEmitter<MouseEvent>;
 
     /**
      * Closed event
      */
-    @Event() closed: EventEmitter<null>;
+    @Event({
+        bubbles: false
+    }) closed: EventEmitter<null>;
 
     /**
      * The host element

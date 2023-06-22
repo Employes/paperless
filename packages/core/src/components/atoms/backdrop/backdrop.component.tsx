@@ -6,7 +6,7 @@ import {
     h,
     Host,
     Listen,
-    Prop,
+    Prop
 } from '@stencil/core';
 
 @Component({
@@ -38,7 +38,9 @@ export class Backdrop {
     /**
      * When the backdrop is clicked
      */
-    @Event() clicked: EventEmitter<MouseEvent>;
+    @Event({
+        bubbles: false
+    }) clicked: EventEmitter<MouseEvent>;
 
     /**
      * The host element

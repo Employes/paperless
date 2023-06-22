@@ -7,7 +7,7 @@ import {
     Host,
     Prop,
     State,
-    Watch,
+    Watch
 } from '@stencil/core';
 import {
     addDays,
@@ -28,7 +28,7 @@ import {
     setMonth,
     setYear,
     startOfDay,
-    startOfMonth,
+    startOfMonth
 } from 'date-fns';
 
 @Component({
@@ -80,7 +80,9 @@ export class Calendar {
     /**
      * Event when the value changes
      */
-    @Event() valueChange: EventEmitter<any>;
+    @Event({
+        bubbles: false
+    }) valueChange: EventEmitter<any>;
 
     /**
      * The host element

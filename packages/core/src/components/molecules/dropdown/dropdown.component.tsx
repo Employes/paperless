@@ -5,7 +5,7 @@ import {
     offset,
     Placement,
     shift,
-    Strategy,
+    Strategy
 } from '@floating-ui/dom';
 import {
     Component,
@@ -16,7 +16,7 @@ import {
     Host,
     Listen,
     Prop,
-    Watch,
+    Watch
 } from '@stencil/core';
 import { childOf } from '../../../utils/child-of';
 
@@ -84,7 +84,9 @@ export class Dropdown {
     /**
      * Open change event
      */
-    @Event() isOpen: EventEmitter<boolean>;
+    @Event({
+        bubbles: false
+    }) isOpen: EventEmitter<boolean>;
 
     private _loaded = false;
     private _trigger: HTMLElement;

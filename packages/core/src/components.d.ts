@@ -597,7 +597,7 @@ export namespace Components {
         /**
           * Variant of the layout
          */
-        "variant": 'default' | 'login';
+        "variant": 'default' | 'login' | 'office';
     }
     interface PLoader {
         /**
@@ -2495,7 +2495,7 @@ declare namespace LocalJSX {
         /**
           * Variant of the layout
          */
-        "variant"?: 'default' | 'login';
+        "variant"?: 'default' | 'login' | 'office';
     }
     interface PLoader {
         /**

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/Employes/Paperless/compare/v1.3.2...v1.3.3) (2023-06-27)
+
+
+### Bug Fixes
+
+* **Angular/Table/Form Filters:** Skip null & undefined values ([b187363](https://github.com/Employes/Paperless/commit/b18736320bf83fcf02eae9dc3a1e033ae8d59827))
+
+
+
+
+
 ## [1.3.2](https://github.com/Employes/Paperless/compare/v1.3.1...v1.3.2) (2023-06-22)
 
 

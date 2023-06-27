@@ -11,10 +11,12 @@ export const createFormFilters = (
     for (const key of Object.keys(values)) {
         const value = values[key];
         if (
-            key !== quickFilterKey &&
-            !(value instanceof Date) &&
-            isNaN(value) &&
-            !value?.length
+            (key !== quickFilterKey &&
+                !(value instanceof Date) &&
+                isNaN(value) &&
+                !value?.length) ||
+            value === null ||
+            value === undefined
         ) {
             continue;
         }

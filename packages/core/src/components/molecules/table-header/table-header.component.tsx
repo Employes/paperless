@@ -7,14 +7,14 @@ import {
     Host,
     Listen,
     Prop,
-    State
+    State,
 } from '@stencil/core';
-import { debounceTime, distinctUntilChanged, Subject, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { IconVariant } from '../../../components';
 import { QuickFilter } from '../../../types/table';
 import {
     formatTranslation,
-    getLocaleComponentStrings
+    getLocaleComponentStrings,
 } from '../../../utils/localization';
 
 export type templateFunc = () => string;
@@ -121,29 +121,33 @@ export class TableHeader {
      * Event when one of the quick filters is clicked
      */
     @Event({
-        bubbles: false
-    }) quickFilter: EventEmitter<QuickFilter>;
+        bubbles: false,
+    })
+    quickFilter: EventEmitter<QuickFilter>;
 
     /**
      * Event when the query changes
      */
     @Event({
-        bubbles: false
-    }) queryChange: EventEmitter<string>;
+        bubbles: false,
+    })
+    queryChange: EventEmitter<string>;
 
     /**
      * Event when the filter button is clicked
      */
     @Event({
-        bubbles: false
-    }) filter: EventEmitter<null>;
+        bubbles: false,
+    })
+    filter: EventEmitter<null>;
 
     /**
      * Event when the edit button is clicked
      */
     @Event({
-        bubbles: false
-    }) edit: EventEmitter<null>;
+        bubbles: false,
+    })
+    edit: EventEmitter<null>;
 
     /**
      * The host element
@@ -168,7 +172,7 @@ export class TableHeader {
 
     componentDidLoad() {
         this._queryObserver
-            .pipe(debounceTime(300), distinctUntilChanged(), tap(() => console.log("Search updated from header")))
+            .pipe(debounceTime(300), distinctUntilChanged())
             .subscribe((value) => this.queryChange.emit(value));
     }
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/ionic-team/stencil-component-starter/compare/v1.3.3...v1.3.4) (2023-06-27)
+
+
+### Bug Fixes
+
+* **Molecules/Table/Header:** Remove `console.log` ([999704d](https://github.com/ionic-team/stencil-component-starter/commit/999704d2fa92902bbdd6bd9af7016c9bf4bf8694))
+
+
+
+
+
 ## [1.3.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.3.2...v1.3.3) (2023-06-27)
 
 **Note:** Version bump only for package @paperless/core

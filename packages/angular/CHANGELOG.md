@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/Employes/Paperless/compare/v1.3.3...v1.3.4) (2023-06-27)
+
+
+### Bug Fixes
+
+* **Angular/Table:** ngx directive uses the correct $event data now ([785645e](https://github.com/Employes/Paperless/commit/785645e937d5aa0d06835c020d4d87107d06bf9b))
+
+
+
+
+
 ## [1.3.3](https://github.com/Employes/Paperless/compare/v1.3.2...v1.3.3) (2023-06-27)
 
 

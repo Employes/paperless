@@ -17,10 +17,10 @@ export interface TableDirectiveValue {
 @Directive({
 	selector: 'p-table-ngx',
 	host: {
-		'(queryChange)': 'handleChange($event.detail, "query")',
-		'(quickFilter)': 'handleChange($event.detail, "quickFilter")',
-		'(pageChange)': 'handleChange($event.detail, "page")',
-		'(pageSizeChange)': 'handleChange($event.detail, "pageSize")',
+		'(queryChange)': 'handleChange($event, "query")',
+		'(quickFilter)': 'handleChange($event, "quickFilter")',
+		'(pageChange)': 'handleChange($event, "page")',
+		'(pageSizeChange)': 'handleChange($event, "pageSize")',
 		'(selectedRowsChange)': 'handleChange($event, "selectedRows")',
 	},
 	providers: [

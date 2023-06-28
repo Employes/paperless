@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/ionic-team/stencil-component-starter/compare/v1.3.5...v1.3.6) (2023-06-28)
+
+
+### Bug Fixes
+
+* **Atoms/Tooltip:** Actually use pointer events this time ([8f09e38](https://github.com/ionic-team/stencil-component-starter/commit/8f09e38d320bf61733e8ac0b2cd166419084ca9f))
+
+
+
+
+
 ## [1.3.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.3.4...v1.3.5) (2023-06-28)
 
 

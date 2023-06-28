@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/employes/paperless/compare/v1.3.4...v1.3.5) (2023-06-28)
+
+
+### Bug Fixes
+
+* **Atoms/Tooltip:** Pointer events none when hidden. ([3fb3a8e](https://github.com/employes/paperless/commit/3fb3a8edd48b5cd92f1ae8378e7cb0283e564a8f))
+
+
+
+
+
 ## [1.3.4](https://github.com/employes/paperless/compare/v1.3.3...v1.3.4) (2023-06-27)
 
 

@@ -14,8 +14,13 @@
                 @apply bg-storm py-1 text-white;
             }
 
-            &.variant-error, &.variant-error-element {
+            &.variant-error,
+            &.variant-error-element {
                 @apply bg-negative uppercase tracking-wider;
+            }
+
+            &:not([data-show]) {
+                @apply pointer-events-none;
             }
 
             &[data-show] {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Employes/Paperless/compare/v1.3.6...v1.4.0) (2023-06-30)
+
+
+### Features
+
+* **Angular/Table:** Fix typing & Add `event$` to `rowClick` ([e93e8a4](https://github.com/Employes/Paperless/commit/e93e8a4939712c00a7e67051731baeb9e01840d5))
+
+
+
+
+
 ## [1.3.6](https://github.com/Employes/Paperless/compare/v1.3.5...v1.3.6) (2023-06-28)
 
 **Note:** Version bump only for package @paperless/angular

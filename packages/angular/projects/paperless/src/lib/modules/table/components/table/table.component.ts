@@ -11,18 +11,18 @@ import {
     Output,
     QueryList,
     SimpleChanges,
-    TemplateRef
+    TemplateRef,
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter, RowClickEvent } from '@paperless/core';
 import {
     IconVariant,
-    IllustrationVariant
+    IllustrationVariant,
 } from '@paperless/core/dist/types/components';
 import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import {
     TableCustomFilterDirective,
-    TableFilterModalDirective
+    TableFilterModalDirective,
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -692,20 +692,20 @@ export class Table implements OnInit, OnChanges {
         return containsCount > 0 && containsCount !== this.parsedItems.length;
     }
 
-    public _rowClick($event: { target: any }, index: number) {
-        const target = $event.target;
+    public _rowClick($event: MouseEvent, index: number) {
+        const target = $event.target as HTMLElement;
 
         if (
             target.tagName.toLowerCase() === 'input' ||
-            target.type === 'checkbox'
+            (target as HTMLInputElement).type === 'checkbox'
         ) {
             return;
         }
 
-        const row = this._findRow($event.target);
+        const row = this._findRow(target);
 
         if (this.enableRowClick) {
-            const action = this._findRowAction($event.target);
+            const action = this._findRowAction(target);
 
             if (action) {
                 return;

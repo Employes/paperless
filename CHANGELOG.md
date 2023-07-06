@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/employes/paperless/compare/v1.4.0...v1.4.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* **Atoms/Button:**  css changes when icon & chevron only are used ([1329bd6](https://github.com/employes/paperless/commit/1329bd6af8873d5bd2a9aebb7a98442e2e28b60e))
+* **Organisms/Table:** Do not select row when action is clicked ([e1b94d9](https://github.com/employes/paperless/commit/e1b94d9f38dcaf032d039426ead34f5c3608304a))
+
+
+
+
+
 # [1.4.0](https://github.com/employes/paperless/compare/v1.3.6...v1.4.0) (2023-06-30)
 
 

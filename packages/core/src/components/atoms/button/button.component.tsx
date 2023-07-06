@@ -5,7 +5,7 @@ import {
     h,
     Host,
     Listen,
-    Prop
+    Prop,
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../icon/icon.component';
@@ -90,8 +90,9 @@ export class Button {
      * Button click event
      */
     @Event({
-        bubbles: false
-    }) onClick: EventEmitter<MouseEvent>;
+        bubbles: false,
+    })
+    onClick: EventEmitter<MouseEvent>;
 
     render() {
         let loaderColor: 'white' | 'storm' | 'indigo' = 'white';
@@ -110,14 +111,14 @@ export class Button {
             <Host
                 class={`p-button size-${this.size} ${
                     this.iconOnly && 'has-icon-only'
-                } `}
+                } ${this.chevron && 'has-chevron'}`}
             >
                 <VariableTag
                     class={`variant-${this.variant}  icon-position-${
                         this.iconPosition
-                    } ${this.chevron && 'has-chevron'} chevron-position-${
-                        this.chevronPosition
-                    } ${this.inheritText && 'should-inherit-text'}`}
+                    } chevron-position-${this.chevronPosition} ${
+                        this.inheritText && 'should-inherit-text'
+                    }`}
                     disabled={this.disabled}
                     href={this.href}
                     target={this.target}

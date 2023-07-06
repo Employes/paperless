@@ -91,8 +91,17 @@ p-button {
             @apply opacity-40;
         }
 
-        // chevron
-        &.has-chevron {
+        &.should-inherit-text {
+            color: inherit #{!important};
+            font-size: inherit #{!important};
+            font-weight: inherit #{!important};
+        }
+    }
+
+    // chevron
+    &.has-chevron {
+        a,
+        button {
             &.chevron-position-start {
                 @apply pl-2;
 
@@ -113,12 +122,6 @@ p-button {
                 @apply text-indigo;
             }
         }
-
-        &.should-inherit-text {
-            color: inherit #{!important};
-            font-size: inherit #{!important};
-            font-weight: inherit #{!important};
-        }
     }
 
     &.has-icon-only {
@@ -134,6 +137,21 @@ p-button {
 
             > p-loader {
                 @apply ml-0;
+            }
+        }
+
+        &.has-chevron {
+            @apply w-auto;
+
+            a,
+            button {
+                &.chevron-position-start {
+                    @apply pr-2;
+                }
+
+                &.chevron-position-end {
+                    @apply pl-2;
+                }
             }
         }
     }
@@ -153,6 +171,10 @@ p-button {
 
         &.has-icon-only {
             @apply w-8;
+
+            &.has-chevron {
+                @apply w-auto;
+            }
         }
     }
 }

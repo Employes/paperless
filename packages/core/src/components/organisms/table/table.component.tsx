@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import { IconVariant } from '../../../components';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
@@ -16,7 +16,7 @@ import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
 import {
     defaultSize,
-    defaultSizeOptions
+    defaultSizeOptions,
 } from '../../molecules/page-size-select/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
 
@@ -71,8 +71,9 @@ export class Table {
      * Event whenever the current selection changes
      */
     @Event({
-        bubbles: false
-    }) selectedRowsChange: EventEmitter<any>;
+        bubbles: false,
+    })
+    selectedRowsChange: EventEmitter<any>;
 
     /**
      * The key to determine if a row is selected
@@ -88,29 +89,33 @@ export class Table {
      * Event whenever a row is clicked
      */
     @Event({
-        bubbles: false
-    }) rowClick: EventEmitter<RowClickEvent>;
+        bubbles: false,
+    })
+    rowClick: EventEmitter<RowClickEvent>;
 
     /**
      * Event whenever a row is selected
      */
     @Event({
-        bubbles: false
-    }) rowSelected: EventEmitter<any>;
+        bubbles: false,
+    })
+    rowSelected: EventEmitter<any>;
 
     /**
      * Event whenever a row is deselected
      */
     @Event({
-        bubbles: false
-    }) rowDeselected: EventEmitter<any>;
+        bubbles: false,
+    })
+    rowDeselected: EventEmitter<any>;
 
     /**
      * Event when the table has rendered
      */
     @Event({
-        bubbles: false
-    }) hasRendered: EventEmitter<number>;
+        bubbles: false,
+    })
+    hasRendered: EventEmitter<number>;
 
     /** START HEADER */
 
@@ -183,29 +188,33 @@ export class Table {
      * Event when one of the quick filters is clicked
      */
     @Event({
-        bubbles: false
-    }) quickFilter: EventEmitter<QuickFilter>;
+        bubbles: false,
+    })
+    quickFilter: EventEmitter<QuickFilter>;
 
     /**
      * Event when the query changes
      */
     @Event({
-        bubbles: false
-    }) queryChange: EventEmitter<string>;
+        bubbles: false,
+    })
+    queryChange: EventEmitter<string>;
 
     /**
      * Event when the filter button is clicked
      */
     @Event({
-        bubbles: false
-    }) filter: EventEmitter<null>;
+        bubbles: false,
+    })
+    filter: EventEmitter<null>;
 
     /**
      * Event when the edit button is clicked
      */
     @Event({
-        bubbles: false
-    }) edit: EventEmitter<null>;
+        bubbles: false,
+    })
+    edit: EventEmitter<null>;
 
     /** START FOOTER */
 
@@ -243,8 +252,9 @@ export class Table {
      * Event whenever the page changes
      */
     @Event({
-        bubbles: false
-    }) pageChange: EventEmitter<number>;
+        bubbles: false,
+    })
+    pageChange: EventEmitter<number>;
 
     /**
      * The amount of items per page
@@ -260,15 +270,17 @@ export class Table {
      * Event whenever the page changes
      */
     @Event({
-        bubbles: false
-    }) pageSizeChange: EventEmitter<number>;
+        bubbles: false,
+    })
+    pageSizeChange: EventEmitter<number>;
 
     /**
      * Event whenever the page changes
      */
     @Event({
-        bubbles: false
-    }) export: EventEmitter<number>;
+        bubbles: false,
+    })
+    export: EventEmitter<number>;
 
     /**
      * Wether to hide when there is only 1 page available
@@ -296,8 +308,9 @@ export class Table {
      * Event whenever the empty state is clicked
      */
     @Event({
-        bubbles: false
-    }) emptyStateActionClick: EventEmitter<null>;
+        bubbles: false,
+    })
+    emptyStateActionClick: EventEmitter<null>;
 
     /* Empty state end */
 
@@ -778,14 +791,13 @@ export class Table {
         }
 
         const row = this._findRow($event.target);
+        const action = this._findRowAction($event.target);
+
+        if (action) {
+            return;
+        }
 
         if (this.enableRowClick) {
-            const action = this._findRowAction($event.target);
-
-            if (action) {
-                return;
-            }
-
             const item = this._items[index];
             this.rowClick.emit({
                 item,

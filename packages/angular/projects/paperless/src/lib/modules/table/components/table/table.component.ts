@@ -703,14 +703,13 @@ export class Table implements OnInit, OnChanges {
         }
 
         const row = this._findRow(target);
+        const action = this._findRowAction(target);
+
+        if (action) {
+            return;
+        }
 
         if (this.enableRowClick) {
-            const action = this._findRowAction(target);
-
-            if (action) {
-                return;
-            }
-
             const item = this.parsedItems[index];
             this.rowClick.emit({
                 item,

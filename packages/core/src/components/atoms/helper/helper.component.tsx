@@ -16,11 +16,11 @@ export class Helper {
         return (
             <Host class="p-helper">
                 <p-tooltip placement={this.placement}>
-                    <div slot="popover">
+                    <div slot="content">
                         <slot />
                     </div>
 
-                    <div slot="content" class="helper"></div>
+                    <div slot="trigger" class="helper"></div>
                 </p-tooltip>
             </Host>
         );

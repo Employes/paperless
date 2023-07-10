@@ -6,7 +6,7 @@ import {
     offset,
     Placement,
     shift,
-    Strategy
+    Strategy,
 } from '@floating-ui/dom';
 import {
     Component,
@@ -16,7 +16,7 @@ import {
     h,
     Host,
     Listen,
-    Prop
+    Prop,
 } from '@stencil/core';
 
 @Component({
@@ -33,7 +33,7 @@ export class Tooltip {
     /**
      * The content of the popover
      */
-    @Prop() popover: any = null;
+    @Prop() content: any = null;
 
     /**
      * The placement of the popover
@@ -64,8 +64,9 @@ export class Tooltip {
      * Open change event
      */
     @Event({
-        bubbles: false
-    }) isOpen: EventEmitter<boolean>;
+        bubbles: false,
+    })
+    isOpen: EventEmitter<boolean>;
 
     /**
      * The host element
@@ -90,7 +91,7 @@ export class Tooltip {
     render() {
         return (
             <Host class="p-popover">
-                <slot name="content" />
+                <slot name="trigger" />
                 <div class="popover-container">
                     <div
                         class={`popover variant-${this.variant}`}
@@ -99,7 +100,7 @@ export class Tooltip {
                         data-strategy={this.strategy}
                         ref={(el) => this._load(el)}
                     >
-                        {this.popover ? this.popover : <slot name="popover" />}
+                        {this.content ? this.content : <slot name="content" />}
                         <div class="arrow"></div>
                     </div>
                 </div>
@@ -206,7 +207,10 @@ export class Tooltip {
         }
 
         computePosition(this._el, this._popover, {
-            placement: this.variant === 'error' || this.variant === 'error-element' ? 'top-end' : this.placement,
+            placement:
+                this.variant === 'error' || this.variant === 'error-element'
+                    ? 'top-end'
+                    : this.placement,
             strategy: this.strategy,
 
             middleware: [
@@ -227,7 +231,8 @@ export class Tooltip {
 
                 Object.assign(arrowEl.style, {
                     left:
-                        this.variant === 'error' || this.variant === 'error-element'
+                        this.variant === 'error' ||
+                        this.variant === 'error-element'
                             ? placement.indexOf('start') >= 0
                                 ? '1rem'
                                 : 'calc(100% - 1rem)'

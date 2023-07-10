@@ -22,7 +22,7 @@ export class InputError {
             <Host class="p-input-error">
                 <p-tooltip
                     variant="error"
-                    popover={this.error}
+                    content={this.error}
                     show={this.forceShowTooltip}
                     onIsOpen={(ev) => (this._showTooltip = ev.detail)}
                 >
@@ -32,7 +32,7 @@ export class InputError {
                                 ? 'text-negative'
                                 : 'text-negative-light'
                         } hover:text-negative`}
-                        slot="content"
+                        slot="trigger"
                         variant="explanation"
                     />
                 </p-tooltip>

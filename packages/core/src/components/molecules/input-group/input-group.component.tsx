@@ -146,7 +146,7 @@ export class InputGroup {
                 <p-tooltip
                     class="w-full"
                     variant="error-element"
-                    popover={this.error}
+                    content={this.error}
                     show={
                         errorAndErrorIsNotBoolean &&
                         errorVariant === 'element' &&
@@ -154,7 +154,7 @@ export class InputGroup {
                     }
                     enableUserInput={false}
                 >
-                    <div class="content" slot="content">
+                    <div class="content" slot="trigger">
                         {(prefix ||
                             (this.icon && this.iconPosition === 'start')) && (
                             <div

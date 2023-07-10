@@ -14,8 +14,8 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip popover="test">
-            <span slot="content">Hover me</span>
+        <p-tooltip content="test">
+            <span slot="trigger">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -24,8 +24,8 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip variant="click" popover="test">
-            <span slot="content">Click me</span>
+        <p-tooltip variant="click" content="test">
+            <span slot="trigger">Click me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -38,9 +38,9 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
             variant="error"
             show={true}
             can-manually-close={false}
-            popover="I am not dismissable"
+            content="I am not dismissable"
         >
-            <span slot="content">
+            <span slot="trigger">
                 I have an error I have an error I have an error I have an error
                 I have an error I have an error I have an error
             </span>
@@ -54,8 +54,8 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip popover="test" placement="right">
-            <span slot="content">Hover me (right)</span>
+        <p-tooltip content="test" placement="right">
+            <span slot="trigger">Hover me (right)</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -64,8 +64,8 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip variant="click" popover="test" placement="left">
-            <span slot="content">Click me (left)</span>
+        <p-tooltip variant="click" content="test" placement="left">
+            <span slot="trigger">Click me (left)</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -77,12 +77,12 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 <Canvas>
     <div class="flex h-20 items-center justify-center pt-24">
         <p-tooltip>
-            <div slot="popover">
+            <div slot="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 bibendum ut sem eget dignissim. Donec bibendum diam non viverra
                 lobortis.
             </div>
-            <span slot="content">Hover me</span>
+            <span slot="trigger">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -92,12 +92,12 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 <Canvas>
     <div class="flex h-20 items-center justify-center pt-24">
         <p-tooltip variant="click">
-            <div slot="popover">
+            <div slot="content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                 bibendum ut sem eget dignissim. Donec bibendum diam non viverra
                 lobortis.
             </div>
-            <span slot="content">Click me</span>
+            <span slot="trigger">Click me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -108,8 +108,8 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
 
 <Canvas>
     <div class="flex h-20 items-center justify-center">
-        <p-tooltip popover="You can't hide me" show>
-            <span slot="content">Hover me</span>
+        <p-tooltip content="You can't hide me" show>
+            <span slot="trigger">Hover me</span>
         </p-tooltip>
     </div>
 </Canvas>
@@ -120,11 +120,11 @@ import TooltipDocs from '../../../packages/core/src/components/atoms/tooltip/rea
     <div class="flex h-20 items-center justify-center">
         <p-tooltip
             variant="click"
-            popover="You can't hide me"
+            content="You can't hide me"
             can-manually-close={false}
             show
         >
-            <span slot="content">Click me</span>
+            <span slot="trigger">Click me</span>
         </p-tooltip>
     </div>
 </Canvas>

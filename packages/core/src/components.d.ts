@@ -1348,6 +1348,10 @@ export namespace Components {
          */
         "canManuallyClose": boolean;
         /**
+          * The content of the popover
+         */
+        "content": any;
+        /**
           * Wether the tooltip can be shown by user input
          */
         "enableUserInput": boolean;
@@ -1355,10 +1359,6 @@ export namespace Components {
           * The placement of the popover
          */
         "placement": Placement;
-        /**
-          * The content of the popover
-         */
-        "popover": any;
         /**
           * Wether to show the popover
          */
@@ -3366,6 +3366,10 @@ declare namespace LocalJSX {
          */
         "canManuallyClose"?: boolean;
         /**
+          * The content of the popover
+         */
+        "content"?: any;
+        /**
           * Wether the tooltip can be shown by user input
          */
         "enableUserInput"?: boolean;
@@ -3377,10 +3381,6 @@ declare namespace LocalJSX {
           * The placement of the popover
          */
         "placement"?: Placement;
-        /**
-          * The content of the popover
-         */
-        "popover"?: any;
         /**
           * Wether to show the popover
          */

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/employes/paperless/compare/v1.4.2...v1.5.0) (2023-07-11)
+
+
+### Features
+
+* **Atoms/Icon:** Add `colleague` & `companies` icons ([82b3ca0](https://github.com/employes/paperless/commit/82b3ca08450a6d708bfe853c34c49940995c55b1))
+
+
+
+
+
 ## [1.4.2](https://github.com/employes/paperless/compare/v1.4.1...v1.4.2) (2023-07-10)
 
 **Note:** Version bump only for package paperless

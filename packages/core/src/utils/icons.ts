@@ -9,14 +9,15 @@ import checkmark from '../assets/icons/checkmark.svg';
 import chevron from '../assets/icons/chevron.svg';
 import clock from '../assets/icons/clock.svg';
 import cogs from '../assets/icons/cogs.svg';
+import colleagues from '../assets/icons/colleagues.svg';
 import comment from '../assets/icons/comment.svg';
+import companies from '../assets/icons/companies.svg';
 import document from '../assets/icons/document.svg';
 import download from '../assets/icons/download.svg';
 import envelope from '../assets/icons/envelope.svg';
 import explanation from '../assets/icons/explanation.svg';
 import eye from '../assets/icons/eye.svg';
 import faBuilding from '../assets/icons/fa/building.svg';
-import faBuildings from '../assets/icons/fa/buildings.svg';
 import faPiggy from '../assets/icons/fa/piggy.svg';
 import filter from '../assets/icons/filter.svg';
 import folder from '../assets/icons/folder.svg';
@@ -65,15 +66,16 @@ export default {
     checkmark,
     chevron,
     clock,
+    colleagues,
     cogs,
     comment,
+    companies,
     document,
     download,
     envelope,
     explanation,
     eye,
     faBuilding,
-    faBuildings,
     faPiggy,
     filter,
     folder,

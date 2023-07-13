@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/employes/paperless/compare/v1.5.0...v1.6.0) (2023-07-13)
+
+
+### Features
+
+* **Atoms/Dropdown/Menu/Container:** Add a scrollable option ([4ea3032](https://github.com/employes/paperless/commit/4ea3032165a54a18fc0cc5a9550a7d3b85ca68de))
+* **Atoms/Dropdown:** Proxy the scrollable prop to the menu container ([4be35da](https://github.com/employes/paperless/commit/4be35dabe594fe80f0866cbefd952d74b9369a97))
+* **Molecules/Select:** Default pass scrollable to the dropdown ([0b89a9d](https://github.com/employes/paperless/commit/0b89a9d2e1f5462da0e3ac308f4a29237f33cf3f))
+
+
+
+
+
 # [1.5.0](https://github.com/employes/paperless/compare/v1.4.2...v1.5.0) (2023-07-11)
 
 

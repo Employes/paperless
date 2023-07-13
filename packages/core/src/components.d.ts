@@ -408,6 +408,10 @@ export namespace Components {
          */
         "placement": Placement;
         /**
+          * Wether the dropdown container should be scrollable when the threshold is met.
+         */
+        "scrollable": boolean;
+        /**
           * Wether to show the dropdown menu
          */
         "show": boolean;
@@ -2309,6 +2313,10 @@ declare namespace LocalJSX {
           * The content of the dropdown menu
          */
         "placement"?: Placement;
+        /**
+          * Wether the dropdown container should be scrollable when the threshold is met.
+         */
+        "scrollable"?: boolean;
         /**
           * Wether to show the dropdown menu
          */

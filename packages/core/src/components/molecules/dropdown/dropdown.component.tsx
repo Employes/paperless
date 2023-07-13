@@ -5,7 +5,7 @@ import {
     offset,
     Placement,
     shift,
-    Strategy
+    Strategy,
 } from '@floating-ui/dom';
 import {
     Component,
@@ -16,7 +16,7 @@ import {
     Host,
     Listen,
     Prop,
-    Watch
+    Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils/child-of';
 
@@ -57,6 +57,11 @@ export class Dropdown {
     @Prop() applyFullWidth: boolean = true;
 
     /**
+     * Wether the dropdown container should be scrollable when the threshold is met.
+     */
+    @Prop() scrollable: boolean = false;
+
+    /**
      * Wether to automatically close the dropdown menu after clicking inside
      */
     @Prop() insideClick: boolean = false;
@@ -85,8 +90,9 @@ export class Dropdown {
      * Open change event
      */
     @Event({
-        bubbles: false
-    }) isOpen: EventEmitter<boolean>;
+        bubbles: false,
+    })
+    isOpen: EventEmitter<boolean>;
 
     private _loaded = false;
     private _trigger: HTMLElement;
@@ -125,6 +131,7 @@ export class Dropdown {
                     data-placement={this.placement}
                     data-strategy={this.strategy}
                     onClick={() => this._containerClickHandler()}
+                    scrollable={this.scrollable}
                 >
                     <slot name="items" />
                 </p-dropdown-menu-container>

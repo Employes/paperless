@@ -425,6 +425,10 @@ export namespace Components {
           * Wether the container applies it's max width
          */
         "maxWidth": boolean;
+        /**
+          * Wether the container should be scrollable when the threshold is met.
+         */
+        "scrollable": boolean;
     }
     interface PDropdownMenuItem {
         /**
@@ -2323,6 +2327,10 @@ declare namespace LocalJSX {
           * Wether the container applies it's max width
          */
         "maxWidth"?: boolean;
+        /**
+          * Wether the container should be scrollable when the threshold is met.
+         */
+        "scrollable"?: boolean;
     }
     interface PDropdownMenuItem {
         /**

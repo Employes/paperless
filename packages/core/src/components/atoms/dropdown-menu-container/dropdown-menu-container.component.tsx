@@ -16,14 +16,23 @@ export class DropdownMenuContainer {
      */
     @Prop() fullWidth: boolean = true;
 
+    /**
+     * Wether the container should be scrollable when the threshold is met.
+     */
+    @Prop() scrollable: boolean = false;
+
     render() {
         return (
             <Host
                 class={`p-dropdown-menu-container ${
                     this.maxWidth && 'max-width'
-                } ${this.fullWidth && 'full-width'}`}
+                } ${this.fullWidth && 'full-width'} ${
+                    this.scrollable && 'scrollable'
+                }`}
             >
-                <slot />
+                <div class="content">
+                    <slot />
+                </div>
             </Host>
         );
     }

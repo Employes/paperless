@@ -41,7 +41,7 @@
     },
     "dependencies": {
         "@floating-ui/dom": "^1.2.6",
-        "@stencil/core": "^3.0.0",
+        "@stencil/core": "^4.0.0",
         "date-fns": "2.30.0",
         "rxjs": "^7.5.5"
     },

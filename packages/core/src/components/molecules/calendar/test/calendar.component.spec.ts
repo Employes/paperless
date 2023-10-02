@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Divider } from '../calendar.component';
+import { Calendar } from '../calendar.component';
 
 describe('p-calendar', () => {
     it('renders', async () => {
         const { root } = await newSpecPage({
-            components: [Divider],
+            components: [Calendar],
             html: '<p-calendar></p-calendar>',
         });
         expect(root).toEqualHtml(`

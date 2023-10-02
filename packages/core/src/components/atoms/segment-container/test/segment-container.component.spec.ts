@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { Divider } from '../divider.component';
+import { SegmentContainer } from '../segment-container.component';
 
 describe('p-segment-container', () => {
     it('renders', async () => {
         const { root } = await newSpecPage({
-            components: [Divider],
+            components: [SegmentContainer],
             html: '<p-segment-container></p-segment-container>',
         });
         expect(root).toEqualHtml(`

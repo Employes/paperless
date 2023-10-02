@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { TabGroup } from '../tab-group-group.component';
+import { TabGroup } from '../tab-group.component';
 
 describe('p-tab-group', () => {
     it('renders', async () => {

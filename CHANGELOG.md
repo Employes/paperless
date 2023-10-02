@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/employes/paperless/compare/v1.6.0...v1.7.0) (2023-10-02)
+
+
+### Bug Fixes
+
+* **Atoms/Icon:** Update switch & settings svg's ([10558d5](https://github.com/employes/paperless/commit/10558d503fcbe9abbafb50d2f09a380c722539dc))
+
+
+### Features
+
+* **Atoms/Icon:** Add `plan` icon & update icons list for review ([4cf59c9](https://github.com/employes/paperless/commit/4cf59c9312fb01bee896095b1fcefb35f87b55a7))
+
+
+
+
+
 # [1.6.0](https://github.com/employes/paperless/compare/v1.5.0...v1.6.0) (2023-07-13)
 
 

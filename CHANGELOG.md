@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/employes/paperless/compare/v1.7.1...v1.8.0) (2023-10-02)
+
+
+### Features
+
+* Update stencil v4 ([5794277](https://github.com/employes/paperless/commit/5794277c1a825e8dbe76f841cd52a34b065ec23c))
+
+
+
+
+
 ## [1.7.1](https://github.com/employes/paperless/compare/v1.7.0...v1.7.1) (2023-10-02)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/employes/paperless/compare/v1.7.0...v1.7.1) (2023-10-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @ngneat/until-destroy to v10 ([#170](https://github.com/employes/paperless/issues/170)) ([b686cfc](https://github.com/employes/paperless/commit/b686cfcd207d6737a30aa5ebcd5e95f7e8015bf0))
+
+
+
+
+
 # [1.7.0](https://github.com/employes/paperless/compare/v1.6.0...v1.7.0) (2023-10-02)
 
 

@@ -36,6 +36,7 @@ import pagination from '../assets/icons/pagination.svg';
 import payment from '../assets/icons/payment.svg';
 import pencil from '../assets/icons/pencil.svg';
 import person from '../assets/icons/person.svg';
+import plan from '../assets/icons/plan.svg';
 import plus from '../assets/icons/plus.svg';
 import question from '../assets/icons/question.svg';
 import receipt from '../assets/icons/receipt.svg';
@@ -94,6 +95,7 @@ export default {
     payment,
     pencil,
     person,
+    plan,
     plus,
     question,
     reload,

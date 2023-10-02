@@ -12,11 +12,32 @@ import icons from '../../../packages/core/src/utils/icons';
 ### Variants
 
 <Canvas>
-    <div class="grid grid-cols-6 gap-10 text-5xl">
+    <table class="w-full table-fixed">
+        <tr>
+            <th class="py-2 text-start">Icon</th>
+            <th class="py-2 text-start">Variant</th>
+            <th class="py-2 text-start">Fontawesome</th>
+        </tr>
         {Object.keys(icons).map((icon) => (
-            <p-icon key={icon} variant={icon}></p-icon>
+            <tr class="group border-b border-b-mystic-dark">
+                <td class="py-2">
+                    <p-icon
+                        key={icon}
+                        variant={icon}
+                        class="text-3xl text-storm-vague group-hover:text-indigo"
+                    ></p-icon>
+                </td>
+                <td class="py-2 group-hover:font-semibold">{icon}</td>
+                <td class="py-2">
+                    {icon.indexOf('fa') === 0 ? (
+                        <p-icon variant="checkmark" class="text-positive" />
+                    ) : (
+                        ''
+                    )}
+                </td>
+            </tr>
         ))}
-    </div>
+    </table>
 </Canvas>
 
 ### Flipping

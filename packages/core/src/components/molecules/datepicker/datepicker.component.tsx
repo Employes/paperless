@@ -8,7 +8,7 @@ import {
     Listen,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import {
     format,
@@ -17,7 +17,7 @@ import {
     isSameDay,
     isValid,
     parse,
-    startOfDay
+    startOfDay,
 } from 'date-fns';
 import { childOf } from '../../../utils';
 
@@ -71,8 +71,9 @@ export class Datepicker {
      * Event when the value changes
      */
     @Event({
-        bubbles: false
-    }) valueChange: EventEmitter<any>;
+        bubbles: false,
+    })
+    valueChange: EventEmitter<any>;
 
     /**
      * The display & parse format to use
@@ -132,14 +133,6 @@ export class Datepicker {
         month: 'LLLL, yyyy',
         day: 'dd-MM-yyyy',
     };
-
-    get formattedDate() {
-        if (!this._value) {
-            return;
-        }
-
-        return format(this._value, this.format);
-    }
 
     @Watch('value')
     protected parseValue(value: string | Date) {
@@ -264,9 +257,10 @@ export class Datepicker {
                             slot="input"
                             type="text"
                             placeholder={this.placeholder}
-                            value={this.formattedDate}
+                            value={this._getFormattedDate()}
                             class="p-input cursor-pointer"
                             onFocus={() => this._onFocus()}
+                            onBlur={(ev) => this._onBlur(ev)}
                             onInput={(ev) => this._onInput(ev)}
                         />
                     </p-input-group>
@@ -303,8 +297,17 @@ export class Datepicker {
         this._showDropdown = true;
     }
 
-    private _onBlur() {
-        this._showDropdown = false;
+    private _onBlur(ev) {
+        if (ev.target.value === null) {
+            return;
+        }
+
+        const value = parse(ev.target.value, this.format, new Date());
+
+        if (!isValid(value) || this._isDisabledDay(value)) {
+            ev.target.value = this._getFormattedDate();
+            return;
+        }
     }
 
     private _onInput(ev) {
@@ -323,7 +326,7 @@ export class Datepicker {
         }, 250);
     }
 
-    private _setValue(value: Date | null, blur = true) {
+    private _setValue(value: Date | null, hideDropdown = true) {
         if (value === null) {
             this._value = null;
             this.valueChange.emit(null);
@@ -345,8 +348,8 @@ export class Datepicker {
             return;
         }
 
-        if (blur) {
-            this._onBlur();
+        if (hideDropdown) {
+            this._showDropdown = false;
         }
 
         this._value = value;
@@ -359,5 +362,13 @@ export class Datepicker {
             (isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
             this._disabledDates.findIndex((date) => isSameDay(date, day)) >= 0
         );
+    }
+
+    private _getFormattedDate() {
+        if (!this._value) {
+            return '';
+        }
+
+        return format(this._value, this.format);
     }
 }

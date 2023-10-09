@@ -596,7 +596,8 @@ export namespace Components {
         /**
           * Variant of the label
          */
-        "variant": | 'positive'
+        "variant": | 'neutral'
+        | 'positive'
         | 'unbiased'
         | 'negative'
         | 'info';
@@ -2502,7 +2503,8 @@ declare namespace LocalJSX {
         /**
           * Variant of the label
          */
-        "variant"?: | 'positive'
+        "variant"?: | 'neutral'
+        | 'positive'
         | 'unbiased'
         | 'negative'
         | 'info';

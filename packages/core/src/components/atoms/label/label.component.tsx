@@ -12,10 +12,11 @@ export class Label {
      * Variant of the label
      */
     @Prop({ reflect: true }) variant:
+        | 'neutral'
         | 'positive'
         | 'unbiased'
         | 'negative'
-        | 'info' = 'info';
+        | 'info' = 'neutral';
 
     /**
      * Define the behavior of the label

@@ -1,18 +1,27 @@
 :host {
-    @apply flex gap-2 justify-center items-center px-2 desktop-xs:px-3 rounded;
+    @apply flex items-center justify-center gap-2 rounded px-2 desktop-xs:px-3;
     @apply h-[1.625rem];
     @apply text-sm font-semibold;
 
     .content {
-        @apply hidden desktop-xs:flex items-center;
+        @apply hidden items-center desktop-xs:flex;
     }
 
     .circle {
-        @apply hidden rounded-round h-[0.625rem] w-[0.625rem];
+        @apply hidden h-[0.625rem] w-[0.625rem] rounded-round;
     }
 
     p-icon {
         @apply hidden text-xs #{!important};
+    }
+}
+
+:host([variant='neutral']) {
+    @apply bg-mystic;
+    @apply text-storm-vague;
+
+    .circle {
+        @apply bg-storm-vague;
     }
 }
 
@@ -54,7 +63,7 @@
 
 :host([size='small']) {
     @apply h-4 min-w-[1rem] px-1 py-[1px];
-    @apply text-xs justify-center;
+    @apply justify-center text-xs;
     @apply leading-3;
 }
 

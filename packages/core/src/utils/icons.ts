@@ -21,6 +21,7 @@ import faBuilding from '../assets/icons/fa/building.svg';
 import faPiggy from '../assets/icons/fa/piggy.svg';
 import filter from '../assets/icons/filter.svg';
 import folder from '../assets/icons/folder.svg';
+import formula from '../assets/icons/formula.svg';
 import grid from '../assets/icons/grid.svg';
 import headset from '../assets/icons/headset.svg';
 import integration from '../assets/icons/integration.svg';
@@ -80,6 +81,7 @@ export default {
     faPiggy,
     filter,
     folder,
+    formula,
     grid,
     headset,
     integration,

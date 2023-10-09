@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.8.0...v1.9.0) (2023-10-09)
+
+
+### Features
+
+* **Atom/Label:** Add neutral variant ([fe16808](https://github.com/ionic-team/stencil-component-starter/commit/fe168084ac98c89d6305723c8acb8b49fbda0a3b))
+* **Atoms/Icon:** Add formula ([4818ce0](https://github.com/ionic-team/stencil-component-starter/commit/4818ce055c9875b563f58e95a19a3e39ee65429e))
+
+
+
+
+
 # [1.8.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.7.1...v1.8.0) (2023-10-02)
 
 

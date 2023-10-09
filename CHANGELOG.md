@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/employes/paperless/compare/v1.9.0...v1.9.1) (2023-10-09)
+
+
+### Bug Fixes
+
+* **Molecules/Datepicker:** Catch invalid user input ([ae39506](https://github.com/employes/paperless/commit/ae39506a88476cec5a374b648e25f4bab87f0f60))
+
+
+
+
+
 # [1.9.0](https://github.com/employes/paperless/compare/v1.8.0...v1.9.0) (2023-10-09)
 
 

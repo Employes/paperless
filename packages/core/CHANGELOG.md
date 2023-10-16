@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.9.2...v1.9.3) (2023-10-16)
+
+
+### Bug Fixes
+
+* **Atoms/Input:** Error support for textarea ([b39a9d1](https://github.com/ionic-team/stencil-component-starter/commit/b39a9d1968049407df80b536268324e5011f4863))
+
+
+
+
+
 ## [1.9.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.9.1...v1.9.2) (2023-10-16)
 
 

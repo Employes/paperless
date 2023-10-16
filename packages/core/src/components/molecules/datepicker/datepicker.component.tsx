@@ -35,7 +35,7 @@ export class Datepicker {
     /**
      * The current value
      */
-    @Prop() value: Date | null | undefined;
+    @Prop() value: Date | string | null | undefined;
 
     /**
      * Wethter to automatically preselect today
@@ -45,17 +45,17 @@ export class Datepicker {
     /**
      * Disabled dates
      */
-    @Prop() disabledDates?: Array<Date | 'string'> | string;
+    @Prop() disabledDates?: Array<Date | string> | string;
 
     /**
      * Min date
      */
-    @Prop() minDate?: Date | 'string';
+    @Prop() minDate?: Date | string;
 
     /**
      * Max date
      */
-    @Prop() maxDate?: Date | 'string';
+    @Prop() maxDate?: Date | string;
 
     /**
      * Wether to disable the weekends
@@ -358,7 +358,7 @@ export class Datepicker {
 
     private _isDisabledDay(day: Date) {
         return (
-            isBefore(day, this._minDate) ||
+            (isBefore(day, this._minDate) && !isSameDay(day, this._minDate)) ||
             (isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
             this._disabledDates.findIndex((date) => isSameDay(date, day)) >= 0
         );

@@ -7,7 +7,7 @@ import {
     Host,
     Prop,
     State,
-    Watch
+    Watch,
 } from '@stencil/core';
 import {
     addDays,
@@ -28,7 +28,7 @@ import {
     setMonth,
     setYear,
     startOfDay,
-    startOfMonth
+    startOfMonth,
 } from 'date-fns';
 
 @Component({
@@ -45,7 +45,7 @@ export class Calendar {
     /**
      * The current value
      */
-    @Prop() value?: Date | 'string';
+    @Prop() value?: Date | string;
 
     /**
      * Wether to automatically preselect today
@@ -55,17 +55,17 @@ export class Calendar {
     /**
      * Disabled dates
      */
-    @Prop() disabledDates?: Array<Date | 'string'> | string;
+    @Prop() disabledDates?: Array<Date | string> | string;
 
     /**
      * Min date
      */
-    @Prop() minDate: Date | 'string' = new Date(1970, 0, 1);
+    @Prop() minDate: Date | string = new Date(1970, 0, 1);
 
     /**
      * Max date
      */
-    @Prop() maxDate: Date | 'string' = this._getAutomaticMax();
+    @Prop() maxDate: Date | string = this._getAutomaticMax();
 
     /**
      * Wether to disable the weekends
@@ -81,8 +81,9 @@ export class Calendar {
      * Event when the value changes
      */
     @Event({
-        bubbles: false
-    }) valueChange: EventEmitter<any>;
+        bubbles: false,
+    })
+    valueChange: EventEmitter<any>;
 
     /**
      * The host element
@@ -455,7 +456,7 @@ export class Calendar {
 
     private _isDisabledDay(day: Date) {
         return (
-            isBefore(day, this._minDate) ||
+            (isBefore(day, this._minDate) && !isSameDay(day, this._maxDate)) ||
             (isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
             ((getDay(day) === 0 || getDay(day) === 6) &&
                 this.disableWeekends) ||

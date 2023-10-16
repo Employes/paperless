@@ -178,15 +178,15 @@ export namespace Components {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'> | string;
+        "disabledDates"?: Array<Date | string> | string;
         /**
           * Max date
          */
-        "maxDate": Date | 'string';
+        "maxDate": Date | string;
         /**
           * Min date
          */
-        "minDate": Date | 'string';
+        "minDate": Date | string;
         /**
           * The mode of the datepicker
          */
@@ -198,7 +198,7 @@ export namespace Components {
         /**
           * The current value
          */
-        "value"?: Date | 'string';
+        "value"?: Date | string;
         /**
           * The variant of the button
          */
@@ -270,7 +270,7 @@ export namespace Components {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'> | string;
+        "disabledDates"?: Array<Date | string> | string;
         /**
           * The helper of the input group used by the datepicker
          */
@@ -290,11 +290,11 @@ export namespace Components {
         /**
           * Max date
          */
-        "maxDate"?: Date | 'string';
+        "maxDate"?: Date | string;
         /**
           * Min date
          */
-        "minDate"?: Date | 'string';
+        "minDate"?: Date | string;
         /**
           * The mode of the datepicker
          */
@@ -322,7 +322,7 @@ export namespace Components {
         /**
           * The current value
          */
-        "value": Date | null | undefined;
+        "value": Date | string | null | undefined;
     }
     interface PDivider {
     }
@@ -2058,15 +2058,15 @@ declare namespace LocalJSX {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'> | string;
+        "disabledDates"?: Array<Date | string> | string;
         /**
           * Max date
          */
-        "maxDate"?: Date | 'string';
+        "maxDate"?: Date | string;
         /**
           * Min date
          */
-        "minDate"?: Date | 'string';
+        "minDate"?: Date | string;
         /**
           * The mode of the datepicker
          */
@@ -2082,7 +2082,7 @@ declare namespace LocalJSX {
         /**
           * The current value
          */
-        "value"?: Date | 'string';
+        "value"?: Date | string;
         /**
           * The variant of the button
          */
@@ -2154,7 +2154,7 @@ declare namespace LocalJSX {
         /**
           * Disabled dates
          */
-        "disabledDates"?: Array<Date | 'string'> | string;
+        "disabledDates"?: Array<Date | string> | string;
         /**
           * The helper of the input group used by the datepicker
          */
@@ -2174,11 +2174,11 @@ declare namespace LocalJSX {
         /**
           * Max date
          */
-        "maxDate"?: Date | 'string';
+        "maxDate"?: Date | string;
         /**
           * Min date
          */
-        "minDate"?: Date | 'string';
+        "minDate"?: Date | string;
         /**
           * The mode of the datepicker
          */
@@ -2210,7 +2210,7 @@ declare namespace LocalJSX {
         /**
           * The current value
          */
-        "value"?: Date | null | undefined;
+        "value"?: Date | string | null | undefined;
     }
     interface PDivider {
     }

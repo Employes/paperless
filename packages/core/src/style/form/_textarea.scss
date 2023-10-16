@@ -1,18 +1,31 @@
 @import './mixins';
 
 textarea.p-input {
-    @include inputDefaultState();
+    @include inputDefaultState(false);
 
-    @apply h-auto py-2;
+    @apply h-auto min-h-[2.5rem] py-2;
 
     &[error],
     &.error {
         @include inputErrorState();
+
+        &:focus,
+        &:focus-within,
+        &:focus-visible,
+        &.focus,
+        &[active],
+        &.active {
+            @include inputErrorState();
+        }
     }
 
     &[disabled],
     &:disabled,
     &.disabled {
         @include inputDisabledState();
+    }
+
+    &.size-small {
+        @apply min-h-[2rem];
     }
 }

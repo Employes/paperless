@@ -9,7 +9,8 @@
             #{$prefix} + ::slotted(input[type='time'].p-input),
             #{$prefix} + ::slotted(input[type='tel'].p-input),
             #{$prefix} + ::slotted(input[type='password'].p-input),
-            #{$prefix} + ::slotted(input[type='email'].p-input) {
+            #{$prefix} + ::slotted(input[type='email'].p-input),
+            #{$prefix} + ::slotted(textarea.p-input) {
                 @content;
             }
         } @else {
@@ -21,7 +22,8 @@
             #{$prefix} + input[type='time'],
             #{$prefix} + input[type='tel'],
             #{$prefix} + input[type='password'],
-            #{$prefix} + input[type='email'] {
+            #{$prefix} + input[type='email'],
+            #{$prefix} + textarea {
                 &.p-input {
                     @content;
                 }
@@ -37,7 +39,8 @@
             ::slotted(input[type='time'].p-input),
             ::slotted(input[type='tel'].p-input),
             ::slotted(input[type='password'].p-input),
-            ::slotted(input[type='email'].p-input) {
+            ::slotted(input[type='email'].p-input),
+            ::slotted(textarea.p-input) {
                 @content;
             }
         } @else {
@@ -49,7 +52,8 @@
             input[type='time'],
             input[type='tel'],
             input[type='password'],
-            input[type='email'] {
+            input[type='email'],
+            textarea {
                 &.p-input {
                     @content;
                 }
@@ -58,7 +62,7 @@
     }
 }
 
-@mixin inputDefaultState {
+@mixin inputDefaultState($applyHeight: true) {
     @apply flex items-center justify-start;
     @apply text-base text-storm-dark;
     @apply bg-white px-4;
@@ -66,7 +70,11 @@
     @apply border-b border-l border-r border-t;
     @apply border-solid border-mystic-dark #{!important};
     @apply outline-none #{!important};
-    @apply h-10 w-full #{!important};
+    @apply w-full #{!important};
+
+    @if $applyHeight {
+        @apply h-10;
+    }
 
     &::placeholder {
         @apply text-base text-storm-medium;
@@ -82,7 +90,7 @@
     }
 
     &.size-small {
-        @include inputSizeSmall();
+        @include inputSizeSmall($applyHeight);
     }
 }
 
@@ -104,9 +112,12 @@
     @apply opacity-40;
 }
 
-@mixin inputSizeSmall {
+@mixin inputSizeSmall($applyHeight: true) {
     @apply text-sm;
-    @apply h-8  #{!important};
+
+    @if $applyHeight {
+        @apply h-8  #{!important};
+    }
 
     &::placeholder {
         @apply text-sm;

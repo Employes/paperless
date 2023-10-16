@@ -23,8 +23,9 @@
 
         .prefix,
         .suffix {
-            @include inputDefaultState();
+            @include inputDefaultState(false);
             @apply box-border flex-1 text-storm;
+            @apply h-full;
         }
 
         .prefix {
@@ -36,9 +37,9 @@
 
         .suffix {
             @apply rounded-bl-none rounded-tl-none;
-            @apply border-l-0 #{!important};
             @apply order-3;
             @apply pl-2;
+            @apply border-l-0 #{!important};
         }
 
         @include slottedItems() {
@@ -85,6 +86,10 @@
         @apply text-negative;
     }
 
+    .suffix {
+        @apply items-start py-[calc(0.75rem-1px)];
+    }
+
     @include slottedItems() {
         @include inputErrorState();
 
@@ -115,5 +120,12 @@
 :host(.size-small) {
     @include slottedItems() {
         @include inputSizeSmall();
+    }
+}
+
+:host(.size-small.error),
+:host(.size-small[error]) {
+    .suffix {
+        @apply py-2;
     }
 }

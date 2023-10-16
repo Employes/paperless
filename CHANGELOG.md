@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.2](https://github.com/employes/paperless/compare/v1.9.1...v1.9.2) (2023-10-16)
+
+
+### Bug Fixes
+
+* **Molecules/Datepicker & Calendar:** Fix typings & `minDate` ([358119a](https://github.com/employes/paperless/commit/358119a104e8470747b76a698457fd16ccb8c706))
+
+
+
+
+
 ## [1.9.1](https://github.com/employes/paperless/compare/v1.9.0...v1.9.1) (2023-10-09)
 
 

@@ -48,7 +48,7 @@
         "docker:start": "yarn start",
         "predocker:angular:playground": "yarn && yarn build:core:prod",
         "docker:angular:playground": "yarn start:angular:playground",
-        "predocker:storybook": "yarn && yarn build:core:watch:bg",
+        "predocker:storybook": "rm -rf ./packages/core/dist && yarn && yarn build:core:watch:bg",
         "docker:storybook": "yarn storybook:start",
         "install:core": "cd packages/core && yarn",
         "install:react": "cd packages/react && yarn",

@@ -9,5 +9,4 @@
       "conventionalCommits": true,
       "message": "chore(release): Lerna publish"
     }
-  }
 }

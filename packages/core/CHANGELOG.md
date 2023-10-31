@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.4](https://github.com/ionic-team/stencil-component-starter/compare/v1.9.3...v1.9.4) (2023-10-31)
+
+
+### Bug Fixes
+
+* **Atoms/Icons/Plan:** Update fixed svg ([88649ec](https://github.com/ionic-team/stencil-component-starter/commit/88649ec8a327206d5eafc394dd3fea3e44332138))
+
+
+
+
+
 ## [1.9.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.9.2...v1.9.3) (2023-10-16)
 
 

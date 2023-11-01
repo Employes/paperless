@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/Employes/Paperless/compare/v1.10.0...v1.11.0) (2023-11-01)
+
+
+### Features
+
+* **Angular:** Improve upload base component ([8bd3632](https://github.com/Employes/Paperless/commit/8bd36321485f3a2479af19924c70a9041290fe08))
+
+
+
+
+
 # [1.10.0](https://github.com/Employes/Paperless/compare/v1.9.4...v1.10.0) (2023-11-01)
 
 

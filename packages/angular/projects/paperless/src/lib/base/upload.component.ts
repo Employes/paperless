@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     ElementRef,
     EventEmitter,
@@ -6,19 +7,18 @@ import {
     Output,
     ViewChild,
 } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     template: ``,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export abstract class BaseUploadComponent {
     @Input() fileId?: string;
     @Input() uploaded = false;
     @Input()
     set loading(value: boolean) {
-        this._loading = value;
-    }
-    get loading() {
-        return this._loading;
+        this.loading$.next(value);
     }
 
     @Output() fileChange = new EventEmitter<any>();
@@ -26,14 +26,14 @@ export abstract class BaseUploadComponent {
     @ViewChild('uploaderInput') uploaderInput?: ElementRef;
     public file?: File;
 
-    private _loading = false;
+    public loading$ = new BehaviorSubject(false);
 
     onChange($event: Event) {
         const target = $event.target as HTMLInputElement;
         const file = target.files?.[0];
 
         if (file) {
-            this._loading = true;
+            this.loading$.next(true);
 
             const reader = new FileReader();
             reader.onload = (e: any) =>
@@ -54,6 +54,6 @@ export abstract class BaseUploadComponent {
         }
 
         this.file = file;
-        this._loading = false;
+        this.loading$.next(false);
     }
 }

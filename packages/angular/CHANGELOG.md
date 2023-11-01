@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/Employes/Paperless/compare/v1.9.4...v1.10.0) (2023-11-01)
+
+
+### Features
+
+* **Atoms/Modal Body:** Add no padding variant ([2321b09](https://github.com/Employes/Paperless/commit/2321b0938813778d33d24ec49833404a81f68023))
+* **Molecules:** Add Cropper molecule ([4c20e2d](https://github.com/Employes/Paperless/commit/4c20e2db48b124a6508f9f2598cce1a8d2f1adc5))
+
+
+
+
+
 ## [1.9.4](https://github.com/Employes/Paperless/compare/v1.9.3...v1.9.4) (2023-10-31)
 
 **Note:** Version bump only for package @paperless/angular

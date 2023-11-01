@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/ionic-team/ionic/compare/v1.9.4...v1.10.0) (2023-11-01)
+
+
+### Features
+
+* **Molecules:** Add Cropper molecule ([4c20e2d](https://github.com/ionic-team/ionic/commit/4c20e2db48b124a6508f9f2598cce1a8d2f1adc5))
+
+
+
+
+
 ## [1.9.4](https://github.com/ionic-team/ionic/compare/v1.9.3...v1.9.4) (2023-10-31)
 
 **Note:** Version bump only for package @paperless/react

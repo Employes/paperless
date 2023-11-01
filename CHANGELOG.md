@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/employes/paperless/compare/v1.9.4...v1.10.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* **Atoms/Input:** Remove range slider background ([3dcbf85](https://github.com/employes/paperless/commit/3dcbf8526753d3f702d0ed3b1c1094e7b4046378))
+* **core:** Lerna json issue ([5fac41a](https://github.com/employes/paperless/commit/5fac41a319218bb5e16bc8208c09d2094caebf7d))
+
+
+### Features
+
+* **Atoms/Input:** Add range variant ([17330c6](https://github.com/employes/paperless/commit/17330c6766ca893799836e13de509d77144d1f75))
+* **Atoms/Modal Body:** Add no padding variant ([2321b09](https://github.com/employes/paperless/commit/2321b0938813778d33d24ec49833404a81f68023))
+* **Molecules:** Add Cropper molecule ([4c20e2d](https://github.com/employes/paperless/commit/4c20e2db48b124a6508f9f2598cce1a8d2f1adc5))
+
+
+
+
+
 ## [1.9.4](https://github.com/employes/paperless/compare/v1.9.3...v1.9.4) (2023-10-31)
 
 

@@ -19,6 +19,7 @@
 | `applyBlur`          | `apply-blur`           | Wether to apply blur to the backdrop                  | `boolean`                      | `false`     |
 | `backdropClickClose` | `backdrop-click-close` | Wether to hide the modal when the backdrop is clicked | `boolean`                      | `true`      |
 | `header`             | `header`               | The Header of the modal                               | `string`                       | `undefined` |
+| `padding`            | `padding`              | Wether the body should have padding                   | `boolean`                      | `true`      |
 | `scrollLock`         | `scroll-lock`          | Wether we should scroll lock the body                 | `boolean`                      | `true`      |
 | `show`               | `show`                 | Wether to show the modal or not                       | `boolean`                      | `false`     |
 | `showClose`          | `show-close`           | Wether to show the close button in the header         | `boolean`                      | `true`      |

@@ -6,7 +6,7 @@ import {
     h,
     Host,
     Prop,
-    State
+    State,
 } from '@stencil/core';
 
 @Component({
@@ -60,18 +60,25 @@ export class Modal {
     @Prop() scrollLock: boolean = true;
 
     /**
+     * Wether the body should have padding
+     */
+    @Prop() padding: boolean = true;
+
+    /**
      * Close click event
      */
     @Event({
-        bubbles: false
-    }) closeClicked: EventEmitter<MouseEvent>;
+        bubbles: false,
+    })
+    closeClicked: EventEmitter<MouseEvent>;
 
     /**
      * Closed event
      */
     @Event({
-        bubbles: false
-    }) closed: EventEmitter<null>;
+        bubbles: false,
+    })
+    closed: EventEmitter<null>;
 
     /**
      * The host element
@@ -123,6 +130,7 @@ export class Modal {
                         <p-modal-body
                             variant={this.variant}
                             rounded={!this._hasFooterSlot}
+                            padding={this.padding}
                         >
                             {bodyContent}
                         </p-modal-body>

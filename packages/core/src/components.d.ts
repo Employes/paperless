@@ -662,6 +662,10 @@ export namespace Components {
          */
         "header"?: string;
         /**
+          * Wether the body should have padding
+         */
+        "padding": boolean;
+        /**
           * Wether we should scroll lock the body
          */
         "scrollLock": boolean;
@@ -687,6 +691,10 @@ export namespace Components {
         "variant": 'default' | 'table';
     }
     interface PModalBody {
+        /**
+          * Wether the body should have padding
+         */
+        "padding": boolean;
         /**
           * Wether the modal body should be rounded at the bottom
          */
@@ -2606,6 +2614,10 @@ declare namespace LocalJSX {
          */
         "onClosed"?: (event: PModalCustomEvent<null>) => void;
         /**
+          * Wether the body should have padding
+         */
+        "padding"?: boolean;
+        /**
           * Wether we should scroll lock the body
          */
         "scrollLock"?: boolean;
@@ -2631,6 +2643,10 @@ declare namespace LocalJSX {
         "variant"?: 'default' | 'table';
     }
     interface PModalBody {
+        /**
+          * Wether the body should have padding
+         */
+        "padding"?: boolean;
         /**
           * Wether the modal body should be rounded at the bottom
          */

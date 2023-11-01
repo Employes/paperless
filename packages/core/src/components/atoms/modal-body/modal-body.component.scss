@@ -1,6 +1,6 @@
 :host {
     @apply bg-white;
-    @apply px-6 tablet:px-10 desktop-xs:px-14 py-6;
+    @apply px-6 py-6 tablet:px-10 desktop-xs:px-14;
 }
 
 :host(.variant-table) {
@@ -9,4 +9,8 @@
 
 :host(.is-rounded) {
     @apply rounded-b-none desktop-xs:rounded-b-xxlarge;
+}
+
+:host(.no-padding) {
+    @apply p-0;
 }

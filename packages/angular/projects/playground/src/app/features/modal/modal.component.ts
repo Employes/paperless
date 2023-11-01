@@ -1,6 +1,7 @@
 import { CdkPortal, TemplatePortal } from '@angular/cdk/portal';
 import { Component } from '@angular/core';
 import { OverlayRef, OverlayService } from 'projects/paperless/src/public-api';
+import { TestCropperModalComponent } from './cropper-modal.component';
 import { TestModalComponent } from './test-modal.component';
 
 @Component({
@@ -13,6 +14,12 @@ export class ModalComponent {
 
     showModal() {
         this._overlay.open<TestModalComponent>(TestModalComponent);
+    }
+
+    showCropperModal() {
+        this._overlay.open<TestCropperModalComponent>(
+            TestCropperModalComponent
+        );
     }
 
     showTemplateModal(template: TemplatePortal) {

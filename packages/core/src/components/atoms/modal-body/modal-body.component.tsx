@@ -16,12 +16,17 @@ export class ModalBody {
      */
     @Prop() rounded: boolean = false;
 
+    /**
+     * Wether the body should have padding
+     */
+    @Prop() padding: boolean = true;
+
     render() {
         return (
             <Host
                 class={`p-modal-body variant-${this.variant} ${
                     this.rounded && 'is-rounded'
-                }`}
+                } ${!this.padding && 'no-padding'}`}
             >
                 <slot />
             </Host>

@@ -24,6 +24,7 @@
  - [p-button](../button)
  - [p-calendar](../../molecules/calendar)
  - [p-card-header](../card-header)
+ - [p-cropper](../../molecules/cropper)
  - [p-dropdown-menu-item](../dropdown-menu-item)
  - [p-info-panel](../info-panel)
  - [p-input-error](../../molecules/input-error)
@@ -45,6 +46,7 @@ graph TD;
   p-button --> p-icon
   p-calendar --> p-icon
   p-card-header --> p-icon
+  p-cropper --> p-icon
   p-dropdown-menu-item --> p-icon
   p-info-panel --> p-icon
   p-input-error --> p-icon

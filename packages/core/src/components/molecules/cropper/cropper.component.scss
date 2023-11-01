@@ -1,0 +1,4 @@
+:host {
+    @import '../../../style/form/range';
+    @apply mb-6 flex w-full flex-col items-center justify-between gap-6;
+}

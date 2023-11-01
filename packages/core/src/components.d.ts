@@ -258,6 +258,20 @@ export namespace Components {
          */
         "variant": 'info' | 'negative' | 'positive' | 'unbiased';
     }
+    interface PCropper {
+        /**
+          * The return type of the onchange
+         */
+        "returnType": 'canvas' | 'base64';
+        /**
+          * The image to crop (url or base64)
+         */
+        "value": any;
+        /**
+          * Variant of the image that's being cropped
+         */
+        "variant": 'user' | 'company';
+    }
     interface PDatepicker {
         /**
           * Wether to disable the weekends
@@ -1402,6 +1416,10 @@ export interface PCalendarCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPCalendarElement;
 }
+export interface PCropperCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPCropperElement;
+}
 export interface PDatepickerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDatepickerElement;
@@ -1534,6 +1552,12 @@ declare global {
     var HTMLPCounterElement: {
         prototype: HTMLPCounterElement;
         new (): HTMLPCounterElement;
+    };
+    interface HTMLPCropperElement extends Components.PCropper, HTMLStencilElement {
+    }
+    var HTMLPCropperElement: {
+        prototype: HTMLPCropperElement;
+        new (): HTMLPCropperElement;
     };
     interface HTMLPDatepickerElement extends Components.PDatepicker, HTMLStencilElement {
     }
@@ -1842,6 +1866,7 @@ declare global {
         "p-card-header": HTMLPCardHeaderElement;
         "p-content-slider": HTMLPContentSliderElement;
         "p-counter": HTMLPCounterElement;
+        "p-cropper": HTMLPCropperElement;
         "p-datepicker": HTMLPDatepickerElement;
         "p-divider": HTMLPDividerElement;
         "p-drawer": HTMLPDrawerElement;
@@ -2141,6 +2166,24 @@ declare namespace LocalJSX {
           * The variant of the counter
          */
         "variant"?: 'info' | 'negative' | 'positive' | 'unbiased';
+    }
+    interface PCropper {
+        /**
+          * Event when the value changes
+         */
+        "onValueChange"?: (event: PCropperCustomEvent<any>) => void;
+        /**
+          * The return type of the onchange
+         */
+        "returnType"?: 'canvas' | 'base64';
+        /**
+          * The image to crop (url or base64)
+         */
+        "value"?: any;
+        /**
+          * Variant of the image that's being cropped
+         */
+        "variant"?: 'user' | 'company';
     }
     interface PDatepicker {
         /**
@@ -3425,6 +3468,7 @@ declare namespace LocalJSX {
         "p-card-header": PCardHeader;
         "p-content-slider": PContentSlider;
         "p-counter": PCounter;
+        "p-cropper": PCropper;
         "p-datepicker": PDatepicker;
         "p-divider": PDivider;
         "p-drawer": PDrawer;
@@ -3492,6 +3536,7 @@ declare module "@stencil/core" {
             "p-card-header": LocalJSX.PCardHeader & JSXBase.HTMLAttributes<HTMLPCardHeaderElement>;
             "p-content-slider": LocalJSX.PContentSlider & JSXBase.HTMLAttributes<HTMLPContentSliderElement>;
             "p-counter": LocalJSX.PCounter & JSXBase.HTMLAttributes<HTMLPCounterElement>;
+            "p-cropper": LocalJSX.PCropper & JSXBase.HTMLAttributes<HTMLPCropperElement>;
             "p-datepicker": LocalJSX.PDatepicker & JSXBase.HTMLAttributes<HTMLPDatepickerElement>;
             "p-divider": LocalJSX.PDivider & JSXBase.HTMLAttributes<HTMLPDividerElement>;
             "p-drawer": LocalJSX.PDrawer & JSXBase.HTMLAttributes<HTMLPDrawerElement>;

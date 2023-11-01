@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CropperComponent } from './features/cropper/cropper.component';
 import { DatepickerComponent } from './features/datepicker/datepicker.component';
 import { DrawerComponent } from './features/drawer/drawer.component';
 import { HomeComponent } from './features/home/home.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
     {
         path: 'datepicker',
         component: DatepickerComponent,
+    },
+    {
+        path: 'cropper',
+        component: CropperComponent,
     },
 ];
 

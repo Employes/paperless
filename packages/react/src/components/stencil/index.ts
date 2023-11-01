@@ -20,6 +20,7 @@ export const PCardContainer = /*@__PURE__*/createReactComponent<JSX.PCardContain
 export const PCardHeader = /*@__PURE__*/createReactComponent<JSX.PCardHeader, HTMLPCardHeaderElement>('p-card-header');
 export const PContentSlider = /*@__PURE__*/createReactComponent<JSX.PContentSlider, HTMLPContentSliderElement>('p-content-slider');
 export const PCounter = /*@__PURE__*/createReactComponent<JSX.PCounter, HTMLPCounterElement>('p-counter');
+export const PCropper = /*@__PURE__*/createReactComponent<JSX.PCropper, HTMLPCropperElement>('p-cropper');
 export const PDatepicker = /*@__PURE__*/createReactComponent<JSX.PDatepicker, HTMLPDatepickerElement>('p-datepicker');
 export const PDivider = /*@__PURE__*/createReactComponent<JSX.PDivider, HTMLPDividerElement>('p-divider');
 export const PDrawer = /*@__PURE__*/createReactComponent<JSX.PDrawer, HTMLPDrawerElement>('p-drawer');

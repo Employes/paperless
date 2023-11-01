@@ -1,5 +1,5 @@
 .p-input[type='range'] {
-    @apply relative appearance-none;
+    @apply relative appearance-none bg-transparent;
 
     &::-webkit-slider-runnable-track,
     &::-moz-range-track {

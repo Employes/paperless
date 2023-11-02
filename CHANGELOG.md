@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.1](https://github.com/employes/paperless/compare/v1.11.0...v1.11.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* **Atom/Input/Range:** Make sure chrome version works too ([ced33db](https://github.com/employes/paperless/commit/ced33db73415460b1c55096cc98a6035d416c534))
+
+
+
+
+
 # [1.11.0](https://github.com/employes/paperless/compare/v1.10.0...v1.11.0) (2023-11-01)
 
 

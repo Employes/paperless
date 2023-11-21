@@ -6,19 +6,19 @@ p-avatar {
     }
 
     &[size='small'] > img {
-        @apply w-8 h-8;
+        @apply h-8 w-8;
     }
 
     &[size='medium'] > img {
-        @apply w-[3.125rem] h-[3.125rem];
+        @apply h-[3.125rem] w-[3.125rem];
     }
 
     &[size='large'] > img {
-        @apply w-16 h-16;
+        @apply h-16 w-16;
     }
 
     &[size='xlarge'] > img {
-        @apply w-[6.5rem] h-[6.5rem];
+        @apply h-[6.5rem] w-[6.5rem];
     }
 
     &[variant='company'] {
@@ -27,7 +27,8 @@ p-avatar {
         }
 
         &[size='medium'],
-        &[size='large'] {
+        &[size='large'],
+        &[size='xlarge'] {
             > img {
                 @apply rounded-large;
             }

@@ -1,7 +1,15 @@
 :host {
-    @apply h-6 flex items-center px-2 rounded-large;
+    @apply h-6 flex items-center px-2 gap-2 rounded-large;
     @apply text-storm text-sm font-semibold whitespace-nowrap;
     @apply cursor-pointer;
+}
+
+:host([size='big']) {
+    @apply h-auto p-4 flex-col max-w-[9rem] whitespace-normal text-center;
+
+    .description {
+        @apply text-storm-medium text-xxs -mt-2;
+    }
 }
 
 :host(.variant-icon) {
@@ -14,4 +22,9 @@
 
 :host(.active) {
     @apply text-indigo bg-indigo-light;
+
+    
+    .description {
+        @apply text-indigo;
+    }
 }

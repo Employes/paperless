@@ -11,17 +11,37 @@ import SegmentItemDocs from '../../../../packages/core/src/components/atoms/segm
 ### Default
 
 <Canvas>
-    <div class="flex justify-center">
+    <div class="flex justify-center items-center gap-4">
         <p-segment-item>I am an item</p-segment-item>
-        <p-segment-item icon="grid" />
+        <p-segment-item icon="grid" icon-only />
+        <p-segment-item size="big">Big</p-segment-item>
+        <p-segment-item size="big" icon="grid">Big & Icon</p-segment-item>
     </div>
 </Canvas>
 
 ### Active
 
 <Canvas>
-    <div class="flex justify-center">
+    <div class="flex justify-center items-center gap-4">
         <p-segment-item active>I am an active item</p-segment-item>
-        <p-segment-item icon="grid" active />
+        <p-segment-item icon="grid" icon-only active />
+        <p-segment-item size="big" active>Big</p-segment-item>
+        <p-segment-item size="big" icon="grid" active>Big & Icon</p-segment-item>
+    </div>
+</Canvas>
+
+
+### Design Example Big
+
+<Canvas>
+    <div class="flex justify-center items-center gap-4">
+        <p-segment-item size="big" icon="grid">
+            <span>Item</span>
+            <span slot="description">Item subtext, item subtext, item subtext, item subtext</span>
+        </p-segment-item>
+        <p-segment-item size="big" icon="grid" active>
+            <span>Item</span>
+            <span slot="description">Item subtext, item subtext, item subtext, item subtext</span>
+        </p-segment-item>
     </div>
 </Canvas>

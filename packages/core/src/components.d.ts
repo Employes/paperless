@@ -851,9 +851,17 @@ export namespace Components {
          */
         "iconFlip": IconFlipOptions;
         /**
+          * Wether the segment item is icon only
+         */
+        "iconOnly": boolean;
+        /**
           * Icon rotate
          */
         "iconRotate": RotateOptions;
+        /**
+          * Size of the segment item
+         */
+        "size": 'small' | 'big';
     }
     interface PSelect {
         /**
@@ -2832,9 +2840,17 @@ declare namespace LocalJSX {
          */
         "iconFlip"?: IconFlipOptions;
         /**
+          * Wether the segment item is icon only
+         */
+        "iconOnly"?: boolean;
+        /**
           * Icon rotate
          */
         "iconRotate"?: RotateOptions;
+        /**
+          * Size of the segment item
+         */
+        "size"?: 'small' | 'big';
     }
     interface PSelect {
         /**

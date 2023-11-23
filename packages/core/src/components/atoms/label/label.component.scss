@@ -25,6 +25,15 @@
     }
 }
 
+:host([variant='special']) {
+    @apply bg-indigo-light;
+    @apply text-indigo-dark;
+
+    .circle {
+        @apply bg-indigo;
+    }
+}
+
 :host([variant='info']) {
     @apply bg-sky-light;
     @apply text-sky;

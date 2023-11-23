@@ -16,6 +16,7 @@ export class Label {
         | 'positive'
         | 'unbiased'
         | 'negative'
+        | 'special'
         | 'info' = 'neutral';
 
     /**

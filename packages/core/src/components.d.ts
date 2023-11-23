@@ -630,6 +630,7 @@ export namespace Components {
         | 'positive'
         | 'unbiased'
         | 'negative'
+        | 'special'
         | 'info';
     }
     interface PLayout {
@@ -2590,6 +2591,7 @@ declare namespace LocalJSX {
         | 'positive'
         | 'unbiased'
         | 'negative'
+        | 'special'
         | 'info';
     }
     interface PLayout {

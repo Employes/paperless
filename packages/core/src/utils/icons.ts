@@ -7,11 +7,13 @@ import car from '../assets/icons/car.svg';
 import checklist from '../assets/icons/checklist.svg';
 import checkmark from '../assets/icons/checkmark.svg';
 import chevron from '../assets/icons/chevron.svg';
+import chevrons from '../assets/icons/chevrons.svg';
 import clock from '../assets/icons/clock.svg';
 import cogs from '../assets/icons/cogs.svg';
 import colleagues from '../assets/icons/colleagues.svg';
 import comment from '../assets/icons/comment.svg';
 import companies from '../assets/icons/companies.svg';
+import deactivate from '../assets/icons/deactivate.svg';
 import document from '../assets/icons/document.svg';
 import download from '../assets/icons/download.svg';
 import envelope from '../assets/icons/envelope.svg';
@@ -23,6 +25,7 @@ import filter from '../assets/icons/filter.svg';
 import folder from '../assets/icons/folder.svg';
 import formula from '../assets/icons/formula.svg';
 import grid from '../assets/icons/grid.svg';
+import hashtag from '../assets/icons/hashtag.svg';
 import headset from '../assets/icons/headset.svg';
 import integration from '../assets/icons/integration.svg';
 import list from '../assets/icons/list.svg';
@@ -67,11 +70,13 @@ export default {
     checklist,
     checkmark,
     chevron,
+    chevrons,
     clock,
     colleagues,
     cogs,
     comment,
     companies,
+    deactivate,
     document,
     download,
     envelope,
@@ -83,6 +88,7 @@ export default {
     folder,
     formula,
     grid,
+    hashtag,
     headset,
     integration,
     list,

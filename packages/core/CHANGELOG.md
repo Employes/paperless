@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.11.2...v1.12.0) (2023-11-23)
+
+
+### Features
+
+* **Atoms/Avatar:** xsmall variant & letters empty state ([c08b77f](https://github.com/ionic-team/stencil-component-starter/commit/c08b77f2000d69607155f5bf11b0800b05d0c9dd))
+* **Atoms/Button:** Add underline option for text variant ([e10e08e](https://github.com/ionic-team/stencil-component-starter/commit/e10e08e66a581906a0e51a84adc3c0d1ede319e0))
+* **Atoms/Icon:** Add Chevrons, Deactivate & Hashtag icons ([5be6fba](https://github.com/ionic-team/stencil-component-starter/commit/5be6fba7b9baba0a4717c0525f4ed131f9dbbfdf))
+* **Atoms/Label:** Add icon position property ([64daa6c](https://github.com/ionic-team/stencil-component-starter/commit/64daa6ca73d1fd30449e0a5566df98db985a815b))
+* **Atoms/Label:** Add special variant ([7184999](https://github.com/ionic-team/stencil-component-starter/commit/7184999be0e4b924245d4e4ca43ea720c7ee896b))
+* **Atoms/Segment/Item:** Add big variant with description ([d0cf434](https://github.com/ionic-team/stencil-component-starter/commit/d0cf4349a352792860b88f7ed9082ff741c9be3e))
+
+
+
+
+
 ## [1.11.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.11.1...v1.11.2) (2023-11-21)
 
 

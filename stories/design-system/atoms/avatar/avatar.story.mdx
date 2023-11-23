@@ -1,6 +1,6 @@
-import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
-import { StoryCategories } from '../../../categories';
+import { Canvas, Meta } from '@storybook/addon-docs';
 import AvatarDocs from '../../../../packages/core/src/components/atoms/avatar/readme.md';
+import { StoryCategories } from '../../../categories';
 
 <Meta title={`${StoryCategories.Atoms}/Avatar/Avatar`} />
 
@@ -11,7 +11,11 @@ import AvatarDocs from '../../../../packages/core/src/components/atoms/avatar/re
 ### User variant & Sizes
 
 <Canvas>
-    <div class="flex items-center place-content-evenly">
+    <div class="flex place-content-evenly items-center">
+        <p-avatar
+            size="xsmall"
+            src="https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
         <p-avatar
             size="small"
             src="https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
@@ -31,7 +35,12 @@ import AvatarDocs from '../../../../packages/core/src/components/atoms/avatar/re
 ### Company variant & Sizes
 
 <Canvas>
-    <div class="flex items-center place-content-evenly">
+    <div class="flex place-content-evenly items-center">
+        <p-avatar
+            variant="company"
+            size="xsmall"
+            src="https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"
+        ></p-avatar>
         <p-avatar
             variant="company"
             size="small"
@@ -54,10 +63,57 @@ import AvatarDocs from '../../../../packages/core/src/components/atoms/avatar/re
     </div>
 </Canvas>
 
-### Default image
+### Empty State / Failed loading of image
+
+#### Letters
 
 <Canvas>
-    <div class="flex items-center place-content-evenly">
+    <div class="flex place-content-evenly items-center">
+        <div class="flex flex-col items-center gap-4">
+            <p-avatar src="broken-link" letters="JH" size="xsmall"></p-avatar>
+            <p-avatar src="broken-link" letters="JH" size="small"></p-avatar>
+            <p-avatar src="broken-link" letters="JH"></p-avatar>
+            <p-avatar src="broken-link" letters="JH" size="large"></p-avatar>
+            <p-avatar src="broken-link" letters="JH" size="xlarge"></p-avatar>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+            <p-avatar
+                variant="company"
+                src="broken-link"
+                letters="BZ"
+                size="xsmall"
+            ></p-avatar>
+            <p-avatar
+                variant="company"
+                src="broken-link"
+                letters="BZ"
+                size="small"
+            ></p-avatar>
+            <p-avatar
+                variant="company"
+                src="broken-link"
+                letters="BZ"
+            ></p-avatar>
+            <p-avatar
+                variant="company"
+                src="broken-link"
+                letters="BZ"
+                size="large"
+            ></p-avatar>
+            <p-avatar
+                variant="company"
+                src="broken-link"
+                letters="BZ"
+                size="xlarge"
+            ></p-avatar>
+        </div>
+    </div>
+</Canvas>
+
+#### No letters
+
+<Canvas>
+    <div class="flex place-content-evenly items-center">
         <p-avatar src="broken-link"></p-avatar>
         <p-avatar variant="company" src="broken-link"></p-avatar>
     </div>

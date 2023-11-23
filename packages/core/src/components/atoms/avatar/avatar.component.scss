@@ -1,41 +1,62 @@
 p-avatar {
-    @apply inline-block flex-shrink-0;
+    @apply inline-flex flex-shrink-0 items-center justify-center overflow-hidden bg-indigo-light;
+    @apply font-semibold uppercase  text-storm-light;
 
     > img {
         @apply object-cover object-center;
     }
 
-    &[size='small'] > img {
-        @apply h-8 w-8;
+    &[size='xsmall'] {
+        @apply h-6 w-6 text-[0.625rem];
+
+        > img {
+            @apply h-6 w-6;
+        }
     }
 
-    &[size='medium'] > img {
-        @apply h-[3.125rem] w-[3.125rem];
+    &[size='small'] {
+        @apply h-8 w-8 text-xs;
+
+        > img {
+            @apply h-8 w-8;
+        }
     }
 
-    &[size='large'] > img {
-        @apply h-16 w-16;
+    &[size='medium'] {
+        @apply h-[3.125rem] w-[3.125rem] text-base;
+
+        > img {
+            @apply h-[3.125rem] w-[3.125rem];
+        }
     }
 
-    &[size='xlarge'] > img {
-        @apply h-[6.5rem] w-[6.5rem];
+    &[size='large'] {
+        @apply h-16 w-16 text-base;
+
+        > img {
+            @apply h-16 w-16;
+        }
+    }
+
+    &[size='xlarge'] {
+        @apply h-[6.5rem] w-[6.5rem] text-base;
+
+        > img {
+            @apply h-[6.5rem] w-[6.5rem];
+        }
     }
 
     &[variant='company'] {
-        > img {
-            @apply rounded;
-        }
+        @apply rounded;
 
         &[size='medium'],
         &[size='large'],
         &[size='xlarge'] {
-            > img {
-                @apply rounded-large;
-            }
+            @apply rounded-large;
         }
     }
 
-    &[variant='user'] > img {
+    &[variant='user'] {
         @apply rounded-round;
     }
 }

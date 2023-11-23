@@ -76,9 +76,17 @@ export namespace Components {
          */
         "defaultImage": string;
         /**
+          * The letters to show on the empty state variant
+         */
+        "letters": string;
+        /**
           * The size of the avatar
          */
-        "size": 'small' | 'medium' | 'large' | 'xlarge';
+        "size": | 'xsmall'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'xlarge';
         /**
           * The image used for the avatar
          */
@@ -1981,9 +1989,17 @@ declare namespace LocalJSX {
          */
         "defaultImage"?: string;
         /**
+          * The letters to show on the empty state variant
+         */
+        "letters"?: string;
+        /**
           * The size of the avatar
          */
-        "size"?: 'small' | 'medium' | 'large' | 'xlarge';
+        "size"?: | 'xsmall'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'xlarge';
         /**
           * The image used for the avatar
          */

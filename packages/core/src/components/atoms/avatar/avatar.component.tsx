@@ -14,8 +14,12 @@ export class Avatar {
     /**
      * The size of the avatar
      */
-    @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' | 'xlarge' =
-        'medium';
+    @Prop({ reflect: true }) size:
+        | 'xsmall'
+        | 'small'
+        | 'medium'
+        | 'large'
+        | 'xlarge' = 'medium';
 
     /**
      * The default image to show on errors
@@ -27,10 +31,17 @@ export class Avatar {
      */
     @Prop() src!: string;
 
+    /**
+     * The letters to show on the empty state variant
+     */
+    @Prop() letters: string;
+
     @State() private _src: string;
+    @State() private _failed: boolean = false;
 
     @Watch('src')
     onSrchChange(src: string) {
+        this._failed = false;
         this._src = src;
     }
 
@@ -44,12 +55,20 @@ export class Avatar {
     render() {
         return (
             <Host class="p-avatar">
-                <img src={this._src} onError={() => this._setDefaultLink()} />
+                {this._failed && this.letters?.length ? (
+                    this.letters
+                ) : (
+                    <img
+                        src={this._src}
+                        onError={() => this._setDefaultLink()}
+                    />
+                )}
             </Host>
         );
     }
 
     private _setDefaultLink() {
+        this._failed = true;
         this._src =
             this.defaultImage ??
             (this.variant === 'user'

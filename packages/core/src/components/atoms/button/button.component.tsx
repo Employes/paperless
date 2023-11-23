@@ -22,6 +22,11 @@ export class Button {
     @Prop() variant: 'primary' | 'secondary' | 'text' = 'primary';
 
     /**
+     * Wether the text variant has underline
+     */
+    @Prop() underline: boolean = false;
+
+    /**
      * Href in case of "text" version
      */
     @Prop() href: string;
@@ -118,6 +123,8 @@ export class Button {
                         this.iconPosition
                     } chevron-position-${this.chevronPosition} ${
                         this.inheritText && 'should-inherit-text'
+                    } ${
+                        this.underline && 'has-underline'
                     }`}
                     disabled={this.disabled}
                     href={this.href}

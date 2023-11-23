@@ -82,6 +82,10 @@ p-button {
         &.variant-text {
             @apply text-indigo;
 
+            &.has-underline {
+                @apply underline underline-offset-1;
+            }
+
             &:hover:not([disabled]) {
                 @apply text-indigo-dark;
             }

@@ -174,6 +174,10 @@ export namespace Components {
          */
         "target": string;
         /**
+          * Wether the text variant has underline
+         */
+        "underline": boolean;
+        /**
           * The variant of the button
          */
         "variant": 'primary' | 'secondary' | 'text';
@@ -2094,6 +2098,10 @@ declare namespace LocalJSX {
           * Target in case of "text" version
          */
         "target"?: string;
+        /**
+          * Wether the text variant has underline
+         */
+        "underline"?: boolean;
         /**
           * The variant of the button
          */

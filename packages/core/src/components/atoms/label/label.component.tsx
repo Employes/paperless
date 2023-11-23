@@ -29,6 +29,11 @@ export class Label {
         | 'icon-only' = 'circle';
 
     /**
+     * Icon position
+     */
+    @Prop() iconPosition: 'start' | 'end' = 'start';
+
+    /**
      * Icon to show on the label
      */
     @Prop({ reflect: true }) icon: IconVariant;
@@ -56,7 +61,7 @@ export class Label {
     render() {
         return (
             <Host class="p-label">
-                {this.icon && (
+                {this.icon && this.iconPosition === 'start' && (
                     <p-icon
                         variant={this.icon}
                         flip={this.iconFlip}
@@ -70,6 +75,13 @@ export class Label {
                 <div class="content">
                     <slot />
                 </div>
+                {this.icon && this.iconPosition === 'end' && (
+                    <p-icon
+                        variant={this.icon}
+                        flip={this.iconFlip}
+                        rotate={this.iconRotate}
+                    />
+                )}
             </Host>
         );
     }

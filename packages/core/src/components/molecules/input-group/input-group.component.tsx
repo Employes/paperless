@@ -93,6 +93,8 @@ export class InputGroup {
 
     @State() private _forceShowTooltip = false;
 
+    private _whitelistedTags = ['input', 'textarea'];
+
     componentWillRender() {
         this._setInputClasses();
     }
@@ -227,6 +229,10 @@ export class InputGroup {
         const input = this._el.querySelector(':scope > [slot="input"]');
 
         if (!input) {
+            return;
+        }
+
+        if (this._whitelistedTags.indexOf(input.tagName) === -1) {
             return;
         }
 

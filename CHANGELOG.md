@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/employes/paperless/compare/v1.12.1...v1.12.2) (2023-12-05)
+
+
+### Bug Fixes
+
+* **Atoms/Divider:** Correct text formatting ([babf7de](https://github.com/employes/paperless/commit/babf7de47d737d9c0572a2d67684cb2de10aa106))
+
+
+
+
+
 ## [1.12.1](https://github.com/employes/paperless/compare/v1.12.0...v1.12.1) (2023-11-27)
 
 **Note:** Version bump only for package paperless

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.12.2...v1.12.3) (2023-12-05)
+
+
+### Bug Fixes
+
+* **Atoms/Divider:** Correct font size ([406e07b](https://github.com/ionic-team/stencil-component-starter/commit/406e07b9af21c7eac6194c23977d224e913412ab))
+* **Atoms/Segment/Item:** Don't make description bold ([6946404](https://github.com/ionic-team/stencil-component-starter/commit/69464047a3b3bef495859711e940af23d3493bf6))
+
+
+
+
+
 ## [1.12.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.12.1...v1.12.2) (2023-12-05)
 
 

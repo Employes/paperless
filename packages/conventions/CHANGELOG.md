@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.5](https://github.com/Employes/Paperless/compare/v1.12.4...v1.12.5) (2023-12-12)
+
+
+### Reverts
+
+* Revert "chore(deps): update angular-eslint monorepo to v17 (#188)" ([e6edb10](https://github.com/Employes/Paperless/commit/e6edb101a6175cd8903c62caca8b9d6f022c5b82)), closes [#188](https://github.com/Employes/Paperless/issues/188)
+
+
+
+
+
 ## [1.12.4](https://github.com/Employes/Paperless/compare/v1.12.3...v1.12.4) (2023-12-12)
 
 **Note:** Version bump only for package @paperless/conventions

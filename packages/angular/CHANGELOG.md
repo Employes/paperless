@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.5](https://github.com/Employes/Paperless/compare/v1.12.4...v1.12.5) (2023-12-12)
+
+
+### Reverts
+
+* Revert "chore(deps): update dependency ng-packagr to v17 (#186)" ([2178213](https://github.com/Employes/Paperless/commit/217821329fbbc51319472dbd4b5313f27ddbe8fa)), closes [#186](https://github.com/Employes/Paperless/issues/186)
+
+
+
+
+
 ## [1.12.4](https://github.com/Employes/Paperless/compare/v1.12.3...v1.12.4) (2023-12-12)
 
 **Note:** Version bump only for package @paperless/angular

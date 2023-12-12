@@ -232,7 +232,8 @@ export class InputGroup {
             return;
         }
 
-        if (this._whitelistedTags.indexOf(input.tagName) === -1) {
+        const tagName = input.tagName.toLowerCase();
+        if (this._whitelistedTags.indexOf(tagName) === -1) {
             return;
         }
 

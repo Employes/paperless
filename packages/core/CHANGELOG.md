@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.12.5...v1.13.0) (2023-12-15)
+
+
+### Features
+
+* **Atoms/Icon:** Add iDeal icon ([a1f920a](https://github.com/ionic-team/stencil-component-starter/commit/a1f920a1962a25220950fb169a14ff74026b765b))
+
+
+
+
+
 ## [1.12.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.12.4...v1.12.5) (2023-12-12)
 
 **Note:** Version bump only for package @paperless/core

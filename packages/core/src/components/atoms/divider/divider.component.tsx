@@ -19,7 +19,7 @@ export class Divider {
                     <div
                         class={`flex items-center ${
                             hasSlotted && 'px-2'
-                        } text-xxs font-semibold uppercase`}
+                        } text-xxs font-semibold uppercase text-storm-light`}
                     >
                         <slot />
                     </div>

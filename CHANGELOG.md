@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/employes/paperless/compare/v1.13.0...v1.14.0) (2023-12-18)
+
+
+### Features
+
+* **Atoms/Divider:** Always make sure text color of divider is set ([391550a](https://github.com/employes/paperless/commit/391550a230bbe7a5ef9e02a7d2a86a8e1c4a4165))
+
+
+
+
+
 # [1.13.0](https://github.com/employes/paperless/compare/v1.12.5...v1.13.0) (2023-12-15)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/ionic-team/ionic/compare/v1.14.0...v1.15.0) (2024-01-05)
+
+
+### Features
+
+* **Atoms:** Add floating menu item & container components ([9f552bb](https://github.com/ionic-team/ionic/commit/9f552bb6d7bfe66d8857c477a17db1c00f3a37e4))
+
+
+
+
+
 # [1.14.0](https://github.com/ionic-team/ionic/compare/v1.13.0...v1.14.0) (2023-12-18)
 
 **Note:** Version bump only for package @paperless/react

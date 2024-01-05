@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.15.0](https://github.com/employes/paperless/compare/v1.14.0...v1.15.0) (2024-01-05)
+
+
+### Features
+
+* **Atoms/Divider:** Add vertical variant ([fbc1367](https://github.com/employes/paperless/commit/fbc1367309e5ec2897c24a5bc0865ff50a97ab37))
+* **Atoms:** Add floating menu item & container components ([9f552bb](https://github.com/employes/paperless/commit/9f552bb6d7bfe66d8857c477a17db1c00f3a37e4))
+
+
+
+
+
 # [1.14.0](https://github.com/employes/paperless/compare/v1.13.0...v1.14.0) (2023-12-18)
 
 

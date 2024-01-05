@@ -351,6 +351,10 @@ export namespace Components {
         "value": Date | string | null | undefined;
     }
     interface PDivider {
+        /**
+          * The variant of the modal body
+         */
+        "variant": 'horizontal' | 'vertical';
     }
     interface PDrawer {
         /**
@@ -2301,6 +2305,10 @@ declare namespace LocalJSX {
         "value"?: Date | string | null | undefined;
     }
     interface PDivider {
+        /**
+          * The variant of the modal body
+         */
+        "variant"?: 'horizontal' | 'vertical';
     }
     interface PDrawer {
         /**

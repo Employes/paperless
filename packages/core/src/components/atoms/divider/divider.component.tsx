@@ -1,4 +1,4 @@
-import { Component, Element, h, Host } from '@stencil/core';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
 
 @Component({
     tag: 'p-divider',
@@ -6,6 +6,11 @@ import { Component, Element, h, Host } from '@stencil/core';
     shadow: true,
 })
 export class Divider {
+    /**
+     * The variant of the modal body
+     */
+    @Prop({ reflect: true }) variant: 'horizontal' | 'vertical' = 'horizontal';
+
     /**
      * The host element
      */

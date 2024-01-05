@@ -1,5 +1,5 @@
 :host {
-    @apply block my-2 w-full;
+    @apply my-2 block w-full text-mystic-medium;
 
     .content {
         @apply flex w-full items-center;
@@ -7,7 +7,21 @@
         &::before,
         &::after {
             content: '';
-            @apply h-px bg-mystic-medium flex-1;
+            @apply h-px flex-1 bg-current;
+        }
+    }
+}
+
+:host([variant='vertical']) {
+    @apply mx-2 my-0 block h-full w-auto;
+
+    .content {
+        @apply h-full w-auto flex-col;
+
+        &::before,
+        &::after {
+            content: '';
+            @apply w-px flex-1 bg-current;
         }
     }
 }

@@ -13,6 +13,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property  | Attribute | Description                   | Type                         | Default        |
+| --------- | --------- | ----------------------------- | ---------------------------- | -------------- |
+| `variant` | `variant` | The variant of the modal body | `"horizontal" \| "vertical"` | `'horizontal'` |
+
+
 ## Dependencies
 
 ### Used by

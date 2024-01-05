@@ -1,0 +1,11 @@
+:host {
+    @apply flex h-6 items-center gap-2 text-sm text-storm-vague;
+}
+
+:host(:not([hover='false'])) {
+    @apply cursor-pointer font-semibold;
+}
+
+:host(:not([hover='false']):hover) {
+    @apply text-white;
+}

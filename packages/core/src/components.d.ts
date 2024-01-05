@@ -478,6 +478,14 @@ export namespace Components {
          */
         "icon": IconVariant;
     }
+    interface PFloatingMenuContainer {
+    }
+    interface PFloatingMenuItem {
+        /**
+          * The variant of the modal body
+         */
+        "hover": boolean;
+    }
     interface PHelper {
         /**
           * The placement of the helper popover
@@ -1650,6 +1658,18 @@ declare global {
         prototype: HTMLPDropdownMenuItemElement;
         new (): HTMLPDropdownMenuItemElement;
     };
+    interface HTMLPFloatingMenuContainerElement extends Components.PFloatingMenuContainer, HTMLStencilElement {
+    }
+    var HTMLPFloatingMenuContainerElement: {
+        prototype: HTMLPFloatingMenuContainerElement;
+        new (): HTMLPFloatingMenuContainerElement;
+    };
+    interface HTMLPFloatingMenuItemElement extends Components.PFloatingMenuItem, HTMLStencilElement {
+    }
+    var HTMLPFloatingMenuItemElement: {
+        prototype: HTMLPFloatingMenuItemElement;
+        new (): HTMLPFloatingMenuItemElement;
+    };
     interface HTMLPHelperElement extends Components.PHelper, HTMLStencilElement {
     }
     var HTMLPHelperElement: {
@@ -1913,6 +1933,8 @@ declare global {
         "p-dropdown": HTMLPDropdownElement;
         "p-dropdown-menu-container": HTMLPDropdownMenuContainerElement;
         "p-dropdown-menu-item": HTMLPDropdownMenuItemElement;
+        "p-floating-menu-container": HTMLPFloatingMenuContainerElement;
+        "p-floating-menu-item": HTMLPFloatingMenuItemElement;
         "p-helper": HTMLPHelperElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
@@ -2450,6 +2472,14 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon"?: IconVariant;
+    }
+    interface PFloatingMenuContainer {
+    }
+    interface PFloatingMenuItem {
+        /**
+          * The variant of the modal body
+         */
+        "hover"?: boolean;
     }
     interface PHelper {
         /**
@@ -3552,6 +3582,8 @@ declare namespace LocalJSX {
         "p-dropdown": PDropdown;
         "p-dropdown-menu-container": PDropdownMenuContainer;
         "p-dropdown-menu-item": PDropdownMenuItem;
+        "p-floating-menu-container": PFloatingMenuContainer;
+        "p-floating-menu-item": PFloatingMenuItem;
         "p-helper": PHelper;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
@@ -3620,6 +3652,8 @@ declare module "@stencil/core" {
             "p-dropdown": LocalJSX.PDropdown & JSXBase.HTMLAttributes<HTMLPDropdownElement>;
             "p-dropdown-menu-container": LocalJSX.PDropdownMenuContainer & JSXBase.HTMLAttributes<HTMLPDropdownMenuContainerElement>;
             "p-dropdown-menu-item": LocalJSX.PDropdownMenuItem & JSXBase.HTMLAttributes<HTMLPDropdownMenuItemElement>;
+            "p-floating-menu-container": LocalJSX.PFloatingMenuContainer & JSXBase.HTMLAttributes<HTMLPFloatingMenuContainerElement>;
+            "p-floating-menu-item": LocalJSX.PFloatingMenuItem & JSXBase.HTMLAttributes<HTMLPFloatingMenuItemElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;

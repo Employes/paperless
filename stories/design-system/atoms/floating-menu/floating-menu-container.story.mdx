@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Primary, ArgsTable } from '@storybook/addon-docs';
+import { StoryCategories } from '../../../categories';
+import Docs from '../../../../packages/core/src/components/atoms/floating-menu-container/readme.md';
+
+<Meta title={`${StoryCategories.Atoms}/Floating Menu/Container`} />
+
+<Docs />
+
+# Examples
+
+## Default
+
+<Canvas>
+    <p-floating-menu-container class="w-full" />
+</Canvas>
+
+## With Items & Dividers
+
+<Canvas>
+    <div class="flex justify-center">
+        <p-floating-menu-container>
+            <p-floating-menu-item hover={false}>
+                x amount selected
+            </p-floating-menu-item>
+            <p-divider class="mx-0 text-storm" variant="vertical" />
+            <p-floating-menu-item>
+                Upload <p-icon variant="upload" />
+            </p-floating-menu-item>
+            <p-floating-menu-item>
+                Download <p-icon variant="download" />
+            </p-floating-menu-item>
+            <p-divider class="mx-0 text-storm" variant="vertical" />
+            <p-floating-menu-item>
+                <p-icon variant="negative" />
+            </p-floating-menu-item>
+        </p-floating-menu-container>
+    </div>
+</Canvas>

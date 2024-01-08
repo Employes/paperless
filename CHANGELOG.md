@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.3](https://github.com/employes/paperless/compare/v1.17.2...v1.17.3) (2024-01-08)
+
+
+### Bug Fixes
+
+* **Angular/Table:** Make first item in floating menu not hoverable ([eac516d](https://github.com/employes/paperless/commit/eac516df191c57f3d81533d6ab653cebaf3beef8))
+
+
+
+
+
 ## [1.17.2](https://github.com/employes/paperless/compare/v1.17.1...v1.17.2) (2024-01-08)
 
 

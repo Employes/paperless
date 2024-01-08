@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.17.0...v1.17.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* **Table:** Don't show floating menu before a first selection ([ac2caba](https://github.com/ionic-team/stencil-component-starter/commit/ac2caba7ace061dc553e212991fb4cc492f44c2a))
+
+
+
+
+
 # [1.17.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.16.0...v1.17.0) (2024-01-08)
 
 **Note:** Version bump only for package @paperless/core

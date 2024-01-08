@@ -9,5 +9,9 @@
             "content": "Er kan geen overzicht worden getoond tot er iets wordt ingediend. Begin met indienen.",
             "action": "Nieuw"
         }
+    },
+    "floating_menu": {
+        "amount_selected": "{{amount}} item geselecteerd",
+        "amount_selected_plural": "{{amount}} items geselecteerd"
     }
 }

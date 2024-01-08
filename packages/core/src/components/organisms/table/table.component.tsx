@@ -21,6 +21,7 @@ import {
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
 
 export type templateFunc = () => string;
+export type amountSelectedTemplateFunc = (amount: number) => string;
 
 @Component({
     tag: 'p-table',
@@ -66,6 +67,24 @@ export class Table {
      * The current selection of items
      */
     @Prop() selectedRows: any[] = [];
+
+    /**
+     * Wether to enable the floating menu
+     */
+    @Prop() enableFloatingMenu: boolean = true;
+
+    /**
+     * The template for amount selected item in the floating menu
+     */
+    @Prop() floatingMenuAmountSelectedTemplate: amountSelectedTemplateFunc = (
+        amount: number
+    ) =>
+        formatTranslation(
+            (amount === 1
+                ? this._locales.floating_menu?.amount_selected
+                : this._locales.floating_menu?.amount_selected_plural
+            )?.replace('{{amount}}', amount)
+        );
 
     /**
      * Event whenever the current selection changes
@@ -160,29 +179,34 @@ export class Table {
     @Prop() filterButtonTemplate: templateFunc;
 
     /**
-     * Wether to show the edit button
+     * Wether to show the action button
      */
-    @Prop() enableEdit: boolean = true;
+    @Prop() enableAction: boolean = false;
 
     /**
-     * Wether the edit button is loading
+     * Wether the action button is loading
      */
-    @Prop() editButtonLoading: boolean = false;
+    @Prop() actionButtonLoading: boolean = false;
 
     /**
-     * The edit button icon
+     * Wether the action button is enabled
      */
-    @Prop() editButtonIcon: IconVariant = 'pencil';
+    @Prop() actionButtonEnabled: boolean = false;
 
     /**
-     * The edit button text if changed
+     * The action button icon
      */
-    @Prop() editButtonText: string;
+    @Prop() actionButtonIcon: IconVariant = 'pencil';
 
     /**
-     * The template for the edit button text
+     * The action button text if changed
      */
-    @Prop() editButtonTemplate: buttonTemplateFunc;
+    @Prop() actionButtonText: string;
+
+    /**
+     * The template for the action button text
+     */
+    @Prop() actionButtonTemplate: buttonTemplateFunc;
 
     /**
      * Event when one of the quick filters is clicked
@@ -209,12 +233,12 @@ export class Table {
     filter: EventEmitter<null>;
 
     /**
-     * Event when the edit button is clicked
+     * Event when the action button is clicked
      */
     @Event({
         bubbles: false,
     })
-    edit: EventEmitter<null>;
+    action: EventEmitter<null>;
 
     /** START FOOTER */
 
@@ -329,11 +353,24 @@ export class Table {
 
     private _ctrlDown = false;
     private _hasCustomFilterSlot = false;
+    private _hasFloatingMenuItems = false;
 
     componentWillLoad() {
         this._hasCustomFilterSlot = !!this._el.querySelector(
             ':scope > [slot="custom-filter"]'
         );
+        this._hasFloatingMenuItems = !!this._el.querySelectorAll(
+            ':scope > [slot="floating-menu-item"]'
+        ).length;
+
+        if (this.enableRowSelection) {
+            console.log(
+                this._hasFloatingMenuItems,
+                this._el.querySelectorAll(
+                    ':scope > [slot="floating-menu-item"]'
+                )
+            );
+        }
 
         this._setLocales();
         this._parseItems(this.items);
@@ -369,14 +406,14 @@ export class Table {
                             selectedFiltersAmount={this.selectedFiltersAmount}
                             filterButtonTemplate={this.filterButtonTemplate}
                             onFilter={() => this.filter.emit()}
-                            // edit button
-                            enableEdit={this.enableEdit}
-                            editIcon={this.editButtonIcon}
-                            editText={this.editButtonText}
-                            editLoading={this.editButtonLoading}
-                            canEdit={!!this.selectedRows?.length}
-                            editButtonTemplate={this.editButtonTemplate}
-                            onEdit={() => this.edit.emit()}
+                            // action button
+                            enableAction={this.enableAction}
+                            actionIcon={this.actionButtonIcon}
+                            actionText={this.actionButtonText}
+                            actionLoading={this.actionButtonLoading}
+                            canUseAction={this.actionButtonEnabled}
+                            actionButtonTemplate={this.actionButtonTemplate}
+                            onAction={() => this.action.emit()}
                             itemsSelectedAmount={this.selectedRows?.length}
                             //loading
                             loading={this.headerLoading}
@@ -417,6 +454,56 @@ export class Table {
                             //loading
                             loading={this.footerLoading}
                         ></p-table-footer>
+                    )}
+
+                    {this.enableFloatingMenu ? (
+                        <p-floating-menu-container
+                            usedInTable={true}
+                            class={this.selectedRows?.length ? '' : 'inactive'}
+                        >
+                            <p-floating-menu-item
+                                hover={false}
+                                slot="floating-menu-item"
+                                class={
+                                    this._hasFloatingMenuItems
+                                        ? 'hide-mobile'
+                                        : ''
+                                }
+                            >
+                                {this.floatingMenuAmountSelectedTemplate(
+                                    this.selectedRows?.length
+                                )}
+                            </p-floating-menu-item>
+                            <p-divider
+                                class={`mx-0 text-storm ${
+                                    this._hasFloatingMenuItems
+                                        ? 'hide-mobile'
+                                        : ''
+                                }`}
+                                variant="vertical"
+                                slot="floating-menu-item"
+                            />
+                            {this._hasFloatingMenuItems && (
+                                <slot name="floating-menu-item"></slot>
+                            )}
+                            {this._hasFloatingMenuItems && (
+                                <p-divider
+                                    class="mx-0 text-storm"
+                                    variant="vertical"
+                                    slot="floating-menu-item"
+                                />
+                            )}
+                            <p-floating-menu-item
+                                slot="floating-menu-item"
+                                onClick={() =>
+                                    this._selectAllChange(null, false)
+                                }
+                            >
+                                <p-icon variant="negative" />
+                            </p-floating-menu-item>
+                        </p-floating-menu-container>
+                    ) : (
+                        ''
                     )}
                 </p-table-container>
             </Host>
@@ -494,7 +581,10 @@ export class Table {
                         variant="header"
                         checkbox={
                             index === 0 || col.hasCheckbox
-                                ? this._getCheckbox(null, 'loading')
+                                ? this._getCheckbox(
+                                      null,
+                                      this.loading ? 'loading' : 'header'
+                                  )
                                 : null
                         }
                         index={index}
@@ -650,12 +740,15 @@ export class Table {
         );
     }
 
-    private _selectAllChange($event: any) {
+    private _selectAllChange($event: any, forceValue?: boolean) {
         if (!this.enableRowSelection) {
             return;
         }
 
-        const value = this._getCheckedValue($event.target);
+        const value =
+            forceValue === undefined
+                ? this._getCheckedValue($event.target)
+                : forceValue;
         if (value) {
             const toAdd = [];
             for (let i = 0; i < this._items.length; i++) {

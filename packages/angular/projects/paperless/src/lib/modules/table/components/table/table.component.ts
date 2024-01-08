@@ -3,6 +3,7 @@ import {
     Component,
     ContentChild,
     ContentChildren,
+    ElementRef,
     EventEmitter,
     HostListener,
     Input,
@@ -23,6 +24,7 @@ import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import {
     TableCustomFilterDirective,
     TableFilterModalDirective,
+    TableFloatingMenuContentDirective,
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
 import { defaultSize, defaultSizeOptions } from './constants';
@@ -91,6 +93,28 @@ export class Table implements OnInit, OnChanges {
     @Input() canSelectKey: string | undefined;
 
     /**
+     * Wether to enable the floating menu
+     */
+    @Input() enableFloatingMenu: boolean = true;
+
+    /**
+     * The floating menu amount item text
+     */
+    @Input() floatingMenuAmountSelectedText: string = '0 items selected';
+
+    /**
+     * The template for amount selected item in the floating menu
+     */
+    @Input() floatingMenuAmountSelectedTemplate: any;
+
+    // floating menu
+    @ContentChild(TableFloatingMenuContentDirective, {
+        read: TemplateRef,
+        static: true,
+    })
+    public floatingMenuContentTemplate: TemplateRef<any> | undefined;
+
+    /**
      * Event whenever a row is clicked
      */
     @Output() rowClick: EventEmitter<RowClickEvent> = new EventEmitter();
@@ -148,29 +172,34 @@ export class Table implements OnInit, OnChanges {
     @Input() filterButtonTemplate: any;
 
     /**
-     * Wether to show the edit button
+     * Wether to show the action button
      */
-    @Input() enableEdit: boolean = true;
+    @Input() enableAction: boolean = false;
 
     /**
-     * Wether the edit button is loading
+     * Wether the action button is loading
      */
-    @Input() editButtonLoading: boolean = false;
+    @Input() actionButtonLoading: boolean = false;
 
     /**
-     * The edit button icon
+     * The action button icon
      */
-    @Input() editButtonIcon: IconVariant = 'pencil';
+    @Input() actionButtonIcon: IconVariant = 'pencil';
 
     /**
-     * The edit button text if changed
+     * Wether the action button is enabled
      */
-    @Input() editButtonText?: string;
+    @Input() actionButtonEnabled: boolean = true;
 
     /**
-     * The template for the edit button text
+     * The action button text if changed
      */
-    @Input() editButtonTemplate: any;
+    @Input() actionButtonText?: string;
+
+    /**
+     * The template for the action button text
+     */
+    @Input() actionButtonTemplate: any;
 
     /**
      * Event when one of the quick filters is clicked
@@ -188,9 +217,9 @@ export class Table implements OnInit, OnChanges {
     @Output() filter: EventEmitter<null> = new EventEmitter();
 
     /**
-     * Event when the edit button is clicked
+     * Event when the action button is clicked
      */
-    @Output() edit: EventEmitter<null> = new EventEmitter();
+    @Output() action: EventEmitter<null> = new EventEmitter();
 
     /** START FOOTER */
 
@@ -324,7 +353,7 @@ export class Table implements OnInit, OnChanges {
     @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
     @Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
-    constructor() {}
+    constructor(private _elementRef: ElementRef) {}
 
     ngOnInit() {
         this._parseItems(this.items);
@@ -336,7 +365,6 @@ export class Table implements OnInit, OnChanges {
         this.filterModalShow$
             .pipe(untilDestroyed(this), distinctUntilChanged())
             .subscribe((value) => this.filterModalShow.next(value));
-        // this._generateColumns();
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -350,11 +378,6 @@ export class Table implements OnInit, OnChanges {
             });
         }
     }
-
-    //  @HostListener('body:tableDefinitionChanged', { target: 'body' })
-    //  onTableDefinitionUpdated() {
-    //      this._generateColumns();
-    //  }
 
     @HostListener('document:keydown', ['$event'])
     keyDown({ key }: { key: string }) {
@@ -444,126 +467,19 @@ export class Table implements OnInit, OnChanges {
         this.columns = definitionsArray;
     }
 
-    //  private _getHeader() {
-    //      return (
-    //          <p-table-row variant="header">
-    //              {this._columns.map((col: TableDefinition, index) => (
-    //                  <p-table-column
-    //                      definition={col}
-    //                      value={col.name}
-    //                      variant="header"
-    //                      checkbox={this._getCheckbox(index, null, 'header')}
-    //                      index={index}
-    //                  ></p-table-column>
-    //              ))}
-    //          </p-table-row>
-    //      );
-    //  }
-
-    //  private _getRows() {
-    //      if (this.loading) {
-    //          return Array.from(
-    //              {
-    //                  length: this.amountOfLoadingRows,
-    //              },
-    //              (_, i) => (
-    //                  <p-table-row
-    //                      enableHover={
-    //                          this.enableRowSelection || this.enableRowClick
-    //                      }
-    //                  >
-    //                      {this._getLoadingColumns(i)}
-    //                  </p-table-row>
-    //              )
-    //          );
-    //      }
-
-    //      return this._items.map((item, index) => (
-    //          <p-table-row
-    //              enableHover={this.enableRowSelection || this.enableRowClick}
-    //              onClick={(ev) => this._rowClick(ev, index)}
-    //          >
-    //              {this._getRowColumns(item, index)}
-    //          </p-table-row>
-    //      ));
-    //  }
-
-    //  private _getRowColumns(item, index) {
-    //      return this._columns.map((col: TableDefinition, colIndex) => {
-    //          return (
-    //              <p-table-column
-    //                  definition={col}
-    //                  item={item}
-    //                  checkbox={this._getCheckbox(colIndex, index)}
-    //                  index={colIndex}
-    //                  rowIndex={index}
-    //              ></p-table-column>
-    //          );
-    //      });
-    //  }
-
-    //  private _getLoadingColumns(index) {
-    //      return this._columns.map((col: TableDefinition, colIndex) => {
-    //          return (
-    //              <p-table-column
-    //                  definition={col}
-    //                  variant="loading"
-    //                  checkbox={this._getCheckbox(colIndex, index, 'loading')}
-    //                  index={colIndex}
-    //                  rowIndex={index}
-    //              ></p-table-column>
-    //          );
-    //      });
-    //  }
-
-    //  private _getCheckbox(
-    //      index,
-    //      rowIndex,
-    //      variant: 'header' | 'default' | 'loading' = 'default'
-    //  ) {
-    //      if (!this.enableRowSelection || !this.selectionKey || index !== 0) {
-    //          return;
-    //      }
-
-    //      if (variant === 'loading') {
-    //          return <p-loader variant="ghost" class="rounded w-6 h-6" />;
-    //      }
-
-    //      if (variant === 'header') {
-    //          return (
-    //              <input
-    //                  class="p-input"
-    //                  type="checkbox"
-    //                  onChange={(ev) => this._selectAllChange(ev)}
-    //                  checked={this._selectionContainsAll()}
-    //                  indeterminate={this._selectionIndeterminate()}
-    //              />
-    //          );
-    //      }
-
-    //      const item = this._items[rowIndex];
-
-    //      return (
-    //          <input
-    //              class="p-input"
-    //              type="checkbox"
-    //              onChange={(ev) => this._checkboxChange(ev?.target, rowIndex)}
-    //              disabled={this.canSelectKey && !item[this.canSelectKey]}
-    //              checked={this._selectionContains(item, rowIndex)}
-    //          />
-    //      );
-    //  }
-
     public _checkboxDisabled(item: any) {
         return this.canSelectKey && !item[this.canSelectKey];
     }
 
-    public _selectAllChange($event: any) {
+    public _selectAllChange($event: any, forceValue?: boolean) {
         if (!this.enableRowSelection) {
             return;
         }
 
-        const value = this._getCheckedValue($event.target);
+        const value =
+            forceValue === undefined
+                ? this._getCheckedValue($event.target)
+                : forceValue;
         if (value) {
             const toAdd = [];
             for (let i = 0; i < this.parsedItems.length; i++) {

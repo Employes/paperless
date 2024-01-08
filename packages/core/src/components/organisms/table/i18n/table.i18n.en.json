@@ -9,5 +9,9 @@
             "content": "We can't show a overview when there is nothing submitted. Start with submitting.",
             "action": "New"
         }
+    },
+    "floating_menu": {
+        "amount_selected": "{{amount}} amount selected",
+        "amount_selected_plural": "{{amount}} amount selected"
     }
 }

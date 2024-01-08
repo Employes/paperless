@@ -28,9 +28,11 @@ export type buttonTemplateFunc = (amount: number) => string;
 export class TableHeader {
     private _defaultFilterButtonTemplate: templateFunc = () =>
         formatTranslation(this._locales.filter);
-    private _defaultEditButtonTemplate: buttonTemplateFunc = (amount: number) =>
-        this.editText
-            ? this.editText
+    private _defaultActionButtonTemplate: buttonTemplateFunc = (
+        amount: number
+    ) =>
+        this.actionText
+            ? this.actionText
             : formatTranslation(
                   amount === 0
                       ? this._locales.edit
@@ -87,35 +89,35 @@ export class TableHeader {
         this._defaultFilterButtonTemplate;
 
     /**
-     * Wether to show the edit button
+     * Wether to show the action button
      */
-    @Prop() enableEdit: boolean = true;
+    @Prop() enableAction: boolean = true;
 
     /**
-     * Wether the edit button is loading
+     * Wether the action button is loading
      */
-    @Prop() editLoading: boolean = false;
+    @Prop() actionLoading: boolean = false;
 
     /**
-     * The edit button icon
+     * The action button icon
      */
-    @Prop() editIcon: IconVariant = 'pencil';
+    @Prop() actionIcon: IconVariant = 'pencil';
 
     /**
-     * The edit button text if changed
+     * The action button text if changed
      */
-    @Prop() editText: string;
+    @Prop() actionText: string;
 
     /**
-     * Wether to enable the edit button
+     * Wether to enable the action button
      */
-    @Prop({ mutable: true }) canEdit: boolean = false;
+    @Prop({ mutable: true }) canUseAction: boolean = false;
 
     /**
-     * The template for the edit button text
+     * The template for the action button text
      */
-    @Prop() editButtonTemplate: buttonTemplateFunc =
-        this._defaultEditButtonTemplate;
+    @Prop() actionButtonTemplate: buttonTemplateFunc =
+        this._defaultActionButtonTemplate;
 
     /**
      * Event when one of the quick filters is clicked
@@ -142,12 +144,12 @@ export class TableHeader {
     filter: EventEmitter<null>;
 
     /**
-     * Event when the edit button is clicked
+     * Event when the action button is clicked
      */
     @Event({
         bubbles: false,
     })
-    edit: EventEmitter<null>;
+    action: EventEmitter<null>;
 
     /**
      * The host element
@@ -265,10 +267,10 @@ export class TableHeader {
                         </p-button>
                     )}
 
-                    {this.enableEdit && this._buttonTemplate()}
+                    {this.enableAction && this._buttonTemplate()}
                 </div>
 
-                {this.enableEdit && this.canEdit && (
+                {this.enableAction && this.canUseAction && (
                     <div class="fixed bottom-0 left-0 block w-full border border-solid border-transparent border-t-mystic-dark bg-white p-4 desktop-xs:hidden">
                         {this._buttonTemplate(true)}
                     </div>
@@ -286,17 +288,17 @@ export class TableHeader {
         return (
             <p-button
                 class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
-                icon={this.editIcon}
+                icon={this.actionIcon}
                 size="small"
-                disabled={!this.canEdit}
-                onClick={() => this.edit.emit()}
-                loading={this.editLoading}
+                disabled={!this.canUseAction}
+                onClick={() => this.action.emit()}
+                loading={this.actionLoading}
             >
-                {this.editButtonTemplate
-                    ? this.editButtonTemplate(
+                {this.actionButtonTemplate
+                    ? this.actionButtonTemplate(
                           mobile ? this.itemsSelectedAmount : 0
                       )
-                    : this._defaultEditButtonTemplate(
+                    : this._defaultActionButtonTemplate(
                           mobile ? this.itemsSelectedAmount : 0
                       )}
             </p-button>

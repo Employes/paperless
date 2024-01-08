@@ -1,7 +1,50 @@
 p-table {
-    @apply flex flex-col;
+    @apply relative flex flex-col;
 
     .p-input[type='checkbox'] {
         flex-shrink: 0;
+    }
+
+    p-table-container {
+        @apply relative;
+
+        p-floating-menu-container {
+            @apply fixed bottom-4 left-1/2 -translate-x-1/2 transform;
+            animation: forwards floatingMenuContainerIn 0.3s ease !important;
+
+            @screen tablet {
+                @apply absolute bottom-16;
+            }
+
+            &.inactive {
+                animation: forwards floatingMenuContainerOut 0.3s ease !important;
+            }
+
+            .hide-mobile {
+                @apply hidden tablet:block;
+            }
+        }
+    }
+}
+
+@keyframes floatingMenuContainerOut {
+    0% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 100;
+    }
+    100% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+@keyframes floatingMenuContainerIn {
+    0% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 100;
     }
 }

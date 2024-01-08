@@ -11,13 +11,13 @@
         [selectedFiltersAmount]="selectedFiltersAmount"
         [filterButtonTemplate]="filterButtonTemplate"
         (filter)="filterModalShow$.next(true)"
-        [enableEdit]="enableEdit"
-        [canEdit]="!!selectedRows.length"
-        [editButtonTemplate]="editButtonTemplate"
-        [editLoading]="editButtonLoading"
-        [editText]="editButtonText"
-        [editIcon]="editButtonIcon"
-        (edit)="edit.emit()"
+        [enableAction]="enableAction"
+        [canUseAction]="actionButtonEnabled"
+        [actionButtonTemplate]="actionButtonTemplate"
+        [actionLoading]="actionButtonLoading"
+        [actionText]="actionButtonText"
+        [actionIcon]="actionButtonIcon"
+        (action)="action.emit()"
         [itemsSelectedAmount]="selectedRows.length"
         [loading]="headerLoading"
     >
@@ -138,6 +138,42 @@
         (export)="export.emit()"
         [loading]="footerLoading"
     ></p-table-footer>
+
+    <ng-container *ngIf="enableFloatingMenu">
+        <p-floating-menu-container
+            [class.inactive]="!selectedRows.length"
+        >
+            <p-floating-menu-item
+                hover={false}
+                [class]="{
+                    hidden: !!floatingMenuContentTemplate,
+                    'tablet:flex': !!floatingMenuContentTemplate
+                }"
+            >
+                {{ floatingMenuAmountSelectedText }}
+            </p-floating-menu-item>
+            <p-divider
+                class="mx-0 text-storm"
+                variant="vertical"
+                [class]="{
+                    hidden: !!floatingMenuContentTemplate,
+                    'tablet:flex': !!floatingMenuContentTemplate
+                }"
+            />
+            <ng-container *ngIf="floatingMenuContentTemplate">
+                <ng-container *ngTemplateOutlet="floatingMenuContentTemplate"></ng-container>
+                <p-divider
+                    class="mx-0 text-storm"
+                    variant="vertical"
+                />
+            </ng-container>
+            <p-floating-menu-item
+                (click)="_selectAllChange(null, false)"
+            >
+                <p-icon variant="negative" />
+            </p-floating-menu-item>
+        </p-floating-menu-container>
+    </ng-container>
 </p-table-container>
 
 <ng-container *ngIf="filterModalTemplate">

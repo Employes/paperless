@@ -13,8 +13,8 @@ import { IllustrationVariant } from "./components/atoms/illustration/illustratio
 import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
+import { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-import { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 import { IconVariant as IconVariant2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
@@ -27,8 +27,8 @@ export { IllustrationVariant } from "./components/atoms/illustration/illustratio
 export { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { Observable } from "rxjs";
 export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
+export { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-export { templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 export { IconVariant as IconVariant2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 export { TableColumn } from "./components/helpers/table-column/table-column.component";
@@ -479,6 +479,10 @@ export namespace Components {
         "icon": IconVariant;
     }
     interface PFloatingMenuContainer {
+        /**
+          * Weather the container is used in the table
+         */
+        "usedInTable": boolean;
     }
     interface PFloatingMenuItem {
         /**
@@ -1053,6 +1057,26 @@ export namespace Components {
     }
     interface PTable {
         /**
+          * Wether the action button is enabled
+         */
+        "actionButtonEnabled": boolean;
+        /**
+          * The action button icon
+         */
+        "actionButtonIcon": IconVariant2;
+        /**
+          * Wether the action button is loading
+         */
+        "actionButtonLoading": boolean;
+        /**
+          * The template for the action button text
+         */
+        "actionButtonTemplate": buttonTemplateFunc;
+        /**
+          * The action button text if changed
+         */
+        "actionButtonText": string;
+        /**
           * Active quick filter identifier
          */
         "activeQuickFilterIdentifier": string;
@@ -1064,31 +1088,15 @@ export namespace Components {
           * A key to determine if a row can be selected
          */
         "canSelectKey": string;
-        /**
-          * The edit button icon
-         */
-        "editButtonIcon": IconVariant2;
-        /**
-          * Wether the edit button is loading
-         */
-        "editButtonLoading": boolean;
-        /**
-          * The template for the edit button text
-         */
-        "editButtonTemplate": buttonTemplateFunc;
-        /**
-          * The edit button text if changed
-         */
-        "editButtonText": string;
         "emptyStateAction": templateFunc1;
         "emptyStateContent": templateFunc1;
         "emptyStateFilteredContent": templateFunc1;
         "emptyStateFilteredHeader": templateFunc1;
         "emptyStateHeader": templateFunc1;
         /**
-          * Wether to show the edit button
+          * Wether to show the action button
          */
-        "enableEdit": boolean;
+        "enableAction": boolean;
         /**
           * Wether to enable empty state action
          */
@@ -1101,6 +1109,10 @@ export namespace Components {
           * Wether to show the filter button
          */
         "enableFilter": boolean;
+        /**
+          * Wether to enable the floating menu
+         */
+        "enableFloatingMenu": boolean;
         /**
           * Wether to show the header
          */
@@ -1133,6 +1145,10 @@ export namespace Components {
           * The template for the filter button text
          */
         "filterButtonTemplate": templateFunc1;
+        /**
+          * The template for amount selected item in the floating menu
+         */
+        "floatingMenuAmountSelectedTemplate": amountSelectedTemplateFunc;
         /**
           * Wether the footer should show loading state
          */
@@ -1304,33 +1320,33 @@ export namespace Components {
     }
     interface PTableHeader {
         /**
+          * The template for the action button text
+         */
+        "actionButtonTemplate": buttonTemplateFunc1;
+        /**
+          * The action button icon
+         */
+        "actionIcon": IconVariant2;
+        /**
+          * Wether the action button is loading
+         */
+        "actionLoading": boolean;
+        /**
+          * The action button text if changed
+         */
+        "actionText": string;
+        /**
           * Active quick filter identifier
          */
         "activeQuickFilterIdentifier": string;
         /**
-          * Wether to enable the edit button
+          * Wether to enable the action button
          */
-        "canEdit": boolean;
+        "canUseAction": boolean;
         /**
-          * The template for the edit button text
+          * Wether to show the action button
          */
-        "editButtonTemplate": buttonTemplateFunc1;
-        /**
-          * The edit button icon
-         */
-        "editIcon": IconVariant2;
-        /**
-          * Wether the edit button is loading
-         */
-        "editLoading": boolean;
-        /**
-          * The edit button text if changed
-         */
-        "editText": string;
-        /**
-          * Wether to show the edit button
-         */
-        "enableEdit": boolean;
+        "enableAction": boolean;
         /**
           * Wether to show the filter button
          */
@@ -2474,6 +2490,10 @@ declare namespace LocalJSX {
         "icon"?: IconVariant;
     }
     interface PFloatingMenuContainer {
+        /**
+          * Weather the container is used in the table
+         */
+        "usedInTable"?: boolean;
     }
     interface PFloatingMenuItem {
         /**
@@ -3080,6 +3100,26 @@ declare namespace LocalJSX {
     }
     interface PTable {
         /**
+          * Wether the action button is enabled
+         */
+        "actionButtonEnabled"?: boolean;
+        /**
+          * The action button icon
+         */
+        "actionButtonIcon"?: IconVariant2;
+        /**
+          * Wether the action button is loading
+         */
+        "actionButtonLoading"?: boolean;
+        /**
+          * The template for the action button text
+         */
+        "actionButtonTemplate"?: buttonTemplateFunc;
+        /**
+          * The action button text if changed
+         */
+        "actionButtonText"?: string;
+        /**
           * Active quick filter identifier
          */
         "activeQuickFilterIdentifier"?: string;
@@ -3091,31 +3131,15 @@ declare namespace LocalJSX {
           * A key to determine if a row can be selected
          */
         "canSelectKey"?: string;
-        /**
-          * The edit button icon
-         */
-        "editButtonIcon"?: IconVariant2;
-        /**
-          * Wether the edit button is loading
-         */
-        "editButtonLoading"?: boolean;
-        /**
-          * The template for the edit button text
-         */
-        "editButtonTemplate"?: buttonTemplateFunc;
-        /**
-          * The edit button text if changed
-         */
-        "editButtonText"?: string;
         "emptyStateAction"?: templateFunc1;
         "emptyStateContent"?: templateFunc1;
         "emptyStateFilteredContent"?: templateFunc1;
         "emptyStateFilteredHeader"?: templateFunc1;
         "emptyStateHeader"?: templateFunc1;
         /**
-          * Wether to show the edit button
+          * Wether to show the action button
          */
-        "enableEdit"?: boolean;
+        "enableAction"?: boolean;
         /**
           * Wether to enable empty state action
          */
@@ -3128,6 +3152,10 @@ declare namespace LocalJSX {
           * Wether to show the filter button
          */
         "enableFilter"?: boolean;
+        /**
+          * Wether to enable the floating menu
+         */
+        "enableFloatingMenu"?: boolean;
         /**
           * Wether to show the header
          */
@@ -3161,6 +3189,10 @@ declare namespace LocalJSX {
          */
         "filterButtonTemplate"?: templateFunc1;
         /**
+          * The template for amount selected item in the floating menu
+         */
+        "floatingMenuAmountSelectedTemplate"?: amountSelectedTemplateFunc;
+        /**
           * Wether the footer should show loading state
          */
         "footerLoading"?: boolean;
@@ -3181,9 +3213,9 @@ declare namespace LocalJSX {
          */
         "loading"?: boolean;
         /**
-          * Event when the edit button is clicked
+          * Event when the action button is clicked
          */
-        "onEdit"?: (event: PTableCustomEvent<null>) => void;
+        "onAction"?: (event: PTableCustomEvent<null>) => void;
         /**
           * Event whenever the empty state is clicked
          */
@@ -3399,33 +3431,33 @@ declare namespace LocalJSX {
     }
     interface PTableHeader {
         /**
+          * The template for the action button text
+         */
+        "actionButtonTemplate"?: buttonTemplateFunc1;
+        /**
+          * The action button icon
+         */
+        "actionIcon"?: IconVariant2;
+        /**
+          * Wether the action button is loading
+         */
+        "actionLoading"?: boolean;
+        /**
+          * The action button text if changed
+         */
+        "actionText"?: string;
+        /**
           * Active quick filter identifier
          */
         "activeQuickFilterIdentifier"?: string;
         /**
-          * Wether to enable the edit button
+          * Wether to enable the action button
          */
-        "canEdit"?: boolean;
+        "canUseAction"?: boolean;
         /**
-          * The template for the edit button text
+          * Wether to show the action button
          */
-        "editButtonTemplate"?: buttonTemplateFunc1;
-        /**
-          * The edit button icon
-         */
-        "editIcon"?: IconVariant2;
-        /**
-          * Wether the edit button is loading
-         */
-        "editLoading"?: boolean;
-        /**
-          * The edit button text if changed
-         */
-        "editText"?: string;
-        /**
-          * Wether to show the edit button
-         */
-        "enableEdit"?: boolean;
+        "enableAction"?: boolean;
         /**
           * Wether to show the filter button
          */
@@ -3447,9 +3479,9 @@ declare namespace LocalJSX {
          */
         "loading"?: boolean;
         /**
-          * Event when the edit button is clicked
+          * Event when the action button is clicked
          */
-        "onEdit"?: (event: PTableHeaderCustomEvent<null>) => void;
+        "onAction"?: (event: PTableHeaderCustomEvent<null>) => void;
         /**
           * Event when the filter button is clicked
          */

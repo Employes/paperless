@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
     tag: 'p-floating-menu-container',
@@ -6,10 +6,19 @@ import { Component, h, Host } from '@stencil/core';
     shadow: true,
 })
 export class FloatingMenuContainer {
+    /**
+     * Weather the container is used in the table
+     */
+    @Prop() usedInTable: boolean = false;
+
     render() {
         return (
             <Host class="p-floating-menu-container">
-                <slot />
+                {this.usedInTable ? (
+                    <slot name="floating-menu-item" />
+                ) : (
+                    <slot />
+                )}
             </Host>
         );
     }

@@ -37,6 +37,7 @@
  - [p-select](../../molecules/select)
  - [p-status](../status)
  - [p-stepper-item](../stepper-item)
+ - [p-table](../../organisms/table)
 
 ### Graph
 ```mermaid
@@ -59,6 +60,7 @@ graph TD;
   p-select --> p-icon
   p-status --> p-icon
   p-stepper-item --> p-icon
+  p-table --> p-icon
   style p-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

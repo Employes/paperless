@@ -12,16 +12,16 @@ p-table {
             @apply fixed bottom-4 left-1/2 -translate-x-1/2 transform;
             animation: forwards floatingMenuContainerIn 0.3s ease !important;
 
-            &.inactive {
-                animation: forwards floatingMenuContainerOut 0.3s ease !important;
-            }
-
             @screen tablet {
                 @apply absolute bottom-16;
             }
 
             &:not(.shown) {
                 @apply hidden;
+            }
+
+            &.inactive {
+                animation: forwards floatingMenuContainerOut 0.3s ease !important;
             }
 
             .hide-mobile {

@@ -3,7 +3,6 @@ import {
     Component,
     ContentChild,
     ContentChildren,
-    ElementRef,
     EventEmitter,
     HostListener,
     Input,
@@ -113,6 +112,11 @@ export class Table implements OnInit, OnChanges {
         static: true,
     })
     public floatingMenuContentTemplate: TemplateRef<any> | undefined;
+
+    /**
+     * Wether the floating menu has been shown atleast once
+     */
+    public floatingMenuShown$ = new BehaviorSubject(false);
 
     /**
      * Event whenever a row is clicked
@@ -353,7 +357,7 @@ export class Table implements OnInit, OnChanges {
     @Output() filterModalSave: EventEmitter<void> = new EventEmitter();
     @Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
-    constructor(private _elementRef: ElementRef) {}
+    constructor() {}
 
     ngOnInit() {
         this._parseItems(this.items);
@@ -498,6 +502,11 @@ export class Table implements OnInit, OnChanges {
 
             this.selectedRows = [...this.selectedRows, ...toAdd];
             this.selectedRowsChange.emit(this.selectedRows);
+
+            if (this.enableFloatingMenu) {
+                this.floatingMenuShown$.next(true);
+            }
+
             return;
         }
 
@@ -537,6 +546,10 @@ export class Table implements OnInit, OnChanges {
             this.selectedRows = [...this.selectedRows, row];
             this.selectedRowsChange.emit(this.selectedRows);
             this.rowSelected.emit(row);
+
+            if (this.enableFloatingMenu) {
+                this.floatingMenuShown$.next(true);
+            }
             return;
         }
 

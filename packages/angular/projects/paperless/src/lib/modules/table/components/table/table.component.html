@@ -140,7 +140,10 @@
     ></p-table-footer>
 
     <ng-container *ngIf="enableFloatingMenu && enableRowSelection">
-        <p-floating-menu-container [class.inactive]="!selectedRows.length">
+        <p-floating-menu-container
+            [class.inactive]="!selectedRows.length"
+            [class.shown]="floatingMenuShown$ | async"
+        >
             <p-floating-menu-item
                 hover="{false}"
                 [class]="{

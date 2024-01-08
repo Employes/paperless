@@ -1,5 +1,5 @@
 :host {
-    @apply flex flex-col;
+    @apply relative flex flex-col;
 
     .p-input[type='checkbox'] {
         flex-shrink: 0;
@@ -16,6 +16,10 @@
                 @apply absolute bottom-16;
             }
 
+            &:not(.shown) {
+                @apply hidden;
+            }
+
             &.inactive {
                 animation: forwards floatingMenuContainerOut 0.3s ease !important;
             }
@@ -25,12 +29,19 @@
 
 @keyframes floatingMenuContainerOut {
     0% {
+        display: flex;
         transform: translateY(0) translateX(-50%);
         opacity: 100;
+    }
+    99% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+        display: flex;
     }
     100% {
         transform: translateY(100%) translateX(-50%);
         opacity: 0;
+        display: none;
     }
 }
 
@@ -38,9 +49,16 @@
     0% {
         transform: translateY(100%) translateX(-50%);
         opacity: 0;
+        display: none;
+    }
+    1% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+        display: flex;
     }
     100% {
         transform: translateY(0) translateX(-50%);
         opacity: 100;
+        display: flex;
     }
 }

@@ -145,7 +145,7 @@
             [class.shown]="floatingMenuShown$ | async"
         >
             <p-floating-menu-item
-                hover="{false}"
+                [hover]="false"
                 [class]="{
                     hidden: !!floatingMenuContentTemplate,
                     'tablet:flex': !!floatingMenuContentTemplate

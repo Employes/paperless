@@ -140,11 +140,9 @@
     ></p-table-footer>
 
     <ng-container *ngIf="enableFloatingMenu">
-        <p-floating-menu-container
-            [class.inactive]="!selectedRows.length"
-        >
+        <p-floating-menu-container [class.inactive]="!selectedRows.length">
             <p-floating-menu-item
-                hover={false}
+                hover="{false}"
                 [class]="{
                     hidden: !!floatingMenuContentTemplate,
                     'tablet:flex': !!floatingMenuContentTemplate
@@ -159,18 +157,18 @@
                     hidden: !!floatingMenuContentTemplate,
                     'tablet:flex': !!floatingMenuContentTemplate
                 }"
-            />
+            ></p-divider>
             <ng-container *ngIf="floatingMenuContentTemplate">
-                <ng-container *ngTemplateOutlet="floatingMenuContentTemplate"></ng-container>
+                <ng-container
+                    *ngTemplateOutlet="floatingMenuContentTemplate"
+                ></ng-container>
                 <p-divider
                     class="mx-0 text-storm"
                     variant="vertical"
-                />
+                ></p-divider>
             </ng-container>
-            <p-floating-menu-item
-                (click)="_selectAllChange(null, false)"
-            >
-                <p-icon variant="negative" />
+            <p-floating-menu-item (click)="_selectAllChange(null, false)">
+                <p-icon variant="negative"></p-icon>
             </p-floating-menu-item>
         </p-floating-menu-container>
     </ng-container>

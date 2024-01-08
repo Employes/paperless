@@ -12,12 +12,16 @@ p-table {
             @apply fixed bottom-4 left-1/2 -translate-x-1/2 transform;
             animation: forwards floatingMenuContainerIn 0.3s ease !important;
 
+            &.inactive {
+                animation: forwards floatingMenuContainerOut 0.3s ease !important;
+            }
+
             @screen tablet {
                 @apply absolute bottom-16;
             }
 
-            &.inactive {
-                animation: forwards floatingMenuContainerOut 0.3s ease !important;
+            &:not(.shown) {
+                @apply hidden;
             }
 
             .hide-mobile {
@@ -29,12 +33,19 @@ p-table {
 
 @keyframes floatingMenuContainerOut {
     0% {
+        display: flex;
         transform: translateY(0) translateX(-50%);
         opacity: 100;
+    }
+    99% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+        display: flex;
     }
     100% {
         transform: translateY(100%) translateX(-50%);
         opacity: 0;
+        display: none;
     }
 }
 
@@ -42,9 +53,16 @@ p-table {
     0% {
         transform: translateY(100%) translateX(-50%);
         opacity: 0;
+        display: none;
+    }
+    1% {
+        transform: translateY(100%) translateX(-50%);
+        opacity: 0;
+        display: flex;
     }
     100% {
         transform: translateY(0) translateX(-50%);
         opacity: 100;
+        display: flex;
     }
 }

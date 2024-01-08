@@ -354,6 +354,7 @@ export class Table {
     private _ctrlDown = false;
     private _hasCustomFilterSlot = false;
     private _hasFloatingMenuItems = false;
+    private _floatingMenuShown = false;
 
     componentWillLoad() {
         this._hasCustomFilterSlot = !!this._el.querySelector(
@@ -362,15 +363,6 @@ export class Table {
         this._hasFloatingMenuItems = !!this._el.querySelectorAll(
             ':scope > [slot="floating-menu-item"]'
         ).length;
-
-        if (this.enableRowSelection) {
-            console.log(
-                this._hasFloatingMenuItems,
-                this._el.querySelectorAll(
-                    ':scope > [slot="floating-menu-item"]'
-                )
-            );
-        }
 
         this._setLocales();
         this._parseItems(this.items);
@@ -456,10 +448,12 @@ export class Table {
                         ></p-table-footer>
                     )}
 
-                    {this.enableFloatingMenu ? (
+                    {this.enableFloatingMenu && this.enableRowSelection ? (
                         <p-floating-menu-container
                             usedInTable={true}
-                            class={this.selectedRows?.length ? '' : 'inactive'}
+                            class={`${
+                                this.selectedRows?.length ? '' : 'inactive'
+                            } ${this._floatingMenuShown ? 'shown' : ''}`}
                         >
                             <p-floating-menu-item
                                 hover={false}
@@ -767,6 +761,10 @@ export class Table {
 
             this.selectedRows = [...this.selectedRows, ...toAdd];
             this.selectedRowsChange.emit(this.selectedRows);
+            if (this.enableFloatingMenu && !this._floatingMenuShown) {
+                this._floatingMenuShown = true;
+            }
+
             return;
         }
 
@@ -806,6 +804,11 @@ export class Table {
             this.selectedRows = [...this.selectedRows, row];
             this.selectedRowsChange.emit(this.selectedRows);
             this.rowSelected.emit(row);
+
+            if (this.enableFloatingMenu && !this._floatingMenuShown) {
+                this._floatingMenuShown = true;
+            }
+
             return;
         }
 

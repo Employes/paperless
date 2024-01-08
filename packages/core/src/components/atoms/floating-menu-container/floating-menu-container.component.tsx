@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
     tag: 'p-floating-menu-container',

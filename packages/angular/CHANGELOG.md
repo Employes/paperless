@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.17.4](https://github.com/Employes/Paperless/compare/v1.17.3...v1.17.4) (2024-01-16)
+
+
+### Bug Fixes
+
+* **Angular:** Include tailwind compilation for html files ([585c2d1](https://github.com/Employes/Paperless/commit/585c2d19a8a0900fd63f79020a33229101bdc6a0))
+
+
+
+
+
 ## [1.17.3](https://github.com/Employes/Paperless/compare/v1.17.2...v1.17.3) (2024-01-08)
 
 

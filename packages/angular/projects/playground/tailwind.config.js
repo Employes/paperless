@@ -5,6 +5,6 @@ module.exports = {
     ...config,
     content: [
         path.join(__dirname, './src/**/*.{html,scss,ts}'),
-        path.join(__dirname, '../paperless/src/**/*.{scss,ts}'),
+        path.join(__dirname, '../paperless/src/**/*.{html,scss,ts}'),
     ],
 };

@@ -3,5 +3,5 @@ const path = require('path');
 
 module.exports = {
     ...config,
-    content: [path.join(__dirname, './src/**/*.{scss,ts}')],
+    content: [path.join(__dirname, './src/**/*.{html,scss,ts}')],
 };

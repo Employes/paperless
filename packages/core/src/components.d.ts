@@ -406,6 +406,10 @@ export namespace Components {
     }
     interface PDropdown {
         /**
+          * Wether to apply chevron automatically
+         */
+        "applyChevron": boolean;
+        /**
           * Wether to apply the full width
          */
         "applyFullWidth": boolean;
@@ -2412,6 +2416,10 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PDropdown {
+        /**
+          * Wether to apply chevron automatically
+         */
+        "applyChevron"?: boolean;
         /**
           * Wether to apply the full width
          */

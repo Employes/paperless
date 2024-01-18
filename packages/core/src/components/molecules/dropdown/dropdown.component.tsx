@@ -72,6 +72,11 @@ export class Dropdown {
     @Prop() disableTriggerClick: boolean = false;
 
     /**
+     * Wether to apply chevron automatically
+     */
+    @Prop() applyChevron: boolean = true;
+
+    /**
      * Chevron position
      */
     @Prop() chevronPosition: 'start' | 'end' = 'end';
@@ -140,6 +145,10 @@ export class Dropdown {
     }
 
     private _checkButton({ target }: Event) {
+        if (!this.applyChevron) {
+            return;
+        }
+
         const slot = target as HTMLSlotElement;
         const children = slot.assignedElements();
 
@@ -149,8 +158,8 @@ export class Dropdown {
                 (child as any).chevron = this.chevronDirection
                     ? this.chevronDirection
                     : this.placement.indexOf('top') >= 0
-                    ? 'up'
-                    : 'down';
+                        ? 'up'
+                        : 'down';
             }
         }
     }

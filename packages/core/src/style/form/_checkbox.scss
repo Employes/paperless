@@ -59,6 +59,10 @@ input[type='checkbox'].p-input {
             @apply bg-negative;
         }
     }
+
+    &.size-small {
+        @apply h-4 w-4 text-sm;
+    }
 }
 
 input[type='checkbox'].p-toggle {

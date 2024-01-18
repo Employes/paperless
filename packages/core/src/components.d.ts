@@ -481,6 +481,10 @@ export namespace Components {
           * Icon of the navigation item
          */
         "icon": IconVariant;
+        /**
+          * The variant of the item
+         */
+        "variant": 'default' | 'checkbox';
     }
     interface PFloatingMenuContainer {
         /**
@@ -944,6 +948,10 @@ export namespace Components {
           * The maximum amount of items to display
          */
         "maxDisplayedItems": number;
+        /**
+          * Wether to enable multi select
+         */
+        "multi": boolean;
         /**
           * The placeholder of the input
          */
@@ -2496,6 +2504,10 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon"?: IconVariant;
+        /**
+          * The variant of the item
+         */
+        "variant"?: 'default' | 'checkbox';
     }
     interface PFloatingMenuContainer {
         /**
@@ -2979,6 +2991,10 @@ declare namespace LocalJSX {
           * The maximum amount of items to display
          */
         "maxDisplayedItems"?: number;
+        /**
+          * Wether to enable multi select
+         */
+        "multi"?: boolean;
         /**
           * Event when the dropdown shows
          */

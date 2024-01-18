@@ -25,6 +25,11 @@ export class Select {
     @Prop() items: string | any[];
 
     /**
+     * Wether to enable multi select
+     */
+    @Prop({ reflect: true }) multi: boolean;
+
+    /**
      * Icon of the select box
      */
     @Prop() icon: IconVariant;
@@ -219,6 +224,10 @@ export class Select {
             return this.query;
         }
 
+        if (this.multi) {
+            return this._selectedItem?.map(i => i?.[this.displayKey]).filter(i => !!i);
+        }
+
         return this._selectedItem?.[this.displayKey];
     }
 
@@ -235,6 +244,10 @@ export class Select {
     componentDidLoad() {
         if (!this.valueKey && !this.identifierKey) {
             throw new Error('You must provide a valueKey or identifierKey');
+        }
+
+        if (this.multi) {
+            this.enableAutocomplete = false;
         }
 
         if (this.value) {
@@ -275,14 +288,22 @@ export class Select {
                             this.enableAutocomplete ? 'focus' : 'click'
                         }
                     >
+                        {this.multi && this._selectedItem?.length && (<div slot="input" class="absolute top-0 left-0 h-full flex gap-2 items-center p-4">
+                            {
+                                this._selectedItem.map(item => (<div class="bg-negative rounded h-8 px-2 py-1 flex gap-2 items-center">
+                                    {item[this.displayKey]}
+                                    <p-icon variant="negative" onClick={() => this._selectValue(item)} />
+                                </div>))
+                            }
+                        </div>)}
+
                         <input
                             slot="input"
                             type="text"
                             placeholder={this._placeholder}
-                            value={this._displayValue}
-                            class={`p-input cursor-pointer ${
-                                !this._isAutoCompleting && 'read-only'
-                            }`}
+                            value={this.multi && this._displayValue?.length ? ' ' : this._displayValue}
+                            class={`p-input cursor-pointer ${!this._isAutoCompleting && 'read-only'
+                                }`}
                             onFocus={(ev) => this._onFocus(ev)}
                             onMouseDown={(ev) => this._onMouseDown(ev)}
                             onClick={() => this._onClick()}
@@ -336,12 +357,26 @@ export class Select {
             return;
         }
 
-        let value = this.value;
+        let value = typeof this.value === 'string' && this.multi ? JSON.parse(this.value) : this.value;
+
+        if (this.multi) {
+            if (!Array.isArray(value)) {
+                this.value = [];
+                this.valueChange.emit(this.value);
+                return;
+            }
+
+            if (!value.length) {
+                return;
+            }
+
+            this._selectedItem = value;
+            return;
+        }
 
         if (!this._selectedItem && !value && this.autoSelectFirst) {
             value = this._items[0];
         }
-
         // if (!value) {
         //     this._selectValue(null);
         //     return;
@@ -377,7 +412,7 @@ export class Select {
             const itemIdentifier = i?.[this._identifierKey];
             const parsedItemIdentifier =
                 typeof itemIdentifier === 'string' ||
-                typeof itemIdentifier === 'number'
+                    typeof itemIdentifier === 'number'
                     ? itemIdentifier
                     : JSON.stringify(itemIdentifier);
 
@@ -388,17 +423,41 @@ export class Select {
     }
 
     private _selectValue(item) {
-        this._selectedItem = item;
         const value =
             !!this.valueKey && this.valueKey !== 'false' && item !== null
                 ? item?.[this.valueKey]
                 : item;
 
         this.query = this.keepQuery ? item?.[this.displayKey] : null;
-        this.value = value;
+
+        if (this.multi) {
+            if (!this._selectedItem || !Array.isArray(this._selectedItem)) {
+                this._selectedItem = [];
+            }
+
+            if (!this.value || !Array.isArray(this.value)) {
+                this.value = [];
+            }
+
+            const includesIndex = this._selectedItem.findIndex(i => i[this._identifierKey] === item[this._identifierKey])
+            if (includesIndex === -1) {
+                this._selectedItem.push(item);
+                this.value.push(item)
+            } else {
+                this._selectedItem.splice(includesIndex, 1);
+                this.value.splice(includesIndex, 1);
+            }
+
+        } else {
+            this._selectedItem = item;
+            this.value = value;
+        }
+
         this.valueChange.emit(value);
 
-        this._onBlur(true);
+        if (!this.multi) {
+            this._onBlur(true);
+        }
     }
 
     private _onFocus(ev) {
@@ -469,9 +528,11 @@ export class Select {
             <p-dropdown-menu-item
                 onClick={() => this._selectValue(item)}
                 active={
-                    item[this._identifierKey] ===
-                    this._selectedItem?.[this._identifierKey]
+                    this.multi ? (this._selectedItem?.findIndex(i => i[this._identifierKey] === item[this._identifierKey]) >= 0) :
+                        (item[this._identifierKey] ===
+                            this._selectedItem?.[this._identifierKey])
                 }
+                variant={this.multi ? 'checkbox' : 'default'}
             >
                 {item[this.displayKey]}
             </p-dropdown-menu-item>

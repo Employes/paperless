@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 import { IconVariant } from '../icon/icon.component';
 
 @Component({
@@ -11,6 +11,11 @@ export class DropdownMenuItem {
      * Wether the dropdown menu item is active
      */
     @Prop() active: boolean = false;
+
+    /**
+     * The variant of the item
+     */
+    @Prop() variant: 'default' | 'checkbox' = 'default';
 
     /**
      * Wether to enable the hover state
@@ -30,6 +35,8 @@ export class DropdownMenuItem {
                 }`}
             >
                 {this.icon && <p-icon variant={this.icon} />}
+
+                {this.variant === 'checkbox' && <input type="checkbox" class="p-input size-small" checked={this.active} />}
 
                 <div class="text-container">
                     <slot />

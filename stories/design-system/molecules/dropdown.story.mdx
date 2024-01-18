@@ -78,6 +78,23 @@ import DropdownDocs from '../../../packages/core/src/components/molecules/dropdo
     </div>
 </Canvas>
 
+### Disabling the chevron
+
+<Canvas>
+    <div class="flex h-48 items-start justify-center">
+        <p-dropdown apply-chevron={false}>
+            <p-button variant="secondary" slot="trigger" icon="plus">
+                Click me
+            </p-button>
+            <slot slot="items">
+                <p-dropdown-menu-item>Item 1</p-dropdown-menu-item>
+                <p-dropdown-menu-item>Item 2</p-dropdown-menu-item>
+                <p-dropdown-menu-item>Item 3</p-dropdown-menu-item>
+            </slot>
+        </p-dropdown>
+    </div>
+</Canvas>
+
 ## Placement
 
 ### Bottom (default)

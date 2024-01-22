@@ -889,6 +889,10 @@ export namespace Components {
     }
     interface PSelect {
         /**
+          * The text to show when add item is being shown
+         */
+        "addItemText": string;
+        /**
           * Wether the input uses async filtering
          */
         "asyncFilter": boolean;
@@ -900,6 +904,14 @@ export namespace Components {
           * The placeholder of the input when auto completing
          */
         "autocompletePlaceholder": string;
+        /**
+          * The key of avatar within an item to show
+         */
+        "avatarKey": string;
+        /**
+          * The key of avatar letters within an item to show when the avatar url doesn't work
+         */
+        "avatarLettersKey": string;
         /**
           * Wether the input group is disabled used by the select
          */
@@ -972,6 +984,10 @@ export namespace Components {
           * Wether the field is required
          */
         "required": boolean;
+        /**
+          * Wether to show a "add" item
+         */
+        "showAddItem": boolean;
         /**
           * Wether to show the chevron or not
          */
@@ -2932,6 +2948,10 @@ declare namespace LocalJSX {
     }
     interface PSelect {
         /**
+          * The text to show when add item is being shown
+         */
+        "addItemText"?: string;
+        /**
           * Wether the input uses async filtering
          */
         "asyncFilter"?: boolean;
@@ -2943,6 +2963,14 @@ declare namespace LocalJSX {
           * The placeholder of the input when auto completing
          */
         "autocompletePlaceholder"?: string;
+        /**
+          * The key of avatar within an item to show
+         */
+        "avatarKey"?: string;
+        /**
+          * The key of avatar letters within an item to show when the avatar url doesn't work
+         */
+        "avatarLettersKey"?: string;
         /**
           * Wether the input group is disabled used by the select
          */
@@ -2996,6 +3024,10 @@ declare namespace LocalJSX {
          */
         "multi"?: boolean;
         /**
+          * Event when the add item is clicked
+         */
+        "onAdd"?: (event: PSelectCustomEvent<any>) => void;
+        /**
           * Event when the dropdown shows
          */
         "onDropdownShown"?: (event: PSelectCustomEvent<any>) => void;
@@ -3027,6 +3059,10 @@ declare namespace LocalJSX {
           * Wether the field is required
          */
         "required"?: boolean;
+        /**
+          * Wether to show a "add" item
+         */
+        "showAddItem"?: boolean;
         /**
           * Wether to show the chevron or not
          */

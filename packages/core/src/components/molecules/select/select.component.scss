@@ -1,7 +1,23 @@
 p-select {
-    @apply flex w-full flex-col;
+	@apply flex w-full flex-col relative;
 
-    input.read-only {
-        @apply text-ellipsis;
-    }
+	input.read-only {
+		@apply text-ellipsis;
+	}
+
+	.multi-container {
+		@apply absolute top-0 left-0 h-full flex gap-2 items-center px-2 py-4 overflow-hidden pointer-events-none w-full;
+
+		.item {
+			@apply bg-indigo-light rounded px-2 flex gap-2 items-center cursor-pointer text-indigo-dark h-[1.625rem] text-sm font-semibold pointer-events-auto whitespace-nowrap;
+
+			p-icon {
+				@apply text-indigo text-xs;
+			}
+		}
+
+		.extra {
+			@apply text-sm text-storm-medium pointer-events-none;
+		}
+	}
 }

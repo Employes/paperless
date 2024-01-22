@@ -61,7 +61,7 @@ input[type='checkbox'].p-input {
     }
 
     &.size-small {
-        @apply h-4 w-4 text-sm;
+        @apply h-4 w-4 text-xs;
     }
 }
 

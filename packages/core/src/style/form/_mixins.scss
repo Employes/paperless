@@ -9,7 +9,7 @@
             #{$prefix} + ::slotted(input[type='time'].p-input),
             #{$prefix} + ::slotted(input[type='tel'].p-input),
             #{$prefix} + ::slotted(input[type='password'].p-input),
-            #{$prefix} + ::slotted(input[type='email'].p-input)
+            #{$prefix} + ::slotted(input[type='email'].p-input),
             #{$prefix} + ::slotted(textarea.p-input) {
                 @content;
             }
@@ -22,7 +22,7 @@
             #{$prefix} + input[type='time'],
             #{$prefix} + input[type='tel'],
             #{$prefix} + input[type='password'],
-            #{$prefix} + input[type='email']
+            #{$prefix} + input[type='email'],
             #{$prefix} + textarea {
                 &.p-input {
                     @content;
@@ -39,7 +39,7 @@
             ::slotted(input[type='time'].p-input),
             ::slotted(input[type='tel'].p-input),
             ::slotted(input[type='password'].p-input),
-            ::slotted(input[type='email'].p-input)
+            ::slotted(input[type='email'].p-input),
             ::slotted(textarea.p-input) {
                 @content;
             }
@@ -52,7 +52,7 @@
             input[type='time'],
             input[type='tel'],
             input[type='password'],
-            input[type='email']
+            input[type='email'],
             textarea {
                 &.p-input {
                     @content;

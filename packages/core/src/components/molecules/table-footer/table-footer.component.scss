@@ -1,42 +1,42 @@
 :host {
-    @apply grid grid-cols-1 gap-4;
-    @apply w-full;
-    @apply p-6;
+	@apply grid grid-cols-1 gap-4;
+	@apply w-full;
+	@apply p-6;
 
-    > p-pagination {
-        @apply flex justify-self-center col-start-1;
-    }
+	> p-pagination {
+		@apply flex justify-self-center col-start-1;
+	}
 
-    > p-loader {
-        @apply col-start-1;
-    }
+	> p-loader {
+		@apply col-start-1;
+	}
 
-    @screen desktop-xs {
-        @apply grid-cols-3;
-        grid-template-areas: 'page-size pagination export';
+	@screen desktop-xs {
+		@apply grid-cols-3;
+		grid-template-areas: 'page-size pagination export';
 
-        > p-page-size-select {
-            @apply col-start-1;
-        }
+		> p-page-size-select {
+			@apply col-start-1;
+		}
 
-        > p-pagination {
-            @apply col-start-2;
-        }
+		> p-pagination {
+			@apply col-start-2;
+		}
 
-        > p-loader {
-            @apply col-start-2;
-        }
+		> p-loader {
+			@apply col-start-2;
+		}
 
-        > p-button {
-            @apply justify-self-end col-start-3;
-        }
-    }
+		> p-button {
+			@apply justify-self-end col-start-3;
+		}
+	}
 }
 
 :host(.page-size-disabled.export-disabled) {
-    @apply grid-cols-1;
+	@apply grid-cols-1;
 
-    > p-pagination {
-        @apply col-start-1;
-    }
+	> p-pagination {
+		@apply col-start-1;
+	}
 }

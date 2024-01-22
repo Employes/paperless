@@ -1,7 +1,7 @@
 :host {
-    @apply flex flex-col;
+	@apply flex flex-col;
 
-    input.read-only {
-        @apply text-ellipsis;
-    }
+	input.read-only {
+		@apply text-ellipsis;
+	}
 }

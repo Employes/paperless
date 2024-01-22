@@ -1,31 +1,31 @@
 :host {
-  @apply flex flex-col w-full relative p-4 bg-indigo-light rounded-large;
+	@apply flex flex-col w-full relative p-4 bg-indigo-light rounded-large;
 
-  .header {
-    @apply font-semibold text-storm-dark;
-  }
+	.header {
+		@apply font-semibold text-storm-dark;
+	}
 
-  .content {
-    @apply text-sm;
-  }
+	.content {
+		@apply text-sm;
+	}
 
-  .close {
-    @apply absolute top-2 right-2 cursor-pointer text-storm-vague;
-  }
+	.close {
+		@apply absolute top-2 right-2 cursor-pointer text-storm-vague;
+	}
 }
 
 :host(.variant-positive) {
-  @apply bg-positive-light;
+	@apply bg-positive-light;
 }
 
 :host(.variant-unbiased) {
-  @apply bg-unbiased-light;
+	@apply bg-unbiased-light;
 }
 
 :host(.variant-negative) {
-  @apply bg-negative-light;
+	@apply bg-negative-light;
 }
 
 :host(.has-close) {
-  @apply pr-8;
+	@apply pr-8;
 }

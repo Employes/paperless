@@ -1,14 +1,14 @@
 p-drawer-container {
-    @apply z-drawer flex flex-col;
-    // tablet:w-[22.5rem]
-    @apply w-full tablet:w-[22.5rem];
-    @apply bg-white;
-    @apply animate-slide-in-right;
-    @apply min-h-screen;
+	@apply z-drawer flex flex-col;
+	// tablet:w-[22.5rem]
+	@apply w-full tablet:w-[22.5rem];
+	@apply bg-white;
+	@apply animate-slide-in-right;
+	@apply min-h-screen;
 
-    @apply shadow-4 #{!important};
+	@apply shadow-4 #{!important};
 
-    &.closing {
-        @apply animate-slide-out-right;
-    }
+	&.closing {
+		@apply animate-slide-out-right;
+	}
 }

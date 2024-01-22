@@ -1,152 +1,152 @@
 :host {
-    @apply block bg-white p-2;
-    @apply w-[14rem];
+	@apply block bg-white p-2;
+	@apply w-[14rem];
 
-    .view-day,
-    .view-month,
-    .view-year {
-        @apply flex flex-col gap-2;
-        @apply w-full h-[12rem];
-    }
+	.view-day,
+	.view-month,
+	.view-year {
+		@apply flex flex-col gap-2;
+		@apply w-full h-[12rem];
+	}
 
-    .header {
-        @apply flex justify-between items-center gap-1;
-        @apply text-base;
-        @apply w-full;
+	.header {
+		@apply flex justify-between items-center gap-1;
+		@apply text-base;
+		@apply w-full;
 
-        span {
-            @apply cursor-pointer h-8 px-2 rounded text-storm;
+		span {
+			@apply cursor-pointer h-8 px-2 rounded text-storm;
 
-            &.disabled {
-                @apply cursor-default;
-            }
+			&.disabled {
+				@apply cursor-default;
+			}
 
-            &:hover:not(.disabled) {
-                @apply bg-indigo-light;
-            }
+			&:hover:not(.disabled) {
+				@apply bg-indigo-light;
+			}
 
-            &.year {
-                @apply font-semibold;
-            }
-        }
+			&.year {
+				@apply font-semibold;
+			}
+		}
 
-        .nav {
-            @apply relative flex justify-center items-center cursor-pointer;
-            @apply no-underline;
-            @apply text-indigo;
-            @apply w-6 h-6 rounded-round;
-            transition-duration: 0.2s;
+		.nav {
+			@apply relative flex justify-center items-center cursor-pointer;
+			@apply no-underline;
+			@apply text-indigo;
+			@apply w-6 h-6 rounded-round;
+			transition-duration: 0.2s;
 
-            &:hover:not(.disabled) {
-                @apply bg-indigo-light;
-            }
+			&:hover:not(.disabled) {
+				@apply bg-indigo-light;
+			}
 
-            &.disabled {
-                @apply opacity-0;
-            }
-        }
-    }
+			&.disabled {
+				@apply opacity-0;
+			}
+		}
+	}
 
-    .view-day {
-        @apply h-auto min-h-[12rem];
+	.view-day {
+		@apply h-auto min-h-[12rem];
 
-        .dates {
-            @apply grid gap-1;
-            grid-template-columns: repeat(7, 1fr);
+		.dates {
+			@apply grid gap-1;
+			grid-template-columns: repeat(7, 1fr);
 
-            > span {
-                @apply text-storm-medium font-semibold text-xs;
-                @apply w-6;
-                @apply self-center justify-self-center text-center;
-            }
+			> span {
+				@apply text-storm-medium font-semibold text-xs;
+				@apply w-6;
+				@apply self-center justify-self-center text-center;
+			}
 
-            > time {
-                @apply flex justify-center items-center;
-                @apply cursor-pointer;
-                @apply w-6 h-6 box-border;
-                @apply justify-self-center self-center;
-                @apply rounded-round;
+			> time {
+				@apply flex justify-center items-center;
+				@apply cursor-pointer;
+				@apply w-6 h-6 box-border;
+				@apply justify-self-center self-center;
+				@apply rounded-round;
 
-                @apply text-storm text-sm;
-                @apply border border-solid border-transparent;
+				@apply text-storm text-sm;
+				@apply border border-solid border-transparent;
 
-                transition-duration: 0.2s;
+				transition-duration: 0.2s;
 
-                &.current {
-                    @apply border-storm-light;
-                }
+				&.current {
+					@apply border-storm-light;
+				}
 
-                &.active {
-                    @apply bg-indigo-light border-indigo-light text-indigo font-semibold;
-                }
+				&.active {
+					@apply bg-indigo-light border-indigo-light text-indigo font-semibold;
+				}
 
-                &.other-month,
-                &.disabled {
-                    @apply opacity-40 cursor-default;
-                }
+				&.other-month,
+				&.disabled {
+					@apply opacity-40 cursor-default;
+				}
 
-                &.disabled {
-                    @apply line-through;
-                }
+				&.disabled {
+					@apply line-through;
+				}
 
-                &:hover:not(.disabled):not(.active):not(.other-month) {
-                    @apply bg-indigo-light text-storm;
-                }
-            }
-        }
-    }
+				&:hover:not(.disabled):not(.active):not(.other-month) {
+					@apply bg-indigo-light text-storm;
+				}
+			}
+		}
+	}
 
-    .view-month,
-    .view-year {
-        .items {
-            @apply relative grid overflow-y-auto gap-1 w-full;
-            @apply h-full items-center;
-            grid-template-columns: repeat(3, 1fr);
+	.view-month,
+	.view-year {
+		.items {
+			@apply relative grid overflow-y-auto gap-1 w-full;
+			@apply h-full items-center;
+			grid-template-columns: repeat(3, 1fr);
 
-            > div {
-                @apply cursor-pointer;
-                @apply flex justify-center items-center;
-                @apply text-sm h-8 px-2 rounded;
-                @apply text-storm;
-                @apply border border-solid border-transparent;
+			> div {
+				@apply cursor-pointer;
+				@apply flex justify-center items-center;
+				@apply text-sm h-8 px-2 rounded;
+				@apply text-storm;
+				@apply border border-solid border-transparent;
 
-                &.current {
-                    @apply border-storm-light;
-                }
+				&.current {
+					@apply border-storm-light;
+				}
 
-                &.active {
-                    @apply bg-indigo-light border-indigo-light text-indigo font-semibold;
-                }
+				&.active {
+					@apply bg-indigo-light border-indigo-light text-indigo font-semibold;
+				}
 
-                &.disabled {
-                    @apply line-through;
-                    @apply opacity-40 cursor-default;
-                }
+				&.disabled {
+					@apply line-through;
+					@apply opacity-40 cursor-default;
+				}
 
-                &:hover:not(.disabled):not(.active) {
-                    @apply bg-mystic;
-                }
-            }
-        }
-    }
+				&:hover:not(.disabled):not(.active) {
+					@apply bg-mystic;
+				}
+			}
+		}
+	}
 
-    .view-month {
-        .items {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+	.view-month {
+		.items {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 
-    .view-year {
-        .header {
-            @apply justify-center;
-        }
-    }
+	.view-year {
+		.header {
+			@apply justify-center;
+		}
+	}
 }
 
 :host(.variant-default) {
-    @apply rounded shadow-4;
+	@apply rounded shadow-4;
 }
 
 :host(.variant-embedded) {
-    @apply p-0;
+	@apply p-0;
 }

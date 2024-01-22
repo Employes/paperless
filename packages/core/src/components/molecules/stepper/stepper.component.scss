@@ -1,16 +1,16 @@
 :host {
-    @apply flex;
+	@apply flex;
 }
 
 :host([direction='horizontal']) {
-    @apply h-auto items-end;
+	@apply h-auto items-end;
 }
 
 :host([direction='vertical']) {
-    @apply flex-col flex-wrap items-start;
-    @apply w-full min-h-full;
+	@apply flex-col flex-wrap items-start;
+	@apply w-full min-h-full;
 }
 
 :host([direction='vertical'][content-position='start']) {
-    @apply items-end;
+	@apply items-end;
 }

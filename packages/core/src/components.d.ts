@@ -83,10 +83,10 @@ export namespace Components {
           * The size of the avatar
          */
         "size": | 'xsmall'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'xlarge';
+		| 'small'
+		| 'medium'
+		| 'large'
+		| 'xlarge';
         /**
           * The image used for the avatar
          */
@@ -619,10 +619,10 @@ export namespace Components {
           * Define the behavior of the label
          */
         "behavior": | 'icon'
-        | 'circle'
-        | 'combination'
-        | 'text'
-        | 'icon-only';
+		| 'circle'
+		| 'combination'
+		| 'text'
+		| 'icon-only';
         /**
           * Icon to show on the label
          */
@@ -651,11 +651,11 @@ export namespace Components {
           * Variant of the label
          */
         "variant": | 'neutral'
-        | 'positive'
-        | 'unbiased'
-        | 'negative'
-        | 'special'
-        | 'info';
+		| 'positive'
+		| 'unbiased'
+		| 'negative'
+		| 'special'
+		| 'info';
     }
     interface PLayout {
         /**
@@ -684,10 +684,10 @@ export namespace Components {
           * Variant of loader
          */
         "variant": | 'inline'
-        | 'full-width'
-        | 'full-screen'
-        | 'modal'
-        | 'ghost';
+		| 'full-width'
+		| 'full-screen'
+		| 'modal'
+		| 'ghost';
     }
     interface PModal {
         /**
@@ -1277,10 +1277,10 @@ export namespace Components {
           * The sizes of the column
          */
         "sizes": | 'auto'
-        | 'hidden'
-        | 'full'
-        | number
-        | TableColumnSizes;
+		| 'hidden'
+		| 'full'
+		| number
+		| TableColumnSizes;
         /**
           * The type of the column
          */
@@ -2067,10 +2067,10 @@ declare namespace LocalJSX {
           * The size of the avatar
          */
         "size"?: | 'xsmall'
-        | 'small'
-        | 'medium'
-        | 'large'
-        | 'xlarge';
+		| 'small'
+		| 'medium'
+		| 'large'
+		| 'xlarge';
         /**
           * The image used for the avatar
          */
@@ -2381,9 +2381,9 @@ declare namespace LocalJSX {
           * Close click event
          */
         "onCloseClicked"?: (event: PDrawerCustomEvent<{
-        event: MouseEvent;
-        canClose: boolean;
-    }>) => void;
+		event: MouseEvent;
+		canClose: boolean;
+	}>) => void;
         /**
           * Closed event
          */
@@ -2642,10 +2642,10 @@ declare namespace LocalJSX {
           * Define the behavior of the label
          */
         "behavior"?: | 'icon'
-        | 'circle'
-        | 'combination'
-        | 'text'
-        | 'icon-only';
+		| 'circle'
+		| 'combination'
+		| 'text'
+		| 'icon-only';
         /**
           * Icon to show on the label
          */
@@ -2674,11 +2674,11 @@ declare namespace LocalJSX {
           * Variant of the label
          */
         "variant"?: | 'neutral'
-        | 'positive'
-        | 'unbiased'
-        | 'negative'
-        | 'special'
-        | 'info';
+		| 'positive'
+		| 'unbiased'
+		| 'negative'
+		| 'special'
+		| 'info';
     }
     interface PLayout {
         /**
@@ -2707,10 +2707,10 @@ declare namespace LocalJSX {
           * Variant of loader
          */
         "variant"?: | 'inline'
-        | 'full-width'
-        | 'full-screen'
-        | 'modal'
-        | 'ghost';
+		| 'full-width'
+		| 'full-screen'
+		| 'modal'
+		| 'ghost';
     }
     interface PModal {
         /**
@@ -3388,10 +3388,10 @@ declare namespace LocalJSX {
           * The sizes of the column
          */
         "sizes"?: | 'auto'
-        | 'hidden'
-        | 'full'
-        | number
-        | TableColumnSizes;
+		| 'hidden'
+		| 'full'
+		| number
+		| TableColumnSizes;
         /**
           * The type of the column
          */

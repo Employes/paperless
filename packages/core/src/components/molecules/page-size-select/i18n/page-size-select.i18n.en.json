@@ -1,4 +1,4 @@
 {
-    "button": "Show {size} items per page",
-    "item": "{size} per page"
+	"button": "Show {size} items per page",
+	"item": "{size} per page"
 }

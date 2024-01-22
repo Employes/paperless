@@ -39,7 +39,7 @@ export class DropdownMenuItem {
 				{this.variant === 'checkbox' && (
 					<input
 						type="checkbox"
-						class="p-input size-small"
+						class="p-input size-small flex-shrink-0"
 						checked={this.active}
 					/>
 				)}

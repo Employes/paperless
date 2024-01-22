@@ -126,6 +126,33 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
     </div>
 </Canvas>
 
+## Show extra item in dropdown for "Add" functionality
+
+<Canvas>
+    <div class="h-52">
+        <p-select
+            placeholder="Click me to search"
+            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+            show-add-item={true}
+        />
+    </div>
+</Canvas>
+
+## Show avatars
+
+<Canvas>
+    <div class="h-52 flex flex-col gap-2">
+        <p-select
+            value-key={false}
+            identifier-key="value"
+            placeholder="Please select some items"
+            avatar-key="avatar"
+            avatar-letters-key="letters"
+            items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+        />
+    </div>
+</Canvas>
+
 ## Multi
 
 <Canvas>
@@ -144,6 +171,16 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
             placeholder="Please select some items"
             items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
             value='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"}]'
+        />
+        <p-select
+            multi
+            value-key={false}
+            identifier-key="value"
+            placeholder="I include avatars"
+            avatar-key="avatar"
+            avatar-letters-key="letters"
+            items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+            value='[{"value":1,"text":"Value 1"}]'
         />
     </div>
 </Canvas>

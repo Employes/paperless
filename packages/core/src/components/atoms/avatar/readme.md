@@ -20,6 +20,19 @@
 | `variant`          | `variant`       | The variant of the avatar                      | `"company" \| "user"`                                    | `'user'`    |
 
 
+## Dependencies
+
+### Used by
+
+ - [p-select](../../molecules/select)
+
+### Graph
+```mermaid
+graph TD;
+  p-select --> p-avatar
+  style p-avatar fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

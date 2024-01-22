@@ -1,29 +1,29 @@
 :host {
-    @apply w-full inline-block mb-1;
+	@apply w-full inline-block mb-1;
 
-    > a {
-        @apply w-full h-8 px-2 cursor-pointer rounded-large no-underline;
-        @apply flex items-center gap-2;
-        @apply text-storm font-semibold;
+	> a {
+		@apply w-full h-8 px-2 cursor-pointer rounded-large no-underline;
+		@apply flex items-center gap-2;
+		@apply text-storm font-semibold;
 
-        @apply hover:bg-indigo-light;
+		@apply hover:bg-indigo-light;
 
-        > p-icon {
-            @apply text-storm;
-        }
+		> p-icon {
+			@apply text-storm;
+		}
 
-        > p-counter {
-            @apply ml-auto;
-        }
-    }
+		> p-counter {
+			@apply ml-auto;
+		}
+	}
 }
 
 :host(.active) {
-    > a {
-        @apply text-indigo bg-indigo-light;
+	> a {
+		@apply text-indigo bg-indigo-light;
 
-        > p-icon {
-            @apply text-indigo;
-        }
-    }
+		> p-icon {
+			@apply text-indigo;
+		}
+	}
 }

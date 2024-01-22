@@ -22,7 +22,6 @@
 		"noImplicitOverride": false,
 		"noPropertyAccessFromIndexSignature": false,
 		"strictNullChecks": false,
-		"suppressImplicitAnyIndexErrors": true,
 		"noUnusedLocals": true,
 		"allowSyntheticDefaultImports": true,
 		"useDefineForClassFields": false,

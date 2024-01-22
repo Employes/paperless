@@ -1,17 +1,17 @@
 :host {
-    @apply bg-white;
-    @apply sticky top-0 flex justify-center items-center;
-    @apply p-4 z-drawer-header;
+	@apply bg-white;
+	@apply sticky top-0 flex justify-center items-center;
+	@apply p-4 z-drawer-header;
 
-    padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
+	padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
 
-    @apply text-storm-dark text-xl font-semibold;
+	@apply text-storm-dark text-xl font-semibold;
 
-    @apply border-0 border-b border-b-mystic-dark border-solid #{!important};
+	@apply border-0 border-b border-b-mystic-dark border-solid #{!important};
 
-    p-button {
-        @apply absolute left-4;
+	p-button {
+		@apply absolute left-4;
 
-        top: calc(env(safe-area-inset-top, 0) + 1rem);
-    }
+		top: calc(env(safe-area-inset-top, 0) + 1rem);
+	}
 }

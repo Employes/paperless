@@ -1,11 +1,11 @@
 :host {
-    @apply flex h-6 items-center gap-2 whitespace-nowrap text-sm text-storm-vague;
+	@apply flex h-6 items-center gap-2 whitespace-nowrap text-sm text-storm-vague;
 }
 
 :host([hover]) {
-    @apply cursor-pointer font-semibold;
+	@apply cursor-pointer font-semibold;
 }
 
 :host([hover]:hover) {
-    @apply text-white;
+	@apply text-white;
 }

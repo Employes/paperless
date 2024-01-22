@@ -1,12 +1,12 @@
 p-modal-container {
-    @apply flex flex-col w-full tablet:w-auto z-modal;
-    @apply rounded-b-none rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
+	@apply flex flex-col w-full tablet:w-auto z-modal;
+	@apply rounded-b-none rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
 
-    @apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small #{!important};
+	@apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small #{!important};
 
-    @apply shadow-4 #{!important};
+	@apply shadow-4 #{!important};
 
-    &.closing {
-        @apply animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small #{!important};
-    }
+	&.closing {
+		@apply animate-slide-out-bottom desktop-xs:animate-slide-out-bottom-small #{!important};
+	}
 }

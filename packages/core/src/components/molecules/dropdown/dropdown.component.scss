@@ -1,23 +1,23 @@
 :host {
-    @apply relative block;
+	@apply relative block;
 
-    .trigger {
-        @apply relative block h-auto w-auto;
-    }
+	.trigger {
+		@apply relative block h-auto w-auto;
+	}
 
-    p-dropdown-menu-container {
-        @apply left-0 top-0 z-dropdown hidden;
+	p-dropdown-menu-container {
+		@apply left-0 top-0 z-dropdown hidden;
 
-        &[data-show] {
-            @apply flex;
-        }
+		&[data-show] {
+			@apply flex;
+		}
 
-        &[data-strategy='absolute'] {
-            @apply absolute;
-        }
+		&[data-strategy='absolute'] {
+			@apply absolute;
+		}
 
-        &[data-strategy='fixed'] {
-            @apply fixed;
-        }
-    }
+		&[data-strategy='fixed'] {
+			@apply fixed;
+		}
+	}
 }

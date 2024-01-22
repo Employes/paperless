@@ -1,83 +1,83 @@
 @import '../../../style/mixins';
 
 :host {
-    @apply w-full max-h-screen-safe;
-    @apply desktop-xs:w-60;
+	@apply w-full max-h-screen-safe;
+	@apply desktop-xs:w-60;
 
-    .sidebar,
-    .sidebar .company,
-    .sidebar .content,
-    .sidebar .user,
-    .userbar {
-        @apply flex w-full flex-col;
-    }
+	.sidebar,
+	.sidebar .company,
+	.sidebar .content,
+	.sidebar .user,
+	.userbar {
+		@apply flex w-full flex-col;
+	}
 
-    .sidebar,
-    .top-bar {
-        @apply bg-white;
-        @apply border-0  border-solid border-mystic-dark #{!important};
-    }
+	.sidebar,
+	.top-bar {
+		@apply bg-white;
+		@apply border-0  border-solid border-mystic-dark #{!important};
+	}
 
-    .sidebar {
-        @apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
-        @apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
-        @apply gap-6;
+	.sidebar {
+		@apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
+		@apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
+		@apply gap-6;
 
-        @apply will-change-transform;
-        @apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
+		@apply will-change-transform;
+		@apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
 
-        @apply py-4;
+		@apply py-4;
 
-        padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
+		padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
 
-        @apply border-r #{!important};
+		@apply border-r #{!important};
 
-        @apply transition-all;
+		@apply transition-all;
 
-        .company,
-        .content,
-        .user,
-        .header {
-            @apply px-4;
-        }
+		.company,
+		.content,
+		.user,
+		.header {
+			@apply px-4;
+		}
 
-        .header {
-            @apply flex w-full items-center justify-between;
-            @apply desktop-xs:hidden;
-        }
+		.header {
+			@apply flex w-full items-center justify-between;
+			@apply desktop-xs:hidden;
+		}
 
-        .content {
-            @apply overflow-y-auto;
+		.content {
+			@apply overflow-y-auto;
 
-            @include scrollbarY();
-        }
+			@include scrollbarY();
+		}
 
-        .user {
-            @apply mt-auto hidden;
-            @apply desktop-xs:flex;
-        }
+		.user {
+			@apply mt-auto hidden;
+			@apply desktop-xs:flex;
+		}
 
-        &.show {
-            --tw-translate-x: env(safe-area-inset-left, 0);
-        }
-    }
+		&.show {
+			--tw-translate-x: env(safe-area-inset-left, 0);
+		}
+	}
 
-    .top-bar {
-        @apply flex w-full justify-between px-4 py-2;
+	.top-bar {
+		@apply flex w-full justify-between px-4 py-2;
 
-        padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
-        height: calc(env(safe-area-inset-top, 0) + 3rem);
+		padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
+		height: calc(env(safe-area-inset-top, 0) + 3rem);
 
-        @apply border-b #{!important};
+		@apply border-b #{!important};
 
-        @apply desktop-xs:hidden;
-    }
+		@apply desktop-xs:hidden;
+	}
 
-    p-backdrop {
-        @apply hidden;
+	p-backdrop {
+		@apply hidden;
 
-        &.show {
-            @apply block;
-        }
-    }
+		&.show {
+			@apply block;
+		}
+	}
 }

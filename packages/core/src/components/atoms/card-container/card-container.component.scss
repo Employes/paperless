@@ -1,17 +1,17 @@
 :host {
-    @apply flex flex-col w-full;
-    @apply bg-white rounded-large;
-    @apply filter drop-shadow-4 #{!important};
+	@apply flex flex-col w-full;
+	@apply bg-white rounded-large;
+	@apply filter drop-shadow-4 #{!important};
 }
 
 :host([hoverable]) {
-    @apply cursor-pointer;
+	@apply cursor-pointer;
 }
 
 :host([hoverable]:hover) {
-    @apply drop-shadow-5 #{!important};
+	@apply drop-shadow-5 #{!important};
 }
 
 :host([shadow='false']) {
-    @apply drop-shadow-transparent #{!important};
+	@apply drop-shadow-transparent #{!important};
 }

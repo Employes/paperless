@@ -1,55 +1,55 @@
 :host {
-    @apply flex flex-col overflow-hidden;
+	@apply flex flex-col overflow-hidden;
 
-    @apply p-16 -m-16;
+	@apply p-16 -m-16;
 
-    .slider {
-        @apply overflow-visible relative box-content;
+	.slider {
+		@apply overflow-visible relative box-content;
 
-        &.draggable {
-            @apply cursor-grab desktop-xs:cursor-auto;
+		&.draggable {
+			@apply cursor-grab desktop-xs:cursor-auto;
 
-            &.dragging {
-                @apply cursor-grabbing desktop-xs:cursor-auto;
+			&.dragging {
+				@apply cursor-grabbing desktop-xs:cursor-auto;
 
-                .inner-slider {
-                    @apply transition-none;
-                }
-            }
-        }
+				.inner-slider {
+					@apply transition-none;
+				}
+			}
+		}
 
-        .inner-slider {
-            @apply absolute flex flex-nowrap items-stretch w-full gap-2;
+		.inner-slider {
+			@apply absolute flex flex-nowrap items-stretch w-full gap-2;
 
-            @apply will-change-transform transform-gpu translate-x-0;
+			@apply will-change-transform transform-gpu translate-x-0;
 
-            @apply desktop-xs:gap-4 desktop-xs:flex-wrap;
+			@apply desktop-xs:gap-4 desktop-xs:flex-wrap;
 
-            @apply transition-all;
-            transition-duration: 0.5s;
+			@apply transition-all;
+			transition-duration: 0.5s;
 
-            > ::slotted(*) {
-                @apply w-full;
-                @apply flex-shrink-0 z-10;
+			> ::slotted(*) {
+				@apply w-full;
+				@apply flex-shrink-0 z-10;
 
-                @screen tablet {
-                    width: calc(50% - 0.5rem);
-                }
+				@screen tablet {
+					width: calc(50% - 0.5rem);
+				}
 
-                @screen desktop-xs {
-                    @apply w-0 flex-1;
-                }
+				@screen desktop-xs {
+					@apply w-0 flex-1;
+				}
 
-                position: relative;
-            }
-        }
-    }
+				position: relative;
+			}
+		}
+	}
 
-    .indicator {
-        @apply flex justify-center items-center desktop-xs:hidden;
+	.indicator {
+		@apply flex justify-center items-center desktop-xs:hidden;
 
-        .item {
-            @apply mt-3 pt-1 px-1;
-        }
-    }
+		.item {
+			@apply mt-3 pt-1 px-1;
+		}
+	}
 }

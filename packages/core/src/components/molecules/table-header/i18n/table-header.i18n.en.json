@@ -1,6 +1,6 @@
 {
-    "edit": "Edit",
-    "edit_single": "Edit item",
-    "edit_plural": "Edit ({amount}) items",
-    "filter": "Filter"
+	"edit": "Edit",
+	"edit_single": "Edit item",
+	"edit_plural": "Edit ({amount}) items",
+	"filter": "Filter"
 }

@@ -2,12 +2,12 @@ import { newSpecPage } from '@stencil/core/testing';
 import { Loader } from '../loader.component';
 
 describe('p-loader', () => {
-  it('renders', async () => {
-    const page = await newSpecPage({
-      components: [Loader],
-      html: `<p-loader></p-loader>`,
-    });
-    expect(page.root).toEqualHtml(`
+	it('renders', async () => {
+		const page = await newSpecPage({
+			components: [Loader],
+			html: `<p-loader></p-loader>`,
+		});
+		expect(page.root).toEqualHtml(`
       <p-icon icon="document" class="p-icon inline-block text-auto hydrated" innerhtml="<?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
       <svg width=&quot;1em&quot; height=&quot;1em&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;>
             <title>20D69539-7C20-49F0-9BCF-AE6F4D356668@1x</title>
@@ -43,5 +43,5 @@ describe('p-loader', () => {
         </svg>
       </p-icon>
     `);
-  });
+	});
 });

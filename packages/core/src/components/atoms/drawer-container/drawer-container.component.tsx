@@ -7,20 +7,20 @@ import { Component, h, Host, Prop } from '@stencil/core';
 // $drawer-xl: 57.5rem;
 
 @Component({
-    tag: 'p-drawer-container',
-    styleUrl: 'drawer-container.component.scss',
+	tag: 'p-drawer-container',
+	styleUrl: 'drawer-container.component.scss',
 })
 export class ModalContainer {
-    /**
-     * Wether the container is closing
-     */
-    @Prop() closing: boolean = false;
+	/**
+	 * Wether the container is closing
+	 */
+	@Prop() closing: boolean = false;
 
-    render() {
-        return (
-            <Host class={`p-drawer-container ${this.closing && 'closing'}`}>
-                <slot />
-            </Host>
-        );
-    }
+	render() {
+		return (
+			<Host class={`p-drawer-container ${this.closing && 'closing'}`}>
+				<slot />
+			</Host>
+		);
+	}
 }

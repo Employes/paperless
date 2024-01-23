@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/Employes/Paperless/compare/v1.17.5...v1.18.0) (2024-01-23)
+
+
+### Features
+
+* **Angular/Playground:** Add select to playground for testing ([ec9c4e3](https://github.com/Employes/Paperless/commit/ec9c4e3f6f193c703635eb5c5bf19942a9dbfc93))
+
+
+
+
+
 ## [1.17.5](https://github.com/Employes/Paperless/compare/v1.17.4...v1.17.5) (2024-01-18)
 
 **Note:** Version bump only for package @paperless/angular

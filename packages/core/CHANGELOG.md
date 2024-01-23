@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.18.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.17.5...v1.18.0) (2024-01-23)
+
+
+### Features
+
+* **Angular/Playground:** Add select to playground for testing ([ec9c4e3](https://github.com/ionic-team/stencil-component-starter/commit/ec9c4e3f6f193c703635eb5c5bf19942a9dbfc93))
+* **Atoms/Dropdown/Menu Item:** Implement checkbox variant ([c461b87](https://github.com/ionic-team/stencil-component-starter/commit/c461b877be1eabd15189785b29603da68b526c8c))
+* **Molecules/Dropdown:** Add option to disable chevrons being applied to buttons ([8502042](https://github.com/ionic-team/stencil-component-starter/commit/8502042cf2d73654d04f080b61955d6dc986450d))
+* **Molecules/Select:** Add multi support ([1efc26b](https://github.com/ionic-team/stencil-component-starter/commit/1efc26b8187edc462ebd400d07f774d9e1870117))
+
+
+
+
+
 ## [1.17.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.17.4...v1.17.5) (2024-01-18)
 
 **Note:** Version bump only for package @paperless/core

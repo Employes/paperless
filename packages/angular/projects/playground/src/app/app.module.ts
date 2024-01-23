@@ -16,6 +16,7 @@ import { ModalComponent } from './features/modal/modal.component';
 import { TestModalComponent } from './features/modal/test-modal.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
+import { SelectComponent } from './features/select/select.component';
 
 @NgModule({
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -31,6 +32,7 @@ import { ToastComponent } from './features/toast/toast.component';
         TableComponent,
         DatepickerComponent,
         CropperComponent,
+        SelectComponent
     ],
     imports: [
         BrowserModule,

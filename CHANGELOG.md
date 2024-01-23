@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/employes/paperless/compare/v1.18.0...v1.19.0) (2024-01-23)
+
+
+### Features
+
+* **Atoms/Icon:** Add building icon ([241eac7](https://github.com/employes/paperless/commit/241eac7a2ecc87b1ba3a825ac290c69a68116461))
+
+
+
+
+
 # [1.18.0](https://github.com/employes/paperless/compare/v1.17.5...v1.18.0) (2024-01-23)
 
 

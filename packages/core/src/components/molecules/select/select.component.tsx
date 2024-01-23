@@ -541,12 +541,12 @@ export class Select {
 
 			this._selectedItem = selectedItem;
 			this.value = valueArray;
+			this.valueChange.emit(valueArray);
 		} else {
 			this._selectedItem = item;
 			this.value = value;
+			this.valueChange.emit(value);
 		}
-
-		this.valueChange.emit(value);
 
 		if (!this.multi) {
 			this._onBlur(true);
@@ -711,83 +711,4 @@ export class Select {
 			extra.classList.remove('hidden');
 		}
 	}
-
-	// private _checkItemVisiblity(ref: HTMLElement) {
-	// 	if (!this._multiContainerRef) {
-	// 		return;
-	// 	}
-
-	// 	if (!ref) {
-	// 		return;
-	// 	}
-
-	// 	const parent = this._multiContainerRef.getBoundingClientRect();
-	// 	const clientRect = ref.getBoundingClientRect();
-
-	// 	if (clientRect.right > parent.right) {
-	// 		if (!ref.classList.contains('hidden')) {
-	// 			ref.classList.add('hidden');
-	// 		}
-
-	// 		console.log(ref.classList);
-
-	// 		// if (!this._showExtra) {
-	// 		// 	this._showExtra = true;
-	// 		// }
-	// 	}
-
-	// 	if (ref.classList.contains('hidden')) {
-	// 		ref.classList.remove('hidden');
-	// 	}
-	// }
-
-	// private _getHiddenChildrenAmount() {
-	// 	const children = Array.from(
-	// 		this._multiContainerRef.querySelectorAll('.item')
-	// 	);
-	// 	const filtered = children.filter(
-	// 		(c: HTMLElement) => c.style.display === 'hidden'
-	// 	);
-
-	// 	console.log(filtered);
-	// 	if (filtered.length === 0 && this._showExtra) {
-	// 		console.log('Showing to false');
-	// 		// this._showExtra = false;
-	// 		return;
-	// 	}
-
-	// 	return filtered.length;
-	// }
-
-	// private _calculateSelectedItemsOverflow() {
-	// 	if (!this.multi || !this._selectedItem?.length) {
-	// 		return;
-	// 	}
-
-	// 	if (this._maxOverflow !== 99) {
-	// 		this._maxOverflow = 99;
-	// 	}
-
-	// 	const children = Array.from(
-	// 		this._multiContainerRef.querySelectorAll('.item')
-	// 	);
-	// 	const maxWidth = parseInt(
-	// 		this._multiContainerRef.style.maxWidth.replace('px', ''),
-	// 		10
-	// 	);
-	// 	let totalWidth = 0;
-
-	// 	for (let i = 0; i < children.length; i++) {
-	// 		const child = children[i];
-	// 		const calculated = window.getComputedStyle(child);
-	// 		totalWidth += parseInt(calculated.width.replace('px', ''), 10) + 8;
-
-	// 		if (totalWidth > maxWidth) {
-	// 			this._maxOverflow = i - 1;
-	// 			break;
-	// 		}
-	// 	}
-
-	// 	console.log(this._maxOverflow);
-	// }
 }

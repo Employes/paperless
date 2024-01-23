@@ -7,6 +7,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ModalComponent } from './features/modal/modal.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
+import { SelectComponent } from './features/select/select.component';
 
 const routes: Routes = [
     {
@@ -36,6 +37,10 @@ const routes: Routes = [
     {
         path: 'cropper',
         component: CropperComponent,
+    },
+    {
+        path: 'select',
+        component: SelectComponent,
     },
 ];
 

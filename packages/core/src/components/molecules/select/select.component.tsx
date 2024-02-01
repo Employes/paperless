@@ -54,12 +54,12 @@ export class Select {
 	/**
 	 * The key of the object to display in the dropdown (overwrites displayKey)
 	 */
-	@Prop() dropdownDisplayKey: string = 'text';
+	@Prop() dropdownDisplayKey: string | undefined;
 
 	/**
 	 * The key of the object to display in the input (overwrites displayKey)
 	 */
-	@Prop() selectionDisplayKey: string = 'text';
+	@Prop() selectionDisplayKey: string | undefined;
 
 	/**
 	 * The key of the object to return

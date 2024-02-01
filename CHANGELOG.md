@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/employes/paperless/compare/v1.19.0...v1.20.0) (2024-02-01)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** fix multi position with label ([f3187c5](https://github.com/employes/paperless/commit/f3187c59ec171e8f16b5763c568b2a7e0d7233dc))
+
+
+### Features
+
+* **Molecules/Select:** Implement display keys for different places ([150f999](https://github.com/employes/paperless/commit/150f9999d3eac1c0699aa8e3d1db643d283da0e8))
+
+
+
+
+
 # [1.19.0](https://github.com/employes/paperless/compare/v1.18.0...v1.19.0) (2024-01-23)
 
 

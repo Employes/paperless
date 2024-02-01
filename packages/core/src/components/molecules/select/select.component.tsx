@@ -389,7 +389,7 @@ export class Select {
 
 				{this.multi && this._selectedItem?.length > 0 && (
 					<div
-						class="multi-container"
+						class={`multi-container size-${this.size}`}
 						ref={(ref) => (this._multiContainerRef = ref)}
 					>
 						{this._selectedItem.map((item) => (

@@ -6,7 +6,11 @@ p-select {
 	}
 
 	.multi-container {
-		@apply absolute top-0 left-0 h-full flex gap-2 items-center px-2 py-4 overflow-hidden pointer-events-none w-full;
+		@apply absolute bottom-0 left-0 h-10 flex gap-2 items-center px-2 py-4 overflow-hidden pointer-events-none w-full;
+
+		&.size-small {
+			@apply px-1 py-2 h-8;
+		}
 
 		.item {
 			@apply bg-indigo-light rounded px-2 flex gap-2 items-center cursor-pointer text-indigo-dark h-[1.625rem] text-sm font-semibold pointer-events-auto whitespace-nowrap;

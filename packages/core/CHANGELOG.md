@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.20.1...v1.20.2) (2024-02-01)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Fix `displayValue` error & remove unused debug code ([73ce0fa](https://github.com/ionic-team/stencil-component-starter/commit/73ce0fa8f03ce2955f9302434b607d844b24035e))
+
+
+
+
+
 ## [1.20.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.20.0...v1.20.1) (2024-02-01)
 
 

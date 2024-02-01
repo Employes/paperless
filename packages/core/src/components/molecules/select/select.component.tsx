@@ -262,6 +262,10 @@ export class Select {
 		}
 
 		if (this.multi) {
+			if (!this._selectedItem?.length) {
+				return [];
+			}
+
 			return this._selectedItem
 				?.map((i) => i?.[this.displayKey])
 				.filter((i) => !!i);
@@ -329,8 +333,6 @@ export class Select {
 	render() {
 		return (
 			<Host class="p-select">
-				{this._showDropdown && (!!this._items.length || this.loading)}
-				{this._isAutoCompleting}
 				<p-dropdown
 					disableTriggerClick={true}
 					calculateWidth={true}

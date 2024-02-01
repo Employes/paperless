@@ -13,24 +13,24 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="Click me to search"
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to search"
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ### Disabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="Click me to select"
-            enable-autocomplete={false}
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to select"
+			enable-autocomplete={false}
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Auto select first item
@@ -38,24 +38,24 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="Click me to search"
-            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to search"
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ### Disabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="I have no auto selection"
-            auto-select-first={false}
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="I have no auto selection"
+			auto-select-first={false}
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Autocomplete placeholder
@@ -63,26 +63,26 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            autocomplete-placeholder="Type something to search"
-            placeholder="Click me to search"
-            auto-select-first={false}
-            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			autocomplete-placeholder="Type something to search"
+			placeholder="Click me to search"
+			auto-select-first={false}
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ### Disabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="I have no autocomplete placeholder"
-            auto-select-first={false}
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="I have no autocomplete placeholder"
+			auto-select-first={false}
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Loading
@@ -90,97 +90,99 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="Click me to show loading"
-            auto-select-first={false}
-            loading={true}
-            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to show loading"
+			auto-select-first={false}
+			loading={true}
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Using identifier key to return object
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            auto-select-first={true}
-            value-key={false}
-            identifier-key="value"
-            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			auto-select-first={true}
+			value-key={false}
+			identifier-key="value"
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Very long lists
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            auto-select-first={true}
-            value-key={false}
-            identifier-key="value"
-            items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"},{"value":4,"text":"Value 4"},{"value":5,"text":"Value 5"},{"value":6,"text":"Value 6"},{"value":7,"text":"Value 7"},{"value":8,"text":"Value 8"},{"value":9,"text":"Value 9"},{"value":10,"text":"Value 10"}]'
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			auto-select-first={true}
+			value-key={false}
+			identifier-key="value"
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"},{"value":4,"text":"Value 4"},{"value":5,"text":"Value 5"},{"value":6,"text":"Value 6"},{"value":7,"text":"Value 7"},{"value":8,"text":"Value 8"},{"value":9,"text":"Value 9"},{"value":10,"text":"Value 10"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Show extra item in dropdown for "Add" functionality
 
 <Canvas>
-    <div class="h-52">
-        <p-select
-            placeholder="Click me to search"
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-            show-add-item={true}
-        />
-    </div>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to search"
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+			show-add-item={true}
+		/>
+	</div>
 </Canvas>
 
 ## Show avatars
 
 <Canvas>
-    <div class="h-52 flex flex-col gap-2">
-        <p-select
-            value-key={false}
-            identifier-key="value"
-            placeholder="Please select some items"
-            avatar-key="avatar"
-            avatar-letters-key="letters"
-            items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
-        />
-    </div>
+	<div class="h-52 flex flex-col gap-2">
+		<p-select
+			value-key={false}
+			identifier-key="value"
+			placeholder="Please select some items"
+			avatar-key="avatar"
+			avatar-letters-key="letters"
+			items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+		/>
+	</div>
 </Canvas>
 
 ## Multi
 
 <Canvas>
-    <div class="h-52 flex flex-col gap-2">
-        <p-select
-            multi
-            value-key={false}
-            identifier-key="value"
-            placeholder="Please select some items"
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-        />
-        <p-select
-            multi
-            value-key={false}
-            identifier-key="value"
-            placeholder="Please select some items"
-            items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-            value='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"}]'
-        />
-        <p-select
-            multi
-            value-key={false}
-            identifier-key="value"
-            placeholder="I include avatars"
-            avatar-key="avatar"
-            avatar-letters-key="letters"
-            items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
-            value='[{"value":1,"text":"Value 1"}]'
-        />
-    </div>
+	<div class="h-52 flex flex-col gap-2">
+		<p-select
+			multi
+			value-key={false}
+			identifier-key="value"
+			placeholder="Please select some items"
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+		<p-select
+			multi
+			value-key={false}
+			identifier-key="value"
+			placeholder="Please select some items"
+			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+			value='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"}]'
+		/>
+		<p-select
+			multi
+			label="test"
+			value-key={false}
+			identifier-key="value"
+			selection-display-key="minText"
+			placeholder="I include avatars"
+			avatar-key="avatar"
+			avatar-letters-key="letters"
+			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
+		/>
+	</div>
 </Canvas>

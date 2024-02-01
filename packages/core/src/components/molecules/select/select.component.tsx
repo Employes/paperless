@@ -1,15 +1,7 @@
 import {
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
-	Watch,
+    Component, Element, Event, EventEmitter, Host, Listen, Prop, State, Watch, h
 } from '@stencil/core';
+
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
 
@@ -58,6 +50,16 @@ export class Select {
 	 * The key of the object to display
 	 */
 	@Prop() displayKey: string = 'text';
+
+	/**
+	 * The key of the object to display in the dropdown (overwrites displayKey)
+	 */
+	@Prop() dropdownDisplayKey: string = 'text';
+
+	/**
+	 * The key of the object to display in the input (overwrites displayKey)
+	 */
+	@Prop() selectionDisplayKey: string = 'text';
 
 	/**
 	 * The key of the object to return
@@ -265,7 +267,9 @@ export class Select {
 				.filter((i) => !!i);
 		}
 
-		return this._selectedItem?.[this.displayKey];
+		return this._selectedItem?.[
+			this.selectionDisplayKey ?? this.displayKey
+		];
 	}
 
 	get _placeholder() {
@@ -393,7 +397,12 @@ export class Select {
 								class="item"
 								onClick={() => this._selectValue(item)}
 							>
-								{item[this.displayKey]}
+								{
+									item[
+										this.selectionDisplayKey ??
+											this.displayKey
+									]
+								}
 								<p-icon variant="negative" />
 							</div>
 						))}
@@ -639,7 +648,7 @@ export class Select {
 							src={item[this.avatarKey]}
 							letters={item[this.avatarLettersKey]}
 						></p-avatar>
-						{item[this.displayKey]}
+						{item[this.dropdownDisplayKey ?? this.displayKey]}
 					</span>
 				) : (
 					item[this.displayKey]

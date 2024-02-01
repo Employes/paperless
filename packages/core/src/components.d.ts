@@ -921,6 +921,10 @@ export namespace Components {
          */
         "displayKey": string;
         /**
+          * The key of the object to display in the dropdown (overwrites displayKey)
+         */
+        "dropdownDisplayKey": string;
+        /**
           * Wether to enable autocomplete
          */
         "enableAutocomplete": boolean;
@@ -984,6 +988,10 @@ export namespace Components {
           * Wether the field is required
          */
         "required": boolean;
+        /**
+          * The key of the object to display in the input (overwrites displayKey)
+         */
+        "selectionDisplayKey": string;
         /**
           * Wether to show a "add" item
          */
@@ -2980,6 +2988,10 @@ declare namespace LocalJSX {
          */
         "displayKey"?: string;
         /**
+          * The key of the object to display in the dropdown (overwrites displayKey)
+         */
+        "dropdownDisplayKey"?: string;
+        /**
           * Wether to enable autocomplete
          */
         "enableAutocomplete"?: boolean;
@@ -3059,6 +3071,10 @@ declare namespace LocalJSX {
           * Wether the field is required
          */
         "required"?: boolean;
+        /**
+          * The key of the object to display in the input (overwrites displayKey)
+         */
+        "selectionDisplayKey"?: string;
         /**
           * Wether to show a "add" item
          */

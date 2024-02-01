@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.20.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.20.0...v1.20.1) (2024-02-01)
+
+
+### Bug Fixes
+
+* **Molecules/Select:**  Make defaults for overriding properties `undefined` ([1dfedbe](https://github.com/ionic-team/stencil-component-starter/commit/1dfedbefbb2a70961350d855c5b814c8e165af93))
+
+
+
+
+
 # [1.20.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.19.0...v1.20.0) (2024-02-01)
 
 

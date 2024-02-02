@@ -929,6 +929,10 @@ export namespace Components {
          */
         "enableAutocomplete": boolean;
         /**
+          * Wether to show the select all item with multi select
+         */
+        "enableSelectAll": boolean;
+        /**
           * The helper of the input group used by the select
          */
         "error": string;
@@ -984,6 +988,14 @@ export namespace Components {
           * Wether the field is required
          */
         "required": boolean;
+        /**
+          * The icon to prefix for select all
+         */
+        "selectAllIcon": IconVariant | undefined;
+        /**
+          * The text of the select all item
+         */
+        "selectAllText": string;
         /**
           * The key of the object to display in the input (overwrites displayKey)
          */
@@ -2992,6 +3004,10 @@ declare namespace LocalJSX {
          */
         "enableAutocomplete"?: boolean;
         /**
+          * Wether to show the select all item with multi select
+         */
+        "enableSelectAll"?: boolean;
+        /**
           * The helper of the input group used by the select
          */
         "error"?: string;
@@ -3040,6 +3056,10 @@ declare namespace LocalJSX {
          */
         "onQueryChange"?: (event: PSelectCustomEvent<string>) => void;
         /**
+          * Event when the select all item has been selected or not
+         */
+        "onSelectAllChange"?: (event: PSelectCustomEvent<any>) => void;
+        /**
           * Event when the value changes
          */
         "onValueChange"?: (event: PSelectCustomEvent<any>) => void;
@@ -3063,6 +3083,14 @@ declare namespace LocalJSX {
           * Wether the field is required
          */
         "required"?: boolean;
+        /**
+          * The icon to prefix for select all
+         */
+        "selectAllIcon"?: IconVariant | undefined;
+        /**
+          * The text of the select all item
+         */
+        "selectAllText"?: string;
         /**
           * The key of the object to display in the input (overwrites displayKey)
          */

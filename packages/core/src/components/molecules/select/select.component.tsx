@@ -117,6 +117,21 @@ export class Select {
 	@Prop() loading: boolean = false;
 
 	/**
+	 * Wether to show the select all item with multi select
+	 */
+	@Prop() enableSelectAll: boolean = false;
+
+	/**
+	 * The text of the select all item
+	 */
+	@Prop() selectAllText: string = 'Select all';
+
+	/**
+	 * The icon to prefix for select all
+	 */
+	@Prop() selectAllIcon: IconVariant | undefined;
+
+	/**
 	 * Event when the query of the autocomplete changes
 	 */
 	@Event({
@@ -131,6 +146,14 @@ export class Select {
 		bubbles: false,
 	})
 	valueChange: EventEmitter<any>;
+
+	/**
+	 * Event when the select all item has been selected or not
+	 */
+	@Event({
+		bubbles: false,
+	})
+	selectAllChange: EventEmitter<any>;
 
 	/**
 	 * Event when the dropdown shows
@@ -200,6 +223,8 @@ export class Select {
 
 	@State() private _showDropdown: any = false;
 	@State() private _selectedItem: any = null;
+
+	@State() private _allSelected: boolean = false;
 
 	@State() private _amountHidden = 0;
 
@@ -617,6 +642,27 @@ export class Select {
 			</p-dropdown-menu-item>
 		));
 
+		if (this.enableSelectAll) {
+			items.unshift(
+				<p-dropdown-menu-item
+					variant="checkbox"
+					onClick={() => this._selectAllChange()}
+					active={this._allSelected}
+				>
+					{this.selectAllIcon?.length ? (
+						<span class="flex items-center gap-2">
+							<div class="w-6 justify-center flex text-lg">
+								<p-icon variant={this.selectAllIcon} />
+							</div>
+							{this.selectAllText}
+						</span>
+					) : (
+						this.selectAllText
+					)}
+				</p-dropdown-menu-item>
+			);
+		}
+
 		if (this.enableAutocomplete) {
 			items.unshift(
 				<div class="bg-white sticky top-0 pt-2 pb-1 -mt-2">
@@ -703,5 +749,10 @@ export class Select {
 		}
 
 		this.autocompleteInputRef.focus();
+	}
+
+	private _selectAllChange() {
+		this._allSelected = !this._allSelected;
+		this.selectAllChange.emit(this._allSelected);
 	}
 }

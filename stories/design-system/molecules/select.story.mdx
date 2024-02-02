@@ -134,6 +134,8 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 
 ## Multi
 
+### Default
+
 <Canvas>
 	<div class="h-52 flex flex-col gap-2">
 		<p-select
@@ -143,6 +145,13 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			placeholder="Please select some items"
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
+	</div>
+</Canvas>
+
+### Preselection
+
+<Canvas>
+	<div class="h-52 flex flex-col gap-2">
 		<p-select
 			multi
 			value-key={false}
@@ -151,6 +160,13 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 			value='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"}]'
 		/>
+	</div>
+</Canvas>
+
+### With avatars
+
+<Canvas>
+	<div class="h-52 flex flex-col gap-2">
 		<p-select
 			multi
 			label="test"
@@ -158,6 +174,49 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 			identifier-key="value"
 			selection-display-key="minText"
 			placeholder="I include avatars"
+			avatar-key="avatar"
+			avatar-letters-key="letters"
+			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
+		/>
+	</div>
+</Canvas>
+
+### With select all
+
+<Canvas>
+	<div class="h-52 flex flex-col gap-2">
+		<p-select
+			multi
+			label="test"
+			value-key={false}
+			identifier-key="value"
+			selection-display-key="minText"
+			placeholder="I have a select all"
+			enable-autocomplete={false}
+			enable-select-all={true}
+			avatar-key="avatar"
+			avatar-letters-key="letters"
+			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
+		/>
+	</div>
+</Canvas>
+
+### With select all icon & avatars
+
+<Canvas>
+	<div class="h-52 flex flex-col gap-2">
+		<p-select
+			multi
+			label="test"
+			value-key={false}
+			identifier-key="value"
+			selection-display-key="minText"
+			placeholder="I have an icon on my select all"
+			enable-autocomplete={false}
+			enable-select-all={true}
+			select-all-icon="colleagues"
 			avatar-key="avatar"
 			avatar-letters-key="letters"
 			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'

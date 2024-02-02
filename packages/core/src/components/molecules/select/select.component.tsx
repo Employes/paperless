@@ -39,7 +39,7 @@ export class Select {
 	/**
 	 * The placeholder of the input used for auto complete
 	 */
-	@Prop() autocompletePlaceholder: string;
+	@Prop() autocompletePlaceholder: string = 'Search...';
 
 	/**
 	 * The current value

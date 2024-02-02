@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/employes/paperless/compare/v1.20.2...v1.21.0) (2024-02-02)
+
+
+### Features
+
+* **Molecules/Select:**  Implement select all event & item ([628fa8a](https://github.com/employes/paperless/commit/628fa8a58218780c33b36a9d631a487dd9da0c5d))
+
+
+
+
+
 ## [1.20.2](https://github.com/employes/paperless/compare/v1.20.1...v1.20.2) (2024-02-01)
 
 

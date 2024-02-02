@@ -15,7 +15,9 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 <Canvas>
 	<div class="h-52">
 		<p-select
-			placeholder="Click me to search"
+			placeholder="Select an item"
+			identifier-key="value"
+			autocomplete-placeholder="Search..."
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -26,7 +28,8 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 <Canvas>
 	<div class="h-52">
 		<p-select
-			placeholder="Click me to select"
+			placeholder="Select an item"
+			identifier-key="value"
 			enable-autocomplete={false}
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
@@ -41,6 +44,7 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 	<div class="h-52">
 		<p-select
 			placeholder="Click me to search"
+			identifier-key="value"
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -52,33 +56,7 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 	<div class="h-52">
 		<p-select
 			placeholder="I have no auto selection"
-			auto-select-first={false}
-			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-		/>
-	</div>
-</Canvas>
-
-## Autocomplete placeholder
-
-### Enabled
-
-<Canvas>
-	<div class="h-52">
-		<p-select
-			autocomplete-placeholder="Type something to search"
-			placeholder="Click me to search"
-			auto-select-first={false}
-			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
-		/>
-	</div>
-</Canvas>
-
-### Disabled
-
-<Canvas>
-	<div class="h-52">
-		<p-select
-			placeholder="I have no autocomplete placeholder"
+			identifier-key="value"
 			auto-select-first={false}
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
@@ -93,6 +71,7 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 	<div class="h-52">
 		<p-select
 			placeholder="Click me to show loading"
+			identifier-key="value"
 			auto-select-first={false}
 			loading={true}
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'

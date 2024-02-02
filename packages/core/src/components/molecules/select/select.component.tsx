@@ -1,5 +1,5 @@
 import {
-    Component, Element, Event, EventEmitter, Host, Listen, Prop, State, Watch, h
+    Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch
 } from '@stencil/core';
 
 import { childOf } from '../../../utils';
@@ -37,7 +37,7 @@ export class Select {
 	@Prop() placeholder: string;
 
 	/**
-	 * The placeholder of the input when auto completing
+	 * The placeholder of the input used for auto complete
 	 */
 	@Prop() autocompletePlaceholder: string;
 
@@ -105,11 +105,6 @@ export class Select {
 	 * Wether to enable autocomplete
 	 */
 	@Prop() enableAutocomplete: boolean = true;
-
-	/**
-	 * Wether to keep the query or not
-	 */
-	@Prop() keepQuery: boolean = true;
 
 	/**
 	 * Wether the input uses async filtering
@@ -206,10 +201,10 @@ export class Select {
 	@State() private _showDropdown: any = false;
 	@State() private _selectedItem: any = null;
 
-	@State() private _isAutoCompleting: boolean = false;
 	@State() private _amountHidden = 0;
 
 	private _inputRef: HTMLInputElement;
+	private autocompleteInputRef: HTMLInputElement;
 	private _multiContainerRef: HTMLElement;
 
 	private _resizeObserver: ResizeObserver;
@@ -235,12 +230,7 @@ export class Select {
 			}));
 		}
 
-		if (
-			this._isAutoCompleting &&
-			this.query?.length &&
-			this.query !== this._selectedItem?.[this.displayKey] &&
-			!this.asyncFilter
-		) {
+		if (this.query?.length && !this.asyncFilter) {
 			items = items.filter((item) => {
 				if (this.queryKey) {
 					return this._checkvalue(this.queryKey, item);
@@ -257,10 +247,6 @@ export class Select {
 	}
 
 	get _displayValue() {
-		if (this._isAutoCompleting) {
-			return this.query;
-		}
-
 		if (this.multi) {
 			if (!this._selectedItem?.length) {
 				return [];
@@ -276,12 +262,6 @@ export class Select {
 		];
 	}
 
-	get _placeholder() {
-		return this._isAutoCompleting && this.autocompletePlaceholder?.length
-			? this.autocompletePlaceholder
-			: this.placeholder;
-	}
-
 	get _identifierKey() {
 		return this.identifierKey ?? this.valueKey ?? 'value';
 	}
@@ -292,7 +272,6 @@ export class Select {
 		}
 
 		if (this.multi) {
-			this.enableAutocomplete = false;
 			this._setMultiContainerMaxWidth();
 
 			this._resizeObserver = new ResizeObserver(() => {
@@ -342,6 +321,7 @@ export class Select {
 						this._showDropdown &&
 						(!!this._items.length || this.loading)
 					}
+					onIsOpen={(ev) => this._onDropdownOpen(ev)}
 				>
 					<p-input-group
 						slot="trigger"
@@ -354,26 +334,21 @@ export class Select {
 						error={this.error}
 						disabled={this.disabled}
 						focused={this._showDropdown}
-						focusMethod={
-							this.enableAutocomplete ? 'focus' : 'click'
-						}
+						focusMethod="click"
 					>
 						<input
 							slot="input"
 							type="text"
-							placeholder={this._placeholder}
+							placeholder={this.placeholder}
 							value={
 								this.multi && this._displayValue?.length
 									? ' '
 									: this._displayValue
 							}
-							class={`p-input cursor-pointer ${
-								!this._isAutoCompleting && 'read-only'
-							}`}
+							class="p-input cursor-pointer read-only"
 							onFocus={(ev) => this._onFocus(ev)}
 							onMouseDown={(ev) => this._onMouseDown(ev)}
 							onClick={() => this._onClick()}
-							onInput={(ev) => this._onChange(ev)}
 							ref={(ref) => (this._inputRef = ref)}
 						/>
 
@@ -423,7 +398,6 @@ export class Select {
 		}
 
 		this._showDropdown = false;
-		this._isAutoCompleting = false;
 	}
 
 	@Watch('value')
@@ -445,10 +419,6 @@ export class Select {
 	}
 
 	private _preselectItem() {
-		if (this._isAutoCompleting && this.query?.length) {
-			return;
-		}
-
 		let value =
 			typeof this.value === 'string' && this.multi
 				? JSON.parse(this.value)
@@ -525,8 +495,6 @@ export class Select {
 				? item?.[this.valueKey]
 				: item;
 
-		this.query = this.keepQuery ? item?.[this.displayKey] : null;
-
 		if (this.multi) {
 			if (!this._selectedItem || !Array.isArray(this._selectedItem)) {
 				this._selectedItem = [];
@@ -553,30 +521,25 @@ export class Select {
 			this._selectedItem = selectedItem;
 			this.value = valueArray;
 			this.valueChange.emit(valueArray);
-		} else {
-			this._selectedItem = item;
-			this.value = value;
-			this.valueChange.emit(value);
-		}
-
-		if (!this.multi) {
-			this._onBlur(true);
-		}
-	}
-
-	private _onFocus(ev) {
-		if (!this.enableAutocomplete) {
-			ev.preventDefault();
-			ev.stopPropogation();
-
-			if (!this._showDropdown) {
-				this._showDropdown = true;
-			}
 			return;
 		}
 
-		this._showDropdown = true;
-		this._isAutoCompleting = true;
+		this._selectedItem = item;
+		this.value = value;
+		this.valueChange.emit(value);
+
+		this._onBlur(true);
+	}
+
+	private _onFocus(ev) {
+		ev.preventDefault();
+		this._inputRef.blur();
+
+		if (!this._showDropdown) {
+			this._showDropdown = true;
+		}
+
+		return;
 	}
 
 	private _onMouseDown(ev) {
@@ -600,19 +563,15 @@ export class Select {
 			return;
 		}
 
-		this._isAutoCompleting = false;
 		this._showDropdown = false;
 	}
 
-	private _onChange(ev) {
+	private _onAutoComplete(ev) {
 		if (!this.enableAutocomplete) {
 			return;
 		}
 
-		if (!this._isAutoCompleting) {
-			this._isAutoCompleting = true;
-			this._showDropdown = true;
-		}
+		this._showDropdown = true;
 
 		this.query = ev.target.value;
 		this.queryChange.emit(ev.target.value);
@@ -628,7 +587,7 @@ export class Select {
 	}
 
 	private _getItems() {
-		return this._items.map((item) => (
+		const items = this._items.map((item) => (
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}
 				active={
@@ -657,6 +616,21 @@ export class Select {
 				)}
 			</p-dropdown-menu-item>
 		));
+
+		if (this.enableAutocomplete) {
+			items.unshift(
+				<div class="bg-white sticky top-0 pt-2 pb-1 -mt-2">
+					<input
+						class="p-input size-small mb-2 sticky top-2"
+						placeholder={this.autocompletePlaceholder}
+						onInput={(ev) => this._onAutoComplete(ev)}
+						ref={(ref) => (this.autocompleteInputRef = ref)}
+					/>
+				</div>
+			);
+		}
+
+		return items;
 	}
 
 	private _getAddItem() {
@@ -721,5 +695,13 @@ export class Select {
 		if (amountHidden > 0) {
 			extra.classList.remove('hidden');
 		}
+	}
+
+	private _onDropdownOpen(ev) {
+		if (!ev.detail || !this.autocompleteInputRef) {
+			return;
+		}
+
+		this.autocompleteInputRef.focus();
 	}
 }

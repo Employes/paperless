@@ -1,8 +1,10 @@
-p-select {
-	@apply flex w-full flex-col relative;
+@import '../../../style/form/mixins';
 
-	input.read-only {
-		@apply text-ellipsis;
+p-select {
+	@apply flex w-full flex-col relative text-ellipsis;
+
+	.p-input {
+		@include inputDefaultState();
 	}
 
 	.multi-container {

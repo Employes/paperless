@@ -901,7 +901,7 @@ export namespace Components {
          */
         "autoSelectFirst": boolean;
         /**
-          * The placeholder of the input when auto completing
+          * The placeholder of the input used for auto complete
          */
         "autocompletePlaceholder": string;
         /**
@@ -923,7 +923,7 @@ export namespace Components {
         /**
           * The key of the object to display in the dropdown (overwrites displayKey)
          */
-        "dropdownDisplayKey": string;
+        "dropdownDisplayKey": string | undefined;
         /**
           * Wether to enable autocomplete
          */
@@ -948,10 +948,6 @@ export namespace Components {
           * The items to show in the dropdown
          */
         "items": string | any[];
-        /**
-          * Wether to keep the query or not
-         */
-        "keepQuery": boolean;
         /**
           * The label of the input group used by the select
          */
@@ -991,7 +987,7 @@ export namespace Components {
         /**
           * The key of the object to display in the input (overwrites displayKey)
          */
-        "selectionDisplayKey": string;
+        "selectionDisplayKey": string | undefined;
         /**
           * Wether to show a "add" item
          */
@@ -2968,7 +2964,7 @@ declare namespace LocalJSX {
          */
         "autoSelectFirst"?: boolean;
         /**
-          * The placeholder of the input when auto completing
+          * The placeholder of the input used for auto complete
          */
         "autocompletePlaceholder"?: string;
         /**
@@ -2990,7 +2986,7 @@ declare namespace LocalJSX {
         /**
           * The key of the object to display in the dropdown (overwrites displayKey)
          */
-        "dropdownDisplayKey"?: string;
+        "dropdownDisplayKey"?: string | undefined;
         /**
           * Wether to enable autocomplete
          */
@@ -3015,10 +3011,6 @@ declare namespace LocalJSX {
           * The items to show in the dropdown
          */
         "items"?: string | any[];
-        /**
-          * Wether to keep the query or not
-         */
-        "keepQuery"?: boolean;
         /**
           * The label of the input group used by the select
          */
@@ -3074,7 +3066,7 @@ declare namespace LocalJSX {
         /**
           * The key of the object to display in the input (overwrites displayKey)
          */
-        "selectionDisplayKey"?: string;
+        "selectionDisplayKey"?: string | undefined;
         /**
           * Wether to show a "add" item
          */

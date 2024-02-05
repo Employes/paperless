@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.1](https://github.com/employes/paperless/compare/v1.22.0...v1.22.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Make sure we don't error when `_selectedItem` is unset ([f7a85a1](https://github.com/employes/paperless/commit/f7a85a1e5ab5652740670fdf4ac906fdce41b929))
+
+
+
+
+
 # [1.22.0](https://github.com/employes/paperless/compare/v1.21.0...v1.22.0) (2024-02-05)
 
 

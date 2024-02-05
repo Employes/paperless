@@ -635,8 +635,8 @@ export class Select {
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}
 				active={
-					this.multi
-						? this._selectedItem?.findIndex(
+					this.multi && !!this._selectedItem
+						? this._selectedItem.findIndex(
 								(i) =>
 									i[this._identifierKey] ===
 									item[this._identifierKey]

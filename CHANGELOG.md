@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/employes/paperless/compare/v1.21.0...v1.22.0) (2024-02-05)
+
+
+### Features
+
+* **Molecules/Select:** Add empty state functionality ([9c8be5e](https://github.com/employes/paperless/commit/9c8be5e8a953d1388e30b47581b301fab894846a))
+
+
+
+
+
 # [1.21.0](https://github.com/employes/paperless/compare/v1.20.2...v1.21.0) (2024-02-02)
 
 

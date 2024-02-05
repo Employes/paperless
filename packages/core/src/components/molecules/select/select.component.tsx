@@ -1,5 +1,14 @@
 import {
-    Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Host,
+	Listen,
+	Prop,
+	State,
+	Watch,
 } from '@stencil/core';
 
 import { childOf } from '../../../utils';
@@ -217,6 +226,11 @@ export class Select {
 	add: EventEmitter;
 
 	/**
+	 * The text to show when items is empty
+	 */
+	@Prop() emptyStateText: string = 'No items available';
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -342,10 +356,7 @@ export class Select {
 					calculateWidth={true}
 					insideClick={true}
 					scrollable={true}
-					show={
-						this._showDropdown &&
-						(!!this._items.length || this.loading)
-					}
+					show={this._showDropdown}
 					onIsOpen={(ev) => this._onDropdownOpen(ev)}
 				>
 					<p-input-group
@@ -612,6 +623,14 @@ export class Select {
 	}
 
 	private _getItems() {
+		if (!this._items.length && !this.query?.length) {
+			return (
+				<p class="w-full p-2 text-storm-medium text-sm text-center">
+					{this.emptyStateText}
+				</p>
+			);
+		}
+
 		const items = this._items.map((item) => (
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}

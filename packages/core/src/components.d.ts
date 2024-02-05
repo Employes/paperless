@@ -925,6 +925,10 @@ export namespace Components {
          */
         "dropdownDisplayKey": string | undefined;
         /**
+          * The text to show when items is empty
+         */
+        "emptyStateText": string;
+        /**
           * Wether to enable autocomplete
          */
         "enableAutocomplete": boolean;
@@ -2999,6 +3003,10 @@ declare namespace LocalJSX {
           * The key of the object to display in the dropdown (overwrites displayKey)
          */
         "dropdownDisplayKey"?: string | undefined;
+        /**
+          * The text to show when items is empty
+         */
+        "emptyStateText"?: string;
         /**
           * Wether to enable autocomplete
          */

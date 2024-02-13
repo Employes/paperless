@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.2](https://github.com/employes/paperless/compare/v1.22.1...v1.22.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* **Atoms/Card/Header:** Don't allow the header to shrink by other content ([d6135a3](https://github.com/employes/paperless/commit/d6135a3f5837aefdb5ac8de5d487561e746cb6d1))
+
+
+
+
+
 ## [1.22.1](https://github.com/employes/paperless/compare/v1.22.0...v1.22.1) (2024-02-05)
 
 

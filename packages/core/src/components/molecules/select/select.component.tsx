@@ -507,7 +507,7 @@ export class Select {
 		}
 
 		if (!this._items?.length && value) {
-			this._selectValue(value);
+			this._selectValue(value, false);
 			return;
 		}
 
@@ -522,10 +522,10 @@ export class Select {
 			return parsedItemIdentifier === parsedValue;
 		});
 
-		this._selectValue(!!item ? item : value);
+		this._selectValue(!!item ? item : value, false);
 	}
 
-	private _selectValue(item) {
+	private _selectValue(item, forceBlur = true) {
 		let value =
 			!!this.valueKey && this.valueKey !== 'false' && item !== null
 				? item?.[this.valueKey]
@@ -564,7 +564,7 @@ export class Select {
 		this.value = value;
 		this.valueChange.emit(value);
 
-		this._onBlur(true);
+		this._onBlur(forceBlur);
 	}
 
 	private _onFocus(ev) {

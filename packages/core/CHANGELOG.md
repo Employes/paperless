@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.22.2...v1.22.3) (2024-02-14)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Show autocomplete during loading ([cfb42ef](https://github.com/ionic-team/stencil-component-starter/commit/cfb42efd85432be6cf8e9e396abbb90aa7cd0f10))
+
+
+
+
+
 ## [1.22.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.22.1...v1.22.2) (2024-02-13)
 
 

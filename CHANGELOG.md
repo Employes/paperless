@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.4](https://github.com/employes/paperless/compare/v1.22.3...v1.22.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Make `forceBlur` optional ([a1a2b20](https://github.com/employes/paperless/commit/a1a2b20cea31f7252af148cfe05132312c38a33f))
+
+
+
+
+
 ## [1.22.3](https://github.com/employes/paperless/compare/v1.22.2...v1.22.3) (2024-02-14)
 
 

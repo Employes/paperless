@@ -1,278 +1,262 @@
-<p-table-container>
-    <p-table-header
-        *ngIf="enableHeader"
-        [quickFilters]="quickFilters"
-        [activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
-        (quickFilter)="onQuickFilter($event)"
-        [enableSearch]="enableSearch"
-        [query]="query"
-        (queryChange)="onQueryChange($event)"
-        [enableFilter]="enableFilter"
-        [selectedFiltersAmount]="selectedFiltersAmount"
-        [filterButtonTemplate]="filterButtonTemplate"
-        (filter)="filterModalShow$.next(true)"
-        [enableAction]="enableAction"
-        [canUseAction]="actionButtonEnabled"
-        [actionButtonTemplate]="actionButtonTemplate"
-        [actionLoading]="actionButtonLoading"
-        [actionText]="actionButtonText"
-        [actionIcon]="actionButtonIcon"
-        (action)="action.emit()"
-        [itemsSelectedAmount]="selectedRows.length"
-        [loading]="headerLoading"
-    >
-        <ng-container *ngIf="headerCustomFilterTemplate">
-            <ng-container
-                *ngTemplateOutlet="headerCustomFilterTemplate"
-            ></ng-container>
-        </ng-container>
-    </p-table-header>
+<p-table-container [shadow]="shadow">
+	<p-table-header
+		*ngIf="enableHeader"
+		[quickFilters]="quickFilters"
+		[activeQuickFilterIdentifier]="activeQuickFilterIdentifier"
+		(quickFilter)="onQuickFilter($event)"
+		[enableSearch]="enableSearch"
+		[query]="query"
+		(queryChange)="onQueryChange($event)"
+		[enableFilter]="enableFilter"
+		[selectedFiltersAmount]="selectedFiltersAmount"
+		[filterButtonTemplate]="filterButtonTemplate"
+		(filter)="filterModalShow$.next(true)"
+		[enableAction]="enableAction"
+		[canUseAction]="actionButtonEnabled"
+		[actionButtonTemplate]="actionButtonTemplate"
+		[actionLoading]="actionButtonLoading"
+		[actionText]="actionButtonText"
+		[actionIcon]="actionButtonIcon"
+		(action)="action.emit()"
+		[itemsSelectedAmount]="selectedRows.length"
+		[loading]="headerLoading"
+	>
+		<ng-container *ngIf="headerCustomFilterTemplate">
+			<ng-container
+				*ngTemplateOutlet="headerCustomFilterTemplate"
+			></ng-container>
+		</ng-container>
+	</p-table-header>
 
-    <p-table-row variant="header">
-        <ng-container *ngFor="let col of columns; let index = index">
-            <p-table-cell-ngx
-                [definition]="col"
-                [value]="col.name"
-                variant="header"
-                [index]="index"
-                [checkbox]="
-                    (index === 0 || col.hasCheckbox) && enableRowSelection
-                        ? checkboxTemplate
-                        : undefined
-                "
-            ></p-table-cell-ngx>
-            <ng-template #checkboxTemplate>
-                <input
-                    class="p-input"
-                    type="checkbox"
-                    (change)="_selectAllChange($event)"
-                    [checked]="_selectionContainsAll()"
-                    [indeterminate]="_selectionIndeterminate()"
-                />
-            </ng-template>
-        </ng-container>
-    </p-table-row>
+	<p-table-row variant="header">
+		<ng-container *ngFor="let col of columns; let index = index">
+			<p-table-cell-ngx
+				[definition]="col"
+				[value]="col.name"
+				variant="header"
+				[index]="index"
+				[checkbox]="
+					(index === 0 || col.hasCheckbox) && enableRowSelection
+						? checkboxTemplate
+						: undefined
+				"
+			></p-table-cell-ngx>
+			<ng-template #checkboxTemplate>
+				<input
+					class="p-input"
+					type="checkbox"
+					(change)="_selectAllChange($event)"
+					[checked]="_selectionContainsAll()"
+					[indeterminate]="_selectionIndeterminate()"
+				/>
+			</ng-template>
+		</ng-container>
+	</p-table-row>
 
-    <div class="flex flex-col">
-        <ng-container *ngIf="loading; else contentTemplate">
-            <p-table-row
-                *ngFor="let r of loadingRows; let rowIndex = index"
-                [enableHover]="enableRowSelection || enableRowClick"
-            >
-                <ng-container *ngFor="let col of columns; let index = index">
-                    <p-table-cell-ngx
-                        [definition]="col"
-                        variant="loading"
-                        [checkbox]="
-                            (index === 0 || col.hasCheckbox) &&
-                            enableRowSelection
-                                ? checkboxTemplate
-                                : undefined
-                        "
-                        [index]="index"
-                        [rowIndex]="rowIndex"
-                    ></p-table-cell-ngx>
-                    <ng-template #checkboxTemplate>
-                        <p-loader
-                            variant="ghost"
-                            class="h-6 w-6 rounded"
-                        ></p-loader>
-                    </ng-template>
-                </ng-container>
-            </p-table-row>
-        </ng-container>
+	<div class="flex flex-col">
+		<ng-container *ngIf="loading; else contentTemplate">
+			<p-table-row
+				*ngFor="let r of loadingRows; let rowIndex = index"
+				[enableHover]="enableRowSelection || enableRowClick"
+			>
+				<ng-container *ngFor="let col of columns; let index = index">
+					<p-table-cell-ngx
+						[definition]="col"
+						variant="loading"
+						[checkbox]="
+							(index === 0 || col.hasCheckbox) &&
+							enableRowSelection
+								? checkboxTemplate
+								: undefined
+						"
+						[index]="index"
+						[rowIndex]="rowIndex"
+					></p-table-cell-ngx>
+					<ng-template #checkboxTemplate>
+						<p-loader
+							variant="ghost"
+							class="h-6 w-6 rounded"
+						></p-loader>
+					</ng-template>
+				</ng-container>
+			</p-table-row>
+		</ng-container>
 
-        <ng-template #contentTemplate>
-            <ng-container *ngIf="items?.length; else emptyStateTemplate">
-                <p-table-row
-                    *ngFor="let item of items; let rowIndex = index"
-                    [enableHover]="enableRowSelection || enableRowClick"
-                    (click)="_rowClick($event, rowIndex)"
-                >
-                    <ng-container
-                        *ngFor="let col of columns; let index = index"
-                    >
-                        <p-table-cell-ngx
-                            [definition]="col"
-                            [item]="item"
-                            [checkbox]="
-                                (index === 0 || col.hasCheckbox) &&
-                                enableRowSelection
-                                    ? checkboxTemplate
-                                    : undefined
-                            "
-                            [index]="index"
-                            [rowIndex]="rowIndex"
-                            [template]="col.template"
-                        ></p-table-cell-ngx>
+		<ng-template #contentTemplate>
+			<ng-container *ngIf="items?.length; else emptyStateTemplate">
+				<p-table-row
+					*ngFor="let item of items; let rowIndex = index"
+					[enableHover]="enableRowSelection || enableRowClick"
+					(click)="_rowClick($event, rowIndex)"
+				>
+					<ng-container
+						*ngFor="let col of columns; let index = index"
+					>
+						<p-table-cell-ngx
+							[definition]="col"
+							[item]="item"
+							[checkbox]="
+								(index === 0 || col.hasCheckbox) &&
+								enableRowSelection
+									? checkboxTemplate
+									: undefined
+							"
+							[index]="index"
+							[rowIndex]="rowIndex"
+							[template]="col.template"
+						></p-table-cell-ngx>
 
-                        <ng-template #checkboxTemplate>
-                            <input
-                                class="p-input"
-                                type="checkbox"
-                                (change)="
-                                    _checkboxChange($event.target, rowIndex)
-                                "
-                                [disabled]="_checkboxDisabled(item)"
-                                [checked]="_selectionContains(item, rowIndex)"
-                            />
-                        </ng-template>
-                    </ng-container>
-                </p-table-row>
-            </ng-container>
-        </ng-template>
-    </div>
+						<ng-template #checkboxTemplate>
+							<input
+								class="p-input"
+								type="checkbox"
+								(change)="
+									_checkboxChange($event.target, rowIndex)
+								"
+								[disabled]="_checkboxDisabled(item)"
+								[checked]="_selectionContains(item, rowIndex)"
+							/>
+						</ng-template>
+					</ng-container>
+				</p-table-row>
+			</ng-container>
+		</ng-template>
+	</div>
 
-    <p-table-footer
-        *ngIf="enableFooter"
-        [hideOnSinglePage]="hideOnSinglePage"
-        [enablePageSize]="enablePageSize"
-        [pageSize]="pageSize"
-        [pageSizeOptions]="pageSizeOptions"
-        (pageSizeChange)="onPageSizeChange($event)"
-        [enablePagination]="enablePagination"
-        [page]="page"
-        [total]="total"
-        (pageChange)="onPageChange($event)"
-        [enableExport]="enableExport"
-        (export)="export.emit()"
-        [loading]="footerLoading"
-    ></p-table-footer>
+	<p-table-footer
+		*ngIf="enableFooter"
+		[hideOnSinglePage]="hideOnSinglePage"
+		[enablePageSize]="enablePageSize"
+		[pageSize]="pageSize"
+		[pageSizeOptions]="pageSizeOptions"
+		(pageSizeChange)="onPageSizeChange($event)"
+		[enablePagination]="enablePagination"
+		[page]="page"
+		[total]="total"
+		(pageChange)="onPageChange($event)"
+		[enableExport]="enableExport"
+		(export)="export.emit()"
+		[loading]="footerLoading"
+	></p-table-footer>
 
-    <ng-container *ngIf="enableFloatingMenu && enableRowSelection">
-        <p-floating-menu-container
-            [class.inactive]="!selectedRows.length"
-            [class.shown]="floatingMenuShown$ | async"
-        >
-            <p-floating-menu-item
-                [hover]="false"
-                [class]="{
-                    hidden: !!floatingMenuContentTemplate,
-                    'tablet:flex': !!floatingMenuContentTemplate
-                }"
-            >
-                {{ floatingMenuAmountSelectedText }}
-            </p-floating-menu-item>
-            <p-divider
-                class="mx-0 text-storm"
-                variant="vertical"
-                [class]="{
-                    hidden: !!floatingMenuContentTemplate,
-                    'tablet:flex': !!floatingMenuContentTemplate
-                }"
-            ></p-divider>
-            <ng-container *ngIf="floatingMenuContentTemplate">
-                <ng-container
-                    *ngTemplateOutlet="floatingMenuContentTemplate"
-                ></ng-container>
-                <p-divider
-                    class="mx-0 text-storm"
-                    variant="vertical"
-                ></p-divider>
-            </ng-container>
-            <p-floating-menu-item (click)="_selectAllChange(null, false)">
-                <p-icon variant="negative"></p-icon>
-            </p-floating-menu-item>
-        </p-floating-menu-container>
-    </ng-container>
+	<ng-container *ngIf="enableFloatingMenu && enableRowSelection">
+		<p-floating-menu-container
+			[class.inactive]="!selectedRows.length"
+			[class.shown]="floatingMenuShown$ | async"
+		>
+			<p-floating-menu-item
+				[hover]="false"
+				[class]="{
+					hidden: !!floatingMenuContentTemplate,
+					'tablet:flex': !!floatingMenuContentTemplate
+				}"
+			>
+				{{ floatingMenuAmountSelectedText }}
+			</p-floating-menu-item>
+			<p-divider
+				class="mx-0 text-storm"
+				variant="vertical"
+				[class]="{
+					hidden: !!floatingMenuContentTemplate,
+					'tablet:flex': !!floatingMenuContentTemplate
+				}"
+			></p-divider>
+			<ng-container *ngIf="floatingMenuContentTemplate">
+				<ng-container
+					*ngTemplateOutlet="floatingMenuContentTemplate"
+				></ng-container>
+				<p-divider
+					class="mx-0 text-storm"
+					variant="vertical"
+				></p-divider>
+			</ng-container>
+			<p-floating-menu-item (click)="_selectAllChange(null, false)">
+				<p-icon variant="negative"></p-icon>
+			</p-floating-menu-item>
+		</p-floating-menu-container>
+	</ng-container>
 </p-table-container>
 
 <ng-container *ngIf="filterModalTemplate">
-    <p-modal
-        [header]="filterModalHeaderText"
-        [show]="filterModalShow$ | async"
-        (closed)="filterModalShow$.next(false)"
-    >
-        <div slot="content" class="flex flex-col gap-6">
-            <ng-container
-                *ngTemplateOutlet="filterModalTemplate"
-            ></ng-container>
-        </div>
-        <div slot="footer" class="flex w-full justify-between gap-4">
-            <p-button
-                *ngIf="filterModalShowResetMobile"
-                class="flex w-full tablet:w-auto desktop-xs:hidden"
-                variant="secondary"
-                (onClick)="onFilterModalReset(true)"
-            >
-                {{ filterModalResetText }}
-            </p-button>
-            <p-button
-                *ngIf="filterModalShowReset"
-                class="hidden w-full tablet:w-auto desktop-xs:flex"
-                variant="secondary"
-                (onClick)="onFilterModalReset()"
-            >
-                {{ filterModalResetText }}
-            </p-button>
-            <p-button
-                class="ml-auto w-full tablet:w-auto"
-                icon="checkmark"
-                (onClick)="onFilterModalSave()"
-            >
-                {{ filterModalSaveText }}
-            </p-button>
-        </div>
-    </p-modal>
+	<p-modal
+		[header]="filterModalHeaderText"
+		[show]="filterModalShow$ | async"
+		(closed)="filterModalShow$.next(false)"
+	>
+		<div slot="content" class="flex flex-col gap-6">
+			<ng-container
+				*ngTemplateOutlet="filterModalTemplate"
+			></ng-container>
+		</div>
+		<div slot="footer" class="flex w-full justify-between gap-4">
+			<p-button
+				*ngIf="filterModalShowResetMobile"
+				class="flex w-full tablet:w-auto desktop-xs:hidden"
+				variant="secondary"
+				(onClick)="onFilterModalReset(true)"
+			>
+				{{ filterModalResetText }}
+			</p-button>
+			<p-button
+				*ngIf="filterModalShowReset"
+				class="hidden w-full tablet:w-auto desktop-xs:flex"
+				variant="secondary"
+				(onClick)="onFilterModalReset()"
+			>
+				{{ filterModalResetText }}
+			</p-button>
+			<p-button
+				class="ml-auto w-full tablet:w-auto"
+				icon="checkmark"
+				(onClick)="onFilterModalSave()"
+			>
+				{{ filterModalSaveText }}
+			</p-button>
+		</div>
+	</p-modal>
 </ng-container>
 
 <ng-template #emptyStateTemplate>
-    <div
-        *ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
-        class="
-            flex
-            max-w-[20rem]
-            flex-col
-            items-center
-            self-center
-            py-24
-            text-center
-        "
-    >
-        <p-illustration
-            [variant]="emptyStateFilteredIllustration"
-            class="mb-6"
-        ></p-illustration>
-        <p class="text-storm-default font-semibold">
-            {{ emptyStateFilteredHeader }}
-        </p>
-        <p class="mb-14 text-sm text-storm-medium">
-            {{ emptyStateFilteredContent }}
-        </p>
-    </div>
+	<div
+		*ngIf="emptyStateType === 'filtered'; else emptyStateNonFilterTemplate"
+		class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center"
+	>
+		<p-illustration
+			[variant]="emptyStateFilteredIllustration"
+			class="mb-6"
+		></p-illustration>
+		<p class="text-storm-default font-semibold">
+			{{ emptyStateFilteredHeader }}
+		</p>
+		<p class="mb-14 text-sm text-storm-medium">
+			{{ emptyStateFilteredContent }}
+		</p>
+	</div>
 </ng-template>
 
 <ng-template #emptyStateNonFilterTemplate>
-    <div
-        class="
-            flex
-            max-w-[20rem]
-            flex-col
-            items-center
-            self-center
-            py-24
-            text-center
-        "
-        [class.cursor-pointer]="enableEmptyStateAction"
-        (click)="emptyStateClicked()"
-    >
-        <p-illustration
-            [variant]="emptyStateIllustration"
-            class="mb-6"
-        ></p-illustration>
-        <p class="text-storm-default font-semibold">
-            {{ emptyStateHeader }}
-        </p>
-        <p class="mb-6 text-sm text-storm-medium">
-            {{ emptyStateContent }}
-        </p>
-        <p-button
-            *ngIf="enableEmptyStateAction"
-            variant="secondary"
-            icon="plus"
-            size="small"
-        >
-            {{ emptyStateAction }}
-        </p-button>
-    </div>
+	<div
+		class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center"
+		[class.cursor-pointer]="enableEmptyStateAction"
+		(click)="emptyStateClicked()"
+	>
+		<p-illustration
+			[variant]="emptyStateIllustration"
+			class="mb-6"
+		></p-illustration>
+		<p class="text-storm-default font-semibold">
+			{{ emptyStateHeader }}
+		</p>
+		<p class="mb-6 text-sm text-storm-medium">
+			{{ emptyStateContent }}
+		</p>
+		<p-button
+			*ngIf="enableEmptyStateAction"
+			variant="secondary"
+			icon="plus"
+			size="small"
+		>
+			{{ emptyStateAction }}
+		</p-button>
+	</div>
 </ng-template>

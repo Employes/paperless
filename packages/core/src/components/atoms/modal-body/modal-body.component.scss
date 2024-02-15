@@ -7,6 +7,10 @@
 	@apply px-6;
 }
 
+:host(.variant-table-flush) {
+	@apply p-0 #{!important};
+}
+
 :host(.is-rounded) {
 	@apply rounded-b-none desktop-xs:rounded-b-xxlarge;
 }

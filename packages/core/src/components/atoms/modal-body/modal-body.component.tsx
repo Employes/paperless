@@ -9,7 +9,7 @@ export class ModalBody {
 	/**
 	 * The variant of the modal body
 	 */
-	@Prop() variant: 'default' | 'table' = 'default';
+	@Prop() variant: 'default' | 'table' | 'table-flush' = 'default';
 
 	/**
 	 * Wether the modal body should be rounded at the bottom

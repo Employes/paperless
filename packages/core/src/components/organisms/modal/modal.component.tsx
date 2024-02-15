@@ -22,7 +22,7 @@ export class Modal {
 	/**
 	 * The variant of the modal body
 	 */
-	@Prop() variant: 'default' | 'table' = 'default';
+	@Prop() variant: 'default' | 'table' | 'table-flush' = 'default';
 
 	/**
 	 * The Header of the modal

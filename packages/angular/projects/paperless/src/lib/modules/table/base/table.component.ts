@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
@@ -8,271 +8,281 @@ import { BaseFormComponent } from '../../../base/form.component';
 import { createFormFilters } from '../utils';
 
 export type TableQuickFilter = QuickFilter & {
-    value: string;
-    metricName?: string;
+	value: string;
+	metricName?: string;
 };
 
 export interface TableOptions {
-    pageSize: number;
-    page: number;
-    quickFilter: TableQuickFilter | string | null;
-    query: string;
-    filters: any[];
-    selectedRows: any[];
+	pageSize: number;
+	page: number;
+	quickFilter: TableQuickFilter | string | null;
+	query: string;
+	filters: any[];
+	selectedRows: any[];
 }
 
 @UntilDestroy({ checkProperties: true })
 @Component({
-    template: ``,
+	template: ``,
 })
 export abstract class BaseTableComponent
-    extends BaseFormComponent
-    implements OnInit
+	extends BaseFormComponent
+	implements OnInit
 {
-    protected quickFilters: any[] = [];
+	@Output() tableOptionsChange: EventEmitter<Partial<TableOptions> | null> =
+		new EventEmitter();
 
-    public filterForm: FormGroup<any> = new FormGroup<any>({});
-    public filterFormQuickFilterKey?: string;
-    public defaultFilterFormValues: any = {};
+	protected quickFilters: any[] = [];
 
-    public pageSizeDefault = 12;
-    public tableOptions?: FormControl<TableOptions>;
+	public filterForm: FormGroup<any> = new FormGroup<any>({});
+	public filterFormQuickFilterKey?: string;
+	public defaultFilterFormValues: any = {};
 
-    private _defaultTableValues: TableOptions = {
-        pageSize: this.pageSizeDefault,
-        page: 1,
-        quickFilter: null,
-        query: '',
-        filters: [],
-        selectedRows: [],
-    };
-    public defaultTableValues: Partial<TableOptions> = {};
+	public pageSizeDefault = 12;
+	public tableOptions?: FormControl<TableOptions>;
 
-    get pageSize() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.pageSize;
-        }
+	private _defaultTableValues: TableOptions = {
+		pageSize: this.pageSizeDefault,
+		page: 1,
+		quickFilter: null,
+		query: '',
+		filters: [],
+		selectedRows: [],
+	};
+	public defaultTableValues: Partial<TableOptions> = {};
 
-        return this.tableOptions.value.pageSize;
-    }
+	get pageSize() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.pageSize;
+		}
 
-    set pageSize(pageSize: number) {
-        this.tableValues = {
-            pageSize,
-        };
-    }
+		return this.tableOptions.value.pageSize;
+	}
 
-    get page() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.page;
-        }
+	set pageSize(pageSize: number) {
+		this.tableValues = {
+			pageSize,
+		};
+	}
 
-        return this.tableOptions.value.page;
-    }
+	get page() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.page;
+		}
 
-    set page(page: number) {
-        this.tableValues = {
-            page,
-        };
-    }
+		return this.tableOptions.value.page;
+	}
 
-    get quickFilter() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.quickFilter;
-        }
+	set page(page: number) {
+		this.tableValues = {
+			page,
+		};
+	}
 
-        return this.tableOptions.value.quickFilter;
-    }
-    set quickFilter(quickFilter: TableQuickFilter | string | null) {
-        this.tableValues = {
-            quickFilter,
-        };
-    }
+	get quickFilter() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.quickFilter;
+		}
 
-    get query() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.query;
-        }
+		return this.tableOptions.value.quickFilter;
+	}
+	set quickFilter(quickFilter: TableQuickFilter | string | null) {
+		this.tableValues = {
+			quickFilter,
+		};
+	}
 
-        return this.tableOptions.value.query;
-    }
-    set query(query: string) {
-        this.tableValues = {
-            query,
-        };
-    }
+	get query() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.query;
+		}
 
-    get filters() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.filters;
-        }
+		return this.tableOptions.value.query;
+	}
+	set query(query: string) {
+		this.tableValues = {
+			query,
+		};
+	}
 
-        return this.tableOptions.value.filters;
-    }
-    set filters(filters: any[]) {
-        this.tableValues = {
-            filters,
-        };
-    }
+	get filters() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.filters;
+		}
 
-    get selectedRows() {
-        if (!this.tableOptions) {
-            return this._defaultTableValues.selectedRows;
-        }
+		return this.tableOptions.value.filters;
+	}
+	set filters(filters: any[]) {
+		this.tableValues = {
+			filters,
+		};
+	}
 
-        return this.tableOptions.value.selectedRows;
-    }
-    set selectedRows(selectedRows: any[]) {
-        this.tableValues = {
-            selectedRows,
-        };
-    }
+	get selectedRows() {
+		if (!this.tableOptions) {
+			return this._defaultTableValues.selectedRows;
+		}
 
-    // setter
-    get parsedDefaultTableValues() {
-        return {
-            ...this._defaultTableValues,
-            ...this.defaultTableValues,
-            pageSize: this.defaultTableValues?.pageSize || this.pageSizeDefault,
-        };
-    }
+		return this.tableOptions.value.selectedRows;
+	}
+	set selectedRows(selectedRows: any[]) {
+		this.tableValues = {
+			selectedRows,
+		};
+	}
 
-    get tableValues() {
-        return this.tableOptions?.value ?? {};
-    }
+	// setter
+	get parsedDefaultTableValues() {
+		return {
+			...this._defaultTableValues,
+			...this.defaultTableValues,
+			pageSize: this.defaultTableValues?.pageSize || this.pageSizeDefault,
+		};
+	}
 
-    set tableValues(values: Partial<TableOptions>) {
-        this._setTableValues({
-            ...this.tableValues,
-            ...values,
-        });
-    }
+	get tableValues() {
+		return this.tableOptions?.value ?? {};
+	}
 
-    constructor() {
-        super();
-    }
+	set tableValues(values: Partial<TableOptions>) {
+		this._setTableValues({
+			...this.tableValues,
+			...values,
+		});
+	}
 
-    ngOnInit() {
-        this.tableOptions = new FormControl<TableOptions>({
-            pageSize: this.parsedDefaultTableValues.pageSize,
-            page: this.parsedDefaultTableValues.page,
-            quickFilter: this.parsedDefaultTableValues.quickFilter,
-            query: this.parsedDefaultTableValues.query,
-            filters: this.parsedDefaultTableValues.filters,
-            selectedRows: this.parsedDefaultTableValues.selectedRows,
-        }) as FormControl<TableOptions>;
+	constructor() {
+		super();
+	}
 
-        this.tableOptions.valueChanges
-            .pipe(
-                untilDestroyed(this),
-                startWith(this.tableOptions.value),
-                pairwise(),
-                map(([previous, next]) => this._getChanges(previous, next)),
-                filter((changes: any) => !!changes),
-                debounce((changes) => {
-                    if (changes?.query && Object.keys(changes)?.length === 1) {
-                        return timer(300);
-                    }
+	ngOnInit() {
+		this.tableOptions = new FormControl<TableOptions>({
+			pageSize: this.parsedDefaultTableValues.pageSize,
+			page: this.parsedDefaultTableValues.page,
+			quickFilter: this.parsedDefaultTableValues.quickFilter,
+			query: this.parsedDefaultTableValues.query,
+			filters: this.parsedDefaultTableValues.filters,
+			selectedRows: this.parsedDefaultTableValues.selectedRows,
+		}) as FormControl<TableOptions>;
 
-                    return timer(0);
-                })
-            )
-            .subscribe((changes: TableOptions) => {
-                if (changes?.page) {
-                    this._refresh();
-                    return;
-                }
+		this.tableOptions.valueChanges
+			.pipe(
+				untilDestroyed(this),
+				startWith(this.tableOptions.value),
+				pairwise(),
+				map(([previous, next]) => [
+					this._getChanges(previous, next),
+					next as TableOptions,
+				]),
+				filter(([changes]) => !!changes),
+				debounce(([changes]) => {
+					if (changes?.query && Object.keys(changes)?.length === 1) {
+						return timer(300);
+					}
 
-                this._resetPageOrRefresh();
-            });
+					return timer(0);
+				})
+			)
+			.subscribe(
+				([changes, values]: (Partial<TableOptions> | null)[]) => {
+					this.tableOptionsChange.next(values);
 
-        this._refresh();
-    }
+					if (changes?.page) {
+						this._refresh();
+						return;
+					}
 
-    resetTable(emitEvent = true, forceRefresh = false) {
-        this._setTableValues(this.parsedDefaultTableValues, emitEvent);
+					this._resetPageOrRefresh();
+				}
+			);
 
-        if (forceRefresh) {
-            this._refresh();
-        }
-    }
+		this._refresh();
+	}
 
-    applyFormFilters(values: any = null) {
-        values = values ?? this.filterForm.value;
+	resetTable(emitEvent = true, forceRefresh = false) {
+		this._setTableValues(this.parsedDefaultTableValues, emitEvent);
 
-        const { filters, quickFilter } = createFormFilters(
-            values,
-            this.quickFilters,
-            this.filterFormQuickFilterKey
-        );
+		if (forceRefresh) {
+			this._refresh();
+		}
+	}
 
-        if (quickFilter) {
-            this.quickFilter = quickFilter;
-        }
+	applyFormFilters(values: any = null) {
+		values = values ?? this.filterForm.value;
 
-        this.filters = filters;
-    }
+		const { filters, quickFilter } = createFormFilters(
+			values,
+			this.quickFilters,
+			this.filterFormQuickFilterKey
+		);
 
-    resetFormFilters(resetQuickFilter: boolean = false) {
-        const values: any = this.filterForm.value;
-        const defaultQuickFilter = this.quickFilters.find((f) => f.default);
+		if (quickFilter) {
+			this.quickFilter = quickFilter;
+		}
 
-        for (const key of Object.keys(values)) {
-            if (key === this.filterFormQuickFilterKey) {
-                if (resetQuickFilter) {
-                    values[key] = defaultQuickFilter.value;
-                }
-                continue;
-            }
+		this.filters = filters;
+	}
 
-            values[key] = this.defaultFilterFormValues[key] ?? null;
-        }
+	resetFormFilters(resetQuickFilter: boolean = false) {
+		const values: any = this.filterForm.value;
+		const defaultQuickFilter = this.quickFilters.find((f) => f.default);
 
-        this.filterForm.setValue(values);
-        this.applyFormFilters(values);
-    }
+		for (const key of Object.keys(values)) {
+			if (key === this.filterFormQuickFilterKey) {
+				if (resetQuickFilter) {
+					values[key] = defaultQuickFilter.value;
+				}
+				continue;
+			}
 
-    protected _refresh() {
-        console.warn('Not implemented');
-    }
+			values[key] = this.defaultFilterFormValues[key] ?? null;
+		}
 
-    private _resetPageOrRefresh() {
-        if (!this.tableOptions) {
-            return;
-        }
+		this.filterForm.setValue(values);
+		this.applyFormFilters(values);
+	}
 
-        if (this.page !== 1) {
-            this.page = 1;
-        }
+	protected _refresh() {
+		console.warn('Not implemented');
+	}
 
-        this._refresh();
-    }
+	private _resetPageOrRefresh() {
+		if (!this.tableOptions) {
+			return;
+		}
 
-    private _setTableValues(data: Partial<TableOptions>, emitEvent = true) {
-        this.tableOptions?.setValue(
-            {
-                ...this.tableOptions.value,
-                ...data,
-            },
-            { emitEvent }
-        );
-    }
+		if (this.page !== 1) {
+			this.page = 1;
+		}
 
-    private _getChanges(previous: TableOptions, next: TableOptions) {
-        const changes: Partial<TableOptions> = {};
+		this._refresh();
+	}
 
-        let key: keyof TableOptions;
-        for (key in next) {
-            if (key === 'selectedRows') {
-                continue;
-            }
+	private _setTableValues(data: Partial<TableOptions>, emitEvent = true) {
+		this.tableOptions?.setValue(
+			{
+				...this.tableOptions.value,
+				...data,
+			},
+			{ emitEvent }
+		);
+	}
 
-            if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
-                // @ts-ignore
-                changes[key] = next[key];
-            }
-        }
+	private _getChanges(previous: TableOptions, next: TableOptions) {
+		const changes: Partial<TableOptions> = {};
 
-        return Object.keys(changes).length ? changes : null;
-    }
+		let key: keyof TableOptions;
+		for (key in next) {
+			if (key === 'selectedRows') {
+				continue;
+			}
+
+			if (JSON.stringify(previous[key]) !== JSON.stringify(next[key])) {
+				// @ts-ignore
+				changes[key] = next[key];
+			}
+		}
+
+		return Object.keys(changes).length ? changes : null;
+	}
 }

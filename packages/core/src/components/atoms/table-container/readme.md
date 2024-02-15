@@ -11,6 +11,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property | Attribute | Description | Type      | Default |
+| -------- | --------- | ----------- | --------- | ------- |
+| `shadow` | `shadow`  |             | `boolean` | `true`  |
+
+
 ## Dependencies
 
 ### Used by

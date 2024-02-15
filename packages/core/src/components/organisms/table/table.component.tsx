@@ -336,6 +336,11 @@ export class Table {
 	})
 	emptyStateActionClick: EventEmitter<null>;
 
+	/*
+	 * Wether to show the shadow or not
+	 */
+	@Prop() shadow: boolean = true;
+
 	/* Empty state end */
 
 	/**
@@ -376,7 +381,7 @@ export class Table {
 	render() {
 		return (
 			<Host class="p-table">
-				<p-table-container>
+				<p-table-container shadow={this.shadow}>
 					{this.enableHeader && (
 						<p-table-header
 							// quick filters

@@ -1,5 +1,8 @@
 :host {
 	@apply flex flex-col w-full;
 	@apply bg-white rounded-large;
+}
+
+:host(:not(.no-shadow)) {
 	@apply shadow-4 #{!important};
 }

@@ -1249,6 +1249,7 @@ export namespace Components {
           * The key to determine if a row is selected
          */
         "selectionKey": string;
+        "shadow": boolean;
         /**
           * The total amount of items
          */
@@ -1327,6 +1328,7 @@ export namespace Components {
         "useSlot": boolean;
     }
     interface PTableContainer {
+        "shadow": boolean;
     }
     interface PTableFooter {
         /**
@@ -3400,6 +3402,7 @@ declare namespace LocalJSX {
           * The key to determine if a row is selected
          */
         "selectionKey"?: string;
+        "shadow"?: boolean;
         /**
           * The total amount of items
          */
@@ -3482,6 +3485,7 @@ declare namespace LocalJSX {
         "useSlot"?: boolean;
     }
     interface PTableContainer {
+        "shadow"?: boolean;
     }
     interface PTableFooter {
         /**

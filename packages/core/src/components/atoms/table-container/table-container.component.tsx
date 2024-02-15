@@ -1,4 +1,4 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
 	tag: 'p-table-container',
@@ -6,9 +6,14 @@ import { Component, h, Host } from '@stencil/core';
 	shadow: true,
 })
 export class TableContainer {
+	/*
+	 * Wether to show the shadow or not
+	 */
+	@Prop() shadow: boolean = true;
+
 	render() {
 		return (
-			<Host class="p-table-container">
+			<Host class={`p-table-container ${!this.shadow && 'no-shadow'}`}>
 				<slot />
 			</Host>
 		);

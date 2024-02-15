@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.25.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.24.1...v1.25.0) (2024-02-15)
+
+
+### Features
+
+* **Atoms/Modal/Body:** Add flush variant ([2193628](https://github.com/ionic-team/stencil-component-starter/commit/2193628a5bbd37832c907579cd8532e3aabaa864))
+
+
+
+
+
 ## [1.24.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.24.0...v1.24.1) (2024-02-15)
 
 **Note:** Version bump only for package @paperless/core

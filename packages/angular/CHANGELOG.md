@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/Employes/Paperless/compare/v1.23.0...v1.24.0) (2024-02-15)
+
+
+### Features
+
+* **Angular/Table/Base:** Add `tableOptionsChange` output ([f63f21b](https://github.com/Employes/Paperless/commit/f63f21b1f461cc9519d627ee1dd4ae7bdbe0ebd2))
+
+
+
+
+
 # [1.23.0](https://github.com/Employes/Paperless/compare/v1.22.4...v1.23.0) (2024-02-15)
 
 **Note:** Version bump only for package @paperless/angular

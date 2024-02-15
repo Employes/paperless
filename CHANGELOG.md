@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/employes/paperless/compare/v1.22.4...v1.23.0) (2024-02-15)
+
+
+### Features
+
+* **Atoms/Table/Container:** Add prop to disable shadow ([f646314](https://github.com/employes/paperless/commit/f646314ba7416bf3ed1b754902a61aa35fb7fab4))
+
+
+
+
+
 ## [1.22.4](https://github.com/employes/paperless/compare/v1.22.3...v1.22.4) (2024-02-14)
 
 

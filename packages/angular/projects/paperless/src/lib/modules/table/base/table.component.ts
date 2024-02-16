@@ -3,7 +3,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { timer } from 'rxjs';
-import { debounce, filter, map, pairwise, startWith } from 'rxjs/operators';
+import {
+	debounce,
+	filter,
+	map,
+	pairwise,
+	startWith,
+	tap,
+} from 'rxjs/operators';
 import { BaseFormComponent } from '../../../base/form.component';
 import { createFormFilters } from '../utils';
 
@@ -169,13 +176,13 @@ export abstract class BaseTableComponent
 			.pipe(
 				untilDestroyed(this),
 				startWith(this.tableOptions.value),
+				tap((value: TableOptions) =>
+					this.tableOptionsChange.next(value)
+				),
 				pairwise(),
-				map(([previous, next]) => [
-					this._getChanges(previous, next),
-					next as TableOptions,
-				]),
-				filter(([changes]) => !!changes),
-				debounce(([changes]) => {
+				map(([previous, next]) => this._getChanges(previous, next)),
+				filter((changes) => !!changes),
+				debounce((changes) => {
 					if (changes?.query && Object.keys(changes)?.length === 1) {
 						return timer(300);
 					}
@@ -183,18 +190,14 @@ export abstract class BaseTableComponent
 					return timer(0);
 				})
 			)
-			.subscribe(
-				([changes, values]: (Partial<TableOptions> | null)[]) => {
-					this.tableOptionsChange.next(values);
-
-					if (changes?.page) {
-						this._refresh();
-						return;
-					}
-
-					this._resetPageOrRefresh();
+			.subscribe((changes) => {
+				if (changes?.page) {
+					this._refresh();
+					return;
 				}
-			);
+
+				this._resetPageOrRefresh();
+			});
 
 		this._refresh();
 	}

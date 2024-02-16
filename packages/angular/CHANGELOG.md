@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.1](https://github.com/Employes/Paperless/compare/v1.25.0...v1.25.1) (2024-02-16)
+
+
+### Bug Fixes
+
+* **Angular/Table/Base:** Always pass TableOptions changes even when `_getChanges` returns nothing ([33ca657](https://github.com/Employes/Paperless/commit/33ca6575d47e92cc60c4aae674704997a77f1036))
+
+
+
+
+
 # [1.25.0](https://github.com/Employes/Paperless/compare/v1.24.1...v1.25.0) (2024-02-15)
 
 **Note:** Version bump only for package @paperless/angular

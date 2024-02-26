@@ -623,6 +623,7 @@ export class Select {
 	}
 
 	private _getItems() {
+		console.log(this._selectedItem, !!this._selectedItem);
 		let items = this._items.map((item) => (
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}

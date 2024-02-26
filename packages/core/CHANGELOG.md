@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.25.2...v1.25.3) (2024-02-26)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Reset selected item when changing from non-multi to multi ([d507d37](https://github.com/ionic-team/stencil-component-starter/commit/d507d37071effbab65e5eecb61757a143fb46236))
+
+
+
+
+
 ## [1.25.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.25.1...v1.25.2) (2024-02-26)
 
 

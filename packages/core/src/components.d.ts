@@ -729,7 +729,7 @@ export namespace Components {
         /**
           * The variant of the modal body
          */
-        "variant": 'default' | 'table';
+        "variant": 'default' | 'table' | 'table-flush';
     }
     interface PModalBody {
         /**
@@ -743,7 +743,7 @@ export namespace Components {
         /**
           * The variant of the modal body
          */
-        "variant": 'default' | 'table';
+        "variant": 'default' | 'table' | 'table-flush';
     }
     interface PModalContainer {
         /**
@@ -2798,7 +2798,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the modal body
          */
-        "variant"?: 'default' | 'table';
+        "variant"?: 'default' | 'table' | 'table-flush';
     }
     interface PModalBody {
         /**
@@ -2812,7 +2812,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the modal body
          */
-        "variant"?: 'default' | 'table';
+        "variant"?: 'default' | 'table' | 'table-flush';
     }
     interface PModalContainer {
         /**

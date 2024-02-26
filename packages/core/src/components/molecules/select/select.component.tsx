@@ -454,6 +454,13 @@ export class Select {
 		});
 	}
 
+	@Watch('multi')
+	public multiChanges() {
+		if (this._selectedItem && !Array.isArray(this._selectedItem)) {
+			this._selectedItem = [];
+		}
+	}
+
 	private _preselectItem() {
 		let value =
 			typeof this.value === 'string' && this.multi
@@ -623,12 +630,13 @@ export class Select {
 	}
 
 	private _getItems() {
-		console.log(this._selectedItem, !!this._selectedItem);
 		let items = this._items.map((item) => (
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}
 				active={
-					this.multi && !!this._selectedItem
+					this.multi &&
+					!!this._selectedItem &&
+					Array.isArray(this._selectedItem)
 						? this._selectedItem.findIndex(
 								(i) =>
 									i[this._identifierKey] ===

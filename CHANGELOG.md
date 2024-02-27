@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.26.0](https://github.com/employes/paperless/compare/v1.25.3...v1.26.0) (2024-02-27)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Reset `_selectedItems` when changed value length is 0 ([7301113](https://github.com/employes/paperless/commit/73011138a2d0aa5da8c124d073e3b12754dd52c4))
+
+
+### Features
+
+* **Organisms/Drawer:** Add ability to close from window event ([af47a91](https://github.com/employes/paperless/commit/af47a91ee9f1cb7bc45839fa8e028a3b655dece7))
+* **Organisms/Modal:** Add ability to close from window event ([c5b6deb](https://github.com/employes/paperless/commit/c5b6debdaccbe77367e456e775daff629705bdaf))
+
+
+
+
+
 ## [1.25.3](https://github.com/employes/paperless/compare/v1.25.2...v1.25.3) (2024-02-26)
 
 

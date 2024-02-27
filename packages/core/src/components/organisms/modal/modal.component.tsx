@@ -5,6 +5,7 @@ import {
 	EventEmitter,
 	h,
 	Host,
+	Listen,
 	Prop,
 	State,
 } from '@stencil/core';
@@ -151,7 +152,7 @@ export class Modal {
 		this.close(ev);
 	}
 
-	public close(ev: MouseEvent) {
+	public close(ev?: MouseEvent) {
 		this.closeClicked.emit(ev);
 
 		this._closing = true;
@@ -162,5 +163,10 @@ export class Modal {
 
 			this.closed.emit();
 		}, 550);
+	}
+
+	@Listen('closeModal', { target: 'window' })
+	handleCloseModal() {
+		this.close();
 	}
 }

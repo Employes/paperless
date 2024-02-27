@@ -5,6 +5,7 @@ import {
 	EventEmitter,
 	h,
 	Host,
+	Listen,
 	Prop,
 	State,
 } from '@stencil/core';
@@ -127,7 +128,7 @@ export class Drawer {
 		this.close(ev);
 	}
 
-	public close(ev: MouseEvent) {
+	public close(ev?: MouseEvent) {
 		this.closeClicked.emit({
 			event: ev,
 			canClose: this.canClose,
@@ -144,5 +145,10 @@ export class Drawer {
 			this._closing = false;
 			this.closed.emit();
 		}, 250);
+	}
+
+	@Listen('closeDrawer', { target: 'window' })
+	handleCloseDrawer() {
+		this.close();
 	}
 }

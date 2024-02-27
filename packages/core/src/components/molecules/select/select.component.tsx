@@ -476,6 +476,7 @@ export class Select {
 
 			this.value = value;
 			if (!value.length) {
+				this._selectedItem = [];
 				return;
 			}
 

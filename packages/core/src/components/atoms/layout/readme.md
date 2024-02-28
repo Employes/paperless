@@ -15,9 +15,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description           | Type                               | Default     |
-| --------- | --------- | --------------------- | ---------------------------------- | ----------- |
-| `variant` | `variant` | Variant of the layout | `"default" \| "login" \| "office"` | `'default'` |
+| Property  | Attribute | Description           | Type                   | Default     |
+| --------- | --------- | --------------------- | ---------------------- | ----------- |
+| `variant` | `variant` | Variant of the layout | `"default" \| "login"` | `'default'` |
 
 
 ----------------------------------------------

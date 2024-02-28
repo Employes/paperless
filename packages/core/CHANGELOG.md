@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.26.1...v1.26.2) (2024-02-28)
+
+
+### Bug Fixes
+
+* **Atoms/Input/Checkbox:** Correct checkmark size ([fb2d949](https://github.com/ionic-team/stencil-component-starter/commit/fb2d9492988a9f06cce7d3509fa930d39f080ace))
+
+
+
+
+
 ## [1.26.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.26.0...v1.26.1) (2024-02-28)
 
 **Note:** Version bump only for package @paperless/core

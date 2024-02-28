@@ -2,7 +2,7 @@
 
 :host {
 	@apply w-full max-h-screen-safe;
-	@apply desktop-xs:w-60;
+	@apply layout-1280:w-60 layout-1680:w-72;
 
 	.sidebar,
 	.sidebar .company,
@@ -20,11 +20,11 @@
 
 	.sidebar {
 		@apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
-		@apply desktop-xs:relative desktop-xs:h-full desktop-xs:w-full;
+		@apply layout-1280:relative layout-1280:h-full layout-1280:w-full;
 		@apply gap-6;
 
 		@apply will-change-transform;
-		@apply -translate-x-full transform-gpu desktop-xs:translate-x-0;
+		@apply -translate-x-full transform-gpu layout-1280:translate-x-0;
 
 		@apply py-4;
 
@@ -43,7 +43,7 @@
 
 		.header {
 			@apply flex w-full items-center justify-between;
-			@apply desktop-xs:hidden;
+			@apply layout-1280:hidden;
 		}
 
 		.content {
@@ -54,7 +54,7 @@
 
 		.user {
 			@apply mt-auto hidden;
-			@apply desktop-xs:flex;
+			@apply layout-1280:flex;
 		}
 
 		&.show {
@@ -70,7 +70,7 @@
 
 		@apply border-b #{!important};
 
-		@apply desktop-xs:hidden;
+		@apply layout-1280:hidden;
 	}
 
 	p-backdrop {

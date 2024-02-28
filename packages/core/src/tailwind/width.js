@@ -1,23 +1,18 @@
 module.exports = {
-    width: {
-        unset: 'unset',
+	width: {
+		unset: 'unset',
 
-        // default variant
-        'sidebar-mobile': '100%',
-        'sidebar-desktop': '15rem',
+		// default variant
+		'content-mobile': '100%',
+		'content-1280': '65rem',
+		'content-1440': '75rem',
+		'content-1536': '81rem',
+		'content-1680': '87rem',
+		'content-1920': '90rem',
+		'content-2560': '92.5rem',
 
-        'content-mobile': '100%',
-        'content-desktop-xs': '100%',
-        'content-desktop-sm': '100%',
-        'content-desktop': '69rem',
-        'content-desktop-lg': '69rem',
-        'content-desktop-xl': '69rem',
-
-        // login variant
-        'sidebar-desktop-login': '100%',
-        'content-desktop-login': '30rem',
-
-        // office variant
-        'sidebar-office-desktop': '19.5rem'
-    },
+		// login variant
+		'sidebar-desktop-login': '100%',
+		'content-desktop-login': '30rem',
+	},
 };

@@ -9,7 +9,7 @@
 		'topbar'
 		'content';
 
-	@screen desktop-xs {
+	@screen layout-1280 {
 		grid-template-columns: auto 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
@@ -34,7 +34,8 @@
 		grid-area: sidebar;
 
 		@apply box-border flex h-full;
-		@apply w-sidebar-mobile desktop-sm:w-sidebar-desktop;
+		@apply w-full;
+		@apply layout-1280:w-60 layout-1680:w-72;
 		@apply order-1 desktop-sm:order-2;
 	}
 
@@ -50,10 +51,15 @@
 		.inner-content {
 			@apply relative pb-24;
 
+			// https://linear.app/employes/issue/PRO-9053/%E2%9A%9B%EF%B8%8F-component-wijzigen-layout
 			@apply px-content-mobile-x py-content-mobile-y;
-			@apply desktop-xs:px-content-desktop-x desktop-xs:py-content-desktop-y;
-
-			@apply desktop-xs:w-content-desktop-xs desktop-sm:w-content-desktop-sm desktop:w-content-desktop desktop-lg:w-content-desktop-lg desktop-xl:w-content-desktop-xl;
+			@apply tablet:p-8;
+			@apply layout-1280:w-content-1280 layout-1280:p-6 layout-1280:pt-8;
+			@apply layout-1440:w-content-1440 layout-1440:p-8;
+			@apply layout-1536:w-content-1536;
+			@apply layout-1680:w-content-1680;
+			@apply layout-1920:w-content-1920 layout-1920:pr-8 layout-1920:pl-20 layout-1920:pb-20;
+			@apply layout-2560:w-content-2560 layout-2560:pt-16 layout-2560:pl-[7.5rem] layout-2560:pb-[7.5rem];
 		}
 	}
 }
@@ -69,14 +75,14 @@
 		'topbar topbar'
 		'content content';
 
-	@screen desktop-xs {
+	@screen layout-1280 {
 		grid-template-areas:
 			'topbar topbar'
 			'content sidebar';
 	}
 
 	.sidebar {
-		@apply hidden w-unset desktop-xs:flex;
+		@apply hidden w-unset layout-1280:flex;
 		@apply order-3 p-2;
 		@apply flex-1 overflow-hidden;
 
@@ -86,26 +92,20 @@
 	}
 
 	.content {
-		@apply order-3 desktop-xs:order-2;
-		@apply items-center desktop-xs:justify-center;
+		@apply order-3 layout-1280:order-2;
+		@apply items-center layout-1280:justify-center;
 
 		.inner-content {
 			@apply box-border;
-			@apply desktop-xs:px-18 desktop-xs:py-0;
+			@apply layout-1280:px-18 desktop-xs:py-0;
 			@apply w-full tablet:w-content-desktop-login;
 
 			@apply px-content-mobile-x py-content-mobile-y;
 			padding-top: calc(env(safe-area-inset-top) + 3.5rem);
 
-			@screen desktop-xs {
+			@screen layout-1280 {
 				@apply pt-content-mobile-y;
 			}
 		}
-	}
-}
-
-:host(.variant-office) {
-	.sidebar {
-		@apply desktop-sm:w-sidebar-office-desktop;
 	}
 }

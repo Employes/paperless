@@ -9,7 +9,7 @@
 	.content-container {
 		@apply h-full w-full overflow-y-auto overflow-x-hidden;
 		@apply tablet:px-16 desktop-xs:p-16;
-		@apply flex items-end justify-center desktop-xs:items-center;
+		@apply flex items-end justify-center desktop-xs:items-stretch;
 		@apply max-h-screen max-w-screen;
 	}
 }
@@ -28,7 +28,7 @@
 
 :host(.variant-drawer) {
 	.content-container {
-		@apply items-start justify-end;
+		@apply items-start justify-end desktop-xs:items-start;
 		@apply p-0 tablet:p-0 desktop-xs:p-0;
 	}
 }

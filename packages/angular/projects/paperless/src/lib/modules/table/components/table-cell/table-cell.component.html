@@ -1,39 +1,39 @@
 <ng-container *ngIf="checkbox">
-    <ng-container *ngTemplateOutlet="checkbox"></ng-container>
+	<ng-container *ngTemplateOutlet="checkbox"></ng-container>
 </ng-container>
 
 <ng-container [ngSwitch]="variant">
-    <p-loader
-        *ngSwitchCase="'loading'"
-        variant="ghost"
-        class="h-6 w-full flex-1 rounded"
-    ></p-loader>
+	<p-loader
+		*ngSwitchCase="'loading'"
+		variant="ghost"
+		class="h-6 w-full flex-1 rounded"
+	></p-loader>
 
-    <div
-        *ngSwitchCase="'header'"
-        class="flex w-full overflow-hidden"
-        [class.justify-start]="definition.align === 'start'"
-        [class.justify-center]="definition.align === 'center'"
-        [class.justify-end]="definition.align === 'end'"
-    >
-        <ng-container *ngTemplateOutlet="valueTemplate"></ng-container>
-    </div>
+	<div
+		*ngSwitchCase="'header'"
+		class="flex w-full overflow-hidden"
+		[class.justify-start]="definition.align === 'start'"
+		[class.justify-center]="definition.align === 'center'"
+		[class.justify-end]="definition.align === 'end'"
+	>
+		<ng-container *ngTemplateOutlet="valueTemplate"></ng-container>
+	</div>
 
-    <div
-        *ngSwitchCase="'default'"
-        class="flex w-full"
-        [class.justify-start]="definition.align === 'start'"
-        [class.justify-center]="definition.align === 'center'"
-        [class.justify-end]="definition.align === 'end'"
-    >
-        <ng-container *ngIf="template; else valueTemplate">
-            <ng-container
-                *ngTemplateOutlet="template; context: data"
-            ></ng-container>
-        </ng-container>
-    </div>
+	<div
+		*ngSwitchCase="'default'"
+		class="flex min-w-0 flex-1"
+		[class.justify-start]="definition.align === 'start'"
+		[class.justify-center]="definition.align === 'center'"
+		[class.justify-end]="definition.align === 'end'"
+	>
+		<ng-container *ngIf="template; else valueTemplate">
+			<ng-container
+				*ngTemplateOutlet="template; context: data"
+			></ng-container>
+		</ng-container>
+	</div>
 </ng-container>
 
 <ng-template #valueTemplate>
-    {{ data.value }}
+	{{ data.value }}
 </ng-template>

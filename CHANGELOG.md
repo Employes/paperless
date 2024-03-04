@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.4](https://github.com/employes/paperless/compare/v1.26.3...v1.26.4) (2024-03-04)
+
+
+### Bug Fixes
+
+* **Angular/Table/Cell:** Fix content width for truncating ([3edce6b](https://github.com/employes/paperless/commit/3edce6b54c493dbf813a9c129d6765ea7e5439e4))
+
+
+
+
+
 ## [1.26.3](https://github.com/employes/paperless/compare/v1.26.2...v1.26.3) (2024-02-28)
 
 **Note:** Version bump only for package paperless

@@ -362,8 +362,6 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalSave: EventEmitter<void> = new EventEmitter();
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
-	constructor() {}
-
 	ngOnInit() {
 		this._parseItems(this.items);
 

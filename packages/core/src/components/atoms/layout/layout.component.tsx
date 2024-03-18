@@ -21,7 +21,7 @@ export class Layout {
 					<slot name="sidebar" />
 				</div>
 				<div class="content">
-					<div class="inner-content">
+					<div class="inner-content bg-unbiased-light/50">
 						<slot name="content" />
 					</div>
 				</div>

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.26.7...v1.27.0) (2024-03-18)
+
+
+### Features
+
+* **Atoms/Layout:** Auto height adjustment for content ([4acad57](https://github.com/ionic-team/stencil-component-starter/commit/4acad572331884353a0071e0e673da30ea9cad2b))
+
+
+
+
+
 ## [1.26.7](https://github.com/ionic-team/stencil-component-starter/compare/v1.26.5...v1.26.7) (2024-03-07)
 
 

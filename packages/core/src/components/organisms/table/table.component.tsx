@@ -425,7 +425,7 @@ export class Table {
 					)}
 
 					{this._getHeader()}
-					<div class="flex flex-col">{this._getRows()}</div>
+					<div class="flex flex-col flex-1">{this._getRows()}</div>
 
 					{this.enableFooter && (
 						<p-table-footer

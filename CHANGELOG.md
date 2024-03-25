@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.27.4](https://github.com/employes/paperless/compare/v1.27.3...v1.27.4) (2024-03-25)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Make sure widths are excluding padding now ([88b8584](https://github.com/employes/paperless/commit/88b8584739afdfce597414789aab5d630db7f6ed))
+
+
+
+
+
 ## [1.27.3](https://github.com/employes/paperless/compare/v1.27.2...v1.27.3) (2024-03-19)
 
 

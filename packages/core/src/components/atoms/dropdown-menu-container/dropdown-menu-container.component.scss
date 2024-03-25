@@ -29,5 +29,9 @@ p-dropdown-menu-container {
 		.content {
 			@apply h-full;
 		}
+
+		&.scrollable-large {
+			@apply max-h-[20rem];
+		}
 	}
 }

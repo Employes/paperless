@@ -19,7 +19,7 @@ export class DropdownMenuContainer {
 	/**
 	 * Wether the container should be scrollable when the threshold is met.
 	 */
-	@Prop() scrollable: boolean = false;
+	@Prop() scrollable: boolean | 'default' | 'large' = false;
 
 	render() {
 		return (
@@ -27,8 +27,8 @@ export class DropdownMenuContainer {
 				class={`p-dropdown-menu-container ${
 					this.maxWidth && 'max-width'
 				} ${this.fullWidth && 'full-width'} ${
-					this.scrollable && 'scrollable'
-				}`}
+					!!this.scrollable && 'scrollable'
+				} ${this.scrollable === 'large' ? 'scrollable-large' : ''}`}
 			>
 				<div class="content">
 					<slot />

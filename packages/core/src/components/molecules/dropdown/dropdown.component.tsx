@@ -59,7 +59,7 @@ export class Dropdown {
 	/**
 	 * Wether the dropdown container should be scrollable when the threshold is met.
 	 */
-	@Prop() scrollable: boolean = false;
+	@Prop() scrollable: boolean | 'default' | 'large' = false;
 
 	/**
 	 * Wether to automatically close the dropdown menu after clicking inside

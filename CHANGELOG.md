@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/employes/paperless/compare/v1.27.6...v1.28.0) (2024-03-25)
+
+
+### Features
+
+* **Atoms/Dropdown/Menu Container:** Add large scrollable container ([274a908](https://github.com/employes/paperless/commit/274a9085b9ccb008bf3df58b603e29bf840b71f6))
+
+
+
+
+
 ## [1.27.6](https://github.com/employes/paperless/compare/v1.27.5...v1.27.6) (2024-03-25)
 
 **Note:** Version bump only for package paperless

@@ -27,7 +27,6 @@
 		grid-area: topbar;
 
 		@apply sticky w-full;
-		@apply order-2 desktop-sm:order-1;
 	}
 
 	.sidebar {
@@ -36,14 +35,13 @@
 		@apply box-border flex h-full;
 		@apply w-full;
 		@apply layout-1280:w-60 layout-1680:w-72;
-		@apply order-1 desktop-sm:order-2;
 	}
 
 	.content {
 		grid-area: content;
 
 		@apply relative flex h-full flex-col overflow-y-auto overflow-x-hidden;
-		@apply order-3 pb-24;
+		@apply pb-24;
 
 		@apply px-content-mobile-x py-content-mobile-y;
 		@apply tablet:p-8;
@@ -83,7 +81,7 @@
 
 	.sidebar {
 		@apply hidden w-unset layout-1280:flex;
-		@apply order-3 p-2;
+		@apply p-2;
 		@apply flex-1 overflow-hidden;
 
 		.inner-content {
@@ -92,7 +90,6 @@
 	}
 
 	.content {
-		@apply order-3 layout-1280:order-2;
 		@apply items-center layout-1280:justify-center;
 
 		@apply layout-1280:px-18 layout-1280:py-0;

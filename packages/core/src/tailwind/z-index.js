@@ -2,6 +2,7 @@ module.exports = {
     'floating-menu': 190,
     dropdown: 200,
 
+    'navbar-topbar': 280,
     'navbar-backdrop': 290,
     navbar: 300,
 

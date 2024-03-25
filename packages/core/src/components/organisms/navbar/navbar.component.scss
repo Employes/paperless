@@ -20,7 +20,7 @@
 
 	.sidebar {
 		@apply fixed top-0 left-0 z-navbar h-screen w-60 bg-white;
-		@apply layout-1280:relative layout-1280:h-full layout-1280:w-full;
+		@apply layout-1280:relative layout-1280:h-full layout-1280:w-full layout-1280:z-0;
 		@apply gap-6;
 
 		@apply will-change-transform;
@@ -63,7 +63,7 @@
 	}
 
 	.top-bar {
-		@apply flex w-full justify-between px-4 py-2;
+		@apply flex w-full justify-between px-4 py-2 z-navbar-topbar relative;
 
 		padding-top: calc(env(safe-area-inset-top, 0) + 0.5rem);
 		height: calc(env(safe-area-inset-top, 0) + 3rem);

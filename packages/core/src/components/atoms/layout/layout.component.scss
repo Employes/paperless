@@ -119,4 +119,8 @@
 			@apply layout-2560:w-[84.5rem];
 		}
 	}
+
+	.sidebar {
+		@apply layout-1280:w-[19rem] layout-1680:w-[22rem];
+	}
 }

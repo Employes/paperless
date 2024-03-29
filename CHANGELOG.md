@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.28.1](https://github.com/employes/paperless/compare/v1.28.0...v1.28.1) (2024-03-29)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Fix widths for office ([7a69503](https://github.com/employes/paperless/commit/7a69503359bb3e8b37ca4250e17c85aba7435c39))
+
+
+
+
+
 # [1.28.0](https://github.com/employes/paperless/compare/v1.27.6...v1.28.0) (2024-03-25)
 
 

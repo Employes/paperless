@@ -111,15 +111,12 @@
 :host(.variant-office) {
 	.content {
 		.inner-content {
-			@apply layout-1280:w-[61rem];
-			@apply layout-1440:w-[71rem];
-			@apply layout-1536:w-[77rem];
-			@apply layout-1680:w-[83rem];
-			@apply layout-1920:w-[86rem];
-			@apply layout-2560:w-[88.5rem];
+			@apply layout-1280:w-[58rem];
+			@apply layout-1440:w-[67rem];
+			@apply layout-1536:w-[73rem];
+			@apply layout-1680:w-[79rem];
+			@apply layout-1920:w-[82rem];
+			@apply layout-2560:w-[84.5rem];
 		}
-	}
-	.sidebar {
-		@apply layout-1280:w-[19rem] layout-1680:w-[22rem];
 	}
 }

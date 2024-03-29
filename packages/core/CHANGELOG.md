@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.28.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.28.1...v1.28.2) (2024-03-29)
+
+
+### Bug Fixes
+
+* **Atoms/Layout:** Fix office navbar width ([0b6ac46](https://github.com/ionic-team/stencil-component-starter/commit/0b6ac46b04a33122d32e4d06e54236a558003ded))
+
+
+
+
+
 ## [1.28.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.28.0...v1.28.1) (2024-03-29)
 
 

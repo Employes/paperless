@@ -603,7 +603,7 @@ export class Select {
 	}
 
 	private _onBlur(force = false) {
-		if (!this.enableAutocomplete && !force) {
+		if (this.enableAutocomplete && !force) {
 			return;
 		}
 

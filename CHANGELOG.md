@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.28.4](https://github.com/employes/paperless/compare/v1.28.3...v1.28.4) (2024-04-08)
+
+
+### Bug Fixes
+
+* **Molecules/Navigation Item:** Don't show an empty 0 when 0 is passed ([0043cdb](https://github.com/employes/paperless/commit/0043cdbc46d1f2d6c9e40a266aa7c550e5b5cbf7))
+
+
+
+
+
 ## [1.28.3](https://github.com/employes/paperless/compare/v1.28.2...v1.28.3) (2024-04-05)
 
 

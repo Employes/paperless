@@ -40,7 +40,7 @@ export class NavigationItem {
 					<span class={this.counter && 'has-counter'}>
 						<slot />
 					</span>
-					{this.counter && (
+					{!!this.counter && this.counter !== '0' && (
 						<p-counter variant="negative">{this.counter}</p-counter>
 					)}
 				</a>

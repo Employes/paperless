@@ -1,8 +1,8 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
-import { timer } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import {
 	debounce,
 	filter,
@@ -287,5 +287,21 @@ export abstract class BaseTableComponent
 		}
 
 		return Object.keys(changes).length ? changes : null;
+	}
+
+	protected _watchProperty<T>(
+		observable: Observable<T & { id: string }>,
+		identifier: keyof (T & { id: string }) = 'id'
+	) {
+		return observable.pipe(
+			untilDestroyed(this),
+			pairwise(),
+			tap(([previous, current]) => {
+				if (previous && previous[identifier] !== current[identifier]) {
+					this.resetTable(false, true);
+				}
+			}),
+			map(([_, current]) => current)
+		);
 	}
 }

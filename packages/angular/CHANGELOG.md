@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.29.0](https://github.com/Employes/Paperless/compare/v1.28.4...v1.29.0) (2024-04-11)
+
+
+### Features
+
+* **Angular/Base/Table:** Add `_watchProperty` function to simplify auto reloading ([3626e11](https://github.com/Employes/Paperless/commit/3626e11e2eed02002ce4b9b1281da0af28345240))
+
+
+
+
+
 ## [1.28.4](https://github.com/Employes/Paperless/compare/v1.28.3...v1.28.4) (2024-04-08)
 
 **Note:** Version bump only for package @paperless/angular

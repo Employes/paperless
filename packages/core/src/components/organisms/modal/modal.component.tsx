@@ -1,13 +1,13 @@
 import {
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Listen,
+  Prop,
+  State
 } from '@stencil/core';
 
 @Component({
@@ -79,7 +79,7 @@ export class Modal {
 	@Event({
 		bubbles: false,
 	})
-	closed: EventEmitter<null>;
+	closed: EventEmitter<string>;
 
 	/**
 	 * The host element
@@ -121,7 +121,7 @@ export class Modal {
 						{(this.header?.length || this._hasHeaderSlot) && (
 							<p-modal-header
 								showClose={this.showClose}
-								onClose={(ev) => this.close(ev.detail)}
+								onClose={(ev) => this.close('button', ev.detail)}
 							>
 								{this._hasHeaderSlot
 									? headerContent
@@ -149,10 +149,10 @@ export class Modal {
 			return;
 		}
 
-		this.close(ev);
+		this.close('backdrop', ev);
 	}
 
-	public close(ev?: MouseEvent) {
+	public close(reason: string, ev?: MouseEvent) {
 		this.closeClicked.emit(ev);
 
 		this._closing = true;
@@ -161,12 +161,12 @@ export class Modal {
 			this.show = false;
 			this._closing = false;
 
-			this.closed.emit();
+			this.closed.emit(reason);
 		}, 550);
 	}
 
 	@Listen('closeModal', { target: 'window' })
 	handleCloseModal() {
-		this.close();
+		this.close('event');
 	}
 }

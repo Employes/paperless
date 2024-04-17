@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.30.0](https://github.com/employes/paperless/compare/v1.29.0...v1.30.0) (2024-04-17)
+
+
+### Features
+
+* **Organisms/Modal:** Add close reason to the event ([ad9213b](https://github.com/employes/paperless/commit/ad9213b7177fc1fe729a589d804ef648157c6c6f))
+
+
+
+
+
 # [1.29.0](https://github.com/employes/paperless/compare/v1.28.4...v1.29.0) (2024-04-11)
 
 

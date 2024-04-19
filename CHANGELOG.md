@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.31.0](https://github.com/employes/paperless/compare/v1.30.0...v1.31.0) (2024-04-19)
+
+
+### Features
+
+* **Atoms/Avatar:** Add table variant ([17aa74e](https://github.com/employes/paperless/commit/17aa74e640f9430bc49e31fc2ddcc209db32d41d))
+
+
+
+
+
 # [1.30.0](https://github.com/employes/paperless/compare/v1.29.0...v1.30.0) (2024-04-17)
 
 

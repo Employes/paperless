@@ -1,13 +1,13 @@
 import {
-  Component,
-  Element,
-  Event,
-  EventEmitter,
-  h,
-  Host,
-  Listen,
-  Prop,
-  State
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Listen,
+    Prop,
+    State
 } from '@stencil/core';
 
 @Component({
@@ -23,7 +23,7 @@ export class Modal {
 	/**
 	 * The variant of the modal body
 	 */
-	@Prop() variant: 'default' | 'table' | 'table-flush' = 'default';
+	@Prop() variant: 'default' | 'table-flush' = 'default';
 
 	/**
 	 * The Header of the modal

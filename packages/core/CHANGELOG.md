@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.33.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.33.0...v1.33.1) (2024-04-19)
+
+
+### Bug Fixes
+
+* **Molecules/Select:** Display errors correctly ([1ac0b1b](https://github.com/ionic-team/stencil-component-starter/commit/1ac0b1b4f15bd9a35a7552eaad1f0e74837678cc))
+
+
+
+
+
 # [1.33.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.32.1...v1.33.0) (2024-04-19)
 
 

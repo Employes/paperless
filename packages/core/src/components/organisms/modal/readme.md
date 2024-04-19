@@ -33,7 +33,7 @@
 | Event          | Description       | Type                      |
 | -------------- | ----------------- | ------------------------- |
 | `closeClicked` | Close click event | `CustomEvent<MouseEvent>` |
-| `closed`       | Closed event      | `CustomEvent<null>`       |
+| `closed`       | Closed event      | `CustomEvent<string>`     |
 
 
 ## Dependencies

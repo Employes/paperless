@@ -14,7 +14,13 @@ export class Profile {
 	/**
 	 * The size of the profile avatar
 	 */
-	@Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'small';
+	@Prop({ reflect: true }) size:
+		| 'xsmall'
+		| 'small'
+    | 'table'
+		| 'medium'
+		| 'large'
+		| 'xlarge' = 'small';
 
 	/**
 	 * The host element

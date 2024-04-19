@@ -84,6 +84,7 @@ export namespace Components {
          */
         "size": | 'xsmall'
 		| 'small'
+    | 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge';
@@ -853,7 +854,12 @@ export namespace Components {
         /**
           * The size of the profile avatar
          */
-        "size": 'small' | 'medium' | 'large';
+        "size": | 'xsmall'
+		| 'small'
+    | 'table'
+		| 'medium'
+		| 'large'
+		| 'xlarge';
         /**
           * The variant of the profile
          */
@@ -2106,6 +2112,7 @@ declare namespace LocalJSX {
          */
         "size"?: | 'xsmall'
 		| 'small'
+    | 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge';
@@ -2770,7 +2777,7 @@ declare namespace LocalJSX {
         /**
           * Closed event
          */
-        "onClosed"?: (event: PModalCustomEvent<null>) => void;
+        "onClosed"?: (event: PModalCustomEvent<string>) => void;
         /**
           * Wether the body should have padding
          */
@@ -2934,7 +2941,12 @@ declare namespace LocalJSX {
         /**
           * The size of the profile avatar
          */
-        "size"?: 'small' | 'medium' | 'large';
+        "size"?: | 'xsmall'
+		| 'small'
+    | 'table'
+		| 'medium'
+		| 'large'
+		| 'xlarge';
         /**
           * The variant of the profile
          */

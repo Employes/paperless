@@ -15,10 +15,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description                    | Type                             | Default   |
-| --------- | --------- | ------------------------------ | -------------------------------- | --------- |
-| `size`    | `size`    | The size of the profile avatar | `"large" \| "medium" \| "small"` | `'small'` |
-| `variant` | `variant` | The variant of the profile     | `"company" \| "user"`            | `'user'`  |
+| Property  | Attribute | Description                    | Type                                                                | Default   |
+| --------- | --------- | ------------------------------ | ------------------------------------------------------------------- | --------- |
+| `size`    | `size`    | The size of the profile avatar | `"large" \| "medium" \| "small" \| "table" \| "xlarge" \| "xsmall"` | `'small'` |
+| `variant` | `variant` | The variant of the profile     | `"company" \| "user"`                                               | `'user'`  |
 
 
 ## Dependencies

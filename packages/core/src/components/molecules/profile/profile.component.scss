@@ -23,8 +23,16 @@
 	}
 }
 
+:host([size='xsmall']) {
+	@apply h-6;
+}
+
 :host([size='small']) {
 	@apply h-8;
+}
+
+:host([size='table']) {
+	@apply h-10;
 }
 
 :host([size='medium']) {
@@ -33,6 +41,10 @@
 
 :host([size='large']) {
 	@apply h-16;
+}
+
+:host([size='xlarge']) {
+	@apply h-[6.5rem];
 }
 
 :host(.has-dropdown) {

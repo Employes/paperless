@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.33.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.32.1...v1.33.0) (2024-04-19)
+
+
+### Features
+
+* **Atoms/Tooltip:** Add ability to watch for show property to hide quicker ([58d275f](https://github.com/ionic-team/stencil-component-starter/commit/58d275f91909a12954937c6b77134335d9c95800))
+
+
+
+
+
 ## [1.32.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.32.0...v1.32.1) (2024-04-19)
 
 **Note:** Version bump only for package @paperless/core

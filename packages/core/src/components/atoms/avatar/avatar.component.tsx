@@ -17,6 +17,7 @@ export class Avatar {
 	@Prop({ reflect: true }) size:
 		| 'xsmall'
 		| 'small'
+    | 'table'
 		| 'medium'
 		| 'large'
 		| 'xlarge' = 'medium';

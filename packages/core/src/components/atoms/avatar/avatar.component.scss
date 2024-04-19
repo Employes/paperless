@@ -22,6 +22,14 @@ p-avatar {
 		}
 	}
 
+	&[size='table'] {
+		@apply h-10 w-10 text-xs;
+
+		> img {
+			@apply h-10 w-10;
+		}
+	}
+
 	&[size='medium'] {
 		@apply h-[3.125rem] w-[3.125rem] text-base;
 

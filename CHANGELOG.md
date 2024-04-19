@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.34.0](https://github.com/employes/paperless/compare/v1.33.1...v1.34.0) (2024-04-19)
+
+
+### Features
+
+* **Molecules/Input Group:** Allow for overriding error variant ([495e5c1](https://github.com/employes/paperless/commit/495e5c1283a121943737fb182d5d74e7acdb0e97))
+
+
+
+
+
 ## [1.33.1](https://github.com/employes/paperless/compare/v1.33.0...v1.33.1) (2024-04-19)
 
 

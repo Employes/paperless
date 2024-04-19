@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.32.0](https://github.com/employes/paperless/compare/v1.31.0...v1.32.0) (2024-04-19)
+
+
+### Features
+
+* **Molecules/Profile:** Add all ([e315529](https://github.com/employes/paperless/commit/e315529996624315ba3082b90ad323a1b823dd28))
+
+
+
+
+
 # [1.31.0](https://github.com/employes/paperless/compare/v1.30.0...v1.31.0) (2024-04-19)
 
 

@@ -92,6 +92,11 @@ export class InputGroup {
 	@Prop() focusMethod: 'focus' | 'click' = 'focus';
 
 	/**
+	 * The error variant to use
+	 */
+	@Prop() errorVariant: 'auto' | 'suffix' | 'element' = 'auto';
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -332,7 +337,7 @@ export class InputGroup {
 			prefix,
 			suffix,
 			errorAndErrorIsNotBoolean,
-			errorVariant: this._el.offsetWidth <= 72 ? 'element' : 'icon',
+			errorVariant: this.errorVariant === 'auto' ? (this._el.offsetWidth <= 72 ? 'element' : 'icon') : this.errorVariant,
 		};
 	}
 

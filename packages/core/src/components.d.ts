@@ -567,6 +567,10 @@ export namespace Components {
          */
         "error": string;
         /**
+          * The error variant to use
+         */
+        "errorVariant": 'auto' | 'suffix' | 'element';
+        /**
           * The method to use when focusing the input
          */
         "focusMethod": 'focus' | 'click';
@@ -574,6 +578,10 @@ export namespace Components {
           * Wether the input group is focused
          */
         "focused": boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip": boolean;
         /**
           * The helper of the input group
          */
@@ -730,7 +738,7 @@ export namespace Components {
         /**
           * The variant of the modal body
          */
-        "variant": 'default' | 'table' | 'table-flush';
+        "variant": 'default' | 'table-flush';
     }
     interface PModalBody {
         /**
@@ -744,7 +752,7 @@ export namespace Components {
         /**
           * The variant of the modal body
          */
-        "variant": 'default' | 'table' | 'table-flush';
+        "variant": 'default' | 'table-flush';
     }
     interface PModalContainer {
         /**
@@ -2634,6 +2642,10 @@ declare namespace LocalJSX {
          */
         "error"?: string;
         /**
+          * The error variant to use
+         */
+        "errorVariant"?: 'auto' | 'suffix' | 'element';
+        /**
           * The method to use when focusing the input
          */
         "focusMethod"?: 'focus' | 'click';
@@ -2641,6 +2653,10 @@ declare namespace LocalJSX {
           * Wether the input group is focused
          */
         "focused"?: boolean;
+        /**
+          * Force show the error tooltip
+         */
+        "forceShowTooltip"?: boolean;
         /**
           * The helper of the input group
          */
@@ -2805,7 +2821,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the modal body
          */
-        "variant"?: 'default' | 'table' | 'table-flush';
+        "variant"?: 'default' | 'table-flush';
     }
     interface PModalBody {
         /**
@@ -2819,7 +2835,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the modal body
          */
-        "variant"?: 'default' | 'table' | 'table-flush';
+        "variant"?: 'default' | 'table-flush';
     }
     interface PModalContainer {
         /**

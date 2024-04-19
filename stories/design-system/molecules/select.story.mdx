@@ -79,6 +79,20 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 	</div>
 </Canvas>
 
+## Error state 
+
+<Canvas>
+	<div class="h-52">
+		<p-select
+			placeholder="Click me to show loading"
+			identifier-key="value"
+			auto-select-first={false}
+			error="This is an error"
+			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
+		/>
+	</div>
+</Canvas>
+
 ## Using identifier key to return object
 
 <Canvas>

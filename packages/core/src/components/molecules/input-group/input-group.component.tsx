@@ -1,11 +1,11 @@
 import {
-	Component,
-	Element,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
+  Component,
+  Element,
+  h,
+  Host,
+  Listen,
+  Prop,
+  State
 } from '@stencil/core';
 import { RotateOptions } from '../../../types/tailwind';
 import { IconFlipOptions, IconVariant } from '../../atoms/icon/icon.component';
@@ -82,6 +82,11 @@ export class InputGroup {
 	@Prop({ reflect: true }) focused: boolean = false;
 
 	/**
+	 * Force show the error tooltip
+	 */
+	@Prop({ reflect: true }) forceShowTooltip: boolean = false;
+
+	/**
 	 * The method to use when focusing the input
 	 */
 	@Prop() focusMethod: 'focus' | 'click' = 'focus';
@@ -152,7 +157,7 @@ export class InputGroup {
 					show={
 						errorAndErrorIsNotBoolean &&
 						errorVariant === 'element' &&
-						this._forceShowTooltip
+						(this.forceShowTooltip || this._forceShowTooltip)
 					}
 					enableUserInput={false}
 				>
@@ -188,7 +193,7 @@ export class InputGroup {
 									<p-input-error
 										error={this.error}
 										forceShowTooltip={
-											this._forceShowTooltip
+											this.forceShowTooltip || this._forceShowTooltip
 										}
 									/>
 								) : this.icon && this.iconPosition === 'end' ? (
@@ -220,9 +225,9 @@ export class InputGroup {
 	handleFocusOut() {
 		this._forceShowTooltip = false;
 	}
-	/* 
+	/*
      With this, we shall hack the system in ways no one would ever have thought.
-     
+
      <div class="pl-0 pr-0 border-l-0 border-r-0 rounded-tl-none rounded-bl-none rounded-tr-none rounded-br-none"></div>
      */
 	private _setInputClasses() {

@@ -1,18 +1,18 @@
 import {
-	Component,
-	Element,
-	Event,
-	EventEmitter,
-	h,
-	Host,
-	Listen,
-	Prop,
-	State,
-	Watch,
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Listen,
+  Prop,
+  State,
+  Watch
 } from '@stencil/core';
-
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
+
 
 @Component({
 	tag: 'p-select',
@@ -370,7 +370,7 @@ export class Select {
 						error={this.error}
 						disabled={this.disabled}
 						focused={this._showDropdown}
-						focusMethod="click"
+            forceShowTooltip={this.error?.length && this._showDropdown}
 					>
 						<input
 							slot="input"

@@ -1,23 +1,23 @@
 import {
-  arrow,
-  autoUpdate,
-  computePosition,
-  flip,
-  offset,
-  Placement,
-  shift,
-  Strategy
+    arrow,
+    autoUpdate,
+    computePosition,
+    flip,
+    offset,
+    Placement,
+    shift,
+    Strategy
 } from '@floating-ui/dom';
 import {
-  Component,
-  Element,
-  Event,
-  EventEmitter,
-  h,
-  Host,
-  Listen,
-  Prop,
-  Watch
+    Component,
+    Element,
+    Event,
+    EventEmitter,
+    h,
+    Host,
+    Listen,
+    Prop,
+    Watch
 } from '@stencil/core';
 
 @Component({
@@ -157,10 +157,6 @@ export class Tooltip {
 
   @Watch('show')
   onShowChange(show: boolean) {
-    if(this.enableUserInput) {
-      return;
-    }
-
 		if (show && !this._popover.hasAttribute('data-show')) {
 			return this._show();
 		}

@@ -4,12 +4,12 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QuickFilter } from '@paperless/core';
 import { Observable, timer } from 'rxjs';
 import {
-	debounce,
-	filter,
-	map,
-	pairwise,
-	startWith,
-	tap,
+  debounce,
+  filter,
+  map,
+  pairwise,
+  startWith,
+  tap
 } from 'rxjs/operators';
 import { BaseFormComponent } from '../../../base/form.component';
 import { createFormFilters } from '../utils';
@@ -295,9 +295,11 @@ export abstract class BaseTableComponent
 	) {
 		return observable.pipe(
 			untilDestroyed(this),
+			startWith(null),
 			pairwise(),
+			filter(([prev, cur]) => prev !== cur && !!cur),
 			tap(([previous, current]) => {
-				if (previous && previous[identifier] !== current[identifier]) {
+				if (previous && previous[identifier] !== current?.[identifier]) {
 					this.resetTable(false, true);
 				}
 			}),

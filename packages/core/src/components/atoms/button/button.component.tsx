@@ -41,6 +41,11 @@ export class Button {
 	 */
 	@Prop() size: 'small' | 'medium' = 'medium';
 
+  /**
+   * The type of the button
+   */
+  @Prop() type: 'button' | 'submit' = 'button';
+
 	/**
 	 * Wether to show a loader or not
 	 */
@@ -126,6 +131,7 @@ export class Button {
 					} ${this.underline && 'has-underline'}`}
 					disabled={this.disabled}
 					href={this.href}
+          type={this.variant !== 'text' ? this.type : undefined}
 					target={this.target}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (

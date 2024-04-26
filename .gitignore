@@ -5,3 +5,5 @@ yarn-error.log
 dist
 storybook-static
 .yarn
+/.idea/
+.DS_Store

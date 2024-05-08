@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.35.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.35.0...v1.35.1) (2024-05-08)
+
+
+### Bug Fixes
+
+* **molecules/select:** Remove autocomplete padding ([f780f82](https://github.com/ionic-team/stencil-component-starter/commit/f780f828563ba33b26542e6e6ffcc8dad353ef6f))
+
+
+
+
+
 # [1.35.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.34.1...v1.35.0) (2024-05-08)
 
 

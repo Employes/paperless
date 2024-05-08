@@ -1,18 +1,17 @@
 import {
-  Component,
-  Element,
-  Event,
-  EventEmitter,
-  h,
-  Host,
-  Listen,
-  Prop,
-  State,
-  Watch
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Host,
+	Listen,
+	Prop,
+	State,
+	Watch,
 } from '@stencil/core';
 import { childOf } from '../../../utils';
 import { IconVariant } from '../../atoms/icon/icon.component';
-
 
 @Component({
 	tag: 'p-select',
@@ -355,7 +354,7 @@ export class Select {
 					disableTriggerClick={true}
 					calculateWidth={true}
 					insideClick={true}
-					scrollable={true}
+					scrollable={this.enableAutocomplete ? 'large' : true}
 					show={this._showDropdown}
 					onIsOpen={(ev) => this._onDropdownOpen(ev)}
 				>
@@ -370,7 +369,9 @@ export class Select {
 						error={this.error}
 						disabled={this.disabled}
 						focused={this._showDropdown}
-            forceShowTooltip={this.error?.length && this._showDropdown}
+						forceShowTooltip={
+							this.error?.length && this._showDropdown
+						}
 					>
 						<input
 							slot="input"

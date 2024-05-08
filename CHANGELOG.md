@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.36.2](https://github.com/employes/paperless/compare/v1.36.1...v1.36.2) (2024-05-08)
+
+
+### Bug Fixes
+
+* **molecules/select:** Set value of autocomplete if query is passed ([e0daf57](https://github.com/employes/paperless/commit/e0daf5785463197835bfa03c23d47317815a6a81))
+
+
+
+
+
 ## [1.36.1](https://github.com/employes/paperless/compare/v1.36.0...v1.36.1) (2024-05-08)
 
 

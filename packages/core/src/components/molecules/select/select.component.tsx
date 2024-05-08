@@ -733,6 +733,7 @@ export class Select {
 					placeholder={this.autocompletePlaceholder}
 					onInput={(ev) => this._onAutoComplete(ev)}
 					ref={(ref) => (this.autocompleteInputRef = ref)}
+					value={this.query}
 				/>
 			</div>
 		);

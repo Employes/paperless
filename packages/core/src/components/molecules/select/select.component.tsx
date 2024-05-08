@@ -727,7 +727,7 @@ export class Select {
 
 	private _getAutoCompleteItem() {
 		return (
-			<div class="bg-white sticky top-0 pt-2 pb-1 -mt-2">
+			<div class="bg-white sticky top-0 pt-2 -mt-2">
 				<input
 					class="p-input size-small mb-2 sticky top-2"
 					placeholder={this.autocompletePlaceholder}

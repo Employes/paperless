@@ -471,7 +471,7 @@ export namespace Components {
         /**
           * Wether the container should be scrollable when the threshold is met.
          */
-        "scrollable": boolean | 'default' | 'large';
+        "scrollable": boolean | 'default' | 'large' | 'xlarge';
     }
     interface PDropdownMenuItem {
         /**
@@ -2550,7 +2550,7 @@ declare namespace LocalJSX {
         /**
           * Wether the container should be scrollable when the threshold is met.
          */
-        "scrollable"?: boolean | 'default' | 'large';
+        "scrollable"?: boolean | 'default' | 'large' | 'xlarge';
     }
     interface PDropdownMenuItem {
         /**

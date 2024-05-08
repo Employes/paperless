@@ -15,11 +15,11 @@
 
 ## Properties
 
-| Property     | Attribute    | Description                                                          | Type                              | Default |
-| ------------ | ------------ | -------------------------------------------------------------------- | --------------------------------- | ------- |
-| `fullWidth`  | `full-width` | Wether the container should all available space                      | `boolean`                         | `true`  |
-| `maxWidth`   | `max-width`  | Wether the container applies it's max width                          | `boolean`                         | `true`  |
-| `scrollable` | `scrollable` | Wether the container should be scrollable when the threshold is met. | `"default" \| "large" \| boolean` | `false` |
+| Property     | Attribute    | Description                                                          | Type                                          | Default |
+| ------------ | ------------ | -------------------------------------------------------------------- | --------------------------------------------- | ------- |
+| `fullWidth`  | `full-width` | Wether the container should all available space                      | `boolean`                                     | `true`  |
+| `maxWidth`   | `max-width`  | Wether the container applies it's max width                          | `boolean`                                     | `true`  |
+| `scrollable` | `scrollable` | Wether the container should be scrollable when the threshold is met. | `"default" \| "large" \| "xlarge" \| boolean` | `false` |
 
 
 ## Dependencies

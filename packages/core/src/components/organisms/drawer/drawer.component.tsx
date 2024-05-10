@@ -128,14 +128,16 @@ export class Drawer {
 		this.close(ev);
 	}
 
-	public close(ev?: MouseEvent) {
-		this.closeClicked.emit({
-			event: ev,
-			canClose: this.canClose,
-		});
+	public close(ev?: MouseEvent, force = false) {
+		if (!force) {
+			this.closeClicked.emit({
+				event: ev,
+				canClose: this.canClose,
+			});
 
-		if (!this.canClose) {
-			return;
+			if (!this.canClose) {
+				return;
+			}
 		}
 
 		this._closing = true;
@@ -150,5 +152,10 @@ export class Drawer {
 	@Listen('closeDrawer', { target: 'window' })
 	handleCloseDrawer() {
 		this.close();
+	}
+
+	@Listen('forceCloseDrawer', { target: 'window' })
+	handleForceCloseDrawer() {
+		this.close(null, true);
 	}
 }

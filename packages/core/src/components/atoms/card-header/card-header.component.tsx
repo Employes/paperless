@@ -22,7 +22,7 @@ export class CardHeader {
 
 				{(this.header?.length || this.arrow) && (
 					<div class="title">
-						{this.header ?? ''}
+						<span>{this.header ?? ''}</span>
 						{this.arrow && <p-icon variant="arrow" />}
 					</div>
 				)}

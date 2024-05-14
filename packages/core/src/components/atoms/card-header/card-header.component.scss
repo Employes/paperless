@@ -6,8 +6,12 @@ p-card-header {
 
 	.title {
 		@apply order-2;
-		@apply flex items-center text-storm;
+		@apply flex-1 overflow-hidden flex items-center text-storm;
 		@apply font-semibold;
+
+		> span {
+			@apply flex-1 overflow-hidden text-ellipsis whitespace-nowrap;
+		}
 
 		> p-icon {
 			@apply ml-2 text-mystic-dark;

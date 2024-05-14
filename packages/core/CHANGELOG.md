@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.37.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.37.0...v1.37.1) (2024-05-14)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Make title text collapse to ellipsis when overflowing ([960cd2a](https://github.com/ionic-team/stencil-component-starter/commit/960cd2af731b38d0b4135e58d897064ab9a0a0b1))
+
+
+
+
+
 # [1.37.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.36.2...v1.37.0) (2024-05-10)
 
 

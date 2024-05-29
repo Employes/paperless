@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.38.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.37.1...v1.38.0) (2024-05-29)
+
+
+### Features
+
+* **Organisms/Table:** Introduce a selection limit ([17085ec](https://github.com/ionic-team/stencil-component-starter/commit/17085ec906ff03671ce6497b06e344be59bbd8d0))
+
+
+
+
+
 ## [1.37.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.37.0...v1.37.1) (2024-05-14)
 
 

@@ -67,6 +67,11 @@ export class Table implements OnInit, OnChanges {
 	@Input() enableRowSelection: boolean = true;
 
 	/**
+	 * A limit to the amount of rows that can be selected
+	 */
+	@Input() rowSelectionLimit: number | undefined;
+
+	/**
 	 * Wether to enable row clicking
 	 */
 	@Input() enableRowClick: boolean = true;
@@ -474,8 +479,14 @@ export class Table implements OnInit, OnChanges {
 		this.columns = definitionsArray;
 	}
 
-	public _checkboxDisabled(item: any) {
-		return this.canSelectKey && !item[this.canSelectKey];
+	public _checkboxDisabled(item: any, rowIndex: number) {
+		const selectionContains = this._selectionContains(item, rowIndex);
+		return (
+			(this.canSelectKey && !item[this.canSelectKey]) ||
+			(this.rowSelectionLimit !== undefined &&
+				!selectionContains &&
+				this.selectedRows.length === this.rowSelectionLimit)
+		);
 	}
 
 	public _selectAllChange($event: any, forceValue?: boolean) {
@@ -501,6 +512,14 @@ export class Table implements OnInit, OnChanges {
 
 				toAdd.push(row);
 				this.rowSelected.emit(row);
+
+				if (
+					this.rowSelectionLimit !== undefined &&
+					this.selectedRows.length + toAdd.length ===
+						this.rowSelectionLimit
+				) {
+					break;
+				}
 			}
 
 			this.selectedRows = [...this.selectedRows, ...toAdd];
@@ -537,6 +556,16 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
+		const value = this._getCheckedValue(target);
+		if (
+			value &&
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length >= this.rowSelectionLimit
+		) {
+			target.checked = false;
+			return;
+		}
+
 		const row = this.parsedItems[index];
 
 		if (this.canSelectKey && !row[this.canSelectKey]) {
@@ -544,7 +573,6 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
-		const value = this._getCheckedValue(target);
 		if (value) {
 			this.selectedRows = [...this.selectedRows, row];
 			this.selectedRowsChange.emit(this.selectedRows);
@@ -593,6 +621,13 @@ export class Table implements OnInit, OnChanges {
 			return false;
 		}
 
+		if (
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this.rowSelectionLimit
+		) {
+			return true;
+		}
+
 		for (let i = 0; i < this.parsedItems?.length; i++) {
 			const item = this.parsedItems[i];
 			const contains = this._selectionContains(item, i);
@@ -608,6 +643,13 @@ export class Table implements OnInit, OnChanges {
 
 	public _selectionIndeterminate() {
 		if (!this.parsedItems?.length || !this.selectedRows?.length) {
+			return false;
+		}
+
+		if (
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this.rowSelectionLimit
+		) {
 			return false;
 		}
 

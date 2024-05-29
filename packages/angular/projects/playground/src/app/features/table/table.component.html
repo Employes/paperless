@@ -1,35 +1,37 @@
 <p-table-ngx
-    selectionKey="date"
-    canSelectLey="canSelect"
-    [items]="items"
-    [total]="32"
-    (selectedRowsChange)="rowsChange($event)"
-    [floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+	selectionKey="date"
+	canSelectLey="canSelect"
+	[items]="items"
+	[total]="32"
+	(selectedRowsChange)="rowsChange($event)"
+	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
+	[rowSelectionLimit]="1"
 >
-    <p-table-column
-        type="th"
-        name="Datum"
-        path="date"
-        [sizes]="8"
-        [hasCheckbox]="true"
-    ></p-table-column>
-    <p-table-column
-        name="Uren"
-        path="hours"
-        align="end"
-        [sizes]="2"
-        [hasCheckbox]="true"
-    ></p-table-column>
-    <p-table-column path="status" align="end" [sizes]="2"></p-table-column>
+	<p-table-column
+		type="th"
+		name="Datum"
+		path="date"
+		[sizes]="8"
+		[hasCheckbox]="true"
+	></p-table-column>
+	<p-table-column
+		name="Uren"
+		path="hours"
+		align="end"
+		[sizes]="2"
+	></p-table-column>
+	<p-table-column path="status" align="end" [sizes]="2"></p-table-column>
 
-    <ng-template p-table-floating-menu-content>
-        <p-floating-menu-item>
-            Upload <p-icon variant="upload" />
-        </p-floating-menu-item>
-        <p-floating-menu-item>
-            Download <p-icon variant="download" />
-        </p-floating-menu-item>
-    </ng-template>
+	<ng-template p-table-floating-menu-content>
+		<p-floating-menu-item>
+			Upload <p-icon variant="upload" />
+		</p-floating-menu-item>
+		<p-floating-menu-item>
+			Download <p-icon variant="download" />
+		</p-floating-menu-item>
+	</ng-template>
 </p-table-ngx>
 
 <p-button (onClick)="showDrawer()"> Show drawer </p-button>
+
+<p-label icon="clock"></p-label>

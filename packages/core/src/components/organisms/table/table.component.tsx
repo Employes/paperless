@@ -59,6 +59,11 @@ export class Table {
 	@Prop() enableRowSelection: boolean = true;
 
 	/**
+	 * A limit to the amount of rows that can be selected
+	 */
+	@Prop() rowSelectionLimit: number | undefined;
+
+	/**
 	 * Wether to enable row clicking
 	 */
 	@Prop() enableRowClick: boolean = true;
@@ -676,24 +681,32 @@ export class Table {
 		if (variant === 'header') {
 			return (
 				<input
-					class="p-input"
+					class={`p-input ${this.rowSelectionLimit === 1 && 'opacity-0'}`}
 					type="checkbox"
 					onChange={(ev) => this._selectAllChange(ev)}
 					checked={this._selectionContainsAll()}
 					indeterminate={this._selectionIndeterminate()}
+					disabled={this.rowSelectionLimit === 1}
 				/>
 			);
 		}
 
 		const item = this._items[rowIndex];
 
+		const selectionContains = this._selectionContains(item, rowIndex);
+
 		return (
 			<input
 				class="p-input"
 				type="checkbox"
 				onChange={(ev) => this._checkboxChange(ev?.target, rowIndex)}
-				disabled={this.canSelectKey && !item[this.canSelectKey]}
-				checked={this._selectionContains(item, rowIndex)}
+				disabled={
+					(this.canSelectKey && !item[this.canSelectKey]) ||
+					(this.rowSelectionLimit !== undefined &&
+						!selectionContains &&
+						this.selectedRows.length === this.rowSelectionLimit)
+				}
+				checked={selectionContains}
 			/>
 		);
 	}
@@ -762,6 +775,14 @@ export class Table {
 
 				toAdd.push(row);
 				this.rowSelected.emit(row);
+
+				if (
+					this.rowSelectionLimit !== undefined &&
+					this.selectedRows.length + toAdd.length ===
+						this.rowSelectionLimit
+				) {
+					break;
+				}
 			}
 
 			this.selectedRows = [...this.selectedRows, ...toAdd];
@@ -797,6 +818,16 @@ export class Table {
 			return;
 		}
 
+		const value = this._getCheckedValue(target);
+		if (
+			value &&
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length >= this.rowSelectionLimit
+		) {
+			target.checked = false;
+			return;
+		}
+
 		const row = this._items[index];
 
 		if (this.canSelectKey && !row[this.canSelectKey]) {
@@ -804,7 +835,6 @@ export class Table {
 			return;
 		}
 
-		const value = this._getCheckedValue(target);
 		if (value) {
 			this.selectedRows = [...this.selectedRows, row];
 			this.selectedRowsChange.emit(this.selectedRows);
@@ -850,6 +880,13 @@ export class Table {
 			return false;
 		}
 
+		if (
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this.rowSelectionLimit
+		) {
+			return true;
+		}
+
 		for (let i = 0; i < this._items?.length; i++) {
 			const item = this._items[i];
 			const contains = this._selectionContains(item, i);
@@ -865,6 +902,13 @@ export class Table {
 
 	private _selectionIndeterminate() {
 		if (!this._items?.length || !this.selectedRows?.length) {
+			return false;
+		}
+
+		if (
+			this.rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this.rowSelectionLimit
+		) {
 			return false;
 		}
 

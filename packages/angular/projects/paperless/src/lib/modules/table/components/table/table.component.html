@@ -48,6 +48,8 @@
 					(change)="_selectAllChange($event)"
 					[checked]="_selectionContainsAll()"
 					[indeterminate]="_selectionIndeterminate()"
+					[class.opacity-0]="rowSelectionLimit === 1"
+					[disabled]="rowSelectionLimit === 1"
 				/>
 			</ng-template>
 		</ng-container>
@@ -113,7 +115,7 @@
 								(change)="
 									_checkboxChange($event.target, rowIndex)
 								"
-								[disabled]="_checkboxDisabled(item)"
+								[disabled]="_checkboxDisabled(item, rowIndex)"
 								[checked]="_selectionContains(item, rowIndex)"
 							/>
 						</ng-template>

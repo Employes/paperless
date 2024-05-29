@@ -1256,6 +1256,10 @@ export namespace Components {
          */
         "quickFilters": QuickFilter[];
         /**
+          * A limit to the amount of rows that can be selected
+         */
+        "rowSelectionLimit": number | undefined;
+        /**
           * The amount of filters being selected
          */
         "selectedFiltersAmount": number;
@@ -3426,6 +3430,10 @@ declare namespace LocalJSX {
           * Quick filters to show
          */
         "quickFilters"?: QuickFilter[];
+        /**
+          * A limit to the amount of rows that can be selected
+         */
+        "rowSelectionLimit"?: number | undefined;
         /**
           * The amount of filters being selected
          */

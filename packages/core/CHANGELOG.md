@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.0...v1.38.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* **organisms/table:** Don't show header checkbox when a limit is applied ([7418227](https://github.com/ionic-team/stencil-component-starter/commit/7418227022171aaa28b3c68e13c4bf57d6af54fd))
+
+
+
+
+
 # [1.38.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.37.1...v1.38.0) (2024-05-29)
 
 

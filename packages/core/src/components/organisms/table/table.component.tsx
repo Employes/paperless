@@ -681,12 +681,12 @@ export class Table {
 		if (variant === 'header') {
 			return (
 				<input
-					class={`p-input ${this.rowSelectionLimit === 1 && 'opacity-0'}`}
+					class={`p-input ${this.rowSelectionLimit !== undefined && 'opacity-0'}`}
 					type="checkbox"
 					onChange={(ev) => this._selectAllChange(ev)}
 					checked={this._selectionContainsAll()}
 					indeterminate={this._selectionIndeterminate()}
-					disabled={this.rowSelectionLimit === 1}
+					disabled={this.rowSelectionLimit !== undefined}
 				/>
 			);
 		}

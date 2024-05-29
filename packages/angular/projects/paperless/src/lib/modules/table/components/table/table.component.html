@@ -48,8 +48,8 @@
 					(change)="_selectAllChange($event)"
 					[checked]="_selectionContainsAll()"
 					[indeterminate]="_selectionIndeterminate()"
-					[class.opacity-0]="rowSelectionLimit === 1"
-					[disabled]="rowSelectionLimit === 1"
+					[class.opacity-0]="rowSelectionLimit !== undefined"
+					[disabled]="rowSelectionLimit !== undefined"
 				/>
 			</ng-template>
 		</ng-container>

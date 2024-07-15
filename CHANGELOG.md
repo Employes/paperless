@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.4](https://github.com/employes/paperless/compare/v1.38.3...v1.38.4) (2024-07-15)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Fix horizontal line situation ([7be16bc](https://github.com/employes/paperless/commit/7be16bc539f5aaf7a98be2bb39ae7b379e1056f3))
+
+
+
+
+
 ## [1.38.3](https://github.com/employes/paperless/compare/v1.38.2...v1.38.3) (2024-07-15)
 
 

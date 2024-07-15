@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper',
@@ -28,6 +28,7 @@ export class Stepper {
 	@Element() private _el: HTMLElement;
 
 	// private _steps: Array<HTMLPStepperItemElement>;
+	@State() _rerender = false;
 
 	componentDidRender() {
 		this._generateSteps();
@@ -111,12 +112,18 @@ export class Stepper {
 
 		// remove duplicate lines
 		const lines = this._el.querySelectorAll('p-stepper-line');
+		let didRemove = false;
 		for (let j = lines.length - 1; j >= 0; j--) {
 			const line = lines.item(j);
 			const previousItem = line.previousElementSibling;
 			if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
+				didRemove = true;
 				line.remove();
 			}
+		}
+
+		if (didRemove) {
+			this._rerender = !this._rerender;
 		}
 	}
 }

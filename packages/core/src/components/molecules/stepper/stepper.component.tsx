@@ -108,5 +108,15 @@ export class Stepper {
 				}
 			}
 		}
+
+		// remove duplicate lines
+		const lines = this._el.querySelectorAll('p-stepper-line');
+		for (let j = lines?.length; j != 0; j--) {
+			const line = lines.item(j);
+			const previousItem = line.previousElementSibling;
+			if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
+				line.remove();
+			}
+		}
 	}
 }

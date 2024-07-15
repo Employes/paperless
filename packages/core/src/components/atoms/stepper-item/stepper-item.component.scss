@@ -20,6 +20,7 @@
 }
 
 :host([direction='horizontal']) {
+	flex: 0;
 	@apply h-10;
 
 	.content {

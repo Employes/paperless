@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.2](https://github.com/employes/paperless/compare/v1.38.1...v1.38.2) (2024-07-15)
+
+
+### Bug Fixes
+
+* **atoms/stepper/item:** Don't shrink the circle when the content becomes bigger ([06357be](https://github.com/employes/paperless/commit/06357befb8a2afd6969338934d2c74e684f62468))
+* **molecules/stepper:** Clean up lines that are duplicates ([c8a6f37](https://github.com/employes/paperless/commit/c8a6f378a97948d046edf8abfa9b57eedce92fe0))
+
+
+
+
+
 ## [1.38.1](https://github.com/employes/paperless/compare/v1.38.0...v1.38.1) (2024-05-29)
 
 

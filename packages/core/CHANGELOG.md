@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.4...v1.38.5) (2024-07-15)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Force a rerender ([4e7b88e](https://github.com/ionic-team/stencil-component-starter/commit/4e7b88ed58463ff2c4f1e505bfabcd87331252a4))
+
+
+
+
+
 ## [1.38.4](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.3...v1.38.4) (2024-07-15)
 
 

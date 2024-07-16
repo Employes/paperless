@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper',
@@ -27,7 +27,8 @@ export class Stepper {
 	 */
 	@Element() private _el: HTMLElement;
 
-	private _rendering = false;
+	@State() private _rendering = false;
+
 	private _loaded = false;
 
 	// private _steps: Array<HTMLPStepperItemElement>;

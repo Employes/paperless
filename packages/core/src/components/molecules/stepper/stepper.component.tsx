@@ -33,10 +33,8 @@ export class Stepper {
 	// private _steps: Array<HTMLPStepperItemElement>;
 
 	componentDidLoad() {
-		setTimeout(() => {
-			this._generateSteps(true);
-			this._loaded = true;
-		}, 500);
+		this._loaded = true;
+		this._generateSteps(true);
 	}
 
 	render() {
@@ -48,7 +46,7 @@ export class Stepper {
 	}
 
 	@Watch('activeStep')
-	private _generateSteps(firstLoad = false) {
+	private async _generateSteps(firstLoad = false) {
 		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
 			return;
 		}
@@ -73,10 +71,16 @@ export class Stepper {
 		}
 
 		for (let i = 0; i < items?.length; i++) {
+			let directionChanged = false;
 			const item = items.item(i) as any;
 
 			item.active = i === activeStep;
 			item.finished = i < activeStep;
+
+			if (item.direction !== this.direction) {
+				directionChanged = true;
+			}
+
 			item.direction = this.direction;
 			item.align =
 				i === 0 ? 'start' : i === items?.length - 1 ? 'end' : 'center';
@@ -84,10 +88,17 @@ export class Stepper {
 
 			if (i < items.length - 1) {
 				const nextItem = item.nextElementSibling;
+
 				if (
 					nextItem &&
 					nextItem.tagName.toLowerCase() === 'p-stepper-item'
 				) {
+					// super hacky, but we want to wait for the css of the `item.direction` change to be applied before querying for the item.clientHeight
+					// otherwise we always get the initial "16"
+					if (directionChanged) {
+						await new Promise((resolve) => setTimeout(resolve, 10));
+					}
+
 					const heightDiff =
 						(item.clientHeight > 16
 							? item.clientHeight - 16
@@ -111,6 +122,14 @@ export class Stepper {
 
 					this._el.insertBefore(stepperLine, nextItem);
 
+					const previous = stepperLine.previousElementSibling;
+					if (
+						previous &&
+						previous.tagName.toLowerCase() === 'p-stepper-line'
+					) {
+						previous.remove();
+					}
+
 					continue;
 				}
 			}
@@ -124,17 +143,12 @@ export class Stepper {
 			}
 		}
 
-		const lines = this._el.querySelectorAll('p-stepper-line');
+		const lines = this._el.querySelectorAll(
+			'p-stepper-line + p-stepper-line, p-stepper-line:not(:has(+ p-stepper-item))'
+		);
 		for (let j = lines.length - 1; j >= 0; j--) {
 			const line = lines.item(j);
-			const next = line?.nextElementSibling;
-			if (next && next.tagName.toLowerCase() === 'p-stepper-line') {
-				next.remove();
-			}
-
-			if (!next) {
-				line.remove();
-			}
+			line.remove();
 		}
 
 		setTimeout(() => (this._rendering = false), 100);

@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, Watch } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper',
@@ -27,23 +27,34 @@ export class Stepper {
 	 */
 	@Element() private _el: HTMLElement;
 
-	// private _steps: Array<HTMLPStepperItemElement>;
-	@State() _rerender = false;
+	private _rendering = false;
+	private _loaded = false;
 
-	componentDidRender() {
-		this._generateSteps();
+	// private _steps: Array<HTMLPStepperItemElement>;
+
+	componentDidLoad() {
+		setTimeout(() => {
+			this._generateSteps(true);
+			this._loaded = true;
+		}, 500);
 	}
 
 	render() {
 		return (
 			<Host class="p-stepper">
-				<slot />
+				<slot onSlotchange={() => this._generateSteps()} />
 			</Host>
 		);
 	}
 
 	@Watch('activeStep')
-	private _generateSteps() {
+	private _generateSteps(firstLoad = false) {
+		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
+			return;
+		}
+
+		this._rendering = true;
+
 		let activeStep = this.activeStep - 1 || 0;
 		const items = this._el.querySelectorAll('p-stepper-item');
 
@@ -77,7 +88,10 @@ export class Stepper {
 					nextItem &&
 					nextItem.tagName.toLowerCase() === 'p-stepper-item'
 				) {
-					const heightDiff = (item.clientHeight - 16) / 2;
+					const heightDiff =
+						(item.clientHeight > 16
+							? item.clientHeight - 16
+							: item.clientHeight) / 2;
 
 					const stepperLine =
 						document.createElement('p-stepper-line');
@@ -110,20 +124,19 @@ export class Stepper {
 			}
 		}
 
-		// remove duplicate lines
 		const lines = this._el.querySelectorAll('p-stepper-line');
-		let didRemove = false;
 		for (let j = lines.length - 1; j >= 0; j--) {
 			const line = lines.item(j);
-			const previousItem = line.previousElementSibling;
-			if (previousItem.tagName.toLowerCase() === 'p-stepper-line') {
-				didRemove = true;
+			const next = line?.nextElementSibling;
+			if (next && next.tagName.toLowerCase() === 'p-stepper-line') {
+				next.remove();
+			}
+
+			if (!next) {
 				line.remove();
 			}
 		}
 
-		if (didRemove) {
-			this._rerender = !this._rerender;
-		}
+		setTimeout(() => (this._rendering = false), 100);
 	}
 }

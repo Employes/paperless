@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.7](https://github.com/employes/paperless/compare/v1.38.6...v1.38.7) (2024-07-16)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Remove the correct ones now ([54148ab](https://github.com/employes/paperless/commit/54148ab9a3ec679aaa87615fabdaf1d99ab8c3a9))
+
+
+
+
+
 ## [1.38.6](https://github.com/employes/paperless/compare/v1.38.5...v1.38.6) (2024-07-16)
 
 **Note:** Version bump only for package paperless

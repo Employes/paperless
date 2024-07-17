@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, h, Host, Prop, State } from '@stencil/core';
 
 @Component({
 	tag: 'p-stepper',
@@ -160,7 +160,7 @@ export class Stepper {
 	}
 
 	@Watch('activeStep')
-	private onActiveStepChange() {
+	protected _onActiveStepChange() {
 		this._generateSteps();
 	}
 }

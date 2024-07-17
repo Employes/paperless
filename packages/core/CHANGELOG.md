@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.9](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.8...v1.38.9) (2024-07-17)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Import `Watch` ([95c3a3e](https://github.com/ionic-team/stencil-component-starter/commit/95c3a3e06e1bf79f937aab772a6b652112946bf0))
+* **molecules/stepper:** Make sure the watch function isn't private and "unused" ([2a8fea8](https://github.com/ionic-team/stencil-component-starter/commit/2a8fea851bd5c8da6dd47d08145a874159d96a08))
+
+
+
+
+
 ## [1.38.8](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.7...v1.38.8) (2024-07-16)
 
 **Note:** Version bump only for package @paperless/core

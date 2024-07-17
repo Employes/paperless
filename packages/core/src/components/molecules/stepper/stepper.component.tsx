@@ -33,14 +33,15 @@ export class Stepper {
 
 	// private _steps: Array<HTMLPStepperItemElement>;
 
-	private _onSlotChange = (_e: Event) => this._generateSteps();
+	private _delay = (amount: number) =>
+		new Promise((resolve) => setTimeout(resolve, amount));
+
+	private _onSlotChange = async (_e: Event) => this._generateSteps();
 
 	private _generateSteps = async (firstLoad = false) => {
 		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
 			return;
 		}
-
-		console.log('Start rendering');
 
 		this._rendering = true;
 
@@ -87,7 +88,7 @@ export class Stepper {
 					// super hacky, but we want to wait for the css of the `item.direction` change to be applied before querying for the item.clientHeight
 					// otherwise we always get the initial "16"
 					if (directionChanged) {
-						await new Promise((resolve) => setTimeout(resolve, 10));
+						await this._delay(10);
 					}
 
 					const heightDiff =
@@ -135,14 +136,13 @@ export class Stepper {
 		}
 
 		const lines = this._el.querySelectorAll(
-			'p-stepper-line + p-stepper-line, p-stepper-line:not(:has(+ p-stepper-item))'
+			'p-stepper-line:not(:has(+ p-stepper-item)), p-stepper-line:first-child'
 		);
 		for (let j = lines.length - 1; j >= 0; j--) {
 			const line = lines.item(j);
 			line.remove();
 		}
 
-		console.log('Done rendering');
 		setTimeout(() => (this._rendering = false), 100);
 	};
 

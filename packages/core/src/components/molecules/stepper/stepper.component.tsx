@@ -33,6 +33,8 @@ export class Stepper {
 
 	// private _steps: Array<HTMLPStepperItemElement>;
 
+	private _onSlotChange = (_e: Event) => this._generateSteps();
+
 	private _generateSteps = async (firstLoad = false) => {
 		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
 			return;
@@ -152,7 +154,7 @@ export class Stepper {
 	render() {
 		return (
 			<Host class="p-stepper">
-				<slot onSlotchange={this._generateSteps} />
+				<slot onSlotchange={this._onSlotChange} />
 			</Host>
 		);
 	}

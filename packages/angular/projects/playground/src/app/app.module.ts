@@ -14,35 +14,37 @@ import { HomeComponent } from './features/home/home.component';
 import { TestCropperModalComponent } from './features/modal/cropper-modal.component';
 import { ModalComponent } from './features/modal/modal.component';
 import { TestModalComponent } from './features/modal/test-modal.component';
+import { SelectComponent } from './features/select/select.component';
+import { StepperComponent } from './features/stepper/stepper.component';
 import { TableComponent } from './features/table/table.component';
 import { ToastComponent } from './features/toast/toast.component';
-import { SelectComponent } from './features/select/select.component';
 
 @NgModule({
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        TestModalComponent,
-        TestCropperModalComponent,
-        ModalComponent,
-        TestDrawerComponent,
-        DrawerComponent,
-        ToastComponent,
-        TableComponent,
-        DatepickerComponent,
-        CropperComponent,
-        SelectComponent
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
-        PaperlessModule.forRoot(),
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	declarations: [
+		AppComponent,
+		HomeComponent,
+		TestModalComponent,
+		TestCropperModalComponent,
+		ModalComponent,
+		TestDrawerComponent,
+		DrawerComponent,
+		ToastComponent,
+		TableComponent,
+		DatepickerComponent,
+		CropperComponent,
+		SelectComponent,
+		StepperComponent,
+	],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		FormsModule,
+		ReactiveFormsModule,
+		AppRoutingModule,
+		PaperlessModule.forRoot(),
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

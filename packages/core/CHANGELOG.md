@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.38.10](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.9...v1.38.10) (2024-07-17)
+
+
+### Bug Fixes
+
+* **molecules/stepper:** Remove console log & Actually fix line deletion correctly ([c936211](https://github.com/ionic-team/stencil-component-starter/commit/c936211a9e6ad3500bc75e0ea3ea9af7a2e4d47a))
+
+
+
+
+
 ## [1.38.9](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.8...v1.38.9) (2024-07-17)
 
 

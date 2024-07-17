@@ -33,24 +33,12 @@ export class Stepper {
 
 	// private _steps: Array<HTMLPStepperItemElement>;
 
-	componentDidLoad() {
-		this._loaded = true;
-		this._generateSteps(true);
-	}
-
-	render() {
-		return (
-			<Host class="p-stepper">
-				<slot onSlotchange={() => this._generateSteps()} />
-			</Host>
-		);
-	}
-
-	@Watch('activeStep')
-	private async _generateSteps(firstLoad = false) {
+	private _generateSteps = async (firstLoad = false) => {
 		if (!firstLoad && (!this._el || this._rendering || !this._loaded)) {
 			return;
 		}
+
+		console.log('Start rendering');
 
 		this._rendering = true;
 
@@ -152,6 +140,25 @@ export class Stepper {
 			line.remove();
 		}
 
+		console.log('Done rendering');
 		setTimeout(() => (this._rendering = false), 100);
+	};
+
+	componentDidLoad() {
+		this._loaded = true;
+		this._generateSteps(true);
+	}
+
+	render() {
+		return (
+			<Host class="p-stepper">
+				<slot onSlotchange={this._generateSteps} />
+			</Host>
+		);
+	}
+
+	@Watch('activeStep')
+	private onActiveStepChange() {
+		this._generateSteps();
 	}
 }

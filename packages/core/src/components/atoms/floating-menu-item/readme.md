@@ -11,9 +11,9 @@
 
 ## Properties
 
-| Property | Attribute | Description                   | Type      | Default |
-| -------- | --------- | ----------------------------- | --------- | ------- |
-| `hover`  | `hover`   | The variant of the modal body | `boolean` | `true`  |
+| Property | Attribute | Description                          | Type      | Default |
+| -------- | --------- | ------------------------------------ | --------- | ------- |
+| `hover`  | `hover`   | Wether it should have a hover effect | `boolean` | `true`  |
 
 
 ## Dependencies

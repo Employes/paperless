@@ -7,7 +7,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class FloatingMenuItem {
 	/**
-	 * The variant of the modal body
+	 * Wether it should have a hover effect
 	 */
 	@Prop({ reflect: true }) hover: boolean = true;
 

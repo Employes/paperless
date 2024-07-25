@@ -73,7 +73,7 @@ export const config: Config = {
             dir: 'dist',
             copy: [
                 { src: 'assets' },
-                { src: 'tailwind.config.js' },
+                { src: 'tailwind.config.ts' },
                 { src: 'tailwind' },
                 { src: 'style' },
                 {

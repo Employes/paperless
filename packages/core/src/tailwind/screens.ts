@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	tablet: '40rem', // 640 px
 	'desktop-xs': '64rem', // 1024 px
 	'desktop-sm': '80rem', // 1360 px

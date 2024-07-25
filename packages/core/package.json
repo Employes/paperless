@@ -27,7 +27,7 @@
         "build:prod": "stencil build",
         "postbuild": "yarn tailwind:process",
         "postbuild:prod": "yarn tailwind:process",
-        "tailwind:process": "tailwindcss -c ./src/tailwind.config.js -i dist/paperless/paperless.css -o dist/paperless/paperless.css",
+        "tailwind:process": "tailwindcss -c ./src/tailwind.config.ts -i dist/paperless/paperless.css -o dist/paperless/paperless.css",
         "tailwind:process:watch": "yarn tailwind:process --watch",
         "watch": "stencil build --watch",
         "watch:both": "concurrently \"yarn watch\" \"yarn tailwind:process:watch\"",

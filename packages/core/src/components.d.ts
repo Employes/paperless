@@ -15,10 +15,11 @@ import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 import { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 import { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-import { IconVariant as IconVariant2 } from "./components";
+import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+import { TableRowActionFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
@@ -29,10 +30,11 @@ export { Observable } from "rxjs";
 export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 export { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
 export { QuickFilter, RowClickEvent, TableColumnSizes } from "./types/table";
-export { IconVariant as IconVariant2 } from "./components";
+export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, RotateOptions as RotateOptions2 } from "./components";
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 export { TableColumn } from "./components/helpers/table-column/table-column.component";
 export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
+export { TableRowActionFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -1303,6 +1305,10 @@ export namespace Components {
          */
         "rowIndex": number;
         /**
+          * Wether the table has actions
+         */
+        "tableHasActions": boolean;
+        /**
           * The template to show
          */
         "template": TableDefinitionTemplateFunc;
@@ -1313,7 +1319,7 @@ export namespace Components {
         /**
           * The variant of the column
          */
-        "variant": 'default' | 'loading' | 'header';
+        "variant": 'default' | 'loading' | 'header' | 'actions';
     }
     interface PTableColumn {
         /**
@@ -1465,6 +1471,36 @@ export namespace Components {
           * Variant of the header
          */
         "variant": 'default' | 'header';
+    }
+    interface PTableRowAction {
+        /**
+          * The action to trigger when used
+         */
+        "action": TableRowActionFunc;
+        /**
+          * Icon to show on the button
+         */
+        "icon": IconVariant2;
+        /**
+          * Icon flip
+         */
+        "iconFlip": IconFlipOptions2;
+        /**
+          * Wether the button is icon only
+         */
+        "iconOnly": boolean;
+        /**
+          * Icon rotate
+         */
+        "iconRotate": RotateOptions2;
+        /**
+          * Label of the action
+         */
+        "label": string;
+        /**
+          * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
+         */
+        "type": 'both' | 'single' | 'multi';
     }
     interface PToast {
         /**
@@ -1988,6 +2024,12 @@ declare global {
         prototype: HTMLPTableRowElement;
         new (): HTMLPTableRowElement;
     };
+    interface HTMLPTableRowActionElement extends Components.PTableRowAction, HTMLStencilElement {
+    }
+    var HTMLPTableRowActionElement: {
+        prototype: HTMLPTableRowActionElement;
+        new (): HTMLPTableRowActionElement;
+    };
     interface HTMLPToastElement extends Components.PToast, HTMLStencilElement {
     }
     var HTMLPToastElement: {
@@ -2068,6 +2110,7 @@ declare global {
         "p-table-footer": HTMLPTableFooterElement;
         "p-table-header": HTMLPTableHeaderElement;
         "p-table-row": HTMLPTableRowElement;
+        "p-table-row-action": HTMLPTableRowActionElement;
         "p-toast": HTMLPToastElement;
         "p-toast-container": HTMLPToastContainerElement;
         "p-tooltip": HTMLPTooltipElement;
@@ -3486,6 +3529,10 @@ declare namespace LocalJSX {
          */
         "rowIndex"?: number;
         /**
+          * Wether the table has actions
+         */
+        "tableHasActions"?: boolean;
+        /**
           * The template to show
          */
         "template"?: TableDefinitionTemplateFunc;
@@ -3496,7 +3543,7 @@ declare namespace LocalJSX {
         /**
           * The variant of the column
          */
-        "variant"?: 'default' | 'loading' | 'header';
+        "variant"?: 'default' | 'loading' | 'header' | 'actions';
     }
     interface PTableColumn {
         /**
@@ -3681,6 +3728,36 @@ declare namespace LocalJSX {
          */
         "variant"?: 'default' | 'header';
     }
+    interface PTableRowAction {
+        /**
+          * The action to trigger when used
+         */
+        "action"?: TableRowActionFunc;
+        /**
+          * Icon to show on the button
+         */
+        "icon"?: IconVariant2;
+        /**
+          * Icon flip
+         */
+        "iconFlip"?: IconFlipOptions2;
+        /**
+          * Wether the button is icon only
+         */
+        "iconOnly"?: boolean;
+        /**
+          * Icon rotate
+         */
+        "iconRotate"?: RotateOptions2;
+        /**
+          * Label of the action
+         */
+        "label"?: string;
+        /**
+          * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
+         */
+        "type"?: 'both' | 'single' | 'multi';
+    }
     interface PToast {
         /**
           * Icon to show on the button
@@ -3821,6 +3898,7 @@ declare namespace LocalJSX {
         "p-table-footer": PTableFooter;
         "p-table-header": PTableHeader;
         "p-table-row": PTableRow;
+        "p-table-row-action": PTableRowAction;
         "p-toast": PToast;
         "p-toast-container": PToastContainer;
         "p-tooltip": PTooltip;
@@ -3891,6 +3969,7 @@ declare module "@stencil/core" {
             "p-table-footer": LocalJSX.PTableFooter & JSXBase.HTMLAttributes<HTMLPTableFooterElement>;
             "p-table-header": LocalJSX.PTableHeader & JSXBase.HTMLAttributes<HTMLPTableHeaderElement>;
             "p-table-row": LocalJSX.PTableRow & JSXBase.HTMLAttributes<HTMLPTableRowElement>;
+            "p-table-row-action": LocalJSX.PTableRowAction & JSXBase.HTMLAttributes<HTMLPTableRowActionElement>;
             "p-toast": LocalJSX.PToast & JSXBase.HTMLAttributes<HTMLPToastElement>;
             "p-toast-container": LocalJSX.PToastContainer & JSXBase.HTMLAttributes<HTMLPToastContainerElement>;
             "p-tooltip": LocalJSX.PTooltip & JSXBase.HTMLAttributes<HTMLPTooltipElement>;

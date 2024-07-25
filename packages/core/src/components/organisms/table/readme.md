@@ -86,9 +86,10 @@
 - [p-icon](../../atoms/icon)
 - [p-table-row](../../molecules/table-row)
 - [p-table-cell](../../molecules/table-cell)
+- [p-tooltip](../../atoms/tooltip)
+- [p-button](../../atoms/button)
 - [p-loader](../../atoms/loader)
 - [p-illustration](../../atoms/illustration)
-- [p-button](../../atoms/button)
 
 ### Graph
 ```mermaid
@@ -102,9 +103,10 @@ graph TD;
   p-table --> p-icon
   p-table --> p-table-row
   p-table --> p-table-cell
+  p-table --> p-tooltip
+  p-table --> p-button
   p-table --> p-loader
   p-table --> p-illustration
-  p-table --> p-button
   p-table-header --> p-loader
   p-table-header --> p-segment-container
   p-table-header --> p-segment-item

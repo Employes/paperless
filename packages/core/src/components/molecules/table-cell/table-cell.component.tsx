@@ -17,7 +17,7 @@ export class TableCell {
 	/**
 	 * The variant of the column
 	 */
-	@Prop() variant: 'default' | 'loading' | 'header' = 'default';
+	@Prop() variant: 'default' | 'loading' | 'header' | 'actions' = 'default';
 
 	/**
 	 * The index of the column
@@ -43,6 +43,11 @@ export class TableCell {
 	 * The value of the column
 	 */
 	@Prop() value: any;
+
+	/**
+	 * Wether the table has actions
+	 */
+	@Prop() tableHasActions: boolean = false;
 
 	/**
 	 * The checkbox to show
@@ -83,31 +88,39 @@ export class TableCell {
 			>
 				{this.checkbox}
 
-				{this.variant === 'loading' ? (
-					<p-loader
-						variant="ghost"
-						class="h-6 w-full flex-1 rounded"
-					/>
-				) : (
-					<div
-						class={{
-							flex: true,
-							'justify-start': this.definition.align === 'start',
-							'justify-center':
-								this.definition.align === 'center',
-							'justify-end': this.definition.align === 'end',
-						}}
-					>
-						{this.variant === 'header' ? (
-							this.data.value
-						) : this.definition.useSlot ? (
-							<slot />
-						) : (
-							this.template(this.data as TableDefinitionData)
-						)}
-					</div>
-				)}
+				{this._getContent()}
 			</Host>
+		);
+	}
+
+	private _getContent() {
+		if (this.variant === 'loading') {
+			return (
+				<p-loader variant="ghost" class="h-6 w-full flex-1 rounded" />
+			);
+		}
+
+		if (this.variant === 'actions') {
+			return <slot name="actions"></slot>;
+		}
+
+		return (
+			<div
+				class={{
+					flex: true,
+					'justify-start': this.definition.align === 'start',
+					'justify-center': this.definition.align === 'center',
+					'justify-end': this.definition.align === 'end',
+				}}
+			>
+				{this.variant === 'header' ? (
+					this.data.value
+				) : this.definition.useSlot ? (
+					<slot />
+				) : (
+					this.template(this.data as TableDefinitionData)
+				)}
+			</div>
 		);
 	}
 
@@ -123,13 +136,21 @@ export class TableCell {
 			'text-storm-dark':
 				this.variant !== 'header' && this.definition?.type === 'th',
 			'pr-4': this.definition.isLast === false,
+			'group-hover:hidden':
+				this.definition.isLast &&
+				this.tableHasActions &&
+				this.variant !== 'actions',
+			'group-hover:flex':
+				this.variant === 'actions' && this.tableHasActions,
+			hidden: this.variant === 'actions' && this.tableHasActions,
+			flex: this.variant !== 'actions',
 			...sizes,
 		};
 	}
 
-	/* 
+	/*
      With this, we shall hack the system in ways no one would ever have thought.
-     
+
      <div class="w-1/12 w-2/12 w-3/12 w-4/12 w-5/12 w-6/12 w-7/12 w-8/12 w-9/12 w-10/12 w-11/12 w-12/12"></div>
      <div class="tablet:w-1/12 tablet:w-2/12 tablet:w-3/12 tablet:w-4/12 tablet:w-5/12 tablet:w-6/12 tablet:w-7/12 tablet:w-8/12 tablet:w-9/12 tablet:w-10/12 tablet:w-11/12 tablet:w-12/12"></div>
      <div class="desktop-xs:w-1/12 desktop-xs:w-2/12 desktop-xs:w-3/12 desktop-xs:w-4/12 desktop-xs:w-5/12 desktop-xs:w-6/12 desktop-xs:w-7/12 desktop-xs:w-8/12 desktop-xs:w-9/12 desktop-xs:w-10/12 desktop-xs:w-11/12 desktop-xs:w-12/12"></div>
@@ -139,7 +160,7 @@ export class TableCell {
      <div class="desktop-lg:w-1/12 desktop-lg:w-2/12 desktop-lg:w-3/12 desktop-lg:w-4/12 desktop-lg:w-5/12 desktop-lg:w-6/12 desktop-lg:w-7/12 desktop-lg:w-8/12 desktop-lg:w-9/12 desktop-lg:w-10/12 desktop-lg:w-11/12 desktop-lg:w-12/12"></div>
      <div class="desktop-xl:w-1/12 desktop-xl:w-2/12 desktop-xl:w-3/12 desktop-xl:w-4/12 desktop-xl:w-5/12 desktop-xl:w-6/12 desktop-xl:w-7/12 desktop-xl:w-8/12 desktop-xl:w-9/12 desktop-xl:w-10/12 desktop-xl:w-11/12 desktop-xl:w-12/12"></div>
 
-     
+
         ⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⠿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣷⠿⣿⣿⣶⣦⣀⠀⠀⠀⠀⠀
         ⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣶⣦⣬⡉⠒⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⢉⣥⣴⣾⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀
         ⠀⠀⠀⡾⠿⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⣿⣿⠿⠿⠛⠛⠛⠛⠿⢧⠀⠀⠀

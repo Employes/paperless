@@ -12,13 +12,18 @@ import {
 } from '@stencil/core';
 import { IconVariant } from '../../../components';
 import { QuickFilter, RowClickEvent } from '../../../types/table';
-import { formatTranslation, getLocaleComponentStrings } from '../../../utils';
+import {
+	formatTranslation,
+	getLocaleComponentStrings,
+	isMobile,
+} from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
 import {
 	defaultSize,
 	defaultSizeOptions,
 } from '../../molecules/page-size-select/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
+import { TableRowAction } from '../../helpers/table-row-action/table-row-action.component';
 
 export type templateFunc = () => string;
 export type amountSelectedTemplateFunc = (amount: number) => string;
@@ -361,18 +366,23 @@ export class Table {
 	@State() private _columns: any[] = [];
 	@State() private _items: any[] = [];
 
+	@State() private _enableRowSelection: boolean = this.enableRowSelection;
+	@State() private _rowSelectionLimit: number | undefined;
+
+	@State() private _rowActionsFloating: TableRowAction[] = [];
+	@State() private _rowActionsRow: TableRowAction[] = [];
+
 	private _ctrlDown = false;
 	private _hasCustomFilterSlot = false;
-	private _hasFloatingMenuItems = false;
 	private _floatingMenuShown = false;
+	private _resizeTimeout: NodeJS.Timer;
 
 	componentWillLoad() {
 		this._hasCustomFilterSlot = !!this._el.querySelector(
 			':scope > [slot="custom-filter"]'
 		);
-		this._hasFloatingMenuItems = !!this._el.querySelectorAll(
-			':scope > [slot="floating-menu-item"]'
-		).length;
+
+		this._setRowSelectionData();
 
 		this._setLocales();
 		this._parseItems(this.items);
@@ -458,7 +468,7 @@ export class Table {
 						></p-table-footer>
 					)}
 
-					{this.enableFloatingMenu && this.enableRowSelection ? (
+					{this.enableFloatingMenu && this._enableRowSelection ? (
 						<p-floating-menu-container
 							usedInTable={true}
 							class={`${
@@ -469,7 +479,7 @@ export class Table {
 								hover={false}
 								slot="floating-menu-item"
 								class={
-									this._hasFloatingMenuItems
+									this._rowActionsFloating?.length
 										? 'hide-mobile'
 										: ''
 								}
@@ -480,17 +490,25 @@ export class Table {
 							</p-floating-menu-item>
 							<p-divider
 								class={`mx-0 text-storm ${
-									this._hasFloatingMenuItems
+									this._rowActionsFloating?.length
 										? 'hide-mobile'
 										: ''
 								}`}
 								variant="vertical"
 								slot="floating-menu-item"
 							/>
-							{this._hasFloatingMenuItems && (
-								<slot name="floating-menu-item"></slot>
-							)}
-							{this._hasFloatingMenuItems && (
+							{this._rowActionsFloating?.length &&
+								this._rowActionsFloating.map((a) => (
+									<p-floating-menu-item slot="floating-menu-item">
+										{a.label}{' '}
+										<p-icon
+											variant={a.icon}
+											rotate={a.iconRotate}
+											flip={a.iconFlip}
+										/>
+									</p-floating-menu-item>
+								))}
+							{this._rowActionsFloating?.length && (
 								<p-divider
 									class="mx-0 text-storm"
 									variant="vertical"
@@ -566,6 +584,54 @@ export class Table {
 		this._items = JSON.parse(items);
 	}
 
+	@Watch('enableRowSelection')
+	@Watch('rowSelectionLimit')
+	@Listen('resize', { target: 'window' })
+	private _setRowSelectionData() {
+		if (this._resizeTimeout) {
+			clearTimeout(this._resizeTimeout);
+		}
+
+		// We add a timeout here because it's a lot easier on the machine to do these when someone is done
+		// resizing and playing around with their browser
+		this._resizeTimeout = setTimeout(() => {
+			const mobile = isMobile();
+
+			// we hack this to any[] to make it work..
+			const actions = Array.from(
+				this._el.querySelectorAll(':scope > p-table-row-action')
+			) as any[] as TableRowAction[];
+			this._rowActionsRow = actions.filter(
+				(a) => a.type === 'both' || a.type === 'single'
+			);
+			this._rowActionsFloating = actions.filter(
+				(a) => a.type === 'both' || a.type === 'multi' || mobile
+			);
+
+			let rowSelectionLimit = this.rowSelectionLimit;
+			if (
+				mobile && // we're mobile
+				this._rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				(!rowSelectionLimit || rowSelectionLimit < 1) // rowSelectionLimit is lower than 0 or unset
+			) {
+				rowSelectionLimit = 1;
+			}
+
+			this._rowSelectionLimit = rowSelectionLimit;
+
+			let enableRowSelection = this.enableRowSelection;
+			if (
+				mobile && // we're mobile
+				this._rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				!enableRowSelection
+			) {
+				enableRowSelection = true;
+			}
+
+			this._enableRowSelection = enableRowSelection;
+		}, 200);
+	}
+
 	private _generateColumns() {
 		const definitions = this._el.querySelectorAll('p-table-column');
 		const definitionsArray = Array.from(definitions);
@@ -607,7 +673,7 @@ export class Table {
 				(_, i) => (
 					<p-table-row
 						enableHover={
-							this.enableRowSelection || this.enableRowClick
+							this._enableRowSelection || this.enableRowClick
 						}
 					>
 						{this._getLoadingColumns(i)}
@@ -622,7 +688,7 @@ export class Table {
 
 		return this._items.map((item, index) => (
 			<p-table-row
-				enableHover={this.enableRowSelection || this.enableRowClick}
+				enableHover={this._enableRowSelection || this.enableRowClick}
 				onClick={(ev) => this._rowClick(ev, index)}
 			>
 				{this._getRowColumns(item, index)}
@@ -631,7 +697,7 @@ export class Table {
 	}
 
 	private _getRowColumns(item, index) {
-		return this._columns.map((col: TableColumn, colIndex) => {
+		const columns = this._columns.map((col: TableColumn, colIndex) => {
 			return (
 				<p-table-cell
 					definition={col}
@@ -643,9 +709,49 @@ export class Table {
 					}
 					index={colIndex}
 					rowIndex={index}
+					tableHasActions={
+						!!this._rowActionsRow.length && !isMobile()
+					}
 				></p-table-cell>
 			);
 		});
+
+		if (this._rowActionsRow?.length && !isMobile()) {
+			const lastDef = this._columns[this._columns.length - 1];
+			columns.push(
+				<p-table-cell
+					variant="actions"
+					definition={lastDef}
+					item={item}
+					index={this._columns.length - 1}
+					rowIndex={index}
+					tableHasActions={!!this._rowActionsRow.length}
+				>
+					<div slot="actions" class="flex ml-auto gap-2 items-center">
+						{this._rowActionsRow.map((a) => (
+							<p-tooltip content={a.label}>
+								<p-button
+									data-is-action
+									variant="secondary"
+									slot="trigger"
+									icon={a.icon}
+									iconRotate={a.iconRotate}
+									iconFlip={a.iconFlip}
+									iconOnly={true}
+									size="small"
+									onClick={() =>
+										typeof a.action === 'function' &&
+										a.action?.(item, false)
+									}
+								></p-button>
+							</p-tooltip>
+						))}
+					</div>
+				</p-table-cell>
+			);
+		}
+
+		return columns;
 	}
 
 	private _getLoadingColumns(index) {
@@ -667,10 +773,13 @@ export class Table {
 	}
 
 	private _getCheckbox(
-		rowIndex,
+		rowIndex: number,
 		variant: 'header' | 'default' | 'loading' = 'default'
 	) {
-		if (!this.enableRowSelection || !this.selectionKey) {
+		if (
+			!this._enableRowSelection ||
+			(!this.selectionKey && !this._rowActionsFloating?.length)
+		) {
 			return;
 		}
 
@@ -681,19 +790,19 @@ export class Table {
 		if (variant === 'header') {
 			return (
 				<input
-					class={`p-input ${this.rowSelectionLimit !== undefined && 'opacity-0'}`}
+					class={`p-input ${this._rowSelectionLimit !== undefined && 'opacity-0'}`}
 					type="checkbox"
 					onChange={(ev) => this._selectAllChange(ev)}
 					checked={this._selectionContainsAll()}
 					indeterminate={this._selectionIndeterminate()}
-					disabled={this.rowSelectionLimit !== undefined}
+					disabled={this._rowSelectionLimit !== undefined}
 				/>
 			);
 		}
 
 		const item = this._items[rowIndex];
 
-		const selectionContains = this._selectionContains(item, rowIndex);
+		const selectionContains = this._selectionContains(rowIndex);
 
 		return (
 			<input
@@ -702,9 +811,9 @@ export class Table {
 				onChange={(ev) => this._checkboxChange(ev?.target, rowIndex)}
 				disabled={
 					(this.canSelectKey && !item[this.canSelectKey]) ||
-					(this.rowSelectionLimit !== undefined &&
+					(this._rowSelectionLimit !== undefined &&
 						!selectionContains &&
-						this.selectedRows.length === this.rowSelectionLimit)
+						this.selectedRows.length === this._rowSelectionLimit)
 				}
 				checked={selectionContains}
 			/>
@@ -753,7 +862,7 @@ export class Table {
 	}
 
 	private _selectAllChange($event: any, forceValue?: boolean) {
-		if (!this.enableRowSelection) {
+		if (!this._enableRowSelection) {
 			return;
 		}
 
@@ -769,7 +878,7 @@ export class Table {
 					continue;
 				}
 
-				if (this._selectionContains(row, i)) {
+				if (this._selectionContains(i)) {
 					continue;
 				}
 
@@ -777,9 +886,9 @@ export class Table {
 				this.rowSelected.emit(row);
 
 				if (
-					this.rowSelectionLimit !== undefined &&
+					this._rowSelectionLimit !== undefined &&
 					this.selectedRows.length + toAdd.length ===
-						this.rowSelectionLimit
+						this._rowSelectionLimit
 				) {
 					break;
 				}
@@ -814,15 +923,15 @@ export class Table {
 	}
 
 	private _checkboxChange(target: any, index: number) {
-		if (!this.enableRowSelection) {
+		if (!this._enableRowSelection) {
 			return;
 		}
 
 		const value = this._getCheckedValue(target);
 		if (
 			value &&
-			this.rowSelectionLimit !== undefined &&
-			this.selectedRows.length >= this.rowSelectionLimit
+			this._rowSelectionLimit !== undefined &&
+			this.selectedRows.length >= this._rowSelectionLimit
 		) {
 			target.checked = false;
 			return;
@@ -836,7 +945,13 @@ export class Table {
 		}
 
 		if (value) {
-			this.selectedRows = [...this.selectedRows, row];
+			this.selectedRows = [
+				...this.selectedRows,
+				{
+					...row,
+					index,
+				},
+			];
 			this.selectedRowsChange.emit(this.selectedRows);
 			this.rowSelected.emit(row);
 
@@ -847,7 +962,7 @@ export class Table {
 			return;
 		}
 
-		const indexOfToRemove = this._selectionContains(row, index, true);
+		const indexOfToRemove = this._selectionContains(index, true);
 
 		// we need to do this, because splice does not trigger the selection setter.
 		const selection = [...this.selectedRows];
@@ -865,11 +980,9 @@ export class Table {
 		return this.selectionKey ? row?.[this.selectionKey] || index : index;
 	}
 
-	private _selectionContains(row, index, returnIndex = false): any {
+	private _selectionContains(index, returnIndex = false): any {
 		const returnValue = this.selectedRows.findIndex(
-			(item) =>
-				this._getSelectionValue(row, index) ===
-				this._getSelectionValue(item, index)
+			(item) => item.index === index
 		);
 		return !returnIndex ? returnValue >= 0 : returnValue;
 	}
@@ -881,15 +994,14 @@ export class Table {
 		}
 
 		if (
-			this.rowSelectionLimit !== undefined &&
-			this.selectedRows.length === this.rowSelectionLimit
+			this._rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this._rowSelectionLimit
 		) {
 			return true;
 		}
 
 		for (let i = 0; i < this._items?.length; i++) {
-			const item = this._items[i];
-			const contains = this._selectionContains(item, i);
+			const contains = this._selectionContains(i);
 
 			if (!contains) {
 				returnValue = false;
@@ -906,16 +1018,15 @@ export class Table {
 		}
 
 		if (
-			this.rowSelectionLimit !== undefined &&
-			this.selectedRows.length === this.rowSelectionLimit
+			this._rowSelectionLimit !== undefined &&
+			this.selectedRows.length === this._rowSelectionLimit
 		) {
 			return false;
 		}
 
 		let containsCount = 0;
 		for (let i = 0; i < this._items?.length; i++) {
-			const item = this._items[i];
-			const contains = this._selectionContains(item, i);
+			const contains = this._selectionContains(i);
 
 			if (contains) {
 				containsCount++;
@@ -951,7 +1062,7 @@ export class Table {
 			return;
 		}
 
-		if (!this.enableRowSelection) {
+		if (!this._enableRowSelection) {
 			return;
 		}
 

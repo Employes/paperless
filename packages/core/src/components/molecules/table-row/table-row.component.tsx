@@ -23,7 +23,7 @@ export class TableRow {
 					this.enableHover &&
 					this.variant === 'default' &&
 					'enable-hover'
-				}`}
+				} group`}
 			>
 				<div class="content">
 					<slot />

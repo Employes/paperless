@@ -443,6 +443,10 @@ export namespace Components {
          */
         "insideClick": boolean;
         /**
+          * The offset of the popover
+         */
+        "offset": number;
+        /**
           * The content of the dropdown menu
          */
         "placement": Placement;
@@ -1511,6 +1515,10 @@ export namespace Components {
           * Wether the tooltip can be shown by user input
          */
         "enableUserInput": boolean;
+        /**
+          * The offset of the popover
+         */
+        "offset": number;
         /**
           * The placement of the popover
          */

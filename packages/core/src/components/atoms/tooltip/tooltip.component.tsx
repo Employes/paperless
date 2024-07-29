@@ -1,23 +1,23 @@
 import {
-    arrow,
-    autoUpdate,
-    computePosition,
-    flip,
-    offset,
-    Placement,
-    shift,
-    Strategy
+	arrow,
+	autoUpdate,
+	computePosition,
+	flip,
+	offset,
+	Placement,
+	shift,
+	Strategy,
 } from '@floating-ui/dom';
 import {
-    Component,
-    Element,
-    Event,
-    EventEmitter,
-    h,
-    Host,
-    Listen,
-    Prop,
-    Watch
+	Component,
+	Element,
+	Event,
+	EventEmitter,
+	h,
+	Host,
+	Listen,
+	Prop,
+	Watch,
 } from '@stencil/core';
 
 @Component({
@@ -40,6 +40,11 @@ export class Tooltip {
 	 * The placement of the popover
 	 */
 	@Prop() placement: Placement = 'top';
+
+	/**
+	 * The offset of the popover
+	 */
+	@Prop() offset: number = 8;
 
 	/**
 	 * The strategy of the popover placement
@@ -155,14 +160,14 @@ export class Tooltip {
 		this._hide();
 	}
 
-  @Watch('show')
-  onShowChange(show: boolean) {
+	@Watch('show')
+	onShowChange(show: boolean) {
 		if (show && !this._popover.hasAttribute('data-show')) {
 			return this._show();
 		}
 
 		return this._hide();
-  }
+	}
 
 	private _show() {
 		if (!this._loaded) {
@@ -224,7 +229,7 @@ export class Tooltip {
 			strategy: this.strategy,
 
 			middleware: [
-				offset(this.variant === 'error' ? 14 : 8),
+				offset(this.variant === 'error' ? 14 : this.offset),
 				flip(),
 				shift(),
 				arrow({ element: arrowEl, padding: 8 }),

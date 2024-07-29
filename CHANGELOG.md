@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.39.0](https://github.com/employes/paperless/compare/v1.38.10...v1.39.0) (2024-07-29)
+
+
+### Features
+
+* **atoms/tooltip:** Add offset property ([bee918d](https://github.com/employes/paperless/commit/bee918d5b59c1d20686580a2e35ea0c5ac8f3971))
+* **molecules/dropdown:** Add offset property ([9ace8cf](https://github.com/employes/paperless/commit/9ace8cf0c16ba9dbaae0a4fd2545035b5585cd17))
+
+
+
+
+
 ## [1.38.10](https://github.com/employes/paperless/compare/v1.38.9...v1.38.10) (2024-07-17)
 
 

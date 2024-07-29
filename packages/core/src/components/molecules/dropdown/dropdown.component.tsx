@@ -32,7 +32,12 @@ export class Dropdown {
 	@Prop({ reflect: true }) placement: Placement = 'bottom-start';
 
 	/**
-	 * The strategy of the popover placement
+	 * The offset of the dropdown menu
+	 */
+	@Prop() offset: number = 8;
+
+	/**
+	 * The strategy of the dropdown placement
 	 */
 	@Prop() strategy: Strategy = 'absolute';
 
@@ -264,7 +269,7 @@ export class Dropdown {
 		computePosition(this._el, this._menu, {
 			placement: this.placement,
 			strategy: this.strategy,
-			middleware: [offset(8), flip(), shift()],
+			middleware: [offset(this.offset), flip(), shift()],
 		}).then(({ x, y, placement }) => {
 			this._menu.dataset.placement = placement;
 			Object.assign(this._menu.style, {

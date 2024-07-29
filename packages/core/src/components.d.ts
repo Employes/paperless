@@ -443,7 +443,7 @@ export namespace Components {
          */
         "insideClick": boolean;
         /**
-          * The offset of the popover
+          * The offset of the dropdown menu
          */
         "offset": number;
         /**
@@ -459,7 +459,7 @@ export namespace Components {
          */
         "show": boolean;
         /**
-          * The strategy of the popover placement
+          * The strategy of the dropdown placement
          */
         "strategy": Strategy;
     }
@@ -2530,6 +2530,10 @@ declare namespace LocalJSX {
          */
         "insideClick"?: boolean;
         /**
+          * The offset of the dropdown menu
+         */
+        "offset"?: number;
+        /**
           * Open change event
          */
         "onIsOpen"?: (event: PDropdownCustomEvent<boolean>) => void;
@@ -2546,7 +2550,7 @@ declare namespace LocalJSX {
          */
         "show"?: boolean;
         /**
-          * The strategy of the popover placement
+          * The strategy of the dropdown placement
          */
         "strategy"?: Strategy;
     }
@@ -3730,6 +3734,10 @@ declare namespace LocalJSX {
           * Wether the tooltip can be shown by user input
          */
         "enableUserInput"?: boolean;
+        /**
+          * The offset of the popover
+         */
+        "offset"?: number;
         /**
           * Open change event
          */

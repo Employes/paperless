@@ -13,6 +13,7 @@ import height from './tailwind/height';
 import spacing from './tailwind/spacing';
 
 import safeArea from './tailwind/plugins/safe-area';
+import hover from './tailwind/plugins/hover';
 
 export default {
 	important: true,
@@ -39,5 +40,6 @@ export default {
 		require('@tailwindcss/aspect-ratio'),
 		require('tailwind-scrollbar-hide'),
 		safeArea,
+		hover,
 	],
 };

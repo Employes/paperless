@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.41.0](https://github.com/employes/paperless/compare/v1.40.0...v1.41.0) (2024-07-30)
+
+
+### Bug Fixes
+
+* **atoms/floating-menu/item:** Docs had a wrong description ([f50be9a](https://github.com/employes/paperless/commit/f50be9a18e4c25bf6a81d4b56db4105bc0c8b129))
+
+
+### Features
+
+* **util:** Add utilities to check what device we're on based on tailwind values & others ([4ebdcff](https://github.com/employes/paperless/commit/4ebdcff393deb4419aee431c74075609e82604fb))
+
+
+
+
+
 # [1.40.0](https://github.com/employes/paperless/compare/v1.39.0...v1.40.0) (2024-07-30)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.40.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.39.0...v1.40.0) (2024-07-30)
+
+
+### Features
+
+* **atoms/icon:** Add hidden icon ([e4b297f](https://github.com/ionic-team/stencil-component-starter/commit/e4b297f0fb87a452c5dfeca067ba8d5bfd6f3d7a))
+
+
+
+
+
 # [1.39.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.38.10...v1.39.0) (2024-07-29)
 
 

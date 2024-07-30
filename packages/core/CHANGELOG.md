@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.42.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.41.0...v1.42.0) (2024-07-30)
+
+
+### Features
+
+* **tailwind:** Add hover plugin ([3ce06e7](https://github.com/ionic-team/stencil-component-starter/commit/3ce06e7fa3673ec68af92d20b4f4fe326205818f))
+
+
+
+
+
 # [1.41.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.40.0...v1.41.0) (2024-07-30)
 
 

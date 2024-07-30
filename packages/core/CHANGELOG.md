@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.42.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.42.1...v1.42.2) (2024-07-30)
+
+
+### Bug Fixes
+
+* **tailwind:** Actually correctly export plugin ([cb87e1e](https://github.com/ionic-team/stencil-component-starter/commit/cb87e1e8a55a86c60498d0acad95bd56329dde3e))
+
+
+
+
+
 ## [1.42.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.42.0...v1.42.1) (2024-07-30)
 
 

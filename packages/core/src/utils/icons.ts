@@ -27,6 +27,7 @@ import formula from '../assets/icons/formula.svg';
 import grid from '../assets/icons/grid.svg';
 import hashtag from '../assets/icons/hashtag.svg';
 import headset from '../assets/icons/headset.svg';
+import hidden from '../assets/icons/hidden.svg';
 import iDeal from '../assets/icons/iDeal.svg';
 import integration from '../assets/icons/integration.svg';
 import list from '../assets/icons/list.svg';
@@ -91,6 +92,7 @@ export default {
 	grid,
 	hashtag,
 	headset,
+	hidden,
 	iDeal,
 	integration,
 	list,

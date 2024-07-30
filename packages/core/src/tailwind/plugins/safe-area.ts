@@ -1,5 +1,5 @@
 // eslint-disable-next-line unicorn/prefer-module
-const plugin = require('tailwindcss/plugin');
+import plugin from 'tailwindcss/plugin';
 
 const safeArea = plugin(({ addUtilities }) => {
 	const utilities = {

@@ -503,7 +503,7 @@ export namespace Components {
     }
     interface PFloatingMenuItem {
         /**
-          * The variant of the modal body
+          * Wether it should have a hover effect
          */
         "hover": boolean;
     }
@@ -2594,7 +2594,7 @@ declare namespace LocalJSX {
     }
     interface PFloatingMenuItem {
         /**
-          * The variant of the modal body
+          * Wether it should have a hover effect
          */
         "hover"?: boolean;
     }

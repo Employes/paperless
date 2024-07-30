@@ -1,6 +1,4 @@
-import plugin from 'tailwindcss/plugin';
-
-const hover = plugin(({ addVariant }) => {
+const hover = ({ addVariant }) => {
 	// Hover media queries
 	addVariant('has-hover', '@media (hover: hover)');
 	addVariant('no-hover', '@media (hover: none)');
@@ -27,6 +25,6 @@ const hover = plugin(({ addVariant }) => {
 		'@media (hover: hover) { :merge(.peer):hover & }',
 		'@media (hover: none)',
 	]);
-});
+};
 
 export default hover;

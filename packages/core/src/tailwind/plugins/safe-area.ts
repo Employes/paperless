@@ -1,7 +1,4 @@
-// eslint-disable-next-line unicorn/prefer-module
-import plugin from 'tailwindcss/plugin';
-
-const safeArea = plugin(({ addUtilities }) => {
+const safeArea = ({ addUtilities }) => {
 	const utilities = {
 		'.m-safe': {
 			marginTop: 'env(safe-area-inset-top)',
@@ -92,7 +89,7 @@ const safeArea = plugin(({ addUtilities }) => {
 	};
 
 	addUtilities(utilities);
-});
+};
 
 // eslint-disable-next-line unicorn/prefer-module
 export default safeArea;

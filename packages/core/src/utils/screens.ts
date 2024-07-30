@@ -1,4 +1,4 @@
-import screens from '../tailwind/screens';
+import screens from '../tailwind/theme/screens';
 
 export type ScreenSize = keyof typeof screens;
 

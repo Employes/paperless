@@ -1,7 +1,7 @@
-import { paperless } from '@paperless/core';
-import path from 'path';
+const { paperless } = require('@paperless/core');
+const path = require('path');
 
-export default {
+module.exports = {
 	important: true,
 	content: [path.join(__dirname, './src/**/*.{html,scss,ts}')],
 	plugins: [

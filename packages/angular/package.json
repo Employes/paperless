@@ -11,7 +11,7 @@
         "prebuild:prod": "yarn set-version",
         "build:prod": "ng build --configuration production",
         "postbuild:prod": "yarn tailwind:process",
-        "tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.ts -i projects/paperless/src/paperless.scss -o dist/paperless.css",
+        "tailwind:process": "tailwindcss -c ./projects/paperless/tailwind.config.js -i projects/paperless/src/paperless.scss -o dist/paperless.css",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "preyarn:publish": "cp ../../README.md ./dist/",

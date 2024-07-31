@@ -1,11 +1,10 @@
 <p-table-ngx
+	[enableRowSelection]="true"
 	selectionKey="date"
-	canSelectLey="canSelect"
 	[items]="items"
 	[total]="32"
 	(selectedRowsChange)="rowsChange($event)"
 	[floatingMenuAmountSelectedText]="floatingMenuAmountSelectedText"
-	[rowSelectionLimit]="1"
 >
 	<p-table-column
 		type="th"
@@ -22,16 +21,22 @@
 	></p-table-column>
 	<p-table-column path="status" align="end" [sizes]="2"></p-table-column>
 
-	<ng-template p-table-floating-menu-content>
-		<p-floating-menu-item>
-			Upload <p-icon variant="upload" />
-		</p-floating-menu-item>
-		<p-floating-menu-item>
-			Download <p-icon variant="download" />
-		</p-floating-menu-item>
-	</ng-template>
+	<p-table-row-action
+		type="both"
+		icon="download"
+		label="Download"
+		(action)="actionClick('download', $event)"
+	></p-table-row-action>
+	<p-table-row-action
+		type="single"
+		icon="eye"
+		label="View"
+		(action)="actionClick('view', $event)"
+	></p-table-row-action>
+	<p-table-row-action
+		type="multi"
+		icon="upload"
+		label="Upload"
+		(action)="actionClick('upload', $event)"
+	></p-table-row-action>
 </p-table-ngx>
-
-<p-button (onClick)="showDrawer()"> Show drawer </p-button>
-
-<p-label icon="clock"></p-label>

@@ -42,6 +42,7 @@ export const config: Config = {
             excludeComponents: [
                 'p-table',
                 'p-table-column',
+                'p-table-row-action',
                 'p-table-cell',
                 'p-toast-container',
             ],

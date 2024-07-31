@@ -14,7 +14,7 @@ import {
 	TemplateRef,
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { QuickFilter, RowClickEvent } from '@paperless/core';
+import { isMobile, QuickFilter, RowClickEvent } from '@paperless/core';
 import {
 	IconVariant,
 	IllustrationVariant,
@@ -23,9 +23,9 @@ import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
 import {
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
-	TableFloatingMenuContentDirective,
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
+import { TableRowAction } from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 
 @UntilDestroy({ checkProperties: true })
@@ -69,7 +69,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * A limit to the amount of rows that can be selected
 	 */
-	@Input() rowSelectionLimit: number | undefined;
+	@Input() rowSelectionLimit: number | undefined = undefined;
 
 	/**
 	 * Wether to enable row clicking
@@ -110,13 +110,6 @@ export class Table implements OnInit, OnChanges {
 	 * The template for amount selected item in the floating menu
 	 */
 	@Input() floatingMenuAmountSelectedTemplate: any;
-
-	// floating menu
-	@ContentChild(TableFloatingMenuContentDirective, {
-		read: TemplateRef,
-		static: true,
-	})
-	public floatingMenuContentTemplate: TemplateRef<any> | undefined;
 
 	/**
 	 * Wether the floating menu has been shown atleast once
@@ -355,6 +348,18 @@ export class Table implements OnInit, OnChanges {
 
 	public filterModalShow$ = new BehaviorSubject(false);
 
+	// row actions templates
+	private _rowActions!: QueryList<TableRowAction>;
+
+	@ContentChildren(TableRowAction)
+	set rowActions(v: QueryList<TableRowAction>) {
+		this._rowActions = v;
+		this._setRowSelectionData();
+	}
+	get rowActions(): QueryList<TableRowAction> {
+		return this._rowActions;
+	}
+
 	@Input() filterModalHeaderText: string = 'Filters';
 	@Input() filterModalSaveText: string = 'Save';
 	@Input() filterModalCancelText: string = 'Cancel';
@@ -366,6 +371,16 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalShow: EventEmitter<boolean> = new EventEmitter();
 	@Output() filterModalSave: EventEmitter<void> = new EventEmitter();
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
+
+	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
+	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
+
+	public isMobile$ = new BehaviorSubject(isMobile());
+
+	private _resizeTimeout: unknown;
+	private _inputEnableRowSelection: boolean = this.enableRowSelection;
+	private _inputRowSelectionLimit: number | undefined =
+		this.rowSelectionLimit;
 
 	ngOnInit() {
 		this._parseItems(this.items);
@@ -389,6 +404,30 @@ export class Table implements OnInit, OnChanges {
 				length: changes['amountOfLoadingRows'].currentValue,
 			});
 		}
+
+		let calculateRowSelectionData = false;
+		if (changes['enableRowSelection']) {
+			this._inputEnableRowSelection =
+				changes['enableRowSelection'].currentValue;
+			calculateRowSelectionData = true;
+		}
+
+		if (changes['rowSelectionLimit']) {
+			this._inputRowSelectionLimit =
+				changes['rowSelectionLimit'].currentValue;
+			calculateRowSelectionData = true;
+		}
+
+		if (calculateRowSelectionData || changes['selectedRows']) {
+			this._setRowSelectionData(
+				changes['selectedRows']?.currentValue ?? this.selectedRows
+			);
+		}
+	}
+
+	@HostListener('window:resize', ['$event'])
+	onResize() {
+		this._setRowSelectionData();
 	}
 
 	@HostListener('document:keydown', ['$event'])
@@ -469,8 +508,6 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateColumns() {
-		// const definitions =
-		// 	this._el.nativeElement.querySelectorAll('p-table-definition');
 		const definitionsArray = Array.from(
 			this._columnDefinitions
 		) as TableColumn[];
@@ -706,6 +743,39 @@ export class Table implements OnInit, OnChanges {
 		this._checkboxChange(checkbox, index);
 	}
 
+	public _rowActionClick(action: TableRowAction, rowIndex?: number) {
+		if (action.disabled) {
+			return;
+		}
+
+		if (!action.action) {
+			return;
+		}
+
+		if (
+			action.type === 'multi' ||
+			(action.type === 'both' && rowIndex === undefined)
+		) {
+			action.action.emit({
+				items: this.selectedRows,
+				multi: true,
+				ctrlDown: this._ctrlDown,
+			});
+			return;
+		}
+
+		if (rowIndex === undefined) {
+			return;
+		}
+
+		const item = this.parsedItems[rowIndex];
+		action.action.emit({
+			item,
+			multi: false,
+			ctrlDown: this._ctrlDown,
+		});
+	}
+
 	private _findRow(el: HTMLElement | null): any {
 		if (!el) {
 			return el;
@@ -735,5 +805,53 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		return this._findRowAction(el?.parentElement);
+	}
+
+	private _setRowSelectionData(selectedRows = this.selectedRows) {
+		if (this._resizeTimeout) {
+			clearTimeout(this._resizeTimeout as number);
+		}
+
+		// We add a timeout here because it's a lot easier on the machine to do these when someone is done
+		// resizing and playing around with their browser
+		this._resizeTimeout = setTimeout(() => {
+			const mobile = isMobile();
+			this.isMobile$.next(mobile);
+
+			const actions = Array.from(this._rowActions) as TableRowAction[];
+
+			// we hack this to any[] to make it work..
+			const rowActionsRow = actions.filter(
+				(a) => a.type === 'both' || a.type === 'single'
+			);
+			const rowActionsFloating = actions.filter(
+				(a) => a.type === 'both' || a.type === 'multi' || mobile
+			);
+
+			let rowSelectionLimit = this._inputRowSelectionLimit;
+			if (
+				mobile && // we're mobile
+				rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				((rowSelectionLimit !== undefined && this.enableRowSelection) ||
+					!this.enableRowSelection)
+			) {
+				rowSelectionLimit = 1;
+			}
+
+			this.rowSelectionLimit = rowSelectionLimit;
+
+			let enableRowSelection = this._inputEnableRowSelection;
+			if (
+				mobile && // we're mobile
+				rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				!enableRowSelection
+			) {
+				enableRowSelection = true;
+			}
+			this.enableRowSelection = enableRowSelection;
+
+			this.rowActionsRow$.next(rowActionsRow);
+			this.rowActionsFloating$.next(rowActionsFloating);
+		}, 200);
 	}
 }

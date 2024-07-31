@@ -9,6 +9,14 @@
 		class="h-6 w-full flex-1 rounded"
 	></p-loader>
 
+	<ng-container *ngSwitchCase="'actions'">
+		<ng-container *ngIf="template">
+			<ng-container
+				*ngTemplateOutlet="template; context: data"
+			></ng-container>
+		</ng-container>
+	</ng-container>
+
 	<div
 		*ngSwitchCase="'header'"
 		class="flex w-full overflow-hidden"

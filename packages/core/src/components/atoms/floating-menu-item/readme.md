@@ -11,9 +11,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                          | Type      | Default |
-| -------- | --------- | ------------------------------------ | --------- | ------- |
-| `hover`  | `hover`   | Wether it should have a hover effect | `boolean` | `true`  |
+| Property   | Attribute  | Description                          | Type      | Default |
+| ---------- | ---------- | ------------------------------------ | --------- | ------- |
+| `disabled` | `disabled` | Wether the item is disabled          | `boolean` | `false` |
+| `hover`    | `hover`    | Wether it should have a hover effect | `boolean` | `true`  |
 
 
 ## Dependencies

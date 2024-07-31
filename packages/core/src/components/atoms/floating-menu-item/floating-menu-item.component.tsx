@@ -11,6 +11,11 @@ export class FloatingMenuItem {
 	 */
 	@Prop({ reflect: true }) hover: boolean = true;
 
+	/**
+	 * Wether the item is disabled
+	 */
+	@Prop({ reflect: true }) disabled: boolean = false;
+
 	render() {
 		return (
 			<Host class="p-floating-menu-item">

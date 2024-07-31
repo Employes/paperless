@@ -499,7 +499,23 @@ export class Table {
 							/>
 							{this._rowActionsFloating?.length &&
 								this._rowActionsFloating.map((a) => (
-									<p-floating-menu-item slot="floating-menu-item">
+									<p-floating-menu-item
+										slot="floating-menu-item"
+										disabled={a.disabled}
+										onClick={() =>
+											!a.disabled &&
+											!!a.action &&
+											a.type === 'single'
+												? a.action(
+														this.selectedRows[0],
+														false
+													)
+												: a.action(
+														this.selectedRows,
+														true
+													)
+										}
+									>
 										{a.label}{' '}
 										<p-icon
 											variant={a.icon}
@@ -586,6 +602,7 @@ export class Table {
 
 	@Watch('enableRowSelection')
 	@Watch('rowSelectionLimit')
+	@Watch('selectedRows')
 	@Listen('resize', { target: 'window' })
 	private _setRowSelectionData() {
 		if (this._resizeTimeout) {
@@ -604,15 +621,24 @@ export class Table {
 			this._rowActionsRow = actions.filter(
 				(a) => a.type === 'both' || a.type === 'single'
 			);
-			this._rowActionsFloating = actions.filter(
-				(a) => a.type === 'both' || a.type === 'multi' || mobile
-			);
+			this._rowActionsFloating = actions
+				.filter(
+					(a) => a.type === 'both' || a.type === 'multi' || mobile
+				)
+				.map((a) => {
+					if (a.type === 'single') {
+						a.disabled = this.selectedRows?.length > 1;
+					}
+
+					return a;
+				});
 
 			let rowSelectionLimit = this.rowSelectionLimit;
 			if (
 				mobile && // we're mobile
 				this._rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
-				(!rowSelectionLimit || rowSelectionLimit < 1) // rowSelectionLimit is lower than 0 or unset
+				((rowSelectionLimit !== undefined && this.enableRowSelection) ||
+					!this.enableRowSelection)
 			) {
 				rowSelectionLimit = 1;
 			}

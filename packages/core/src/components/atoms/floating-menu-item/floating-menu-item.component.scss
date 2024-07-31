@@ -6,6 +6,11 @@
 	@apply cursor-pointer font-semibold;
 }
 
-:host([hover]:hover) {
+:host([disabled]),
+:host([disabled='true']) {
+	@apply opacity-40 pointer-events-none;
+}
+
+:host([hover]:hover:not([disabled])) {
 	@apply text-white;
 }

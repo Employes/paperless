@@ -53,6 +53,11 @@ export class TableRowAction {
 	 */
 	@Prop() action: TableRowActionFunc;
 
+	/**
+	 * Wether the action is disabled
+	 */
+	@Prop() disabled: boolean = false;
+
 	render() {
 		return;
 	}

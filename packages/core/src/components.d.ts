@@ -505,6 +505,10 @@ export namespace Components {
     }
     interface PFloatingMenuItem {
         /**
+          * Wether the item is disabled
+         */
+        "disabled": boolean;
+        /**
           * Wether it should have a hover effect
          */
         "hover": boolean;
@@ -1477,6 +1481,10 @@ export namespace Components {
           * The action to trigger when used
          */
         "action": TableRowActionFunc;
+        /**
+          * Wether the action is disabled
+         */
+        "disabled": boolean;
         /**
           * Icon to show on the button
          */
@@ -2637,6 +2645,10 @@ declare namespace LocalJSX {
     }
     interface PFloatingMenuItem {
         /**
+          * Wether the item is disabled
+         */
+        "disabled"?: boolean;
+        /**
           * Wether it should have a hover effect
          */
         "hover"?: boolean;
@@ -3733,6 +3745,10 @@ declare namespace LocalJSX {
           * The action to trigger when used
          */
         "action"?: TableRowActionFunc;
+        /**
+          * Wether the action is disabled
+         */
+        "disabled"?: boolean;
         /**
           * Icon to show on the button
          */

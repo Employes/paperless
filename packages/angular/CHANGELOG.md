@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.46.0](https://github.com/Employes/Paperless/compare/v1.45.0...v1.46.0) (2024-08-02)
+
+
+### Features
+
+* **angular/table:** Better handeling for routerLink & queryParams support ([e75b43b](https://github.com/Employes/Paperless/commit/e75b43bb64722dd1a779a31f2cfa9525572f2e8f))
+
+
+
+
+
 # [1.45.0](https://github.com/Employes/Paperless/compare/v1.44.3...v1.45.0) (2024-08-02)
 
 

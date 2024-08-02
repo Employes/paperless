@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.44.1](https://github.com/employes/paperless/compare/v1.44.0...v1.44.1) (2024-08-02)
+
+
+### Bug Fixes
+
+* **angular/table:** Correctly show amount & divider ([7d3cff6](https://github.com/employes/paperless/commit/7d3cff672abbd5e07c16446e066f021b847050b1))
+
+
+
+
+
 # [1.44.0](https://github.com/employes/paperless/compare/v1.43.0...v1.44.0) (2024-08-02)
 
 

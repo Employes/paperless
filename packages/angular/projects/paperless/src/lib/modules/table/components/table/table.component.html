@@ -199,9 +199,10 @@
 		>
 			<p-floating-menu-item
 				[hover]="false"
+				slot="floating-menu-item"
 				[class]="{
-					hidden: (rowActionsFloating$ | async)?.length,
-					'tablet:block': (rowActionsFloating$ | async)?.length
+					hidden: !!(rowActionsFloating$ | async)?.length,
+					'tablet:block': !!(rowActionsFloating$ | async)?.length
 				}"
 			>
 				{{ floatingMenuAmountSelectedText }}
@@ -209,9 +210,10 @@
 			<p-divider
 				class="mx-0 text-storm"
 				variant="vertical"
+				slot="floating-menu-item"
 				[class]="{
-					hidden: (rowActionsFloating$ | async)?.length,
-					'tablet:block': (rowActionsFloating$ | async)?.length
+					hidden: !!(rowActionsFloating$ | async)?.length,
+					'tablet:block': !!(rowActionsFloating$ | async)?.length
 				}"
 			></p-divider>
 
@@ -239,7 +241,10 @@
 				</ng-template>
 			</p-floating-menu-item>
 
-			<p-floating-menu-item (click)="_selectAllChange(null, false)">
+			<p-floating-menu-item
+				(click)="_selectAllChange(null, false)"
+				slot="floating-menu-item"
+			>
 				<p-icon variant="negative"></p-icon>
 			</p-floating-menu-item>
 		</p-floating-menu-container>

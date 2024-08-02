@@ -10,10 +10,10 @@ import {
 	Output,
 	SimpleChanges,
 } from '@angular/core';
-import { Components, RowClickEvent } from '@paperless/core';
-import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
-import { Params, UrlTree } from '@angular/router';
+import { Params } from '@angular/router';
+import { Components } from '@paperless/core';
 import { Observable, Subscribable } from 'rxjs';
+import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 
 export interface TableRowActionClickEvent {
 	item?: any;

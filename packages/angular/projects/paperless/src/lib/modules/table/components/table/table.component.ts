@@ -21,12 +21,7 @@ import {
 	IconVariant,
 	IllustrationVariant,
 } from '@paperless/core/dist/types/components';
-import {
-	BehaviorSubject,
-	distinctUntilChanged,
-	Observable,
-	Subscription,
-} from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, Subscription } from 'rxjs';
 import {
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
@@ -434,9 +429,7 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		if (calculateRowSelectionData || changes['selectedRows']) {
-			this._setRowSelectionData(
-				changes['selectedRows']?.currentValue ?? this.selectedRows
-			);
+			this._setRowSelectionData();
 		}
 	}
 
@@ -868,7 +861,7 @@ export class Table implements OnInit, OnChanges {
 		return this._findRowAction(el?.parentElement);
 	}
 
-	private _setRowSelectionData(selectedRows = this.selectedRows) {
+	private _setRowSelectionData() {
 		if (this._resizeTimeout) {
 			clearTimeout(this._resizeTimeout as number);
 		}

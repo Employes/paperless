@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.44.3](https://github.com/Employes/Paperless/compare/v1.44.2...v1.44.3) (2024-08-02)
+
+
+### Bug Fixes
+
+* **angular/table:** Return of the divider ([b4bd336](https://github.com/Employes/Paperless/commit/b4bd336856f8611640fa09cc6b67b5bee1572e61))
+* **organisms/table:** Use flex instead of block ([e52b4ff](https://github.com/Employes/Paperless/commit/e52b4ff72a2f22e8ebd60a241627a3ae81116280))
+
+
+
+
+
 ## [1.44.2](https://github.com/Employes/Paperless/compare/v1.44.1...v1.44.2) (2024-08-02)
 
 

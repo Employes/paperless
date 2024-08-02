@@ -4,6 +4,7 @@ import {
 	Component,
 	ElementRef,
 	EventEmitter,
+	Input,
 	NgZone,
 	OnChanges,
 	Output,
@@ -11,6 +12,7 @@ import {
 } from '@angular/core';
 import { Components, RowClickEvent } from '@paperless/core';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
+import { UrlTree } from '@angular/router';
 
 export interface TableRowActionClickEvent {
 	item?: any;
@@ -53,6 +55,11 @@ export declare interface TableRowAction
 })
 export class TableRowAction implements OnChanges {
 	protected el: HTMLElement;
+
+	/**
+	 * Routerlink to navigate to
+	 */
+	@Input() routerLink?: string | any[];
 
 	/**
 	 * Event whenever a row is clicked

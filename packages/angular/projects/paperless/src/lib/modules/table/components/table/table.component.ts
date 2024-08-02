@@ -776,6 +776,13 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
+		if (
+			action.routerLink ||
+			(Array.isArray(action.routerLink) && action.routerLink.length)
+		) {
+			return;
+		}
+
 		const item = this.parsedItems[rowIndex];
 		action.action.emit({
 			item,

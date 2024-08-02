@@ -162,6 +162,7 @@
 										iconOnly="true"
 										size="small"
 										[disabled]="action.disabled"
+										[routerLink]="action.routerLink"
 										(onClick)="
 											_rowActionClick(action, rowIndex)
 										"

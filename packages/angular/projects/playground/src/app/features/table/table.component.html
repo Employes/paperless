@@ -23,6 +23,13 @@
 
 	<p-table-row-action
 		type="both"
+		icon="arrow"
+		label="Navigate"
+		routerLink="../"
+		(action)="actionClick('navigate', $event)"
+	></p-table-row-action>
+	<p-table-row-action
+		type="both"
 		icon="download"
 		label="Download"
 		[loading]="downloading$ | async"

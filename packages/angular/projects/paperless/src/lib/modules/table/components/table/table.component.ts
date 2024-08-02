@@ -1,5 +1,6 @@
 import {
 	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 	Component,
 	ContentChild,
 	ContentChildren,
@@ -19,7 +20,7 @@ import {
 	IconVariant,
 	IllustrationVariant,
 } from '@paperless/core/dist/types/components';
-import { BehaviorSubject, distinctUntilChanged } from 'rxjs';
+import { BehaviorSubject, distinctUntilChanged, Subscription } from 'rxjs';
 import {
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
@@ -350,6 +351,7 @@ export class Table implements OnInit, OnChanges {
 
 	// row actions templates
 	private _rowActions!: QueryList<TableRowAction>;
+	private _rowActionsSubscriptions: Subscription[] = [];
 
 	@ContentChildren(TableRowAction)
 	set rowActions(v: QueryList<TableRowAction>) {
@@ -372,8 +374,8 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalSave: EventEmitter<void> = new EventEmitter();
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
-	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
 	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
+	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
 
 	public isMobile$ = new BehaviorSubject(isMobile());
 
@@ -381,6 +383,8 @@ export class Table implements OnInit, OnChanges {
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
 	private _inputRowSelectionLimit: number | undefined =
 		this.rowSelectionLimit;
+
+	constructor(private _changeDetection: ChangeDetectorRef) {}
 
 	ngOnInit() {
 		this._parseItems(this.items);
@@ -748,6 +752,10 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
+		if (action.loading) {
+			return;
+		}
+
 		if (!action.action) {
 			return;
 		}
@@ -819,6 +827,21 @@ export class Table implements OnInit, OnChanges {
 			this.isMobile$.next(mobile);
 
 			const actions = Array.from(this._rowActions) as TableRowAction[];
+
+			if (this._rowActionsSubscriptions.length) {
+				for (let subscription of this._rowActionsSubscriptions) {
+					subscription.unsubscribe();
+				}
+			}
+
+			this._rowActionsSubscriptions = actions.map((action) =>
+				action._loadingChanged
+					.pipe(untilDestroyed(this))
+					.subscribe(() => {
+						console.log('Loading changed');
+						this._changeDetection.detectChanges();
+					})
+			);
 
 			// we hack this to any[] to make it work..
 			const rowActionsRow = actions.filter(

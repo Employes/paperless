@@ -504,6 +504,7 @@ export class Table {
 										disabled={a.disabled}
 										onClick={() =>
 											!a.disabled &&
+											!a.loading &&
 											!!a.action &&
 											a.type === 'single'
 												? a.action(
@@ -517,11 +518,15 @@ export class Table {
 										}
 									>
 										{a.label}{' '}
-										<p-icon
-											variant={a.icon}
-											rotate={a.iconRotate}
-											flip={a.iconFlip}
-										/>
+										{a.loading ? (
+											<p-loader></p-loader>
+										) : (
+											<p-icon
+												variant={a.icon}
+												rotate={a.iconRotate}
+												flip={a.iconFlip}
+											/>
+										)}
 									</p-floating-menu-item>
 								))}
 							{this._rowActionsFloating?.length && (

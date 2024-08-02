@@ -4,6 +4,7 @@ import {
 	TableRowActionClickEvent,
 } from 'projects/paperless/src/public-api';
 import { TestDrawerComponent } from '../drawer/test-drawer.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	templateUrl: 'table.component.html',
@@ -15,6 +16,9 @@ export class TableComponent {
 
 	public floatingMenuAmountSelectedText = '0 items selected';
 
+	public downloading$ = new BehaviorSubject(false);
+	private _downloadTimeout: unknown | undefined;
+
 	constructor(private _overlay: OverlayService) {}
 
 	showDrawer() {
@@ -22,6 +26,20 @@ export class TableComponent {
 	}
 
 	actionClick(name: string, event: TableRowActionClickEvent) {
+		if (name === 'download') {
+			if (this._downloadTimeout) {
+				clearTimeout(this._downloadTimeout as number);
+				this._downloadTimeout = undefined;
+			}
+
+			this.downloading$.next(true);
+			console.log('Started downloading');
+			this._downloadTimeout = setTimeout(() => {
+				console.log('Stopped downloading');
+				this.downloading$.next(false);
+			}, 3000);
+		}
+
 		if (event.multi) {
 			const { items } = event;
 			console.log('Multi', name, items);

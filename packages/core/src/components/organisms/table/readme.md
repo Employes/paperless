@@ -83,12 +83,12 @@
 - [p-floating-menu-container](../../atoms/floating-menu-container)
 - [p-floating-menu-item](../../atoms/floating-menu-item)
 - [p-divider](../../atoms/divider)
+- [p-loader](../../atoms/loader)
 - [p-icon](../../atoms/icon)
 - [p-table-row](../../molecules/table-row)
 - [p-table-cell](../../molecules/table-cell)
 - [p-tooltip](../../atoms/tooltip)
 - [p-button](../../atoms/button)
-- [p-loader](../../atoms/loader)
 - [p-illustration](../../atoms/illustration)
 
 ### Graph
@@ -100,12 +100,12 @@ graph TD;
   p-table --> p-floating-menu-container
   p-table --> p-floating-menu-item
   p-table --> p-divider
+  p-table --> p-loader
   p-table --> p-icon
   p-table --> p-table-row
   p-table --> p-table-cell
   p-table --> p-tooltip
   p-table --> p-button
-  p-table --> p-loader
   p-table --> p-illustration
   p-table-header --> p-loader
   p-table-header --> p-segment-container

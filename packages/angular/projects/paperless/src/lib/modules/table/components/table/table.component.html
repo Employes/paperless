@@ -225,11 +225,18 @@
 				(click)="_rowActionClick(action)"
 			>
 				{{ action.label }}
-				<p-icon
-					[variant]="action.icon"
-					[rotate]="action.iconRotate"
-					[flip]="action.iconFlip"
-				/>
+
+				<p-loader
+					*ngIf="action.loading; else floatingMenuItemIconTemplate"
+				></p-loader>
+
+				<ng-template #floatingMenuItemIconTemplate>
+					<p-icon
+						[variant]="action.icon"
+						[rotate]="action.iconRotate"
+						[flip]="action.iconFlip"
+					/>
+				</ng-template>
 			</p-floating-menu-item>
 
 			<p-floating-menu-item (click)="_selectAllChange(null, false)">

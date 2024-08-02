@@ -58,6 +58,11 @@ export class TableRowAction {
 	 */
 	@Prop() disabled: boolean = false;
 
+	/**
+	 * Wether the action is loading
+	 */
+	@Prop() loading: boolean = false;
+
 	render() {
 		return;
 	}

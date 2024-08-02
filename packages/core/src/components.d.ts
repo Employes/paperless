@@ -1506,6 +1506,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Wether the action is loading
+         */
+        "loading": boolean;
+        /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */
         "type": 'both' | 'single' | 'multi';
@@ -3769,6 +3773,10 @@ declare namespace LocalJSX {
           * Label of the action
          */
         "label"?: string;
+        /**
+          * Wether the action is loading
+         */
+        "loading"?: boolean;
         /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */

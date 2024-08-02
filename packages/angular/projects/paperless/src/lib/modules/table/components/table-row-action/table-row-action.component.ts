@@ -5,7 +5,9 @@ import {
 	ElementRef,
 	EventEmitter,
 	NgZone,
+	OnChanges,
 	Output,
+	SimpleChanges,
 } from '@angular/core';
 import { Components, RowClickEvent } from '@paperless/core';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
@@ -30,6 +32,7 @@ export declare interface TableRowAction
 		'iconRotate',
 		'label',
 		'type',
+		'loading',
 	],
 })
 @Component({
@@ -45,9 +48,10 @@ export declare interface TableRowAction
 		'iconRotate',
 		'label',
 		'type',
+		'loading',
 	],
 })
-export class TableRowAction {
+export class TableRowAction implements OnChanges {
 	protected el: HTMLElement;
 
 	/**
@@ -56,12 +60,23 @@ export class TableRowAction {
 	@Output() action: EventEmitter<TableRowActionClickEvent> =
 		new EventEmitter();
 
+	/**
+	 * Event whenever loading has changed
+	 */
+	@Output() _loadingChanged: EventEmitter<boolean> = new EventEmitter();
+
 	constructor(
-		c: ChangeDetectorRef,
-		r: ElementRef,
-		protected z: NgZone
+		private _c: ChangeDetectorRef,
+		protected z: NgZone,
+		r: ElementRef
 	) {
-		c.detach();
+		this._c.detach();
 		this.el = r.nativeElement;
+	}
+
+	ngOnChanges(changes: SimpleChanges) {
+		if (changes['loading']) {
+			this._loadingChanged.emit(changes['loading'].currentValue);
+		}
 	}
 }

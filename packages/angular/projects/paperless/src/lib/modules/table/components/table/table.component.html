@@ -200,8 +200,8 @@
 			<p-floating-menu-item
 				[hover]="false"
 				[class]="{
-					hidden: !!(rowActionsFloating$ | async)?.length,
-					'tablet:flex': !!(rowActionsFloating$ | async)?.length
+					hidden: (rowActionsFloating$ | async)?.length,
+					'tablet:block': (rowActionsFloating$ | async)?.length
 				}"
 			>
 				{{ floatingMenuAmountSelectedText }}
@@ -210,8 +210,8 @@
 				class="mx-0 text-storm"
 				variant="vertical"
 				[class]="{
-					hidden: !!(rowActionsFloating$ | async)?.length,
-					'tablet:flex': !!(rowActionsFloating$ | async)?.length
+					hidden: (rowActionsFloating$ | async)?.length,
+					'tablet:block': (rowActionsFloating$ | async)?.length
 				}"
 			></p-divider>
 

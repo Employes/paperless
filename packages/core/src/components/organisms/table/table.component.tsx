@@ -480,7 +480,7 @@ export class Table {
 								slot="floating-menu-item"
 								class={
 									this._rowActionsFloating?.length
-										? 'hide-mobile'
+										? 'hidden tablet:flex'
 										: ''
 								}
 							>
@@ -491,7 +491,7 @@ export class Table {
 							<p-divider
 								class={`mx-0 text-storm ${
 									this._rowActionsFloating?.length
-										? 'hide-mobile'
+										? 'hidden tablet:flex'
 										: ''
 								}`}
 								variant="vertical"

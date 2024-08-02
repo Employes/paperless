@@ -162,7 +162,22 @@
 										iconOnly="true"
 										size="small"
 										[disabled]="action.disabled"
-										[routerLink]="action.routerLink"
+										[routerLink]="
+											action.routerLink
+												? (_getActionRouterLink(
+														action.routerLink,
+														rowIndex
+													) | async)
+												: null
+										"
+										[queryParams]="
+											action.queryParams
+												? (_getActionQueryParams(
+														action.queryParams,
+														rowIndex
+													) | async)
+												: null
+										"
 										(onClick)="
 											_rowActionClick(action, rowIndex)
 										"

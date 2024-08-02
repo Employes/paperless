@@ -14,19 +14,30 @@ import {
 	SimpleChanges,
 	TemplateRef,
 } from '@angular/core';
+import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { isMobile, QuickFilter, RowClickEvent } from '@paperless/core';
 import {
 	IconVariant,
 	IllustrationVariant,
 } from '@paperless/core/dist/types/components';
-import { BehaviorSubject, distinctUntilChanged, Subscription } from 'rxjs';
+import {
+	BehaviorSubject,
+	distinctUntilChanged,
+	Observable,
+	Subscription,
+} from 'rxjs';
 import {
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
 } from '../../directives';
 import { TableColumn } from '../table-column/table-column.component';
-import { TableRowAction } from '../table-row-action/table-row-action.component';
+import {
+	AsyncItem,
+	TableRowAction,
+	TableRowActionQueryParams,
+	TableRowActionRouterLink,
+} from '../table-row-action/table-row-action.component';
 import { defaultSize, defaultSizeOptions } from './constants';
 
 @UntilDestroy({ checkProperties: true })
@@ -745,6 +756,41 @@ export class Table implements OnInit, OnChanges {
 
 		checkbox.checked = !checkbox.checked;
 		this._checkboxChange(checkbox, index);
+	}
+
+	public _getActionRouterLink(
+		routerLink: TableRowActionRouterLink,
+		rowIndex: number
+	): BehaviorSubject<string | any[]> | AsyncItem<string | any[]> {
+		if (typeof routerLink === 'function') {
+			const item = this.parsedItems[rowIndex];
+			return this._getActionRouterLink(routerLink(item), rowIndex);
+		}
+
+		if (typeof routerLink === 'string' || Array.isArray(routerLink)) {
+			return new BehaviorSubject(routerLink);
+		}
+
+		return routerLink;
+	}
+
+	public _getActionQueryParams(
+		queryParams: TableRowActionQueryParams,
+		rowIndex: number
+	): BehaviorSubject<Params> | AsyncItem<Params> {
+		if (typeof queryParams === 'function') {
+			const item = this.parsedItems[rowIndex];
+			return this._getActionQueryParams(queryParams(item), rowIndex);
+		}
+
+		if (
+			queryParams instanceof Object &&
+			queryParams.constructor === Object
+		) {
+			return new BehaviorSubject(queryParams);
+		}
+
+		return queryParams as AsyncItem<Params>;
 	}
 
 	public _rowActionClick(action: TableRowAction, rowIndex?: number) {

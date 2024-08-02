@@ -12,7 +12,8 @@ import {
 } from '@angular/core';
 import { Components, RowClickEvent } from '@paperless/core';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
-import { UrlTree } from '@angular/router';
+import { Params, UrlTree } from '@angular/router';
+import { Observable, Subscribable } from 'rxjs';
 
 export interface TableRowActionClickEvent {
 	item?: any;
@@ -24,6 +25,19 @@ export declare interface TableRowAction
 	extends Omit<Components.PTableRowAction, 'action'> {
 	action: EventEmitter<TableRowActionClickEvent>;
 }
+
+export type AsyncItem<T> = Observable<T> | Subscribable<T> | Promise<T>;
+
+export type TableRowActionRouterLink =
+	| string
+	| any[]
+	| AsyncItem<string | any[]>
+	| ((item: any) => AsyncItem<string | any[]> | string | any[]);
+
+export type TableRowActionQueryParams =
+	| Params
+	| AsyncItem<Params>
+	| ((item: any) => Params | AsyncItem<Params>);
 
 @ProxyCmp({
 	inputs: [
@@ -59,7 +73,12 @@ export class TableRowAction implements OnChanges {
 	/**
 	 * Routerlink to navigate to
 	 */
-	@Input() routerLink?: string | any[];
+	@Input() routerLink?: TableRowActionRouterLink;
+
+	/**
+	 * Queryparams to add to the navigation
+	 */
+	@Input() queryParams?: TableRowActionQueryParams;
 
 	/**
 	 * Event whenever a row is clicked

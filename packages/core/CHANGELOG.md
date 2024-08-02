@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.43.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.42.5...v1.43.0) (2024-08-02)
+
+
+### Bug Fixes
+
+* **table:** Small changes to support singles better ([9dd0f0b](https://github.com/ionic-team/stencil-component-starter/commit/9dd0f0b574de62f4be1af246d30d7df82f0261e3))
+
+
+### Features
+
+* **angular/table:** Add table-row-action usage instead of floating-menu-content ([7ee0f93](https://github.com/ionic-team/stencil-component-starter/commit/7ee0f93aa7361ab3e552ec5516e1abb6605507dc))
+* **Organisms/Table:** Turn the slot for floating-menu-items in a general actions item & add single row actions ([9f203da](https://github.com/ionic-team/stencil-component-starter/commit/9f203da7dbfa044ee7aa57516b39785eb2e22f64))
+
+
+
+
+
 ## [1.42.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.42.4...v1.42.5) (2024-07-30)
 
 **Note:** Version bump only for package @paperless/core

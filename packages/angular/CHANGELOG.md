@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.43.0](https://github.com/Employes/Paperless/compare/v1.42.5...v1.43.0) (2024-08-02)
+
+
+### Features
+
+* **angular/table:** Add table-row-action usage instead of floating-menu-content ([7ee0f93](https://github.com/Employes/Paperless/commit/7ee0f93aa7361ab3e552ec5516e1abb6605507dc))
+
+
+
+
+
 ## [1.42.5](https://github.com/Employes/Paperless/compare/v1.42.4...v1.42.5) (2024-07-30)
 
 **Note:** Version bump only for package @paperless/angular

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.44.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.43.0...v1.44.0) (2024-08-02)
+
+
+### Features
+
+* **helper/table-row-action:** Add loading property ([94f12a5](https://github.com/ionic-team/stencil-component-starter/commit/94f12a5364e978e9197ff39cd4001b07cce7e790))
+
+
+
+
+
 # [1.43.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.42.5...v1.43.0) (2024-08-02)
 
 

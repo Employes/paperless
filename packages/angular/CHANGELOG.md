@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.44.2](https://github.com/Employes/Paperless/compare/v1.44.1...v1.44.2) (2024-08-02)
+
+
+### Bug Fixes
+
+* **angular/table:** Also show unselect button ([e852b8e](https://github.com/Employes/Paperless/commit/e852b8ec71ad3f226bc465c2b773a9ae260c0fcb))
+
+
+
+
+
 ## [1.44.1](https://github.com/Employes/Paperless/compare/v1.44.0...v1.44.1) (2024-08-02)
 
 

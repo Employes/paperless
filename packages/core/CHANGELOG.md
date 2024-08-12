@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.48.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.47.0...v1.48.0) (2024-08-12)
+
+
+### Features
+
+* **organisms/table:** Only show floating menu actions for both/single if possible ([a66eb47](https://github.com/ionic-team/stencil-component-starter/commit/a66eb4777ce5136c7d632bab56905e41b07d8689))
+
+
+
+
+
 # [1.47.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.46.0...v1.47.0) (2024-08-12)
 
 

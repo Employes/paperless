@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.47.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.46.0...v1.47.0) (2024-08-12)
+
+
+### Features
+
+* **helpers/table-row-action:** Add function for table row actions to be hidden for a row ([dcb37bb](https://github.com/ionic-team/stencil-component-starter/commit/dcb37bbc4a34cb58f10e2a358be84477c2a0d32e))
+
+
+
+
+
 # [1.46.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.45.0...v1.46.0) (2024-08-02)
 
 **Note:** Version bump only for package @paperless/core

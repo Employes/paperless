@@ -1,5 +1,5 @@
 <p-table-ngx
-	[enableRowSelection]="true"
+	[enableRowSelection]="false"
 	selectionKey="date"
 	[items]="items"
 	[total]="32"
@@ -25,6 +25,15 @@
 		type="both"
 		icon="arrow"
 		label="Navigate"
+		routerLink="../"
+		(action)="actionClick('navigate', $event)"
+		[showFunction]="showNavigateButton"
+	></p-table-row-action>
+	<p-table-row-action
+		type="single"
+		icon="arrow"
+		[iconRotate]="-90"
+		label="Navigate 2"
 		routerLink="../"
 		(action)="actionClick('navigate', $event)"
 		[showFunction]="showNavigateButton"

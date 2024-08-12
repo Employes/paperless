@@ -369,6 +369,7 @@ export class Table {
 	@State() private _enableRowSelection: boolean = this.enableRowSelection;
 	@State() private _rowSelectionLimit: number | undefined;
 
+	private _rowActionsFloatingAll: TableRowAction[] = [];
 	@State() private _rowActionsFloating: TableRowAction[] = [];
 	@State() private _rowActionsRow: TableRowAction[] = [];
 
@@ -626,7 +627,7 @@ export class Table {
 			this._rowActionsRow = actions.filter(
 				(a) => a.type === 'both' || a.type === 'single'
 			);
-			this._rowActionsFloating = actions
+			this._rowActionsFloatingAll = actions
 				.filter(
 					(a) => a.type === 'both' || a.type === 'multi' || mobile
 				)
@@ -641,7 +642,7 @@ export class Table {
 			let rowSelectionLimit = this.rowSelectionLimit;
 			if (
 				mobile && // we're mobile
-				this._rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				this._rowActionsFloatingAll?.length && // we have atleast 1 item in _rowActionsFloating
 				((rowSelectionLimit !== undefined && this.enableRowSelection) ||
 					!this.enableRowSelection)
 			) {
@@ -653,7 +654,7 @@ export class Table {
 			let enableRowSelection = this.enableRowSelection;
 			if (
 				mobile && // we're mobile
-				this._rowActionsFloating?.length && // we have atleast 1 item in _rowActionsFloating
+				this._rowActionsFloatingAll?.length && // we have atleast 1 item in _rowActionsFloating
 				!enableRowSelection
 			) {
 				enableRowSelection = true;
@@ -936,7 +937,7 @@ export class Table {
 			this.selectedRows = [...this.selectedRows, ...toAdd];
 			this.selectedRowsChange.emit(this.selectedRows);
 			if (this.enableFloatingMenu && !this._floatingMenuShown) {
-				this._floatingMenuShown = true;
+				this._showFloatingMenu();
 			}
 
 			return;
@@ -995,7 +996,7 @@ export class Table {
 			this.rowSelected.emit(row);
 
 			if (this.enableFloatingMenu && !this._floatingMenuShown) {
-				this._floatingMenuShown = true;
+				this._showFloatingMenu();
 			}
 
 			return;
@@ -1144,5 +1145,26 @@ export class Table {
 		}
 
 		return this._findRowAction(el?.parentElement);
+	}
+
+	private _showFloatingMenu() {
+		let actions = this._rowActionsFloatingAll;
+		if (
+			this.rowSelectionLimit === 1 &&
+			actions.findIndex(
+				(a) =>
+					(a.type === 'single' || a.type === 'both') && a.showFunction
+			) >= 0
+		) {
+			actions = actions.filter(
+				(a) =>
+					a.type === 'multi' ||
+					!a.showFunction ||
+					a.showFunction(this.selectedRows[0])
+			);
+		}
+
+		this._rowActionsFloating = actions;
+		this._floatingMenuShown = true;
 	}
 }

@@ -21,7 +21,12 @@ import {
 	IconVariant,
 	IllustrationVariant,
 } from '@paperless/core/dist/types/components';
-import { BehaviorSubject, distinctUntilChanged, Subscription } from 'rxjs';
+import {
+	BehaviorSubject,
+	distinctUntilChanged,
+	Subscription,
+	take,
+} from 'rxjs';
 import {
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
@@ -381,6 +386,7 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
 	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
+	public rowActionsFloatingAll$ = new BehaviorSubject<TableRowAction[]>([]);
 	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
 
 	public isMobile$ = new BehaviorSubject(isMobile());
@@ -571,7 +577,7 @@ export class Table implements OnInit, OnChanges {
 			this.selectedRowsChange.emit(this.selectedRows);
 
 			if (this.enableFloatingMenu) {
-				this.floatingMenuShown$.next(true);
+				this._showFloatingMenu();
 			}
 
 			return;
@@ -624,7 +630,7 @@ export class Table implements OnInit, OnChanges {
 			this.rowSelected.emit(row);
 
 			if (this.enableFloatingMenu) {
-				this.floatingMenuShown$.next(true);
+				this._showFloatingMenu();
 			}
 			return;
 		}
@@ -920,7 +926,30 @@ export class Table implements OnInit, OnChanges {
 			this.enableRowSelection = enableRowSelection;
 
 			this.rowActionsRow$.next(rowActionsRow);
-			this.rowActionsFloating$.next(rowActionsFloating);
+			this.rowActionsFloatingAll$.next(rowActionsFloating);
 		}, 200);
+	}
+
+	private _showFloatingMenu() {
+		this.rowActionsFloatingAll$.pipe(take(1)).subscribe((actions) => {
+			if (
+				this.rowSelectionLimit === 1 &&
+				actions.findIndex(
+					(a) =>
+						(a.type === 'single' || a.type === 'both') &&
+						a.showFunction
+				) >= 0
+			) {
+				actions = actions.filter(
+					(a) =>
+						a.type === 'multi' ||
+						!a.showFunction ||
+						a.showFunction(this.selectedRows[0])
+				);
+			}
+
+			this.rowActionsFloating$.next(actions);
+			this.floatingMenuShown$.next(true);
+		});
 	}
 }

@@ -19,7 +19,7 @@ import { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, Rotat
 import { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 import { TableColumn } from "./components/helpers/table-column/table-column.component";
 import { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
-import { TableRowActionFunc } from "./components/helpers/table-row-action/table-row-action.component";
+import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
@@ -34,7 +34,7 @@ export { IconFlipOptions as IconFlipOptions2, IconVariant as IconVariant2, Rotat
 export { buttonTemplateFunc } from "./components/molecules/table-header/table-header.component";
 export { TableColumn } from "./components/helpers/table-column/table-column.component";
 export { buttonTemplateFunc as buttonTemplateFunc1, templateFunc as templateFunc2 } from "./components/molecules/table-header/table-header.component";
-export { TableRowActionFunc } from "./components/helpers/table-row-action/table-row-action.component";
+export { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers/table-row-action/table-row-action.component";
 export namespace Components {
     interface PAccordion {
         /**
@@ -1509,6 +1509,10 @@ export namespace Components {
           * Wether the action is loading
          */
         "loading": boolean;
+        /**
+          * A function for row actions of type "single" or "both" that determines if the action is shown on the row
+         */
+        "showFunction": TableRowActionShowFunc;
         /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */
@@ -3777,6 +3781,10 @@ declare namespace LocalJSX {
           * Wether the action is loading
          */
         "loading"?: boolean;
+        /**
+          * A function for row actions of type "single" or "both" that determines if the action is shown on the row
+         */
+        "showFunction"?: TableRowActionShowFunc;
         /**
           * The type of action mutli = Only multi select action single = Only an action on the row both = Action on both locations
          */

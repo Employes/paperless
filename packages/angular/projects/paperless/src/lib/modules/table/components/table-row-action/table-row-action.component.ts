@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { Components } from '@paperless/core';
+import { TableRowActionShowFunc } from '@paperless/core/dist/types/components';
 import { Observable, Subscribable } from 'rxjs';
 import { ProxyCmp } from '../../../../stencil/angular-component-lib/utils';
 
@@ -22,8 +23,9 @@ export interface TableRowActionClickEvent {
 	ctrlDown: boolean;
 }
 export declare interface TableRowAction
-	extends Omit<Components.PTableRowAction, 'action'> {
+	extends Omit<Components.PTableRowAction, 'action' | 'showFunction'> {
 	action: EventEmitter<TableRowActionClickEvent>;
+	showFunction?: TableRowActionShowFunc;
 }
 
 export type AsyncItem<T> = Observable<T> | Subscribable<T> | Promise<T>;
@@ -49,6 +51,7 @@ export type TableRowActionQueryParams =
 		'label',
 		'type',
 		'loading',
+		'showFunction',
 	],
 })
 @Component({
@@ -90,6 +93,11 @@ export class TableRowAction implements OnChanges {
 	 * Event whenever loading has changed
 	 */
 	@Output() _loadingChanged: EventEmitter<boolean> = new EventEmitter();
+
+	/**
+	 * A function for row actions of type "single" or "both" that determines if the action is shown on the row
+	 */
+	@Input() showFunction?: TableRowActionShowFunc;
 
 	constructor(
 		private _c: ChangeDetectorRef,

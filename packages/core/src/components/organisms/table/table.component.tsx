@@ -749,6 +749,14 @@ export class Table {
 
 		if (this._rowActionsRow?.length && !isMobile()) {
 			const lastDef = this._columns[this._columns.length - 1];
+			const actions = this._rowActionsRow.filter((a) =>
+				a.showFunction ? a.showFunction(item) : true
+			);
+
+			if (!actions.length) {
+				return columns;
+			}
+
 			columns.push(
 				<p-table-cell
 					variant="actions"
@@ -759,7 +767,7 @@ export class Table {
 					tableHasActions={!!this._rowActionsRow.length}
 				>
 					<div slot="actions" class="flex ml-auto gap-2 items-center">
-						{this._rowActionsRow.map((a) => (
+						{actions.map((a) => (
 							<p-tooltip content={a.label}>
 								<p-button
 									data-is-action

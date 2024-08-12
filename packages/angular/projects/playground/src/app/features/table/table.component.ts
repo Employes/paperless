@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
 	OverlayService,
 	TableRowActionClickEvent,
@@ -8,16 +8,22 @@ import { BehaviorSubject } from 'rxjs';
 
 @Component({
 	templateUrl: 'table.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent {
 	public items = JSON.parse(
-		'[{"date":"01/01/2022","hours":8,"status":"Ingediend", "canSelect": true},{"date":"02/01/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true},{"date":"10/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
+		'[{"date":"01/01/2022","hours":8,"status":"Ingediend", "canSelect": true, "hide": true},{"date":"02/01/2022","hours":6.5,"status":"Ingediend", "canSelect": true},{"date":"03/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"08/01/2022","hours":8,"status":"Goedgekeurd", "canSelect": true},{"date":"09/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true},{"date":"10/01/2022","hours":8,"status":"Afgekeurd", "canSelect": true}]'
 	);
 
 	public floatingMenuAmountSelectedText = '0 items selected';
 
 	public downloading$ = new BehaviorSubject(false);
 	private _downloadTimeout: unknown | undefined;
+
+	public showNavigateButton = (item: any) => {
+		console.log('Show navigate button');
+		return item.hide === undefined ? true : !item.hide;
+	};
 
 	constructor(private _overlay: OverlayService) {}
 

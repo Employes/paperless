@@ -10,6 +10,10 @@ export type TableRowActionFunc = {
 	(item: any[], multi: true): void;
 };
 
+export type TableRowActionShowFunc = {
+	(item: any): boolean;
+};
+
 @Component({
 	tag: 'p-table-row-action',
 })
@@ -62,6 +66,11 @@ export class TableRowAction {
 	 * Wether the action is loading
 	 */
 	@Prop() loading: boolean = false;
+
+	/**
+	 * A function for row actions of type "single" or "both" that determines if the action is shown on the row
+	 */
+	@Prop() showFunction: TableRowActionShowFunc;
 
 	render() {
 		return;

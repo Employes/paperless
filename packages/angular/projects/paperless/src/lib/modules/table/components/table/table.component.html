@@ -146,43 +146,56 @@
 
 						<ng-template #actionsTemplate>
 							<div class="flex ml-auto gap-2 items-center">
-								<p-tooltip
-									[content]="action.label"
+								<ng-container
 									*ngFor="
 										let action of rowActionsRow$ | async
 									"
 								>
-									<p-button
-										data-is-action
-										variant="secondary"
-										slot="trigger"
-										[icon]="action.icon"
-										[iconRotate]="action.iconRotate"
-										iconFlip="action.iconFlip"
-										iconOnly="true"
-										size="small"
-										[disabled]="action.disabled"
-										[routerLink]="
-											action.routerLink
-												? (_getActionRouterLink(
-														action.routerLink,
-														rowIndex
-													) | async)
-												: null
+									<p-tooltip
+										*ngIf="
+											action.showFunction
+												? action.showFunction(
+														parsedItems[rowIndex]
+													)
+												: true
 										"
-										[queryParams]="
-											action.queryParams
-												? (_getActionQueryParams(
-														action.queryParams,
-														rowIndex
-													) | async)
-												: null
-										"
-										(onClick)="
-											_rowActionClick(action, rowIndex)
-										"
-									></p-button>
-								</p-tooltip>
+										[content]="action.label"
+									>
+										<p-button
+											data-is-action
+											variant="secondary"
+											slot="trigger"
+											[icon]="action.icon"
+											[iconRotate]="action.iconRotate"
+											iconFlip="action.iconFlip"
+											iconOnly="true"
+											size="small"
+											[disabled]="action.disabled"
+											[routerLink]="
+												action.routerLink
+													? (_getActionRouterLink(
+															action.routerLink,
+															rowIndex
+														) | async)
+													: null
+											"
+											[queryParams]="
+												action.queryParams
+													? (_getActionQueryParams(
+															action.queryParams,
+															rowIndex
+														) | async)
+													: null
+											"
+											(onClick)="
+												_rowActionClick(
+													action,
+													rowIndex
+												)
+											"
+										></p-button>
+									</p-tooltip>
+								</ng-container>
 							</div>
 						</ng-template>
 					</ng-container>

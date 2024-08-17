@@ -15,25 +15,27 @@
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"resolveJsonModule": true,
-		"noImplicitReturns": false,
 		"noImplicitThis": false,
 		"noImplicitAny": false,
 		"noFallthroughCasesInSwitch": true,
-		"noImplicitOverride": false,
-		"noPropertyAccessFromIndexSignature": false,
 		"strictNullChecks": false,
 		"noUnusedLocals": true,
 		"allowSyntheticDefaultImports": true,
 		"useDefineForClassFields": false,
+		"esModuleInterop": true,
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
 		"target": "es2020",
 		"module": "es2020",
-		"lib": ["es2018", "dom"]
+		"lib": ["es2018", "dom"],
 	},
 	"angularCompilerOptions": {
-		"enableIvy": true,
 		"enableI18nLegacyMessageIdFormat": false,
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
-		"strictTemplates": false
+		"strictTemplates": true,
+		"enableIvy": true,
 	}
 }

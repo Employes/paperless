@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.2](https://github.com/Employes/Paperless/compare/v1.49.1...v1.49.2) (2024-08-19)
+
+
+### Bug Fixes
+
+* **angular/table:** Set correct type for items ([6023fd2](https://github.com/Employes/Paperless/commit/6023fd2cc87a90035379c9b584457c53f576f43a))
+
+
+
+
+
 ## [1.49.1](https://github.com/Employes/Paperless/compare/v1.49.0...v1.49.1) (2024-08-19)
 
 **Note:** Version bump only for package @paperless/angular

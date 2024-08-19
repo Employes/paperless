@@ -62,6 +62,11 @@ export class Dropdown {
 	@Prop() applyFullWidth: boolean = true;
 
 	/**
+	 * Wether to allow overflow in the container
+	 */
+	@Prop() allowOverflow: boolean = true;
+
+	/**
 	 * Wether the dropdown container should be scrollable when the threshold is met.
 	 */
 	@Prop() scrollable: boolean | 'default' | 'large' = false;
@@ -137,6 +142,7 @@ export class Dropdown {
 					role="popover"
 					maxWidth={!this.calculateWidth && this.applyMaxWidth}
 					fullWidth={this.applyFullWidth && !this.applyMaxWidth}
+					allowOverflow={this.allowOverflow}
 					ref={(el) => this._load(el)}
 					data-placement={this.placement}
 					data-strategy={this.strategy}

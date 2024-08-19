@@ -3,7 +3,7 @@
 p-dropdown-menu-container {
 	@apply w-auto;
 	@apply rounded-xxlarge bg-white;
-	@apply z-10 drop-shadow-4 filter;
+	@apply z-10 overflow-y-auto overflow-x-hidden drop-shadow-4 filter;
 
 	.content {
 		@apply w-full p-2;

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.49.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.48.0...v1.49.0) (2024-08-19)
+
+
+### Features
+
+* **atoms/dropdown-menu/container:** Add property to allow overflow ([fe71e83](https://github.com/ionic-team/stencil-component-starter/commit/fe71e838213a6e5f1df49726190d59bf545ad4e3))
+* **molecules/dropdown:** Add property to allow overflow ([c1264b3](https://github.com/ionic-team/stencil-component-starter/commit/c1264b3efab16191d0787c9c4035acc6b19206ff))
+
+
+### Reverts
+
+* Revert "refactor(atoms/dropdown-menu/container): Remove overflow" ([bbace95](https://github.com/ionic-team/stencil-component-starter/commit/bbace95ea048d4b6563c254a98e5ead49e338fe0))
+
+
+
+
+
 # [1.48.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.47.0...v1.48.0) (2024-08-12)
 
 

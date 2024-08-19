@@ -64,7 +64,7 @@ export class Dropdown {
 	/**
 	 * Wether to allow overflow in the container
 	 */
-	@Prop() allowOverflow: boolean = true;
+	@Prop() allowOverflow: boolean = false;
 
 	/**
 	 * Wether the dropdown container should be scrollable when the threshold is met.

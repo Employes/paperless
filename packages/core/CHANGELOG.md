@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.49.0...v1.49.1) (2024-08-19)
+
+
+### Bug Fixes
+
+* **molecules/dropdown:** Default `false` for `allowOverflow` ([0e81ed8](https://github.com/ionic-team/stencil-component-starter/commit/0e81ed8047620890c2db7e5ecb3b5f8918606b79))
+
+
+
+
+
 # [1.49.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.48.0...v1.49.0) (2024-08-19)
 
 

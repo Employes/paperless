@@ -17,6 +17,11 @@ export class DropdownMenuContainer {
 	@Prop() fullWidth: boolean = true;
 
 	/**
+	 * Wether to allow overflow
+	 */
+	@Prop() allowOverflow: boolean = false;
+
+	/**
 	 * Wether the container should be scrollable when the threshold is met.
 	 */
 	@Prop() scrollable: boolean | 'default' | 'large' | 'xlarge' = false;
@@ -26,7 +31,7 @@ export class DropdownMenuContainer {
 			<Host
 				class={`p-dropdown-menu-container ${
 					this.maxWidth && 'max-width'
-				} ${this.fullWidth && 'full-width'} ${
+				} ${this.fullWidth && 'full-width'} ${!this.allowOverflow && 'no-overflow'} ${
 					!!this.scrollable && 'scrollable'
 				} ${this.scrollable === 'large' ? 'scrollable-large' : ''} ${this.scrollable === 'xlarge' ? 'scrollable-xlarge' : ''}`}
 			>

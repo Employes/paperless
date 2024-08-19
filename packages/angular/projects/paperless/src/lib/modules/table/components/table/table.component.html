@@ -85,9 +85,9 @@
 		</ng-container>
 
 		<ng-template #contentTemplate>
-			<ng-container *ngIf="items?.length; else emptyStateTemplate">
+			<ng-container *ngIf="parsedItems?.length; else emptyStateTemplate">
 				<p-table-row
-					*ngFor="let item of items; let rowIndex = index"
+					*ngFor="let item of parsedItems; let rowIndex = index"
 					[enableHover]="enableRowSelection || enableRowClick"
 					(click)="_rowClick($event, rowIndex)"
 				>

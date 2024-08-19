@@ -51,7 +51,7 @@ export class Table implements OnInit, OnChanges {
 	/**
 	 * The items to be fed to the table
 	 */
-	@Input() items!: string;
+	@Input() items!: string | any[];
 
 	/**
 	 * Wether data is loading
@@ -507,7 +507,7 @@ export class Table implements OnInit, OnChanges {
 		this.emptyStateActionClick.emit();
 	}
 
-	private _parseItems(items: string) {
+	private _parseItems(items: string | any[]) {
 		if (!items) {
 			this.parsedItems = [];
 			return;

@@ -1,3 +1,6 @@
 import conventions from './packages/conventions/.prettierrc.js';
 
-export default conventions;
+module.exports = Object.assign(conventions, {
+	tailwindConfig: './tailwind.config.js',
+});
+

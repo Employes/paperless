@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.8](https://github.com/employes/paperless/compare/v1.49.7...v1.49.8) (2024-09-04)
+
+
+### Features
+
+* **prettierrc:** Add tailwindconfig ([0384676](https://github.com/employes/paperless/commit/03846769560f403a07fe41dbda609120ad214915))
+
+
+
+
+
 ## [1.49.7](https://github.com/employes/paperless/compare/v1.49.6...v1.49.7) (2024-09-04)
 
 

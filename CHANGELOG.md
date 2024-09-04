@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.6](https://github.com/employes/paperless/compare/v1.49.5...v1.49.6) (2024-09-04)
+
+
+### Bug Fixes
+
+* **conventions/prettier:** Add tailwindcss plugin ([d84a672](https://github.com/employes/paperless/commit/d84a672beee9ba44bcf9745da4b393dd6e31c7d7))
+
+
+
+
+
 ## [1.49.5](https://github.com/employes/paperless/compare/v1.49.4...v1.49.5) (2024-09-04)
 
 **Note:** Version bump only for package paperless

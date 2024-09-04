@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.7](https://github.com/Employes/Paperless/compare/v1.49.6...v1.49.7) (2024-09-04)
+
+
+### Bug Fixes
+
+* **conventions/prettier:** `tabs` -> `useTabs` ([a453609](https://github.com/Employes/Paperless/commit/a4536097316bdeb61029942e85dfa9e457f77564))
+
+
+
+
+
 ## [1.49.6](https://github.com/Employes/Paperless/compare/v1.49.5...v1.49.6) (2024-09-04)
 
 

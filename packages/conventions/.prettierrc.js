@@ -6,7 +6,7 @@
  */
 const config = {
 	printWidth: 140,
-	tabs: true,
+	useTabs: true,
 	semi: true,
 	singleQuote: true,
 	jsxSingleQuote: true,

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.50.0](https://github.com/employes/paperless/compare/v1.49.8...v1.50.0) (2024-09-05)
+
+
+### Features
+
+* **organisms/drawer:** Add source of close clicked event ([7677284](https://github.com/employes/paperless/commit/767728490037f3d9bb30bb17175151a348803588))
+
+
+
+
+
 ## [1.49.8](https://github.com/employes/paperless/compare/v1.49.7...v1.49.8) (2024-09-04)
 
 

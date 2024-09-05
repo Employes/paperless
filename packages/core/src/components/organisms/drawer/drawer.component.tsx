@@ -60,6 +60,7 @@ export class Drawer {
 	closeClicked: EventEmitter<{
 		event: MouseEvent;
 		canClose: boolean;
+    source: 'unknown' | 'backdrop' | 'close' | 'event'
 	}>;
 
 	/**
@@ -106,7 +107,7 @@ export class Drawer {
 						{(this.header?.length || this._hasHeaderSlot) && (
 							<p-drawer-header
 								show-close={this.showClose}
-								onClose={(ev) => this.close(ev.detail)}
+								onClose={(ev) => this.close(ev.detail, 'close')}
 							>
 								{this._hasHeaderSlot
 									? headerContent
@@ -125,14 +126,15 @@ export class Drawer {
 			return;
 		}
 
-		this.close(ev);
+		this.close(ev, 'backdrop');
 	}
 
-	public close(ev?: MouseEvent, force = false) {
+	public close(ev?: MouseEvent, source: 'unknown' | 'backdrop' | 'close' | 'event' = 'unknown', force = false) {
 		if (!force) {
 			this.closeClicked.emit({
 				event: ev,
 				canClose: this.canClose,
+        source
 			});
 
 			if (!this.canClose) {
@@ -151,11 +153,11 @@ export class Drawer {
 
 	@Listen('closeDrawer', { target: 'window' })
 	handleCloseDrawer() {
-		this.close();
+		this.close(null, 'event');
 	}
 
 	@Listen('forceCloseDrawer', { target: 'window' })
 	handleForceCloseDrawer() {
-		this.close(null, true);
+		this.close(null, 'event', true);
 	}
 }

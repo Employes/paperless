@@ -20,10 +20,10 @@
 
 ## Events
 
-| Event          | Description       | Type                                                     |
-| -------------- | ----------------- | -------------------------------------------------------- |
-| `closeClicked` | Close click event | `CustomEvent<{ event: MouseEvent; canClose: boolean; }>` |
-| `closed`       | Closed event      | `CustomEvent<null>`                                      |
+| Event          | Description       | Type                                                                                                            |
+| -------------- | ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| `closeClicked` | Close click event | `CustomEvent<{ event: MouseEvent; canClose: boolean; source: "backdrop" \| "close" \| "unknown" \| "event"; }>` |
+| `closed`       | Closed event      | `CustomEvent<null>`                                                                                             |
 
 
 ## Dependencies

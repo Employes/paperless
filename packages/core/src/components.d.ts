@@ -317,6 +317,10 @@ export namespace Components {
          */
         "helper": string;
         /**
+          * The display & parse format to use
+         */
+        "isIconHiddenWhenFilled": boolean;
+        /**
           * The label of the input group used by the datepicker
          */
         "label": string;
@@ -413,6 +417,10 @@ export namespace Components {
     }
     interface PDropdown {
         /**
+          * Wether to allow overflow in the container
+         */
+        "allowOverflow": boolean;
+        /**
           * Wether to apply chevron automatically
          */
         "applyChevron": boolean;
@@ -466,6 +474,10 @@ export namespace Components {
         "strategy": Strategy;
     }
     interface PDropdownMenuContainer {
+        /**
+          * Wether to allow overflow
+         */
+        "allowOverflow": boolean;
         /**
           * Wether the container should all available space
          */
@@ -2442,6 +2454,10 @@ declare namespace LocalJSX {
          */
         "helper"?: string;
         /**
+          * The display & parse format to use
+         */
+        "isIconHiddenWhenFilled"?: boolean;
+        /**
           * The label of the input group used by the datepicker
          */
         "label"?: string;
@@ -2515,6 +2531,7 @@ declare namespace LocalJSX {
         "onCloseClicked"?: (event: PDrawerCustomEvent<{
 		event: MouseEvent;
 		canClose: boolean;
+    source: 'unknown' | 'backdrop' | 'close' | 'event'
 	}>) => void;
         /**
           * Closed event
@@ -2556,6 +2573,10 @@ declare namespace LocalJSX {
         "showClose"?: boolean;
     }
     interface PDropdown {
+        /**
+          * Wether to allow overflow in the container
+         */
+        "allowOverflow"?: boolean;
         /**
           * Wether to apply chevron automatically
          */
@@ -2614,6 +2635,10 @@ declare namespace LocalJSX {
         "strategy"?: Strategy;
     }
     interface PDropdownMenuContainer {
+        /**
+          * Wether to allow overflow
+         */
+        "allowOverflow"?: boolean;
         /**
           * Wether the container should all available space
          */

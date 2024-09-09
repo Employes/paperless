@@ -248,7 +248,7 @@ export class Datepicker {
 				>
 					<p-input-group
 						slot="trigger"
-						icon={this.isIconHiddenWhenFilled && this._getFormattedDate() ? null : 'calendar'}
+						icon={this.isIconHiddenWhenFilled && !!this._value ? null : 'calendar'}
 						iconPosition="start"
 						size={this.size}
 						prefix={this.prefix}

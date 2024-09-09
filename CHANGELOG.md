@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.51.0](https://github.com/employes/paperless/compare/v1.50.0...v1.51.0) (2024-09-09)
+
+
+### Features
+
+* **datepicker:** Add `isIconHiddenWhenFilled` property ([#203](https://github.com/employes/paperless/issues/203)) ([8bed151](https://github.com/employes/paperless/commit/8bed151bf66c4bdc60471e9b77d6d42d9b87a5a0))
+
+
+
+
+
 # [1.50.0](https://github.com/employes/paperless/compare/v1.49.8...v1.50.0) (2024-09-05)
 
 

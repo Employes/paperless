@@ -80,10 +80,16 @@ export class Datepicker {
 	 */
 	@Prop() format: string = 'dd-MM-yyyy';
 
+  /**
+   * Hides the icon when filled
+   */
+  @Prop() isIconHiddenWhenFilled: boolean = false;
+
 	/**
 	 * The size of the input group used by the datepicker
 	 */
 	@Prop() size: 'small' | 'medium' = 'medium';
+
 
 	/**
 	 * The prefix of the input group used by the datepicker
@@ -242,6 +248,8 @@ export class Datepicker {
 				>
 					<p-input-group
 						slot="trigger"
+						icon={this.isIconHiddenWhenFilled && this._getFormattedDate() ? null : 'calendar'}
+						iconPosition="start"
 						size={this.size}
 						prefix={this.prefix}
 						label={this.label}

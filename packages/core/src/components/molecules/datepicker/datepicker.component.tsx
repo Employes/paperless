@@ -242,8 +242,6 @@ export class Datepicker {
 				>
 					<p-input-group
 						slot="trigger"
-						icon="calendar"
-						iconPosition="start"
 						size={this.size}
 						prefix={this.prefix}
 						label={this.label}

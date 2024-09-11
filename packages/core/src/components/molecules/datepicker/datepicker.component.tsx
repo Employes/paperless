@@ -83,7 +83,7 @@ export class Datepicker {
   /**
    * Hides the icon when filled
    */
-  @Prop() isIconHiddenWhenFilled: boolean = false;
+  @Prop() hideIconWhenFilled: boolean = false;
 
 	/**
 	 * The size of the input group used by the datepicker
@@ -248,7 +248,7 @@ export class Datepicker {
 				>
 					<p-input-group
 						slot="trigger"
-						icon={this.isIconHiddenWhenFilled && !!this._value ? null : 'calendar'}
+						icon={this.hideIconWhenFilled && !!this._value ? null : 'calendar'}
 						iconPosition="start"
 						size={this.size}
 						prefix={this.prefix}

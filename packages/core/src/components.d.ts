@@ -317,9 +317,9 @@ export namespace Components {
          */
         "helper": string;
         /**
-          * The display & parse format to use
+          * Hides the icon when filled
          */
-        "isIconHiddenWhenFilled": boolean;
+        "hideIconWhenFilled": boolean;
         /**
           * The label of the input group used by the datepicker
          */
@@ -2454,9 +2454,9 @@ declare namespace LocalJSX {
          */
         "helper"?: string;
         /**
-          * The display & parse format to use
+          * Hides the icon when filled
          */
-        "isIconHiddenWhenFilled"?: boolean;
+        "hideIconWhenFilled"?: boolean;
         /**
           * The label of the input group used by the datepicker
          */

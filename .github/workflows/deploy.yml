@@ -46,7 +46,7 @@ jobs:
               uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
               with:
                   always-auth: true
-                  node-version: 18
+                  node-version: 20.9
                   registry-url: 'https://registry.npmjs.org'
 
             - uses: c-hive/gha-yarn-cache@d528cd63c28aed0a9f44b1cada95050d7aa95c2e # tag=v2
@@ -119,7 +119,7 @@ jobs:
               uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
               with:
                   always-auth: true
-                  node-version: 18
+                  node-version: 20.9
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Download a single artifact
@@ -157,7 +157,7 @@ jobs:
               uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
               with:
                   always-auth: true
-                  node-version: 18
+                  node-version: 20.9
                   registry-url: 'https://registry.npmjs.org'
 
             - name: Install dependencies

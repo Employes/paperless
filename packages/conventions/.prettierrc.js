@@ -12,7 +12,7 @@ const config = {
 	jsxSingleQuote: true,
 	trailingComma: 'es5',
 	bracketSpacing: true,
-	bracketSameLine: true,
+	bracketSameLine: false,
 	arrowParens: 'avoid',
 	singleAttributePerLine: true,
 	plugins: ['prettier-plugin-tailwindcss'],

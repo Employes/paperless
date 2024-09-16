@@ -162,13 +162,8 @@ export class TableHeader {
 	@State() private _locales: any = {};
 
 	private _queryObserver = new Subject<string>();
-	private _hasCustomFilterSlot = false;
 
 	componentWillLoad() {
-		this._hasCustomFilterSlot = !!this._el.querySelector(
-			':scope > [slot="custom-filter"]'
-		);
-
 		this._setLocales();
 	}
 
@@ -186,6 +181,10 @@ export class TableHeader {
 			(this.selectedFiltersAmount || 0) +
 			(activeQuickFilter?.default ? 0 : 1);
 
+		const hasCustomFilterSlot = !!this._el.querySelector(
+			':scope > [slot="custom-filter"]'
+		);
+
 		return (
 			<Host class="p-table-header">
 				{this.loading && (
@@ -196,10 +195,10 @@ export class TableHeader {
 				)}
 
 				{!this.loading &&
-					(this._hasCustomFilterSlot ||
+					(hasCustomFilterSlot ||
 						this.quickFilters.length > 0) && (
 						<div class="left-side flex flex-col justify-start gap-4 desktop-xs:flex-row">
-							{this._hasCustomFilterSlot && (
+							{hasCustomFilterSlot && (
 								<slot name="custom-filter" />
 							)}
 

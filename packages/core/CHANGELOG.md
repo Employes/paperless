@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.51.4](https://github.com/ionic-team/stencil-component-starter/compare/v1.51.3...v1.51.4) (2024-09-16)
+
+
+### Bug Fixes
+
+* **molecules/table/header:** Make sure we check on custom-slots on render and not on load ([8a869dd](https://github.com/ionic-team/stencil-component-starter/commit/8a869dd44ec88606326121fe193c49cde59d660c))
+
+
+
+
+
 ## [1.51.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.51.2...v1.51.3) (2024-09-11)
 
 **Note:** Version bump only for package @paperless/core

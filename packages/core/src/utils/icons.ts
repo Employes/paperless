@@ -48,6 +48,7 @@ import question from '../assets/icons/question.svg';
 import receipt from '../assets/icons/receipt.svg';
 import reload from '../assets/icons/reload.svg';
 import report from '../assets/icons/report.svg';
+import review from '../assets/icons/review.svg';
 import search from '../assets/icons/search.svg';
 import settings from '../assets/icons/settings.svg';
 import sick from '../assets/icons/sick.svg';
@@ -113,6 +114,7 @@ export default {
 	reload,
 	receipt,
 	report,
+  review,
 	search,
 	settings,
 	sick,

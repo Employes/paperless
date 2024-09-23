@@ -11,9 +11,7 @@
 
 	<ng-container *ngSwitchCase="'actions'">
 		<ng-container *ngIf="template">
-			<ng-container
-				*ngTemplateOutlet="template; context: data"
-			></ng-container>
+			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
 		</ng-container>
 	</ng-container>
 
@@ -35,9 +33,7 @@
 		[class.justify-end]="definition.align === 'end'"
 	>
 		<ng-container *ngIf="template; else valueTemplate">
-			<ng-container
-				*ngTemplateOutlet="template; context: data"
-			></ng-container>
+			<ng-container *ngTemplateOutlet="template; context: data"></ng-container>
 		</ng-container>
 	</div>
 </ng-container>

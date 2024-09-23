@@ -68,8 +68,11 @@ export class TableNgxDirective extends BaseValueAccessor {
 			this._setActiveQuickFilter(value.quickFilter);
 		}
 
-		this._base.selectedFiltersAmount = !value.filters || value.filters.length === 0 ? undefined : value.filters.length;
-		
+		this._base.selectedFiltersAmount =
+			!value.filters || value.filters.length === 0
+				? undefined
+				: value.filters.length;
+
 		this._checkEmptyStateType();
 		this._checkResetButtons();
 	}
@@ -94,7 +97,7 @@ export class TableNgxDirective extends BaseValueAccessor {
 		if (type === 'quickFilter' && typeof value === 'object') {
 			this._setActiveQuickFilter(value);
 		}
-		
+
 		this._checkEmptyStateType();
 		this._checkResetButtons();
 	}
@@ -106,7 +109,13 @@ export class TableNgxDirective extends BaseValueAccessor {
 	}
 
 	private _checkEmptyStateType() {
-		if(this.lastValue.query?.length || (this.lastValue.quickFilter && !this.lastValue.quickFilter?.default) || (this._base.selectedFiltersAmount && this._base.selectedFiltersAmount > 0) || this.lastValue.filters?.length) {
+		if (
+			this.lastValue.query?.length ||
+			(this.lastValue.quickFilter && !this.lastValue.quickFilter?.default) ||
+			(this._base.selectedFiltersAmount &&
+				this._base.selectedFiltersAmount > 0) ||
+			this.lastValue.filters?.length
+		) {
 			this._base.emptyStateType = 'filtered';
 			return;
 		}
@@ -118,21 +127,21 @@ export class TableNgxDirective extends BaseValueAccessor {
 		const activeQuickFilter = this.lastValue.quickFilter;
 		const selectedFiltersAmount = this._base.selectedFiltersAmount;
 
-		if (
-            activeQuickFilter ||
-            selectedFiltersAmount
-        ) {
-            if (selectedFiltersAmount && selectedFiltersAmount > 0) {
-                this._base.filterModalShowReset = true;
-            } else {
+		if (activeQuickFilter || selectedFiltersAmount) {
+			if (selectedFiltersAmount && selectedFiltersAmount > 0) {
+				this._base.filterModalShowReset = true;
+			} else {
 				this._base.filterModalShowReset = false;
 			}
 
-            if (selectedFiltersAmount && selectedFiltersAmount > 0 || !activeQuickFilter?.default) {
-                this._base.filterModalShowResetMobile = true;
-            } else {
+			if (
+				(selectedFiltersAmount && selectedFiltersAmount > 0) ||
+				!activeQuickFilter?.default
+			) {
+				this._base.filterModalShowResetMobile = true;
+			} else {
 				this._base.filterModalShowResetMobile = false;
 			}
-        }
+		}
 	}
 }

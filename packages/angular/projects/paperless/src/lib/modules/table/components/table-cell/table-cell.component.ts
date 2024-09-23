@@ -7,6 +7,7 @@ import {
 	TableColumnSizesKey,
 	TableDefinitionData,
 } from '@paperless/core';
+
 @Component({
 	selector: 'p-table-cell-ngx',
 	styleUrls: ['table-cell.component.scss'],
@@ -70,9 +71,17 @@ export class TableCell {
 			};
 		}
 
+		if (this.variant === 'actions') {
+			return {
+				value: this.value,
+				item: this.item,
+				index: this.index,
+				rowIndex: this.rowIndex,
+			};
+		}
+
 		return {
-			value:
-				this.value ?? objectGetByPath(this.item, this.definition.path),
+			value: this.value ?? objectGetByPath(this.item, this.definition.path),
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
@@ -112,6 +121,10 @@ export class TableCell {
 
 	public getColumnClasses() {
 		const sizes = this.definition ? this._getSizes(this.definition) : {};
+		const isLastValues = this.definition
+			? this._getIsLastValues(this.definition)
+			: {};
+
 		return {
 			'justify-start':
 				!this.definition?.align || this.definition?.align === 'start',
@@ -121,16 +134,10 @@ export class TableCell {
 				this.variant !== 'header' && this.definition?.type === 'th',
 			'text-storm-dark':
 				this.variant !== 'header' && this.definition?.type === 'th',
-			'pr-4': this.definition?.isLast === false,
-			'group-hover:hidden':
-				this.definition.isLast &&
-				this.tableHasActions &&
-				this.variant !== 'actions',
-			'group-hover:flex':
-				this.variant === 'actions' && this.tableHasActions,
+			'group-hover:flex': this.variant === 'actions' && this.tableHasActions,
 			hidden: this.variant === 'actions' && this.tableHasActions,
-			flex: this.variant !== 'actions',
 			...sizes,
+			...isLastValues,
 		};
 	}
 
@@ -145,13 +152,13 @@ export class TableCell {
      desktop:w-1/12 desktop:w-2/12 desktop:w-3/12 desktop:w-4/12 desktop:w-5/12 desktop:w-6/12 desktop:w-7/12 desktop:w-8/12 desktop:w-9/12 desktop:w-10/12 desktop:w-11/12 desktop:w-12/12
      desktop-lg:w-1/12 desktop-lg:w-2/12 desktop-lg:w-3/12 desktop-lg:w-4/12 desktop-lg:w-5/12 desktop-lg:w-6/12 desktop-lg:w-7/12 desktop-lg:w-8/12 desktop-lg:w-9/12 desktop-lg:w-10/12 desktop-lg:w-11/12 desktop-lg:w-12/12
      desktop-xl:w-1/12 desktop-xl:w-2/12 desktop-xl:w-3/12 desktop-xl:w-4/12 desktop-xl:w-5/12 desktop-xl:w-6/12 desktop-xl:w-7/12 desktop-xl:w-8/12 desktop-xl:w-9/12 desktop-xl:w-10/12 desktop-xl:w-11/12 desktop-xl:w-12/12
-     hidden flex
-     tablet:hidden tablet:flex
-     desktop-xs:hidden desktop-xs:flex
-     desktop-sm:hidden desktop-sm:flex
-     desktop:hidden desktop:flex
-     desktop-lg:hidden desktop-lg:flex
-     desktop-xl:hidden desktop-xl:flex
+     hidden flex group-hover:hidden group-hover:flex
+     tablet:hidden tablet:flex tablet:group-hover:hidden tablet:group-hover:flex
+     desktop-xs:hidden desktop-xs:flex desktop-xs:group-hover:hidden desktop-xs:group-hover:flex
+     desktop-sm:hidden desktop-sm:flex  desktop-sm:group-hover:hidden desktop-sm:group-hover:flex
+     desktop:hidden desktop:flex desktop:group-hover:hidden desktop:group-hover:flex
+     desktop-lg:hidden desktop-lg:flex desktop-lg:group-hover:hidden desktop-lg:group-hover:flex
+     desktop-xl:hidden desktop-xl:flex desktop-xl:group-hover:hidden desktop-xl:group-hover:flex
 
 
         ⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⠿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣷⠿⣿⣿⣶⣦⣀⠀⠀⠀⠀⠀
@@ -164,8 +171,7 @@ export class TableCell {
         ⠀⠀⣨⣷⣶⣿⣧⣛⣛⠿⠿⣿⢿⣿⣿⣛⣿⡿⠀⠀⡇⠀⠀⠀⠀⢸⠀⠈⢿⣟⣛⠿⢿⡿⢿⢿⢿⣛⣫⣼⡿⣶⣾⣅⡀⠀
         ⢀⡼⠋⠁⠀⠀⠈⠉⠛⠛⠻⠟⠸⠛⠋⠉⠁⠀⠀⢸⡇⠀⠀⠄⠀⢸⡄⠀⠀⠈⠉⠙⠛⠃⠻⠛⠛⠛⠉⠁⠀⠀⠈⠙⢧⡀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡇⢠⠀⠀⠀⢸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⢸⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠁⣿⠇⠀⠀⠀⠀⢸⡇⠙⢿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⡇⠀⠀⠀⠀⢸⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠁⣿⠇⠀⠀⠀⠀⢸⡇⠙⢿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠰⣄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⠖⡾⠁⠀⠀⣿⠀⠀⠀⠀⠀⠘⣿⠀⠀⠙⡇⢸⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠄⠀
         ⠀⠀⢻⣷⡦⣤⣤⣤⡴⠶⠿⠛⠉⠁⠀⢳⠀⢠⡀⢿⣀⠀⠀⠀⠀⣠⡟⢀⣀⢠⠇⠀⠈⠙⠛⠷⠶⢦⣤⣤⣤⢴⣾⡏⠀⠀
         ⠀⠀⠈⣿⣧⠙⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⢊⣙⠛⠒⠒⢛⣋⡚⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⡿⠁⣾⡿⠀⠀⠀
@@ -228,12 +234,13 @@ export class TableCell {
 				if (
 					currentValue !== 'hidden' &&
 					previousValue &&
-					previousValue === 'hidden'
+					previousValue === 'hidden' &&
+					this.variant !== 'actions'
 				) {
 					classes[`${size}:flex`] = true;
 				}
 
-				if (currentValue === 'hidden') {
+				if (currentValue === 'hidden' && this.variant !== 'actions') {
 					classes[`${size}:hidden`] = true;
 					previousSize = size;
 					continue;
@@ -260,5 +267,39 @@ export class TableCell {
 		return {
 			[`w-${sizes}/12`]: true,
 		};
+	}
+
+	private _getIsLastValues(
+		{
+			isLast,
+			parsedSizes,
+		}: {
+			isLast: { [key: string]: boolean };
+			parsedSizes: TableColumnSizes;
+		} /* Table Definition */
+	) {
+		const values: { [key: string]: boolean } = {};
+
+		for (let size of Object.keys(isLast)) {
+			let prefix = '';
+			if (size !== 'default') {
+				prefix = `${size}:`;
+			}
+
+			values[`${prefix}pr-4`] = !isLast[size];
+
+			values[`${prefix}group-hover:hidden`] =
+				isLast[size] && this.tableHasActions && this.variant !== 'actions';
+
+			values[`${prefix}group-hover:flex`] =
+				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' ||
+				this.variant === 'actions';
+
+			values[`${prefix}flex`] =
+				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&
+				this.variant !== 'actions';
+		}
+
+		return values;
 	}
 }

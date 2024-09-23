@@ -38,9 +38,9 @@ export class TableHeaderDirective extends BaseValueAccessor {
 		this.el.nativeElement.query = this.lastValue.query = value?.query;
 		this.lastValue.quickFilter = value?.quickFilter;
 
-        if(value?.quickFilter) {
+		if (value?.quickFilter) {
 			this._setActiveQuickFilter(value.quickFilter);
-        }
+		}
 	}
 
 	public handleChange(
@@ -58,7 +58,6 @@ export class TableHeaderDirective extends BaseValueAccessor {
 	}
 
 	private _setActiveQuickFilter(quickFilter: QuickFilter) {
-		this.el.nativeElement.activeQuickFilterIdentifier =
-			quickFilter?.identifier;
+		this.el.nativeElement.activeQuickFilterIdentifier = quickFilter?.identifier;
 	}
 }

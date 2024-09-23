@@ -86,8 +86,7 @@ export class TableRowAction implements OnChanges {
 	/**
 	 * Event whenever a row is clicked
 	 */
-	@Output() action: EventEmitter<TableRowActionClickEvent> =
-		new EventEmitter();
+	@Output() action: EventEmitter<TableRowActionClickEvent> = new EventEmitter();
 
 	/**
 	 * Event whenever loading has changed

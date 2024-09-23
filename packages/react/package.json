@@ -1,52 +1,54 @@
 {
-    "name": "@paperless/react",
-    "sideEffects": false,
-    "version": "1.52.0",
-    "description": "React specific wrapper for component-library",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ionic-team/ionic.git"
-    },
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org"
-    },
-    "scripts": {
-        "prebuild": "yarn",
-        "build": "yarn clean && yarn compile",
-        "build:prod": "yarn build",
-        "clean": "rm -rf dist",
-        "compile": "yarn tsc",
-        "tsc": "tsc -p .",
-        "rollup": "rollup -c",
-        "preyarn:publish": "cp ../../README.md .",
-        "yarn:publish": "yarn publish"
-    },
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "dist/"
-    ],
-    "devDependencies": {
-        "@types/jest": "29.5.1",
-        "@types/node": "20.10.3",
-        "jest": "29.5.0",
-        "jest-dom": "4.0.0",
-        "np": "8.0.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "typescript": "4.6.3"
-    },
-    "peerDependencies": {
-        "react": "^17.0.2 || ^18.0.0",
-        "react-dom": "^17.0.2 || ^18.0.0"
-    },
-    "jest": {
-        "preset": "ts-jest",
-        "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
-        "testPathIgnorePatterns": [
-            "node_modules",
-            "dist"
-        ]
-    }
+	"name": "@paperless/react",
+	"sideEffects": false,
+	"version": "1.51.4",
+	"description": "React specific wrapper for component-library",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ionic-team/ionic.git"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org"
+	},
+	"scripts": {
+		"prebuild": "yarn",
+		"build": "yarn clean && yarn compile",
+		"build:prod": "yarn build",
+		"clean": "rm -rf dist",
+		"compile": "yarn tsc",
+		"tsc": "tsc -p .",
+		"rollup": "rollup -c",
+		"preyarn:publish": "cp ../../README.md .",
+		"yarn:publish": "yarn publish",
+		"prettier:check": "yarn prettier \"./src/**/*.{ts,tsx,html,scss,json}\"",
+		"prettier:write": "yarn prettier:check -w"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/"
+	],
+	"devDependencies": {
+		"@types/jest": "29.5.1",
+		"@types/node": "20.10.3",
+		"jest": "29.5.0",
+		"jest-dom": "4.0.0",
+		"np": "8.0.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"typescript": "4.6.3"
+	},
+	"peerDependencies": {
+		"react": "^17.0.2 || ^18.0.0",
+		"react-dom": "^17.0.2 || ^18.0.0"
+	},
+	"jest": {
+		"preset": "ts-jest",
+		"setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+		"testPathIgnorePatterns": [
+			"node_modules",
+			"dist"
+		]
+	}
 }

@@ -2,13 +2,13 @@ import { OverlayRef as CDKOverlayRef } from '@angular/cdk/overlay';
 import { Subject } from 'rxjs';
 
 export class OverlayRef<T> {
-    public instance!: T;
-    public closed$ = new Subject();
+	public instance!: T;
+	public closed$ = new Subject();
 
-    constructor(private _overlay: CDKOverlayRef) {}
+	constructor(private _overlay: CDKOverlayRef) {}
 
-    close(): void {
-        this._overlay.dispose();
-        this.closed$.next(null);
-    }
+	close(): void {
+		this._overlay.dispose();
+		this.closed$.next(null);
+	}
 }

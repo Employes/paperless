@@ -176,13 +176,11 @@ export abstract class BaseTableComponent
 			.pipe(
 				untilDestroyed(this),
 				startWith(this.tableOptions.value),
-				tap((value: TableOptions) =>
-					this.tableOptionsChange.next(value)
-				),
+				tap((value: TableOptions) => this.tableOptionsChange.next(value)),
 				pairwise(),
 				map(([previous, next]) => this._getChanges(previous, next)),
-				filter((changes) => !!changes),
-				debounce((changes) => {
+				filter(changes => !!changes),
+				debounce(changes => {
 					if (changes?.query && Object.keys(changes)?.length === 1) {
 						return timer(300);
 					}
@@ -190,7 +188,7 @@ export abstract class BaseTableComponent
 					return timer(0);
 				})
 			)
-			.subscribe((changes) => {
+			.subscribe(changes => {
 				if (changes?.page) {
 					this._refresh();
 					return;
@@ -229,17 +227,15 @@ export abstract class BaseTableComponent
 	checkFilterForm() {
 		for (const key of Object.keys(this.filterForm.controls)) {
 			const filter =
-				this.filters.find((f) => f.key === key) ||
-				(key === this.filterFormQuickFilterKey
-					? this.quickFilter
-					: null);
+				this.filters.find(f => f.key === key) ||
+				(key === this.filterFormQuickFilterKey ? this.quickFilter : null);
 			this.filterForm.get(key)?.setValue(filter?.value ?? null);
 		}
 	}
 
 	resetFormFilters(resetQuickFilter: boolean = false) {
 		const values: any = this.filterForm.value;
-		const defaultQuickFilter = this.quickFilters.find((f) => f.default);
+		const defaultQuickFilter = this.quickFilters.find(f => f.default);
 
 		for (const key of Object.keys(values)) {
 			if (key === this.filterFormQuickFilterKey) {
@@ -310,10 +306,7 @@ export abstract class BaseTableComponent
 			pairwise(),
 			filter(([prev, cur]) => prev !== cur && !!cur),
 			tap(([previous, current]) => {
-				if (
-					previous &&
-					previous[identifier] !== current?.[identifier]
-				) {
+				if (previous && previous[identifier] !== current?.[identifier]) {
 					this.resetTable(false, true);
 				}
 			}),

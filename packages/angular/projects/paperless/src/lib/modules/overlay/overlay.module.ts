@@ -8,14 +8,14 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        StencilModule,
-        CDKOverlayModule,
-        PlatformModule,
-        ObserversModule,
-        PortalModule,
-    ],
-    exports: [PortalModule],
+	imports: [
+		CommonModule,
+		StencilModule,
+		CDKOverlayModule,
+		PlatformModule,
+		ObserversModule,
+		PortalModule,
+	],
+	exports: [PortalModule],
 })
 export class OverlayModule {}

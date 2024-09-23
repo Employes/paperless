@@ -1,22 +1,26 @@
 <div class="flex w-full flex-col items-start gap-4">
-    <p-button (onClick)="showModal()"> Show modal </p-button>
-    <p-button (onClick)="showTemplateModal(modalTemplate)">
-        Show template modal
-    </p-button>
-    <p-button (onClick)="showCropperModal()"> Show cropper modal </p-button>
+	<p-button (onClick)="showModal()"> Show modal </p-button>
+	<p-button (onClick)="showTemplateModal(modalTemplate)">
+		Show template modal
+	</p-button>
+	<p-button (onClick)="showCropperModal()"> Show cropper modal </p-button>
 </div>
 
-<ng-template cdkPortal #modalTemplate="cdkPortal">
-    <p-modal
-        [show]="true"
-        header="Template world"
-        (closed)="closeTemplateModal()"
-    >
-        <div slot="content">Content</div>
-        <div slot="footer" class="flex w-full justify-between gap-4">
-            <p-button class="ml-auto w-full desktop-xs:w-auto">
-                Confirm
-            </p-button>
-        </div>
-    </p-modal>
+<ng-template
+	cdkPortal
+	#modalTemplate="cdkPortal"
+>
+	<p-modal
+		[show]="true"
+		header="Template world"
+		(closed)="closeTemplateModal()"
+	>
+		<div slot="content">Content</div>
+		<div
+			slot="footer"
+			class="flex w-full justify-between gap-4"
+		>
+			<p-button class="ml-auto w-full desktop-xs:w-auto"> Confirm </p-button>
+		</div>
+	</p-modal>
 </ng-template>

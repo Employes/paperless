@@ -31,6 +31,16 @@ export interface TableColumnSizes {
     'desktop-xl'?: number | 'hidden' | 'full';
 }
 
+export interface TableColumnIsLast {
+    default: boolean;
+    tablet?: boolean;
+    'desktop-xs'?: boolean;
+    'desktop-sm'?: boolean;
+    desktop?: boolean;
+    'desktop-lg'?: boolean;
+    'desktop-xl'?: boolean;
+}
+
 export type TableColumnSizesKey =
     | 'default'
     | 'tablet'

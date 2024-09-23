@@ -1,0 +1,9 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+/charts/**/*.yaml
+.templates
+.vscode/ngxs.code-snippets
+./**/.angular
+node_modules

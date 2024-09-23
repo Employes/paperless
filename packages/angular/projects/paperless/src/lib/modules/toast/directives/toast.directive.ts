@@ -2,39 +2,39 @@ import { Directive, EventEmitter, Input, Output } from '@angular/core';
 import { ToastActionFunction } from '../types';
 
 @Directive({
-    selector: 'p-toast',
-    host: {
-        '(action)': 'onAction()',
-    },
+	selector: 'p-toast',
+	host: {
+		'(action)': 'onAction()',
+	},
 })
 export class ToastDirective {
-    @Input() delay: number | 'infinite' = 5000;
-    @Input() identifier!: string;
-    @Input() dismissOnAction: boolean = true;
-    @Input() actionFunc?: ToastActionFunction;
-    @Input() actionData: any = {};
+	@Input() delay: number | 'infinite' = 5000;
+	@Input() identifier!: string;
+	@Input() dismissOnAction: boolean = true;
+	@Input() actionFunc?: ToastActionFunction;
+	@Input() actionData: any = {};
 
-    @Output() dismiss: EventEmitter<string> = new EventEmitter();
+	@Output() dismiss: EventEmitter<string> = new EventEmitter();
 
-    ngOnInit(): void {
-        if (this.delay === 'infinite' || this.delay === 0) {
-            return;
-        }
+	ngOnInit(): void {
+		if (this.delay === 'infinite' || this.delay === 0) {
+			return;
+		}
 
-        setTimeout(() => this.doDismiss(), this.delay);
-    }
+		setTimeout(() => this.doDismiss(), this.delay);
+	}
 
-    onAction() {
-        if (this.dismissOnAction && !this.actionFunc) {
-            return this.doDismiss();
-        }
+	onAction() {
+		if (this.dismissOnAction && !this.actionFunc) {
+			return this.doDismiss();
+		}
 
-        if (this.actionFunc) {
-            this.actionFunc(this, this.actionData);
-        }
-    }
+		if (this.actionFunc) {
+			this.actionFunc(this, this.actionData);
+		}
+	}
 
-    doDismiss() {
-        this.dismiss.next(this.identifier);
-    }
+	doDismiss() {
+		this.dismiss.next(this.identifier);
+	}
 }

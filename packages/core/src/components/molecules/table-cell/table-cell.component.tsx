@@ -69,8 +69,7 @@ export class TableCell {
 		}
 
 		return {
-			value:
-				this.value ?? objectGetByPath(this.item, this.definition.path),
+			value: this.value ?? objectGetByPath(this.item, this.definition.path),
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
@@ -96,12 +95,15 @@ export class TableCell {
 	private _getContent() {
 		if (this.variant === 'loading') {
 			return (
-				<p-loader variant="ghost" class="h-6 w-full flex-1 rounded" />
+				<p-loader
+					variant='ghost'
+					class='h-6 w-full flex-1 rounded'
+				/>
 			);
 		}
 
 		if (this.variant === 'actions') {
-			return <slot name="actions"></slot>;
+			return <slot name='actions'></slot>;
 		}
 
 		return (
@@ -126,6 +128,10 @@ export class TableCell {
 
 	private _getColumnClasses() {
 		const sizes = this.definition ? this._getSizes(this.definition) : {};
+		const isLastValues = this.definition
+			? this._getIsLastValues(this.definition)
+			: {};
+
 		return {
 			'justify-start':
 				!this.definition?.align || this.definition?.align === 'start',
@@ -135,16 +141,10 @@ export class TableCell {
 				this.variant !== 'header' && this.definition?.type === 'th',
 			'text-storm-dark':
 				this.variant !== 'header' && this.definition?.type === 'th',
-			'pr-4': this.definition.isLast === false,
-			'group-hover:hidden':
-				this.definition.isLast &&
-				this.tableHasActions &&
-				this.variant !== 'actions',
-			'group-hover:flex':
-				this.variant === 'actions' && this.tableHasActions,
+			'group-hover:flex': this.variant === 'actions' && this.tableHasActions,
 			hidden: this.variant === 'actions' && this.tableHasActions,
-			flex: this.variant !== 'actions',
 			...sizes,
+			...isLastValues,
 		};
 	}
 
@@ -159,6 +159,13 @@ export class TableCell {
      <div class="desktop:w-1/12 desktop:w-2/12 desktop:w-3/12 desktop:w-4/12 desktop:w-5/12 desktop:w-6/12 desktop:w-7/12 desktop:w-8/12 desktop:w-9/12 desktop:w-10/12 desktop:w-11/12 desktop:w-12/12"></div>
      <div class="desktop-lg:w-1/12 desktop-lg:w-2/12 desktop-lg:w-3/12 desktop-lg:w-4/12 desktop-lg:w-5/12 desktop-lg:w-6/12 desktop-lg:w-7/12 desktop-lg:w-8/12 desktop-lg:w-9/12 desktop-lg:w-10/12 desktop-lg:w-11/12 desktop-lg:w-12/12"></div>
      <div class="desktop-xl:w-1/12 desktop-xl:w-2/12 desktop-xl:w-3/12 desktop-xl:w-4/12 desktop-xl:w-5/12 desktop-xl:w-6/12 desktop-xl:w-7/12 desktop-xl:w-8/12 desktop-xl:w-9/12 desktop-xl:w-10/12 desktop-xl:w-11/12 desktop-xl:w-12/12"></div>
+     <div class="hidden flex group-hover:hidden group-hover:flex"></div>
+     <div class="tablet:hidden tablet:flex tablet:group-hover:hidden tablet:group-hover:flex"></div>
+     <div class="desktop-xs:hidden desktop-xs:flex desktop-xs:group-hover:hidden desktop-xs:group-hover:flex"></div>
+     <div class="desktop-sm:hidden desktop-sm:flex  desktop-sm:group-hover:hidden desktop-sm:group-hover:flex"></div>
+     <div class="desktop:hidden desktop:flex desktop:group-hover:hidden desktop:group-hover:flex"></div>
+     <div class="desktop-lg:hidden desktop-lg:flex desktop-lg:group-hover:hidden desktop-lg:group-hover:flex"></div>
+     <div class="desktop-xl:hidden desktop-xl:flex desktop-xl:group-hover:hidden desktop-xl:group-hover:flex"></div>
 
 
         ⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⠿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣷⠿⣿⣿⣶⣦⣀⠀⠀⠀⠀⠀
@@ -261,5 +268,39 @@ export class TableCell {
 		return {
 			[`w-${sizes}/12`]: true,
 		};
+	}
+
+	private _getIsLastValues(
+		{
+			isLast,
+			parsedSizes,
+		}: {
+			isLast: { [key: string]: boolean };
+			parsedSizes: TableColumnSizes;
+		} /* Table Definition */
+	) {
+		const values: { [key: string]: boolean } = {};
+
+		for (let size of Object.keys(isLast)) {
+			let prefix = '';
+			if (size !== 'default') {
+				prefix = `${size}:`;
+			}
+
+			values[`${prefix}pr-4`] = !isLast[size];
+
+			values[`${prefix}group-hover:hidden`] =
+				isLast[size] && this.tableHasActions && this.variant !== 'actions';
+
+			values[`${prefix}group-hover:flex`] =
+				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' ||
+				this.variant === 'actions';
+
+			values[`${prefix}flex`] =
+				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&
+				this.variant !== 'actions';
+		}
+
+		return values;
 	}
 }

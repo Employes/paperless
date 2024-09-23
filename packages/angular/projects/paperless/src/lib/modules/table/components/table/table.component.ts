@@ -16,10 +16,16 @@ import {
 } from '@angular/core';
 import { Params } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { isMobile, QuickFilter, RowClickEvent } from '@paperless/core';
+import {
+	isMobile,
+	QuickFilter,
+	RowClickEvent,
+	tableColumSizesOptions,
+} from '@paperless/core';
 import {
 	IconVariant,
 	IllustrationVariant,
+	TableColumnSizes,
 } from '@paperless/core/dist/types/components';
 import {
 	BehaviorSubject,
@@ -386,6 +392,9 @@ export class Table implements OnInit, OnChanges {
 	@Output() filterModalReset: EventEmitter<boolean> = new EventEmitter();
 
 	public rowActionsRow$ = new BehaviorSubject<TableRowAction[]>([]);
+	public rowActionsRowDefinition$ = new BehaviorSubject<any | undefined>(
+		undefined
+	);
 	public rowActionsFloatingAll$ = new BehaviorSubject<TableRowAction[]>([]);
 	public rowActionsFloating$ = new BehaviorSubject<TableRowAction[]>([]);
 
@@ -393,8 +402,7 @@ export class Table implements OnInit, OnChanges {
 
 	private _resizeTimeout: unknown;
 	private _inputEnableRowSelection: boolean = this.enableRowSelection;
-	private _inputRowSelectionLimit: number | undefined =
-		this.rowSelectionLimit;
+	private _inputRowSelectionLimit: number | undefined = this.rowSelectionLimit;
 
 	constructor(private _changeDetection: ChangeDetectorRef) {}
 
@@ -407,7 +415,7 @@ export class Table implements OnInit, OnChanges {
 
 		this.filterModalShow$
 			.pipe(untilDestroyed(this), distinctUntilChanged())
-			.subscribe((value) => this.filterModalShow.next(value));
+			.subscribe(value => this.filterModalShow.next(value));
 	}
 
 	ngOnChanges(changes: SimpleChanges) {
@@ -429,8 +437,7 @@ export class Table implements OnInit, OnChanges {
 		}
 
 		if (changes['rowSelectionLimit']) {
-			this._inputRowSelectionLimit =
-				changes['rowSelectionLimit'].currentValue;
+			this._inputRowSelectionLimit = changes['rowSelectionLimit'].currentValue;
 			calculateRowSelectionData = true;
 		}
 
@@ -522,10 +529,9 @@ export class Table implements OnInit, OnChanges {
 	}
 
 	private _generateColumns() {
-		const definitionsArray = Array.from(
-			this._columnDefinitions
-		) as TableColumn[];
-		definitionsArray[definitionsArray.length - 1].isLast = true;
+		let definitionsArray = Array.from(this._columnDefinitions) as TableColumn[];
+
+		definitionsArray = this._parseDefinitions(definitionsArray);
 
 		this.columns = definitionsArray;
 	}
@@ -549,6 +555,7 @@ export class Table implements OnInit, OnChanges {
 			forceValue === undefined
 				? this._getCheckedValue($event.target)
 				: forceValue;
+
 		if (value) {
 			const toAdd = [];
 			for (let i = 0; i < this.parsedItems.length; i++) {
@@ -566,8 +573,7 @@ export class Table implements OnInit, OnChanges {
 
 				if (
 					this.rowSelectionLimit !== undefined &&
-					this.selectedRows.length + toAdd.length ===
-						this.rowSelectionLimit
+					this.selectedRows.length + toAdd.length === this.rowSelectionLimit
 				) {
 					break;
 				}
@@ -586,9 +592,7 @@ export class Table implements OnInit, OnChanges {
 		for (let i = 0; i < this.selectedRows.length; i++) {
 			const value = this.selectedRows[i];
 			const row = this.parsedItems.find(
-				(d) =>
-					this._getSelectionValue(d, i) ===
-					this._getSelectionValue(value, i)
+				d => this._getSelectionValue(d, i) === this._getSelectionValue(value, i)
 			);
 
 			if (!row) {
@@ -653,13 +657,9 @@ export class Table implements OnInit, OnChanges {
 		return this.selectionKey ? row?.[this.selectionKey] || index : index;
 	}
 
-	public _selectionContains(
-		row: any,
-		index: number,
-		returnIndex = false
-	): any {
+	public _selectionContains(row: any, index: number, returnIndex = false): any {
 		const returnValue = this.selectedRows.findIndex(
-			(item) =>
+			item =>
 				this._getSelectionValue(row, index) ===
 				this._getSelectionValue(item, index)
 		);
@@ -782,10 +782,7 @@ export class Table implements OnInit, OnChanges {
 			return this._getActionQueryParams(queryParams(item), rowIndex);
 		}
 
-		if (
-			queryParams instanceof Object &&
-			queryParams.constructor === Object
-		) {
+		if (queryParams instanceof Object && queryParams.constructor === Object) {
 			return new BehaviorSubject(queryParams);
 		}
 
@@ -886,21 +883,18 @@ export class Table implements OnInit, OnChanges {
 				}
 			}
 
-			this._rowActionsSubscriptions = actions.map((action) =>
+			this._rowActionsSubscriptions = actions.map(action =>
 				action._loadingChanged
 					.pipe(untilDestroyed(this))
-					.subscribe(() => {
-						console.log('Loading changed');
-						this._changeDetection.detectChanges();
-					})
+					.subscribe(() => this._changeDetection.detectChanges())
 			);
 
 			// we hack this to any[] to make it work..
 			const rowActionsRow = actions.filter(
-				(a) => a.type === 'both' || a.type === 'single'
+				a => a.type === 'both' || a.type === 'single'
 			);
 			const rowActionsFloating = actions.filter(
-				(a) => a.type === 'both' || a.type === 'multi' || mobile
+				a => a.type === 'both' || a.type === 'multi' || mobile
 			);
 
 			let rowSelectionLimit = this._inputRowSelectionLimit;
@@ -925,23 +919,22 @@ export class Table implements OnInit, OnChanges {
 			}
 			this.enableRowSelection = enableRowSelection;
 
+			this.rowActionsRowDefinition$.next(this._parseRowActionsRowDefinition());
 			this.rowActionsRow$.next(rowActionsRow);
 			this.rowActionsFloatingAll$.next(rowActionsFloating);
 		}, 200);
 	}
 
 	private _showFloatingMenu() {
-		this.rowActionsFloatingAll$.pipe(take(1)).subscribe((actions) => {
+		this.rowActionsFloatingAll$.pipe(take(1)).subscribe(actions => {
 			if (
 				this.rowSelectionLimit === 1 &&
 				actions.findIndex(
-					(a) =>
-						(a.type === 'single' || a.type === 'both') &&
-						a.showFunction
+					a => (a.type === 'single' || a.type === 'both') && a.showFunction
 				) >= 0
 			) {
 				actions = actions.filter(
-					(a) =>
+					a =>
 						a.type === 'multi' ||
 						!a.showFunction ||
 						a.showFunction(this.selectedRows[0])
@@ -951,5 +944,107 @@ export class Table implements OnInit, OnChanges {
 			this.rowActionsFloating$.next(actions);
 			this.floatingMenuShown$.next(true);
 		});
+	}
+
+	private _parseDefinitions(definitionsArray: TableColumn[]) {
+		const definitions = definitionsArray.map(definition => {
+			definition = this._parseDefinitionSizes(definition);
+			definition.isLast = {};
+			return definition;
+		});
+
+		const matchedIsLast = tableColumSizesOptions.reduce(
+			(data: { [key: string]: boolean }, size) => {
+				data[size] = false;
+				return data;
+			},
+			{}
+		);
+
+		for (let i = definitions.length - 1; i >= 0; i--) {
+			const definition = definitions[i];
+
+			for (const size of tableColumSizesOptions) {
+				if (matchedIsLast[size]) {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				if (definition.parsedSizes![size] === 'hidden') {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				const isLastAtSizeFound = this._findLastDefinitionBySize(
+					definitions,
+					size
+				);
+				if (isLastAtSizeFound) {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				definition.isLast[size] = true;
+			}
+		}
+
+		return definitions;
+	}
+
+	private _findLastDefinitionBySize(definitions: TableColumn[], size: string) {
+		return definitions
+			.slice()
+			.reverse()
+			.find(d => d.isLast[size] === true);
+	}
+
+	private _parseDefinitionSizes(definition: TableColumn) {
+		const definitionAny = definition as any;
+		let parsedSizes: TableColumnSizes = { default: 'full' };
+
+		for (const [index, size] of tableColumSizesOptions.entries()) {
+			if (
+				definitionAny.sizes === 'auto' ||
+				definitionAny.sizes === 'hidden' ||
+				definitionAny.sizes === 'full' ||
+				typeof definitionAny.sizes === 'number'
+			) {
+				parsedSizes[size] =
+					definitionAny.sizes === 'auto' ? 'full' : definitionAny.sizes;
+				continue;
+			}
+
+			parsedSizes[size] =
+				definitionAny.sizes[size] ??
+				parsedSizes[tableColumSizesOptions[index - 1]];
+		}
+
+		definition.parsedSizes = parsedSizes;
+		return definition;
+	}
+
+	private _parseRowActionsRowDefinition() {
+		const isLast = tableColumSizesOptions.reduce(
+			(data: { [key: string]: boolean }, size) => {
+				data[size] = true;
+				return data;
+			},
+			{}
+		);
+		const sizes: TableColumnSizes = { default: 0 };
+
+		for (const size of tableColumSizesOptions) {
+			const lastColumn = this._findLastDefinitionBySize(this.columns, size);
+			sizes[size] = lastColumn!.parsedSizes![size]!;
+		}
+
+		return {
+			isLast,
+			sizes,
+			parsedSizes: sizes,
+			align: 'end',
+			type: 'td',
+			path: null,
+		};
 	}
 }

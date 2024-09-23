@@ -22,6 +22,7 @@ export class DatepickerDirective extends BaseValueAccessor {
 	}
 
 	override writeValue(value: any) {
-		this.el.nativeElement.value = this.lastValue = value === null ? JSON.parse(value) : value;
+		this.el.nativeElement.value = this.lastValue =
+			value === null ? JSON.parse(value) : value;
 	}
 }

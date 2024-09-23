@@ -1,9 +1,15 @@
-<h1 class="font-semibold text-4xl">Home</h1>
+<h1 class="text-4xl font-semibold">Home</h1>
 
-<div class="w-full h-96 mt-6">
-	<p-stepper direction="vertical" [activeStep]="activeStep$ | async">
+<div class="mt-6 h-96 w-full">
+	<p-stepper
+		direction="vertical"
+		[activeStep]="activeStep$ | async"
+	>
 		<p-stepper-item *ngFor="let step of steps$ | async; let i = index">
-			<div class="flex gap-4 items-center" slot="content">
+			<div
+				class="flex items-center gap-4"
+				slot="content"
+			>
 				<span class="font-semibold">step {{ step }}</span>
 				<p-button
 					icon="trash"
@@ -15,7 +21,7 @@
 	</p-stepper>
 </div>
 
-<div class="w-full flex gap-4 justify-start mt-8">
+<div class="mt-8 flex w-full justify-start gap-4">
 	<p-button (onClick)="add()">Add</p-button>
 	<p-button (onClick)="randomizeActiveStep()">Randomize</p-button>
 </div>

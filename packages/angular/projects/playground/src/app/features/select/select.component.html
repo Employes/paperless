@@ -1,22 +1,53 @@
-<div class="w-full flex flex-col items-start gap-4" [formGroup]="form">
-    <p-select
-        valueKey="value"
-        identifierKey="value"
-        placeholder="I am a single select"
-        [items]='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
-        formControlName="single"
-        [autoSelectFirst]="false"
-    ></p-select>
-    <p-select
-        multi
-        identifierKey="value"
-        placeholder="I include avatars & have multi select"
-        avatarKey="avatar"
-        avatarLettersKey="letters"
-        [items]='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
-        formControlName="multi"
-    ></p-select>
+<div
+	class="flex w-full flex-col items-start gap-4"
+	[formGroup]="form"
+>
+	<p-select
+		valueKey="value"
+		identifierKey="value"
+		placeholder="I am a single select"
+		[items]="[
+			{
+				value: 1,
+				text: 'Value 1',
+				avatar:
+					'https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80'
+			},
+			{ value: 2, text: 'Value 2', letters: 'JH' },
+			{
+				value: 3,
+				text: 'Value 3',
+				avatar:
+					'https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80'
+			}
+		]"
+		formControlName="single"
+		[autoSelectFirst]="false"
+	></p-select>
+	<p-select
+		multi
+		identifierKey="value"
+		placeholder="I include avatars & have multi select"
+		avatarKey="avatar"
+		avatarLettersKey="letters"
+		[items]="[
+			{
+				value: 1,
+				text: 'Value 1',
+				avatar:
+					'https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80'
+			},
+			{ value: 2, text: 'Value 2', letters: 'JH' },
+			{
+				value: 3,
+				text: 'Value 3',
+				avatar:
+					'https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80'
+			}
+		]"
+		formControlName="multi"
+	></p-select>
 
-    <p>Values:</p>
-    <pre>{{form.value | json}}</pre>
+	<p>Values:</p>
+	<pre>{{ form.value | json }}</pre>
 </div>

@@ -1,43 +1,43 @@
 import { RotateOptions } from '@paperless/core';
 import {
-    IconFlipOptions,
-    IconVariant,
+	IconFlipOptions,
+	IconVariant,
 } from '@paperless/core/dist/types/components/atoms/icon/icon.component';
 import { ToastDirective } from './directives';
 
 export enum ToastVariants {
-    Success = 'positive',
-    Warning = 'unbiased',
-    Error = 'negative',
-    Positive = 'positive',
-    Unbiased = 'unbiased',
-    Negative = 'negative',
+	Success = 'positive',
+	Warning = 'unbiased',
+	Error = 'negative',
+	Positive = 'positive',
+	Unbiased = 'unbiased',
+	Negative = 'negative',
 }
 
 export type ToastActionFunction = (
-    directive?: ToastDirective,
-    data?: any
+	directive?: ToastDirective,
+	data?: any
 ) => void;
 
 export interface ToastOptions {
-    delay?: number | 'infinite';
-    dismissOnAction?: boolean;
+	delay?: number | 'infinite';
+	dismissOnAction?: boolean;
 
-    enableAction?: boolean;
-    action?: ToastActionFunction;
-    actionData?: any;
+	enableAction?: boolean;
+	action?: ToastActionFunction;
+	actionData?: any;
 
-    icon?: {
-        variant?: IconVariant;
-        flip?: IconFlipOptions;
-        rotate?: RotateOptions;
-    };
+	icon?: {
+		variant?: IconVariant;
+		flip?: IconFlipOptions;
+		rotate?: RotateOptions;
+	};
 }
 
 export interface ToastData {
-    identifier: string;
-    variant: ToastVariants;
-    header: string;
-    content: string;
-    options: ToastOptions;
+	identifier: string;
+	variant: ToastVariants;
+	header: string;
+	content: string;
+	options: ToastOptions;
 }

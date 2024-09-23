@@ -11,19 +11,24 @@ import {
 	Watch,
 } from '@stencil/core';
 import { IconVariant } from '../../../components';
-import { QuickFilter, RowClickEvent } from '../../../types/table';
+import { tableColumSizesOptions } from '../../../types/constants';
+import {
+	QuickFilter,
+	RowClickEvent,
+	TableColumnSizes,
+} from '../../../types/table';
 import {
 	formatTranslation,
 	getLocaleComponentStrings,
 	isMobile,
 } from '../../../utils';
 import { TableColumn } from '../../helpers/table-column/table-column.component';
+import { TableRowAction } from '../../helpers/table-row-action/table-row-action.component';
 import {
 	defaultSize,
 	defaultSizeOptions,
 } from '../../molecules/page-size-select/constants';
 import { buttonTemplateFunc } from '../../molecules/table-header/table-header.component';
-import { TableRowAction } from '../../helpers/table-row-action/table-row-action.component';
 
 export type templateFunc = () => string;
 export type amountSelectedTemplateFunc = (amount: number) => string;
@@ -396,24 +401,18 @@ export class Table {
 
 	render() {
 		return (
-			<Host class="p-table">
+			<Host class='p-table'>
 				<p-table-container shadow={this.shadow}>
 					{this.enableHeader && (
 						<p-table-header
 							// quick filters
 							quickFilters={this.quickFilters}
-							activeQuickFilterIdentifier={
-								this.activeQuickFilterIdentifier
-							}
-							onQuickFilter={({ detail }) =>
-								this.quickFilter.emit(detail)
-							}
+							activeQuickFilterIdentifier={this.activeQuickFilterIdentifier}
+							onQuickFilter={({ detail }) => this.quickFilter.emit(detail)}
 							// search
 							enableSearch={this.enableSearch}
 							query={this.query}
-							onQueryChange={({ detail }) =>
-								this.queryChange.emit(detail)
-							}
+							onQueryChange={({ detail }) => this.queryChange.emit(detail)}
 							// filter button
 							enableFilter={this.enableFilter}
 							selectedFiltersAmount={this.selectedFiltersAmount}
@@ -433,15 +432,15 @@ export class Table {
 						>
 							{this._hasCustomFilterSlot && (
 								<slot
-									name="custom-filter"
-									slot="custom-filter"
+									name='custom-filter'
+									slot='custom-filter'
 								/>
 							)}
 						</p-table-header>
 					)}
 
 					{this._getHeader()}
-					<div class="flex flex-col flex-1">{this._getRows()}</div>
+					<div class='flex flex-1 flex-col'>{this._getRows()}</div>
 
 					{this.enableFooter && (
 						<p-table-footer
@@ -458,9 +457,7 @@ export class Table {
 							enablePagination={this.enablePagination}
 							page={this.page}
 							total={this.total}
-							onPageChange={({ detail }) =>
-								this.pageChange.emit(detail)
-							}
+							onPageChange={({ detail }) => this.pageChange.emit(detail)}
 							// export
 							enableExport={this.enableExport}
 							onExport={() => this.export.emit()}
@@ -472,17 +469,15 @@ export class Table {
 					{this.enableFloatingMenu && this._enableRowSelection ? (
 						<p-floating-menu-container
 							usedInTable={true}
-							class={`${
-								this.selectedRows?.length ? '' : 'inactive'
-							} ${this._floatingMenuShown ? 'shown' : ''}`}
+							class={`${this.selectedRows?.length ? '' : 'inactive'} ${
+								this._floatingMenuShown ? 'shown' : ''
+							}`}
 						>
 							<p-floating-menu-item
 								hover={false}
-								slot="floating-menu-item"
+								slot='floating-menu-item'
 								class={
-									this._rowActionsFloating?.length
-										? 'hidden tablet:flex'
-										: ''
+									this._rowActionsFloating?.length ? 'hidden tablet:flex' : ''
 								}
 							>
 								{this.floatingMenuAmountSelectedTemplate(
@@ -491,31 +486,23 @@ export class Table {
 							</p-floating-menu-item>
 							<p-divider
 								class={`mx-0 text-storm ${
-									this._rowActionsFloating?.length
-										? 'hidden tablet:flex'
-										: ''
+									this._rowActionsFloating?.length ? 'hidden tablet:flex' : ''
 								}`}
-								variant="vertical"
-								slot="floating-menu-item"
+								variant='vertical'
+								slot='floating-menu-item'
 							/>
 							{this._rowActionsFloating?.length &&
-								this._rowActionsFloating.map((a) => (
+								this._rowActionsFloating.map(a => (
 									<p-floating-menu-item
-										slot="floating-menu-item"
+										slot='floating-menu-item'
 										disabled={a.disabled}
 										onClick={() =>
 											!a.disabled &&
 											!a.loading &&
 											!!a.action &&
 											a.type === 'single'
-												? a.action(
-														this.selectedRows[0],
-														false
-													)
-												: a.action(
-														this.selectedRows,
-														true
-													)
+												? a.action(this.selectedRows[0], false)
+												: a.action(this.selectedRows, true)
 										}
 									>
 										{a.label}{' '}
@@ -532,18 +519,16 @@ export class Table {
 								))}
 							{this._rowActionsFloating?.length && (
 								<p-divider
-									class="mx-0 text-storm"
-									variant="vertical"
-									slot="floating-menu-item"
+									class='mx-0 text-storm'
+									variant='vertical'
+									slot='floating-menu-item'
 								/>
 							)}
 							<p-floating-menu-item
-								slot="floating-menu-item"
-								onClick={() =>
-									this._selectAllChange(null, false)
-								}
+								slot='floating-menu-item'
+								onClick={() => this._selectAllChange(null, false)}
 							>
-								<p-icon variant="negative" />
+								<p-icon variant='negative' />
 							</p-floating-menu-item>
 						</p-floating-menu-container>
 					) : (
@@ -625,13 +610,11 @@ export class Table {
 				this._el.querySelectorAll(':scope > p-table-row-action')
 			) as any[] as TableRowAction[];
 			this._rowActionsRow = actions.filter(
-				(a) => a.type === 'both' || a.type === 'single'
+				a => a.type === 'both' || a.type === 'single'
 			);
 			this._rowActionsFloatingAll = actions
-				.filter(
-					(a) => a.type === 'both' || a.type === 'multi' || mobile
-				)
-				.map((a) => {
+				.filter(a => a.type === 'both' || a.type === 'multi' || mobile)
+				.map(a => {
 					if (a.type === 'single') {
 						a.disabled = this.selectedRows?.length > 1;
 					}
@@ -666,27 +649,24 @@ export class Table {
 
 	private _generateColumns() {
 		const definitions = this._el.querySelectorAll('p-table-column');
-		const definitionsArray = Array.from(definitions);
+		let definitionsArray = Array.from(definitions);
 
-		definitionsArray[definitionsArray.length - 1]['isLast'] = true;
+		definitionsArray = this._parseDefinitions(definitionsArray);
 
 		this._columns = definitionsArray;
 	}
 
 	private _getHeader() {
 		return (
-			<p-table-row variant="header">
+			<p-table-row variant='header'>
 				{this._columns.map((col: TableColumn, index) => (
 					<p-table-cell
 						definition={col}
 						value={col.name}
-						variant="header"
+						variant='header'
 						checkbox={
 							index === 0 || col.hasCheckbox
-								? this._getCheckbox(
-										null,
-										this.loading ? 'loading' : 'header'
-									)
+								? this._getCheckbox(null, this.loading ? 'loading' : 'header')
 								: null
 						}
 						index={index}
@@ -704,9 +684,7 @@ export class Table {
 				},
 				(_, i) => (
 					<p-table-row
-						enableHover={
-							this._enableRowSelection || this.enableRowClick
-						}
+						enableHover={this._enableRowSelection || this.enableRowClick}
 					>
 						{this._getLoadingColumns(i)}
 					</p-table-row>
@@ -721,7 +699,7 @@ export class Table {
 		return this._items.map((item, index) => (
 			<p-table-row
 				enableHover={this._enableRowSelection || this.enableRowClick}
-				onClick={(ev) => this._rowClick(ev, index)}
+				onClick={ev => this._rowClick(ev, index)}
 			>
 				{this._getRowColumns(item, index)}
 			</p-table-row>
@@ -735,22 +713,18 @@ export class Table {
 					definition={col}
 					item={item}
 					checkbox={
-						colIndex === 0 || col.hasCheckbox
-							? this._getCheckbox(index)
-							: null
+						colIndex === 0 || col.hasCheckbox ? this._getCheckbox(index) : null
 					}
 					index={colIndex}
 					rowIndex={index}
-					tableHasActions={
-						!!this._rowActionsRow.length && !isMobile()
-					}
+					tableHasActions={!!this._rowActionsRow.length && !isMobile()}
 				></p-table-cell>
 			);
 		});
 
 		if (this._rowActionsRow?.length && !isMobile()) {
-			const lastDef = this._columns[this._columns.length - 1];
-			const actions = this._rowActionsRow.filter((a) =>
+			const def = this._parseRowActionsRowDefinition();
+			const actions = this._rowActionsRow.filter(a =>
 				a.showFunction ? a.showFunction(item) : true
 			);
 
@@ -760,28 +734,30 @@ export class Table {
 
 			columns.push(
 				<p-table-cell
-					variant="actions"
-					definition={lastDef}
+					variant='actions'
+					definition={def}
 					item={item}
 					index={this._columns.length - 1}
 					rowIndex={index}
 					tableHasActions={!!this._rowActionsRow.length}
 				>
-					<div slot="actions" class="flex ml-auto gap-2 items-center">
-						{actions.map((a) => (
+					<div
+						slot='actions'
+						class='ml-auto flex items-center gap-2'
+					>
+						{actions.map(a => (
 							<p-tooltip content={a.label}>
 								<p-button
 									data-is-action
-									variant="secondary"
-									slot="trigger"
+									variant='secondary'
+									slot='trigger'
 									icon={a.icon}
 									iconRotate={a.iconRotate}
 									iconFlip={a.iconFlip}
 									iconOnly={true}
-									size="small"
+									size='small'
 									onClick={() =>
-										typeof a.action === 'function' &&
-										a.action?.(item, false)
+										typeof a.action === 'function' && a.action?.(item, false)
 									}
 								></p-button>
 							</p-tooltip>
@@ -799,7 +775,7 @@ export class Table {
 			return (
 				<p-table-cell
 					definition={col}
-					variant="loading"
+					variant='loading'
 					checkbox={
 						colIndex === 0 || col.hasCheckbox
 							? this._getCheckbox(index, 'loading')
@@ -824,15 +800,22 @@ export class Table {
 		}
 
 		if (variant === 'loading') {
-			return <p-loader variant="ghost" class="h-6 w-6 rounded" />;
+			return (
+				<p-loader
+					variant='ghost'
+					class='h-6 w-6 rounded'
+				/>
+			);
 		}
 
 		if (variant === 'header') {
 			return (
 				<input
-					class={`p-input ${this._rowSelectionLimit !== undefined && 'opacity-0'}`}
-					type="checkbox"
-					onChange={(ev) => this._selectAllChange(ev)}
+					class={`p-input ${
+						this._rowSelectionLimit !== undefined && 'opacity-0'
+					}`}
+					type='checkbox'
+					onChange={ev => this._selectAllChange(ev)}
 					checked={this._selectionContainsAll()}
 					indeterminate={this._selectionIndeterminate()}
 					disabled={this._rowSelectionLimit !== undefined}
@@ -846,9 +829,9 @@ export class Table {
 
 		return (
 			<input
-				class="p-input"
-				type="checkbox"
-				onChange={(ev) => this._checkboxChange(ev?.target, rowIndex)}
+				class='p-input'
+				type='checkbox'
+				onChange={ev => this._checkboxChange(ev?.target, rowIndex)}
 				disabled={
 					(this.canSelectKey && !item[this.canSelectKey]) ||
 					(this._rowSelectionLimit !== undefined &&
@@ -863,12 +846,15 @@ export class Table {
 	private _getEmptyState() {
 		if (this.query?.length || this.selectedFiltersAmount) {
 			return (
-				<div class="flex max-w-[20rem] flex-col items-center self-center py-24 text-center">
-					<p-illustration variant="empty-state-search" class="mb-6" />
-					<p class="text-storm-default font-semibold">
+				<div class='flex max-w-[20rem] flex-col items-center self-center py-24 text-center'>
+					<p-illustration
+						variant='empty-state-search'
+						class='mb-6'
+					/>
+					<p class='text-storm-default font-semibold'>
 						{this.emptyStateFilteredHeader()}
 					</p>
-					<p class="mb-14 text-sm text-storm-medium">
+					<p class='mb-14 text-sm text-storm-medium'>
 						{this.emptyStateFilteredContent()}
 					</p>
 				</div>
@@ -881,19 +867,23 @@ export class Table {
 					this.enableEmptyStateAction && 'cursor-pointer'
 				}`}
 				onClick={() =>
-					this.enableEmptyStateAction &&
-					this.emptyStateActionClick.emit(null)
+					this.enableEmptyStateAction && this.emptyStateActionClick.emit(null)
 				}
 			>
-				<p-illustration variant="empty-state-add" class="mb-6" />
-				<p class="text-storm-default font-semibold">
+				<p-illustration
+					variant='empty-state-add'
+					class='mb-6'
+				/>
+				<p class='text-storm-default font-semibold'>
 					{this.emptyStateHeader()}
 				</p>
-				<p class="mb-6 text-sm text-storm-medium">
-					{this.emptyStateContent()}
-				</p>
+				<p class='mb-6 text-sm text-storm-medium'>{this.emptyStateContent()}</p>
 				{this.enableEmptyStateAction && (
-					<p-button variant="secondary" icon="plus" size="small">
+					<p-button
+						variant='secondary'
+						icon='plus'
+						size='small'
+					>
 						{this.emptyStateAction()}
 					</p-button>
 				)}
@@ -927,8 +917,7 @@ export class Table {
 
 				if (
 					this._rowSelectionLimit !== undefined &&
-					this.selectedRows.length + toAdd.length ===
-						this._rowSelectionLimit
+					this.selectedRows.length + toAdd.length === this._rowSelectionLimit
 				) {
 					break;
 				}
@@ -946,9 +935,7 @@ export class Table {
 		for (let i = 0; i < this.selectedRows.length; i++) {
 			const value = this.selectedRows[i];
 			const row = this._items.find(
-				(d) =>
-					this._getSelectionValue(d, i) ===
-					this._getSelectionValue(value, i)
+				d => this._getSelectionValue(d, i) === this._getSelectionValue(value, i)
 			);
 
 			if (!row) {
@@ -1022,7 +1009,7 @@ export class Table {
 
 	private _selectionContains(index, returnIndex = false): any {
 		const returnValue = this.selectedRows.findIndex(
-			(item) => item.index === index
+			item => item.index === index
 		);
 		return !returnIndex ? returnValue >= 0 : returnValue;
 	}
@@ -1152,12 +1139,11 @@ export class Table {
 		if (
 			this.rowSelectionLimit === 1 &&
 			actions.findIndex(
-				(a) =>
-					(a.type === 'single' || a.type === 'both') && a.showFunction
+				a => (a.type === 'single' || a.type === 'both') && a.showFunction
 			) >= 0
 		) {
 			actions = actions.filter(
-				(a) =>
+				a =>
 					a.type === 'multi' ||
 					!a.showFunction ||
 					a.showFunction(this.selectedRows[0])
@@ -1166,5 +1152,117 @@ export class Table {
 
 		this._rowActionsFloating = actions;
 		this._floatingMenuShown = true;
+	}
+
+	private _parseDefinitions(definitionsArray: HTMLPTableColumnElement[]) {
+		const definitions = definitionsArray.map(definition => {
+			definition = this._parseDefinitionSizes(definition);
+			definition.isLast = {};
+			return definition;
+		});
+
+		const matchedIsLast = tableColumSizesOptions.reduce(
+			(data: { [key: string]: boolean }, size) => {
+				data[size] = false;
+				return data;
+			},
+			{}
+		);
+
+		for (let i = definitions.length - 1; i >= 0; i--) {
+			const definition = definitions[i];
+
+			for (const size of tableColumSizesOptions) {
+				if (matchedIsLast[size]) {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				if (definition.parsedSizes![size] === 'hidden') {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				const isLastAtSizeFound = this._findLastDefinitionBySize(
+					definitions,
+					size
+				);
+				if (isLastAtSizeFound) {
+					definition.isLast[size] = false;
+					continue;
+				}
+
+				definition.isLast[size] = true;
+			}
+		}
+
+		return definitions;
+	}
+
+	private _findLastDefinitionBySize(
+		definitions: HTMLPTableColumnElement[],
+		size: string
+	) {
+		return definitions
+			.slice()
+			.reverse()
+			.find(d => d.isLast[size] === true);
+	}
+
+	private _parseDefinitionSizes(definition: HTMLPTableColumnElement) {
+		const definitionAny = definition as any;
+		let parsedSizes: TableColumnSizes = { default: 'full' };
+
+		if (
+			typeof definition.sizes === 'string' &&
+			!['auto', 'hidden', 'full'].includes(definition.sizes)
+		) {
+			definition.sizes = JSON.parse(definition.sizes);
+		}
+
+		for (const [index, size] of tableColumSizesOptions.entries()) {
+			if (
+				definitionAny.sizes === 'auto' ||
+				definitionAny.sizes === 'hidden' ||
+				definitionAny.sizes === 'full' ||
+				typeof definitionAny.sizes === 'number'
+			) {
+				parsedSizes[size] =
+					definitionAny.sizes === 'auto' ? 'full' : definitionAny.sizes;
+				continue;
+			}
+
+			parsedSizes[size] =
+				definitionAny.sizes[size] ??
+				parsedSizes[tableColumSizesOptions[index - 1]];
+		}
+
+		definition.parsedSizes = parsedSizes;
+		return definition;
+	}
+
+	private _parseRowActionsRowDefinition() {
+		const isLast = tableColumSizesOptions.reduce(
+			(data: { [key: string]: boolean }, size) => {
+				data[size] = true;
+				return data;
+			},
+			{}
+		);
+		const sizes: TableColumnSizes = { default: 0 };
+
+		for (const size of tableColumSizesOptions) {
+			const lastColumn = this._findLastDefinitionBySize(this._columns, size);
+			sizes[size] = lastColumn!.parsedSizes![size]!;
+		}
+
+		return {
+			isLast,
+			sizes,
+			parsedSizes: sizes,
+			align: 'end',
+			type: 'td',
+			path: null,
+		} as TableColumn;
 	}
 }

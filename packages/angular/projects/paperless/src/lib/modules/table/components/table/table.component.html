@@ -55,7 +55,7 @@
 		</ng-container>
 	</p-table-row>
 
-	<div class="flex flex-col flex-1">
+	<div class="flex flex-1 flex-col">
 		<ng-container *ngIf="loading; else contentTemplate">
 			<p-table-row
 				*ngFor="let r of loadingRows; let rowIndex = index"
@@ -66,8 +66,7 @@
 						[definition]="col"
 						variant="loading"
 						[checkbox]="
-							(index === 0 || col.hasCheckbox) &&
-							enableRowSelection
+							(index === 0 || col.hasCheckbox) && enableRowSelection
 								? checkboxTemplate
 								: undefined
 						"
@@ -91,15 +90,12 @@
 					[enableHover]="enableRowSelection || enableRowClick"
 					(click)="_rowClick($event, rowIndex)"
 				>
-					<ng-container
-						*ngFor="let col of columns; let index = index"
-					>
+					<ng-container *ngFor="let col of columns; let index = index">
 						<p-table-cell-ngx
 							[definition]="col"
 							[item]="item"
 							[checkbox]="
-								(index === 0 || col.hasCheckbox) &&
-								enableRowSelection
+								(index === 0 || col.hasCheckbox) && enableRowSelection
 									? checkboxTemplate
 									: undefined
 							"
@@ -107,8 +103,7 @@
 							[rowIndex]="rowIndex"
 							[template]="col.template"
 							[tableHasActions]="
-								!!(rowActionsRow$ | async)?.length &&
-								!(isMobile$ | async)
+								!!(rowActionsRow$ | async)?.length && !(isMobile$ | async)
 							"
 						></p-table-cell-ngx>
 
@@ -116,9 +111,7 @@
 							<input
 								class="p-input"
 								type="checkbox"
-								(change)="
-									_checkboxChange($event.target, rowIndex)
-								"
+								(change)="_checkboxChange($event.target, rowIndex)"
 								[disabled]="_checkboxDisabled(item, rowIndex)"
 								[checked]="_selectionContains(item, rowIndex)"
 							/>
@@ -128,35 +121,28 @@
 					<ng-container
 						*ngIf="
 							!!(rowActionsRow$ | async)?.length &&
+							!!(rowActionsRowDefinition$ | async) &&
 							!(isMobile$ | async)
 						"
 					>
 						<p-table-cell-ngx
 							variant="actions"
-							[definition]="columns[columns.length - 1]"
+							[definition]="rowActionsRowDefinition$ | async"
 							[item]="parsedItems[rowIndex]"
 							[index]="columns.length - 1"
 							[rowIndex]="rowIndex"
-							[tableHasActions]="
-								!!(rowActionsRow$ | async)?.length
-							"
+							[tableHasActions]="!!(rowActionsRow$ | async)?.length"
 							[template]="actionsTemplate"
 						>
 						</p-table-cell-ngx>
 
 						<ng-template #actionsTemplate>
-							<div class="flex ml-auto gap-2 items-center">
-								<ng-container
-									*ngFor="
-										let action of rowActionsRow$ | async
-									"
-								>
+							<div class="ml-auto flex items-center gap-2">
+								<ng-container *ngFor="let action of rowActionsRow$ | async">
 									<p-tooltip
 										*ngIf="
 											action.showFunction
-												? action.showFunction(
-														parsedItems[rowIndex]
-													)
+												? action.showFunction(parsedItems[rowIndex])
 												: true
 										"
 										[content]="action.label"
@@ -173,26 +159,17 @@
 											[disabled]="action.disabled"
 											[routerLink]="
 												action.routerLink
-													? (_getActionRouterLink(
-															action.routerLink,
-															rowIndex
-														) | async)
+													? (_getActionRouterLink(action.routerLink, rowIndex)
+													  | async)
 													: null
 											"
 											[queryParams]="
 												action.queryParams
-													? (_getActionQueryParams(
-															action.queryParams,
-															rowIndex
-														) | async)
+													? (_getActionQueryParams(action.queryParams, rowIndex)
+													  | async)
 													: null
 											"
-											(onClick)="
-												_rowActionClick(
-													action,
-													rowIndex
-												)
-											"
+											(onClick)="_rowActionClick(action, rowIndex)"
 										></p-button>
 									</p-tooltip>
 								</ng-container>
@@ -292,12 +269,16 @@
 		[show]="filterModalShow$ | async"
 		(closed)="filterModalShow$.next(false)"
 	>
-		<div slot="content" class="flex flex-col gap-6">
-			<ng-container
-				*ngTemplateOutlet="filterModalTemplate"
-			></ng-container>
+		<div
+			slot="content"
+			class="flex flex-col gap-6"
+		>
+			<ng-container *ngTemplateOutlet="filterModalTemplate"></ng-container>
 		</div>
-		<div slot="footer" class="flex w-full justify-between gap-4">
+		<div
+			slot="footer"
+			class="flex w-full justify-between gap-4"
+		>
 			<p-button
 				*ngIf="filterModalShowResetMobile"
 				class="flex w-full tablet:w-auto desktop-xs:hidden"

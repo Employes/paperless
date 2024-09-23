@@ -1349,11 +1349,16 @@ export namespace Components {
         /**
           * Wether the column is the last in the row
          */
-        "isLast": boolean;
+        "isLast": { [key: string]: boolean };
         /**
           * The name of the column
          */
         "name": string;
+        /**
+          * Parsed sizes based on the complete set of columns
+         */
+        "parsedSizes": | TableColumnSizes
+		| undefined;
         /**
           * The path of the value of the item you want to display
          */
@@ -3602,7 +3607,7 @@ declare namespace LocalJSX {
         /**
           * Wether the column is the last in the row
          */
-        "isLast"?: boolean;
+        "isLast"?: { [key: string]: boolean };
         /**
           * The name of the column
          */
@@ -3611,6 +3616,11 @@ declare namespace LocalJSX {
           * Event to let the table know it has to re render
          */
         "onTableDefinitionChanged"?: (event: PTableColumnCustomEvent<boolean>) => void;
+        /**
+          * Parsed sizes based on the complete set of columns
+         */
+        "parsedSizes"?: | TableColumnSizes
+		| undefined;
         /**
           * The path of the value of the item you want to display
          */

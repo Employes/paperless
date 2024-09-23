@@ -11,9 +11,9 @@ import { PaginationDirective } from './p-pagination.directive';
 import { SelectDirective } from './p-select.directive';
 
 export const DIRECTIVES = [
-    PaginationDirective,
-    PageSizeSelectDirective,
-    SelectDirective,
-    DatepickerDirective,
-    CropperDirective,
+	PaginationDirective,
+	PageSizeSelectDirective,
+	SelectDirective,
+	DatepickerDirective,
+	CropperDirective,
 ];

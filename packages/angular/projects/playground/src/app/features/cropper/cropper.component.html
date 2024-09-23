@@ -1,43 +1,55 @@
-<div class="w-full flex flex-col items-start gap-4" [formGroup]="form">
-    <h1 class="text-2xl font-semibold text-storm-dark">User</h1>
-    <p-cropper formControlName="user" />
-    <div class="flex items-center place-content-evenly w-full">
-        <p-avatar
-            size="small"
-            [src]="form.get('user')?.value"
-        ></p-avatar>
-        <p-avatar [src]="form.get('user')?.value"></p-avatar>
-        <p-avatar
-            size="large"
-            [src]="form.get('user')?.value"
-        ></p-avatar>
-        <p-avatar
-            size="xlarge"
-            [src]="form.get('user')?.value"
-        ></p-avatar>
-    </div>
+<div
+	class="flex w-full flex-col items-start gap-4"
+	[formGroup]="form"
+>
+	<h1 class="text-2xl font-semibold text-storm-dark">User</h1>
+	<p-cropper formControlName="user" />
+	<div class="flex w-full place-content-evenly items-center">
+		<p-avatar
+			size="small"
+			[src]="form.get('user')?.value"
+		></p-avatar>
+		<p-avatar [src]="form.get('user')?.value"></p-avatar>
+		<p-avatar
+			size="large"
+			[src]="form.get('user')?.value"
+		></p-avatar>
+		<p-avatar
+			size="xlarge"
+			[src]="form.get('user')?.value"
+		></p-avatar>
+	</div>
 </div>
 
-<div class="w-full flex flex-col items-start gap-4 mt-12" [formGroup]="form">
-    <h1 class="text-2xl font-semibold text-storm-dark">Company</h1>
-    <p-cropper formControlName="company" variant="company" />
-    
-    <div class="flex items-center place-content-evenly w-full">
-        <p-avatar
-            size="small"
-            variant="company"
-            [src]="form.get('company')?.value"
-        ></p-avatar>
-        <p-avatar variant="company" [src]="form.get('company')?.value"></p-avatar>
-        <p-avatar
-            size="large"
-            variant="company"
-            [src]="form.get('company')?.value"
-        ></p-avatar>
-        <p-avatar
-            size="xlarge"
-            variant="company"
-            [src]="form.get('company')?.value"
-        ></p-avatar>
-    </div>
+<div
+	class="mt-12 flex w-full flex-col items-start gap-4"
+	[formGroup]="form"
+>
+	<h1 class="text-2xl font-semibold text-storm-dark">Company</h1>
+	<p-cropper
+		formControlName="company"
+		variant="company"
+	/>
+
+	<div class="flex w-full place-content-evenly items-center">
+		<p-avatar
+			size="small"
+			variant="company"
+			[src]="form.get('company')?.value"
+		></p-avatar>
+		<p-avatar
+			variant="company"
+			[src]="form.get('company')?.value"
+		></p-avatar>
+		<p-avatar
+			size="large"
+			variant="company"
+			[src]="form.get('company')?.value"
+		></p-avatar>
+		<p-avatar
+			size="xlarge"
+			variant="company"
+			[src]="form.get('company')?.value"
+		></p-avatar>
+	</div>
 </div>

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.1](https://github.com/Employes/Paperless/compare/v1.52.0...v1.52.1) (2024-09-23)
+
+
+### Bug Fixes
+
+* **organisms/table:** Actually parse sizes correctly for actions etc ([69b2f34](https://github.com/Employes/Paperless/commit/69b2f34d5e149bc4f8474b4cc03669a583b0e7de))
+* **organisms/table:** Floating menu actions on single items ([6757df4](https://github.com/Employes/Paperless/commit/6757df4fdbe469afdf44ddb668aa5e87c105963b))
+
+
+
+
+
 # [1.52.0](https://github.com/Employes/Paperless/compare/v1.51.4...v1.52.0) (2024-09-20)
 
 **Note:** Version bump only for package @paperless/angular

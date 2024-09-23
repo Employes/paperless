@@ -30,6 +30,7 @@ import {
 import {
 	BehaviorSubject,
 	distinctUntilChanged,
+	filter,
 	Subscription,
 	take,
 } from 'rxjs';
@@ -814,10 +815,6 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
-		if (rowIndex === undefined) {
-			return;
-		}
-
 		if (
 			action.routerLink ||
 			(Array.isArray(action.routerLink) && action.routerLink.length)
@@ -825,7 +822,10 @@ export class Table implements OnInit, OnChanges {
 			return;
 		}
 
-		const item = this.parsedItems[rowIndex];
+		const item =
+			rowIndex !== undefined
+				? this.parsedItems[rowIndex]
+				: this.selectedRows[0];
 		action.action.emit({
 			item,
 			multi: false,
@@ -894,7 +894,10 @@ export class Table implements OnInit, OnChanges {
 				a => a.type === 'both' || a.type === 'single'
 			);
 			const rowActionsFloating = actions.filter(
-				a => a.type === 'both' || a.type === 'multi' || mobile
+				a =>
+					(this._inputEnableRowSelection &&
+						(a.type === 'both' || a.type === 'multi')) ||
+					(mobile && a.type === 'single' && !a.routerLink)
 			);
 
 			let rowSelectionLimit = this._inputRowSelectionLimit;
@@ -922,6 +925,13 @@ export class Table implements OnInit, OnChanges {
 			this.rowActionsRowDefinition$.next(this._parseRowActionsRowDefinition());
 			this.rowActionsRow$.next(rowActionsRow);
 			this.rowActionsFloatingAll$.next(rowActionsFloating);
+
+			this.floatingMenuShown$
+				.pipe(
+					take(1),
+					filter(v => !!v)
+				)
+				.subscribe(() => this._showFloatingMenu());
 		}, 200);
 	}
 

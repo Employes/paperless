@@ -8,7 +8,7 @@ import {
 	NgZone,
 	TemplateRef,
 } from '@angular/core';
-import { Components, TableColumnSizes } from '@paperless/core';
+import { Components } from '@paperless/core';
 import {
 	ProxyCmp,
 	proxyOutputs,

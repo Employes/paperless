@@ -613,7 +613,12 @@ export class Table {
 				a => a.type === 'both' || a.type === 'single'
 			);
 			this._rowActionsFloatingAll = actions
-				.filter(a => a.type === 'both' || a.type === 'multi' || mobile)
+				.filter(
+					a =>
+						(this.enableRowSelection &&
+							(a.type === 'both' || a.type === 'multi')) ||
+						(mobile && a.type === 'single')
+				)
 				.map(a => {
 					if (a.type === 'single') {
 						a.disabled = this.selectedRows?.length > 1;
@@ -644,6 +649,10 @@ export class Table {
 			}
 
 			this._enableRowSelection = enableRowSelection;
+
+			if (this._floatingMenuShown) {
+				this._showFloatingMenu();
+			}
 		}, 200);
 	}
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.2](https://github.com/Employes/Paperless/compare/v1.52.1...v1.52.2) (2024-09-24)
+
+
+### Bug Fixes
+
+* **molecules/table/cell:** Catch headers & other edge cases + share code accross code bases ([a69709c](https://github.com/Employes/Paperless/commit/a69709cae895d91967a96091e50c81eec14389ef))
+* **molecules/table/cell:** Move the "hack" up so it gets read ([aeb75f9](https://github.com/Employes/Paperless/commit/aeb75f9a34d8c16d14ffbad306a3c56f2615297a))
+
+
+
+
+
 ## [1.52.1](https://github.com/Employes/Paperless/compare/v1.52.0...v1.52.1) (2024-09-23)
 
 

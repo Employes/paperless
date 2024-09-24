@@ -90,91 +90,102 @@
 					[enableHover]="enableRowSelection || enableRowClick"
 					(click)="_rowClick($event, rowIndex)"
 				>
-					<ng-container *ngFor="let col of columns; let index = index">
-						<p-table-cell-ngx
-							[definition]="col"
-							[item]="item"
-							[checkbox]="
-								(index === 0 || col.hasCheckbox) && enableRowSelection
-									? checkboxTemplate
-									: undefined
-							"
-							[index]="index"
-							[rowIndex]="rowIndex"
-							[template]="col.template"
-							[tableHasActions]="
-								!!(rowActionsRow$ | async)?.length && !(isMobile$ | async)
-							"
-						></p-table-cell-ngx>
-
-						<ng-template #checkboxTemplate>
-							<input
-								class="p-input"
-								type="checkbox"
-								(change)="_checkboxChange($event.target, rowIndex)"
-								[disabled]="_checkboxDisabled(item, rowIndex)"
-								[checked]="_selectionContains(item, rowIndex)"
-							/>
-						</ng-template>
-					</ng-container>
-
 					<ng-container
 						*ngIf="
-							!!(rowActionsRow$ | async)?.length &&
-							!!(rowActionsRowDefinition$ | async) &&
-							!(isMobile$ | async)
+							parseRowActionsRow(
+								rowActionsRow$ | async,
+								rowIndex
+							) as rowActionsRow
 						"
 					>
-						<p-table-cell-ngx
-							variant="actions"
-							[definition]="rowActionsRowDefinition$ | async"
-							[item]="parsedItems[rowIndex]"
-							[index]="columns.length - 1"
-							[rowIndex]="rowIndex"
-							[tableHasActions]="!!(rowActionsRow$ | async)?.length"
-							[template]="actionsTemplate"
-						>
-						</p-table-cell-ngx>
+						<ng-container *ngFor="let col of columns; let index = index">
+							<p-table-cell-ngx
+								[definition]="col"
+								[item]="item"
+								[checkbox]="
+									(index === 0 || col.hasCheckbox) && enableRowSelection
+										? checkboxTemplate
+										: undefined
+								"
+								[index]="index"
+								[rowIndex]="rowIndex"
+								[template]="col.template"
+								[tableHasActions]="
+									!!rowActionsRow?.length && !(isMobile$ | async)
+								"
+							></p-table-cell-ngx>
 
-						<ng-template #actionsTemplate>
-							<div class="ml-auto flex items-center gap-2">
-								<ng-container *ngFor="let action of rowActionsRow$ | async">
-									<p-tooltip
-										*ngIf="
-											action.showFunction
-												? action.showFunction(parsedItems[rowIndex])
-												: true
-										"
-										[content]="action.label"
-									>
-										<p-button
-											data-is-action
-											variant="secondary"
-											slot="trigger"
-											[icon]="action.icon"
-											[iconRotate]="action.iconRotate"
-											iconFlip="action.iconFlip"
-											iconOnly="true"
-											size="small"
-											[disabled]="action.disabled"
-											[routerLink]="
-												action.routerLink
-													? (_getActionRouterLink(action.routerLink, rowIndex)
-													  | async)
-													: null
+							<ng-template #checkboxTemplate>
+								<input
+									class="p-input"
+									type="checkbox"
+									(change)="_checkboxChange($event.target, rowIndex)"
+									[disabled]="_checkboxDisabled(item, rowIndex)"
+									[checked]="_selectionContains(item, rowIndex)"
+								/>
+							</ng-template>
+						</ng-container>
+
+						<ng-container
+							*ngIf="
+								!!rowActionsRow?.length &&
+								!!(rowActionsRowDefinition$ | async) &&
+								!(isMobile$ | async)
+							"
+						>
+							<p-table-cell-ngx
+								variant="actions"
+								[definition]="rowActionsRowDefinition$ | async"
+								[item]="parsedItems[rowIndex]"
+								[index]="columns.length - 1"
+								[rowIndex]="rowIndex"
+								[tableHasActions]="!!rowActionsRow?.length"
+								[template]="actionsTemplate"
+							>
+							</p-table-cell-ngx>
+
+							<ng-template #actionsTemplate>
+								<div class="ml-auto flex items-center gap-2">
+									<ng-container *ngFor="let action of rowActionsRow">
+										<p-tooltip
+											*ngIf="
+												action.showFunction
+													? action.showFunction(parsedItems[rowIndex])
+													: true
 											"
-											[queryParams]="
-												action.queryParams
-													? (_getActionQueryParams(action.queryParams, rowIndex)
-													  | async)
-													: null
-											"
-											(onClick)="_rowActionClick(action, rowIndex)"
-										></p-button>
-									</p-tooltip>
-								</ng-container>
-							</div>
-						</ng-template>
+											[content]="action.label"
+										>
+											<p-button
+												data-is-action
+												variant="secondary"
+												slot="trigger"
+												[icon]="action.icon"
+												[iconRotate]="action.iconRotate"
+												iconFlip="action.iconFlip"
+												iconOnly="true"
+												size="small"
+												[disabled]="action.disabled"
+												[routerLink]="
+													action.routerLink
+														? (_getActionRouterLink(action.routerLink, rowIndex)
+														  | async)
+														: null
+												"
+												[queryParams]="
+													action.queryParams
+														? (_getActionQueryParams(
+																action.queryParams,
+																rowIndex
+														  ) | async)
+														: null
+												"
+												(onClick)="_rowActionClick(action, rowIndex)"
+											></p-button>
+										</p-tooltip>
+									</ng-container>
+								</div>
+							</ng-template>
+						</ng-container>
 					</ng-container>
 				</p-table-row>
 			</ng-container>

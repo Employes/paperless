@@ -716,6 +716,10 @@ export class Table {
 	}
 
 	private _getRowColumns(item, index) {
+		const actions = this._rowActionsRow.filter(a =>
+			a.showFunction ? a.showFunction(item) : true
+		);
+
 		const columns = this._columns.map((col: TableColumn, colIndex) => {
 			return (
 				<p-table-cell
@@ -726,16 +730,13 @@ export class Table {
 					}
 					index={colIndex}
 					rowIndex={index}
-					tableHasActions={!!this._rowActionsRow.length && !isMobile()}
+					tableHasActions={!!actions.length && !isMobile()}
 				></p-table-cell>
 			);
 		});
 
-		if (this._rowActionsRow?.length && !isMobile()) {
+		if (actions?.length && !isMobile()) {
 			const def = this._parseRowActionsRowDefinition();
-			const actions = this._rowActionsRow.filter(a =>
-				a.showFunction ? a.showFunction(item) : true
-			);
 
 			if (!actions.length) {
 				return columns;
@@ -748,7 +749,7 @@ export class Table {
 					item={item}
 					index={this._columns.length - 1}
 					rowIndex={index}
-					tableHasActions={!!this._rowActionsRow.length}
+					tableHasActions={true}
 				>
 					<div
 						slot='actions'

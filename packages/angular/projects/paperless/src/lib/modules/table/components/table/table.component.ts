@@ -515,6 +515,16 @@ export class Table implements OnInit, OnChanges {
 		this.emptyStateActionClick.emit();
 	}
 
+	parseRowActionsRow(actions: TableRowAction[] | null, rowIndex: number) {
+		if (!actions?.length) {
+			return;
+		}
+
+		return actions.filter(
+			a => !a.showFunction || a.showFunction(this.parsedItems[rowIndex])
+		);
+	}
+
 	private _parseItems(items: string | any[]) {
 		if (!items) {
 			this.parsedItems = [];

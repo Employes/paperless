@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.3](https://github.com/employes/paperless/compare/v1.52.2...v1.52.3) (2024-09-24)
+
+
+### Bug Fixes
+
+* **molecules/table/cell:** Add missing classes to "hack" ([53b50b9](https://github.com/employes/paperless/commit/53b50b9611e4f09d5511a8ef1baff5d0aa826955))
+
+
+
+
+
 ## [1.52.2](https://github.com/employes/paperless/compare/v1.52.1...v1.52.2) (2024-09-24)
 
 

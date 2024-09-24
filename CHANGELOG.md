@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.4](https://github.com/employes/paperless/compare/v1.52.3...v1.52.4) (2024-09-24)
+
+
+### Bug Fixes
+
+* **organisms/table:** Only add row-actions column when row actions available after check function ([14d4d78](https://github.com/employes/paperless/commit/14d4d789f1b92197132a5a0d2c52b4185bdd4959))
+
+
+
+
+
 ## [1.52.3](https://github.com/employes/paperless/compare/v1.52.2...v1.52.3) (2024-09-24)
 
 

@@ -9,6 +9,8 @@ import {
 /*
      With this, we shall hack the system in ways no one would ever have thought.
 
+	 justify-start justify-center justify-end
+	 font-semibold text-storm-dark
      w-1/12 w-2/12 w-3/12 w-4/12 w-5/12 w-6/12 w-7/12 w-8/12 w-9/12 w-10/12 w-11/12 w-12/12
      tablet:w-1/12 tablet:w-2/12 tablet:w-3/12 tablet:w-4/12 tablet:w-5/12 tablet:w-6/12 tablet:w-7/12 tablet:w-8/12 tablet:w-9/12 tablet:w-10/12 tablet:w-11/12 tablet:w-12/12
      desktop-xs:w-1/12 desktop-xs:w-2/12 desktop-xs:w-3/12 desktop-xs:w-4/12 desktop-xs:w-5/12 desktop-xs:w-6/12 desktop-xs:w-7/12 desktop-xs:w-8/12 desktop-xs:w-9/12 desktop-xs:w-10/12 desktop-xs:w-11/12 desktop-xs:w-12/12
@@ -24,6 +26,13 @@ import {
      desktop:hidden desktop:flex desktop:group-hover:hidden desktop:group-hover:flex
      desktop-lg:hidden desktop-lg:flex desktop-lg:group-hover:hidden desktop-lg:group-hover:flex
      desktop-xl:hidden desktop-xl:flex desktop-xl:group-hover:hidden desktop-xl:group-hover:flex
+     pr-4 pr-0
+     tablet:pr-4 tablet:pr-0
+     desktop-xs:pr-4 desktop-xs:pr-0
+     desktop-sm:pr-4 desktop-sm:pr-0
+     desktop:pr-4 desktop:pr-0
+     desktop-lg:pr-4 desktop-lg:pr-0
+     desktop-xl:pr-4 desktop-xl:pr-0
 
 
         ⠀⠀⠀⠀⠀⣠⣴⣶⣿⣿⠿⣷⣶⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣷⠿⣿⣿⣶⣦⣀⠀⠀⠀⠀⠀

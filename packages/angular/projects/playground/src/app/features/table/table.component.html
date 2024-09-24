@@ -7,26 +7,50 @@
 >
 	<p-table-column
 		type="th"
-		name="Datum"
+		name="Employee"
 		path="date"
-		[sizes]="8"
+		[sizes]="{
+			default: 8,
+			tablet: 7
+		}"
 		[hasCheckbox]="true"
 	></p-table-column>
 	<p-table-column
-		name="Uren"
+		name="Dagen"
 		path="hours"
 		align="end"
 		[sizes]="{
-			default: 4,
+			default: 'hidden',
+			tablet: 3,
 			'desktop-xs': 2
 		}"
 	></p-table-column>
 	<p-table-column
+		name="Uren"
+		path="status"
+		align="end"
+		[sizes]="{
+			default: 'hidden',
+			'desktop-xs': 1
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Status"
 		path="status"
 		align="end"
 		[sizes]="{
 			default: 'hidden',
 			'desktop-xs': 2
+		}"
+	></p-table-column>
+	<p-table-column
+		name="Uren"
+		path="status"
+		align="end"
+		[sizes]="{
+			default: 4,
+			tablet: 2,
+			'desktop-xs': 'hidden'
 		}"
 	></p-table-column>
 

@@ -1,10 +1,8 @@
 /* eslint-disable max-len */
 import { Component, HostBinding, Input, TemplateRef } from '@angular/core';
 import {
-	isTableColumnSizesKey,
+	getTableCellColumnClasses,
 	objectGetByPath,
-	TableColumnSizes,
-	TableColumnSizesKey,
 	TableDefinitionData,
 } from '@paperless/core';
 
@@ -61,7 +59,11 @@ export class TableCell {
 
 	@HostBinding('class')
 	get class() {
-		return this.getColumnClasses();
+		return getTableCellColumnClasses(
+			this.definition,
+			this.variant,
+			this.tableHasActions
+		);
 	}
 
 	get data(): TableDefinitionData | { value: string } {
@@ -85,59 +87,6 @@ export class TableCell {
 			item: this.item,
 			index: this.index,
 			rowIndex: this.rowIndex,
-		};
-	}
-
-	// render() {
-	// 	return (
-	// 		<Host
-	// 			class={{
-	// 				'p-table-column': true,
-	// 				[`variant-${this.variant}`]: true,
-	// 				...this._getColumnClasses(),
-	// 			}}
-	// 		>
-	// 			{this.checkbox}
-
-	// 			{this.variant === 'loading' ? (
-	// 				<p-loader
-	// 					variant="ghost"
-	// 					class="rounded flex-1 w-full h-6"
-	// 				/>
-	// 			) : (
-	// 				<div class="flex">
-	// 					{this.variant === 'header' ? (
-	// 						this.data.value
-	// 					) : this.definition.useSlot ? (
-	// 						<slot />
-	// 					) : (
-	// 						this.template(this.data as TableDefinitionData)
-	// 					)}
-	// 				</div>
-	// 			)}
-	// 		</Host>
-	// 	);
-	// }
-
-	public getColumnClasses() {
-		const sizes = this.definition ? this._getSizes(this.definition) : {};
-		const isLastValues = this.definition
-			? this._getIsLastValues(this.definition)
-			: {};
-
-		return {
-			'justify-start':
-				!this.definition?.align || this.definition?.align === 'start',
-			'justify-center': this.definition?.align === 'center',
-			'justify-end': this.definition?.align === 'end',
-			'font-semibold':
-				this.variant !== 'header' && this.definition?.type === 'th',
-			'text-storm-dark':
-				this.variant !== 'header' && this.definition?.type === 'th',
-			'group-hover:flex': this.variant === 'actions' && this.tableHasActions,
-			hidden: this.variant === 'actions' && this.tableHasActions,
-			...sizes,
-			...isLastValues,
 		};
 	}
 
@@ -188,118 +137,4 @@ export class TableCell {
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     */
-	private _getSizes(
-		{
-			sizes,
-		}: {
-			sizes: 'auto' | 'hidden' | 'full' | number | TableColumnSizes;
-		} /* Table Definition */
-	) {
-		if (sizes === 'auto' || !sizes) {
-			return {
-				'w-auto': true,
-			};
-		}
-
-		if (sizes === 'hidden') {
-			return {
-				hidden: true,
-			};
-		}
-
-		if (typeof sizes === 'object') {
-			sizes = sizes as TableColumnSizes;
-			const classes: any = {};
-			let previousSize: TableColumnSizesKey | undefined;
-
-			for (let size in sizes) {
-				if (!isTableColumnSizesKey(sizes, size)) {
-					continue;
-				}
-
-				if (size === 'default') {
-					if (sizes.default === 'hidden') {
-						classes['hidden'] = true;
-						previousSize = size;
-						continue;
-					}
-
-					classes[`w-${sizes.default}/12`] = true;
-					previousSize = size;
-					continue;
-				}
-
-				const currentValue = sizes[size];
-				const previousValue = previousSize ? sizes[previousSize] : null;
-				if (
-					currentValue !== 'hidden' &&
-					previousValue &&
-					previousValue === 'hidden' &&
-					this.variant !== 'actions'
-				) {
-					classes[`${size}:flex`] = true;
-				}
-
-				if (currentValue === 'hidden' && this.variant !== 'actions') {
-					classes[`${size}:hidden`] = true;
-					previousSize = size;
-					continue;
-				}
-
-				if (currentValue === 12 || currentValue === 'full') {
-					classes[`${size}:w-full`] = true;
-				}
-
-				classes[`${size}:w-${currentValue}/12`] = true;
-				previousSize = size;
-			}
-
-			return classes;
-		}
-
-		if (sizes === 12 || sizes === 'full') {
-			return {
-				'w-full': true,
-			};
-		}
-
-		// is a number.
-		return {
-			[`w-${sizes}/12`]: true,
-		};
-	}
-
-	private _getIsLastValues(
-		{
-			isLast,
-			parsedSizes,
-		}: {
-			isLast: { [key: string]: boolean };
-			parsedSizes: TableColumnSizes;
-		} /* Table Definition */
-	) {
-		const values: { [key: string]: boolean } = {};
-
-		for (let size of Object.keys(isLast)) {
-			let prefix = '';
-			if (size !== 'default') {
-				prefix = `${size}:`;
-			}
-
-			values[`${prefix}pr-4`] = !isLast[size];
-
-			values[`${prefix}group-hover:hidden`] =
-				isLast[size] && this.tableHasActions && this.variant !== 'actions';
-
-			values[`${prefix}group-hover:flex`] =
-				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' ||
-				this.variant === 'actions';
-
-			values[`${prefix}flex`] =
-				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&
-				this.variant !== 'actions';
-		}
-
-		return values;
-	}
 }

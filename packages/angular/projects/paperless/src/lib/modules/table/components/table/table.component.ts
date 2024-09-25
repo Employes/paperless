@@ -517,7 +517,7 @@ export class Table implements OnInit, OnChanges {
 
 	parseRowActionsRow(actions: TableRowAction[] | null, rowIndex: number) {
 		if (!actions?.length) {
-			return;
+			return [];
 		}
 
 		return actions.filter(

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.52.5](https://github.com/Employes/Paperless/compare/v1.52.4...v1.52.5) (2024-09-25)
+
+
+### Bug Fixes
+
+* **angular/table:** Return empty array of actions so columns are generated ([a1ea73f](https://github.com/Employes/Paperless/commit/a1ea73f52d0da9531a8f1c4d31ada58027be2517))
+
+
+
+
+
 ## [1.52.4](https://github.com/Employes/Paperless/compare/v1.52.3...v1.52.4) (2024-09-24)
 
 

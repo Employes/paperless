@@ -411,7 +411,7 @@ export class Select {
 							class={`p-input read-only cursor-pointer ${
 								this._displayValue === this.placeholder
 									? 'text-base text-storm-medium'
-									: ''
+									: 'font-medium'
 							}`}
 							contenteditable
 							onFocus={ev => this._onFocus(ev)}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.53.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.52.5...v1.53.0) (2024-10-21)
+
+
+### Features
+
+* **molecules/select:** Add support for a custom class, icon & use editeable div to support better content ([b116dc1](https://github.com/ionic-team/stencil-component-starter/commit/b116dc17fdfff4d90f239d215e495bf243b881ba))
+
+
+
+
+
 ## [1.52.5](https://github.com/ionic-team/stencil-component-starter/compare/v1.52.4...v1.52.5) (2024-09-25)
 
 **Note:** Version bump only for package @paperless/core

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.53.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.53.0...v1.53.1) (2024-10-21)
+
+
+### Bug Fixes
+
+* **molecules/select:** Apply medium font to value ([680d1e7](https://github.com/ionic-team/stencil-component-starter/commit/680d1e7f9ecd94eb826bd5ff6f5c3b5eaed5ad23))
+
+
+
+
+
 # [1.53.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.52.5...v1.53.0) (2024-10-21)
 
 

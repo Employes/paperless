@@ -933,6 +933,10 @@ export namespace Components {
          */
         "addItemText": string;
         /**
+          * Wether to apply the item's class also on the selected item
+         */
+        "applyClassOnSelectedItem": string;
+        /**
           * Wether the input uses async filtering
          */
         "asyncFilter": boolean;
@@ -952,6 +956,10 @@ export namespace Components {
           * The key of avatar letters within an item to show when the avatar url doesn't work
          */
         "avatarLettersKey": string;
+        /**
+          * The key of a class in an item to apply
+         */
+        "classKey": string;
         /**
           * Wether the input group is disabled used by the select
          */
@@ -988,6 +996,10 @@ export namespace Components {
           * Icon of the select box
          */
         "icon": IconVariant;
+        /**
+          * The key of icon variant within an item to show
+         */
+        "iconKey": string;
         /**
           * The key to identify an object
          */
@@ -1052,6 +1064,10 @@ export namespace Components {
           * Wether to show the chevron or not
          */
         "showChevron": boolean;
+        /**
+          * Wether to show the icon also on the selected Item
+         */
+        "showIconInSelectedItem": string;
         /**
           * The size of the input group used by the select
          */
@@ -3119,6 +3135,10 @@ declare namespace LocalJSX {
          */
         "addItemText"?: string;
         /**
+          * Wether to apply the item's class also on the selected item
+         */
+        "applyClassOnSelectedItem"?: string;
+        /**
           * Wether the input uses async filtering
          */
         "asyncFilter"?: boolean;
@@ -3138,6 +3158,10 @@ declare namespace LocalJSX {
           * The key of avatar letters within an item to show when the avatar url doesn't work
          */
         "avatarLettersKey"?: string;
+        /**
+          * The key of a class in an item to apply
+         */
+        "classKey"?: string;
         /**
           * Wether the input group is disabled used by the select
          */
@@ -3174,6 +3198,10 @@ declare namespace LocalJSX {
           * Icon of the select box
          */
         "icon"?: IconVariant;
+        /**
+          * The key of icon variant within an item to show
+         */
+        "iconKey"?: string;
         /**
           * The key to identify an object
          */
@@ -3258,6 +3286,10 @@ declare namespace LocalJSX {
           * Wether to show the chevron or not
          */
         "showChevron"?: boolean;
+        /**
+          * Wether to show the icon also on the selected Item
+         */
+        "showIconInSelectedItem"?: string;
         /**
           * The size of the input group used by the select
          */

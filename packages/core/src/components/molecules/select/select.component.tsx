@@ -80,6 +80,26 @@ export class Select {
 	@Prop() avatarKey: string;
 
 	/**
+	 * The key of icon variant within an item to show
+	 */
+	@Prop() iconKey: string;
+
+	/**
+	 * Wether to show the icon also on the selected Item
+	 */
+	@Prop() showIconInSelectedItem: string;
+
+	/**
+	 * The key of a class in an item to apply
+	 */
+	@Prop() classKey: string = 'class';
+
+	/**
+	 * Wether to apply the item's class also on the selected item
+	 */
+	@Prop() applyClassOnSelectedItem: string;
+
+	/**
 	 * The key of avatar letters within an item to show when the avatar url doesn't work
 	 */
 	@Prop() avatarLettersKey: string;
@@ -241,7 +261,7 @@ export class Select {
 
 	@State() private _amountHidden = 0;
 
-	private _inputRef: HTMLInputElement;
+	private _inputRef: HTMLDivElement;
 	private autocompleteInputRef: HTMLInputElement;
 	private _multiContainerRef: HTMLElement;
 
@@ -254,22 +274,20 @@ export class Select {
 		}
 
 		let items =
-			typeof this.items === 'string'
-				? JSON.parse(this.items)
-				: this.items;
+			typeof this.items === 'string' ? JSON.parse(this.items) : this.items;
 
 		if (typeof items?.[0] === 'string') {
 			this.displayKey = 'text';
 			this.valueKey = 'value';
 
-			items = items.map((str) => ({
+			items = items.map(str => ({
 				value: str,
 				text: str,
 			}));
 		}
 
 		if (this.query?.length && !this.asyncFilter) {
-			items = items.filter((item) => {
+			items = items.filter(item => {
 				if (this.queryKey) {
 					return this._checkvalue(this.queryKey, item);
 				}
@@ -285,19 +303,36 @@ export class Select {
 	}
 
 	get _displayValue() {
-		if (this.multi) {
-			if (!this._selectedItem?.length) {
-				return [];
-			}
-
-			return this._selectedItem
-				?.map((i) => i?.[this.displayKey])
-				.filter((i) => !!i);
+		if (!this._selectedItem) {
+			return this.placeholder;
 		}
 
-		return this._selectedItem?.[
-			this.selectionDisplayKey ?? this.displayKey
-		];
+		if (this.multi) {
+			if (this._selectedItem?.length === 0) {
+				return this.placeholder;
+			}
+
+			return (
+				<div
+					class={`multi-container size-${this.size}`}
+					ref={ref => (this._multiContainerRef = ref)}
+				>
+					{this._selectedItem.map(item => (
+						<div
+							class='item'
+							onClick={() => this._selectValue(item)}
+						>
+							{item[this.selectionDisplayKey ?? this.displayKey]}
+							<p-icon variant='negative' />
+						</div>
+					))}
+
+					<div class='extra hidden'>+{this._amountHidden}</div>
+				</div>
+			);
+		}
+
+		return this._getDisplay(this._selectedItem, true);
 	}
 
 	get _identifierKey() {
@@ -349,17 +384,17 @@ export class Select {
 
 	render() {
 		return (
-			<Host class="p-select">
+			<Host class='p-select'>
 				<p-dropdown
 					disableTriggerClick={true}
 					calculateWidth={true}
 					insideClick={true}
 					scrollable={this.enableAutocomplete ? 'large' : true}
 					show={this._showDropdown}
-					onIsOpen={(ev) => this._onDropdownOpen(ev)}
+					onIsOpen={ev => this._onDropdownOpen(ev)}
 				>
 					<p-input-group
-						slot="trigger"
+						slot='trigger'
 						icon={this.icon}
 						size={this.size}
 						prefix={this.prefix}
@@ -369,61 +404,36 @@ export class Select {
 						error={this.error}
 						disabled={this.disabled}
 						focused={this._showDropdown}
-						forceShowTooltip={
-							this.error?.length && this._showDropdown
-						}
+						forceShowTooltip={this.error?.length && this._showDropdown}
 					>
-						<input
-							slot="input"
-							type="text"
-							placeholder={this.placeholder}
-							value={
-								this.multi && this._displayValue?.length
-									? ' '
-									: this._displayValue
-							}
-							class="p-input cursor-pointer read-only"
-							onFocus={(ev) => this._onFocus(ev)}
-							onMouseDown={(ev) => this._onMouseDown(ev)}
+						<div
+							slot='input'
+							class={`p-input read-only cursor-pointer ${
+								this._displayValue === this.placeholder
+									? 'text-base text-storm-medium'
+									: ''
+							}`}
+							contenteditable
+							onFocus={ev => this._onFocus(ev)}
+							onMouseDown={ev => this._onMouseDown(ev)}
 							onClick={() => this._onClick()}
-							ref={(ref) => (this._inputRef = ref)}
-						/>
+							ref={ref => (this._inputRef = ref)}
+						>
+							{this._displayValue}
+						</div>
 
 						{this.showChevron && (
-							<p-icon variant="chevron" slot="suffix" />
+							<p-icon
+								variant='chevron'
+								slot='suffix'
+							/>
 						)}
 					</p-input-group>
-					<div slot="items">
-						{this.loading
-							? this._getLoadingItems()
-							: this._getItems()}
+					<div slot='items'>
+						{this.loading ? this._getLoadingItems() : this._getItems()}
 						{this.showAddItem && this._getAddItem()}
 					</div>
 				</p-dropdown>
-
-				{this.multi && this._selectedItem?.length > 0 && (
-					<div
-						class={`multi-container size-${this.size}`}
-						ref={(ref) => (this._multiContainerRef = ref)}
-					>
-						{this._selectedItem.map((item) => (
-							<div
-								class="item"
-								onClick={() => this._selectValue(item)}
-							>
-								{
-									item[
-										this.selectionDisplayKey ??
-											this.displayKey
-									]
-								}
-								<p-icon variant="negative" />
-							</div>
-						))}
-
-						<div class="extra hidden">+{this._amountHidden}</div>
-					</div>
-				)}
 			</Host>
 		);
 	}
@@ -483,9 +493,7 @@ export class Select {
 
 			this._selectedItem =
 				!!this.valueKey && this.valueKey !== 'false'
-					? this._items.filter((i) =>
-							value.includes(i?.[this.valueKey])
-						)
+					? this._items.filter(i => value.includes(i?.[this.valueKey]))
 					: [...value];
 			return;
 		}
@@ -520,11 +528,10 @@ export class Select {
 			return;
 		}
 
-		const item = this._items.find((i) => {
+		const item = this._items.find(i => {
 			const itemIdentifier = i?.[this._identifierKey];
 			const parsedItemIdentifier =
-				typeof itemIdentifier === 'string' ||
-				typeof itemIdentifier === 'number'
+				typeof itemIdentifier === 'string' || typeof itemIdentifier === 'number'
 					? itemIdentifier
 					: JSON.stringify(itemIdentifier);
 
@@ -553,7 +560,7 @@ export class Select {
 			const valueArray = [...this.value];
 
 			const includesIndex = selectedItem.findIndex(
-				(i) => i[this._identifierKey] === item[this._identifierKey]
+				i => i[this._identifierKey] === item[this._identifierKey]
 			);
 			if (includesIndex === -1) {
 				selectedItem.push(item);
@@ -632,7 +639,7 @@ export class Select {
 	}
 
 	private _getItems() {
-		let items = this._items.map((item) => (
+		let items = this._items.map(item => (
 			<p-dropdown-menu-item
 				onClick={() => this._selectValue(item)}
 				active={
@@ -640,33 +647,20 @@ export class Select {
 					!!this._selectedItem &&
 					Array.isArray(this._selectedItem)
 						? this._selectedItem.findIndex(
-								(i) =>
-									i[this._identifierKey] ===
-									item[this._identifierKey]
-							) >= 0
+								i => i[this._identifierKey] === item[this._identifierKey]
+						  ) >= 0
 						: item[this._identifierKey] ===
-							this._selectedItem?.[this._identifierKey]
+						  this._selectedItem?.[this._identifierKey]
 				}
 				variant={this.multi ? 'checkbox' : 'default'}
 			>
-				{this.avatarKey ? (
-					<span class="flex items-center gap-2">
-						<p-avatar
-							size="xsmall"
-							src={item[this.avatarKey]}
-							letters={item[this.avatarLettersKey]}
-						></p-avatar>
-						{item[this.dropdownDisplayKey ?? this.displayKey]}
-					</span>
-				) : (
-					item[this.displayKey]
-				)}
+				{this._getDisplay(item)}
 			</p-dropdown-menu-item>
 		));
 
 		if (!this._items.length) {
 			items = [
-				<p class="w-full p-2 text-storm-medium text-sm text-center">
+				<p class='w-full p-2 text-center text-sm text-storm-medium'>
 					{this.emptyStateText}
 				</p>,
 			];
@@ -675,15 +669,15 @@ export class Select {
 		if (this.enableSelectAll && this._items.length) {
 			items.unshift(
 				<p-dropdown-menu-item
-					variant="checkbox"
+					variant='checkbox'
 					onClick={() => this._selectAllChange()}
 					active={this._allSelected}
 				>
 					{this.selectAllIcon?.length ? (
-						<span class="flex items-center gap-2">
-							<div class="w-6 justify-center flex text-lg">
+						<span class='flex items-center gap-2'>
+							<div class='flex w-6 justify-center text-lg'>
 								<p-icon variant={this.selectAllIcon} />
-							</div>
+							</div>{' '}
 							{this.selectAllText}
 						</span>
 					) : (
@@ -703,9 +697,9 @@ export class Select {
 	private _getAddItem() {
 		return (
 			<p-dropdown-menu-item onClick={() => this.add.emit()}>
-				<span class="text-indigo font-semibold flex gap-1 items-center">
+				<span class='flex items-center gap-1 font-semibold text-indigo'>
 					{this.addItemText}
-					<p-icon variant="plus" />
+					<p-icon variant='plus' />
 				</span>
 			</p-dropdown-menu-item>
 		);
@@ -714,7 +708,10 @@ export class Select {
 	private _getLoadingItems() {
 		const items = [0, 0, 0].map(() => (
 			<p-dropdown-menu-item enableHover={false}>
-				<p-loader variant="ghost" class="h-6 w-full rounded" />
+				<p-loader
+					variant='ghost'
+					class='h-6 w-full rounded'
+				/>
 			</p-dropdown-menu-item>
 		));
 
@@ -727,12 +724,12 @@ export class Select {
 
 	private _getAutoCompleteItem() {
 		return (
-			<div class="bg-white sticky top-0 pt-2 -mt-2">
+			<div class='sticky top-0 -mt-2 bg-white pt-2'>
 				<input
-					class="p-input size-small mb-2 sticky top-2"
+					class='p-input size-small sticky top-2 mb-2'
 					placeholder={this.autocompletePlaceholder}
-					onInput={(ev) => this._onAutoComplete(ev)}
-					ref={(ref) => (this.autocompleteInputRef = ref)}
+					onInput={ev => this._onAutoComplete(ev)}
+					ref={ref => (this.autocompleteInputRef = ref)}
 					value={this.query}
 				/>
 			</div>
@@ -744,7 +741,9 @@ export class Select {
 			return;
 		}
 
-		this._multiContainerRef.style.maxWidth = `${this._inputRef.clientWidth - 16}px`;
+		this._multiContainerRef.style.maxWidth = `${
+			this._inputRef.clientWidth - 16
+		}px`;
 	}
 
 	private _checkSelectedItems() {
@@ -795,5 +794,47 @@ export class Select {
 	private _selectAllChange() {
 		this._allSelected = !this._allSelected;
 		this.selectAllChange.emit(this._allSelected);
+	}
+
+	private _getDisplay(item, isSelection = false) {
+		let content =
+			item[
+				isSelection
+					? this.selectionDisplayKey ?? this.displayKey
+					: this.displayKey
+			];
+		if (this.avatarKey) {
+			content = (
+				<span class='flex items-center gap-2'>
+					<p-avatar
+						size='xsmall'
+						src={item[this.avatarKey]}
+						letters={item[this.avatarLettersKey]}
+					></p-avatar>
+					{item[this.dropdownDisplayKey ?? this.displayKey]}
+				</span>
+			);
+		}
+
+		if (this.iconKey && (!isSelection || this.showIconInSelectedItem)) {
+			content = (
+				<span class='flex items-center gap-2'>
+					<p-icon variant={item[this.iconKey] as IconVariant} />
+					{item[this.dropdownDisplayKey ?? this.displayKey]}
+				</span>
+			);
+		}
+
+		return (
+			<div
+				class={
+					!isSelection || this.applyClassOnSelectedItem
+						? item?.class ?? null
+						: null
+				}
+			>
+				{content}
+			</div>
+		);
 	}
 }

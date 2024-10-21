@@ -13,11 +13,11 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-	<div class="h-80">
+	<div class='h-80'>
 		<p-select
-			placeholder="Select an item"
-			identifier-key="value"
-			autocomplete-placeholder="Search..."
+			placeholder='Select an item'
+			identifier-key='value'
+			autocomplete-placeholder='Search...'
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"},{"value":4,"text":"Value 4"},{"value":5,"text":"Value 5"},{"value":6,"text":"Value 6"}]'
 		/>
 	</div>
@@ -26,10 +26,10 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Disabled
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="Select an item"
-			identifier-key="value"
+			placeholder='Select an item'
+			identifier-key='value'
 			enable-autocomplete={false}
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
@@ -41,10 +41,10 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="Click me to search"
-			identifier-key="value"
+			placeholder='Click me to search'
+			identifier-key='value'
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -53,10 +53,10 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Disabled
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="I have no auto selection"
-			identifier-key="value"
+			placeholder='I have no auto selection'
+			identifier-key='value'
 			auto-select-first={false}
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
@@ -68,10 +68,10 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Enabled
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="Click me to show loading"
-			identifier-key="value"
+			placeholder='Click me to show loading'
+			identifier-key='value'
 			auto-select-first={false}
 			loading={true}
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
@@ -79,15 +79,15 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 	</div>
 </Canvas>
 
-## Error state 
+## Error state
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="Click me to show loading"
-			identifier-key="value"
+			placeholder='Click me to show loading'
+			identifier-key='value'
 			auto-select-first={false}
-			error="This is an error"
+			error='This is an error'
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -96,11 +96,11 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ## Using identifier key to return object
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
 			auto-select-first={true}
 			value-key={false}
-			identifier-key="value"
+			identifier-key='value'
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -109,11 +109,11 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ## Very long lists
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
 			auto-select-first={true}
 			value-key={false}
-			identifier-key="value"
+			identifier-key='value'
 			items='[{"value":1,"text":"I will be selected automatically"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"},{"value":4,"text":"Value 4"},{"value":5,"text":"Value 5"},{"value":6,"text":"Value 6"},{"value":7,"text":"Value 7"},{"value":8,"text":"Value 8"},{"value":9,"text":"Value 9"},{"value":10,"text":"Value 10"}]'
 		/>
 	</div>
@@ -122,9 +122,9 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ## Show extra item in dropdown for "Add" functionality
 
 <Canvas>
-	<div class="h-52">
+	<div class='h-52'>
 		<p-select
-			placeholder="Click me to search"
+			placeholder='Click me to search'
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 			show-add-item={true}
 		/>
@@ -134,14 +134,70 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ## Show avatars
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			value-key={false}
-			identifier-key="value"
-			placeholder="Please select some items"
-			avatar-key="avatar"
-			avatar-letters-key="letters"
+			identifier-key='value'
+			placeholder='Please select some items'
+			avatar-key='avatar'
+			avatar-letters-key='letters'
 			items='[{"value":1,"text":"Value 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH"},{"value":3,"text":"Value 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
+		/>
+	</div>
+</Canvas>
+
+## Show icon
+
+<Canvas>
+	<div class='flex h-52 flex-col gap-2'>
+		<p-select
+			value-key={false}
+			identifier-key='value'
+			placeholder='Please select some items'
+			icon-key='icon'
+			items='[{"value":1,"text":"Value 1","icon":"checkmark"},{"value":2,"text":"Value 2","icon":"person"},{"value":3,"text":"Value 3","icon":"company"}]'
+		/>
+	</div>
+</Canvas>
+
+## Show icon also on selected item
+
+<Canvas>
+	<div class='flex h-52 flex-col gap-2'>
+		<p-select
+			value-key={false}
+			identifier-key='value'
+			placeholder='Please select some items'
+			icon-key='icon'
+			show-icon-in-selected-item={true}
+			items='[{"value":1,"text":"Value 1","icon":"checkmark"},{"value":2,"text":"Value 2","icon":"person"},{"value":3,"text":"Value 3","icon":"company"}]'
+		/>
+	</div>
+</Canvas>
+
+## Custom classes
+
+<Canvas>
+	<div class='flex h-52 flex-col gap-2'>
+		<p-select
+			value-key={false}
+			identifier-key='value'
+			placeholder='Please select some items'
+			items='[{"value":1,"text":"Value 1","class":"text-positive"},{"value":2,"text":"Value 2","class":"text-unbiased"},{"value":3,"text":"Value 3","class":"text-negative"}]'
+		/>
+	</div>
+</Canvas>
+
+## Apply custom classes on selected item
+
+<Canvas>
+	<div class='flex h-52 flex-col gap-2'>
+		<p-select
+			value-key={false}
+			identifier-key='value'
+			placeholder='Please select some items'
+			apply-class-on-selected-item={true}
+			items='[{"value":1,"text":"Value 1","class":"text-positive"},{"value":2,"text":"Value 2","class":"text-unbiased"},{"value":3,"text":"Value 3","class":"text-negative"}]'
 		/>
 	</div>
 </Canvas>
@@ -151,12 +207,12 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Default
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			multi
 			value-key={false}
-			identifier-key="value"
-			placeholder="Please select some items"
+			identifier-key='value'
+			placeholder='Please select some items'
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 		/>
 	</div>
@@ -165,12 +221,12 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Preselection
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			multi
 			value-key={false}
-			identifier-key="value"
-			placeholder="Please select some items"
+			identifier-key='value'
+			placeholder='Please select some items'
 			items='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"},{"value":3,"text":"Value 3"}]'
 			value='[{"value":1,"text":"Value 1"},{"value":2,"text":"Value 2"}]'
 		/>
@@ -180,16 +236,16 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### With avatars
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			multi
-			label="test"
+			label='test'
 			value-key={false}
-			identifier-key="value"
-			selection-display-key="minText"
-			placeholder="I include avatars"
-			avatar-key="avatar"
-			avatar-letters-key="letters"
+			identifier-key='value'
+			selection-display-key='minText'
+			placeholder='I include avatars'
+			avatar-key='avatar'
+			avatar-letters-key='letters'
 			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
 			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
 		/>
@@ -199,18 +255,18 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### With select all
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			multi
-			label="test"
+			label='test'
 			value-key={false}
-			identifier-key="value"
-			selection-display-key="minText"
-			placeholder="I have a select all"
+			identifier-key='value'
+			selection-display-key='minText'
+			placeholder='I have a select all'
 			enable-autocomplete={false}
 			enable-select-all={true}
-			avatar-key="avatar"
-			avatar-letters-key="letters"
+			avatar-key='avatar'
+			avatar-letters-key='letters'
 			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
 			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
 		/>
@@ -220,19 +276,19 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### With select all icon & avatars
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			multi
-			label="test"
+			label='test'
 			value-key={false}
-			identifier-key="value"
-			selection-display-key="minText"
-			placeholder="I have an icon on my select all"
+			identifier-key='value'
+			selection-display-key='minText'
+			placeholder='I have an icon on my select all'
 			enable-autocomplete={false}
 			enable-select-all={true}
-			select-all-icon="colleagues"
-			avatar-key="avatar"
-			avatar-letters-key="letters"
+			select-all-icon='colleagues'
+			avatar-key='avatar'
+			avatar-letters-key='letters'
 			items='[{"value":1,"text":"Value 1", "minText": "Val 1","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"},{"value":2,"text":"Value 2","letters":"JH", "minText": "Val 2"},{"value":3,"text":"Value 3", "minText": "Val 3","avatar":"https://images.unsplash.com/photo-1594815550232-e615b7a46f25?auto=format&fit=crop&crop=faces&w=150&h=150&q=80"}]'
 			value='[{"value":1,"text":"Value 1", "minText": "Val 1"}]'
 		/>
@@ -242,14 +298,14 @@ import Docs from '../../../packages/core/src/components/molecules/select/readme.
 ### Empty state
 
 <Canvas>
-	<div class="h-52 flex flex-col gap-2">
+	<div class='flex h-52 flex-col gap-2'>
 		<p-select
 			value-key={false}
-			identifier-key="value"
-			placeholder="I am empty"
+			identifier-key='value'
+			placeholder='I am empty'
 			enable-autocomplete={false}
-			items="[]"
-			value="[]"
+			items='[]'
+			value='[]'
 		/>
 	</div>
 </Canvas>

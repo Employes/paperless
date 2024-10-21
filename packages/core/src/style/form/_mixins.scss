@@ -1,125 +1,129 @@
 @mixin inputs($prefix: false, $slotted: false) {
-    @if $prefix != false {
-        @if $slotted == true {
-            #{$prefix} + ::slotted(input[type='text'].p-input),
-            #{$prefix} + ::slotted(input[type='number'].p-input),
-            #{$prefix} + ::slotted(input[type='date'].p-input),
-            #{$prefix} + ::slotted(input[type='month'].p-input),
-            #{$prefix} + ::slotted(input[type='datetime-local'].p-input),
-            #{$prefix} + ::slotted(input[type='time'].p-input),
-            #{$prefix} + ::slotted(input[type='tel'].p-input),
-            #{$prefix} + ::slotted(input[type='password'].p-input),
-            #{$prefix} + ::slotted(input[type='email'].p-input),
-            #{$prefix} + ::slotted(textarea.p-input) {
-                @content;
-            }
-        } @else {
-            #{$prefix} + input[type='text'],
-            #{$prefix} + input[type='number'],
-            #{$prefix} + input[type='date'],
-            #{$prefix} + input[type='month'],
-            #{$prefix} + input[type='datetime-local'],
-            #{$prefix} + input[type='time'],
-            #{$prefix} + input[type='tel'],
-            #{$prefix} + input[type='password'],
-            #{$prefix} + input[type='email'],
-            #{$prefix} + textarea {
-                &.p-input {
-                    @content;
-                }
-            }
-        }
-    } @else {
-        @if $slotted == true {
-            ::slotted(input[type='text'].p-input),
-            ::slotted(input[type='number'].p-input),
-            ::slotted(input[type='date'].p-input),
-            ::slotted(input[type='month'].p-input),
-            ::slotted(input[type='datetime-local'].p-input),
-            ::slotted(input[type='time'].p-input),
-            ::slotted(input[type='tel'].p-input),
-            ::slotted(input[type='password'].p-input),
-            ::slotted(input[type='email'].p-input),
-            ::slotted(textarea.p-input) {
-                @content;
-            }
-        } @else {
-            input[type='text'],
-            input[type='number'],
-            input[type='date'],
-            input[type='month'],
-            input[type='datetime-local'],
-            input[type='time'],
-            input[type='tel'],
-            input[type='password'],
-            input[type='email'],
-            textarea {
-                &.p-input {
-                    @content;
-                }
-            }
-        }
-    }
+	@if $prefix != false {
+		@if $slotted == true {
+			#{$prefix} + ::slotted(div[contenteditable].p-input),
+			#{$prefix} + ::slotted(input[type='text'].p-input),
+			#{$prefix} + ::slotted(input[type='number'].p-input),
+			#{$prefix} + ::slotted(input[type='date'].p-input),
+			#{$prefix} + ::slotted(input[type='month'].p-input),
+			#{$prefix} + ::slotted(input[type='datetime-local'].p-input),
+			#{$prefix} + ::slotted(input[type='time'].p-input),
+			#{$prefix} + ::slotted(input[type='tel'].p-input),
+			#{$prefix} + ::slotted(input[type='password'].p-input),
+			#{$prefix} + ::slotted(input[type='email'].p-input),
+			#{$prefix} + ::slotted(textarea.p-input) {
+				@content;
+			}
+		} @else {
+			#{$prefix} + div[contenteditable],
+			#{$prefix} + input[type='text'],
+			#{$prefix} + input[type='number'],
+			#{$prefix} + input[type='date'],
+			#{$prefix} + input[type='month'],
+			#{$prefix} + input[type='datetime-local'],
+			#{$prefix} + input[type='time'],
+			#{$prefix} + input[type='tel'],
+			#{$prefix} + input[type='password'],
+			#{$prefix} + input[type='email'],
+			#{$prefix} + textarea {
+				&.p-input {
+					@content;
+				}
+			}
+		}
+	} @else {
+		@if $slotted == true {
+			::slotted(div[contenteditable].p-input),
+			::slotted(input[type='text'].p-input),
+			::slotted(input[type='number'].p-input),
+			::slotted(input[type='date'].p-input),
+			::slotted(input[type='month'].p-input),
+			::slotted(input[type='datetime-local'].p-input),
+			::slotted(input[type='time'].p-input),
+			::slotted(input[type='tel'].p-input),
+			::slotted(input[type='password'].p-input),
+			::slotted(input[type='email'].p-input),
+			::slotted(textarea.p-input) {
+				@content;
+			}
+		} @else {
+			div[contenteditable],
+			input[type='text'],
+			input[type='number'],
+			input[type='date'],
+			input[type='month'],
+			input[type='datetime-local'],
+			input[type='time'],
+			input[type='tel'],
+			input[type='password'],
+			input[type='email'],
+			textarea {
+				&.p-input {
+					@content;
+				}
+			}
+		}
+	}
 }
 
 @mixin inputDefaultState($applyHeight: true) {
-    @apply flex items-center justify-start;
-    @apply text-base text-storm-dark;
-    @apply bg-white px-4;
-    @apply rounded-large;
-    @apply border-b border-l border-r border-t;
-    @apply border-solid border-mystic-dark #{!important};
-    @apply outline-none #{!important};
-    @apply w-full #{!important};
+	@apply flex items-center justify-start;
+	@apply text-base text-storm-dark;
+	@apply bg-white px-4;
+	@apply rounded-large;
+	@apply border-b border-l border-r border-t;
+	@apply border-solid border-mystic-dark #{!important};
+	@apply outline-none #{!important};
+	@apply w-full #{!important};
 
-    @if $applyHeight {
-        @apply h-10;
-    }
+	@if $applyHeight {
+		@apply h-10;
+	}
 
-    &::placeholder {
-        @apply text-base text-storm-medium;
-    }
+	&::placeholder {
+		@apply text-base text-storm-medium;
+	}
 
-    &:focus,
-    &:focus-within,
-    &:focus-visible,
-    &.focus,
-    &[active],
-    &.active {
-        @include inputFocusState();
-    }
+	&:focus,
+	&:focus-within,
+	&:focus-visible,
+	&.focus,
+	&[active],
+	&.active {
+		@include inputFocusState();
+	}
 
-    &.size-small {
-        @include inputSizeSmall($applyHeight);
-    }
+	&.size-small {
+		@include inputSizeSmall($applyHeight);
+	}
 }
 
 @mixin inputFocusState {
-    @apply border-indigo #{!important};
-    @apply outline-none #{!important};
+	@apply border-indigo #{!important};
+	@apply outline-none #{!important};
 }
 
 @mixin inputErrorState {
-    @apply text-negative-dark;
-    @apply border-negative #{!important};
+	@apply text-negative-dark;
+	@apply border-negative #{!important};
 
-    &::placeholder {
-        @apply text-negative-light;
-    }
+	&::placeholder {
+		@apply text-negative-light;
+	}
 }
 
 @mixin inputDisabledState {
-    @apply opacity-40;
+	@apply opacity-40;
 }
 
 @mixin inputSizeSmall($applyHeight: true) {
-    @apply text-sm;
+	@apply text-sm;
 
-    @if $applyHeight {
-        @apply h-8  #{!important};
-    }
+	@if $applyHeight {
+		@apply h-8  #{!important};
+	}
 
-    &::placeholder {
-        @apply text-sm;
-    }
+	&::placeholder {
+		@apply text-sm;
+	}
 }

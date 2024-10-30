@@ -5,6 +5,11 @@ p-select {
 
 	.p-input {
 		@include inputDefaultState();
+		@apply text-base font-semibold;
+
+		&.size-small {
+			@apply text-sm font-medium;
+		}
 	}
 
 	.multi-container {

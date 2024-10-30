@@ -408,10 +408,10 @@ export class Select {
 					>
 						<div
 							slot='input'
-							class={`p-input read-only cursor-pointer ${
+							class={`p-input read-only cursor-pointer size-${this.size} ${
 								this._displayValue === this.placeholder
-									? 'text-base text-storm-medium'
-									: 'font-medium'
+									? 'font-medium text-storm-medium'
+									: ''
 							}`}
 							contenteditable
 							onFocus={ev => this._onFocus(ev)}

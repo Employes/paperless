@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.53.2](https://github.com/employes/paperless/compare/v1.53.1...v1.53.2) (2024-10-30)
+
+
+### Bug Fixes
+
+* **molecules/select:** Fix font sizings for small & default size ([71f07b7](https://github.com/employes/paperless/commit/71f07b73e9387d939728f73c9afb979a459da1a7))
+
+
+
+
+
 ## [1.53.1](https://github.com/employes/paperless/compare/v1.53.0...v1.53.1) (2024-10-21)
 
 

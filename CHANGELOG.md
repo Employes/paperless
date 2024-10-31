@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.53.3](https://github.com/employes/paperless/compare/v1.53.2...v1.53.3) (2024-10-31)
+
+
+### Bug Fixes
+
+* **atoms/card/container:** Fix disable shadow ([d7718f8](https://github.com/employes/paperless/commit/d7718f8c5ae87e8b92010c97d039a25023b4c2e1))
+
+
+
+
+
 ## [1.53.2](https://github.com/employes/paperless/compare/v1.53.1...v1.53.2) (2024-10-30)
 
 

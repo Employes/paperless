@@ -27,6 +27,11 @@ export class DropdownMenuItem {
 	 */
 	@Prop() icon: IconVariant;
 
+	/**
+	 *  wether to use the container for text
+	 */
+	@Prop() useContainer = true;
+
 	render() {
 		return (
 			<Host
@@ -38,15 +43,19 @@ export class DropdownMenuItem {
 
 				{this.variant === 'checkbox' && (
 					<input
-						type="checkbox"
-						class="p-input size-small flex-shrink-0"
+						type='checkbox'
+						class='p-input size-small flex-shrink-0'
 						checked={this.active}
 					/>
 				)}
 
-				<div class="text-container">
+				{this.useContainer ? (
+					<div class='text-container'>
+						<slot />
+					</div>
+				) : (
 					<slot />
-				</div>
+				)}
 			</Host>
 		);
 	}

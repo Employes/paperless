@@ -505,6 +505,10 @@ export namespace Components {
          */
         "icon": IconVariant;
         /**
+          * wether to use the container for text
+         */
+        "useContainer": boolean;
+        /**
           * The variant of the item
          */
         "variant": 'default' | 'checkbox';
@@ -2686,6 +2690,10 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon"?: IconVariant;
+        /**
+          * wether to use the container for text
+         */
+        "useContainer"?: boolean;
         /**
           * The variant of the item
          */

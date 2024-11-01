@@ -1,7 +1,7 @@
 :host {
 	@import '../../../style/form/checkbox';
 
-	@apply flex h-8 w-full items-center gap-2 rounded px-2;
+	@apply flex h-8 w-full items-center justify-start gap-2 rounded px-2;
 	@apply text-sm font-semibold text-storm;
 	@apply cursor-pointer;
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.54.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.53.3...v1.54.0) (2024-11-01)
+
+
+### Features
+
+* **atoms/dropdown-menu-item:** Add option to disable text container ([7cb0b1d](https://github.com/ionic-team/stencil-component-starter/commit/7cb0b1dc35906172b91294e97bc4bf5ed6c6ab4e))
+* **molecules/select:** Apply custom text container for overflow ([fe3a01b](https://github.com/ionic-team/stencil-component-starter/commit/fe3a01b2ba058dbf05f928492f943987ebf1f554))
+
+
+
+
+
 ## [1.53.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.53.2...v1.53.3) (2024-10-31)
 
 

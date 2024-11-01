@@ -408,7 +408,9 @@ export class Select {
 					>
 						<div
 							slot='input'
-							class={`p-input read-only cursor-pointer size-${this.size} ${
+							class={`p-input read-only max-w-[calc(100%-3rem)] cursor-pointer size-${
+								this.size
+							} ${
 								this._displayValue === this.placeholder
 									? 'font-medium text-storm-medium'
 									: ''
@@ -641,6 +643,7 @@ export class Select {
 	private _getItems() {
 		let items = this._items.map(item => (
 			<p-dropdown-menu-item
+				useContainer={false}
 				onClick={() => this._selectValue(item)}
 				active={
 					this.multi &&
@@ -653,6 +656,7 @@ export class Select {
 						  this._selectedItem?.[this._identifierKey]
 				}
 				variant={this.multi ? 'checkbox' : 'default'}
+				class='justify-start'
 			>
 				{this._getDisplay(item)}
 			</p-dropdown-menu-item>
@@ -669,6 +673,7 @@ export class Select {
 		if (this.enableSelectAll && this._items.length) {
 			items.unshift(
 				<p-dropdown-menu-item
+					useContainer={false}
 					variant='checkbox'
 					onClick={() => this._selectAllChange()}
 					active={this._allSelected}
@@ -696,7 +701,10 @@ export class Select {
 
 	private _getAddItem() {
 		return (
-			<p-dropdown-menu-item onClick={() => this.add.emit()}>
+			<p-dropdown-menu-item
+				onClick={() => this.add.emit()}
+				useContainer={false}
+			>
 				<span class='flex items-center gap-1 font-semibold text-indigo'>
 					{this.addItemText}
 					<p-icon variant='plus' />
@@ -797,12 +805,18 @@ export class Select {
 	}
 
 	private _getDisplay(item, isSelection = false) {
-		let content =
-			item[
-				isSelection
-					? this.selectionDisplayKey ?? this.displayKey
-					: this.displayKey
-			];
+		let content = (
+			<div class='text-container'>
+				{
+					item[
+						isSelection
+							? this.selectionDisplayKey ?? this.displayKey
+							: this.displayKey
+					]
+				}
+			</div>
+		);
+
 		if (this.avatarKey) {
 			content = (
 				<span class='flex items-center gap-2'>
@@ -811,7 +825,9 @@ export class Select {
 						src={item[this.avatarKey]}
 						letters={item[this.avatarLettersKey]}
 					></p-avatar>
-					{item[this.dropdownDisplayKey ?? this.displayKey]}
+					<div class='text-container'>
+						{item[this.dropdownDisplayKey ?? this.displayKey]}
+					</div>
 				</span>
 			);
 		}
@@ -820,7 +836,9 @@ export class Select {
 			content = (
 				<span class='flex items-center gap-2'>
 					<p-icon variant={item[this.iconKey] as IconVariant} />
-					{item[this.dropdownDisplayKey ?? this.displayKey]}
+					<div class='text-container'>
+						{item[this.dropdownDisplayKey ?? this.displayKey]}
+					</div>
 				</span>
 			);
 		}
@@ -829,8 +847,8 @@ export class Select {
 			<div
 				class={
 					!isSelection || this.applyClassOnSelectedItem
-						? item?.class ?? null
-						: null
+						? `max-w-full ${item?.class}`
+						: 'max-w-full'
 				}
 			>
 				{content}

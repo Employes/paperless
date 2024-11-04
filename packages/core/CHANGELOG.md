@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.54.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.54.0...v1.54.1) (2024-11-04)
+
+
+### Bug Fixes
+
+* **molecules/select:** Don't remove 3rem if chevron is not shown ([6b4fdd9](https://github.com/ionic-team/stencil-component-starter/commit/6b4fdd90b85532d0449d4ebea42a01467d2e51e8))
+
+
+
+
+
 # [1.54.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.53.3...v1.54.0) (2024-11-01)
 
 

@@ -408,9 +408,9 @@ export class Select {
 					>
 						<div
 							slot='input'
-							class={`p-input read-only max-w-[calc(100%-3rem)] cursor-pointer size-${
-								this.size
-							} ${
+							class={`p-input read-only cursor-pointer ${
+								this.showChevron ? 'max-w-[calc(100%-3rem)]' : 'w-full'
+							} size-${this.size} ${
 								this._displayValue === this.placeholder
 									? 'font-medium text-storm-medium'
 									: ''

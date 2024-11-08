@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.54.2](https://github.com/employes/paperless/compare/v1.54.1...v1.54.2) (2024-11-08)
+
+
+### Bug Fixes
+
+* **atoms/button:** Add `as` property & use `a` tag when href is present ([0cd3d9f](https://github.com/employes/paperless/commit/0cd3d9f294df918b538827ffc74fd790d3eb6e99))
+
+
+
+
+
 ## [1.54.1](https://github.com/employes/paperless/compare/v1.54.0...v1.54.1) (2024-11-04)
 
 

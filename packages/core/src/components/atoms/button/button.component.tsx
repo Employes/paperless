@@ -17,6 +17,11 @@ import { IconFlipOptions, IconVariant } from '../icon/icon.component';
 })
 export class Button {
 	/**
+	 * The type of the button
+	 */
+	@Prop() as: 'a' | 'button' = 'button';
+
+	/**
 	 * The variant of the button
 	 */
 	@Prop() variant: 'primary' | 'secondary' | 'text' = 'primary';
@@ -41,10 +46,10 @@ export class Button {
 	 */
 	@Prop() size: 'small' | 'medium' = 'medium';
 
-  /**
-   * The type of the button
-   */
-  @Prop() type: 'button' | 'submit' = 'button';
+	/**
+	 * The type of the button
+	 */
+	@Prop() type: 'button' | 'submit' = 'button';
 
 	/**
 	 * Wether to show a loader or not
@@ -115,7 +120,10 @@ export class Button {
 				break;
 		}
 
-		const VariableTag = this.variant === 'text' ? 'a' : 'button';
+		const VariableTag =
+			this.variant === 'text' || this.href?.length || this.as === 'a'
+				? 'a'
+				: 'button';
 
 		return (
 			<Host
@@ -131,13 +139,13 @@ export class Button {
 					} ${this.underline && 'has-underline'}`}
 					disabled={this.disabled}
 					href={this.href}
-          type={this.variant !== 'text' ? this.type : undefined}
+					type={this.variant !== 'text' ? this.type : undefined}
 					target={this.target}
 				>
 					{this.chevron && this.chevronPosition === 'start' && (
 						<p-icon
-							class="chevron"
-							variant="chevron"
+							class='chevron'
+							variant='chevron'
 							rotate={this.chevron === 'up' ? 180 : 0}
 						/>
 					)}
@@ -158,8 +166,8 @@ export class Button {
 
 					{this.chevron && this.chevronPosition === 'end' && (
 						<p-icon
-							class="chevron"
-							variant="chevron"
+							class='chevron'
+							variant='chevron'
 							rotate={this.chevron === 'up' ? 180 : 0}
 						/>
 					)}

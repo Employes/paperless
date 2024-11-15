@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.54.3](https://github.com/Employes/Paperless/compare/v1.54.2...v1.54.3) (2024-11-15)
+
+
+### Bug Fixes
+
+* **molecules/select:** Run preselect 1 ticket later ([80156a3](https://github.com/Employes/Paperless/commit/80156a3994ce2e1ef193735edb0a5c0247f2be85))
+
+
+
+
+
 ## [1.54.2](https://github.com/Employes/Paperless/compare/v1.54.1...v1.54.2) (2024-11-08)
 
 **Note:** Version bump only for package @paperless/angular

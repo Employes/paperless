@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.54.4](https://github.com/employes/paperless/compare/v1.54.3...v1.54.4) (2024-11-15)
+
+
+### Bug Fixes
+
+* **angular/table/utils:** Don't do a length check on objects ([5d2fe2d](https://github.com/employes/paperless/commit/5d2fe2d093e86f39c27b2ffd5dce83deb7a935f2))
+
+
+
+
+
 ## [1.54.3](https://github.com/employes/paperless/compare/v1.54.2...v1.54.3) (2024-11-15)
 
 

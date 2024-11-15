@@ -451,12 +451,12 @@ export class Select {
 
 	@Watch('value')
 	private _valueChange() {
-		this._preselectItem();
+		setTimeout(() => this._preselectItem());
 	}
 
 	@Watch('items')
 	public itemChanges() {
-		this._preselectItem();
+		setTimeout(() => this._preselectItem());
 	}
 
 	@Watch('_showDropdown')

@@ -125,6 +125,10 @@ export namespace Components {
     }
     interface PButton {
         /**
+          * The type of the button
+         */
+        "as": 'a' | 'button';
+        /**
           * Wether to show a chevron or not
          */
         "chevron": boolean | 'up' | 'down';
@@ -2274,6 +2278,10 @@ declare namespace LocalJSX {
         "variant"?: 'modal' | 'drawer';
     }
     interface PButton {
+        /**
+          * The type of the button
+         */
+        "as"?: 'a' | 'button';
         /**
           * Wether to show a chevron or not
          */

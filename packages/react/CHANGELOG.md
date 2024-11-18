@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.55.0](https://github.com/ionic-team/ionic/compare/v1.54.4...v1.55.0) (2024-11-18)
+
+
+### Features
+
+* **molecules:** Add button-group component ([8e3d248](https://github.com/ionic-team/ionic/commit/8e3d248c0440069c41feee7de422402e8e8b7829))
+
+
+
+
+
 ## [1.54.4](https://github.com/ionic-team/ionic/compare/v1.54.3...v1.54.4) (2024-11-15)
 
 **Note:** Version bump only for package @paperless/react

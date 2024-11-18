@@ -14,6 +14,7 @@ export const PAvatar = /*@__PURE__*/createReactComponent<JSX.PAvatar, HTMLPAvata
 export const PAvatarGroup = /*@__PURE__*/createReactComponent<JSX.PAvatarGroup, HTMLPAvatarGroupElement>('p-avatar-group');
 export const PBackdrop = /*@__PURE__*/createReactComponent<JSX.PBackdrop, HTMLPBackdropElement>('p-backdrop');
 export const PButton = /*@__PURE__*/createReactComponent<JSX.PButton, HTMLPButtonElement>('p-button');
+export const PButtonGroup = /*@__PURE__*/createReactComponent<JSX.PButtonGroup, HTMLPButtonGroupElement>('p-button-group');
 export const PCalendar = /*@__PURE__*/createReactComponent<JSX.PCalendar, HTMLPCalendarElement>('p-calendar');
 export const PCardBody = /*@__PURE__*/createReactComponent<JSX.PCardBody, HTMLPCardBodyElement>('p-card-body');
 export const PCardContainer = /*@__PURE__*/createReactComponent<JSX.PCardContainer, HTMLPCardContainerElement>('p-card-container');

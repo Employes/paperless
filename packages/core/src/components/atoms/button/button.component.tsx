@@ -102,6 +102,11 @@ export class Button {
 	@Prop() inheritText: boolean = false;
 
 	/**
+	 * Position of the button in the button group, mostly un-used if not in a group
+	 */
+	@Prop() buttonGroupPosition: 'start' | 'middle' | 'end' | 'none' = 'none';
+
+	/**
 	 * Button click event
 	 */
 	@Event({
@@ -136,7 +141,10 @@ export class Button {
 						this.iconPosition
 					} chevron-position-${this.chevronPosition} ${
 						this.inheritText && 'should-inherit-text'
-					} ${this.underline && 'has-underline'}`}
+					} ${this.underline && 'has-underline'} ${
+						this.buttonGroupPosition !== 'none' &&
+						`button-group-pos-${this.buttonGroupPosition}`
+					}`}
 					disabled={this.disabled}
 					href={this.href}
 					type={this.variant !== 'text' ? this.type : undefined}

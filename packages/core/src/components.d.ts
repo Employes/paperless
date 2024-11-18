@@ -129,6 +129,10 @@ export namespace Components {
          */
         "as": 'a' | 'button';
         /**
+          * Position of the button in the button group, mostly un-used if not in a group
+         */
+        "buttonGroupPosition": 'start' | 'middle' | 'end' | 'none';
+        /**
           * Wether to show a chevron or not
          */
         "chevron": boolean | 'up' | 'down';
@@ -192,6 +196,12 @@ export namespace Components {
           * The variant of the button
          */
         "variant": 'primary' | 'secondary' | 'text';
+    }
+    interface PButtonGroup {
+        /**
+          * The size of the child buttons
+         */
+        "size": 'medium' | 'small';
     }
     interface PCalendar {
         /**
@@ -1751,6 +1761,12 @@ declare global {
         prototype: HTMLPButtonElement;
         new (): HTMLPButtonElement;
     };
+    interface HTMLPButtonGroupElement extends Components.PButtonGroup, HTMLStencilElement {
+    }
+    var HTMLPButtonGroupElement: {
+        prototype: HTMLPButtonGroupElement;
+        new (): HTMLPButtonGroupElement;
+    };
     interface HTMLPCalendarElement extends Components.PCalendar, HTMLStencilElement {
     }
     var HTMLPCalendarElement: {
@@ -2112,6 +2128,7 @@ declare global {
         "p-avatar-group": HTMLPAvatarGroupElement;
         "p-backdrop": HTMLPBackdropElement;
         "p-button": HTMLPButtonElement;
+        "p-button-group": HTMLPButtonGroupElement;
         "p-calendar": HTMLPCalendarElement;
         "p-card-body": HTMLPCardBodyElement;
         "p-card-container": HTMLPCardContainerElement;
@@ -2283,6 +2300,10 @@ declare namespace LocalJSX {
          */
         "as"?: 'a' | 'button';
         /**
+          * Position of the button in the button group, mostly un-used if not in a group
+         */
+        "buttonGroupPosition"?: 'start' | 'middle' | 'end' | 'none';
+        /**
           * Wether to show a chevron or not
          */
         "chevron"?: boolean | 'up' | 'down';
@@ -2350,6 +2371,12 @@ declare namespace LocalJSX {
           * The variant of the button
          */
         "variant"?: 'primary' | 'secondary' | 'text';
+    }
+    interface PButtonGroup {
+        /**
+          * The size of the child buttons
+         */
+        "size"?: 'medium' | 'small';
     }
     interface PCalendar {
         /**
@@ -3958,6 +3985,7 @@ declare namespace LocalJSX {
         "p-avatar-group": PAvatarGroup;
         "p-backdrop": PBackdrop;
         "p-button": PButton;
+        "p-button-group": PButtonGroup;
         "p-calendar": PCalendar;
         "p-card-body": PCardBody;
         "p-card-container": PCardContainer;
@@ -4029,6 +4057,7 @@ declare module "@stencil/core" {
             "p-avatar-group": LocalJSX.PAvatarGroup & JSXBase.HTMLAttributes<HTMLPAvatarGroupElement>;
             "p-backdrop": LocalJSX.PBackdrop & JSXBase.HTMLAttributes<HTMLPBackdropElement>;
             "p-button": LocalJSX.PButton & JSXBase.HTMLAttributes<HTMLPButtonElement>;
+            "p-button-group": LocalJSX.PButtonGroup & JSXBase.HTMLAttributes<HTMLPButtonGroupElement>;
             "p-calendar": LocalJSX.PCalendar & JSXBase.HTMLAttributes<HTMLPCalendarElement>;
             "p-card-body": LocalJSX.PCardBody & JSXBase.HTMLAttributes<HTMLPCardBodyElement>;
             "p-card-container": LocalJSX.PCardContainer & JSXBase.HTMLAttributes<HTMLPCardContainerElement>;

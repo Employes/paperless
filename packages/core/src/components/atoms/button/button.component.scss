@@ -100,6 +100,18 @@ p-button {
 			font-size: inherit #{!important};
 			font-weight: inherit #{!important};
 		}
+
+		&.button-group-pos-start {
+			@apply rounded-r-none #{!important};
+		}
+
+		&.button-group-pos-middle {
+			@apply rounded-none #{!important};
+		}
+
+		&.button-group-pos-end {
+			@apply rounded-l-none #{!important};
+		}
 	}
 
 	// chevron

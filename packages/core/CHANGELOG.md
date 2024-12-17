@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.55.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.55.0...v1.55.1) (2024-12-17)
+
+
+### Bug Fixes
+
+* **modal:** Allow overflow on mobile ([d0de0cf](https://github.com/ionic-team/stencil-component-starter/commit/d0de0cf6a540b58ca3d9426c2a2d337319d02ba2))
+* **molecules/datepicker:** Pass through dropdown options ([953e7e0](https://github.com/ionic-team/stencil-component-starter/commit/953e7e09227e586155f9f7f2f429c2fc3757952b))
+
+
+
+
+
 # [1.55.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.54.4...v1.55.0) (2024-11-18)
 
 

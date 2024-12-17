@@ -20,6 +20,7 @@ import {
 	startOfDay,
 } from 'date-fns';
 import { childOf } from '../../../utils';
+import { Placement, Strategy } from '@floating-ui/dom';
 
 @Component({
 	tag: 'p-datepicker',
@@ -80,16 +81,15 @@ export class Datepicker {
 	 */
 	@Prop() format: string = 'dd-MM-yyyy';
 
-  /**
-   * Hides the icon when filled
-   */
-  @Prop() hideIconWhenFilled: boolean = false;
+	/**
+	 * Hides the icon when filled
+	 */
+	@Prop() hideIconWhenFilled: boolean = false;
 
 	/**
 	 * The size of the input group used by the datepicker
 	 */
 	@Prop() size: 'small' | 'medium' = 'medium';
-
 
 	/**
 	 * The prefix of the input group used by the datepicker
@@ -120,6 +120,16 @@ export class Datepicker {
 	 * Wether the input group is disabled used by the datepicker
 	 */
 	@Prop({ reflect: true }) disabled: boolean = false;
+
+	/**
+	 * The strategy of the dropdown placement
+	 */
+	@Prop() strategy: Strategy = 'absolute';
+
+	/**
+	 * The placement of the dropdown
+	 */
+	@Prop({ reflect: true }) placement: Placement = 'bottom-start';
 
 	/**
 	 * The host element
@@ -199,14 +209,14 @@ export class Datepicker {
 
 		// normalize all to date
 		this._disabledDates = disabledDates
-			.map((date) => {
+			.map(date => {
 				if (typeof date === 'string') {
 					return new Date(date);
 				}
 
 				return date;
 			})
-			.filter((date) => isValid(date));
+			.filter(date => isValid(date));
 
 		if (this._isDisabledDay(this._value)) {
 			this._setValue(null);
@@ -226,10 +236,7 @@ export class Datepicker {
 			this.parseMaxDate(this.maxDate);
 		}
 
-		if (
-			this.mode !== 'day' &&
-			this.format === this._defaultFormats['day']
-		) {
+		if (this.mode !== 'day' && this.format === this._defaultFormats['day']) {
 			this.format = this._defaultFormats[this.mode];
 		}
 
@@ -238,8 +245,10 @@ export class Datepicker {
 
 	render() {
 		return (
-			<Host class="p-datepicker">
+			<Host class='p-datepicker'>
 				<p-dropdown
+					strategy={this.strategy}
+					placement={this.placement}
 					disableTriggerClick={true}
 					applyMaxWidth={false}
 					applyFullWidth={false}
@@ -247,9 +256,9 @@ export class Datepicker {
 					show={this._showDropdown}
 				>
 					<p-input-group
-						slot="trigger"
+						slot='trigger'
 						icon={this.hideIconWhenFilled && !!this._value ? null : 'calendar'}
-						iconPosition="start"
+						iconPosition='start'
 						size={this.size}
 						prefix={this.prefix}
 						label={this.label}
@@ -260,23 +269,21 @@ export class Datepicker {
 						focused={this._showDropdown}
 					>
 						<input
-							slot="input"
-							type="text"
+							slot='input'
+							type='text'
 							placeholder={this.placeholder}
 							value={this._getFormattedDate()}
-							class="p-input cursor-pointer"
+							class='p-input cursor-pointer'
 							onFocus={() => this._onFocus()}
-							onBlur={(ev) => this._onBlur(ev)}
-							onInput={(ev) => this._onInput(ev)}
+							onBlur={ev => this._onBlur(ev)}
+							onInput={ev => this._onInput(ev)}
 						/>
 					</p-input-group>
-					<div slot="items">
+					<div slot='items'>
 						<p-calendar
-							variant="embedded"
+							variant='embedded'
 							value={this._value}
-							onValueChange={({ detail }) =>
-								(this.value = detail)
-							}
+							onValueChange={({ detail }) => (this.value = detail)}
 							preselectToday={this.preselectToday}
 							disabledDates={this.disabledDates}
 							minDate={this.minDate}
@@ -366,7 +373,7 @@ export class Datepicker {
 		return (
 			(isBefore(day, this._minDate) && !isSameDay(day, this._minDate)) ||
 			(isAfter(day, this._maxDate) && !isSameDay(day, this._maxDate)) ||
-			this._disabledDates.findIndex((date) => isSameDay(date, day)) >= 0
+			this._disabledDates.findIndex(date => isSameDay(date, day)) >= 0
 		);
 	}
 

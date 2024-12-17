@@ -1,8 +1,9 @@
 p-modal-container {
-	@apply flex flex-col w-full tablet:w-auto z-modal;
+	@apply z-modal flex w-full flex-col tablet:w-auto;
 	@apply rounded-b-none rounded-t-xxlarge desktop-xs:rounded-b-xxlarge;
 
 	@apply desktop-xs:m-auto;
+	@apply max-h-[calc(100dvh-4rem)] desktop-xs:max-h-none;
 
 	@apply animate-slide-in-bottom desktop-xs:animate-slide-in-bottom-small #{!important};
 

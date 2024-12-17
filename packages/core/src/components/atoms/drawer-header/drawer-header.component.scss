@@ -1,13 +1,13 @@
 :host {
 	@apply bg-white;
-	@apply sticky top-0 flex justify-center items-center;
-	@apply p-4 z-drawer-header;
+	@apply sticky top-0 flex items-center justify-center;
+	@apply z-drawer-header p-4;
 
 	padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
 
-	@apply text-storm-dark text-xl font-semibold;
+	@apply text-xl font-semibold text-storm-dark;
 
-	@apply border-0 border-b border-b-mystic-dark border-solid #{!important};
+	@apply border-0 border-b border-solid border-b-mystic-dark #{!important};
 
 	p-button {
 		@apply absolute left-4;

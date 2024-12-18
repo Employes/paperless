@@ -1,4 +1,12 @@
-import { Component, Element, h, Host, Prop } from '@stencil/core';
+import {
+	Component,
+	Element,
+	h,
+	Host,
+	Prop,
+	Event,
+	EventEmitter,
+} from '@stencil/core';
 
 @Component({
 	tag: 'p-info-panel',
@@ -27,6 +35,14 @@ export class InfoPanel {
 	@Prop() closeable: boolean = false;
 
 	/**
+	 * When the backdrop is clicked
+	 */
+	@Event({
+		bubbles: false,
+	})
+	closed: EventEmitter<void>;
+
+	/**
 	 * The host element
 	 */
 	@Element() private _el: HTMLElement;
@@ -34,18 +50,23 @@ export class InfoPanel {
 	render() {
 		return (
 			<Host
-				class={`p-info-panel variant-${this.variant} ${this.closeable && 'has-close'}`}
+				class={`p-info-panel variant-${this.variant} ${
+					this.closeable && 'has-close'
+				}`}
 			>
-				<div class="header">
-					<slot name="header" />
+				<div class='header'>
+					<slot name='header' />
 				</div>
-				<div class="content">
-					<slot name="content" />
+				<div class='content'>
+					<slot name='content' />
 				</div>
 
 				{this.closeable && (
-					<div class="close" onClick={() => this._close()}>
-						<p-icon variant="negative" />
+					<div
+						class='close'
+						onClick={() => this._close()}
+					>
+						<p-icon variant='negative' />
 					</div>
 				)}
 			</Host>
@@ -53,6 +74,7 @@ export class InfoPanel {
 	}
 
 	private _close() {
+		this.closed.emit();
 		this._el.remove();
 	}
 }

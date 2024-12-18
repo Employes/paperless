@@ -355,6 +355,10 @@ export namespace Components {
          */
         "placeholder": string;
         /**
+          * The placement of the dropdown
+         */
+        "placement": Placement;
+        /**
           * The prefix of the input group used by the datepicker
          */
         "prefix": string;
@@ -370,6 +374,10 @@ export namespace Components {
           * The size of the input group used by the datepicker
          */
         "size": 'small' | 'medium';
+        /**
+          * The strategy of the dropdown placement
+         */
+        "strategy": Strategy;
         /**
           * The current value
          */
@@ -1680,6 +1688,10 @@ export interface PDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPDropdownElement;
 }
+export interface PInfoPanelCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPInfoPanelElement;
+}
 export interface PModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPModalElement;
@@ -2542,6 +2554,10 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
+          * The placement of the dropdown
+         */
+        "placement"?: Placement;
+        /**
           * The prefix of the input group used by the datepicker
          */
         "prefix"?: string;
@@ -2557,6 +2573,10 @@ declare namespace LocalJSX {
           * The size of the input group used by the datepicker
          */
         "size"?: 'small' | 'medium';
+        /**
+          * The strategy of the dropdown placement
+         */
+        "strategy"?: Strategy;
         /**
           * The current value
          */
@@ -2793,6 +2813,10 @@ declare namespace LocalJSX {
           * The header of the info panel
          */
         "header"?: string;
+        /**
+          * When the backdrop is clicked
+         */
+        "onClosed"?: (event: PInfoPanelCustomEvent<void>) => void;
         /**
           * The variant of the info panel
          */

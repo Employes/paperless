@@ -22,6 +22,13 @@
 | `variant`   | `variant`   | The variant of the info panel  | `"info" \| "negative" \| "positive" \| "unbiased"` | `'info'`    |
 
 
+## Events
+
+| Event    | Description                  | Type                |
+| -------- | ---------------------------- | ------------------- |
+| `closed` | When the backdrop is clicked | `CustomEvent<void>` |
+
+
 ## Dependencies
 
 ### Depends on

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.56.0](https://github.com/employes/paperless/compare/v1.55.1...v1.56.0) (2024-12-18)
+
+
+### Features
+
+* **atoms/info-panel:** Add closed event ([7faa018](https://github.com/employes/paperless/commit/7faa0182d3795b7a49c671ab683bee4f872aed7c))
+
+
+
+
+
 ## [1.55.1](https://github.com/employes/paperless/compare/v1.55.0...v1.55.1) (2024-12-17)
 
 

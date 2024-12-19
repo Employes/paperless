@@ -18,7 +18,7 @@ export class CardContainer {
 
 	render() {
 		return (
-			<Host class="p-card-container">
+			<Host class='p-card-container group'>
 				<slot />
 			</Host>
 		);

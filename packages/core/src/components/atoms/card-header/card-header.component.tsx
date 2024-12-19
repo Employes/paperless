@@ -17,17 +17,22 @@ export class CardHeader {
 
 	render() {
 		return (
-			<Host class="p-card-header">
-				<slot name="prefix" />
+			<Host class='p-card-header'>
+				<slot name='prefix' />
 
 				{(this.header?.length || this.arrow) && (
-					<div class="title">
+					<div class='title'>
 						<span>{this.header ?? ''}</span>
-						{this.arrow && <p-icon variant="arrow" />}
+						{this.arrow && (
+							<p-icon
+								variant='arrow'
+								class='group-hover:text-indigo'
+							/>
+						)}
 					</div>
 				)}
 
-				<slot name="suffix" />
+				<slot name='suffix' />
 			</Host>
 		);
 	}

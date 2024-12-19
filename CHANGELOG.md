@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.57.0](https://github.com/employes/paperless/compare/v1.56.0...v1.57.0) (2024-12-19)
+
+
+### Features
+
+* **atoms/card/header & container:** Add group hover effect to arrow ([0a6b25e](https://github.com/employes/paperless/commit/0a6b25e830f662f4308a1b3d3dc9ec2800b21027))
+
+
+
+
+
 # [1.56.0](https://github.com/employes/paperless/compare/v1.55.1...v1.56.0) (2024-12-18)
 
 

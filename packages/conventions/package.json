@@ -1,7 +1,7 @@
 {
 	"name": "@paperless/conventions",
 	"description": "Paperless eslint, typescript & prettier recommended configuration",
-	"version": "1.56.0",
+	"version": "1.57.0",
 	"main": "index.js",
 	"license": "ISC",
 	"publishConfig": {

@@ -96,18 +96,18 @@ export class Tooltip {
 
 	render() {
 		return (
-			<Host class="p-popover">
-				<slot name="trigger" />
-				<div class="popover-container">
+			<Host class='p-popover'>
+				<slot name='trigger' />
+				<div class='popover-container'>
 					<div
 						class={`popover variant-${this.variant}`}
-						role="popover"
+						role='popover'
 						data-placement={this.placement}
 						data-strategy={this.strategy}
-						ref={(el) => this._load(el)}
+						ref={el => this._load(el)}
 					>
-						{this.content ? this.content : <slot name="content" />}
-						<div class="arrow"></div>
+						{this.content ? this.content : <slot name='content' />}
+						<div class='arrow'></div>
 					</div>
 				</div>
 			</Host>
@@ -174,9 +174,15 @@ export class Tooltip {
 			return;
 		}
 
-		this._cleanup = autoUpdate(this._el, this._popover, () =>
-			this._update()
-		);
+		if (!this.content?.length) {
+			if (this._popover.hasAttribute('data-show')) {
+				this._hide();
+			}
+
+			return;
+		}
+
+		this._cleanup = autoUpdate(this._el, this._popover, () => this._update());
 		// Make the popover visible
 		this._popover.setAttribute('data-show', '');
 
@@ -246,14 +252,13 @@ export class Tooltip {
 
 				Object.assign(arrowEl.style, {
 					left:
-						this.variant === 'error' ||
-						this.variant === 'error-element'
+						this.variant === 'error' || this.variant === 'error-element'
 							? placement.indexOf('start') >= 0
 								? '1rem'
 								: 'calc(100% - 1rem)'
 							: x != null
-								? `${x}px`
-								: '',
+							? `${x}px`
+							: '',
 					top: y != null ? `${y}px` : '',
 				});
 			}

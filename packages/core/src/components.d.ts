@@ -800,7 +800,11 @@ export namespace Components {
         /**
           * Wether the modal body should be rounded at the bottom
          */
-        "rounded": boolean;
+        "roundedBottom": boolean;
+        /**
+          * Wether the modal body should be rounded at the top
+         */
+        "roundedTop": boolean;
         /**
           * The variant of the modal body
          */
@@ -3031,7 +3035,11 @@ declare namespace LocalJSX {
         /**
           * Wether the modal body should be rounded at the bottom
          */
-        "rounded"?: boolean;
+        "roundedBottom"?: boolean;
+        /**
+          * Wether the modal body should be rounded at the top
+         */
+        "roundedTop"?: boolean;
         /**
           * The variant of the modal body
          */

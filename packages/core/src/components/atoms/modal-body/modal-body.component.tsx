@@ -14,7 +14,12 @@ export class ModalBody {
 	/**
 	 * Wether the modal body should be rounded at the bottom
 	 */
-	@Prop() rounded: boolean = false;
+	@Prop() roundedBottom: boolean = false;
+
+	/**
+	 * Wether the modal body should be rounded at the top
+	 */
+	@Prop() roundedTop: boolean = false;
 
 	/**
 	 * Wether the body should have padding
@@ -25,7 +30,9 @@ export class ModalBody {
 		return (
 			<Host
 				class={`p-modal-body variant-${this.variant} ${
-					this.rounded && 'is-rounded'
+					this.roundedBottom && 'is-rounded-bottom'
+				} ${
+					this.roundedTop && 'is-rounded-top'
 				} ${!this.padding && 'no-padding'}`}
 			>
 				<slot />

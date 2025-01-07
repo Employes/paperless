@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.58.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.57.2...v1.58.0) (2025-01-07)
+
+
+### Features
+
+* **organisms/modal:** Automatically round header if no header supplied ([d046eab](https://github.com/ionic-team/stencil-component-starter/commit/d046eab9976550daafe221b8ed5f7772e20d8e77))
+
+
+
+
+
 ## [1.57.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.57.1...v1.57.2) (2025-01-07)
 
 

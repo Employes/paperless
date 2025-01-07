@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.57.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.57.1...v1.57.2) (2025-01-07)
+
+
+### Bug Fixes
+
+* **atoms/info-panel:** Fix text formatting ([ce008e0](https://github.com/ionic-team/stencil-component-starter/commit/ce008e0a1c539f558388302557be1d5a0e664a02))
+
+
+
+
+
 ## [1.57.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.57.0...v1.57.1) (2025-01-06)
 
 

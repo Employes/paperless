@@ -79,9 +79,17 @@ export class Tooltip {
 	 */
 	@Element() private _el: HTMLElement;
 
+	private _hasContentSlot = false;
+
 	private _loaded = false;
 	private _popover: HTMLElement;
 	private _cleanup: () => void;
+
+	componentWillLoad() {
+		this._hasContentSlot = !!this._el.querySelector(
+			':scope > [slot="content"]'
+		);
+	}
 
 	componentShouldUpdate() {
 		this._update();
@@ -174,7 +182,7 @@ export class Tooltip {
 			return;
 		}
 
-		if (!this.content?.length) {
+		if (!this.content?.length && !this._hasContentSlot) {
 			if (this._popover.hasAttribute('data-show')) {
 				this._hide();
 			}

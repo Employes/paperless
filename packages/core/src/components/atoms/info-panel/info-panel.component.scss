@@ -1,16 +1,16 @@
 :host {
-	@apply flex flex-col w-full relative p-4 bg-indigo-light rounded-large;
+	@apply relative flex w-full flex-col rounded-large bg-indigo-light p-4;
 
 	.header {
 		@apply font-semibold text-storm-dark;
 	}
 
 	.content {
-		@apply text-sm;
+		@apply whitespace-pre-line text-sm;
 	}
 
 	.close {
-		@apply absolute top-2 right-2 cursor-pointer text-storm-vague;
+		@apply absolute right-2 top-2 cursor-pointer text-storm-vague;
 	}
 }
 

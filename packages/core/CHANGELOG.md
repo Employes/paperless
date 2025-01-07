@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.58.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.58.0...v1.58.1) (2025-01-07)
+
+
+### Bug Fixes
+
+* **atoms/tooltip:** Don't disable tooltip if using contentslot ([cf7ad5a](https://github.com/ionic-team/stencil-component-starter/commit/cf7ad5a3a2b3b4b9486805bb4835346337d2f43b))
+
+
+
+
+
 # [1.58.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.57.2...v1.58.0) (2025-01-07)
 
 

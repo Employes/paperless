@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 
 @Component({
 	tag: 'p-card-header',
@@ -15,6 +15,17 @@ export class CardHeader {
 	 */
 	@Prop() arrow: boolean = false;
 
+	/**
+	 * The host element
+	 */
+	@Element() private _el: HTMLElement;
+
+	private _hasContentSlot = false;
+
+	componentWillLoad() {
+		this._hasContentSlot = !!this._el.querySelector(':scope > [slot="slot"]');
+	}
+
 	render() {
 		return (
 			<Host class='p-card-header'>
@@ -22,7 +33,13 @@ export class CardHeader {
 
 				{(this.header?.length || this.arrow) && (
 					<div class='title'>
-						<span>{this.header ?? ''}</span>
+						<span>
+							{this.header ?? this._hasContentSlot ? (
+								<slot name='content' />
+							) : (
+								''
+							)}
+						</span>
 						{this.arrow && (
 							<p-icon
 								variant='arrow'

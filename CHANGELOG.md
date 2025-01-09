@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.59.2](https://github.com/employes/paperless/compare/v1.59.1...v1.59.2) (2025-01-09)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Fix slot name ([747f501](https://github.com/employes/paperless/commit/747f501e0bc532f9032e171444d58b3ef3e62c23))
+
+
+
+
+
 ## [1.59.1](https://github.com/employes/paperless/compare/v1.59.0...v1.59.1) (2025-01-09)
 
 

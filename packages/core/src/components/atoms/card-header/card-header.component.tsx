@@ -23,7 +23,9 @@ export class CardHeader {
 	private _hasContentSlot = false;
 
 	componentWillLoad() {
-		this._hasContentSlot = !!this._el.querySelector(':scope > [slot="slot"]');
+		this._hasContentSlot = !!this._el.querySelector(
+			':scope > [slot="content"]'
+		);
 	}
 
 	render() {
@@ -33,7 +35,9 @@ export class CardHeader {
 
 				{(this.header?.length || this._hasContentSlot || this.arrow) && (
 					<div class='title'>
-						<span>{this.header ?? <slot name='content' />}</span>
+						<span>
+							{this.header?.length ? this.header : <slot name='content' />}
+						</span>
 						{this.arrow && (
 							<p-icon
 								variant='arrow'

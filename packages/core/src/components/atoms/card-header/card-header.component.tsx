@@ -31,15 +31,9 @@ export class CardHeader {
 			<Host class='p-card-header'>
 				<slot name='prefix' />
 
-				{(this.header?.length || this.arrow) && (
+				{(this.header?.length || this._hasContentSlot || this.arrow) && (
 					<div class='title'>
-						<span>
-							{this.header ?? this._hasContentSlot ? (
-								<slot name='content' />
-							) : (
-								''
-							)}
-						</span>
+						<span>{this.header ?? <slot name='content' />}</span>
 						{this.arrow && (
 							<p-icon
 								variant='arrow'

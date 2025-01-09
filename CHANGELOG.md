@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.59.0](https://github.com/employes/paperless/compare/v1.58.1...v1.59.0) (2025-01-09)
+
+
+### Features
+
+* **atoms/card/header:** Add content slot ([0aa75fd](https://github.com/employes/paperless/commit/0aa75fda5e21a60bf31a3d4c0b9c829247858e2c))
+
+
+
+
+
 ## [1.58.1](https://github.com/employes/paperless/compare/v1.58.0...v1.58.1) (2025-01-07)
 
 

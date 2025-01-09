@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.59.1](https://github.com/employes/paperless/compare/v1.59.0...v1.59.1) (2025-01-09)
+
+
+### Bug Fixes
+
+* **atoms/card/header:** Also update the if statement to show the title ([49a5671](https://github.com/employes/paperless/commit/49a56713e1ca21ade70216020b96e1f19958256a))
+
+
+
+
+
 # [1.59.0](https://github.com/employes/paperless/compare/v1.58.1...v1.59.0) (2025-01-09)
 
 

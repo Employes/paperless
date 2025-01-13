@@ -21,10 +21,15 @@ export class CardHeader {
 	@Element() private _el: HTMLElement;
 
 	private _hasContentSlot = false;
+	private _hasContentSuffixSlot = false;
 
 	componentWillLoad() {
 		this._hasContentSlot = !!this._el.querySelector(
 			':scope > [slot="content"]'
+		);
+
+		this._hasContentSuffixSlot = !!this._el.querySelector(
+			':scope > [slot="content-suffix"]'
 		);
 	}
 
@@ -33,11 +38,17 @@ export class CardHeader {
 			<Host class='p-card-header'>
 				<slot name='prefix' />
 
-				{(this.header?.length || this._hasContentSlot || this.arrow) && (
-					<div class='title'>
+				{(this.header?.length ||
+					this._hasContentSlot ||
+					this._hasContentSuffixSlot ||
+					this.arrow) && (
+					<div class='content'>
 						<span>
 							{this.header?.length ? this.header : <slot name='content' />}
 						</span>
+
+						<slot name='content-suffix' />
+
 						{this.arrow && (
 							<p-icon
 								variant='arrow'

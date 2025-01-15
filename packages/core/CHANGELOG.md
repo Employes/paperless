@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.60.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.59.3...v1.60.0) (2025-01-15)
+
+
+### Features
+
+* **atoms/icon:** Add lock & unlock icon ([b94640e](https://github.com/ionic-team/stencil-component-starter/commit/b94640eac103109771c3e58129f6072e63116054))
+
+
+
+
+
 ## [1.59.3](https://github.com/ionic-team/stencil-component-starter/compare/v1.59.2...v1.59.3) (2025-01-13)
 
 **Note:** Version bump only for package @paperless/core

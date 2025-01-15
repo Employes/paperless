@@ -32,6 +32,7 @@ import iDeal from '../assets/icons/iDeal.svg';
 import integration from '../assets/icons/integration.svg';
 import list from '../assets/icons/list.svg';
 import location from '../assets/icons/location.svg';
+import lock from '../assets/icons/lock.svg';
 import megaphone from '../assets/icons/megaphone.svg';
 import menu from '../assets/icons/menu.svg';
 import minus from '../assets/icons/minus.svg';
@@ -60,6 +61,7 @@ import template from '../assets/icons/template.svg';
 import tool from '../assets/icons/tool.svg';
 import trash from '../assets/icons/trash.svg';
 import turn from '../assets/icons/turn.svg';
+import unlock from '../assets/icons/unlock.svg';
 import upload from '../assets/icons/upload.svg';
 import warning from '../assets/icons/warning.svg';
 
@@ -98,6 +100,7 @@ export default {
 	integration,
 	list,
 	location,
+	lock,
 	megaphone,
 	menu,
 	minus,
@@ -114,7 +117,7 @@ export default {
 	reload,
 	receipt,
 	report,
-  review,
+	review,
 	search,
 	settings,
 	sick,
@@ -126,6 +129,7 @@ export default {
 	tool,
 	trash,
 	turn,
+	unlock,
 	upload,
 	warning,
 };

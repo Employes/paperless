@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.61.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.60.0...v1.61.0) (2025-01-24)
+
+
+### Features
+
+* **molecules/navigation-item:** Add icon position & loading state ([2e82003](https://github.com/ionic-team/stencil-component-starter/commit/2e820032f2dd918aab3183176b0b48ccbc28ceae))
+
+
+
+
+
 # [1.60.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.59.3...v1.60.0) (2025-01-15)
 
 

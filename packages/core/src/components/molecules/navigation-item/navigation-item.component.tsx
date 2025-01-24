@@ -13,9 +13,19 @@ export class NavigationItem {
 	@Prop() active: boolean = false;
 
 	/**
+	 * Loading
+	 */
+	@Prop() loading: boolean = false;
+
+	/**
 	 * Icon of the navigation item
 	 */
 	@Prop() icon: IconVariant;
+
+	/**
+	 * The icon position
+	 */
+	@Prop() iconPosition: 'start' | 'end' = 'start';
 
 	/**
 	 * Icon of the navigation item
@@ -35,14 +45,27 @@ export class NavigationItem {
 	render() {
 		return (
 			<Host class={`p-navigation-item ${this.active && 'active'}`}>
-				<a href={this.href} target={this.target}>
-					{this.icon && <p-icon variant={this.icon} />}
+				<a
+					href={this.href}
+					target={this.target}
+				>
+					{this.icon && this.iconPosition == 'start' && (
+						<p-icon variant={this.icon} />
+					)}
+
 					<span class={this.counter && 'has-counter'}>
 						<slot />
 					</span>
-					{!!this.counter && this.counter !== '0' && (
-						<p-counter variant="negative">{this.counter}</p-counter>
+
+					{!!this.counter && this.counter !== '0' && !this.loading && (
+						<p-counter variant='negative'>{this.counter}</p-counter>
 					)}
+
+					{this.icon && this.iconPosition == 'end' && !this.loading && (
+						<p-icon variant={this.icon} />
+					)}
+
+					{this.loading && <p-loader />}
 				</a>
 			</Host>
 		);

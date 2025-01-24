@@ -1,10 +1,10 @@
 :host {
-	@apply w-full inline-block mb-1;
+	@apply mb-1 inline-block w-full;
 
 	> a {
-		@apply w-full h-8 px-2 cursor-pointer rounded-large no-underline;
+		@apply h-8 w-full cursor-pointer rounded-large px-2 no-underline;
 		@apply flex items-center gap-2;
-		@apply text-storm font-semibold;
+		@apply font-semibold text-storm;
 
 		@apply hover:bg-indigo-light;
 
@@ -12,15 +12,15 @@
 			@apply text-storm;
 		}
 
-		> p-counter {
-			@apply ml-auto;
+		> span {
+			@apply mr-auto;
 		}
 	}
 }
 
 :host(.active) {
 	> a {
-		@apply text-indigo bg-indigo-light;
+		@apply bg-indigo-light text-indigo;
 
 		> p-icon {
 			@apply text-indigo;

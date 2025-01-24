@@ -856,6 +856,14 @@ export namespace Components {
          */
         "icon": IconVariant;
         /**
+          * The icon position
+         */
+        "iconPosition": 'start' | 'end';
+        /**
+          * Loading
+         */
+        "loading": boolean;
+        /**
           * The target of the navigation item
          */
         "target": string;
@@ -3094,6 +3102,14 @@ declare namespace LocalJSX {
           * Icon of the navigation item
          */
         "icon"?: IconVariant;
+        /**
+          * The icon position
+         */
+        "iconPosition"?: 'start' | 'end';
+        /**
+          * Loading
+         */
+        "loading"?: boolean;
         /**
           * The target of the navigation item
          */

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.1](https://github.com/employes/paperless/compare/v2.0.1-beta.0...v2.0.1-beta.1) (2025-02-03)
+
+
+### Features
+
+* **storybook:** Add paperless beta environment ([6b0ba5e](https://github.com/employes/paperless/commit/6b0ba5ec7c2e5db9667af905ffa53322d2257712))
+
+
+
+
+
 ## [2.0.1-beta.0](https://github.com/employes/paperless/compare/v1.61.0...v2.0.1-beta.0) (2025-02-03)
 
 

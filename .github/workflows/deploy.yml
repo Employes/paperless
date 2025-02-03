@@ -11,165 +11,166 @@ on: push
 
 # List of jobs
 jobs:
-    # lint:
-    #     runs-on: ubuntu-latest
-    #     if: |
-    #         !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
-    #     steps:
-    #         - uses: actions/checkout@v2
+  # lint:
+  #     runs-on: ubuntu-latest
+  #     if: |
+  #         !contains(github.event.head_commit.message, 'no-release') && !contains(github.event.head_commit.message, 'Lerna publish')
+  #     steps:
+  #         - uses: actions/checkout@v2
 
-    #         - name: Setup node
-    #           uses: actions/setup-node@v2
-    #           with:
-    #               node-version: 14
+  #         - name: Setup node
+  #           uses: actions/setup-node@v2
+  #           with:
+  #               node-version: 14
 
-    #         - uses: c-hive/gha-yarn-cache@v1
+  #         - uses: c-hive/gha-yarn-cache@v1
 
-    #         - name: Install dependencies
-    #           run: yarn
+  #         - name: Install dependencies
+  #           run: yarn
 
-    # - name: Lint
-    #   run: yarn lerna:lint
+  # - name: Lint
+  #   run: yarn lerna:lint
 
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.head_commit.message, 'no-build') &&
+      !contains(github.event.head_commit.message, 'Lerna publish')
+    steps:
+      - name: 'Checkout' # Download code from the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Checkout all branches and tags
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          node-version: 20.9
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
+
+      - uses: oleksiyrudenko/gha-git-credentials@v2.1.2
+        with:
+          name: 'Github Actions'
+          email: 'actions@github.com'
+          token: '${{ secrets.GITHUB_TOKEN }}'
+
+      - name: Version
         if: |
-            !contains(github.event.head_commit.message, 'no-build') &&
-            !contains(github.event.head_commit.message, 'Lerna publish')
-        steps:
-            - name: 'Checkout' # Download code from the repository
-              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
-              with:
-                  fetch-depth: 0 # Checkout all branches and tags
+          github.ref == 'refs/heads/main'
+        run: yarn lerna:version:nopush
 
-            - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-              with:
-                  always-auth: true
-                  node-version: 20.9
-                  registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: yarn
 
-            - uses: c-hive/gha-yarn-cache@d528cd63c28aed0a9f44b1cada95050d7aa95c2e # tag=v2
+      - name: Build
+        run: yarn lerna:build:prod
 
-            - uses: oleksiyrudenko/gha-git-credentials@6132cfce45156e2c1562673f9be1a91a575ce879 # v2-latest
-              with:
-                  name: 'Github Actions'
-                  email: 'actions@github.com'
-                  token: '${{ secrets.GITHUB_TOKEN }}'
-
-            - name: Version
-              if: |
-                  github.ref == 'refs/heads/main'
-              run: yarn lerna:version:nopush
-
-            - name: Install dependencies
-              run: yarn
-
-            - name: Build
-              run: yarn lerna:build:prod
-
-            - name: Push changes
-              if: |
-                  github.ref == 'refs/heads/main' &&
-                  !contains(github.event.head_commit.message, 'chore')
-              uses: ad-m/github-push-action@master
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  branch: ${{ github.ref }}
-                  tags: true
-
-            - name: Upload artifacts
-              uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
-              with:
-                  name: build-artifact
-                  path: |
-                      lerna.json
-                      CHANGELOG.md
-                      packages/core/package.json
-                      packages/core/CHANGELOG.md
-                      packages/conventions/package.json
-                      packages/conventions/CHANGELOG.md
-                      packages/angular/package.json
-                      packages/angular/CHANGELOG.md
-                      packages/react/package.json
-                      packages/react/CHANGELOG.md
-                      packages/core/dist
-                      packages/core/loader
-                      packages/core/hydrate
-                      packages/conventions/dist
-                      packages/angular/dist
-                      packages/react/dist
-
-    release:
-        needs: [build]
-        runs-on: ubuntu-latest
+      - name: Push changes
         if: |
-            github.ref == 'refs/heads/main' && 
-            !contains(github.event.head_commit.message, 'no-release') &&
-            !contains(github.event.head_commit.message, 'Lerna publish') &&
-            !contains(github.event.head_commit.message , 'docs:') &&
-            !contains(github.event.head_commit.message , 'docs(') &&
-            !contains(github.event.head_commit.message, 'chore')
-        steps:
-            - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
-              with:
-                  fetch-depth: 0
+          github.ref == 'refs/heads/main' &&
+          !contains(github.event.head_commit.message, 'chore')
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+          tags: true
 
-            - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-              with:
-                  always-auth: true
-                  node-version: 20.9
-                  registry-url: 'https://registry.npmjs.org'
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: |
+            lerna.json
+            CHANGELOG.md
+            packages/core/package.json
+            packages/core/CHANGELOG.md
+            packages/conventions/package.json
+            packages/conventions/CHANGELOG.md
+            packages/angular/package.json
+            packages/angular/CHANGELOG.md
+            packages/react/package.json
+            packages/react/CHANGELOG.md
+            packages/core/dist
+            packages/core/loader
+            packages/core/hydrate
+            packages/conventions/dist
+            packages/angular/dist
+            packages/react/dist
 
-            - name: Download a single artifact
-              uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-              with:
-                  name: build-artifact
+  release:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: |
+      github.ref == 'refs/heads/main' &&
+      !contains(github.event.head_commit.message, 'no-release') &&
+      !contains(github.event.head_commit.message, 'Lerna publish') &&
+      !contains(github.event.head_commit.message , 'docs:') &&
+      !contains(github.event.head_commit.message , 'docs(') &&
+      !contains(github.event.head_commit.message, 'chore')
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-            - name: Release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-              run: yarn lerna:publish
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          node-version: 20.9
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
 
-    deploy-storybook:
-        needs: [build]
-        if: |
-            github.ref == 'refs/heads/main' &&
-            !contains(github.event.head_commit.message, 'no-build') &&
-            !contains(github.event.head_commit.message, 'no-release') &&
-            !contains(github.event.head_commit.message, 'Lerna publish')
-        runs-on: ubuntu-latest
-        # Job steps
-        steps:
-            - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
-              with:
-                  fetch-depth: 0
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
 
-            - name: Download a single artifact
-              uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
-              with:
-                  name: build-artifact
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn lerna:publish
 
-            - name: Setup node
-              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
-              with:
-                  always-auth: true
-                  node-version: 20.9
-                  registry-url: 'https://registry.npmjs.org'
+  deploy-storybook:
+    needs: [build]
+    if: |
+      github.ref == 'refs/heads/main' &&
+      !contains(github.event.head_commit.message, 'no-build') &&
+      !contains(github.event.head_commit.message, 'no-release') &&
+      !contains(github.event.head_commit.message, 'Lerna publish')
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v4 # v4
+        with:
+          fetch-depth: 0
 
-            - name: Install dependencies
-              run: yarn
+      - name: Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
 
-            - name: Build storybook
-              env:
-                  NODE_OPTIONS: '--openssl-legacy-provider'
-              run: yarn storybook:build
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          always-auth: true
+          node-version: 20.9
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
 
-            - name: Deploy storybook
-              env:
-                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-              run: yarn storybook:deploy
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build storybook
+        env:
+          NODE_OPTIONS: '--openssl-legacy-provider'
+        run: yarn storybook:build
+
+      - name: Deploy storybook
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: yarn storybook:deploy

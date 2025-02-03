@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1-beta.0](https://github.com/employes/paperless/compare/v1.61.0...v2.0.1-beta.0) (2025-02-03)
+
+
+### Bug Fixes
+
+* **ci:** Update versions for actions ([3644684](https://github.com/employes/paperless/commit/3644684567d58064d18d8d4bf907cc61897356a0))
+
+
+### Features
+
+* prerelease pipeline ([491b8eb](https://github.com/employes/paperless/commit/491b8eb7ee05c7eac054299b82a84f9fe4cc7468))
+
+
+
+
+
 # [1.61.0](https://github.com/employes/paperless/compare/v1.60.0...v1.61.0) (2025-01-24)
 
 

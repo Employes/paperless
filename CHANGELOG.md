@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.61.1](https://github.com/employes/paperless/compare/v1.61.0...v1.61.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* **angular/table:** Pass loading to button for row actions ([7ff2c33](https://github.com/employes/paperless/commit/7ff2c3390df675d2136d8644234f9120e72c3545))
+* **ci:** Update versions for actions ([3644684](https://github.com/employes/paperless/commit/3644684567d58064d18d8d4bf907cc61897356a0))
+
+
+
+
+
 # [1.61.0](https://github.com/employes/paperless/compare/v1.60.0...v1.61.0) (2025-01-24)
 
 

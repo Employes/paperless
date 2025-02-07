@@ -34,6 +34,7 @@ export const PDropdownMenuItem = /*@__PURE__*/createReactComponent<JSX.PDropdown
 export const PFloatingMenuContainer = /*@__PURE__*/createReactComponent<JSX.PFloatingMenuContainer, HTMLPFloatingMenuContainerElement>('p-floating-menu-container');
 export const PFloatingMenuItem = /*@__PURE__*/createReactComponent<JSX.PFloatingMenuItem, HTMLPFloatingMenuItemElement>('p-floating-menu-item');
 export const PHelper = /*@__PURE__*/createReactComponent<JSX.PHelper, HTMLPHelperElement>('p-helper');
+export const PIbanIcon = /*@__PURE__*/createReactComponent<JSX.PIbanIcon, HTMLPIbanIconElement>('p-iban-icon');
 export const PIcon = /*@__PURE__*/createReactComponent<JSX.PIcon, HTMLPIconElement>('p-icon');
 export const PIllustration = /*@__PURE__*/createReactComponent<JSX.PIllustration, HTMLPIllustrationElement>('p-illustration');
 export const PInfoPanel = /*@__PURE__*/createReactComponent<JSX.PInfoPanel, HTMLPInfoPanelElement>('p-info-panel');

@@ -8,9 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 import { RotateOptions, TextSizeOptions } from "./types/tailwind";
 import { Placement, Strategy } from "@floating-ui/dom";
+import { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 import { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
-import { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 import { Observable } from "rxjs";
 import { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 import { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
@@ -23,9 +23,9 @@ import { TableRowActionFunc, TableRowActionShowFunc } from "./components/helpers
 export { IconFlipOptions, IconVariant } from "./components/atoms/icon/icon.component";
 export { RotateOptions, TextSizeOptions } from "./types/tailwind";
 export { Placement, Strategy } from "@floating-ui/dom";
+export { IbanIconVariant, RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { IconFlipOptions as IconFlipOptions1, IconVariant as IconVariant1 } from "./components/atoms/icon/icon.component";
 export { IllustrationVariant } from "./components/atoms/illustration/illustration.component";
-export { RotateOptions as RotateOptions1, TableDefinitionData, TableDefinitionTemplateFunc } from "./types";
 export { Observable } from "rxjs";
 export { templateFunc } from "./components/molecules/page-size-select/page-size-select.component";
 export { amountSelectedTemplateFunc, templateFunc as templateFunc1 } from "./components/organisms/table/table.component";
@@ -556,6 +556,16 @@ export namespace Components {
           * The placement of the helper popover
          */
         "placement": Placement;
+    }
+    interface PIbanIcon {
+        /**
+          * The iban you want to get an icon for
+         */
+        "iban": string;
+        /**
+          * The variant of the icon you want toshow
+         */
+        "variant": IbanIconVariant;
     }
     interface PIcon {
         /**
@@ -1905,6 +1915,12 @@ declare global {
         prototype: HTMLPHelperElement;
         new (): HTMLPHelperElement;
     };
+    interface HTMLPIbanIconElement extends Components.PIbanIcon, HTMLStencilElement {
+    }
+    var HTMLPIbanIconElement: {
+        prototype: HTMLPIbanIconElement;
+        new (): HTMLPIbanIconElement;
+    };
     interface HTMLPIconElement extends Components.PIcon, HTMLStencilElement {
     }
     var HTMLPIconElement: {
@@ -2172,6 +2188,7 @@ declare global {
         "p-floating-menu-container": HTMLPFloatingMenuContainerElement;
         "p-floating-menu-item": HTMLPFloatingMenuItemElement;
         "p-helper": HTMLPHelperElement;
+        "p-iban-icon": HTMLPIbanIconElement;
         "p-icon": HTMLPIconElement;
         "p-illustration": HTMLPIllustrationElement;
         "p-info-panel": HTMLPInfoPanelElement;
@@ -2787,6 +2804,16 @@ declare namespace LocalJSX {
           * The placement of the helper popover
          */
         "placement"?: Placement;
+    }
+    interface PIbanIcon {
+        /**
+          * The iban you want to get an icon for
+         */
+        "iban"?: string;
+        /**
+          * The variant of the icon you want toshow
+         */
+        "variant"?: IbanIconVariant;
     }
     interface PIcon {
         /**
@@ -4053,6 +4080,7 @@ declare namespace LocalJSX {
         "p-floating-menu-container": PFloatingMenuContainer;
         "p-floating-menu-item": PFloatingMenuItem;
         "p-helper": PHelper;
+        "p-iban-icon": PIbanIcon;
         "p-icon": PIcon;
         "p-illustration": PIllustration;
         "p-info-panel": PInfoPanel;
@@ -4125,6 +4153,7 @@ declare module "@stencil/core" {
             "p-floating-menu-container": LocalJSX.PFloatingMenuContainer & JSXBase.HTMLAttributes<HTMLPFloatingMenuContainerElement>;
             "p-floating-menu-item": LocalJSX.PFloatingMenuItem & JSXBase.HTMLAttributes<HTMLPFloatingMenuItemElement>;
             "p-helper": LocalJSX.PHelper & JSXBase.HTMLAttributes<HTMLPHelperElement>;
+            "p-iban-icon": LocalJSX.PIbanIcon & JSXBase.HTMLAttributes<HTMLPIbanIconElement>;
             "p-icon": LocalJSX.PIcon & JSXBase.HTMLAttributes<HTMLPIconElement>;
             "p-illustration": LocalJSX.PIllustration & JSXBase.HTMLAttributes<HTMLPIllustrationElement>;
             "p-info-panel": LocalJSX.PInfoPanel & JSXBase.HTMLAttributes<HTMLPInfoPanelElement>;

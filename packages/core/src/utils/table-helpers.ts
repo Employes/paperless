@@ -139,6 +139,12 @@ export const getTableCellIsLastValues = (
 			parsedSizes[size as keyof TableColumnSizes] !== 12 &&
 			variant === 'default';
 
+		const actionsShouldBeAbsolute =
+			parsedSizes[size as keyof TableColumnSizes] === 12 &&
+			variant === 'actions';
+		values[`${prefix}absolute`] = actionsShouldBeAbsolute;
+		values[`${prefix}right-6`] = actionsShouldBeAbsolute;
+
 		values[`${prefix}group-hover:flex`] =
 			(!isLast[size] &&
 				parsedSizes[size as keyof TableColumnSizes] !== 'hidden' &&

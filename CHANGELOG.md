@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.61.2](https://github.com/employes/paperless/compare/v1.61.1...v1.61.2) (2025-02-07)
+
+
+### Bug Fixes
+
+* **utils/table:** Don't hide column on hover if column is full size ([a9dfd34](https://github.com/employes/paperless/commit/a9dfd34f45c58331ef120735603caa2ae6b40aec))
+
+
+
+
+
 ## [1.61.1](https://github.com/employes/paperless/compare/v1.61.0...v1.61.1) (2025-02-06)
 
 

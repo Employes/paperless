@@ -136,6 +136,7 @@ export const getTableCellIsLastValues = (
 			(isLast[size] ||
 				parsedSizes[size as keyof TableColumnSizes] === 'hidden') &&
 			hasActions &&
+			parsedSizes[size as keyof TableColumnSizes] !== 12 &&
 			variant === 'default';
 
 		values[`${prefix}group-hover:flex`] =

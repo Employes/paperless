@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.62.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.61.2...v1.62.0) (2025-02-07)
+
+
+### Bug Fixes
+
+* **utils/table:** Make actions float when last column width is 12 ([f075cce](https://github.com/ionic-team/stencil-component-starter/commit/f075cce7d1377fa79f319e9abdb34f06879f995f))
+
+
+### Features
+
+* **atoms:** Add iban icon component ([521aa60](https://github.com/ionic-team/stencil-component-starter/commit/521aa60b67b782c54327cdee9e2277e4eedcc03e))
+
+
+
+
+
 ## [1.61.2](https://github.com/ionic-team/stencil-component-starter/compare/v1.61.1...v1.61.2) (2025-02-07)
 
 

@@ -183,6 +183,11 @@ export class Table implements OnInit, OnChanges {
 	@Input() enableFilter: boolean = true;
 
 	/**
+	 * Wether to show the filter button on desktop
+	 */
+	@Input() enableFilterDesktop: boolean = true;
+
+	/**
 	 * The amount of filters being selected
 	 */
 	@Input() selectedFiltersAmount: number | undefined;

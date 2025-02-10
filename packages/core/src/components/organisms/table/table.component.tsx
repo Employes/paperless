@@ -184,6 +184,11 @@ export class Table {
 	@Prop() enableFilter: boolean = true;
 
 	/**
+	 * Wether to show the filter button on desktop
+	 */
+	@Prop() enableFilterDesktop: boolean = true;
+
+	/**
 	 * The amount of filters being selected
 	 */
 	@Prop() selectedFiltersAmount: number;
@@ -415,6 +420,7 @@ export class Table {
 							onQueryChange={({ detail }) => this.queryChange.emit(detail)}
 							// filter button
 							enableFilter={this.enableFilter}
+							enableFilterDesktop={this.enableFilterDesktop}
 							selectedFiltersAmount={this.selectedFiltersAmount}
 							filterButtonTemplate={this.filterButtonTemplate}
 							onFilter={() => this.filter.emit()}

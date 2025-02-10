@@ -28,19 +28,17 @@ export type buttonTemplateFunc = (amount: number) => string;
 export class TableHeader {
 	private _defaultFilterButtonTemplate: templateFunc = () =>
 		formatTranslation(this._locales.filter);
-	private _defaultActionButtonTemplate: buttonTemplateFunc = (
-		amount: number
-	) =>
+	private _defaultActionButtonTemplate: buttonTemplateFunc = (amount: number) =>
 		this.actionText
 			? this.actionText
 			: formatTranslation(
 					amount === 0
 						? this._locales.edit
 						: amount === 1
-							? this._locales.edit_single
-							: this._locales.edit_plural,
+						? this._locales.edit_single
+						: this._locales.edit_plural,
 					{ amount }
-				);
+			  );
 
 	/**
 	 * Quick filters to show
@@ -76,6 +74,11 @@ export class TableHeader {
 	 * Wether to show the filter button
 	 */
 	@Prop() enableFilter: boolean = true;
+
+	/**
+	 * Wether to show the filter button on desktop
+	 */
+	@Prop() enableFilterDesktop: boolean = true;
 
 	/**
 	 * The amount of filters being selected
@@ -170,56 +173,45 @@ export class TableHeader {
 	componentDidLoad() {
 		this._queryObserver
 			.pipe(debounceTime(300), distinctUntilChanged())
-			.subscribe((value) => this.queryChange.emit(value));
+			.subscribe(value => this.queryChange.emit(value));
 	}
 
 	render() {
 		const activeQuickFilter = this.quickFilters.find(
-			(f) => f.identifier === this.activeQuickFilterIdentifier
+			f => f.identifier === this.activeQuickFilterIdentifier
 		);
 		const mobileTotal =
-			(this.selectedFiltersAmount || 0) +
-			(activeQuickFilter?.default ? 0 : 1);
+			(this.selectedFiltersAmount || 0) + (activeQuickFilter?.default ? 0 : 1);
 
 		const hasCustomFilterSlot = !!this._el.querySelector(
 			':scope > [slot="custom-filter"]'
 		);
 
 		return (
-			<Host class="p-table-header">
+			<Host class='p-table-header'>
 				{this.loading && (
 					<p-loader
-						variant="ghost"
-						class="hidden h-8 w-3/4 rounded desktop-xs:flex"
+						variant='ghost'
+						class='hidden h-8 w-3/4 rounded desktop-xs:flex'
 					></p-loader>
 				)}
 
 				{!this.loading &&
-					(hasCustomFilterSlot ||
-						this.quickFilters.length > 0) && (
-						<div class="left-side flex flex-col justify-start gap-4 desktop-xs:flex-row">
-							{hasCustomFilterSlot && (
-								<slot name="custom-filter" />
-							)}
+					(hasCustomFilterSlot || this.quickFilters.length > 0) && (
+						<div class='left-side flex flex-col justify-start gap-4 desktop-xs:flex-row'>
+							{hasCustomFilterSlot && <slot name='custom-filter' />}
 
 							{this.quickFilters.length > 0 && (
-								<p-segment-container class="hidden desktop-xs:flex">
-									{this.quickFilters.map((item) => (
+								<p-segment-container class='hidden desktop-xs:flex'>
+									{this.quickFilters.map(item => (
 										<p-segment-item
 											active={
-												item.identifier ===
-												this.activeQuickFilterIdentifier
+												item.identifier === this.activeQuickFilterIdentifier
 											}
-											onClick={() =>
-												this.quickFilter.emit(item)
-											}
+											onClick={() => this.quickFilter.emit(item)}
 										>
-											{typeof item.text === 'string'
-												? item.text
-												: item.text()}{' '}
-											{item?.count >= 0
-												? `(${item.count})`
-												: ''}
+											{typeof item.text === 'string' ? item.text : item.text()}{' '}
+											{item?.count >= 0 ? `(${item.count})` : ''}
 										</p-segment-item>
 									))}
 								</p-segment-container>
@@ -227,19 +219,19 @@ export class TableHeader {
 						</div>
 					)}
 
-				<div class="right-side flex flex-col justify-end gap-4 desktop-xs:flex-row">
+				<div class='right-side flex flex-col justify-end gap-4 desktop-xs:flex-row'>
 					{this.enableSearch && (
 						<p-input-group
-							icon="search"
-							size="small"
-							class="desktop-xs:w-48"
+							icon='search'
+							size='small'
+							class='desktop-xs:w-48'
 						>
 							<input
-								type="text"
-								slot="input"
-								placeholder="Zoeken..."
+								type='text'
+								slot='input'
+								placeholder='Zoeken...'
 								value={this.query}
-								onInput={(ev) =>
+								onInput={ev =>
 									this._queryObserver.next(
 										(ev.target as HTMLInputElement).value
 									)
@@ -250,10 +242,14 @@ export class TableHeader {
 
 					{this.enableFilter && (
 						<p-button
-							icon="filter"
-							variant="secondary"
-							size="small"
-							class="w-full desktop-xs:w-auto"
+							icon='filter'
+							variant='secondary'
+							size='small'
+							class={`w-full ${
+								this.enableFilterDesktop
+									? 'desktop-xs:w-auto'
+									: 'desktop-xs:hidden'
+							}`}
 							onClick={() => this.filter.emit()}
 						>
 							{this.filterButtonTemplate
@@ -261,8 +257,7 @@ export class TableHeader {
 								: this._defaultFilterButtonTemplate()}
 							{this.selectedFiltersAmount &&
 								this._getLabel(this.selectedFiltersAmount)}
-							{mobileTotal > 0 &&
-								this._getLabel(mobileTotal, 'mobile')}
+							{mobileTotal > 0 && this._getLabel(mobileTotal, 'mobile')}
 						</p-button>
 					)}
 
@@ -270,7 +265,7 @@ export class TableHeader {
 				</div>
 
 				{this.enableAction && this.canUseAction && (
-					<div class="fixed bottom-0 left-0 block w-full border border-solid border-transparent border-t-mystic-dark bg-white p-4 desktop-xs:hidden">
+					<div class='fixed bottom-0 left-0 block w-full border border-solid border-transparent border-t-mystic-dark bg-white p-4 desktop-xs:hidden'>
 						{this._buttonTemplate(true)}
 					</div>
 				)}
@@ -288,18 +283,16 @@ export class TableHeader {
 			<p-button
 				class={mobile ? 'w-full' : 'hidden desktop-xs:flex'}
 				icon={this.actionIcon}
-				size="small"
+				size='small'
 				disabled={!this.canUseAction}
 				onClick={() => this.action.emit()}
 				loading={this.actionLoading}
 			>
 				{this.actionButtonTemplate
-					? this.actionButtonTemplate(
-							mobile ? this.itemsSelectedAmount : 0
-						)
+					? this.actionButtonTemplate(mobile ? this.itemsSelectedAmount : 0)
 					: this._defaultActionButtonTemplate(
 							mobile ? this.itemsSelectedAmount : 0
-						)}
+					  )}
 			</p-button>
 		);
 	}
@@ -307,9 +300,9 @@ export class TableHeader {
 	private _getLabel(amount, variant: 'mobile' | 'default' = 'default') {
 		return (
 			<p-label
-				size="small"
-				variant="negative"
-				behavior="text"
+				size='small'
+				variant='negative'
+				behavior='text'
 				class={`ml-1 ${
 					variant === 'default'
 						? 'hidden desktop-xs:flex'

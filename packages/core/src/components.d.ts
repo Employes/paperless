@@ -1262,6 +1262,10 @@ export namespace Components {
          */
         "enableFilter": boolean;
         /**
+          * Wether to show the filter button on desktop
+         */
+        "enableFilterDesktop": boolean;
+        /**
           * Wether to enable the floating menu
          */
         "enableFloatingMenu": boolean;
@@ -1518,6 +1522,10 @@ export namespace Components {
           * Wether to show the filter button
          */
         "enableFilter": boolean;
+        /**
+          * Wether to show the filter button on desktop
+         */
+        "enableFilterDesktop": boolean;
         /**
           * Wether to show the search input
          */
@@ -3554,6 +3562,10 @@ declare namespace LocalJSX {
          */
         "enableFilter"?: boolean;
         /**
+          * Wether to show the filter button on desktop
+         */
+        "enableFilterDesktop"?: boolean;
+        /**
           * Wether to enable the floating menu
          */
         "enableFloatingMenu"?: boolean;
@@ -3878,6 +3890,10 @@ declare namespace LocalJSX {
           * Wether to show the filter button
          */
         "enableFilter"?: boolean;
+        /**
+          * Wether to show the filter button on desktop
+         */
+        "enableFilterDesktop"?: boolean;
         /**
           * Wether to show the search input
          */

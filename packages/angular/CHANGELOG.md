@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.64.0](https://github.com/Employes/Paperless/compare/v1.63.0...v1.64.0) (2025-02-10)
+
+
+### Features
+
+* **molecules/table/header:** Add custom actions slot ([6ba2546](https://github.com/Employes/Paperless/commit/6ba2546a54e98a9892a1f7728aed23e916e1f29b))
+
+
+
+
+
 # [1.63.0](https://github.com/Employes/Paperless/compare/v1.62.0...v1.63.0) (2025-02-10)
 
 

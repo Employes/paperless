@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.63.0](https://github.com/Employes/Paperless/compare/v1.62.0...v1.63.0) (2025-02-10)
+
+
+### Features
+
+* **molecules/table/header:** Add ability to hide filter only on desktop ([87e36a8](https://github.com/Employes/Paperless/commit/87e36a8bd2d1f74a32bda7e1d052c8225cabd72f))
+
+
+
+
+
 # [1.62.0](https://github.com/Employes/Paperless/compare/v1.61.2...v1.62.0) (2025-02-07)
 
 **Note:** Version bump only for package @paperless/angular

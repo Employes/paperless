@@ -35,6 +35,7 @@ import {
 	take,
 } from 'rxjs';
 import {
+	TableCustomActionsDirective,
 	TableCustomFilterDirective,
 	TableFilterModalDirective,
 } from '../../directives';
@@ -350,6 +351,13 @@ export class Table implements OnInit, OnChanges {
 		static: true,
 	})
 	public headerCustomFilterTemplate: TemplateRef<any> | undefined;
+
+	// custom actions template
+	@ContentChild(TableCustomActionsDirective, {
+		read: TemplateRef,
+		static: true,
+	})
+	public headerCustomActionsTemplate: TemplateRef<any> | undefined;
 
 	// column templates
 	private _columnDefinitions!: QueryList<TableColumn>;

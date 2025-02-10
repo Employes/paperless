@@ -187,6 +187,10 @@ export class TableHeader {
 			':scope > [slot="custom-filter"]'
 		);
 
+		const hasCustomActionsSlot = !!this._el.querySelector(
+			':scope > [slot="custom-actions"]'
+		);
+
 		return (
 			<Host class='p-table-header'>
 				{this.loading && (
@@ -262,6 +266,8 @@ export class TableHeader {
 					)}
 
 					{this.enableAction && this._buttonTemplate()}
+
+					{hasCustomActionsSlot && <slot name='custom-actions' />}
 				</div>
 
 				{this.enableAction && this.canUseAction && (

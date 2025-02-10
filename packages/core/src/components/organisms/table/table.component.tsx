@@ -385,12 +385,17 @@ export class Table {
 
 	private _ctrlDown = false;
 	private _hasCustomFilterSlot = false;
+	private _hasCustomActionsSlot = false;
 	private _floatingMenuShown = false;
 	private _resizeTimeout: NodeJS.Timer;
 
 	componentWillLoad() {
 		this._hasCustomFilterSlot = !!this._el.querySelector(
 			':scope > [slot="custom-filter"]'
+		);
+
+		this._hasCustomActionsSlot = !!this._el.querySelector(
+			':scope > [slot="custom-actions"]'
 		);
 
 		this._setRowSelectionData();
@@ -440,6 +445,13 @@ export class Table {
 								<slot
 									name='custom-filter'
 									slot='custom-filter'
+								/>
+							)}
+
+							{this._hasCustomActionsSlot && (
+								<slot
+									name='custom-actions'
+									slot='custom-actions'
 								/>
 							)}
 						</p-table-header>

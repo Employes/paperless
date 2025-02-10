@@ -27,6 +27,12 @@
 				*ngTemplateOutlet="headerCustomFilterTemplate"
 			></ng-container>
 		</ng-container>
+
+		<ng-container *ngIf="headerCustomActionsTemplate">
+			<ng-container
+				*ngTemplateOutlet="headerCustomActionsTemplate"
+			></ng-container>
+		</ng-container>
 	</p-table-header>
 
 	<p-table-row variant="header">

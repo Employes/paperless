@@ -4,7 +4,7 @@
 	@apply px-6;
 
 	.content {
-		@apply flex min-h-[3.875rem] w-full flex-nowrap items-center justify-between py-2 tablet:h-18 tablet:py-6;
+		@apply relative flex min-h-[3.875rem] w-full flex-nowrap items-center justify-between py-2 tablet:h-18 tablet:py-6;
 	}
 }
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.64.1](https://github.com/ionic-team/stencil-component-starter/compare/v1.64.0...v1.64.1) (2025-02-11)
+
+
+### Bug Fixes
+
+* **atoms/stepper:** Fix the line being active if only step 1 is active ([c22b410](https://github.com/ionic-team/stencil-component-starter/commit/c22b4104411882223f287bb319ee6c0f9e825cdf))
+
+
+
+
+
 # [1.64.0](https://github.com/ionic-team/stencil-component-starter/compare/v1.63.0...v1.64.0) (2025-02-10)
 
 

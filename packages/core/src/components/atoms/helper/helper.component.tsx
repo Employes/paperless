@@ -1,4 +1,4 @@
-import { Placement } from '@floating-ui/dom';
+import { Placement, Strategy } from '@floating-ui/dom';
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
@@ -8,19 +8,30 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class Helper {
 	/**
+	 * The strategy of the popover placement
+	 */
+	@Prop() strategy: Strategy = 'absolute';
+
+	/**
 	 * The placement of the helper popover
 	 */
 	@Prop() placement: Placement = 'top';
 
 	render() {
 		return (
-			<Host class="p-helper">
-				<p-tooltip placement={this.placement}>
-					<div slot="content">
+			<Host class='p-helper'>
+				<p-tooltip
+					placement={this.placement}
+					strategy={this.strategy}
+				>
+					<div slot='content'>
 						<slot />
 					</div>
 
-					<div slot="trigger" class="helper"></div>
+					<div
+						slot='trigger'
+						class='helper'
+					></div>
 				</p-tooltip>
 			</Host>
 		);

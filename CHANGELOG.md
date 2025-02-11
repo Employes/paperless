@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.64.2](https://github.com/employes/paperless/compare/v1.64.1...v1.64.2) (2025-02-11)
+
+
+### Bug Fixes
+
+* **molecules/table/row:** Make content relative ([6523605](https://github.com/employes/paperless/commit/65236053333652ec6252bb2bdcf50c522af85f20))
+
+
+
+
+
 ## [1.64.1](https://github.com/employes/paperless/compare/v1.64.0...v1.64.1) (2025-02-11)
 
 

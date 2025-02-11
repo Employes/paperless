@@ -14,8 +14,7 @@ export class Stepper {
 	/**
 	 * The direction of the stepper
 	 */
-	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' =
-		'horizontal';
+	@Prop({ reflect: true }) direction: 'horizontal' | 'vertical' = 'horizontal';
 
 	/**
 	 * The position of the content in case of vertical direction
@@ -34,7 +33,7 @@ export class Stepper {
 	// private _steps: Array<HTMLPStepperItemElement>;
 
 	private _delay = (amount: number) =>
-		new Promise((resolve) => setTimeout(resolve, amount));
+		new Promise(resolve => setTimeout(resolve, amount));
 
 	private _onSlotChange = async (_e: Event) => this._generateSteps();
 
@@ -81,10 +80,7 @@ export class Stepper {
 			if (i < items.length - 1) {
 				const nextItem = item.nextElementSibling;
 
-				if (
-					nextItem &&
-					nextItem.tagName.toLowerCase() === 'p-stepper-item'
-				) {
+				if (nextItem && nextItem.tagName.toLowerCase() === 'p-stepper-item') {
 					// super hacky, but we want to wait for the css of the `item.direction` change to be applied before querying for the item.clientHeight
 					// otherwise we always get the initial "16"
 					if (directionChanged) {
@@ -96,17 +92,14 @@ export class Stepper {
 							? item.clientHeight - 16
 							: item.clientHeight) / 2;
 
-					const stepperLine =
-						document.createElement('p-stepper-line');
+					const stepperLine = document.createElement('p-stepper-line');
 
 					stepperLine.direction = this.direction;
-					stepperLine.active = i <= activeStep;
+					stepperLine.active = i < activeStep;
 
 					if (heightDiff > 0 && this.direction === 'vertical') {
 						stepperLine.style.marginTop = `-${heightDiff / 16}rem`;
-						stepperLine.style.marginBottom = `-${
-							heightDiff / 16
-						}rem`;
+						stepperLine.style.marginBottom = `-${heightDiff / 16}rem`;
 						stepperLine.style.minHeight = `calc(1rem + ${
 							(heightDiff * 2) / 16
 						}rem)`;
@@ -115,10 +108,7 @@ export class Stepper {
 					this._el.insertBefore(stepperLine, nextItem);
 
 					const previous = stepperLine.previousElementSibling;
-					if (
-						previous &&
-						previous.tagName.toLowerCase() === 'p-stepper-line'
-					) {
+					if (previous && previous.tagName.toLowerCase() === 'p-stepper-line') {
 						previous.remove();
 					}
 
@@ -153,7 +143,7 @@ export class Stepper {
 
 	render() {
 		return (
-			<Host class="p-stepper">
+			<Host class='p-stepper'>
 				<slot onSlotchange={this._onSlotChange} />
 			</Host>
 		);

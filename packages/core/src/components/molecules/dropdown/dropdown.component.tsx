@@ -18,12 +18,21 @@ import {
 	Prop,
 	Watch,
 } from '@stencil/core';
+import { cva } from 'class-variance-authority';
 import { childOf } from '../../../utils/child-of';
+
+const dropdownContainer = cva(['z-dropdown'], {
+	variants: {
+		strategy: {
+			absolute: 'absolute',
+			fixed: 'fixed',
+		},
+	},
+});
 
 @Component({
 	tag: 'p-dropdown',
 	styleUrl: 'dropdown.component.scss',
-	shadow: true,
 })
 export class Dropdown {
 	/**
@@ -118,6 +127,10 @@ export class Dropdown {
 		this._update();
 	}
 
+	componentDidLoad() {
+		this._checkButton();
+	}
+
 	disconnectedCallback() {
 		if (this._cleanup) {
 			this._cleanup();
@@ -127,51 +140,47 @@ export class Dropdown {
 
 	render() {
 		return (
-			<Host class="p-dropdown">
+			<Host class='p-dropdown relative w-inherit'>
 				<div
-					class="trigger"
-					ref={(ref) => (this._trigger = ref)}
+					class='relative w-inherit'
+					ref={ref => (this._trigger = ref)}
 					onClick={() => this._triggerClickHandler()}
 				>
-					<slot
-						onSlotchange={(ev) => this._checkButton(ev)}
-						name="trigger"
-					/>
+					<slot name='trigger' />
 				</div>
 				<p-dropdown-menu-container
-					role="popover"
+					class={dropdownContainer({
+						strategy: this.strategy,
+					})}
+					role='popover'
 					maxWidth={!this.calculateWidth && this.applyMaxWidth}
 					fullWidth={this.applyFullWidth && !this.applyMaxWidth}
 					allowOverflow={this.allowOverflow}
-					ref={(el) => this._load(el)}
+					ref={el => this._load(el)}
 					data-placement={this.placement}
 					data-strategy={this.strategy}
 					onClick={() => this._containerClickHandler()}
 					scrollable={this.scrollable}
 				>
-					<slot name="items" />
+					<slot name='items' />
 				</p-dropdown-menu-container>
 			</Host>
 		);
 	}
 
-	private _checkButton({ target }: Event) {
+	private _checkButton() {
 		if (!this.applyChevron) {
 			return;
 		}
 
-		const slot = target as HTMLSlotElement;
-		const children = slot.assignedElements();
-
-		for (let child of children) {
-			if (child.nodeName === 'P-BUTTON') {
-				(child as any).chevronPosition = this.chevronPosition;
-				(child as any).chevron = this.chevronDirection
-					? this.chevronDirection
-					: this.placement.indexOf('top') >= 0
-						? 'up'
-						: 'down';
-			}
+		const buttons = this._el.querySelectorAll<HTMLPButtonElement>('p-button');
+		for (let button of buttons) {
+			button.chevronPosition = this.chevronPosition;
+			button.chevron = this.chevronDirection
+				? this.chevronDirection
+				: this.placement.indexOf('top') >= 0
+				? 'up'
+				: 'down';
 		}
 	}
 
@@ -191,10 +200,7 @@ export class Dropdown {
 
 	@Listen('click', { target: 'document', capture: true })
 	protected documentClickHandler({ target }) {
-		if (
-			!this._menu.hasAttribute('data-show') ||
-			childOf(target, this._el)
-		) {
+		if (!this._menu.hasAttribute('data-show') || childOf(target, this._el)) {
 			return;
 		}
 

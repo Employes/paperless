@@ -564,6 +564,10 @@ export namespace Components {
           * The placement of the helper popover
          */
         "placement": Placement;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy": Strategy;
     }
     interface PIbanIcon {
         /**
@@ -2833,6 +2837,10 @@ declare namespace LocalJSX {
           * The placement of the helper popover
          */
         "placement"?: Placement;
+        /**
+          * The strategy of the popover placement
+         */
+        "strategy"?: Strategy;
     }
     interface PIbanIcon {
         /**

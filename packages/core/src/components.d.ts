@@ -84,20 +84,18 @@ export namespace Components {
         /**
           * The size of the avatar
          */
-        "size": | 'xsmall'
-		| 'small'
-    | 'table'
-		| 'medium'
-		| 'large'
-		| 'xlarge';
+        "size": | 'xs'
+		| 'sm'
+		| 'base'
+		| 'lg'
+		| 'xl'
+		| '2xl'
+		| '3xl'
+		| '4xl';
         /**
           * The image used for the avatar
          */
         "src": string;
-        /**
-          * The variant of the avatar
-         */
-        "variant": 'user' | 'company';
     }
     interface PAvatarGroup {
         /**
@@ -936,18 +934,20 @@ export namespace Components {
     }
     interface PProfile {
         /**
+          * The position of the dropdown
+         */
+        "dropdownLocation": 'top-end' | 'bottom-end';
+        /**
           * The size of the profile avatar
          */
-        "size": | 'xsmall'
-		| 'small'
-    | 'table'
-		| 'medium'
-		| 'large'
-		| 'xlarge';
-        /**
-          * The variant of the profile
-         */
-        "variant": 'company' | 'user';
+        "size": | 'xs'
+		| 'sm'
+		| 'base'
+		| 'lg'
+		| 'xl'
+		| '2xl'
+		| '3xl'
+		| '4xl';
     }
     interface PSegmentContainer {
     }
@@ -2309,20 +2309,18 @@ declare namespace LocalJSX {
         /**
           * The size of the avatar
          */
-        "size"?: | 'xsmall'
-		| 'small'
-    | 'table'
-		| 'medium'
-		| 'large'
-		| 'xlarge';
+        "size"?: | 'xs'
+		| 'sm'
+		| 'base'
+		| 'lg'
+		| 'xl'
+		| '2xl'
+		| '3xl'
+		| '4xl';
         /**
           * The image used for the avatar
          */
         "src": string;
-        /**
-          * The variant of the avatar
-         */
-        "variant"?: 'user' | 'company';
     }
     interface PAvatarGroup {
         /**
@@ -3225,18 +3223,20 @@ declare namespace LocalJSX {
     }
     interface PProfile {
         /**
+          * The position of the dropdown
+         */
+        "dropdownLocation"?: 'top-end' | 'bottom-end';
+        /**
           * The size of the profile avatar
          */
-        "size"?: | 'xsmall'
-		| 'small'
-    | 'table'
-		| 'medium'
-		| 'large'
-		| 'xlarge';
-        /**
-          * The variant of the profile
-         */
-        "variant"?: 'company' | 'user';
+        "size"?: | 'xs'
+		| 'sm'
+		| 'base'
+		| 'lg'
+		| 'xl'
+		| '2xl'
+		| '3xl'
+		| '4xl';
     }
     interface PSegmentContainer {
     }

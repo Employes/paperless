@@ -854,6 +854,10 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * The element to use for the navigation item
+         */
+        "as": string;
+        /**
           * Icon of the navigation item
          */
         "counter": number | string;
@@ -865,14 +869,6 @@ export namespace Components {
           * Icon of the navigation item
          */
         "icon": IconVariant;
-        /**
-          * The icon position
-         */
-        "iconPosition": 'start' | 'end';
-        /**
-          * Loading
-         */
-        "loading": boolean;
         /**
           * The target of the navigation item
          */
@@ -3135,6 +3131,10 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
+          * The element to use for the navigation item
+         */
+        "as"?: string;
+        /**
           * Icon of the navigation item
          */
         "counter"?: number | string;
@@ -3145,15 +3145,7 @@ declare namespace LocalJSX {
         /**
           * Icon of the navigation item
          */
-        "icon"?: IconVariant;
-        /**
-          * The icon position
-         */
-        "iconPosition"?: 'start' | 'end';
-        /**
-          * Loading
-         */
-        "loading"?: boolean;
+        "icon": IconVariant;
         /**
           * The target of the navigation item
          */

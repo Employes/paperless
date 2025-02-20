@@ -120,7 +120,7 @@ export class Profile {
 	private _getIcon() {
 		return (
 			<p-icon
-				variant='chevron'
+				variant='caret'
 				flip={this._dropdownOpen ? 'vertical' : 'horizontal'}
 			/>
 		);

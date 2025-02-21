@@ -140,7 +140,7 @@ export class Dropdown {
 
 	render() {
 		return (
-			<Host class='p-dropdown relative w-inherit'>
+			<Host class='p-dropdown relative'>
 				<div
 					class='relative w-inherit'
 					ref={ref => (this._trigger = ref)}

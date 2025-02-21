@@ -57,7 +57,7 @@ export class Profile {
 							active={this._dropdownOpen}
 							slot='trigger'
 							size='lg'
-							class='w-full px-2'
+							class='w-full'
 						>
 							{content}
 						</p-button>

@@ -131,6 +131,10 @@ export namespace Components {
     }
     interface PButton {
         /**
+          * Wether to force an active state
+         */
+        "active": boolean;
+        /**
           * The type of the button
          */
         "as": 'a' | 'button';
@@ -967,17 +971,6 @@ export namespace Components {
           * The position of the dropdown
          */
         "dropdownLocation": 'top-end' | 'bottom-end';
-        /**
-          * The size of the profile avatar
-         */
-        "size": | 'xs'
-		| 'sm'
-		| 'base'
-		| 'lg'
-		| 'xl'
-		| '2xl'
-		| '3xl'
-		| '4xl';
     }
     interface PSegmentContainer {
     }
@@ -2402,6 +2395,10 @@ declare namespace LocalJSX {
     }
     interface PButton {
         /**
+          * Wether to force an active state
+         */
+        "active"?: boolean;
+        /**
           * The type of the button
          */
         "as"?: 'a' | 'button';
@@ -3298,17 +3295,6 @@ declare namespace LocalJSX {
           * The position of the dropdown
          */
         "dropdownLocation"?: 'top-end' | 'bottom-end';
-        /**
-          * The size of the profile avatar
-         */
-        "size"?: | 'xs'
-		| 'sm'
-		| 'base'
-		| 'lg'
-		| 'xl'
-		| '2xl'
-		| '3xl'
-		| '4xl';
     }
     interface PSegmentContainer {
     }

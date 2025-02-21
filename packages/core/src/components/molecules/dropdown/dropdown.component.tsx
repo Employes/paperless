@@ -168,7 +168,7 @@ export class Dropdown {
 		);
 	}
 
-	private _checkButton() {
+	private _checkButton(active: boolean = false) {
 		if (!this.applyChevron) {
 			return;
 		}
@@ -181,6 +181,8 @@ export class Dropdown {
 				: this.placement.indexOf('top') >= 0
 				? 'up'
 				: 'down';
+			button.disabled = this.disableTriggerClick;
+			button.active = active;
 		}
 	}
 
@@ -256,6 +258,7 @@ export class Dropdown {
 
 		this._menu.setAttribute('data-show', '');
 		this.isOpen.emit(true);
+		this._checkButton(true);
 	}
 
 	private _hide() {
@@ -271,6 +274,7 @@ export class Dropdown {
 		// Hide the popover
 		this._menu.removeAttribute('data-show');
 		this.isOpen.emit(false);
+		this._checkButton(false);
 	}
 
 	private _update() {
